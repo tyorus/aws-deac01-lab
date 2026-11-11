@@ -1,0 +1,13 @@
+project_id = "ipwqqfvskyspvqrwlysb"
+
+[api]
+enabled = true
+
+[auth]
+enabled = true
+
+[functions.grade-attempt]
+verify_jwt = true
+
+[functions.submit-exam]
+verify_jwt = true

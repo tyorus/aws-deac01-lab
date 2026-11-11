@@ -1,0 +1,45 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-008",
+  "domain": "D1",
+  "topics": [
+    "orchestration",
+    "step-functions"
+  ],
+  "services": [
+    "step-functions"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A Step Functions task uses a callback (.waitForTaskToken) pattern. The external worker crashes and never calls SendTaskSuccess or SendTaskFailure. What prevents an indefinite wait?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Configure a TimeoutSeconds (or HeartbeatSeconds) on the task state",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Disable logging on the state machine",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Switch the state machine type from Standard to Express only",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Remove IAM permissions for SendTaskFailure so failures cannot be reported",
+      "correct": false
+    }
+  ],
+  "explanation": "Task-level timeouts/heartbeats bound how long Step Functions waits for a callback. Express vs Standard is about duration/execution model, not a substitute for timeouts."
+}

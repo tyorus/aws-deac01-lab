@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-027",
+  "domain": "D3",
+  "topics": [
+    "athena",
+    "analysis"
+  ],
+  "services": [
+    "athena",
+    "s3"
+  ],
+  "difficulty": "easy",
+  "type": "single",
+  "stem": "An engineer needs a one-hour ad-hoc distinct-count query on Parquet in S3 without provisioning clusters. Which service fits best?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Amazon Athena",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Amazon Redshift provisioned cluster created for one query then deleted mid-hour without automation",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Amazon EC2 with a manual Hadoop install for a single COUNT DISTINCT",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "AWS Budgets",
+      "correct": false
+    }
+  ],
+  "explanation": "Athena provides serverless SQL on S3 for ad-hoc analysis."
+}

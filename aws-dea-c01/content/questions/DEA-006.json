@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-006",
+  "domain": "D1",
+  "topics": [
+    "orchestration"
+  ],
+  "services": [
+    "step-functions",
+    "mwaa",
+    "glue"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A team wants orchestration with no server patching or capacity planning, supporting long-running branching workflows that coordinate Glue, Lambda, and a manual approval. Which option best fits?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "AWS Step Functions Standard workflows",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Self-managed Airflow on a single EC2 instance",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Only Amazon EventBridge Scheduler cron rules with no state machine",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Amazon EMR cluster steps without an orchestration layer",
+      "correct": false
+    }
+  ],
+  "explanation": "Step Functions Standard is fully managed/serverless and supports long-running branching and wait-for-callback/approval patterns. Self-managed Airflow adds ops burden; cron alone lacks rich branching state."
+}

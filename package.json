@@ -1,0 +1,20 @@
+{
+  "name": "aws-deac01-lab",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AWS DEA-C01 learning platform — knowledge base, drill, exam sim, analytics",
+  "scripts": {
+    "dev": "npm run dev --prefix apps/web",
+    "build": "npm run build --prefix apps/web",
+    "preview": "npm run preview --prefix apps/web",
+    "typecheck": "npm run typecheck --prefix apps/web",
+    "lint": "npm run lint --prefix apps/web",
+    "validate:questions": "node scripts/validate-questions.mjs",
+    "sync:content": "node scripts/sync-content.mjs",
+    "seed:sql": "node scripts/build-seed-sql.mjs",
+    "test": "npm run test --prefix apps/web"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

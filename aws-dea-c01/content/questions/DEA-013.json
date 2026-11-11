@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-013",
+  "domain": "D1",
+  "topics": [
+    "streaming-compare"
+  ],
+  "services": [
+    "kinesis",
+    "firehose",
+    "msk"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "An application must retain stream data for custom consumers with shard-level processing and optional enhanced fan-out. Which service fits best?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Amazon Kinesis Data Streams",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Amazon Data Firehose alone as the system of record for consumer fan-out",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Amazon Athena",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Amazon S3 Inventory",
+      "correct": false
+    }
+  ],
+  "explanation": "Kinesis Data Streams is built for durable streaming with consumer applications. Firehose is primarily a delivery stream to destinations, not a general consumer fan-out system of record."
+}

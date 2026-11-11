@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-023",
+  "domain": "D2",
+  "topics": [
+    "athena-vs-redshift"
+  ],
+  "services": [
+    "athena",
+    "redshift",
+    "s3"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "Analysts need infrequent ad-hoc SQL over CSV/JSON in S3 with minimal ongoing cost and no cluster to manage. Which approach is most cost-effective?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Catalog with Glue crawler and query via Athena (optionally with workgroup limits)",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Always load into a provisioned Redshift cluster first for every ad-hoc question",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Duplicate all files into Amazon RDS MySQL daily",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Use only QuickSight SPICE with no SQL access",
+      "correct": false
+    }
+  ],
+  "explanation": "Athena is serverless SQL on S3 and fits sporadic ad-hoc analysis. Provisioned warehouses add steady cost."
+}

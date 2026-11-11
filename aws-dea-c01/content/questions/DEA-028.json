@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-028",
+  "domain": "D3",
+  "topics": [
+    "athena-spark",
+    "emr"
+  ],
+  "services": [
+    "athena",
+    "emr"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "Exploratory Spark analysis is bursty a few hours per week. Which factor most favors Athena Spark notebooks over a long-running EMR cluster?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Serverless on-demand compute that avoids paying for idle cluster capacity",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Need for persistent HDFS with custom bootstrap AMI deep customization",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Requirement to pin exact EC2 instance families for years",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Need for OS-level SSH into every executor host daily",
+      "correct": false
+    }
+  ],
+  "explanation": "Athena Spark notebooks suit intermittent exploration without idle cluster cost."
+}

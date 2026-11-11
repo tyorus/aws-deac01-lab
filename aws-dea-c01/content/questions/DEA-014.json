@@ -1,0 +1,45 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-014",
+  "domain": "D1",
+  "topics": [
+    "streaming-compare"
+  ],
+  "services": [
+    "firehose",
+    "s3"
+  ],
+  "difficulty": "easy",
+  "type": "single",
+  "stem": "Telemetry must be ingested continuously and landed into S3 as near-real-time buffered objects with optional format conversion, without managing consumers. Which service is the most direct fit?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Amazon Data Firehose",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Amazon Redshift Spectrum",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "AWS Glue DataBrew",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "AWS Certificate Manager",
+      "correct": false
+    }
+  ],
+  "explanation": "Firehose is managed delivery into destinations such as S3 with buffering and optional conversion."
+}

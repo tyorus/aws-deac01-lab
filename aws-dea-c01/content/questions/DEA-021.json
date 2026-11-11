@@ -1,0 +1,44 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-021",
+  "domain": "D2",
+  "topics": [
+    "redshift-dist"
+  ],
+  "services": [
+    "redshift"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A 40-row region_lookup dimension is joined to large KEY-distributed facts. Which distribution style keeps the join local on every node without redistributing the dimension?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "ALL distribution for region_lookup",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "EVEN for region_lookup and KEY on a low-cardinality column for facts",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "AUTO only with no further thought when the table is tiny and joined everywhere",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Disabling compression encodings",
+      "correct": false
+    }
+  ],
+  "explanation": "ALL copies small dimensions to every node so joins to large facts avoid redistributing the dimension."
+}

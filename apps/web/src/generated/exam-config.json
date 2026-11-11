@@ -1,0 +1,51 @@
+{
+  "exam_code": "DEA-C01",
+  "exam_name": "AWS Certified Data Engineer - Associate",
+  "sources": [
+    "https://aws.amazon.com/certification/certified-data-engineer-associate/",
+    "AWS Certified Data Engineer - Associate Exam Guide (DEA-C01)"
+  ],
+  "official": {
+    "total_questions": 65,
+    "scored_questions": 50,
+    "unscored_questions": 15,
+    "duration_minutes": 130,
+    "passing_score": 720,
+    "score_scale_max": 1000,
+    "question_formats": ["single", "multi"],
+    "domain_weights": [
+      { "code": "D1", "name": "Data Ingestion and Transformation", "weight_pct": 34 },
+      { "code": "D2", "name": "Data Store Management", "weight_pct": 26 },
+      { "code": "D3", "name": "Data Operations and Support", "weight_pct": 22 },
+      { "code": "D4", "name": "Data Security and Governance", "weight_pct": 18 }
+    ]
+  },
+  "presets": [
+    {
+      "id": "full",
+      "name": "Full mock (official length)",
+      "question_count": 65,
+      "duration_minutes": 130,
+      "use_domain_weights": true
+    },
+    {
+      "id": "short20",
+      "name": "Short mock",
+      "question_count": 20,
+      "duration_minutes": 40,
+      "use_domain_weights": true
+    },
+    {
+      "id": "sprint10",
+      "name": "Sprint mock",
+      "question_count": 10,
+      "duration_minutes": 20,
+      "use_domain_weights": false
+    }
+  ],
+  "notes": [
+    "Unscored items are not identified on the real exam; this simulator treats all selected items as scored for practice clarity.",
+    "Platform readiness scores are internal estimates, not official AWS pass predictions.",
+    "Scaled score emulation is approximate when enabled."
+  ]
+}

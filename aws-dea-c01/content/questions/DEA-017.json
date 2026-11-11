@@ -1,0 +1,47 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-017",
+  "domain": "D2",
+  "topics": [
+    "glue-catalog",
+    "partitions"
+  ],
+  "services": [
+    "glue",
+    "athena",
+    "s3"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A Glue ETL job writes DynamicFrames to S3 with partitionKeys but analysts cannot query new partitions in Athena until a separate crawler runs. How can the job register partitions during the write?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Enable partition projection or use a sink option / catalog update pattern such as enabling updateBehavior/partition updates so partitions are registered as data is written",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Delete the Glue Data Catalog and rely on listing S3 keys in the Athena UI only",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Store Parquet in Glacier Instant Retrieval only",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Switch from Athena to AWS CloudTrail Lake for table reads",
+      "correct": false
+    }
+  ],
+  "explanation": "Glue can update the Data Catalog with new partitions as part of the write path, avoiding a delayed crawler-only workflow."
+}

@@ -1,0 +1,48 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-040",
+  "domain": "D4",
+  "topics": [
+    "audit",
+    "cloudtrail"
+  ],
+  "services": [
+    "cloudtrail",
+    "athena",
+    "s3",
+    "config"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "Organization CloudTrail already delivers logs to a centralized S3 bucket. Auditors need one-off SQL for DeleteBucket calls this quarter with minimal new infrastructure. What is the leanest approach?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Query the existing CloudTrail S3 logs with Athena (and Glue catalog/partitions as needed)",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Rebuild a new streaming pipeline into a dedicated Redshift cluster solely for this quarter’s question",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Turn off CloudTrail and rely on memory of console clicks",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Use Amazon Polly to read log files aloud",
+      "correct": false
+    }
+  ],
+  "explanation": "Athena on existing CloudTrail S3 data answers ad-hoc audit SQL with little new infrastructure. AWS Config is better for configuration timeline questions; here the need is API call search."
+}

@@ -1,0 +1,45 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-035",
+  "domain": "D4",
+  "topics": [
+    "managed-vs-unmanaged"
+  ],
+  "services": [
+    "ec2",
+    "rds"
+  ],
+  "difficulty": "easy",
+  "type": "single",
+  "stem": "Which option is best described as unmanaged relative to a managed database service, where the customer patches OS and database engine?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Running a database on Amazon EC2",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Amazon RDS",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Amazon Aurora fully managed clusters",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Amazon DynamoDB",
+      "correct": false
+    }
+  ],
+  "explanation": "EC2-hosted databases shift OS/engine patching to the customer versus RDS/Aurora/DynamoDB managed models."
+}

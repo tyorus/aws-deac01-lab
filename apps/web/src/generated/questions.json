@@ -1,0 +1,1884 @@
+[
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-001",
+    "domain": "D1",
+    "topics": [
+      "monitoring",
+      "ingestion"
+    ],
+    "services": [
+      "lambda",
+      "cloudwatch"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A scheduled Lambda ingestion job completes successfully but sometimes writes far fewer records than expected. Engineers only receive alerts when the function throws. Which approach best detects silent under-production?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Emit a custom CloudWatch metric for records written per run and alarm when it falls below a baseline",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Increase Lambda memory so the function is less likely to time out",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Wrap business logic in a broad try/except that returns success after logging",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Set reserved concurrency to 1 for the function",
+        "correct": false
+      }
+    ],
+    "explanation": "Successful runs with unexpectedly low volume do not raise errors. A throughput metric with a low-threshold alarm detects silent under-production. Memory, swallowed exceptions, and concurrency limits do not measure output volume."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-002",
+    "domain": "D1",
+    "topics": [
+      "iac",
+      "programming"
+    ],
+    "services": [
+      "cloudformation",
+      "cdk"
+    ],
+    "difficulty": "easy",
+    "type": "multi",
+    "stem": "A team will redeploy the same serverless data pipeline across three accounts using infrastructure as code. Which two statements are accurate?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Version-controlled templates tie each deployment change to a commit and author",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A declarative template can be applied repeatably across accounts without manual console recreation",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "IaC requires creating every resource in the console before automation can manage it",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Templated updates always guarantee zero downtime for every resource type",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Passing template syntax validation removes the need to test deployed behavior",
+        "correct": false
+      }
+    ],
+    "explanation": "IaC provides traceability and repeatable multi-account deployment. It does not require console-first creation, does not guarantee zero downtime for all updates, and syntax checks are not a substitute for testing."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-003",
+    "domain": "D1",
+    "topics": [
+      "glue",
+      "jdbc"
+    ],
+    "services": [
+      "glue",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An AWS Glue ETL job must connect to a legacy database whose engine is not in Glue’s built-in JDBC list. The vendor provided a JDBC driver JAR. How should the driver be supplied?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Upload the JAR to Amazon S3 and reference that path in the Glue connection so the job loads it at runtime",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Open a support case asking AWS to install the JAR onto Glue’s managed hosts",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Package the JAR as a Lambda layer and attach it to the Glue job",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Replace JDBC with Amazon Data Firehose because Firehose can speak any database protocol",
+        "correct": false
+      }
+    ],
+    "explanation": "Glue supports custom JDBC drivers stored in S3 and referenced by the connection. Glue does not use Lambda layers, and Firehose is not a generic JDBC client."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-004",
+    "domain": "D1",
+    "topics": [
+      "triggers",
+      "scheduling"
+    ],
+    "services": [
+      "glue",
+      "eventbridge",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "Pipeline A must catalog new S3 partitions once every hour regardless of activity. Pipeline B must start within seconds whenever a new object lands. Which two trigger choices match these needs?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Use a time-based schedule (cron) for pipeline A’s crawler/job",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Use S3 Event Notifications or EventBridge object-created rules for pipeline B",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Use only object-created events for pipeline A so it never runs on quiet hours",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Use a fixed hourly schedule for pipeline B to poll for new files",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Require manual console starts for both pipelines",
+        "correct": false
+      }
+    ],
+    "explanation": "Fixed schedules guarantee hourly runs. Event-driven object notifications meet near-real-time needs. The reverse choices break each requirement."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-005",
+    "domain": "D1",
+    "topics": [
+      "streaming",
+      "lambda"
+    ],
+    "services": [
+      "kinesis",
+      "lambda"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Lambda function is mapped to a Kinesis data stream with default event source mapping settings. What is the default read behavior?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Lambda polls each shard as a standard iterator consumer sharing shard throughput with other consumers",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Lambda always registers enhanced fan-out with dedicated throughput per shard by default",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Lambda invokes once per individual record and never batches",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "The stream must be deleted and recreated as a Lambda-only stream type first",
+        "correct": false
+      }
+    ],
+    "explanation": "By default Lambda uses shared throughput polling. Enhanced fan-out is optional. Batching is the normal behavior, and no special stream type is required."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-006",
+    "domain": "D1",
+    "topics": [
+      "orchestration"
+    ],
+    "services": [
+      "step-functions",
+      "mwaa",
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A team wants orchestration with no server patching or capacity planning, supporting long-running branching workflows that coordinate Glue, Lambda, and a manual approval. Which option best fits?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "AWS Step Functions Standard workflows",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Self-managed Airflow on a single EC2 instance",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Only Amazon EventBridge Scheduler cron rules with no state machine",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Amazon EMR cluster steps without an orchestration layer",
+        "correct": false
+      }
+    ],
+    "explanation": "Step Functions Standard is fully managed/serverless and supports long-running branching and wait-for-callback/approval patterns. Self-managed Airflow adds ops burden; cron alone lacks rich branching state."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-007",
+    "domain": "D1",
+    "topics": [
+      "orchestration",
+      "mwaa"
+    ],
+    "services": [
+      "mwaa"
+    ],
+    "difficulty": "hard",
+    "type": "single",
+    "stem": "Three AWS accounts each run Amazon MWAA. A DAG in account A should trigger a DAG in account B when upstream datasets are ready, without tightly coupling schedules. Which MWAA capability directly supports this pattern?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Dataset-driven scheduling / data-aware scheduling across DAG dependencies",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Replacing all DAGs with a single shared cron expression in every account",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Hard-coding EC2 public IPs of each MWAA webserver into DAG files",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Disabling concurrency so only one DAG in the organization can run at a time",
+        "correct": false
+      }
+    ],
+    "explanation": "Data-aware / dataset scheduling lets DAGs react to asset readiness rather than only wall-clock schedules, which fits loosely coupled cross-team pipelines."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-008",
+    "domain": "D1",
+    "topics": [
+      "orchestration",
+      "step-functions"
+    ],
+    "services": [
+      "step-functions"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Step Functions task uses a callback (.waitForTaskToken) pattern. The external worker crashes and never calls SendTaskSuccess or SendTaskFailure. What prevents an indefinite wait?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Configure a TimeoutSeconds (or HeartbeatSeconds) on the task state",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Disable logging on the state machine",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Switch the state machine type from Standard to Express only",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Remove IAM permissions for SendTaskFailure so failures cannot be reported",
+        "correct": false
+      }
+    ],
+    "explanation": "Task-level timeouts/heartbeats bound how long Step Functions waits for a callback. Express vs Standard is about duration/execution model, not a substitute for timeouts."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-009",
+    "domain": "D1",
+    "topics": [
+      "transformation",
+      "formats"
+    ],
+    "services": [
+      "lambda",
+      "s3"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "CSV files uploaded to an S3 prefix must be converted to Parquet by Lambda only when the object key ends with .csv. Which notification design is correct?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "s3:ObjectCreated:* with a suffix filter of .csv targeting the Lambda ARN",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "s3:ObjectTagging:* filtered on a tag value of csv",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "s3:* with no suffix filter",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "ObjectCreated events that only publish to SNS with no Lambda destination and no subscription",
+        "correct": false
+      }
+    ],
+    "explanation": "ObjectCreated with a suffix filter ensures Lambda runs only for .csv uploads. Tagging events and unfiltered wildcards do not meet the requirement cleanly."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-010",
+    "domain": "D1",
+    "topics": [
+      "glue",
+      "cost"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Nightly Glue jobs are flexible on finish time and should minimize cost. Which job execution class is most appropriate?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "FLEX",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "STANDARD only, because FLEX cannot run Glue ETL",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Spot Instance type field in Glue job properties (as if Glue were EC2 Spot bidding UI)",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Setting GlueVersion alone without changing execution class",
+        "correct": false
+      }
+    ],
+    "explanation": "Glue FLEX execution class is designed for non-urgent workloads at lower cost. STANDARD is for time-sensitive jobs."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-011",
+    "domain": "D1",
+    "topics": [
+      "bedrock",
+      "llm"
+    ],
+    "services": [
+      "bedrock",
+      "lambda",
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "Which two patterns correctly use Amazon Bedrock in a data engineering pipeline?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Invoke a Bedrock model from Lambda after a crawler run to generate table descriptions for the Glue Data Catalog",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Call Bedrock from an existing Lambda transform to classify free-text support tickets before writing downstream",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Replace Glue crawlers entirely with Bedrock writing catalog schemas directly as a metastore",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Configure Bedrock as a native Glue Spark worker/DPU executor type",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Use Bedrock as the only way to count rows grouped by date",
+        "correct": false
+      }
+    ],
+    "explanation": "Bedrock is an API for generative tasks such as descriptions and classification. It is not a catalog replacement, Spark worker type, or required for simple aggregations."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-012",
+    "domain": "D1",
+    "topics": [
+      "glue-vs-emr"
+    ],
+    "services": [
+      "glue",
+      "emr"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A team needs serverless Spark ETL with minimal cluster management for daily batch jobs that fit Glue’s feature set. When is AWS Glue generally preferable to Amazon EMR?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "When you want a fully managed, serverless Spark job model without sizing and patching clusters",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "When you must run arbitrary long-lived multi-tenant YARN applications with custom bootstrap deep OS tuning",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "When you need only sub-millisecond key/value lookups",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "When you need a relational warehouse with concurrency scaling for BI",
+        "correct": false
+      }
+    ],
+    "explanation": "Glue shines for managed/serverless ETL. EMR is better for custom/long-lived cluster control. Key/value and warehouse needs point to other services."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-013",
+    "domain": "D1",
+    "topics": [
+      "streaming-compare"
+    ],
+    "services": [
+      "kinesis",
+      "firehose",
+      "msk"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An application must retain stream data for custom consumers with shard-level processing and optional enhanced fan-out. Which service fits best?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Kinesis Data Streams",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon Data Firehose alone as the system of record for consumer fan-out",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Amazon Athena",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Amazon S3 Inventory",
+        "correct": false
+      }
+    ],
+    "explanation": "Kinesis Data Streams is built for durable streaming with consumer applications. Firehose is primarily a delivery stream to destinations, not a general consumer fan-out system of record."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-014",
+    "domain": "D1",
+    "topics": [
+      "streaming-compare"
+    ],
+    "services": [
+      "firehose",
+      "s3"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Telemetry must be ingested continuously and landed into S3 as near-real-time buffered objects with optional format conversion, without managing consumers. Which service is the most direct fit?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Data Firehose",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon Redshift Spectrum",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "AWS Glue DataBrew",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "AWS Certificate Manager",
+        "correct": false
+      }
+    ],
+    "explanation": "Firehose is managed delivery into destinations such as S3 with buffering and optional conversion."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-015",
+    "domain": "D2",
+    "topics": [
+      "transfer",
+      "lifecycle"
+    ],
+    "services": [
+      "transfer-family"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A healthcare partner requires digitally signed, encrypted file exchange with integrity checks and receipts for B2B claims files. Which AWS Transfer Family protocol is the best fit?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "AS2",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Anonymous FTP without TLS",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "SMTP email drop boxes",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Public S3 website hosting",
+        "correct": false
+      }
+    ],
+    "explanation": "AS2 is commonly used for B2B signed/encrypted document exchange with MDNs/receipts. The other options lack that compliance-oriented exchange model."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-016",
+    "domain": "D2",
+    "topics": [
+      "redshift",
+      "performance"
+    ],
+    "services": [
+      "redshift",
+      "quicksight"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "QuickSight dashboards repeatedly run the same expensive multi-join aggregate against Redshift while underlying data changes only a few times per day. Which Redshift feature best improves dashboard load time?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Materialized views refreshed on the data change cadence",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Disabling result caching permanently",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Converting all facts to SUPER JSON without modeling",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Moving the cluster to a single-node type only",
+        "correct": false
+      }
+    ],
+    "explanation": "Materialized views precompute expensive aggregates for repeated queries when data freshness needs are modest."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-017",
+    "domain": "D2",
+    "topics": [
+      "glue-catalog",
+      "partitions"
+    ],
+    "services": [
+      "glue",
+      "athena",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Glue ETL job writes DynamicFrames to S3 with partitionKeys but analysts cannot query new partitions in Athena until a separate crawler runs. How can the job register partitions during the write?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Enable partition projection or use a sink option / catalog update pattern such as enabling updateBehavior/partition updates so partitions are registered as data is written",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Delete the Glue Data Catalog and rely on listing S3 keys in the Athena UI only",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Store Parquet in Glacier Instant Retrieval only",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Switch from Athena to AWS CloudTrail Lake for table reads",
+        "correct": false
+      }
+    ],
+    "explanation": "Glue can update the Data Catalog with new partitions as part of the write path, avoiding a delayed crawler-only workflow."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-018",
+    "domain": "D2",
+    "topics": [
+      "crawler",
+      "dynamodb"
+    ],
+    "services": [
+      "glue",
+      "dynamodb"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Glue crawler will catalog a DynamoDB table. Which configuration detail is specific to DynamoDB versus an S3 data store?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Sampling configuration / scan rate considerations for reading table items to infer schema",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Choosing an S3 path depth for partition discovery",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Setting an Amazon S3 inventory manifest as the crawler target",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Enabling S3 dual-layer server-side encryption on the crawler itself",
+        "correct": false
+      }
+    ],
+    "explanation": "DynamoDB crawlers sample/scan table items and expose scan-rate related settings. S3 path depth and inventory manifests apply to object stores."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-019",
+    "domain": "D2",
+    "topics": [
+      "s3-lifecycle"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "hard",
+    "type": "multi",
+    "stem": "An S3 Lifecycle rule transitions objects tagged project=archive after 60 days. Operators remove the tag from objects that must be retained. Which two statements are accurate operationally?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Lifecycle evaluates object tags; removing the tag can exclude the object from that tag-filtered rule on subsequent evaluations",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Use S3 Inventory or Storage Lens / listings plus rule understanding to verify expected transitions rather than assuming instant UI certainty alone",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Lifecycle rules permanently ignore tag changes after the object is created",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Tag removal always restores objects already in Glacier Instantaneously to Standard without a restore",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Lifecycle only works on buckets without versioning and cannot coexist with tags",
+        "correct": false
+      }
+    ],
+    "explanation": "Tag-based lifecycle rules re-evaluate eligibility; removing tags can prevent future transitions. Already transitioned objects are not magically restored by untagging."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-020",
+    "domain": "D2",
+    "topics": [
+      "s3-lifecycle"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A rule intends Standard → Standard-IA at 30 days → Glacier Flexible Retrieval at 45 days. Which statement reflects S3 transition constraints?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Transition timelines must respect minimum days and supported transition paths between storage classes",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Any storage class can transition to any other class after one day with no restrictions",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Lifecycle transitions require AWS Glue crawlers to rewrite objects",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Objects smaller than 128 KB always transition faster than larger objects by rule",
+        "correct": false
+      }
+    ],
+    "explanation": "S3 enforces minimum ages and valid transition graphs between classes. Not every hop is unrestricted."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-021",
+    "domain": "D2",
+    "topics": [
+      "redshift-dist"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A 40-row region_lookup dimension is joined to large KEY-distributed facts. Which distribution style keeps the join local on every node without redistributing the dimension?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "ALL distribution for region_lookup",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "EVEN for region_lookup and KEY on a low-cardinality column for facts",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "AUTO only with no further thought when the table is tiny and joined everywhere",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Disabling compression encodings",
+        "correct": false
+      }
+    ],
+    "explanation": "ALL copies small dimensions to every node so joins to large facts avoid redistributing the dimension."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-022",
+    "domain": "D2",
+    "topics": [
+      "lineage"
+    ],
+    "services": [
+      "sagemaker"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Auditors need to know which training dataset and preprocessing job produced a model on a SageMaker endpoint. Which capability is purpose-built for this traceability?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon SageMaker ML Lineage Tracking (and related catalog/lineage features)",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon SQS dead-letter queues",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Amazon Route 53 health checks",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "AWS Snowball Edge device manifests alone",
+        "correct": false
+      }
+    ],
+    "explanation": "SageMaker lineage tracking records relationships among data, jobs, and models."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-023",
+    "domain": "D2",
+    "topics": [
+      "athena-vs-redshift"
+    ],
+    "services": [
+      "athena",
+      "redshift",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Analysts need infrequent ad-hoc SQL over CSV/JSON in S3 with minimal ongoing cost and no cluster to manage. Which approach is most cost-effective?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Catalog with Glue crawler and query via Athena (optionally with workgroup limits)",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Always load into a provisioned Redshift cluster first for every ad-hoc question",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Duplicate all files into Amazon RDS MySQL daily",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Use only QuickSight SPICE with no SQL access",
+        "correct": false
+      }
+    ],
+    "explanation": "Athena is serverless SQL on S3 and fits sporadic ad-hoc analysis. Provisioned warehouses add steady cost."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-024",
+    "domain": "D2",
+    "topics": [
+      "lake-formation"
+    ],
+    "services": [
+      "lake-formation",
+      "s3",
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Multiple departments share an S3 data lake and need least-privilege access to different subsets with low operational overhead. Which design fits best?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "AWS Lake Formation with LF-Tags / tag-based access control on Data Catalog resources",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A single shared IAM user access key distributed to every analyst",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Public bucket ACLs for convenience",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Copying the entire lake into per-analyst laptops nightly",
+        "correct": false
+      }
+    ],
+    "explanation": "Lake Formation TBAC is purpose-built for fine-grained lake permissions with less policy sprawl than path-only IAM at scale."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-025",
+    "domain": "D3",
+    "topics": [
+      "scheduling"
+    ],
+    "services": [
+      "eventbridge",
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Hundreds of customer-specific Glue jobs must start at 2 AM in each customer’s time zone with varying payloads as customers are added. Which approach scales best?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Manage per-customer EventBridge Scheduler schedules (or equivalent schedule resources) driven by customer config data",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "One global cron that ignores time zones",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Manual starts by an on-call engineer for each customer",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Embedding wall-clock sleeps inside Glue Spark drivers for each customer",
+        "correct": false
+      }
+    ],
+    "explanation": "EventBridge Scheduler scales to many one-off schedules with timezone support better than manual or single global cron approaches."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-026",
+    "domain": "D3",
+    "topics": [
+      "monitoring"
+    ],
+    "services": [
+      "glue",
+      "eventbridge",
+      "lambda"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "A Lambda must run when any Glue job in the account enters FAILED, without polling. Which two elements are part of a sound design?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Capture Glue job state-change events via EventBridge",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Set the Lambda as the EventBridge rule target filtered to FAILED",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Run a Lambda every second calling GetJobRuns for all jobs",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Disable CloudWatch metrics for Glue to reduce noise",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Require SSH into Glue’s underlying hosts",
+        "correct": false
+      }
+    ],
+    "explanation": "EventBridge can route Glue job state changes to Lambda. Polling and host access are unnecessary and fragile."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-027",
+    "domain": "D3",
+    "topics": [
+      "athena",
+      "analysis"
+    ],
+    "services": [
+      "athena",
+      "s3"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "An engineer needs a one-hour ad-hoc distinct-count query on Parquet in S3 without provisioning clusters. Which service fits best?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Athena",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon Redshift provisioned cluster created for one query then deleted mid-hour without automation",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Amazon EC2 with a manual Hadoop install for a single COUNT DISTINCT",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "AWS Budgets",
+        "correct": false
+      }
+    ],
+    "explanation": "Athena provides serverless SQL on S3 for ad-hoc analysis."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-028",
+    "domain": "D3",
+    "topics": [
+      "athena-spark",
+      "emr"
+    ],
+    "services": [
+      "athena",
+      "emr"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Exploratory Spark analysis is bursty a few hours per week. Which factor most favors Athena Spark notebooks over a long-running EMR cluster?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Serverless on-demand compute that avoids paying for idle cluster capacity",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Need for persistent HDFS with custom bootstrap AMI deep customization",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Requirement to pin exact EC2 instance families for years",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Need for OS-level SSH into every executor host daily",
+        "correct": false
+      }
+    ],
+    "explanation": "Athena Spark notebooks suit intermittent exploration without idle cluster cost."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-029",
+    "domain": "D3",
+    "topics": [
+      "logging",
+      "search"
+    ],
+    "services": [
+      "opensearch",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Terabytes of microservice logs need full-text search, dashboards, and cost-effective long-term retention. Which approach is most appropriate?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Hot searchable store such as OpenSearch for recent/queryable logs plus durable cheap storage (for example S3) for long-term retention tiers",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Only print logs to application stdout with no aggregation",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Store all logs exclusively in DynamoDB strongly consistent items forever",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Email each log line via SES",
+        "correct": false
+      }
+    ],
+    "explanation": "Search engines handle interactive full-text needs; object storage tiers handle cheap long retention."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-030",
+    "domain": "D3",
+    "topics": [
+      "cloudwatch-logs"
+    ],
+    "services": [
+      "cloudwatch"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "A CloudWatch Logs Insights query must count errors by service field in 5-minute bins, sort descending, and limit to top 20. Which components belong in the query pipeline?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "stats count() by service, bin(5m)",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "sort count desc | limit 20 (or equivalent sort/limit clauses)",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "DELETE FROM log group",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "VACUUM FULL on the log group",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "CREATE INDEX CONCURRENTLY",
+        "correct": false
+      }
+    ],
+    "explanation": "Logs Insights uses stats/bin aggregations with sort and limit. Relational DDL/maintenance statements do not apply."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-031",
+    "domain": "D3",
+    "topics": [
+      "data-quality"
+    ],
+    "services": [
+      "databrew"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Five numeric DataBrew columns must each be ≤ 100. How can one rule cover all five columns?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Define a column-level check once and apply it to multiple columns in the ruleset",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Create five separate Glue workflows that each drop the table",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Use Route 53 latency-based routing",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Enable S3 Transfer Acceleration on the DataBrew project",
+        "correct": false
+      }
+    ],
+    "explanation": "DataBrew rulesets support applying the same check across multiple columns."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-032",
+    "domain": "D3",
+    "topics": [
+      "spark-skew"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "hard",
+    "type": "multi",
+    "stem": "Glue Spark jobs sometimes suffer shuffle skew. The team wants Spark to detect and correct skewed partitions at runtime. Which statements are correct about adaptive execution-style capabilities?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Adaptive Query Execution can coalesce/optimize skewed shuffle partitions based on runtime stats",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enabling AQE-related settings can reduce manual salting for many skew cases",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "AQE requires disabling the Glue Data Catalog permanently",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Skew is impossible on Parquet inputs",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "The only fix is always converting to CSV",
+        "correct": false
+      }
+    ],
+    "explanation": "AQE uses runtime statistics to mitigate skew; it does not require abandoning the catalog or changing to CSV."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-033",
+    "domain": "D3",
+    "topics": [
+      "data-quality"
+    ],
+    "services": [
+      "databrew",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Training data in S3 needs data quality rules with minimal operational overhead before ML use. Which approach fits best?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Glue DataBrew profile jobs with rulesets, optionally triggered via EventBridge on new data",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A perpetual EMR cluster running custom code for every object with no managed rules",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Neptune ML Gremlin scripts as the primary DQ engine for tabular training sets",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "DynamoDB global tables to deduplicate S3 objects",
+        "correct": false
+      }
+    ],
+    "explanation": "DataBrew provides managed profiling and rules with low ops overhead for tabular quality checks."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-034",
+    "domain": "D4",
+    "topics": [
+      "s3-access-points"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "An S3 Access Point should accept requests only from a specific VPC. Which statements are correct?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "You can restrict an access point policy to a VPC source VPC condition",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Network origin controls on the access point help ensure requests come from the designated VPC",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Access points replace the need for any IAM authorization always",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "VPC-only access points automatically make the bucket world-readable",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Access points can only be used with Glacier Deep Archive listings",
+        "correct": false
+      }
+    ],
+    "explanation": "Access points support VPC-restricted policies/network origins while IAM still authorizes actions."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-035",
+    "domain": "D4",
+    "topics": [
+      "managed-vs-unmanaged"
+    ],
+    "services": [
+      "ec2",
+      "rds"
+    ],
+    "difficulty": "easy",
+    "type": "single",
+    "stem": "Which option is best described as unmanaged relative to a managed database service, where the customer patches OS and database engine?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Running a database on Amazon EC2",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon RDS",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Amazon Aurora fully managed clusters",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Amazon DynamoDB",
+        "correct": false
+      }
+    ],
+    "explanation": "EC2-hosted databases shift OS/engine patching to the customer versus RDS/Aurora/DynamoDB managed models."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-036",
+    "domain": "D4",
+    "topics": [
+      "secrets"
+    ],
+    "services": [
+      "secrets-manager",
+      "rds"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "An EC2 ETL job hard-codes an RDS password. Security requires removing the hard-coded secret and rotating credentials without redeploying the app each rotation. Which two actions help?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Store credentials in AWS Secrets Manager",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable rotation and have the application retrieve the secret at runtime",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Commit the password to a public GitHub gist for centralized access",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Disable SSL on RDS to simplify clients",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Share one IAM access key in Slack",
+        "correct": false
+      }
+    ],
+    "explanation": "Secrets Manager plus runtime retrieval enables rotation without baking passwords into builds."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-037",
+    "domain": "D4",
+    "topics": [
+      "abac"
+    ],
+    "services": [
+      "iam",
+      "s3",
+      "glue"
+    ],
+    "difficulty": "hard",
+    "type": "multi",
+    "stem": "Engineers should gain access to S3/Glue resources tagged with the same project tag they are assigned, without rewriting policies for each project change. Which two elements implement ABAC?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Tag principals (users/roles) with a project tag",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Write policies that compare resource tags to principal tags (aws:PrincipalTag / aws:ResourceTag)",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Disable all tagging on resources",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Use only inline wildcard Allow * on * for everyone",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Store passwords in object metadata instead of IAM",
+        "correct": false
+      }
+    ],
+    "explanation": "ABAC matches principal tags to resource tags in IAM conditions."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-038",
+    "domain": "D4",
+    "topics": [
+      "encryption"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "On-premises ETL connects to Redshift over the internet. Auditors require encryption in transit and rejection of unencrypted attempts. What should be configured?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Require TLS for connections (for example require_ssl / equivalent cluster parameter) so non-TLS clients fail",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Disable encryption to improve speed for auditors",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Use only HTTP cleartext JDBC",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Expose the cluster with a wide-open 0.0.0.0/0 security group and no TLS",
+        "correct": false
+      }
+    ],
+    "explanation": "Requiring SSL/TLS on the Redshift cluster rejects unencrypted clients."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-039",
+    "domain": "D4",
+    "topics": [
+      "kms"
+    ],
+    "services": [
+      "kms",
+      "glue"
+    ],
+    "difficulty": "hard",
+    "type": "multi",
+    "stem": "A short-lived Glue job must decrypt objects under a customer managed KMS key for one run without permanently widening key or role policies. Which approach fits?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Use a KMS grant for temporary permission",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Rely on grant constraints/retirement so access is narrowly scoped and temporary",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Make the CMK publicly usable by anonymous principals",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Disable CloudTrail for the account during the job",
+        "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Embed the raw KMS key material in the Glue script",
+        "correct": false
+      }
+    ],
+    "explanation": "KMS grants provide temporary, retiring permissions without permanent policy edits."
+  },
+  {
+    "provenance": "original-authored-for-dea-c01-lab",
+    "verification_status": "original",
+    "status": "published",
+    "reviewed_at": "2026-11-11",
+    "id": "DEA-040",
+    "domain": "D4",
+    "topics": [
+      "audit",
+      "cloudtrail"
+    ],
+    "services": [
+      "cloudtrail",
+      "athena",
+      "s3",
+      "config"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Organization CloudTrail already delivers logs to a centralized S3 bucket. Auditors need one-off SQL for DeleteBucket calls this quarter with minimal new infrastructure. What is the leanest approach?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Query the existing CloudTrail S3 logs with Athena (and Glue catalog/partitions as needed)",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Rebuild a new streaming pipeline into a dedicated Redshift cluster solely for this quarter’s question",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Turn off CloudTrail and rely on memory of console clicks",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Use Amazon Polly to read log files aloud",
+        "correct": false
+      }
+    ],
+    "explanation": "Athena on existing CloudTrail S3 data answers ad-hoc audit SQL with little new infrastructure. AWS Config is better for configuration timeline questions; here the need is API call search."
+  }
+]

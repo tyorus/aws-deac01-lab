@@ -1,0 +1,53 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-011",
+  "domain": "D1",
+  "topics": [
+    "bedrock",
+    "llm"
+  ],
+  "services": [
+    "bedrock",
+    "lambda",
+    "glue"
+  ],
+  "difficulty": "medium",
+  "type": "multi",
+  "stem": "Which two patterns correctly use Amazon Bedrock in a data engineering pipeline?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Invoke a Bedrock model from Lambda after a crawler run to generate table descriptions for the Glue Data Catalog",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Call Bedrock from an existing Lambda transform to classify free-text support tickets before writing downstream",
+      "correct": true
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Replace Glue crawlers entirely with Bedrock writing catalog schemas directly as a metastore",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Configure Bedrock as a native Glue Spark worker/DPU executor type",
+      "correct": false
+    },
+    {
+      "id": "opt-e",
+      "label": "E",
+      "body": "Use Bedrock as the only way to count rows grouped by date",
+      "correct": false
+    }
+  ],
+  "explanation": "Bedrock is an API for generative tasks such as descriptions and classification. It is not a catalog replacement, Spark worker type, or required for simple aggregations."
+}

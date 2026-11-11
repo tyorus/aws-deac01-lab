@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-001",
+  "domain": "D1",
+  "topics": [
+    "monitoring",
+    "ingestion"
+  ],
+  "services": [
+    "lambda",
+    "cloudwatch"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A scheduled Lambda ingestion job completes successfully but sometimes writes far fewer records than expected. Engineers only receive alerts when the function throws. Which approach best detects silent under-production?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Emit a custom CloudWatch metric for records written per run and alarm when it falls below a baseline",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Increase Lambda memory so the function is less likely to time out",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Wrap business logic in a broad try/except that returns success after logging",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Set reserved concurrency to 1 for the function",
+      "correct": false
+    }
+  ],
+  "explanation": "Successful runs with unexpectedly low volume do not raise errors. A throughput metric with a low-threshold alarm detects silent under-production. Memory, swallowed exceptions, and concurrency limits do not measure output volume."
+}

@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-029",
+  "domain": "D3",
+  "topics": [
+    "logging",
+    "search"
+  ],
+  "services": [
+    "opensearch",
+    "s3"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "Terabytes of microservice logs need full-text search, dashboards, and cost-effective long-term retention. Which approach is most appropriate?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Hot searchable store such as OpenSearch for recent/queryable logs plus durable cheap storage (for example S3) for long-term retention tiers",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Only print logs to application stdout with no aggregation",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Store all logs exclusively in DynamoDB strongly consistent items forever",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Email each log line via SES",
+      "correct": false
+    }
+  ],
+  "explanation": "Search engines handle interactive full-text needs; object storage tiers handle cheap long retention."
+}

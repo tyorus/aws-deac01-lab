@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/dea-c01/question.schema.json",
+  "title": "DEA-C01 Original Question",
+  "type": "object",
+  "required": [
+    "id",
+    "domain",
+    "topics",
+    "services",
+    "difficulty",
+    "type",
+    "stem",
+    "options",
+    "explanation",
+    "provenance",
+    "verification_status",
+    "status",
+    "reviewed_at"
+  ],
+  "properties": {
+    "id": { "type": "string", "pattern": "^DEA-[0-9]{3}$" },
+    "domain": { "type": "string", "enum": ["D1", "D2", "D3", "D4"] },
+    "topics": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "services": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "difficulty": { "type": "string", "enum": ["easy", "medium", "hard"] },
+    "type": { "type": "string", "enum": ["single", "multi"] },
+    "stem": { "type": "string", "minLength": 20 },
+    "options": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "body", "correct"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "body": { "type": "string" },
+          "correct": { "type": "boolean" }
+        }
+      }
+    },
+    "explanation": { "type": "string", "minLength": 20 },
+    "provenance": { "type": "string" },
+    "verification_status": {
+      "type": "string",
+      "enum": ["verified", "community", "uncertain", "original"]
+    },
+    "status": { "type": "string", "enum": ["draft", "reviewed", "published"] },
+    "reviewed_at": { "type": "string" }
+  }
+}

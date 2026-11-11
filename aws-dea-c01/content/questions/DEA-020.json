@@ -1,0 +1,44 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-020",
+  "domain": "D2",
+  "topics": [
+    "s3-lifecycle"
+  ],
+  "services": [
+    "s3"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A rule intends Standard → Standard-IA at 30 days → Glacier Flexible Retrieval at 45 days. Which statement reflects S3 transition constraints?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Transition timelines must respect minimum days and supported transition paths between storage classes",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Any storage class can transition to any other class after one day with no restrictions",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Lifecycle transitions require AWS Glue crawlers to rewrite objects",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Objects smaller than 128 KB always transition faster than larger objects by rule",
+      "correct": false
+    }
+  ],
+  "explanation": "S3 enforces minimum ages and valid transition graphs between classes. Not every hop is unrestricted."
+}

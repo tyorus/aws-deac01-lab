@@ -1,0 +1,53 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-004",
+  "domain": "D1",
+  "topics": [
+    "triggers",
+    "scheduling"
+  ],
+  "services": [
+    "glue",
+    "eventbridge",
+    "s3"
+  ],
+  "difficulty": "medium",
+  "type": "multi",
+  "stem": "Pipeline A must catalog new S3 partitions once every hour regardless of activity. Pipeline B must start within seconds whenever a new object lands. Which two trigger choices match these needs?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "Use a time-based schedule (cron) for pipeline A’s crawler/job",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Use S3 Event Notifications or EventBridge object-created rules for pipeline B",
+      "correct": true
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Use only object-created events for pipeline A so it never runs on quiet hours",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Use a fixed hourly schedule for pipeline B to poll for new files",
+      "correct": false
+    },
+    {
+      "id": "opt-e",
+      "label": "E",
+      "body": "Require manual console starts for both pipelines",
+      "correct": false
+    }
+  ],
+  "explanation": "Fixed schedules guarantee hourly runs. Event-driven object notifications meet near-real-time needs. The reverse choices break each requirement."
+}

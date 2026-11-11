@@ -1,0 +1,45 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-015",
+  "domain": "D2",
+  "topics": [
+    "transfer",
+    "lifecycle"
+  ],
+  "services": [
+    "transfer-family"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "A healthcare partner requires digitally signed, encrypted file exchange with integrity checks and receipts for B2B claims files. Which AWS Transfer Family protocol is the best fit?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "AS2",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "Anonymous FTP without TLS",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "SMTP email drop boxes",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Public S3 website hosting",
+      "correct": false
+    }
+  ],
+  "explanation": "AS2 is commonly used for B2B signed/encrypted document exchange with MDNs/receipts. The other options lack that compliance-oriented exchange model."
+}

@@ -1,0 +1,50 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-030",
+  "domain": "D3",
+  "topics": [
+    "cloudwatch-logs"
+  ],
+  "services": [
+    "cloudwatch"
+  ],
+  "difficulty": "medium",
+  "type": "multi",
+  "stem": "A CloudWatch Logs Insights query must count errors by service field in 5-minute bins, sort descending, and limit to top 20. Which components belong in the query pipeline?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "stats count() by service, bin(5m)",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "sort count desc | limit 20 (or equivalent sort/limit clauses)",
+      "correct": true
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "DELETE FROM log group",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "VACUUM FULL on the log group",
+      "correct": false
+    },
+    {
+      "id": "opt-e",
+      "label": "E",
+      "body": "CREATE INDEX CONCURRENTLY",
+      "correct": false
+    }
+  ],
+  "explanation": "Logs Insights uses stats/bin aggregations with sort and limit. Relational DDL/maintenance statements do not apply."
+}

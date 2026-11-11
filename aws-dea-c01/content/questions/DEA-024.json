@@ -1,0 +1,46 @@
+{
+  "provenance": "original-authored-for-dea-c01-lab",
+  "verification_status": "original",
+  "status": "published",
+  "reviewed_at": "2026-11-11",
+  "id": "DEA-024",
+  "domain": "D2",
+  "topics": [
+    "lake-formation"
+  ],
+  "services": [
+    "lake-formation",
+    "s3",
+    "glue"
+  ],
+  "difficulty": "medium",
+  "type": "single",
+  "stem": "Multiple departments share an S3 data lake and need least-privilege access to different subsets with low operational overhead. Which design fits best?",
+  "options": [
+    {
+      "id": "opt-a",
+      "label": "A",
+      "body": "AWS Lake Formation with LF-Tags / tag-based access control on Data Catalog resources",
+      "correct": true
+    },
+    {
+      "id": "opt-b",
+      "label": "B",
+      "body": "A single shared IAM user access key distributed to every analyst",
+      "correct": false
+    },
+    {
+      "id": "opt-c",
+      "label": "C",
+      "body": "Public bucket ACLs for convenience",
+      "correct": false
+    },
+    {
+      "id": "opt-d",
+      "label": "D",
+      "body": "Copying the entire lake into per-analyst laptops nightly",
+      "correct": false
+    }
+  ],
+  "explanation": "Lake Formation TBAC is purpose-built for fine-grained lake permissions with less policy sprawl than path-only IAM at scale."
+}
