@@ -5,9 +5,8 @@ import examConfig from './exam-config.json'
 
 export type RawQuestion = (typeof questions)[number]
 export const allQuestions = questions as RawQuestion[]
-export const originalQuestions = (questions as RawQuestion[]).filter((q) =>
-  String(q.id || '').startsWith('DEA-'),
-)
+/** @deprecated Old DEA-* originals removed; alias kept for compatibility */
+export const originalQuestions = [] as RawQuestion[]
 export const compiledResearchQuestions = researchQuestions as RawQuestion[]
 export const knowledgeFiles = kb as Record<string, string>
 export { examConfig }
