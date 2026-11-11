@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import AuthCard from '@/components/AuthCard.vue'
 import { useAuthStore } from '@/stores/auth'
+import { DEMO_CREDENTIALS } from '@/services/demoAuth'
 
 const auth = useAuthStore()
 const router = useRouter()
@@ -16,7 +17,7 @@ async function submit() {
   message.value = ''
   try {
     const data = await auth.register(email.value, password.value)
-    if (data.session) await router.push('/')
+    if (data.session || auth.demoUser) await router.push('/')
     else message.value = 'Check your email to confirm the account, then sign in.'
   } catch (e) {
     message.value = e instanceof Error ? e.message : 'Registration failed'
@@ -29,10 +30,22 @@ async function continueLocal() {
   auth.enterLocalGuest()
   await router.push('/')
 }
+
+async function useDemo() {
+  await auth.login(DEMO_CREDENTIALS.email, DEMO_CREDENTIALS.password)
+  await router.push('/')
+}
 </script>
 
 <template>
   <AuthCard title="Create account" subtitle="Track drills, exams, and spaced review privately.">
+    <div class="mb-3 rounded-md border border-[var(--color-border)] bg-[var(--color-accent)]/8 px-3 py-2 text-sm text-[var(--color-ink-muted)]">
+      Prefer a ready account?
+      <button type="button" class="ml-1 font-medium text-[var(--color-accent)] underline" @click="useDemo">
+        Sign in as demo
+      </button>
+      <span class="block mt-1 text-xs">{{ DEMO_CREDENTIALS.email }} / {{ DEMO_CREDENTIALS.password }}</span>
+    </div>
     <form class="space-y-3" @submit.prevent="submit">
       <label class="block text-sm">
         <span class="text-[var(--color-ink-muted)]">Email</span>

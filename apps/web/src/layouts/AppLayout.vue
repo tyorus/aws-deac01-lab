@@ -56,11 +56,11 @@ async function onLogout() {
           >
             {{ theme.mode === 'dark' ? 'Light' : 'Dark' }}
           </button>
-          <span class="hidden sm:inline text-xs text-[var(--color-ink-muted)] truncate max-w-[10rem]">
-            {{ auth.user?.email || (auth.localGuest ? 'local guest' : 'local mode') }}
+          <span class="hidden sm:inline text-xs text-[var(--color-ink-muted)] truncate max-w-[12rem]">
+            {{ auth.displayEmail || 'local mode' }}
           </span>
           <button
-            v-if="auth.user || auth.localGuest"
+            v-if="auth.user || auth.localGuest || auth.demoUser"
             type="button"
             class="text-xs px-2.5 py-1.5 rounded-md border border-[var(--color-border)]"
             @click="onLogout"

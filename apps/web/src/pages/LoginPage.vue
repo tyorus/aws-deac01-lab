@@ -3,12 +3,13 @@ import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import AuthCard from '@/components/AuthCard.vue'
 import { useAuthStore } from '@/stores/auth'
+import { DEMO_CREDENTIALS } from '@/services/demoAuth'
 
 const auth = useAuthStore()
 const router = useRouter()
 const route = useRoute()
-const email = ref('')
-const password = ref('')
+const email = ref(DEMO_CREDENTIALS.email)
+const password = ref(DEMO_CREDENTIALS.password)
 const busy = ref(false)
 const message = ref('')
 
@@ -26,6 +27,11 @@ async function submit() {
   }
 }
 
+function fillDemo() {
+  email.value = DEMO_CREDENTIALS.email
+  password.value = DEMO_CREDENTIALS.password
+}
+
 async function continueLocal() {
   auth.enterLocalGuest()
   const redirect = typeof route.query.redirect === 'string' ? route.query.redirect : '/'
@@ -35,6 +41,20 @@ async function continueLocal() {
 
 <template>
   <AuthCard title="Sign in" subtitle="Continue your DEA-C01 preparation.">
+    <div class="mb-3 rounded-md border border-[var(--color-border)] bg-[var(--color-accent)]/8 px-3 py-2 text-sm">
+      <p class="font-medium text-[var(--color-ink)]">Demo account</p>
+      <p class="mt-1 text-[var(--color-ink-muted)]">
+        Email: <code class="text-[var(--color-ink)]">{{ DEMO_CREDENTIALS.email }}</code><br />
+        Password: <code class="text-[var(--color-ink)]">{{ DEMO_CREDENTIALS.password }}</code>
+      </p>
+      <button
+        type="button"
+        class="mt-2 text-xs font-medium text-[var(--color-accent)] underline"
+        @click="fillDemo"
+      >
+        Fill demo credentials
+      </button>
+    </div>
     <form class="space-y-3" @submit.prevent="submit">
       <label class="block text-sm">
         <span class="text-[var(--color-ink-muted)]">Email</span>
