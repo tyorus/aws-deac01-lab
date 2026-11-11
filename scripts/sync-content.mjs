@@ -29,12 +29,25 @@ function walk(dir, files = []) {
   return files
 }
 
-// Questions bundle
+// Questions bundle (original content pack)
 const qDir = join(kbRoot, 'content', 'questions')
 const questions = readdirSync(qDir)
   .filter((f) => f.endsWith('.json'))
   .map((f) => JSON.parse(readFileSync(join(qDir, f), 'utf8')))
-writeFileSync(join(outDir, 'questions.json'), JSON.stringify(questions, null, 2))
+
+// Optional local research/compiled bank (scraped + PDF) — stays outside content/questions
+const researchPath = join(kbRoot, '_work', 'compiled', 'research-questions.json')
+let researchQuestions = []
+try {
+  const researchDoc = JSON.parse(readFileSync(researchPath, 'utf8'))
+  researchQuestions = Array.isArray(researchDoc.questions) ? researchDoc.questions : []
+} catch {
+  researchQuestions = []
+}
+writeFileSync(join(outDir, 'research-questions.json'), JSON.stringify(researchQuestions, null, 2))
+
+const mergedQuestions = [...questions, ...researchQuestions]
+writeFileSync(join(outDir, 'questions.json'), JSON.stringify(mergedQuestions, null, 2))
 
 // Knowledge markdown bundle
 const mdFiles = []
@@ -66,14 +79,21 @@ writeFileSync(join(outDir, 'exam-config.json'), examConfig)
 writeFileSync(
   join(outDir, 'index.ts'),
   `import questions from './questions.json'
+import researchQuestions from './research-questions.json'
 import kb from './kb.json'
 import examConfig from './exam-config.json'
 
 export type RawQuestion = (typeof questions)[number]
 export const allQuestions = questions as RawQuestion[]
+export const originalQuestions = (questions as RawQuestion[]).filter((q) =>
+  String(q.id || '').startsWith('DEA-'),
+)
+export const compiledResearchQuestions = researchQuestions as RawQuestion[]
 export const knowledgeFiles = kb as Record<string, string>
 export { examConfig }
 `,
 )
 
-console.log(`Synced ${questions.length} questions and ${mdFiles.length} markdown files → apps/web/src/generated`)
+console.log(
+  `Synced ${questions.length} original + ${researchQuestions.length} research questions, ${mdFiles.length} markdown files → apps/web/src/generated`,
+)

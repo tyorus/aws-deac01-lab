@@ -35,3 +35,14 @@ supabase/.branches/
 # Misc
 *.tsbuildinfo
 .cache/
+
+# Large local research dumps / PDFs / scratch
+aws-dea-c01/_work/
+docs/*.pdf
+examtopics-downloader/
+scripts/_append_*.txt
+scripts/_cdp_*.json
+scripts/dea-multi/_probe_*.py
+scripts/dea-multi/__pycache__/
+**/__pycache__/
+*.pyc

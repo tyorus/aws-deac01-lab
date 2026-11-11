@@ -25,6 +25,12 @@ async function submit() {
     busy.value = false
   }
 }
+
+async function continueLocal() {
+  auth.enterLocalGuest()
+  const redirect = typeof route.query.redirect === 'string' ? route.query.redirect : '/'
+  await router.push(redirect)
+}
 </script>
 
 <template>
@@ -43,6 +49,13 @@ async function submit() {
         {{ busy ? 'Signing in…' : 'Sign in' }}
       </button>
     </form>
+    <button
+      type="button"
+      class="mt-3 w-full rounded-md border border-[var(--color-border)] py-2.5 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-accent)]/10"
+      @click="continueLocal"
+    >
+      Continue without account (local study)
+    </button>
     <div class="mt-4 text-sm text-[var(--color-ink-muted)] flex justify-between">
       <RouterLink to="/register" class="text-[var(--color-accent)]">Create account</RouterLink>
       <RouterLink to="/forgot-password" class="text-[var(--color-accent)]">Reset password</RouterLink>

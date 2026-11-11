@@ -3,18 +3,24 @@ import { computed, ref } from 'vue'
 import type { Session, User } from '@supabase/supabase-js'
 import { isSupabaseConfigured, supabase } from '@/services/supabase'
 
+const LOCAL_GUEST_KEY = 'dea-local-guest'
+
 export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null)
   const session = ref<Session | null>(null)
+  const localGuest = ref(false)
   const loading = ref(true)
   const error = ref<string | null>(null)
 
-  const isAuthenticated = computed(() => Boolean(session.value?.user))
+  const isAuthenticated = computed(
+    () => Boolean(session.value?.user) || localGuest.value || !isSupabaseConfigured,
+  )
 
   async function init() {
     loading.value = true
     error.value = null
     try {
+      localGuest.value = localStorage.getItem(LOCAL_GUEST_KEY) === '1'
       if (!isSupabaseConfigured) {
         user.value = null
         session.value = null
@@ -23,13 +29,27 @@ export const useAuthStore = defineStore('auth', () => {
       const { data } = await supabase.auth.getSession()
       session.value = data.session
       user.value = data.session?.user ?? null
+      if (data.session?.user) {
+        localGuest.value = false
+        localStorage.removeItem(LOCAL_GUEST_KEY)
+      }
       supabase.auth.onAuthStateChange((_event, next) => {
         session.value = next
         user.value = next?.user ?? null
+        if (next?.user) {
+          localGuest.value = false
+          localStorage.removeItem(LOCAL_GUEST_KEY)
+        }
       })
     } finally {
       loading.value = false
     }
+  }
+
+  function enterLocalGuest() {
+    localStorage.setItem(LOCAL_GUEST_KEY, '1')
+    localGuest.value = true
+    error.value = null
   }
 
   async function register(email: string, password: string) {
@@ -61,7 +81,11 @@ export const useAuthStore = defineStore('auth', () => {
 
   async function logout() {
     error.value = null
-    await supabase.auth.signOut()
+    localGuest.value = false
+    localStorage.removeItem(LOCAL_GUEST_KEY)
+    if (isSupabaseConfigured) {
+      await supabase.auth.signOut()
+    }
     session.value = null
     user.value = null
   }
@@ -90,10 +114,12 @@ export const useAuthStore = defineStore('auth', () => {
   return {
     user,
     session,
+    localGuest,
     loading,
     error,
     isAuthenticated,
     init,
+    enterLocalGuest,
     register,
     login,
     logout,

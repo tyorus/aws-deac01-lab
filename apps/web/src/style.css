@@ -46,6 +46,37 @@ a {
   text-decoration: none;
 }
 
+/* Clickable affordance */
+a,
+button,
+summary,
+label[for],
+[role='button'],
+[role='link'],
+[role='tab'],
+[role='menuitem'],
+[role='option'],
+[role='checkbox'],
+[role='radio'],
+[role='switch'],
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='checkbox'],
+input[type='radio'],
+input[type='file'],
+select {
+  cursor: pointer;
+}
+
+button:disabled,
+a[aria-disabled='true'],
+input:disabled,
+select:disabled,
+[aria-disabled='true'] {
+  cursor: not-allowed;
+}
+
 .prose-kb h1 {
   font-size: 1.75rem;
   font-weight: 650;

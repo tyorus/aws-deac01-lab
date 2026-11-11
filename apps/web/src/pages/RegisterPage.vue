@@ -24,6 +24,11 @@ async function submit() {
     busy.value = false
   }
 }
+
+async function continueLocal() {
+  auth.enterLocalGuest()
+  await router.push('/')
+}
 </script>
 
 <template>
@@ -42,6 +47,13 @@ async function submit() {
         {{ busy ? 'Creating…' : 'Register' }}
       </button>
     </form>
+    <button
+      type="button"
+      class="mt-3 w-full rounded-md border border-[var(--color-border)] py-2.5 text-sm font-medium text-[var(--color-ink)] hover:bg-[var(--color-accent)]/10"
+      @click="continueLocal"
+    >
+      Continue without account (local study)
+    </button>
     <div class="mt-4 text-sm">
       <RouterLink to="/login" class="text-[var(--color-accent)]">Already have an account?</RouterLink>
     </div>
