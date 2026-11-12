@@ -19976,5 +19976,3094 @@
       "source_url": "",
       "stem_hash": "ddbb69818659266c"
     }
+  },
+  {
+    "id": "LOC-393",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Around forty microservices produce and consume from it using Kafka client libraries and a schema registry. The operations team spends significant time patching brokers and rebalancing partitions. The company wants to reduce that operational work. Throughput is high, steady and well understood, and the services must not be rewritten. What should the data engineer recommend?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Msk Serverless",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon Kinesis Data Streams in on-demand",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Amazon MsK Provisioned, migrating the existing",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Amazon Data Firehose delivering to Amazon s3",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 1,
+      "source_url": "",
+      "stem_hash": "3245e5aefba16126"
+    }
+  },
+  {
+    "id": "LOC-394",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Aws Glue job reads JsON files from a partner and writes Parquet to a curated table. It has run nightly for a year. Last week the partner added a nested field and changed one integer column to sometimes contain a string. The job now fails on some nights and succeeds on others. When it succeeds, downstream totals are slightly lower than the source system reports. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the number of workers so the job has",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable job bookmarks so previously processed",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "files are skipped",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Configure the crawler's schema change policy",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 2,
+      "source_url": "",
+      "stem_hash": "349aafa645f214d0"
+    }
+  },
+  {
+    "id": "LOC-395",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "step-functions"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Step Functions state machine starts an Aws Glue job, then runs a Glue crawler, then every night. Analysts report that the crawler sometimes registers only part of the day's data, and the What is the most likely cause?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "The Lambda function is timing out before the",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "The crawler needs a longer schedule interval",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "summary is written",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "The Glue job is being invoked with the default",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat is the most likely cause? The Lambda function timing out B A longer crawler interval A timeout would fail the state, and the state machine The crawler is not on a schedule; the state machine reports success every night. invokes it. There is no interval to change. Request-response instead of .sync Express workflows The APl call succeeds immediately, so the state machine Changes duration limits and pricing. It has nothing to do moves on while the Glue job is still writing. The crawler then with whether a step waits for a job. sees partial data. THE SIGNAL Every step succeeds and the output is wrong. That combination points at ordering rather than failure. PRACTICE EXAM 1\n\n**THE SIGNAL:** Every step succeeds and the output is wrong. That combination points at ordering rather than failure.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 3,
+      "source_url": "",
+      "stem_hash": "9f3542100267f3cc"
+    }
+  },
+  {
+    "id": "LOC-396",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A nightly Aws Glue job processes about four hundred gigabytes and takes ninety minutes. It at two. The company wants to reduce cost. evenly utilised throughout. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Migrate the job to Amazon EMR on EC2 with Spot",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Run the job on Glue Flex execution",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Switch to memory-optimised R workers",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Reduce the worker count to five and accept a",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer do? EMR with Spot Glue Flex A Spot is genuinely cheap, and this introduces a cluster to Up to 34 percent cheaper for jobs with no tight deadline. Six operate for a job Glue already runs well. hours of slack is exactly the condition Flex exists for. R workers Five workers More memory per worker, at a higher price. Workers are Fewer, slower workers process the same data. Glue bills evenly utilised, so memory is not the constraint. DPU-hours, so the total is broadly unchanged. THE SIGNAL Six hours of slack before the deadline is the planted detail. Flex trades start-time certainty for a discount. PRACTICE EXAM 1\n\n**THE SIGNAL:** Six hours of slack before the deadline is the planted detail. Flex trades start-time certainty for a discount.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 4,
+      "source_url": "",
+      "stem_hash": "af12a3d4a2ac11a5"
+    }
+  },
+  {
+    "id": "LOC-397",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A retailer sends clickstream events to Amazon Data Firehose, which writes raw JsoN to Amazon S3 in a single prefix. Analysts query the data with Amazon Athena and costs are rising steeply. A fraud team has now also asked to consume the same events within seconds, independently. The team wants to address both the query cost and the fraud team's requirement. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the Firehose buffer size so fewer, larger",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable Firehose format conversion to Parquet",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "files are written",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "with dynamic partitioning, and add a second",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer implement? Larger buffers Conversion plus a second Firehose stream Produces fewer, larger files, which helps a little and leaves Fixes the cost properly, and a second Firehose stream raw JsoN unpartitioned. It does nothing for the fraud team. deliverstoadestinationratherthangivingthefraud team a live feed. Fraud team queries S3 DataStream infront,Firehoseasoneconsumer Files appear after buffering, so the fraud team is always Conversion and partitioning fix the Athena cost; the stream behind. Seconds was the stated requirement. gives thefraud teaman independent consumer reading within seconds. THE SIGNAL Two requirements again. Format and partitioning fix the cost; multiple consumers is the capability Firehose lacks. PRACTICE EXAM 1\n\n**THE SIGNAL:** Two requirements again. Format and partitioning fix the cost; multiple consumers is the capability Firehose lacks.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 6,
+      "source_url": "",
+      "stem_hash": "0253176ed2095326"
+    }
+  },
+  {
+    "id": "LOC-398",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "lambda",
+      "cloudwatch"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An AwS Lambda function converts small JsON files to Parquet as they arrive in Amazon S3. It is configured with 5l2 MB of memory and takes about twenty five seconds per file. CloudWatch shows peak memory usage of around 2o0 MB. The conversion is CPU bound. The company processes around one hundred thousand files a month and wants to reduce the Lambda cost. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the memory allocation, measure the",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Reduce the memory allocation to 256 MB to",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "change in duration, and select the cheapest",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "match observed usage",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer do? Raise memory, measure, choose the cheapest Halve the memory Memory buys CPU. A CPU-bound function finishes Halves the CPU too. A CPU-bound function takes roughly proportionally sooner, and duration times rate often falls. twice as long, so the bill barely moves and may rise. Provisioned concurrency A longer timeout Removes cold start latency at a continuous charge. The Nothing is timing out. A timeout is a ceiling, not a worktakes twentyfiveseconds;cold start isnot the cost. performance or cost setting. THE SIGNAL \"CPU bound\" and \"memory barely used\" together are the exam pointing directly at the memory-equals-CPU relationship. PRACTICE EXAM 1\n\n**THE SIGNAL:** \"CPU bound\" and \"memory barely used\" together are the exam pointing directly at the memory-equals-CPU relationship.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 7,
+      "source_url": "",
+      "stem_hash": "e0d6f18634b50245"
+    }
+  },
+  {
+    "id": "LOC-399",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company stores sensor readings in Amazon s3. Objects average 30 kilobytes. Data is queried frequently for fourteen days, then very rarely, but must be retained for five years for regulatory reasons. A data engineer proposes a lifecycle rule transitioning objects to s3 Standard-lnfrequent Access after fourteen days, and expiring them after five years. What is the problem with this proposal?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Standard-IA retrieval takes several hours, which",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Standard-iA cannot be used for objects",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "is too slow for regulatory access",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "retained longer than one year",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat is theproblem with this proposal? Hours to retrieve A one year limit Standard-IA returns inmilliseconds.Hoursdescribes Invented. There is no maximum retention for any storage GlacierFlexibleRetrieval orDeepArchive. class. A thirty day transition floor 128 KB billing minimum Standard-iA has a thirty day minimum storage duration, Each 30 KB object is billed as 128KB, more than four times not a minimum agebefore transition.Transitioning at its real size. The cheaper class becomes more expensive. fourteen days incurs theremainder. THE SIGNAL Thirty kilobyte objects is the planted number. Check it against the 128 KB minimum before anything else. PRACTICE EXAM 1\n\n**THE SIGNAL:** Thirty kilobyte objects is the planted number. Check it against the 128 KB minimum before anything else.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 8,
+      "source_url": "",
+      "stem_hash": "992c03ac625c5999"
+    }
+  },
+  {
+    "id": "LOC-400",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Amazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over eight months, query times have roughly tripled and storage costs have grown faster than the underlying data volume. The platform team is two people supporting twenty pipelines and has no capacity to build and operate maintenance jobs. What should the data engineer recommend?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the Firehose buffer interval to reduce",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Migrate the tables to Amazon s3 Tables, which",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "the number of files written",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "performs compaction and snapshot",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 9,
+      "source_url": "",
+      "stem_hash": "4519dfc3aa7fd54d"
+    }
+  },
+  {
+    "id": "LOC-401",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Amazon Redshift cluster holds a three billion row events table and a fifty thousand row campaigns table. Almost every query joins the two on campaign ID and filters on an event date range covering the last seven days. Both tables currently use EVEN distribution and neither has a sort key. Monitoring shows heavy data redistribution during joins. Which combination will most improve performance?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Enable concurrency scaling on the cluster",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Add four more nodes to the cluster",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Set both tables to KEY distribution on campaign",
+        "correct": true
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Set the events table toKEY distribution on",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **C**.\n\nWhich combination will most improve performance? Concurrency scaling Four more nodes Addresses queries waiting to start. These queries are slow More slices performing the same redistribution on every while running. join. Cost rises and the cause remains. KEY on both, interleaved sort KEY on events, ALL on campaigns, sort on date KEY on a small dimensionwastesthemechanism,and Fiftythousandrowsreplicatedtoeverynoderemovesthe interleaved suitsunpredictable filters.Thesealwaysfilteron exchange, and a date sort key lets zone maps skip date. everything outside seven days. THE SIGNAL Fifty thousand rows is small enough for ALl. Three billion joined on one column is the KEY case. PRACTICE EXAM 1 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 23/47\n\n**THE SIGNAL:** Fifty thousand rows is small enough for ALl. Three billion joined on one column is the KEY case.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 10,
+      "source_url": "",
+      "stem_hash": "9cb479135b4e0f75"
+    }
+  },
+  {
+    "id": "LOC-402",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "dynamodb"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An application stores orders in Amazon DynamoDB with order ID as the partition key. A new requirement is to list all orders for a given customer, sorted by order date. The table already holds two hundred million items. Reads for this new pattern do not need to reflect the most recent write immediately. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "A global secondary index partitioned by",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A local secondary index with customer ID as the",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "customerID and sorted by order date",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "A Scanwith a filter expressiononcustomer ID",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer implement? A GSl on customer ID, sorted by order date A local secondary index A different partition key groups items by customer, the sort An LSl keeps the table's partition key, so it cannot group by key ordersthem, and eventual consistency is acceptable customer,and itcannotbeadded toanexistingtable. here. A Scan with a filter Export and query with Athena Readsalltwohundredmillionitemsanddiscardsmostof An analytical answer to an operational lookup. It is also them, on every request. stale between exports. THE SIGNAL An existing table plus a new access pattern is always a Gsl. LSls cannot be added after creation. PRACTICE EXAM 1\n\n**THE SIGNAL:** An existing table plus a new access pattern is always a Gsl. LSls cannot be added after creation.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 11,
+      "source_url": "",
+      "stem_hash": "ccc03cd08aa3cd86"
+    }
+  },
+  {
+    "id": "LOC-403",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "s3",
+      "redshift",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Glue job writes hourly output to Amazon S3 under Hive-style partitions. A crawler runs every ten minutes to register new partitions so Athena users can query recent data. Finance has flagged the crawler's cost, and analysts still wait up to ten minutes for new data to appear. The table is also queried by Amazon Redshift Spectrum. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Reduce the crawler schedule to every three",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Configure partition projection on the table in",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "EnableenableUpdateCatalogontheGlue job",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "RunMSCK REPAIRTABLEona scheduleinstead of",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer do? Crawl every three minutes Partition projection Triples thenumber of ten-minutebilling minimums, to A real answer for a predictable pattern, and Athena-only. Redshift Spectrumreads thesame table and would lose partition awareness. enableUpdateCatalog,remove the crawler ScheduledMSCKREPAIRTABLE The partition is registered as it is written, so data is visible Scans the location to find missing partitions. Slow on a immediately and the crawler cost disappears. largetable,and itkeepsboththedelay and ascheduled component. THE SIGNAL Spectrum also queries this table. That single sentence is what rules out partition projection. PRACTICE EXAM 1\n\n**THE SIGNAL:** Spectrum also queries this table. That single sentence is what rules out partition projection.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 12,
+      "source_url": "",
+      "stem_hash": "e32ff19189c4b5d5"
+    }
+  },
+  {
+    "id": "LOC-404",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "redshift",
+      "cloudwatch"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A nightly Aws Glue job loads data into Amazon Redshift. An operations team has a Cloudwatch alarm on the job's failed run count. It has worked for eighteen months. During a recent change, the EventBridge rule that triggers the job was disabled. The job did not run for three nights. No alarm fired, and the problem was found when a business user noticed stale figures. What change would have detected this?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Lower the failure alarm threshold to fire on a",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable Aws CloudTrail so the rule change is",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "single failed run",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Create an alarm on the job's succeeded run",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 14,
+      "source_url": "",
+      "stem_hash": "8a25ddcdfeb4b18f"
+    }
+  },
+  {
+    "id": "LOC-405",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A Glue pipeline joins transactions to a merchant reference table before loading a warehouse. Finance reports that monthly revenue is consistently around half a percent below the source system. The job succeeds every night and row counts between the job's output and the warehouse match exactly. New merchant codes are added to the source system regularly. What is the most likely cause, and which check would detect it?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "The row count check is sufficient, so the source",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "The job is running out of memory and dropping",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "system figure must be wrong",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "records. A Cloudwatch memory alarm would",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 15,
+      "source_url": "",
+      "stem_hash": "6d39c0fd5659ef11"
+    }
+  },
+  {
+    "id": "LOC-406",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Amazon Redshift cluster serves dashboards for two hundred analysts each weekday morning. Users report slowness during the busiest hour. Query history shows execution times snuw aa o aaue to sa m nanb puo 'spuooas fu b puo auo punon o ass during that hour. An overnight transformation job sometimes overruns into the morning. Which combination best addresses this?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Enable concurrency scaling on the dashboard",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Add sort and distribution keys to the dashboard",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "queue and set WLM query priority above the",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "transformation workload",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 16,
+      "source_url": "",
+      "stem_hash": "1414f4e4945aaa73"
+    }
+  },
+  {
+    "id": "LOC-407",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "kms"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "bucket policy grants the partner's role s3:GetObject, and the partner's role policy allows the subsequent KMs Decrypt call being denied. What is missing?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "The KMs key policy does not permit the partner's",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "The objects must be re-encrypted with sSE-s3",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "role to use the key",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "for cross-account access",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat is missing? The key policy does not allow the partner B Re-encrypt with SSE-S3 CloudTrail says it directly. GetObject succeeded and Would work by removing the key control the company Decrypt was denied, so the object permissions are right chose deliberately. It solves the symptom by abandoning and the key permission is not. the requirement. Enable Bucket Keys Create an IAm user for the partner A cost optimisation reducing KMS request volume. It has no Cross-account access uses roles and resource policies. bearing on whether a principal may decrypt. Creating users for external parties is the pattern to avoid. THE SIGNAL Cross-account access to encrypted data needs three policies to align. CloudTrail names which one failed. PRACTICE EXAM 1\n\n**THE SIGNAL:** Cross-account access to encrypted data needs three policies to align. CloudTrail names which one failed.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 17,
+      "source_url": "",
+      "stem_hash": "624878b5da936861"
+    }
+  },
+  {
+    "id": "LOC-408",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "s3",
+      "athena",
+      "iam"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A bank stores customer records in Amazon S3, catalogued in Aws Glue and queried with Amazon Athena. A modelling team must analyse transaction behaviour but must never see customer name, address or account number. A data engineer proposes writing an IAM policy for the modelling team's role that denies access to those three columns. Why will this not work, and what should be done?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Encrypt the three columns with a KMS key the",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "IAM cannot express column-level permissions.",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "modelling team cannot use",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Use Aws Lake Formation column-level grants or",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhy will this not work, and what should be done? Encrypt the columns IAMcannotdocolumns.UseLakeFormation Client-side column encryption is possible and complex. IAM grants actions on resources named by ARN. A column Lake Formation addresses this directly. has no ARN, so there is nothing a policy can name. A redacted copy Attach it to the bucket It works, and creates two datasets to keep in step, doubling A bucket policy has the same vocabulary. Objects and prefixes, not columns. THE SIGNAL The proposal is impossible rather than merely suboptimal. Recognising that is faster than weighing the alternatives. PRACTICE EXAM 1 admｉn@sthｉthａpragnａ.com 39/47\n\n**THE SIGNAL:** The proposal is impossible rather than merely suboptimal. Recognising that is faster than weighing the alternatives.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 18,
+      "source_url": "",
+      "stem_hash": "594eaafbbfed8ec6"
+    }
+  },
+  {
+    "id": "LOC-409",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Aws Glue job connects to a third-party analytics APl using an APl key, and to Amazon Redshift using a database password. Both are currently stored as Glue job parameters. A security review requires that both credentials are stored outside the job definition, and that the Redshift password is rotated automatically every thirty days. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Store both in Systems Manager Parameter Store",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Store both in Aws Secrets Manager, with",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "as Securestring parameters",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "rotation enabled ontheRedshiftsecret",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer implement? Both in Parameter Store Both in Secrets Manager, rotation on Redshift Meets the storage requirement and not the rotation one. Both leave the job definition, and Secrets Manager has Parameter Store has norotation capability. built-in rotation for Redshift, updating the stored value and the database together. Split between the two stores An IAM role covering both Workable,and it introducesasecondstoretomanagefor A role authenticates toAws. It cannot representanidentity no benefit. Both are secrets, not configuration. in a third party's system. THE SIGNAL One word decides it. Rotation eliminates Parameter Store, and a third-party APl key eliminates a role. PRACTICE EXAM 1\n\n**THE SIGNAL:** One word decides it. Rotation eliminates Parameter Store, and a third-party APl key eliminates a role.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 19,
+      "source_url": "",
+      "stem_hash": "21298398a45b5053"
+    }
+  },
+  {
+    "id": "LOC-410",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A healthcare provider must keep all patient data within one country. The data lake and An audit finds that Redshift snapshots are copied to a second Region for disaster recovery, and that an Athena workgroup writes query results to a bucket in a third Region created several years ago. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Encrypt the snapshots and query results so their",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Apply Lake Formation row-level filters to the",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "location is no longer material",
+        "correct": true
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "affected tables",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **C**.\n\nWhat should the data engineer do? Encrypt them instead Row-level filters Residency is about physical location. Encrypted regulated Controls which rows a principal sees. It has nothing to do data in the wrong country is still in the wrong country. with where bytes are physically stored. Delete the DR snapshots Relocate both, and restrict Regions with an SCP Addresses one finding by removing a resilience capability, Both findings are derived copies outside the boundary. rather thanrelocating it. The Athena resultsremain. Relocating fixes today; the SCP prevents the next one appearing. THE SIGNAL Two findings, one cause. Both are derived artefacts that inherited the data's sensitivity but not its constraint. PRACTICE EXAM 1\n\n**THE SIGNAL:** Two findings, one cause. Both are derived artefacts that inherited the data's sensitivity but not its constraint.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 20,
+      "source_url": "",
+      "stem_hash": "5c955515fe796b23"
+    }
+  },
+  {
+    "id": "LOC-411",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "kinesis"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A payments company streams card transactions into Amazon Kinesis Data Streams. A new requirement is to detect, within seconds, when a single card is used more than five times in ananb wbansumop p o pbo asoue ysllqnd o pup 'mopuim anu om Kun The team wants to avoid building and operating stream processing infrastructure. What should the data engineer use?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Managed Service for Apache Flink with",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon Data Firehose delivering to Amazon S3,",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "a two minute tumbling window",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "with a scheduled Glue job checking for the",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer use? Managed Service for Apache Flink B Firehose plus a scheduled Glue job Windowed aggregation over a stream is exactly what Flink Batch analysis of delivered files. The detection would arrive minutes or hours late, not within seconds. operate. A Lambda consumer counting in memory Athena on a schedule Lambda invocations are stateless and independent, so An analytical engine over files, run every minute. It is neither counts across a window would be lost between them. fast enough nor a stream processor. THE SIGNAL \"within any two minute window\" is the windowing signal. Counting across time is what separates Flink from Firehose. PRACTICE EXAM 2\n\n**THE SIGNAL:** \"within any two minute window\" is the windowing signal. Counting across time is what separates Flink from Firehose.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 21,
+      "source_url": "",
+      "stem_hash": "354a10a680e61294"
+    }
+  },
+  {
+    "id": "LOC-412",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Aws Glue job reads a growing Amazon s3 prefix every night and writes aggregates to a curated table. Input volume has grown from two hundred gigabytes to four terabytes over Files are only ever added to the prefix; existing files are never modified. Each run reprocesses the entire prefix. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the number of workers so the job",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable job bookmarks so each run processes",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "completes in the original time",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "only files added since the last run",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer do? A More workers Enable job bookmarks Restores the runtime by paying proportionally more. The Append-only input with unmodified files is exactly the job still reads four terabytes to process one night's data. bookmark case. Each run reads only what is new. Glue Flex Partition the output A discount on the same wasted work. It reduces the rate Improves how the results are queried. It does nothing rather than the volume. about how much input the job reads. THE SIGNAL Cost growing with total accumulated data rather than with daily volume is the reprocessing signature. PRACTICE EXAM 2\n\n**THE SIGNAL:** Cost growing with total accumulated data rather than with daily volume is the reprocessing signature.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 22,
+      "source_url": "",
+      "stem_hash": "653a018e40797b57"
+    }
+  },
+  {
+    "id": "LOC-413",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "emr"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company runs an Amazon EMR cluster on EC2 continuously. It executes a four hour Apache Hive job each night and is otherwise idle. Intermediate data is written to HDFS on the core nodes, and the team has a large body of existing Hive scripts. be rewritten. Which combination reduces cost the most?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Migrate the Hive scripts to Aws Glue and run",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Move all core nodes to Spot Instances and keep",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "them as Spark jobs",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "the cluster running",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhich combination reduces cost the most? Migrate Hive to Glue All core nodes on Spot Glue does not run Hive, so this means rewriting every script. Core nodes hold HDFS. An interruption loses data mid-job, The question forbids it explicitly. and the cluster still runs all day. Halve the cluster EMRFS, transient cluster, Spot task nodes Saves half of a bill you should not be paying. The waste is Stops paying for twenty idle hours a day and discounts the the idle time,not thenode count. four that remain. Hive runs unchanged. THE SIGNAL Twenty four hours of cluster for four hours of work. The waste is time, and Hive rules out Glue in one word. PRACTICE EXAM 2\n\n**THE SIGNAL:** Twenty four hours of cluster for four hours of work. The waste is time, and Hive rules out Glue in one word.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 23,
+      "source_url": "",
+      "stem_hash": "6a8afe75e57d1012"
+    }
+  },
+  {
+    "id": "LOC-414",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "lambda"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A pipeline converts uploaded video metadata files into a normalised format. Each file takes between eight and forty minutes to process depending on size, and processing is single- The current implementation is an Aws Lambda function, and the longer files now fail. What should the data engineer use?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the Lambda function's timeout and",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "An Amazon EMR cluster with a step per file",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "memory allocation",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Aws Batch, running each file as a containerised",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer use? A A longer Lambda timeout B An EMR cluster Lambda's maximum is fifteen minutes and it cannot be A cluster to operate for sixty single-threaded jobs a day raised. Files taking forty minutes will always fail. arriving unpredictably. AWS Batch A Glue Spark job per file No time limit, containerised, and it provisions compute per Spark distributes work the question says cannot be job then shuts down. It fills the gap above Lambda. distributed, and adds startup overhead to every file. THE SIGNAL Forty minutes crosses Lambda's hard fifteen minute ceiling. That number is in the question to eliminate Lambda. PRACTICE EXAM 2\n\n**THE SIGNAL:** Forty minutes crosses Lambda's hard fifteen minute ceiling. That number is in the question to eliminate Lambda.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 24,
+      "source_url": "",
+      "stem_hash": "56bb41ee47e218fd"
+    }
+  },
+  {
+    "id": "LOC-415",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "lambda"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "S3 daily, with field mapping and light filtering applied. A developer has proposed writing a Lambda function that calls the Salesforce REST APl, handles pagination, manages OAuth token refresh and retries, and writes JsoN to Amazon s3. The team wants to minimise the code they build and maintain. What should the data engineer recommend?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon AppFlow, with a scheduled flow",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Build the Lambda function as proposed, with",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "performing the mapping and filtering",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "EventBridge Scheduler triggering it daily",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer recommend? Amazon AppFlow Build the Lambda function A managed connector for Salesforce, with mapping and Works, and means owning pagination, token refresh, retries filtering as configuration. Authentication and pagination and APl changes forever. That is the code they said they are handled. want to avoid. AWS DMS AWS DataSync Migrates and replicates databases. Salesforce is a SaaS Moves files between file systems and object storage. It has application, not a database endpoint. no concept of a Saas APl. THE SIGNAL The proposal lists four things AppFlow does for you. A question describing that much plumbing is naming the managed service. PRACTICE EXAM 2\n\n**THE SIGNAL:** The proposal lists four things AppFlow does for you. A question describing that much plumbing is naming the managed service.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 25,
+      "source_url": "",
+      "stem_hash": "f82ec90ad9af98f0"
+    }
+  },
+  {
+    "id": "LOC-416",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "kinesis"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A retailer writes order events to Amazon Kinesis Data Streams using store ID as the partition key. The chain has four hundred stores, but one flagship store generates around thirty percent of all events. Producers receive throttling errors during peak hours while total stream utilisation is around forty percent. The team has already increased the shard count twice without improvement. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the shard count again",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Switch the stream to on-demand capacity",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Use a composite partition key combining store",
+        "correct": true
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Enableenhancedfan-outfortheconsumers",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **C**.\n\nWhat should the data engineer do? More shards again On-demand capacity Twice already, without improvement. The flagshipstore's Removes shard management and does not change how a key still hashes to one shard however many exist. key maps to a shard. A hot key still throttles. A composite key with a random suffix Enhanced fan-out Spreads the hot store across several shards, so its traffic no Gives each consumer dedicated read throughput. The longer concentrates on one. Consumers reassemble by throttling here is on the write side. store. THE SIGNAL Throttling at forty percent utilisation, unimproved by two capacity increases, is the hot partition signature. PRACTICE EXAM 2\n\n**THE SIGNAL:** Throttling at forty percent utilisation, unimproved by two capacity increases, is the hot partition signature.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 27,
+      "source_url": "",
+      "stem_hash": "b1e73b86395f0271"
+    }
+  },
+  {
+    "id": "LOC-417",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A subscription business stores customer interaction records as Parquet in Amazon s3, partitioned by month, and queries them with Amazon Athena. Under privacy legislation it must erase all records for a customer within thirty days of a request, and receives around sixty such requests a month. Currently an engineer identifies affected files, rewrites each without the customer's rows, and What should the company implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Convert the dataset to Apachelceberg tables",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "EnableS3Versioningso a failed rewritecanbe",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "and use DELETE statements",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Repartition the data by customer identifier so",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the company implement? lceberg tables with DELETE S3 Versioning Row-leveldeletionbecomesoneatomicSQLstatement.A Makes the corruption recoverable without making the failure leaves the table untouched rather than corrupted. process faster or less manual. Days per request remains. Partition by customer Object Lock The over-partitioning trap. Thousands of tiny partitions, and Makes objects undeletable, which directly conflicts with an queries filter by month rather thanby customer. erasure obligation. THE SIGNAL Row-level deletion inside shared files is precisely the problem open table formats exist to solve. PRACTICE EXAM 2\n\n**THE SIGNAL:** Row-level deletion inside shared files is precisely the problem open table formats exist to solve.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 28,
+      "source_url": "",
+      "stem_hash": "4c6e04f219de019f"
+    }
+  },
+  {
+    "id": "LOC-418",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company keeps six years of order history in an Amazon Redshift cluster, totalling ninety terabytes. The last six months are queried continuously by three hundred users. Older data is queried a handful of times each year for audits, and those audits must join old and recent data in a single query. Managed storage is now the largest line on the Redshift bill. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Reduce the cluster node count to lower the",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Move the older data to a second Redshift",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "storage cost",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "cluster and use data sharing",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer implement? Fewer nodes B A second cluster with data sharing On managed storage, compute and storage are billed Data sharing avoids copies between warehouses. It does independently. Shrinking the cluster does not reduce the not move data to cheaper storage. storage bill. Unload to Parquet, query with Spectrum Auditors use Athena Cold data moves to s3 prices, and an external table joins to Saves the same money and breaks the single-query warehouse tables in one statement. requirement. Athena and Redshift are separate engines. THE SIGNAL \"Join old and recent data in a single query\" is the clause that makes it Spectrum rather than Athena. PRACTICE EXAM 2\n\n**THE SIGNAL:** \"Join old and recent data in a single query\" is the clause that makes it Spectrum rather than Athena.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 29,
+      "source_url": "",
+      "stem_hash": "f7e2bf76cd87518f"
+    }
+  },
+  {
+    "id": "LOC-419",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A media company runs a self-managed MongoDB cluster on Amazon EC2 holding a content catalogue. Around eighty services query it using MongoDB drivers and aggregation pipelines. The operations team wants to stop managing replica sets and backups. What should the data engineer recommend?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Keyspaces, which is designed for",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon DynamoDB, which is fully managed",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "flexible schemas",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "and handles document workloads",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer recommend? Amazon Keyspaces B DynamoDB Cassandra compatible, not MongoDB compatible. Wide Fully managed, and a different APl and data model. Eighty column is a different model from documents. rewritten. Aurora PostgreSQL with JSONB Amazon DocumentDB Can store documents, and every one of the eighty services MongoDB compatible, so the drivers and aggregation would need rewriting to use SQL. pipelines continue to work while AwS operates the cluster. THE SIGNAL Eighty services using MongoDB drivers is a compatibility requirement. Aggregation pipelines make it stricter still. PRACTICE EXAM 2\n\n**THE SIGNAL:** Eighty services using MongoDB drivers is a compatibility requirement. Aggregation pipelines make it stricter still.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 30,
+      "source_url": "",
+      "stem_hash": "d3deff07c9d22343"
+    }
+  },
+  {
+    "id": "LOC-420",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "stayed around twenty terabytes. S3 Storage Lens reports approximately seventy terabytes of billed storage. Which combination explains the gap and addresses it?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Enable S3 Intelligent-Tiering so infrequently",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable Cross-Region Replication and delete the",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "accessed data moves to cheaper tiers",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "primary copies",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhich combination explains the gap and addresses it? Intelligent-Tiering Replication Makes the invisible fifty terabytes cheaper without Copies the problem to a second Region. Deleting primaries removing it. You would still be storing seventy. onaversionedbucketaddsdeletemarkersratherthan freeing space. Disable versioning Expire noncurrent versions, abort incomplete Stops new versions accumulating, leaves the existing ones, uploads and discards theprotection it was enabled for. A nightly overwrite on a versioned bucket retains every previous version, and failed uploads leave billed parts that never appear in a listing. THE SIGNAL Twenty terabytes known, seventy billed. Two planted details, versioning and failed uploads, explain the fifty. PRACTICE EXAM 2\n\n**THE SIGNAL:** Twenty terabytes known, seventy billed. Two planted details, versioning and failed uploads, explain the fifty.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 31,
+      "source_url": "",
+      "stem_hash": "1d3782be16a4102f"
+    }
+  },
+  {
+    "id": "LOC-421",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A crawler has catalogued a set of pipe-delimited text files in Amazon S3. Analysts querying colo, containing the entire line as one string. The files have a consistent structure with a header row. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the crawler's sample size so it reads",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Create a custom classifier defining the pipe",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "delimiter, and rerun the crawler",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Set the crawler's schema change policy to",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer do? A larger sample A custom classifier for the delimiter Reading more files does not help when the crawler cannot The crawler could not recognise the delimiter, so it treated parse the format of any of them. each line as one value. A classifier tells it how to read the file. Update the schema on change Convert to Parquet first Controls what happens when the schema changes. The Would work, and requires a job to parse the files, which is schema was never inferred correctly in the first place. the very thing that is failing. THE SIGNAL One column holding the whole line is the classic unrecognised-format symptom. A classifier is the fix. PRACTICE EXAM 2\n\n**THE SIGNAL:** One column holding the whole line is the classic unrecognised-format symptom. A classifier is the fix.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 32,
+      "source_url": "",
+      "stem_hash": "40c50b691c5f5f25"
+    }
+  },
+  {
+    "id": "LOC-422",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Athena table over five years of Parquet data is partitioned by a string column named event_date. Analysts filter with a function that extracts the date from an event_timestamp column instead.Results are correct. Queries scan the entire table every time, and the Athena bill is far higher than expected. What is the cause?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "The table needs a Glue partition index",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "The workgroup's data scan limit has been set",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Thefilter is applied toa derived value, so",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Parquet files are too small and need",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat is thecause? A partition index The scan limit A guardrail that cancels expensive queries. It does not partition is being read, which is a pruning problem. cause a query to read more than it needs. Thefilter uses a derived value Small files The engine cannot connect a function's output to the Adds request overhead.It doesnotexplain scanning the entire tablewhena narrowdatefilter is applied. THE SIGNAL Correct results and a full table scan together is the silent pruning failure. Nothing errors. PRACTICE EXAM2\n\n**THE SIGNAL:** Correct results and a full table scan together is the silent pruning failure. Nothing errors.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 33,
+      "source_url": "",
+      "stem_hash": "54802e8237171ee4"
+    }
+  },
+  {
+    "id": "LOC-423",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "emr"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Amazon EMR transient cluster runs a nightly Spark job and terminates on completion. Last night the job failed after ninety minutes. The cluster terminated automatically and the operations team can see only that the step failed. No application logs are available. The team needs to diagnose this and prevent the same blind spot recurring. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Rerun the job on a long-running cluster to",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Configure the cluster to archive logs to Amazon",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "reproduce the failure",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "S3 and enable the persistent Spark history",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer do? Reproduce on a long-running cluster Archive logs to s3, persistent history server May work for this onefailure, at the cost of a rerun and a Logs survive termination and Spark's own view of the run is cluster, and it fixes nothing for next time. retained, so every future failure is diagnosable. Enable CloudTrail A bigger cluster RecordstheAPl callsthatcreated theclusterand Capacity for a failure nobody has diagnosed. It might be submitted the step. It contains nothing about why Spark skew, bad data or a code error. failed. THE SIGNAL Log delivery is configured at cluster creation. After a transient cluster terminates, the decision has already been made. PRACTICE EXAM 2\n\n**THE SIGNAL:** Log delivery is configured at cluster creation. After a transient cluster terminates, the decision has already been made.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 34,
+      "source_url": "",
+      "stem_hash": "dede333f293452c2"
+    }
+  },
+  {
+    "id": "LOC-424",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A daily pipeline loads product data into a warehouse. Aws Glue Data Quality rules check that key columns are complete and that prices fall within an expected range. All rules pass every day. Over three weeks, the proportion of products with a null description rose from under one What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Add an IsCompleterule on the description",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Run the ruleset twice daily instead of once",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "column with a one hundred percent threshold",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Increase the Glue job's worker count so more",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 35,
+      "source_url": "",
+      "stem_hash": "f379dc3890047c02"
+    }
+  },
+  {
+    "id": "LOC-425",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A bank runs Glue jobs in private subnets. Compliance requires that no data traverses the public internet, and that jobs can reach only three named Amazon S3 buckets rather than any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and jobs reach Amazon S3 over its public endpoint. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "An IAM policy on the Glue role permitting only",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Bucket policies on each of the three buckets,",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "those three buckets",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "keeping the NAT gateway",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer implement? An IAM policy on the role Bucket policies plus NAT Governs the identity rather than the network path, and anyonewhocan edit therolecanwiden it.Trafficstilluses about traffic to somebody else's, and the internet path the internet. remains. Public subnets Gateway endpoint with an endpoint policy Solves a routing inconveniencebyplacing the jobs on the Traffic leaves the internet path entirely, and the endpoint internet,which istheoppositeof therequirement. policy restricts which buckets are reachable through it. THE SIGNAL Two requirements: a private path, and a restricted set of destinations. Only an endpoint policy delivers the second. PRACTICE EXAM 2 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 37/47\n\n**THE SIGNAL:** Two requirements: a private path, and a restricted set of destinations. Only an endpoint policy delivers the second.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 37,
+      "source_url": "",
+      "stem_hash": "38701b9ec0ccc6a1"
+    }
+  },
+  {
+    "id": "LOC-426",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "athena",
+      "lake-formation"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company has configured Aws Lake Formation column-level grants excluding three sensitive columns from an analytics team. The grants appear correctly in the Lake Formation console. Testing shows the analytics team can still query all columns through Amazon Athena. The database was created before Lake Formation was adopted. What is the most likely cause?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Column-level grants only apply to Amazon",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "The IAMAllowedPrincipals setting is still present,",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Redshift Spectrum, not to Athena",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "so Lake Formation defers to IAM",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat is the most likely cause? Athena is not covered IAMAllowedPrincipals still present False. Lake Formation permissions are enforced in Athena, That setting makes Lake Formation defer to IAM entirely, so RedshiftSpectrum,EMRand Gluealike. grants are recorded and never consulted. Common on pre-existing databases. Propagation delay Convert to Iceberg Invented.Grantstakeeffectpromptly;thereis notwenty Lake FormationgovernsplainParquet tablesperfectlywell. four hour window. Iceberg is not a prerequisite. THE SIGNAL Grants that appear configured and do nothing is the classic Lake Formation surprise. The pre-existing database is the clue. PRACTICE EXAM 2\n\n**THE SIGNAL:** Grants that appear configured and do nothing is the classic Lake Formation surprise. The pre-existing database is the clue.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 38,
+      "source_url": "",
+      "stem_hash": "d4edf42785a707f6"
+    }
+  },
+  {
+    "id": "LOC-427",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "kms"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company enabled Amazon Macie across its data lake nine months ago. The lake holds sixty terabytes across three hundred buckets, all encrypted with SSE-KMS using several A manual review of two datasets has found unredacted email addresses and payment card numbers. What is the most likely explanation?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Macie lacks permission to use the KMs keys, so it",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Macie does not detect payment card numbers",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "can only report object metadata",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "without a custom data identifier",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat is the most likely explanation? No permission to use the KMs keys No detector for card numbers Macie can only decrypt SSE-KMS objects if the key policy Paymentcard numbersand emailaddressesareboth allows it. Without that it reports metadata and finds covered by built-in managed data identifiers. nothing. First megabyte only Findings expired Invented.Maciesamplesintelligently acrossobjectsrather Detailed results expire after ninety days.That would not than truncating each one. explain nine months of near-total silence. THE SIGNAL Near silence across three hundred encrypted buckets is a symptom, not a clean result. Ask what the tool could see. PRACTICE EXAM 2 ａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com 41/ 47\n\n**THE SIGNAL:** Near silence across three hundred encrypted buckets is a symptom, not a clean result. Ask what the tool could see.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 39,
+      "source_url": "",
+      "stem_hash": "0e61034db5789711"
+    }
+  },
+  {
+    "id": "LOC-428",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A market research firm wants to sell three curated datasets to around one hundred and fifty external customers. Subscribers should receive quarterly revisions automatically, and access must end when a subscription lapses. The firm does not want to build entitlement management or billing. A proposal is to create an s3 bucket per customer and copy the datasets into each after every revision. What should the data engineer recommend instead?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "A single bucket with a bucket policy listing all",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Automate the per-customer copying with a",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "one hundred and fifty accounts",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "scheduled Glue job",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer recommend instead? One bucket policy naming 150 accounts B Automate the copying A A policy that size is unmaintainable and hits length limits, One hundred and fifty copies, automated. The duplication, and it manages no subscription lifecycle. the storage and the revocation problem all remain. 150 Lake Formation grants AWS Data Exchange Technically workable for access, and it leaves billing, Entitlement, revisions, subscription lifecycle and delivery are entitlement and lapse handling entirely to the firm. the product. None of it has to be built. THE SIGNAL Subscribers, automatic revisions, and access ending on lapse. Those three words are the Data Exchange signal. PRACTICE EXAM 2\n\n**THE SIGNAL:** Subscribers, automatic revisions, and access ending on lapse. Those three words are the Data Exchange signal.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 40,
+      "source_url": "",
+      "stem_hash": "b8ff01b8812f7629"
+    }
+  },
+  {
+    "id": "LOC-429",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "redshift",
+      "kinesis"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company needs order events available in Amazon Redshift within seconds for an operational dashboard. Events are produced to Amazon Kinesis Data Streams. The team does not want to stage files in Amazon s3 or operate a consumer application. Volumes are moderate and the dashboard queries aggregate the most recent events. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon Data Firehose delivering to Amazon S3,",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Redshift streaming ingestion, materialising the",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "with a scheduled COPY into Redshift",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "stream into a materialized view",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer implement? Firehose to S3, then COPY Redshift streaming ingestion Stages files in s3, which the question rules out, and adds Connects the warehouse directly to the stream, buffering plus a scheduled load to a seconds requirement. materialising records into a view with no s3 staging and no consumer to run. A Lambda consumer using the Data API A Glue streaming job A consumer application to build, deploy and operate, Also a consumer to operate, and a minute of latency which the question explicitly excludes. where seconds were asked for. THE SIGNAL No s3 staging and no consumer to operate. Those two constraints together leave one option. PRACTICE EXAM3\n\n**THE SIGNAL:** No s3 staging and no consumer to operate. Those two constraints together leave one option.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 41,
+      "source_url": "",
+      "stem_hash": "74f842ad1a7dc1f1"
+    }
+  },
+  {
+    "id": "LOC-430",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An Aws Glue job created two years ago still runs with default settings. It processes about eight gigabytes nightly. Monitoring shows executor utilisation below fifteen percent throughout, and the job completes in twelve minutes. A cost review has flagged it as one of the more expensive jobs in the account relative to the data it handles. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Switch the job to Glue Flex execution",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable job bookmarks",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Move the job to Amazon EMR Serverless",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Reduce the number of workers from the default",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer do? Glue Flex B Job bookmarks A discount on capacity that is eighty five percent idle. It Prevents reprocessing. Nothing here suggests the job is re- reduces the rate rather than the over-provisioning. minutes. EMR Serverless Right-size the worker count Introduces a different service to solve a configuration Fifteen percent utilisation on default settings means the job problem inside the one already running the job. was never sized. Matching workers to the work is the direct fix. THE SIGNAL Two years old, default settings, fifteen percent utilisation. The defaults are the answer. PRACTICE EXAM 3\n\n**THE SIGNAL:** Two years old, default settings, fifteen percent utilisation. The defaults are the answer.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 42,
+      "source_url": "",
+      "stem_hash": "9a066c5dc990d8a4"
+    }
+  },
+  {
+    "id": "LOC-431",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "lambda"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Amazon RDs for PostgreSQL database. During bulk uploads, thousands of files arrive at once and Lambda scales to hundreds of concurrent executions. The database exhausts its connection limit and the application that also uses it begins failing. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Increase the RDs instance size to raise the",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable provisioned concurrency on the Lambda",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "connection limit",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Set reserved concurrency on the Lambda",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer implement? A larger RDs instance B Provisioned concurrency Buys headroom and moves the ceiling. A larger bulk Keeps environments warm to remove cold starts. It does upload exhausts the new limit and the application fails not limit concurrency; it can increase readiness to scale. again. Reserved concurrency A longer timeout Caps how many functions run at once, protecting the Nothing is timing out. Functions are failing to obtain a connection, which happens immediately. application stays up. THE SIGNAL Parallelism upstream became a bottleneck downstream. Reserved concurrency is a throttle you apply to yourself. PRACTICE EXAM 3\n\n**THE SIGNAL:** Parallelism upstream became a bottleneck downstream. Reserved concurrency is a throttle you apply to yourself.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 43,
+      "source_url": "",
+      "stem_hash": "2e87e22af52ea1f1"
+    }
+  },
+  {
+    "id": "LOC-432",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company must process around four million individual small JsoN objects in Amazon S3, applying a transformation to each and writing the result back. The work is embarrassingly parallel and each object takes under a second. The team wants to run this without building custom fan-out logic, and needs per-object success and failure tracking. Whatshould thedata engineer use?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "An Aws Glue Spark job listing the prefix and",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A single Lambda function iterating over the",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "processing every object",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "objects in a loop",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 44,
+      "source_url": "",
+      "stem_hash": "396e3424102bfc1d"
+    }
+  },
+  {
+    "id": "LOC-433",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Sixty suppliers send daily inventory files to a retailer. Each supplier uses SFTP with its own credentials and cannot change how it transmits files. The retailer wants the files to land in Amazon S3 and to stop operating the current SFTP servers on Amazon EC2. File sizes are modest and arrive throughout the day. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "AWS Transfer Family with an SFTP endpoint",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "AWs DataSync agents at each supplier site",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "backed by Amazon S3",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Amazon AppFlow with an SFTP connector",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer implement? AWS Transfer Family Datasync agents at each site A managed SFTP endpoint writing straight into S3. Suppliers Requires software deployed on sixty third-party networks, keep their protocol and credentials; the EC2 servers go and changes how every supplier transmits. away. AppFlow with SFTP Snowball Edge AppFlow connects to SaaS applications. SFTP file transfer is Physical devices for very large offline transfers. These are not what it does. modest daily files, and Snowball is closed to new customers. THE SIGNAL \"Cannot change how it transmits\" plus SFTP names Transfer Family. The protocol is the requirement. PRACTICE EXAM 3\n\n**THE SIGNAL:** \"Cannot change how it transmits\" plus SFTP names Transfer Family. The protocol is the requirement.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 45,
+      "source_url": "",
+      "stem_hash": "f13394b9d6986162"
+    }
+  },
+  {
+    "id": "LOC-434",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "dates, and writes Parquet. It currently runs as an Aws Glue Spark job with the default allocation and takes about four minutes, most of which is startup. The team wants the lowest cost for this specific step. What should the data engineer use?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "An AwS Lambda function triggered by the file",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Keep the Glue Spark job and reduce it to the",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "minimum two DPUs",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "A Glue Python shell job",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer use? A Lambda function Two DPUs on Spark Megabytes, three trivial transformations, seconds of work. A real improvement, and still a Spark cluster starting up for No startup overhead and no billing minimumbeyond the two megabytes, with a one minute billing minimum each milliseconds used. hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte file. Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all. PRACTICE EXAM 3\n\n**THE SIGNAL:** Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 47,
+      "source_url": "",
+      "stem_hash": "3c66d792d86f47c2"
+    }
+  },
+  {
+    "id": "LOC-435",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess. What should the data engineer configure?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "A lifecycle rule transitioning to Standard-IA after",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "S3 Intelligent-Tiering",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "A lifecycle rule transitioning to Glacier Instant",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "S3 One Zone-Infrequent Access from the outset",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer configure? Lifecycle to Standard-IA S3 Intelligent-Tiering A lifecycle rule encodes a guess about access. The Moves objects between tiers based on observed access, withnoretrieval feesand nominimumduration.Built for means retrieval charges. unknown patterns. Glacier Instant Retrieval after seven days One Zone-lA from the outset Assumes infrequent access from day one, and stores the accesswouldbechargedandearlydeletionpenalised. only copy in a single Availability Zone. THE SIGNAL \"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3\n\n**THE SIGNAL:** \"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost word for word.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 48,
+      "source_url": "",
+      "stem_hash": "4d7931d6a9c758fe"
+    }
+  },
+  {
+    "id": "LOC-436",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A nightly pipeline loads order records into an Amazon Redshift table that has a declared primary key on order ID. After a failure and rerun last week, the table now contains around twelve thousand duplicated orders and reports are overstated. What is the cause, and what should be implemented?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "The rerun used a different distribution key,",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "The primary key was declared after the table",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "creating duplicate slices",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "was created, so it applies only to new rows",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat is the cause, and what should be implemented? A different distribution key Declared after creation Distributiondecideswhichsliceholdsarow.Itdoesnot Invented. Primary keys in Redshift are never enforced, duplicate rows. whenever they are declared. Constraints are informational; use staging and Automatic table optimization MERGE Manages sort and distribution keys based on query Redshift does not enforce primary keys. Idempotency has patterns. It does not enforce constraints. to come from the load, and COPY to staging then MERGE is the standard pattern. THE SIGNAL A declared primary key that did not prevent duplicates is not a bug. Redshift constraints are hints to the planner. PRACTICE EXAM 3 ａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com 21/50\n\n**THE SIGNAL:** A declared primary key that did not prevent duplicates is not a bug. Redshift constraints are hints to the planner.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 49,
+      "source_url": "",
+      "stem_hash": "6d0bc9ef9a11fa06"
+    }
+  },
+  {
+    "id": "LOC-437",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "writes must complete in microseconds, and the data must survive an Availability Zone failure without loss because it is the authoritative record for in-flight sessions. The team currently uses an in-memory cache backed by a relational database. What should the data engineer recommend?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Amazon DynamoDB with DynamoDB",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Amazon s3 Express One Zone",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Amazon Aurora PostgreSQL with a large buffer",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Amazon MemoryDB",
+        "correct": true
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **D**.\n\nWhat should the data engineer recommend? DynamoDB with DAX B S3 Express One Zone DAX is a cache in front of DynamoDB, so it is not the Single-digit milliseconds, and a single Availability Zone, authoritative record, and DynamoDB itself is single-digit which the durability requirement rules out. milliseconds. Aurora with a large cache Amazon MemoryDB Milliseconds at best, and a cache hit is not a durability In-memory speed with durability across Availability Zones, guarantee. so it can be the primary store rather than a cache. THE SIGNAL Microseconds and durable and authoritative. That combination is MemoryDB rather than any cache. PRACTICE EXAM 3\n\n**THE SIGNAL:** Microseconds and durable and authoritative. That combination is MemoryDB rather than any cache.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 50,
+      "source_url": "",
+      "stem_hash": "0f5812be89b3574f"
+    }
+  },
+  {
+    "id": "LOC-438",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "athena",
+      "emr"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "Amazon s3, because the business term has changed. Historical queries must continue to return the same rows, and rewriting five years of files is not acceptable. The table is queried by Amazon Athena and Amazon EMR. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Rename the column in the Glue Data Catalog",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Create a view that aliases the old column name",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "and leave the files unchanged",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "to the new one",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 51,
+      "source_url": "",
+      "stem_hash": "6d4443dc60b4dbb6"
+    }
+  },
+  {
+    "id": "LOC-439",
+    "domain": "D2",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A table in the Aws Glue Data Catalog has around one hundred and forty thousand partitions after four years of hourly partitioning. Athena queries take fifteen to twenty five seconds before scanning begins, regardless of how narrow the filter is. Once scanning starts, they complete quickly. Analysts filter by date range and occasionally by hour. Which action addresses the delay while preserving the hourly granularity analysts occasionally use?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Repartition the data by day and discard the",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Add a Glue partition index on the partition keys",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "hour partition",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Increase theAthena workgroup'squery timeout",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 52,
+      "source_url": "",
+      "stem_hash": "7c8959c02c8a3f6a"
+    }
+  },
+  {
+    "id": "LOC-440",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "cloudwatch"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An application writes a log line containing the text RECORD_REJECTED whenever it discards a malformed record. These lines go to CloudWatch Logs. Operations want to be notified when the rate of rejections exceeds a threshold. They have tried and failed to configure a Cloudwatch alarm directly against the log group. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "A CloudWatch Logs metric filter matching the",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A CloudWatch alarm configured with the log",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "pattern, with an alarm on the resulting metric",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "group as its metric source",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer implement? A metric filter, then an alarm on the metric B An alarm on the log group Alarms evaluate metrics, not log content. A metric filter is Not possible. This is what the team already tried and could the bridge, counting matching events into a metric an not configure. alarm can watch. A subscription filter to S3 An EventBridge rule on log content Streams matching events onward for storage or EventBridge matches events services emit, not arbitrary processing. It creates no metric and raises no alert. text inside application log lines. THE SIGNAL The team's failed attempt is the clue. Alarms cannot watch logs directly, which is exactly why metric filters exist. PRACTICE EXAM3\n\n**THE SIGNAL:** The team's failed attempt is the clue. Alarms cannot watch logs directly, which is exactly why metric filters exist.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 53,
+      "source_url": "",
+      "stem_hash": "91be45210c42b8a1"
+    }
+  },
+  {
+    "id": "LOC-441",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An executive dashboard built on Amazon Redshift is opened by around eight hundred people between eight and nine each morning. The underlying data is refreshed once overnight and does not change during the day. During that hour, other analytical workloads on the cluster slow noticeably. Every viewer's dashboard runs the same set of queries. What is the most appropriate change?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Import the dashboard dataset into SPiCE and",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable Redshift concurrency scaling so",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "refresh it after the overnight load completes",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "additional clusters absorb the morning burst",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 54,
+      "source_url": "",
+      "stem_hash": "215bc370b84d2b95"
+    }
+  },
+  {
+    "id": "LOC-442",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter. What should the data engineer configure now?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Remove the analyst's Athena permissions",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "AnAwsBudgetalertontheAthenaservice",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "A per-query data scan limit on the Athena",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Increase the workgroup's query timeout so",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer configure now? Remove the permissions A Budget alert Tells you afterwards that spend crossed a line. The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read more than a set Allows expensive queries to run for longer. It is the opposite volume, so a single accidental query cannot run up a large of a guardrail. bill. THE SIGNAL Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards. PRACTICE EXAM 3\n\n**THE SIGNAL:** Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 56,
+      "source_url": "",
+      "stem_hash": "6d004f10c3decc66"
+    }
+  },
+  {
+    "id": "LOC-443",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "iam"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A company has fifteen Aws accounts and around sixty engineers. Each engineer has an IAM security team cannot confirm all their credentials were removed. The company wants access to end when employment ends, and to stop issuing long-lived keys. What should the company implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "A scheduled Lambda function deleting lAM",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "A ninety day access key rotation policy",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "users inactive for sixty days",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "enforced across all accounts",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the company implement? Delete inactive users Ninety day key rotation Cleans up on a sixty day delay, during which a departed Shortens thelife of aleaked key whilekeeping long-lived engineer's key remains valid. keys in existence, which the company said it wants to stop. Identity Center federated to the directory Fewer accounts Identity lives in one place tied to employment, and access Reduces the number of places to clean up, and does is temporary role credentials rather than keys. nothing about identity being tied to employment. THE SIGNAL \"Access should end when employment ends\" is a statement about where identity lives. Only federation satisfies it. PRACTICE EXAM 3\n\n**THE SIGNAL:** \"Access should end when employment ends\" is a statement about where identity lives. Only federation satisfies it.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 57,
+      "source_url": "",
+      "stem_hash": "24a9d9c856c8cc67"
+    }
+  },
+  {
+    "id": "LOC-444",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "redshift"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "An insurer holds claims data in Amazon Redshift. Regional teams must see only their own region's claims. A fraud team must see all regions. A support team must see all regions but with the claimant's national identifier partially masked, while the fraud team sees it in full. There are currently eleven views maintaining these combinations, and keeping them aligned with schema changes has become a burden. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Create one table per region with the identifier",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Continue with views, generating them",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "column omitted where required",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "automatically when the schema changes",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nWhat should the data engineer implement? A One table per region B Generate the views automatically Multiplies the schema, the pipelines and the drift, and still Automates the maintenance of eleven objects rather than does not address the two masking audiences. removing them. The duplication remains. Move to s3 and use Lake Formation Row-level security plus dynamic data masking Relocates warehouse data to the lake to reach capabilities One table, one schema. Rows filter by the session's role and Redshift already has natively. the identifier masks by role, with nothing to keep aligned. THE SIGNAL Two distinct requirements, two native Redshift features. The eleven views exist because neither was used. PRACTICE EXAM3\n\n**THE SIGNAL:** Two distinct requirements, two native Redshift features. The eleven views exist because neither was used.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 58,
+      "source_url": "",
+      "stem_hash": "4a6e5da89faa044d"
+    }
+  },
+  {
+    "id": "LOC-445",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "kms"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored. What should the data engineer do?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Movethedata toS3Standard-Infrequent",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Switch the bucket to SSE-s3 encryption",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Request a KMS request quota increase",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Enable S3 Bucket Keys on the bucket",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer do? Standard-IA Switch to SSE-S3 Changes storage cost and adds a retrieval charge.The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signature. PRACTICE EXAM 3\n\n**THE SIGNAL:** decryption signature.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 59,
+      "source_url": "",
+      "stem_hash": "7f033a76ff203a84"
+    }
+  },
+  {
+    "id": "LOC-446",
+    "domain": "D4",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit. What should the data engineer implement?",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Granteachbusinessunitdatabase-levelLake",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Publish datasets as assets in Amazon",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Formation permissions on its own databases",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "SageMaker Catalog and use the subscription",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nWhat should the data engineer implement? Database-level grants per business unit SageMaker Catalog subscription workflow Removes the queue by granting broadly. It cannot Consumers request, the data owner approves, and Lake distinguish sensitivity within a business unit, and records no Formation permissions are applied automatically with the decision. decision recorded. More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes detection.It is decide, which was the stated problem. the opposite of what therequirement describes. THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both. PRACTICE EXAM 3\n\n**THE SIGNAL:** Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "community",
+    "status": "published",
+    "has_answer_key": true,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 60,
+      "source_url": "",
+      "stem_hash": "8cbe02130ee7bd37"
+    }
+  },
+  {
+    "id": "LOC-447",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "source database must remain available to its application throughout, and cutover downtime must be under fifteen minutes. The database contains a number of large object columns. The team has assessed the schema and knows some stored procedures need manual work. Select Two actions the data engineer should take (Choose two.)",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Run an AWs DMS task with full load plus change",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Run an Aws DMs full load only task during a",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "data capture",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "maintenance window",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 5,
+      "source_url": "",
+      "stem_hash": "4a31c5611c95efa5"
+    }
+  },
+  {
+    "id": "LOC-448",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "An analytics team queries a fifty terabyte dataset in Amazon s3 with Amazon Athena. The data is Parquet, partitioned by date. Costs have risen sharply. Investigation shows analysts write queries as SELECT star across ninety columns, and six dashboards each re-run the same four queries every ten minutes against data that is refreshed once daily. Select Two changes that will most reduce the Athena bill (Choose two.)",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Name only the required columns in queries",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Enable query result reuse for the dashboard",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Move the dataset to s3 Standard-lnfrequent",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Repartition the data by hour instead of by date",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 13,
+      "source_url": "",
+      "stem_hash": "8dbb1422b2afc3b6"
+    }
+  },
+  {
+    "id": "LOC-449",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "Four Aws Glue jobs run nightly, each triggered by its own cron schedule spaced ninety minutes apart. Job two occasionally overruns, and when it does, job three starts against incomplete data and produces incorrect aggregates. No error is raised. The team wants the pipeline to be dependency-driven and to be alerted when any step fails. Select Two actions the data engineer should take (Choose two.)",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Replace the cron schedules with an Aws Step",
+        "correct": false
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Widen the gaps between the cron schedules to",
+        "correct": true
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Functions state machine invoking each job in",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Add a Catch on each state routing failures to",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nSelect Two actions the data engineer should take. A Step Functions state machine Widen the cron gaps Each job starts only when the previous one has succeeded. Guessing at timing more conservatively. The same failure That is what dependency-driven means. returns on a slower night, and every night finishes later. Catch routing to SNS Max concurrent runs of one Delivers the alerting requirement, declared per state rather Stops a job overlapping itself. It says nothing about a than written into each job. different job starting on incomplete data. THE SIGNAL Two requirements stated, two answers. Dependency ordering and failure alerting are separate things. PRACTICE EXAM 2\n\n**THE SIGNAL:** Two requirements stated, two answers. Dependency ordering and failure alerting are separate things.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 26,
+      "source_url": "",
+      "stem_hash": "2b7b63156eceea23"
+    }
+  },
+  {
+    "id": "LOC-450",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "s3",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "An analytics team's Amazon Athena spend has grown to a level finance has queried. The data is uncompressed JsON in Amazon S3 in a single prefix, and queries filter on a date field and read eight columns out of seventy. A proposal has been made to purchase Athena capacity reservations to make the cost predictable. Select Two changes the data engineer should make first (Choose two.)",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Convert the data to Parquet with Snappy",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Partition the data by date",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "Purchase Athena capacity reservations",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Move thedatatoS3Glacier InstantRetrieval",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nSelect Two changes the data engineer should make first. Convert to Parquet with Snappy Partition by date Eight columns of seventy means reading roughly a ninth of Queries filter on date against a single unpartitioned prefix, the data, and compression reduces the bytes billed. Capacity reservations Glacier Instant Retrieval Makes the cost predictable by fixing it, sized around queries Storage cost, plus a retrieval fee. Athena bills bytes thatread seventycolumns ofrawJsoN. scanned regardless of storage class. THE SIGNAL Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work. PRACTICE EXAM 2 admｉn@sthｉthａｐragnａ.com 35/47\n\n**THE SIGNAL:** Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 36,
+      "source_url": "",
+      "stem_hash": "0dd50265de5d47cd"
+    }
+  },
+  {
+    "id": "LOC-451",
+    "domain": "D1",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "glue",
+      "s3",
+      "athena"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "A Glue job writes to a curated Amazon S3 table used by Athena. Output consists of roughly forty thousand files per day, most under two hundred kilobytes, because the job writes one file per input partition. Athena queries have become slow, spending most of their time before any data is read. The data is Parquet and correctly partitioned by date. Select Two actions that will improve query performance (Choose two.)",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Coalesce or repartition the output so the job",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Run a scheduled compaction job over existing",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "writes fewer, larger files",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "Convert the output from Parquet to Csv",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nSelect Two actions that will improve query performance. Coalesce the output Compact existing partitions Fixes the cause, so tomorrow's output is a manageable Fixes the accumulated problem. Without it, every partition number of files rather than forty thousand. already written stays slow to query. Convert to CsV More workers Abandons columnar storage. It would increase bytes More workers typically write more files, not fewer. It makes scanned substantially. the small file problem worse. THE SIGNAL Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape. PRACTICE EXAM 3\n\n**THE SIGNAL:** Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 46,
+      "source_url": "",
+      "stem_hash": "86004a5730478a61"
+    }
+  },
+  {
+    "id": "LOC-452",
+    "domain": "D3",
+    "topics": [
+      "local-compiled-bank"
+    ],
+    "services": [
+      "aws"
+    ],
+    "difficulty": "medium",
+    "type": "multi",
+    "stem": "Occasionally a small number of records arrive with a missing settlement currency. Partial figures are worse than no figures for this use case, because reports built on incomplete data have twice been filed. The team wants to catch this and does not want to write custom validation code. SelectTwoactions the data engineer should take (Choose two.)",
+    "options": [
+      {
+        "id": "opt-a",
+        "label": "A",
+        "body": "Add AWS Glue Data Quality rules inside the ETL",
+        "correct": true
+      },
+      {
+        "id": "opt-b",
+        "label": "B",
+        "body": "Configure the job to fail when the ruleset does",
+        "correct": false
+      },
+      {
+        "id": "opt-c",
+        "label": "C",
+        "body": "job checking completeness of the currency",
+        "correct": false
+      },
+      {
+        "id": "opt-d",
+        "label": "D",
+        "body": "not pass, so nothing downstream is loaded",
+        "correct": false
+      }
+    ],
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nSelect Two actions the data engineer should take. Glue Data Quality rules in the job Fail the job on violation Adeclarativecompletenessrule,evaluatedasdataflows through, with no custom validation code to maintain. so stopping is correct and quarantining would publish incomplete data. Quarantine and continue Alarm on failed runs Right when partial data has value. Here the question states Useful once the job fails, and on its own it detects nothing, the opposite, and incompletereports havealreadybeen because today the job succeeds withbad data. filed. THE SIGNAL \"Partial figures are worse than no figures\" is the clause choosing fail over quarantine. It is the only difference. PRACTICE EXAM 3 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 33/50\n\n**THE SIGNAL:** \"Partial figures are worse than no figures\" is the clause choosing fail over quarantine. It is the only difference.",
+    "provenance": "local-compile:pdf_slide_practice_exam",
+    "verification_status": "uncertain",
+    "status": "published",
+    "has_answer_key": false,
+    "reviewed_at": "2026-11-12",
+    "source_meta": {
+      "source": "pdf_slide_practice_exam",
+      "source_question_number": 55,
+      "source_url": "",
+      "stem_hash": "793e21f194b915f4"
+    }
   }
 ]

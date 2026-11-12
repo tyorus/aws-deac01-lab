@@ -1,32 +1,18 @@
 # DEA-C01 Compiled Local Question Bank
 
-Generated: 2026-11-12T02:55:42.583806+00:00
+Generated: 2026-11-12T04:38:21.975Z
 
-Third-party / scraped / PDF-extracted study material. Not official AWS exam content.
-Original lab items remain under content/questions (DEA-001...).
+Bank soal lokal (scrape + PDF) lengkap dengan **pembahasan**.
+Bukan materi resmi AWS.
 
-- Unique stems compiled: **392**
-- Web items (all stems): **392**
-- With answer key: **290**
-- Study-only (no reliable key): **102**
-
----
-
-## Q1. [pdf_exam_dumps] #1
-*App id: `LOC-298`*
-
-A data engineer is confguring an AWS Glue job to read data from an Amazon S3 bucket. The data engineer has set up the necessary AWS Glue connection details and an associated IAM role. However, when the data engineer aflempts to run the AWS Glue job, Glue job, the data engineer receives an error message that indicates that there are problems with the Amazon S3 VPC gateway endpoint. The data engineer must resolve the error and connect the AWS Glue job to the S3 bucket. Which solution will meet this requirement?
-
-- A. Update the AWS Glue security group to allow inbound traffic from the Amazon S3 VPC gateway endpoint. gateway endpoint.
-- B. Confgure an S3 bucket policy to explicitly grant the AWS Glue job permissions to access the S3 bucket.
-- C. Review the AWS Glue job code to ensure that the AWS Glue connection details include a fully qualifed domain name.
-- D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
-- E. D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
+- Total entri quiz-ready: **452**
+- Dengan pembahasan: **452**
+- Multi-select: **70**
 
 ---
 
-## Q2. [examice] #1
-*App id: `LOC-001`*
+## Q1. [examice] #1
+*App id: `LOC-001` · type: `single`*
 
 A data engineer is configuring an AWS Glue job to read data from an Amazon S3 bucket. The data engineer has set up the necessary AWS Glue connection details and an associated IAM role. However, when the data engineer attempts to run the AWS Glue job, the data engineer receives an error message that indicates that there are problems with the Amazon S3 VPC gateway endpoint. The data engineer must resolve the error and connect the AWS Glue job to the S3 bucket. Which solution will meet this requirement?
 
@@ -37,7 +23,7 @@ A data engineer is configuring an AWS Glue job to read data from an Amazon S3 bu
 
 **Answer:** D
 
-**Explanation:**
+**Explanation / Pembahasan:**
 
 When dealing with VPC gateway endpoints for Amazon S3, it is crucial to verify that the VPC's route table includes the necessary routes for the gateway endpoint. This ensures that traffic intended for the S3 bucket is properly routed through the VPC endpoint instead of going out to the internet. Therefore, verifying and potentially updating the VPC's route table to include routes for the Amazon S3 VPC gateway endpoint is the correct solution to resolve the connection issue faced by the AWS Glue job.
 
@@ -45,8 +31,8 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-1
 
 ---
 
-## Q3. [examice] #2
-*App id: `LOC-002`*
+## Q2. [examice] #2
+*App id: `LOC-002` · type: `single`*
 
 A retail company has a customer data hub in an Amazon S3 bucket. Employees from many countries use the data hub to support company-wide analytics. A governance team must ensure that the company's data analysts can access data only for customers who are within the same country as the analysts. Which solution will meet these requirements with the LEAST operational effort?
 
@@ -57,7 +43,7 @@ A retail company has a customer data hub in an Amazon S3 bucket. Employees from 
 
 **Answer:** B
 
-**Explanation:**
+**Explanation / Pembahasan:**
 
 The best solution for ensuring that data analysts can access data only for customers within the same country with the least operational effort is to register the S3 bucket as a data lake location in AWS Lake Formation. This service provides powerful data governance and fine-grained access control capabilities, including row-level security. By using Lake Formation’s row-level security features, you can easily define and enforce policies that restrict access to data based on specific conditions such as the country of the customer. This approach avoids the need for creating separate tables, views, or managing regional data migrations, thereby reducing operational overhead and complexity.
 
@@ -65,21 +51,8 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-2
 
 ---
 
-## Q4. [pdf_exam_dumps] #2
-*App id: `LOC-299`*
-
-A retail company has a customer data hub in an Amazon S3 bucket. Employees from many countries use the data hub to support company-wide analytics A governance team must ensure that the company's data analysts can access data only for customers who are within the same country as the analysts. Which solution will meet these requirements with the LEAST operafonal etiort?
-
-- A. Create a separate table for each country's customer data. Provide access to each analyst each analyst based on the country that the analyst serves. analyst serves.
-- B. Register the S3 bucket as a data lake locafon in AWS Lake Formafon. Use the Lake Formafon row-level security features to enforce the company's access policies.
-- C. Move the data to AWS Regions that are close to the countries where the customers are. Provide access to each analyst based on the country that the analyst serves.
-- D. Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. Assign the appropriate roles to the analysts.
-- E. Provide access to each analyst based on the country that the analyst serves. D. Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. Assign the appropriate roles to the analysts.
-
----
-
-## Q5. [examice] #3
-*App id: `LOC-003`*
+## Q3. [examice] #3
+*App id: `LOC-003` · type: `single`*
 
 A media company wants to improve a system that recommends media content to customer based on user behavior and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company's existing analytics platform. The company wants to minimize the effort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -90,7 +63,7 @@ A media company wants to improve a system that recommends media content to custo
 
 **Answer:** A
 
-**Explanation:**
+**Explanation / Pembahasan:**
 
 To minimize effort and time required to incorporate third-party datasets into an existing analytics platform, it is best to use API calls to access and integrate these datasets. AWS Data Exchange is designed specifically for discovering and subscribing to third-party datasets, providing direct and easy integration. This service effectively reduces operational overhead because it directly supports these types of integrations without the need for complex configurations or additional infrastructure. AWS DataSync, on the other hand, is primarily intended for data transfer between on-premises storage and AWS storage services, not for directly accessing third-party datasets through APIs.
 
@@ -98,34 +71,8 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-3
 
 ---
 
-## Q6. [pdf_80_mock] #3
-*App id: `LOC-300`*
-
-A media company wants to improve a system that recommends media content to customers based on user behaviour and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company’s existing analytics platform. The company wants to minimise the effort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Use API calls to access and integrate third-party datasets from AWS Data Exchange.
-- B. Use API calls to access and integrate third-party datasets from AWS DataSyn
-- C. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories.
-- D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
-- E. B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories. D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
-
----
-
-## Q7. [pdf_exam_dumps] #3
-*App id: `LOC-301`*
-
-A media company wants to improve a system that recommends media content to customer based on user behaviour and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company's existing analytics plaftorm. The The company wants to minimize the estort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Use API calls to access and integrate third-party datasets from AWS Data Exchange.
-- B. Use API calls to access and integrate third-party datasets from AWS DataSyn
-- C. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories.
-- D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
-- E. B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories. D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
-
----
-
-## Q8. [examtopics] #3
-*App id: `LOC-004`*
+## Q4. [examtopics] #3
+*App id: `LOC-004` · type: `single`*
 
 Question #: 3 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A media company wants to improve a system that recommends media content to customer based on user behavior and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company's existing analytics platform. The company wants to minimize the effort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -135,12 +82,16 @@ Question #: 3 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Qu
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131706-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-3-discussion/
 
 ---
 
-## Q9. [examtopics] #4
-*App id: `LOC-005`*
+## Q5. [examtopics] #4
+*App id: `LOC-005` · type: `multi`*
 
 A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
 
@@ -152,12 +103,16 @@ A financial company wants to implement a data mesh. The data mesh must support c
 
 **Answer:** BE
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: BE. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/exams/amazon/aws-certified-data-engineer-associate-dea-c01/view/1/#question-4
 
 ---
 
-## Q10. [examice] #4
-*App id: `LOC-006`*
+## Q6. [examice] #4
+*App id: `LOC-006` · type: `multi`*
 
 A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh?
 
@@ -169,7 +124,7 @@ A financial company wants to implement a data mesh. The data mesh must support c
 
 **Answer:** BE
 
-**Explanation:**
+**Explanation / Pembahasan:**
 
 To implement a data mesh that supports centralized data governance, data analysis, and data access control, the most appropriate combination of AWS services would be Amazon S3 for data storage and Amazon Athena for data analysis, along with AWS Lake Formation for centralized data governance and access control. Amazon S3 provides a scalable and cost-effective storage solution that is well-suited for large datasets, while Amazon Athena allows for serverless querying of data stored in S3 using SQL, facilitating data exploration and analysis without the need for managing infrastructure. AWS Lake Formation enhances governance by allowing the establishment of fine-grained access controls and ensuring data quality and compliance, aligning with the need for centralized governance in a data mesh.
 
@@ -177,34 +132,8 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-4
 
 ---
 
-## Q11. [pdf_80_mock] #4
-*App id: `LOC-302`*
-
-A financial company wants to implement a data mesh. The data mesh must support centralised data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
-
-- A. Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.
-- B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
-- C. Use AWS Glue DataBrew for centralised data governance and access control.
-- D. Use Amazon RDS for data storag
-- E. Use an Amazon Redshift provisioned cluster for data analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue DataBrew for centralised data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formation for centralised data governance and access control.
-
----
-
-## Q12. [pdf_exam_dumps] #4
-*App id: `LOC-303`*
-
-A fnancial ) A fnancial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
-
-- A. Use Amazon Aurora for data storage. Use an Amazon Redshiffl provisioned cluster for data analysis. analysis.
-- B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
-- C. Use AWS Glue Data Brew for centralized data governance and access control.
-- D. Use Amazon RDS for data storag
-- E. Use an Amazon Redshiffl provisioned cluster for data analysis. analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue Data Brew for centralized data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formafon for centralized data governance and access control.
-
----
-
-## Q13. [examtopics] #4
-*App id: `LOC-007`*
+## Q7. [examtopics] #4
+*App id: `LOC-007` · type: `multi`*
 
 Question #: 4 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
 
@@ -215,12 +144,14 @@ Question #: 4 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Qu
 
 **Answer:** B
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131467-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-4-discussion/
 
 ---
 
-## Q14. [examice] #5
-*App id: `LOC-008`*
+## Q8. [examice] #5
+*App id: `LOC-008` · type: `single`*
 
 A data engineer maintains custom Python scripts that perform a data formatting process that many AWS Lambda functions use. When the data engineer needs to modify the Python scripts, the data engineer must manually update all the Lambda functions. The data engineer requires a less manual way to update the Lambda functions. Which solution will meet this requirement?
 
@@ -231,7 +162,7 @@ A data engineer maintains custom Python scripts that perform a data formatting p
 
 **Answer:** B
 
-**Explanation:**
+**Explanation / Pembahasan:**
 
 Package the custom Python scripts into Lambda layers and apply these layers to the Lambda functions. Lambda layers allow for centralized management of shared code across multiple functions. Once the layer is updated with the new scripts, all the Lambda functions that use that layer will automatically inherit the updates, thus reducing manual efforts and ensuring consistency.
 
@@ -239,20 +170,8 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-5
 
 ---
 
-## Q15. [pdf_exam_dumps] #5
-*App id: `LOC-304`*
-
-A data engineer maintains custom Python scripts that perform a data formaffng process that that many AWS Lambda functions use. When the data engineer needs to modify the Python scripts, the data engineer must manually update all the Lambda functions. The data engineer requires a less manual way to update the Lambda functions. Which solution will meet this requirement?
-
-- A. Store a pointer to the custom Python scripts in the execution context object in a shared Amazon S3 bucket.
-- B. Package the custom Python scripts into Lambda layers. Apply the Lambda layers to the Lambda funcfons. Lambda funcfons.
-- C. Store a pointer to the custom Python scripts in environment variables in a shared Amazon S3 bucket. S3 bucket.
-- D. Assign the same alias to each Lambda function. Call reach Lambda function by specifying the function's alias.
-
----
-
-## Q16. [examtopics] #6
-*App id: `LOC-009`*
+## Q9. [examtopics] #6
+*App id: `LOC-009` · type: `single`*
 
 A company created an extract, transform, and load (ETL) data pipeline in AWS Glue. A data engineer must crawl a table that is in Microsoft SQL Server. The data engineer needs to extract, transform, and load the output of the crawl to an Amazon S3 bucket. The data engineer also must orchestrate the data pipeline. Which AWS service or feature will meet these requirements MOST cost-effectively?
 
@@ -263,24 +182,16 @@ A company created an extract, transform, and load (ETL) data pipeline in AWS Glu
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/exams/amazon/aws-certified-data-engineer-associate-dea-c01/view/1/#question-6
 
 ---
 
-## Q17. [pdf_exam_dumps] #6
-*App id: `LOC-305`*
-
-A company created an extract, transform, and load (ETL) data pipeline in AWS Glue. A data engineer must crawl a table that is in Microsoffl SQL Server. The data engineer needs to extract, transform, and load the output of the crawl to an Amazon S3 bucket. The data engineer also must orchestrate the data pipeline. Which AWS service or feature will meet these requirements MOST cost-etiecfvely?
-
-- A. AWS Step Functions
-- B. AWS Glue workflows
-- C. AWS Glue Studio
-- D. Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA)
-
----
-
-## Q18. [examtopics] #6
-*App id: `LOC-010`*
+## Q10. [examtopics] #6
+*App id: `LOC-010` · type: `single`*
 
 Question #: 6 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company created an extract, transform, and load (ETL) data pipeline in AWS Glue. A data engineer must crawl a table that is in Microsoft SQL Server. The data engineer needs to extract, transform, and load the output of the crawl to an Amazon S3 bucket. The data engineer also must orchestrate the data pipeline. Which AWS service or feature will meet these requirements MOST cost-effectively?
 
@@ -290,12 +201,16 @@ Question #: 6 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Qu
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131469-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-6-discussion/
 
 ---
 
-## Q19. [examtopics] #7
-*App id: `LOC-011`*
+## Q11. [examtopics] #7
+*App id: `LOC-011` · type: `single`*
 
 A financial services company stores financial data in Amazon Redshift. A data engineer wants to run real-time queries on the financial data to support a web-based trading application. The data engineer wants to run the queries from within the trading application. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -306,24 +221,16 @@ A financial services company stores financial data in Amazon Redshift. A data en
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/exams/amazon/aws-certified-data-engineer-associate-dea-c01/view/1/#question-7
 
 ---
 
-## Q20. [pdf_exam_dumps] #7
-*App id: `LOC-306`*
-
-A fnancial services company stores fnancial data in Amazon Redshiffl. A data engineer wants to run real-time queries on the fnancial data to support a web-based trading application. The data engineer wants to run the queries from within the trading application. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Establish WebSocket connections to Amazon Redshiffl.
-- B. Use the Amazon Redshiffi Data API.
-- C. Set up Java Database Connectivity (JDBC) connections to Amazon Redshiffl.
-- D. Store frequently accessed data in Amazon S3. Use Amazon S3 Select to run the queries.
-
----
-
-## Q21. [examtopics] #7
-*App id: `LOC-012`*
+## Q12. [examtopics] #7
+*App id: `LOC-012` · type: `single`*
 
 Question #: 7 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A financial services company stores financial data in Amazon Redshift. A data engineer wants to run real-time queries on the financial data to support a web-based trading application. The data engineer wants to run the queries from within the trading application. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -333,12 +240,16 @@ Question #: 7 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Qu
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131470-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-7-discussion/
 
 ---
 
-## Q22. [examtopics] #8
-*App id: `LOC-013`*
+## Q13. [examtopics] #8
+*App id: `LOC-013` · type: `single`*
 
 A company uses Amazon Athena for one-time queries against data that is in Amazon S3. The company has several use cases. The company must implement permission controls to separate query processes and access to query history among users, teams, and applications that are in the same AWS account. Which solution will meet these requirements?
 
@@ -349,12 +260,16 @@ A company uses Amazon Athena for one-time queries against data that is in Amazon
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/exams/amazon/aws-certified-data-engineer-associate-dea-c01/view/1/#question-8
 
 ---
 
-## Q23. [examtopics] #8
-*App id: `LOC-014`*
+## Q14. [examtopics] #8
+*App id: `LOC-014` · type: `single`*
 
 Question #: 8 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon Athena for one-time queries against data that is in Amazon S3. The company has several use cases. The company must implement permission controls to separate query processes and access to query history among users, teams, and applications that are in the same AWS account. Which solution will meet these requirements?
 
@@ -364,12 +279,16 @@ Question #: 8 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Qu
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131471-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-8-discussion/
 
 ---
 
-## Q24. [examtopics] #9
-*App id: `LOC-015`*
+## Q15. [examtopics] #9
+*App id: `LOC-015` · type: `single`*
 
 A data engineer needs to schedule a workflow that runs a set of AWS Glue jobs every day. The data engineer does not require the Glue jobs to run or finish at a specific time. Which solution will run the Glue jobs in the MOST cost-effective way?
 
@@ -380,24 +299,16 @@ A data engineer needs to schedule a workflow that runs a set of AWS Glue jobs ev
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/exams/amazon/aws-certified-data-engineer-associate-dea-c01/view/1/#question-9
 
 ---
 
-## Q25. [pdf_exam_dumps] #9
-*App id: `LOC-307`*
-
-A data engineer needs to schedule a workfiow that runs a set of AWS Glue jobs every day. The data engineer does not require the Glue jobs to run or fnish at a specifc time. Which solution will run the Glue jobs in the MOST cost-etiecfve way?
-
-- A. Choose the FLEX execufon class in the Glue job properfes
-- B. Use the Spot Instance type in Glue job properties.
-- C. Choose the STANDARD execution class in the Glue job properties.
-- D. Choose the latest version in the GlueVersion feld in the Glue job properties. properties.
-
----
-
-## Q26. [examtopics] #10
-*App id: `LOC-016`*
+## Q16. [examtopics] #10
+*App id: `LOC-016` · type: `single`*
 
 A data engineer needs to create an AWS Lambda function that converts the format of data from .csv to Apache Parquet. The Lambda function must run only if a user uploads a .csv file to an Amazon S3 bucket. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -408,12 +319,16 @@ A data engineer needs to create an AWS Lambda function that converts the format 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/exams/amazon/aws-certified-data-engineer-associate-dea-c01/view/1/#question-10
 
 ---
 
-## Q27. [examtopics] #10
-*App id: `LOC-017`*
+## Q17. [examtopics] #10
+*App id: `LOC-017` · type: `single`*
 
 Question #: 10 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to create an AWS Lambda function that converts the format of data from .csv to Apache Parquet. The Lambda function must run only if a user uploads a .csv file to an Amazon S3 bucket. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -423,36 +338,16 @@ Question #: 10 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Q
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131472-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-10-discussion/
 
 ---
 
-## Q28. [pdf_exam_dumps] #10
-*App id: `LOC-308`*
-
-data engineer needs to create an AWS Lambda function that converts the format of data data from .csv to Apache Parquet. The Lambda function must run only if a user uploads a .csv fle to an Amazon S3 bucket. Which solution will meet these requirements with the LEAST operafonal LEAST operafonal overhead? overhead?
-
-- A. Create an S3 event noffflcafon that has an event type of s3:ObjectCreated:*. Use a ffllter rule to generate noffflcafons only when the suftx includes .csv. Set the Amazon Resource Name (ARN) of the Lambda funcfon as the desfnafon for the event noffflcafon.
-- B. Create an $3 event notifcation that has an event type of s3:ObjectTagging:* for objects for objects that have a tag set to .csv. Set the Amazon Resource Name (ARN) of the Lambda function as the destination for the event notifcation.
-- C. Create an S3 event notifcation that has an event type of s3:*. Use a flter rule to generate generate notifcations only when the suffix includes .csv. Set the Amazon Resource Name (ARN) of the the Lambda function as the destination for the event notifcation.
-- D. Create an S3 event notifcation that has an event type of s3:ObjectCreated:*. Use a flter flter rule to generate notifcations only when the suffix includes .csv. Set an Amazon Simple Notifcation Service (Amazon SNS) topic as the destination for the event notifcation. Subscribe the Lambda function to the SNS topic.
-
----
-
-## Q29. [pdf_exam_dumps] #11
-*App id: `LOC-309`*
-
-A data engineer needs Amazon Athena queries to fnish faster. The data engineer notices that all the fles the Athena queries use are currently stored in uncompressed .csv format. The data engineer also notices that users perform most queries by selecting a specifc column. Which solution will MOST speed up the Athena query performance?
-
-- A. Change the data format from .csv to JSON format. Apply Snappy compression.
-- B. Compress the .csv fles by using Snappy compression.
-- C. Change the data format from .csv to Apache Parquet. Apply Snappy compression.
-- D. Compress the .csv fles by using gzip compression.
-
----
-
-## Q30. [examtopics] #11
-*App id: `LOC-018`*
+## Q18. [examtopics] #11
+*App id: `LOC-018` · type: `single`*
 
 Question #: 11 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs Amazon Athena queries to finish faster. The data engineer notices that all the files the Athena queries use are currently stored in uncompressed .csv format. The data engineer also notices that users perform most queries by selecting a specific column. Which solution will MOST speed up the Athena query performance?
 
@@ -462,25 +357,16 @@ Question #: 11 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Q
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131473-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-11-discussion/
 
 ---
 
-## Q31. [pdf_exam_dumps] #12
-*App id: `LOC-310`*
-
-A manufacturing company collects sensor data from its factory fioor to monitor and enhance enhance operational efficiency. The company uses Amazon Kinesis Data Streams to publish the data that the sensors collect to a data stream. Then Amazon Kinesis Data Firehose writes the data to an Amazon S3 bucket. S3 bucket. The company needs to display a real-time view of operational efficiency on a large screen in the manufacturing facility. Which solution will meet these requirements with the LOWEST latency LOWEST latency?
-
-- A. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to process the sensor data. Use a connector for Apache Flink to write data to an Amazon Timestream database. Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard.
-- B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard.
-- C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream database. Use the Timestream database as a source to create an Amazon QuickSight dashboar
-- D. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard. C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream databas
-- E. Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard. C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream database. Use the Timestream database as a source to create an Amazon QuickSight dashboard. D. Use AWS Glue bookmarks to read sensor data from the S3 bucket in real time. Publish the data to an Amazon Timestream database. Use the Timestream database as a source to create a Grafana dashboard.
-
----
-
-## Q32. [examtopics] #12
-*App id: `LOC-019`*
+## Q19. [examtopics] #12
+*App id: `LOC-019` · type: `single`*
 
 Question #: 12 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A manufacturing company collects sensor data from its factory floor to monitor and enhance operational efficiency. The company uses Amazon Kinesis Data Streams to publish the data that the sensors collect to a data stream. Then Amazon Kinesis Data Firehose writes the data to an Amazon S3 bucket. The company needs to display a real-time view of operational efficiency on a large screen in the manufacturing facility. Which solution will meet these requirements with the LOWEST latency?
 
@@ -490,711 +376,16 @@ Question #: 12 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Q
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131474-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-12-discussion/
 
 ---
 
-## Q33. [pdf_exam_dumps] #13
-*App id: `LOC-311`*
-
-A company stores daily records of the fnancial performance of investment porftolios in .csv .csv format in an Amazon S3 bucket. A data engineer uses AWS Glue crawlers to crawl the S3 data. The data engineer must make the S3 data accessible daily in the AWS Glue Data Catalog. Which solution will meet these requirements?
-
-- A. Create an IAM role that includes the Amazon S3 Full Access policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Confgure the output destination to a new path in the existing S3 bucket.
-- B. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Specify a database name for the output.
-- C. Create an IAM role that includes the AmazonS3FullAccess policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Specify a database name for the output.
-- D. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the crawler's data stor
-- E. Create a daily schedule to run the crawler. Confgure the output destination to a new path in the existing S3 bucket. B. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Specify a database name for the output. C. Create an IAM role that includes the AmazonS3FullAccess policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Specify a database name for the output. D. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Confgure the output destination to a new path in the existing S3 bucket.
-
----
-
-## Q34. [pdf_exam_dumps] #14
-*App id: `LOC-312`*
-
-A company loads transaction data for each day into Amazon Redshiffl tables at the end of each day. The company wants to have the ability to track which tables have been loaded and which tables still need to be loaded. A data engineer wants to store the load statuses of Redshiffl tables in an Amazon DynamoDB table. The data engineer creates an AWS Lambda function to publish the details of the load statuses to DynamoDB. DynamoDB. How should the data engineer invoke the Lambda function to write load statuses to the DynamoDB table? table?
-
-- A. Use a second Lambda function to invoke the frst Lambda function based on Amazon Amazon CloudWatch events. CloudWatch events.
-- B. Use the Amazon Redshiffi Data API to publish an event to Amazon EventBridge. Confflgure an EventBridge rule to invoke the Lambda funcfon.
-- C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function.
-- D. Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
-- E. Confflgure an EventBridge rule to invoke the Lambda funcfon. C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function. D. Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
-
----
-
-## Q35. [pdf_exam_dumps] #15
-*App id: `LOC-313`*
-
-A data engineer needs to securely transfer 5 TB of data from an on-premises data center to an Amazon S3 bucket. Approximately 5% of the data changes every day. Updates to the data need to be regularly proliferated to the S3 bucket. The data includes fles that are in multiple formats. The data engineer needs to automate the transfer process and must schedule the process to run periodically. run periodically. Which AWS service should the data engineer use to transfer the data in the MOST operationally MOST operationally efficient way? efficient way?
-
-- A. AWS DataSync
-- B. AWS Glue
-- C. AWS Direct Connect
-- D. Amazon S3 Transfer Acceleration
-
----
-
-## Q36. [pdf_exam_dumps] #16
-*App id: `LOC-314`*
-
-A company uses an on-premises Microsoffl SQL Server database to store fnancial transaction data. The company migrates the transaction data from the on-premises database to AWS at the end of each month. The company has noticed that the cost to migrate data from the on-premises database to an Amazon RDS for SQL Server database has increased recently. The company requires a cost-estective solution to migrate the data to AWS. The solufon must cause minimal downtown for the applicafons that access the database. Which AWS service should the company use to meet these requirements?
-
-- A. AWS Lambda
-- B. AWS Database Migrafon Service (AWS DMS)
-- C. AWS Direct Connect
-- D. AWS DataSync
-
----
-
-## Q37. [pdf_80_mock] #16
-*App id: `LOC-315`*
-
-A company uses an on-premises Microsoft SQL Server database to store financial transaction data. The company migrates the transaction data from the on-premises database to AWS at the end of each month. The company has noticed that the cost to migrate data from the on-premises database to an Amazon RDS for SQL Server database has increased recently. The company requires a cost-effective solution to migrate the data to AWS. The solution must cause minimal downtime for the applications that access the database. Which AWS service should the company use to meet these requirements?
-
-- A. AWS Lambda
-- B. AWS Database Migration Service (AWS DMS)
-- C. AWS Direct Connect
-- D. AWS DataSync
-
----
-
-## Q38. [pdf_exam_dumps] #17
-*App id: `LOC-316`*
-
-A data engineer is building a data pipeline on AWS by using AWS Glue extract, transform, and load (ETL) jobs. The data engineer needs to process data from Amazon RDS and MongoDB, perform transformations, and load the transformed data into Amazon Redshiffl for analytics. The data updates must occur every hour. Which combination of tasks will meet these requirements with the LEAST operafonal overhead? (Choose two.) (Choose two.)
-
-- A. Confflgure AWS Glue triggers to run the ETL jobs every hour.
-- B. Use AWS Glue DataBrew to clean and prepare the data for analytics.
-- C. Use AWS Lambda functions to schedule and run the ETL jobs every hour.
-- D. Use AWS Glue connecfons to establish connecfvity between the data sources and Amazon Redshiffi. Amazon Redshiffi.
-- E. Use the Redshiffl Data API to load transformed data into Amazon Redshiffl.
-
----
-
-## Q39. [pdf_exam_dumps] #18
-*App id: `LOC-317`*
-
-A company uses an Amazon Redshiffl cluster that runs on RA3 nodes. The company wants to scale read and write capacity to meet demand. A data engineer needs to identify a solution that will will turn on turn on concurrency scaling. Which solution will meet this requirement? requirement?
-
-- A. Turn on concurrency scaling in workload management (WLM) for Redshiffl Serverless Serverless workgroups. workgroups.
-- B. Turn on concurrency scaling at the workload management (WLM) queue level in the Redshiffi cluster. Redshiffi cluster.
-- C. Turn on concurrency scaling in the seffngs during the creation of any new Redshiffl cluster. cluster.
-- D. Turn on concurrency scaling for the daily usage quota for the Redshiffl cluster.
-
----
-
-## Q40. [pdf_exam_dumps] #19
-*App id: `LOC-318`*
-
-A data A data engineer must orchestrate a series of Amazon Athena queries that will run every day. Each query can run for more than 15 minutes. Which combination of steps will meet these requirements MOST cost-etiecfvely? (Choose two.) (Choose two.)
-
-- A. Use an AWS Lambda funcfon and the Athena Boto3 client start_query_execufon API call to invoke the Athena queries programmafcally.
-- B. Create an AWS Step Funcfons workflow and add two states. Add the fflrst state before the Lambda funcfon. Confflgure the second state as a Wait state to periodically check whether the Athena query has fflnished using the Athena Boto3 get_query_execufon API call. Confflgure the workflow to invoke the next query when the current query has fflnished running. running.
-- C. Use an AWS Glue Python shell job and the Athena Boto3 client start_query_execution API call to invoke the A call to invoke the Athena queries programmatically.
-- D. Use an AWS Glue Python shell script to run a sleep timer that checks every 5 minutes to determine whether the current Athena query has fnished running successfully. Confgure the Python shell script to invoke the next query when the current query has fnished fnished running. running.
-- E. Use Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) to orchestrate the Athena queries in AWS Batch.
-
----
-
-## Q41. [pdf_exam_dumps] #20
-*App id: `LOC-319`*
-
-A company is migrating on-premises workloads to AWS. The company wants to reduce overall reduce overall operational overhead. The company also wants to explore serverless options. The company's current workloads use Apache Pig, Apache Oozie, Apache Spark, Apache Hbase, and Hbase, and Apache Flink Apache Flink. The on-premises workloads process petabytes of data in seconds. The c . The on-premises workloads process petabytes of data in seconds. The company must ompany must maintain similar or befler performance affler the migration to AWS. AWS. Which extract, transform, and load (ETL) service will meet these requirements?
-
-- A. AWS Glue
-- B. Amazon EMR
-- C. AWS Lambda
-- D. Amazon Redshiffl
-
----
-
-## Q42. [pdf_exam_dumps] #21
-*App id: `LOC-320`*
-
-A data engineer must use AWS services to ingest a dataset into an Amazon S3 data lake. The data engineer profles the dataset and discovers that the dataset contains personally identifable information (PII). The data engineer must implement a solution to profle the dataset and obfuscate the PII. the PII. Which solution will meet this requirement with the LEAST operafonal etiort?
-
-- A. Use an Amazon Kinesis Data Firehose delivery stream to process the dataset. Create an AWS Lambda transform function to identify the PII. Use an AWS SDK to obfuscate the PII. Set the S3 data lake as the target for the delivery stream.
-- B. Use the Detect PII transform in AWS Glue Studio to identify the PII. Obfuscate the PII. Use Use an AWS Step Functions state machine to orchestrate a data pipeline to ingest the data into the S3 data lake.
-- C. Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons state machine to orchestrate a data pipeline to ingest the data into the S3 data lake.
-- D. Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lak
-- E. C. Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons state machine to orchestrate a data pipeline to ingest the data into the S3 data lake. D. Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lake.
-
----
-
-## Q43. [pdf_exam_dumps] #22
-*App id: `LOC-321`*
-
-A company maintains multiple extract, transform, and load (ETL) workfiows that ingest data from from the company's operational databases into an Amazon S3 based data lake. The ETL workfiows use AWS Glue and Amazon EMR to process data. The company wants to improve the existing architecture to provide automated orchestration and to require minimal manual estort. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. AWS Glue workflows
-- B. AWS Step Functions tasks
-- C. AWS Lambda functions
-- D. Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) workfiows
-
----
-
-## Q44. [pdf_exam_dumps] #23
-*App id: `LOC-322`*
-
-A company currently stores all of its data in Amazon S3 by using the S3 Standard storage class. A data engineer examined data access paflerns to identify trends. During the frst 6 months, most data fles are accessed several times each day. Between 6 months and 2 years, most data fles are are accessed once or twice each month. Affler 2 years, data fles are accessed only once or twice each year. year. The data engineer needs to use an S3 Lifecycle policy to develop new data storage rules. The new storage solution must continue to provide high availability. Which solution will meet these requirements in the MOST cost-etiecfve way?
-
-- A. Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. 6 months. Transfer objects to S3 Glacier Flexible Retrieval affler 2 years.
-- B. Transition objects to S3 Standard-Infrequent Access (S3 Standard-IA) affler 6 months. Transfer objects to S3 Glacier Flexible Retrieval affler 2 years.
-- C. Transifon objects to S3 Standard-Infrequent Access (S3 Standard-IA) affier 6 months. Transfer objects to S3 Glacier Deep Archive affier 2 years.
-- D. Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. months. Transfer objects to S3 Glacier Deep Archive affler 2 years.
-
----
-
-## Q45. [pdf_exam_dumps] #24
-*App id: `LOC-323`*
-
-A company maintains an Amazon Redshiffl provisioned cluster that the company uses for extract, extract, transform, and load (ETL) operations to support critical analysis tasks. A sales team within the company maintains a Redshiffl cluster that the sales team uses for business intelligence (BI) tasks. The sales team recently requested access to the data that is in the ETL Redshiffl cluster so the team can perform weekly summary analysis tasks. The sales team needs to join data from the ETL cluster with data that is in the sales team's Bl cluster. The company needs a solution that will share the ETL cluster data with the sales team without team without interrupting the critical analysis tasks. The solution must minimize usage of the computing resources of the ETL cluster. Which solution will meet these requirements?
-
-- A. Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshiffi data sharing. sharing.
-- B. Create materialized views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
-- C. Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
-- D. Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshiffl Spectrum table based on the content of the ETL cluster.
-
----
-
-## Q46. [pdf_80_mock] #24
-*App id: `LOC-324`*
-
-A company maintains an Amazon Redshift provisioned cluster that the company uses for extract, transform, and load (ETL) operations to support critical analysis tasks. A sales team within the company maintains a Redshift cluster that the sales team uses for business intelligence (BI) tasks. The sales team recently requested access to the data that is in the ETL Redshift cluster so the team can perform weekly summary analysis tasks. The sales team needs to join data from the ETL cluster with data that is in the sales team's BI cluster. The company needs a solution that will share the ETL cluster data with the sales team without interrupting the critical analysis tasks. The solution must minimise usage of the computing resources of the ETL cluster. Which solution will meet these requirements?
-
-- A. Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshift data sharing.
-- B. Create materialised views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
-- C. Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
-- D. Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshift Spectrum table based on the content of the ETL cluster.
-
----
-
-## Q47. [pdf_exam_dumps] #25
-*App id: `LOC-325`*
-
-A data engineer needs to join data from multiple sources to perform a one-time analysis job. The data is stored in Amazon DynamoDB, Amazon RDS, Amazon Redshiffl, and Amazon S3. Which solution will meet this requirement MOST cost-etiecfvely?
-
-- A. Use an Amazon EMR provisioned cluster to read from all sources. Use Apache Spark to join the data and perform the analysis.
-- B. Copy the data from DynamoDB, Amazon RDS, and Amazon Redshiffl into Amazon S3. Run Amazon Athena queries directly on the S3 fles.
-- C. Use Amazon Athena Federated Query to join the data from all data sources.
-- D. Use Redshiffl Spectrum to query data from DynamoDB, Amazon RDS, and Amazon S3 directly from Redshiffl.
-
----
-
-## Q48. [pdf_80_mock] #26
-*App id: `LOC-326`*
-
-A company is planning to use a provisioned Amazon EMR cluster that runs Apache Spark jobs to perform big data analysis. The company requires high reliability. A big data team must follow best practices for running cost-optimised and long-running workloads on Amazon EMR. The team must find a solution that will maintain the company's current level of performance. Which combination of resources will meet these requirements MOST cost-effectively? (Choose two.)
-
-- A. Use Hadoop Distributed File System (HDFS) as a persistent data store.
-- B. Use Amazon S3 as a persistent data store.
-- C. Use x86-based instances for core nodes and task nodes.
-- D. Use Graviton instances for core nodes and task nodes.
-- E. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes.
-
----
-
-## Q49. [pdf_exam_dumps] #26
-*App id: `LOC-327`*
-
-A company is planning to use a provisioned Amazon EMR cluster that runs Apache Spark jobs to perform big data analysis. The company requires high reliability. A big data team must follow best practices for running cost-optimized and long-running workloads on Amazon EMR. The team must fnd a solution that will maintain the company's current level of performance. Which combination of resources will meet these requirements MOST cost-etiecfvely? (Choose two.) (Choose two.)
-
-- A. Use Hadoop Distributed File System (HDFS) as a persistent data store. store.
-- B. Use Amazon S3 as a persistent data store.
-- C. Use x86-based instances for core nodes and task nodes. task nodes.
-- D. Use Graviton instances for core nodes and task nodes.
-- E. store. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes. primary nodes.
-
----
-
-## Q50. [pdf_exam_dumps] #27
-*App id: `LOC-328`*
-
-A company wants to implement real-time analytics capabilities. The company wants to use Amazon Kinesis Data Streams and Amazon Redshiffl to ingest and process streaming data at the rate of several gigabytes per second. The company wants to derive near real-time insights by using existing business intelligence (BI) and analytics tools. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Use Kinesis Data Streams to stage data in Amazon S3. Use the COPY command to load data from Amazon S3 directly into Amazon Redshiffl to make the data immediately available for real-time analysis.
-- B. Access the data from Kinesis Data Streams by using SQL queries. Create materialized views directly on top of the stream. Refresh the materialized views regularly to query the most recent stream data.
-- C. Create an external schema in Amazon Redshiffi to map the data from Kinesis Data Streams to an Amazon Redshiffi object. Create a materialized view to read data from the stream. Set the materialized view to auto refresh.
-- D. Connect Kinesis Data Streams to Amazon Kinesis Data Firehos
-- E. Use Kinesis Data Firehose Firehose to stage the data in Amazon S3. Use the COPY command to load the data from Amazon S3 to a table in Amazon Redshiffl.
-
----
-
-## Q51. [pdf_exam_dumps] #28
-*App id: `LOC-329`*
-
-A company uses an Amazon QuickSight dashboard to monitor usage of one of the company's applications. The company uses AWS Glue jobs to process data for the dashboard. The company stores the data in a single Amazon S3 bucket. The company adds new data every day. A data engineer discovers that dashboard queries are becoming slower over time. The data engineer determines that the root cause of the slowing queries is long-running AWS Glue jobs. Which actions should the data engineer take to improve the performance of the AWS Glue jobs? (Choose two.) (Choose two.)
-
-- A. Parffon the data that is in the S3 bucket. Organize the data by year, month, and day.
-- B. Increase the AWS Glue instance size by scaling up the worker type.
-- C. Convert the AWS Glue schema to the DynamicFrame schema class.
-- D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day.
-- E. C. Convert the AWS Glue schema to the DynamicFrame schema class. D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day. E. Modify the IAM role that grants access to AWS glue to grant access to all S3 features.
-
----
-
-## Q52. [pdf_exam_dumps] #29
-*App id: `LOC-330`*
-
-A data engineer needs to use AWS Step Functions to design an orchestration workfiow. The workfiow must parallel process a large collection of data fles and apply a specifc transformation to each fle. Which Step Functions state should the data engineer use to meet these requirements?
-
-- A. Parallel state
-- B. Choice state
-- C. Map state
-- D. Wait state
-
----
-
-## Q53. [pdf_exam_dumps] #30
-*App id: `LOC-331`*
-
-A company is migrating a legacy application to an Amazon S3 based data lake. A data engineer reviewed data that is associated with the legacy application. The data engineer found that the legacy data contained some duplicate information. The data engineer must identify and remove duplicate information from the legacy application data. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Write a custom extract, transform, and load (ETL) job in Python. Use the DataFrame.drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication.
-- B. Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication.
-- C. Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. deduplication.
-- D. Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
-- E. drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication. B. Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication. C. Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. deduplication. D. Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
-
----
-
-## Q54. [pdf_exam_dumps] #31
-*App id: `LOC-332`*
-
-A company is building an analytics solution. The solution uses Amazon S3 for data lake storage and Amazon Redshiffl for a data warehouse. The company wants to use Amazon Redshiffl Spectrum Spectrum to query the data that is in Amazon S3. Which actions will provide the FASTEST queries? (Choose two.)
-
-- A. Use gzip compression to compress individual fles to sizes that are between 1 GB and 5 G
-- B. GB. B. Use a columnar storage fflle format.
-- C. Parffon the data based on the most common query predicates.
-- D. Split the data into fles that are less than 10 KB.
-- E. Use fle formats that are not spliflable. not spliflable.
-
----
-
-## Q55. [pdf_exam_dumps] #32
-*App id: `LOC-333`*
-
-A company uses Amazon RDS to store transactional data. The company runs an RDS DB instance in a private subnet. A developer wrote an AWS Lambda function with default seffngs to insert, update, or delete data in the DB instance. instance. The developer needs to give the Lambda function the ability to connect to the DB instance privately instance privately without using the public internet. Which combination of steps will meet this requirement with the LEAST operafonal overhead? (Choose two.) (Choose two.)
-
-- A. Turn on the public access seffng for the DB instance.
-- B. Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port.
-- C. Confflgure the Lambda funcfon to run in the same subnet that the DB instance uses.
-- D. Aflach the same security group to the Lambda function and the DB instanc
-- E. B. Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port. C. Confflgure the Lambda funcfon to run in the same subnet that the DB instance uses. D. Aflach the same security group to the Lambda function and the DB instance. Include a self- referencing rule that allows access through the database port. E. Update the network ACL of the private subnet to include a self-referencing rule that allows access through the database port.
-
----
-
-## Q56. [pdf_exam_dumps] #33
-*App id: `LOC-334`*
-
-A company has a frontend ReactJS website that uses Amazon API Gateway to invoke REST APIs. The APIs perform the functionality of the website. A data engineer needs to write a Python script that can be occasionally invoked through API Gateway. The code must return results to API Gateway. API Gateway. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Deploy a custom Python script on an Amazon Elastic Container Service (Amazon ECS) cluster. cluster.
-- B. Create an AWS Lambda Python funcfon with provisioned concurrency.
-- C. Deploy a custom Python script that can integrate with API Gateway on Amazon Elastic Kubernetes Service (Amazon EKS).
-- D. Create an AWS Lambda function. Ensure that the function is warm by scheduling an scheduling an Amazon EventBridge rule to invoke the Lambda function every 5 minutes by using mock events. events.
-
----
-
-## Q57. [pdf_80_mock] #34
-*App id: `LOC-335`*
-
-A company has a production AWS account that runs company workloads. The company's security team created a security AWS account to store and analyse security logs from the production AWS account. The security logs in the production AWS account are stored in Amazon CloudWatch Logs. The company needs to use Amazon Kinesis Data Streams to deliver the security logs to the security AWS account. Which solution will meet these requirements?
-
-- A. Create a destination data stream in the production AWS account. In the security AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the production AWS account.
-- B. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription filter in the security AWS account.
-- C. Create a destination data stream in the production AWS account. In the production AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the security AWS account.
-- D. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription filter in the production AWS account.
-
----
-
-## Q58. [pdf_exam_dumps] #34
-*App id: `LOC-336`*
-
-A company has a production AWS account that runs company workloads. The company's security team created a security AWS account to store and analyze security logs from the production AWS account. The security logs in the production AWS account are stored in Amazon CloudWatch Logs. The company needs to use Amazon Kinesis Data Streams to deliver the security logs to the security the security AWS account. AWS account. Which solution will meet these requirements?
-
-- A. Create a desfnafon data stream in the producfon AWS account. In the security AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the producfon AWS account.
-- B. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription flter in the security AWS account.
-- C. Create a desfnafon data stream in the producfon AWS account. In the producfon AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the security AWS account.
-- D. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription flter in the production AWS account.
-
----
-
-## Q59. [pdf_exam_dumps] #35
-*App id: `LOC-337`*
-
-A company uses Amazon S3 to store semi-structured data in a transactional data lake. Some of the data fles are small, but other data fles are tens of terabytes. terabytes. A data engineer must perform a change data capture (CDC) operation to identify changed data from from the data source. The data source sends a full snapshot as a JSON fle every day and ingests the changed data into the data lake. Which solution will capture the changed data MOST cost-etiecfvely?
-
-- A. Create an AWS Lambda function to identify the changes between the previous data and the current data. Confgure the Lambda function to ingest the changes into the data lake.
-- B. Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake.
-- C. Use an open source data lake format to merge the data source with the S3 data lake to insert the new data and update the exisfng data.
-- D. Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lak
-- E. B. Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake. C. Use an open source data lake format to merge the data source with the S3 data lake to insert the new data and update the exisfng data. D. Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake.
-
----
-
-## Q60. [pdf_exam_dumps] #36
-*App id: `LOC-338`*
-
-A data engineer runs Amazon Athena queries on data that is in an Amazon S3 bucket. The Athena queries use AWS Glue Data Catalog as a metadata table. The data engineer notices that the Athena query plans are experiencing a performance boflleneck. The data engineer determines that the cause of the performance boflleneck is the large number of partitions that are in the S3 bucket. The data engineer must resolve the performance boflleneck and reduce Athena query planning time. Which solutions will meet these requirements? (Choose two.)
-
-- A. Create an AWS Glue parffon index. Enable parffon fflltering.
-- B. Bucket the data based on a column that the data have in common in a WHERE clause of the user query.
-- C. Use Athena parffon projecfon based on the S3 bucket prefflx.
-- D. Transform the data that is in the S3 bucket to Apache Parquet format.
-- E. Use the Amazon EMR S3DistCP utility to combine smaller objects in the 53 bucket into larger objects. larger objects.
-
----
-
-## Q61. [pdf_exam_dumps] #37
-*App id: `LOC-339`*
-
-A data A data engineer must manage the ingestion of real-time streaming data into AWS. The data The data engineer wants to perform real-time analytics on the incoming streaming data by using time-based aggregations over a window of up to 30 minutes. The data engineer needs a solution that is highly is highly fault tolerant. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Use an AWS Lambda function that includes both the business and the analytics logic to ic to perform time-based aggregations over a window of up to 30 minutes for the data in Amazon Amazon Kinesis Data Streams.
-- B. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) to analyze the data that might occasionally contain duplicates by using multiple multiple types of aggregations.
-- C. Use an AWS Lambda function that includes both the business and the analytics logic to logic to perform aggregations for a tumbling window of up to 30 minutes, based on the event the event timestamp. timestamp.
-- D. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to analyze the data by using mulfple types of aggregafons to perform fme-based analyfcs over a window of up to 30 minutes.
-
----
-
-## Q62. [pdf_exam_dumps] #38
-*App id: `LOC-340`*
-
-A company is planning to upgrade its Amazon Elastic Block Store (Amazon EBS) General Purpose SSD storage from gp2 to gp3. The company wants to prevent any interruptions in its Amazon EC2 instances that will cause data loss during the migration to the upgraded storage. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Create snapshots of the gp2 volumes. Create new gp3 volumes from the snapshots. Aflach the new gp3 volumes to the EC2 instances.
-- B. Create new gp3 volumes. Gradually transfer the data to the new gp3 volumes. When the transfer is complete, mount the new gp3 volumes to the EC2 instances to replace the gp2 volumes. volumes.
-- C. Change the volume type of the exisfng gp2 volumes to gp3. Enter new values for volume size, IOPS, and throughput.
-- D. Use AWS DataSync to create new gp3 volumes. Transfer the data from the original gp2 volumes to the new gp3 volumes.
-
----
-
-## Q63. [pdf_exam_dumps] #39
-*App id: `LOC-341`*
-
-A company is migrating its database servers from Amazon EC2 instances that run Microsoffl SQL Server to Amazon RDS for Microsoffl SQL Server DB instances. The company's analytics team must export large data elements every day until the migration is complete. The data elements are the result of SQL joins across multiple tables. The data must be in Apache Parquet format. The analytics team must store the data in Amazon S3. Which solution will meet these requirements in the MOST operafonally eftcient way?
-
-- A. Create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create an AWS Glue job that selects the data directly from the view and view and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day. every day.
-- B. Schedule SQL Server Agent to run a daily SQL query that selects the desired data elements from the EC2 instance-based SQL Server databases. Confgure the query to direct the direct the output .csv objects to an S3 bucket. Create an S3 event that invokes an AWS Lambda function to transform the output format from .csv to Parquet. to Parquet.
-- C. Use a SQL query to create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create and run an AWS Glue crawler to read the view. Create an AWS Glue job that retrieves the data and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day.
-- D. Create an AWS Lambda function that queries the EC2 instance-based databases by using Java Database Connectivity (JDBC). Confgure the Lambda function to retrieve the required data, transform the data into Parquet format, and transfer the data into an S3 bucket. Use bucket. Use Amazon EventBridge to schedule the Lambda function to run every day.
-
----
-
-## Q64. [pdf_exam_dumps] #40
-*App id: `LOC-342`*
-
-A data engineering team is using an Amazon Redshiffl data warehouse for operational reporting. The team wants to prevent performance issues that might result from long-running queries. A data data engineer must choose a system table in Amazon Redshiffl to edshiffl to record anomalies when a query optimizer identifes conditions that might indicate performance issues. Which table views should the data engineer use to meet this requirement?
-
-- A. STL_USAGE_CONTROL
-- B. STL_ALERT_EVENT_LOG
-- C. STL_QUERY_METRICS
-- D. STL_PLAN_INFO
-
----
-
-## Q65. [pdf_exam_dumps] #41
-*App id: `LOC-343`*
-
-A data engineer must ingest a source of structured data that is in .csv format into an Amazon S3 data lake. The .csv fles contain 15 columns. Data analysts need to run Amazon Athena queries on one or two columns of the dataset. The data analysts rarely query the entire fle. Which solution will meet these requirements MOST cost-etiecfvely?
-
-- A. Use an AWS Glue PySpark job to ingest the source data into the data lake in .csv format.
-- B. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confgure the job to ingest the data into the data lake in JSON format.
-- C. Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format.
-- D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data sourc
-- E. Confgure the job to ingest the data into the data lake in JSON format. C. Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format. D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confflgure the job to write the data into the data lake in Apache Parquet format. Parquet format.
-
----
-
-## Q66. [pdf_exam_dumps] #42
-*App id: `LOC-344`*
-
-A company has fve offices in disterent AWS Regions. Each office has its own human resources (HR) department that uses a unique IAM role. The company stores employee records in a data lake lake that is based on Amazon S3 storage. A data engineering team needs to limit access to the records. Each HR department should be able to access records for only employees who are within the HR department's Region. Which combination of steps should the data engineering team take to meet this requirement with the the LEAST operafonal overhead? (Choose two.) ? (Choose two.)
-
-- A. Use data flters for each Region to register the S3 paths as data locations.
-- B. Register the S3 path as an AWS Lake Formafon locafon.
-- C. Modify the IAM roles of the HR departments to add a data flter for each department's department's Region. Region.
-- D. Enable fflne-grained access control in AWS Lake Formafon. Add a data ffllter for each Region. Region.
-- E. Create a separate S3 bucket for each Region. Confgure an IAM policy to allow $3 access. Restrict access based on Region.
-
----
-
-## Q67. [pdf_exam_dumps] #43
-*App id: `LOC-345`*
-
-A company uses AWS Step Functions to orchestrate a data pipeline. The pipeline consists of Amazon EMR jobs that ingest data from data sources and store the data in an Amazon S3 bucket. The pipeline also includes EMR jobs that load the data to A load the data to Amazon Redshiffl. mazon Redshiffl. The company's cloud infrastructure team manually built a Step Functions state machine. The cloud infrastructure team launched an EMR cluster into a VPC to support the EMR jobs. However, the deployed Step Functions state machine is not able to run the EMR jobs. Which combination of steps should the company take to identify the reason the Step Functions state machine is not able to run the EMR jobs? (Choose two.)
-
-- A. Use AWS CloudFormation to automate the Step Functions state machine deployment. Create a step to pause the state machine during the EMR jobs that fail. Confgure the step to wait for a human user to send approval through an email message. Include details of the EMR task in the email message for further analysis.
-- B. Verify that the Step Funcfons state machine code has all IAM permissions that are necessary to create and run the EMR jobs. Verify that the Step Funcfons state machine code also includes IAM permissions to access the Amazon S3 buckets that the EMR jobs use. Use Access Analyzer for S3 to check the S3 access properfes.
-- C. Check for entries in Amazon CloudWatch for the newly created EMR cluster. Change the Change the AWS Step Functions state machine code to use Amazon EMR on EKS. Change the IAM access policies and the security group confguration for the Step Functions state machine code to refiect inclusion of Amazon Elastic Kubernetes Service (Amazon ĔKS). ĔKS).
-- D. Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports.
-- E. Include details of the EMR task in the email message for further analysis. B. Verify that the Step Funcfons state machine code has all IAM permissions that are necessary to create and run the EMR jobs. Verify that the Step Funcfons state machine code also includes IAM permissions to access the Amazon S3 buckets that the EMR jobs use. Use Access Analyzer for S3 to check the S3 access properfes. C. Check for entries in Amazon CloudWatch for the newly created EMR cluster. Change the Change the AWS Step Functions state machine code to use Amazon EMR on EKS. Change the IAM access policies and the security group confguration for the Step Functions state machine code to refiect inclusion of Amazon Elastic Kubernetes Service (Amazon ĔKS). ĔKS). D. Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports. E. Check the retry scenarios that the company confgured for the EMR jobs. Increase the Increase the number of seconds in the interval between each EMR task. Validate that each fallback state has the appropriate catch for each decision state. Confgure an Amazon Simple Notifcation Service (Amazon SNS) topic to store the error messages.
-
----
-
-## Q68. [pdf_exam_dumps] #44
-*App id: `LOC-346`*
-
-A company is developing an application that runs on Amazon EC2 instances. Currently, the data that the application generates is temporary. However, the company needs to persist the data, even , even if the EC2 instances are terminated. A data engineer must launch new EC2 instances from an Amazon Machine Image (AMI) and MI) and confgure the instances to preserve the data. Which solution will meet this requirement?
-
-- A. Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume that contains the application data. Apply the default seffngs to the EC2 instances.
-- B. Launch new EC2 instances by using an AMI that is backed by a root Amazon Elasfc Block Store (Amazon EBS) volume that contains the applicafon data. Apply the default seffngs to the EC2 instances.
-- C. Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances.
-- D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volum
-- E. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances. D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volume. Aflach an additional EC2 instance store volume to contain the application data. Apply the default seffngs to the EC2 instances.
-
----
-
-## Q69. [pdf_exam_dumps] #45
-*App id: `LOC-347`*
-
-A company uses Amazon Athena to run SQL queries for extract, transform, and load (ETL) tasks by using Create Table As Select (CTAS). The company must use Apache Spark instead of SQL to SQL to generate analytics. Which solution will give the company the ability to use Spark to access Athena?
-
-- A. Athena query seffngs
-- B. Athena workgroup
-- C. Athena data source
-- D. Athena query editor
-
----
-
-## Q70. [pdf_80_mock] #46
-*App id: `LOC-348`*
-
-A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format: s3://bucket/prefix/ year=2023/month=01/day=01. A data engineer must ensure that the AWS Glue Data Catalog synchronises with the S3 storage when the company adds new partitions to the bucket. Which solution will meet these requirements with the LEAST latency?
-
-- A. Schedule an AWS Glue crawler to run every morning.
-- B. Manually run the AWS Glue CreatePartition API twice each day.
-- C. Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.
-- D. Run the MSCK REPAIR TABLE command from the AWS Glue consol
-
----
-
-## Q71. [pdf_exam_dumps] #46
-*App id: `LOC-349`*
-
-A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format: s3://bucket/prefx/year=2023/month=01/day=01. A data engineer must ensure that the AWS Glue Data Catalog synchronizes with the S3 storage when storage when the company adds new partitions to the bucket. Which solution will meet these requirements with the LEAST latency LEAST latency?
-
-- A. Schedule an AWS Glue crawler to run every morning.
-- B. Manually run the AWS Glue CreatePartition API twice each day.
-- C. Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_parffon API call. API call.
-- D. Run the MSCK REPAIR TABLE command from the AWS Glue consol
-
----
-
-## Q72. [pdf_exam_dumps] #47
-*App id: `LOC-350`*
-
-A media company uses sofflware as a service (SaaS) applications to gather data by using third- party tools. The company needs to store the data in an Amazon S3 bucket. The company will use Amazon Redshiffl to perform analytics based on the data. data. Which AWS service or feature will meet these requirements with the LEAST operafonal overhead?
-
-- A. Amazon Managed Streaming for Apache Kaa (Amazon MSK)
-- B. Amazon AppFlow
-- C. AWS Glue Data Catalog
-- D. Amazon Kinesis
-
----
-
-## Q73. [pdf_exam_dumps] #48
-*App id: `LOC-351`*
-
-A data engineer is using Amazon Athena to analyze sales data that is in Amazon S3. The data engineer writes a query to retrieve sales amounts for 2023 for several products from a table named sales_data. However, the query does not return results for all of the products that are in the the sales_data table. The data engineer needs to troubleshoot the query to resolve the issue. issue. The data engineer's original query is as follows: follows: SELECT product_name, sum(sales_amount) FROM sales_data- FROM sales_data- WHERE year = 2023 - GROUP BY product_name - How should the data engineer modify the Athena query to meet these requirements?
-
-- A. Replace sum(sales_amount) with count(*) for the aggregation. gregation.
-- B. Change WHERE year = 2023 to WHERE extract(year FROM sales_data) = 2023.
-- C. Add HAVING sum(sales_amount) > 0 affier the GROUP BY clause.
-- D. Remove the GROUP BY claus
-- E. D. Remove the GROUP BY clause.
-
----
-
-## Q74. [pdf_exam_dumps] #49
-*App id: `LOC-352`*
-
-A data A data engineer has a one-time task to read data from objects that are in Apache Parquet format Parquet format in an Amazon S3 bucket. The data engineer needs to query only one column of the data. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Confgure an AWS Lambda function to load data from the S3 bucket into a pandas dataframe. Write a SQL SELECT statement on the dataframe to query the required column.
-- B. Use S3 Select to write a SQL SELECT statement to retrieve the required column from the S3 objects. S3 objects.
-- C. Prepare an AWS Glue DataBrew project to consume the S3 objects and to query the required column. required column.
-- D. Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
-- E. Write a SQL SELECT statement on the dataframe to query the required column. B. Use S3 Select to write a SQL SELECT statement to retrieve the required column from the S3 objects. S3 objects. C. Prepare an AWS Glue DataBrew project to consume the S3 objects and to query the required column. required column. D. Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
-
----
-
-## Q75. [pdf_exam_dumps] #50
-*App id: `LOC-353`*
-
-A company uses Amazon Redshiffl for its data warehouse. The company must automate refresh schedules for Amazon Redshiffl materialized views. Which solution will meet this requirement with the LEAST estort? estort?
-
-- A. Use Apache Airfiow to refresh the materialized views.
-- B. Use an AWS Lambda user-defned function (UDF) within Amazon Redshiffl to refresh the materialized views.
-- C. Use the query editor v2 in Amazon Redshiffi to refresh the materialized views.
-- D. Use an AWS Glue workfiow to refresh the materialized views.
-- F. within Amazon Redshiffl to refresh the materialized views. C. Use the query editor v2 in Amazon Redshiffi to refresh the materialized views. D. Use an AWS Glue workfiow to refresh the materialized views.
-
----
-
-## Q76. [pdf_80_mock] #50
-*App id: `LOC-354`*
-
-A company uses Amazon Redshift for its data warehouse. The company must automate refresh schedules for Amazon Redshift materialised views. Which solution will meet this requirement with the LEAST effort?
-
-- A. Use Apache Airflow to refresh the materialised views.
-- B. Use an AWS Lambda user-defined function (UDF) within Amazon Redshift to refresh the materialised views.
-- C. Use the query editor v2 in Amazon Redshift to refresh the materialised views.
-- D. Use an AWS Glue workflow to refresh the materialised views.
-- F. within Amazon Redshift to refresh the materialised views. C. Use the query editor v2 in Amazon Redshift to refresh the materialised views. D. Use an AWS Glue workflow to refresh the materialised views.
-
----
-
-## Q77. [pdf_exam_dumps] #52
-*App id: `LOC-355`*
-
-A company needs to set up a data catalog and metadata management for data sources that run in the AWS Cloud. The company will use the data catalog to maintain the metadata of all the objects that are in a set of data stores. The data stores include structured sources such as Amazon RDS and Amazon Redshiffl. The data stores also include semistructured sources such as JSON fles and .xml fles that are stored in Amazon S3. The company needs a solution that will update the data catalog on a regular basis. The solution also must detect changes to the source metadata. Which solution will meet these requirements with the LEAST operafonal overhead?
-
-- A. Use Amazon Aurora as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information fro from m mul multipl tiple e sou source rces s and and to to upd update ate the Aurora data cat catalo alog. g. Sch Schedu edule le the the Lam Lambda bda functions to run periodically.
-- B. Use the AWS Glue Data Catalog as the central metadata repository. Use AWS Glue crawlers to connect to mulfple data stores and to update the Data Catalog with metadata changes. Schedule the crawlers to run periodically to update the metadata catalog.
-- C. Use Amazon DynamoDB as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information from multiple sources and to update the DynamoDB data catalog. Schedule the Lambda functions to run periodically.
-- D. Use the AWS Glue Data Catalog as the central metadata repository. Extract the schema for Amazon RDS and Amazon Redshiffl sources, and build the Data Catalog. Use AWS Glue crawlers for data that is in Amazon S3 to infer the schema and to automatically update the Data Catalog Data Catalog
-
----
-
-## Q78. [pdf_exam_dumps] #53
-*App id: `LOC-356`*
-
-A company stores data from an application in an Amazon DynamoDB table that operates in provisioned capacity mode. The workloads of the application have predictable throughput load on a regular schedule. Every Monday, there is an immediate increase in activity early in the morning. The application has very low usage during weekends. The company must ensure that the application performs consistently during peak usage times. Which solution will meet these requirements in the MOST cost-etiecfve way?
-
-- A. Increase the provisioned capacity to the maximum capacity that is currently present during peak load times.
-- B. Divide the table into two tables. Provision each table with half of the provisioned capacity of the original table. Spread queries evenly across both tables.
-- C. Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capacity during oti-peak fmes.
-- D. Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the tabl
-- E. Spread queries evenly across both tables. C. Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capacity during oti-peak fmes. D. Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the table.
-
----
-
-## Q79. [pdf_80_mock] #60
-*App id: `LOC-357`*
-
-An airline company is collecting metrics about flight activities for analytics. The company is conducting a proof of concept (POC) test to show how analytics can provide insights that the company can use to increase on-time departures. The POC test uses objects in Amazon S3 that contain the metrics in .csv format. The POC test uses Amazon Athena to query the data. The data is partitioned in the S3 bucket by date. As the amount of data increases, the company wants to optimise the storage solution to improve query performance. Which combination of solutions will meet these requirements? (Choose two.)
-
-- A. Add a randomised string to the beginning of the keys in Amazon S3 to get more throughput across partitions.
-- B. Use an S3 bucket that is in the same account that uses Athena to query the data.
-- C. Use an S3 bucket that is in the same AWS Region where the company runs Athena queries.
-- D. Preprocess the .csv data to JSON format by fetching only the document keys that the query requires.
-- E. Preprocess the .csv data to Apache Parquet format by fetching only the data blocks that are needed for predicates.
-
----
-
-## Q80. [pdf_80_mock] #61
-*App id: `LOC-358`*
-
-A company uses Amazon RDS for MySQL as the database for a critical application. The database workload is mostly writes, with a small number of reads. A data engineer notices that the CPU utilisation of the DB instance is very high. The high CPU utilisation is slowing down the application. The data engineer must reduce the CPU utilisation of the DB instance. Which actions should the data engineer take to meet this requirement? (Choose two.)
-
-- A. Use the Performance Insights feature of Amazon RDS to identify queries that have high CPU utilisation. Optimise the problematic queries.
-- B. Modify the database schema to include additional tables and indexes.
-- C. Reboot the RDS DB instance once each week.
-- D. Upgrade to a larger instance siz
-- E. E. Implement caching to reduce the database query load.
-
----
-
-## Q81. [pdf_80_mock] #62
-*App id: `LOC-359`*
-
-A company has used an Amazon Redshift table that is named Orders for 6 months. The company performs weekly updates and deletes on the table. The table has an interleaved sort key on a column that contains AWS Regions. The company wants to reclaim disk space so that the company will not run out of storage space. The company also wants to analyse the sort key column. Which Amazon Redshift command will meet these requirements?
-
-- A. V ACUUM FULL Orders
-- B. V ACUUM DELETE ONLY Orders
-- C. V ACUUM REINDEX Orders
-- D. V ACUUM SORT ONLY Orders
-
----
-
-## Q82. [pdf_80_mock] #66
-*App id: `LOC-360`*
-
-A financial company wants to use Amazon Athena to run on-demand SQL queries on a petabyte- scale dataset to support a business intelligence (BI) application. An AWS Glue job that runs during non-business hours updates the dataset once every day. The BI application has a standard data refresh frequency of 1 hour to comply with company policies. A data engineer wants to cost optimise the company's use of Amazon Athena without adding any additional infrastructure costs. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Configure an Amazon S3 Lifecycle policy to move data to the S3 Glacier Deep Archive storage class after 1 day.
-- B. Use the query result reuse feature of Amazon Athena for the SQL queries.
-- C. Add an Amazon ElastiCache cluster between the BI application and Athena.
-- D. Change the format of the files that are in the dataset to Apache Parquet.
-
----
-
-## Q83. [pdf_80_mock] #67
-*App id: `LOC-361`*
-
-A company's data engineer needs to optimise the performance of table SQL queries. The company stores data in an Amazon Redshift cluster. The data engineer cannot increase the size of the cluster because of budget constraints. The company stores the data in multiple tables and loads the data by using the EVEN distribution style. Some tables are hundreds of gigabytes in size. Other tables are less than 10 MB in size. Which solution will meet these requirements?
-
-- A. Keep using the EVEN distribution style for all tables. Specify primary and foreign keys for all tables.
-- B. Use the ALL distribution style for large tables. Specify primary and foreign keys for all tables.
-- C. Use the ALL distribution style for rarely updated small tables. Specify primary and foreign keys for all tables.
-- D. Specify a combination of distribution, sort, and partition keys for all tables.
-
----
-
-## Q84. [pdf_80_mock] #68
-*App id: `LOC-362`*
-
-A company receives .csv files that contain physical address data. The data is in columns that have the following names: Door_No, Street_Name, City, and Zip_Code. The company wants to create a single column to store these values in the following format: { "Door_No": "24", "Street_Name": "AAA street", "City": "BBB", "Zip_Code": "111111" } Which solution will meet this requirement with the LEAST coding effort?
-
-- A. Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column.
-- B. Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column.
-- C. Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column.
-- D. Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column.
-
----
-
-## Q85. [pdf_80_mock] #70
-*App id: `LOC-363`*
-
-A company stores petabytes of data in thousands of Amazon S3 buckets in the S3 Standard storage class. The data supports analytics workloads that have unpredictable and variable data access patterns. The company does not access some data for months. However, the company must be able to retrieve all data within milliseconds. The company needs to optimise S3 storage costs. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Use S3 Storage Lens standard metrics to determine when to move objects to more cost-optimised storage classes. Create S3 Lifecycle policies for the S3 buckets to move objects to cost-optimised storage classes. Continue to refine the S3 Lifecycle policies in the future to optimise storage costs.
-- B. Use S3 Storage Lens activity metrics to identify S3 buckets that the company accesses infrequently. Configure S3 Lifecycle rules to move objects from S3 Standard to the S3 Standard- Infrequent Access (S3 Standard-IA) and S3 Glacier storage classes based on the age of the data.
-- C. Use S3 Intelligent-Tiering. Activate the Deep Archive Access tier.
-- D. Use S3 Intelligent-Tiering. Use the default access tier.
-
----
-
-## Q86. [pdf_80_mock] #74
-*App id: `LOC-364`*
-
-A healthcare company uses Amazon Kinesis Data Streams to stream real-time health data from wearable devices, hospital equipment, and patient records. A data engineer needs to find a solution to process the streaming data and store the data in an Amazon Redshift Serverless warehouse. The solution must support near real-time analytics of the streaming data and the previous day's data. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Load data into Amazon Kinesis Data Firehose. Load the data into Amazon Redshift.
-- B. Use the streaming ingestion feature of Amazon Redshift.
-- C. Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift.
-- D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
-- E. Load the data into Amazon Redshift. B. Use the streaming ingestion feature of Amazon Redshift. C. Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift. D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
-
----
-
-## Q87. [pdf_80_mock] #75
-*App id: `LOC-365`*
-
-A data engineer needs to use an Amazon QuickSight dashboard that is based on Amazon Athena queries on data that is stored in an Amazon S3 bucket. When the data engineer connects to the QuickSight dashboard, the data engineer receives an error message that indicates insufficient permissions. Which factors could cause the permissions-related errors? (Choose two.)
-
-- A. There is no connection between QuickSight and Athena.
-- B. The Athena tables are not cataloged.
-- C. QuickSight does not have access to the S3 bucket.
-- D. C. QuickSight does not have access to the S3 bucket. D. QuickSight does not have access to decrypt S3 data.
-- E. There is no IAM role assigned to QuickSight.
-
----
-
-## Q88. [pdf_80_mock] #79
-*App id: `LOC-366`*
-
-A company has multiple applications that use datasets that are stored in an Amazon S3 bucket. The company has an ecommerce application that generates a dataset that contains personally identifiable information (PII). The company has an internal analytics application that does not require access to the PII. To comply with regulations, the company must not share PII unnecessarily. A data engineer needs to implement a solution that will redact PII dynamically, based on the needs of each application that accesses the dataset. Which solution will meet the requirements with the LEAST operational overhead?
-
-- A. Create an S3 bucket policy to limit the access each application has. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.
-- B. Create an S3 Object Lambda endpoint. Use the S3 Object Lambda endpoint to read data from the S3 bucket. Implement redaction logic within an S3 Object Lambda function to dynamically redact PII based on the needs of each application that accesses the data.
-- C. Use AWS Glue to transform the data for each application. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.
-- D. Create an API Gateway endpoint that has custom authorisers. Use the API Gateway endpoint to read data from the S3 bucket. Initiate a REST API call to dynamically redact PII based on the needs of each application that accesses the data.
-
----
-
-## Q89. [examtopics] #105
-*App id: `LOC-020`*
+## Q20. [examtopics] #105
+*App id: `LOC-020` · type: `single`*
 
 Question #: 105 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer creates an AWS Lambda function that an Amazon EventBridge event will invoke. When the data engineer tries to invoke the Lambda function by using an EventBridge event, an AccessDeniedException message appears. How should the data engineer resolve the exception?
 
@@ -1204,12 +395,16 @@ Question #: 105 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142578-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-105-discussion/
 
 ---
 
-## Q90. [examtopics] #106
-*App id: `LOC-021`*
+## Q21. [examtopics] #106
+*App id: `LOC-021` · type: `single`*
 
 Question #: 106 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses a data lake that is based on an Amazon S3 bucket. To comply with regulations, the company must apply two layers of server-side encryption to files that are uploaded to the S3 bucket. The company wants to use an AWS Lambda function to apply the necessary encryption. Which solution will meet these requirements?
 
@@ -1219,12 +414,16 @@ Question #: 106 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142579-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-106-discussion/
 
 ---
 
-## Q91. [examtopics] #107
-*App id: `LOC-022`*
+## Q22. [examtopics] #107
+*App id: `LOC-022` · type: `single`*
 
 Question #: 107 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer notices that Amazon Athena queries are held in a queue before the queries run. How can the data engineer prevent the queries from queueing?
 
@@ -1234,12 +433,16 @@ Question #: 107 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142580-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-107-discussion/
 
 ---
 
-## Q92. [examtopics] #125
-*App id: `LOC-023`*
+## Q23. [examtopics] #125
+*App id: `LOC-023` · type: `multi`*
 
 Question #: 125 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application. Which solutions will minimize data loss for the application? (Choose two.)
 
@@ -1250,12 +453,14 @@ Question #: 125 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145713-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-125-discussion/
 
 ---
 
-## Q93. [examtopics] #126
-*App id: `LOC-024`*
+## Q24. [examtopics] #126
+*App id: `LOC-024` · type: `single`*
 
 Question #: 126 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is creating near real-time dashboards to visualize time series data. The company ingests data into Amazon Managed Streaming for Apache Kafka (Amazon MSK). A customized data pipeline consumes the data. The pipeline then writes data to Amazon Keyspaces (for Apache Cassandra), Amazon OpenSearch Service, and Apache Avro objects in Amazon S3. Which solution will make the data available for the data visualizations with the LEAST latency?
 
@@ -1265,27 +470,16 @@ Question #: 126 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145714-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-126-discussion/
 
 ---
 
-## Q94. [examtopics] #136
-*App id: `LOC-367`*
-
-Question #: 136 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer set up an AWS Lambda function to read an object that is stored in an Amazon S3 bucket. The object is encrypted by an AWS KMS key. The data engineer configured the Lambda function’s execution role to access the S3 bucket. However, the Lambda function encountered an error and failed to retrieve the content of the object. What is the likely cause of the error?
-
-- A. The data engineer misconfigured the permissions of the S3 bucket. The Lambda function could not access the object.
-- B. The Lambda function is using an outdated SDK version, which caused the read failure.
-- C. The S3 bucket is located in a different AWS Region than the Region where the data engineer works. Latency issues caused the Lambda function to encounter an error.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/145725-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-136-discussion/
-
----
-
-## Q95. [examtopics] #137
-*App id: `LOC-025`*
+## Q25. [examtopics] #137
+*App id: `LOC-025` · type: `single`*
 
 Question #: 137 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer has implemented data quality rules in 1,000 AWS Glue Data Catalog tables. Because of a recent change in business requirements, the data engineer must edit the data quality rules. How should the data engineer meet this requirement with the LEAST operational overhead?
 
@@ -1295,12 +489,16 @@ Question #: 137 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145726-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-137-discussion/
 
 ---
 
-## Q96. [examtopics] #140
-*App id: `LOC-026`*
+## Q26. [examtopics] #140
+*App id: `LOC-026` · type: `single`*
 
 Question #: 140 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company receives test results from testing facilities that are located around the world. The company stores the test results in millions of 1 KB JSON files in an Amazon S3 bucket. A data engineer needs to process the files, convert them into Apache Parquet format, and load them into Amazon Redshift tables. The data engineer uses AWS Glue to process the files, AWS Step Functions to orchestrate the processes, and Amazon EventBridge to schedule jobs. The company recently added more testing facilities. The time required to process files is increasing. The data engineer must reduce the data processing time. Which solution will MOST reduce the data processing time?
 
@@ -1310,12 +508,16 @@ Question #: 140 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145729-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-140-discussion/
 
 ---
 
-## Q97. [examtopics] #158
-*App id: `LOC-027`*
+## Q27. [examtopics] #158
+*App id: `LOC-027` · type: `single`*
 
 Question #: 158 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has a data lake in Amazon S3. The company uses AWS Glue to catalog data and AWS Glue Studio to implement data extract, transform, and load (ETL) pipelines. The company needs to ensure that data quality issues are checked every time the pipelines run. A data engineer must enhance the existing pipelines to evaluate data quality rules based on predefined thresholds. Which solution will meet these requirements with the LEAST implementation effort?
 
@@ -1325,12 +527,16 @@ Question #: 158 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151925-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-158-discussion/
 
 ---
 
-## Q98. [examtopics] #159
-*App id: `LOC-028`*
+## Q28. [examtopics] #159
+*App id: `LOC-028` · type: `multi`*
 
 Question #: 159 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an application that uses a microservice architecture. The company hosts the application on an Amazon Elastic Kubernetes Services (Amazon EKS) cluster. The company wants to set up a robust monitoring system for the application. The company needs to analyze the logs from the EKS cluster and the application. The company needs to correlate the cluster's logs with the application's traces to identify points of failure in the whole application request flow. Which combination of steps will meet these requirements with the LEAST development effort? (Choose two.)
 
@@ -1341,12 +547,14 @@ Question #: 159 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151926-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-159-discussion/
 
 ---
 
-## Q99. [examtopics] #160
-*App id: `LOC-029`*
+## Q29. [examtopics] #160
+*App id: `LOC-029` · type: `single`*
 
 Question #: 160 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has a gaming application that stores data in Amazon DynamoDB tables. A data engineer needs to ingest the game data into an Amazon OpenSearch Service cluster. Data updates must occur in near real time. Which solution will meet these requirements?
 
@@ -1356,12 +564,16 @@ Question #: 160 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151927-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-160-discussion/
 
 ---
 
-## Q100. [examtopics] #205
-*App id: `LOC-030`*
+## Q30. [examtopics] #205
+*App id: `LOC-030` · type: `single`*
 
 Question #: 205 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer uses Amazon Kinesis Data Streams to ingest and process records that contain user behavior data from an application every day. The data engineer notices that the data stream is experiencing throttling because hot shards receive much more data than other shards in the data stream. How should the data engineer resolve the throttling issue?
 
@@ -1371,27 +583,16 @@ Question #: 205 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/156778-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-205-discussion/
 
 ---
 
-## Q101. [examtopics] #206
-*App id: `LOC-368`*
-
-Question #: 206 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has a data processing pipeline that includes several dozen steps. The data processing pipeline needs to send alerts in real time when a step fails or succeeds. The data processing pipeline uses a combination of Amazon S3 buckets, AWS Lambda functions, and AWS Step Functions state machines. A data engineer needs to create a solution to monitor the entire pipeline. Which solution will meet these requirements?
-
-- A. Configure the Step Functions state machines to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the S3 bucket.
-- B. Configure the AWS Lambda functions to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the S3 bucket.
-- C. Use AWS CloudTrail to send a message to an Amazon Simple Notification Service (Amazon SNS) topic that sends notifications when a state machine fails to run or succeeds to run.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/156779-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-206-discussion/
-
----
-
-## Q102. [examtopics] #207
-*App id: `LOC-031`*
+## Q31. [examtopics] #207
+*App id: `LOC-031` · type: `single`*
 
 Question #: 207 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an application that uses an Amazon API Gateway REST API and an AWS Lambda function to retrieve data from an Amazon DynamoDB instance. Users recently reported intermittent high latency in the application's response times. A data engineer finds that the Lambda function experiences frequent throttling when the company's other Lambda functions experience increased invocations. The company wants to ensure the API's Lambda function operate without being affected by other Lambda functions. Which solution will meet this requirement MOST cost-effectively?
 
@@ -1401,12 +602,16 @@ Question #: 207 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/156780-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-207-discussion/
 
 ---
 
-## Q103. [examtopics] #211
-*App id: `LOC-032`*
+## Q32. [examtopics] #211
+*App id: `LOC-032` · type: `single`*
 
 Question #: 211 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to optimize the performance of a data pipeline that handles retail orders. Data about the orders is ingested daily into an Amazon S3 bucket. The data engineer runs queries once each week to extract metrics from the orders data based the order date for multiple date ranges. The data engineer needs an optimization solution that ensures the query performance will not degrade when the volume of data increases. Which solution will meet this requirement MOST cost-effectively?
 
@@ -1416,12 +621,16 @@ Question #: 211 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305563-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-211-discussion/
 
 ---
 
-## Q104. [examtopics] #221
-*App id: `LOC-033`*
+## Q33. [examtopics] #221
+*App id: `LOC-033` · type: `single`*
 
 Question #: 221 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company receives marketing campaign data from a vendor. The company ingests the data into an Amazon S3 bucket every 40 to 60 minutes. The data is in CSV format. File sizes are between 100 KB and 300 KB. A data engineer needs to set-up an extract, transform, and load (ETL) pipeline to upload the content of each file to Amazon Redshift. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -1431,27 +640,16 @@ Question #: 221 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305568-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-221-discussion/
 
 ---
 
-## Q105. [examtopics] #222
-*App id: `LOC-369`*
-
-Question #: 222 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company wants to build a dimension table in an Amazon S3 bucket. The bucket contains historical data that includes 10 million records. The historical data is 1 TB in size. A data engineer needs a solution to update changes for up to 10,000 records in the base table every day. Which solution will meet this requirement with the LOWEST runtime?
-
-- A. Develop an Apache Spark job in Amazon EMR to read the historical data and the new changes into two Spark DataFrames. Use the Spark update method to update the base table.
-- B. Develop an AWS Glue Python job to read the historical data and new changes into two Pandas DataFrames. Use the Pandas update method to update the base table.
-- C. Develop an AWS Glue Apache Spark job to read the historical data and new changes into two Spark DataFrames. Use the Spark update method to update the base table.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/305569-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-222-discussion/
-
----
-
-## Q106. [examtopics] #223
-*App id: `LOC-034`*
+## Q34. [examtopics] #223
+*App id: `LOC-034` · type: `multi`*
 
 Question #: 223 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer develops an AWS Glue Apache Spark ETL job to perform transformations on a dataset. When the data engineer runs the job, the job returns an error that reads, “No space left on device.” The data engineer needs to identify the source of the error and provide a solution. Which combinations of steps will meet this requirement MOST cost-effectively? (Choose two.)
 
@@ -1462,12 +660,14 @@ Question #: 223 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305570-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-223-discussion/
 
 ---
 
-## Q107. [examtopics] #226
-*App id: `LOC-035`*
+## Q35. [examtopics] #226
+*App id: `LOC-035` · type: `single`*
 
 Question #: 226 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is setting up a data pipeline in AWS. The pipeline extracts client data from Amazon S3 buckets, performs quality checks, and transforms the data. The pipeline stores the processed data in a relational database. The company will use the processed data for future queries. Which solution will meet these requirements MOST cost-effectively?
 
@@ -1477,12 +677,16 @@ Question #: 226 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305571-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-226-discussion/
 
 ---
 
-## Q108. [examtopics] #227
-*App id: `LOC-036`*
+## Q36. [examtopics] #227
+*App id: `LOC-036` · type: `single`*
 
 Question #: 227 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon Redshift as a data warehouse solution. One of the datasets that the company stores in Amazon Redshift contains data for a vendor. Recently, the vendor asked the company to transfer the vendor’s data into the vendor’s Amazon S3 bucket once each week. Which solution will meet this requirement?
 
@@ -1492,12 +696,16 @@ Question #: 227 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305573-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-227-discussion/
 
 ---
 
-## Q109. [examtopics] #228
-*App id: `LOC-037`*
+## Q37. [examtopics] #228
+*App id: `LOC-037` · type: `single`*
 
 Question #: 228 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses an Amazon Redshift cluster as a data warehouse that is shared across two departments. To comply with a security policy, each department must have unique access permissions. Department A must have access to tables and views for Department
 
@@ -1507,12 +715,16 @@ Question #: 228 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305574-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-228-discussion/
 
 ---
 
-## Q110. [examtopics] #230
-*App id: `LOC-038`*
+## Q38. [examtopics] #230
+*App id: `LOC-038` · type: `single`*
 
 Question #: 230 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A sales company uses AWS Glue ETL to collect, process, and ingest data into an Amazon S3 bucket. The AWS Glue pipeline creates a new file in the S3 bucket every hour. File sizes vary from 200 KB to 300 KB. The company wants to build a sales prediction model by using data from the previous 5 years. The historic data includes 44,000 files. The company builds a second AWS Glue ETL pipeline by using the smallest worker type. The second pipeline retrieves the historic files from the S3 bucket and processes the files for downstream analysis. The company notices significant performance issues with the second ETL pipeline. The company needs to improve the performance of the second pipeline. Which solution will meet this requirement MOST cost-effectively?
 
@@ -1522,12 +734,16 @@ Question #: 230 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305575-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-230-discussion/
 
 ---
 
-## Q111. [examtopics] #231
-*App id: `LOC-039`*
+## Q39. [examtopics] #231
+*App id: `LOC-039` · type: `single`*
 
 Question #: 231 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company wants to combine data from multiple software as a service (SaaS) applications for analysis. A data engineering team needs to use Amazon QuickSight to perform the analysis and build dashboards. A data engineer needs to extract the data from the SaaS applications and make the data available for QuickSight queries. Which solution will meet these requirements in the MOST operationally efficient way?
 
@@ -1537,12 +753,16 @@ Question #: 231 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305576-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-231-discussion/
 
 ---
 
-## Q112. [examtopics] #232
-*App id: `LOC-040`*
+## Q40. [examtopics] #232
+*App id: `LOC-040` · type: `single`*
 
 Question #: 232 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company runs multiple applications on AWS. The company configured each application to output logs. The company wants to query and visualize the application logs in near real time. Which solution will meet these requirements?
 
@@ -1552,12 +772,16 @@ Question #: 232 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305577-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-232-discussion/
 
 ---
 
-## Q113. [examtopics] #233
-*App id: `LOC-041`*
+## Q41. [examtopics] #233
+*App id: `LOC-041` · type: `single`*
 
 Question #: 233 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] An ecommerce company processes millions of orders each day. The company uses AWS Glue ETL to collect data from multiple sources, clean the data, and store the data in an Amazon S3 bucket in CSV format by using the S3 Standard storage class. The company uses the stored data to conduct daily analysis. The company wants to optimize costs for data storage and retrieval. Which solution will meet this requirement?
 
@@ -1567,12 +791,16 @@ Question #: 233 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305578-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-233-discussion/
 
 ---
 
-## Q114. [examtopics] #234
-*App id: `LOC-042`*
+## Q42. [examtopics] #234
+*App id: `LOC-042` · type: `single`*
 
 Question #: 234 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is optimizing query performance in Amazon Athena notebooks that use Apache Spark to analyze large datasets that are stored in Amazon S3. The data is partitioned. An AWS Glue crawler updates the partitions. The data engineer wants to minimize the amount of data that is scanned to improve efficiency of Athena queries. Which solution will meet these requirements?
 
@@ -1582,12 +810,16 @@ Question #: 234 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305579-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-234-discussion/
 
 ---
 
-## Q115. [examtopics] #235
-*App id: `LOC-043`*
+## Q43. [examtopics] #235
+*App id: `LOC-043` · type: `single`*
 
 Question #: 235 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company manages an Amazon Redshift data warehouse. The data warehouse is in a public subnet inside a custom VPC. A security group allows only traffic from within itself. An ACL is open to all traffic. The company wants to generate several visualizations in Amazon QuickSight for an upcoming sales event. The company will run QuickSight Enterprise edition in a second AWS account inside a public subnet within a second custom VPC. The new public subnet has a security group that allows outbound traffic to the existing Redshift cluster. A data engineer needs to establish connections between Amazon Redshift and QuickSight. QuickSight must refresh dashboards by querying the Redshift cluster. Which solution will meet these requirements?
 
@@ -1598,12 +830,16 @@ Question #: 235 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305580-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-235-discussion/
 
 ---
 
-## Q116. [examtopics] #236
-*App id: `LOC-044`*
+## Q44. [examtopics] #236
+*App id: `LOC-044` · type: `single`*
 
 Question #: 236 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is building a data pipeline. A large data file is uploaded to an Amazon S3 bucket once each day at unpredictable times. An AWS Glue workflow uses hundreds of workers to process the file and load the data into Amazon Redshift. The company wants to process the file as quickly as possible. Which solution will meet these requirements?
 
@@ -1613,12 +849,16 @@ Question #: 236 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305582-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-236-discussion/
 
 ---
 
-## Q117. [examtopics] #237
-*App id: `LOC-045`*
+## Q45. [examtopics] #237
+*App id: `LOC-045` · type: `single`*
 
 Question #: 237 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to run a data transformation job whenever a user adds a file to an Amazon S3 bucket. The job will run for less than 1 minute. The job must send the output through an email message to the data engineer. The data engineer expects users to add one file every hour of the day. Which solution will meet these requirements in the MOST operationally efficient way?
 
@@ -1628,12 +868,16 @@ Question #: 237 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305583-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-237-discussion/
 
 ---
 
-## Q118. [examtopics] #238
-*App id: `LOC-046`*
+## Q46. [examtopics] #238
+*App id: `LOC-046` · type: `single`*
 
 Question #: 238 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon S3 and AWS Glue Data Catalog to manage a data lake that contains contact information for customers. The company uses PySpark and AWS Glue jobs with a DynamicFrame to run a workflow that processes data within the data lake. A data engineer notices that the workflow is generating errors as a result of how customer postal codes are stored in the data lake. Some postal codes include unnecessary numbers or invalid characters. The data engineer needs a solution to address the errors and correct the postal codes in the data lake.
 
@@ -1643,12 +887,16 @@ Question #: 238 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305584-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-238-discussion/
 
 ---
 
-## Q119. [examtopics] #239
-*App id: `LOC-047`*
+## Q47. [examtopics] #239
+*App id: `LOC-047` · type: `single`*
 
 Question #: 239 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is troubleshooting an AWS Glue workflow that occasionally fails. The engineer determines that the failures are a result of data quality issues. A business reporting team needs to receive an email notification any time the workflow fails in the future. Which solution will meet this requirement?
 
@@ -1658,12 +906,16 @@ Question #: 239 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305585-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-239-discussion/
 
 ---
 
-## Q120. [examtopics] #240
-*App id: `LOC-048`*
+## Q48. [examtopics] #240
+*App id: `LOC-048` · type: `single`*
 
 Question #: 240 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses AWS Glue jobs to implement several data pipelines. The pipelines are critical to the company. The company needs to implement a monitoring mechanism that will alert stakeholders if the pipelines fail. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -1673,27 +925,16 @@ Question #: 240 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305586-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-240-discussion/
 
 ---
 
-## Q121. [examtopics] #241
-*App id: `LOC-370`*
-
-Question #: 241 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses AWS Glue Apache Spark jobs to handle extract, transform, and load (ETL) workloads. The company has enabled logging and monitoring for all AWS Glue jobs. One of the AWS Glue jobs begins to fail. A data engineer investigates the error and wants to examine metrics for all individual stages within the job. How can the data engineer access the stage metrics?
-
-- A. Examine the AWS Glue job and stage details in the Spark UI.
-- B. How can the data engineer access the stage metrics? A. Examine the AWS Glue job and stage details in the Spark UI. B. Examine the AWS Glue job and stage metrics in Amazon CloudWatch.
-- C. Examine the AWS Glue job and stage logs in AWS CloudTrail logs.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/305587-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-241-discussion/
-
----
-
-## Q122. [examtopics] #242
-*App id: `LOC-049`*
+## Q49. [examtopics] #242
+*App id: `LOC-049` · type: `single`*
 
 Question #: 242 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer notices slow query performance on a highly partitioned table that is in Amazon Athena. The table contains daily data for the previous 5 years, partitioned by date. The data engineer wants to improve query performance and to automate partition management. Which solution will meet these requirements?
 
@@ -1703,12 +944,16 @@ Question #: 242 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/305588-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-242-discussion/
 
 ---
 
-## Q123. [examtopics] #249
-*App id: `LOC-050`*
+## Q50. [examtopics] #249
+*App id: `LOC-050` · type: `single`*
 
 Question #: 249 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses an organization in AWS Organizations to manage multiple AWS accounts. The company uses an enhanced fanout data stream in Amazon Kinesis Data Streams to receive streaming data from multiple producers. The company runs the data stream in an account named Account
 
@@ -1718,42 +963,35 @@ Question #: 249 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/315500-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-249-discussion/
 
 ---
 
-## Q124. [examtopics] #250
-*App id: `LOC-371`*
-
-Question #: 250 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to use Amazon Athena to analyze data that is in an Amazon S3 bucket. A data engineer needs to configure AWS Glue table partitions for year, month, and day. The data engineer needs to create the partitions every day to adjust to schema changes in the data. Which solution will meet these requirements?
-
-- A. Which solution will meet these requirements? A. Use AWS Glue DataBrew to create the partitions for the AWS Glue table.
-- B. Use an AWS Lambda function to create the partitions for the AWS Glue table.
-- C. Set partition projection properties for the AWS Glue table.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/315501-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-250-discussion/
-
----
-
-## Q125. [examtopics] #256
-*App id: `LOC-051`*
+## Q51. [examtopics] #256
+*App id: `LOC-051` · type: `multi`*
 
 Question #: 256 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is building a new data pipeline that stores metadata in an Amazon DynamoDB table. The data engineer must ensure that all items that are older than a specified age are removed from the DynamoDB table daily. Which solution will meet this requirement with the LEAST configuration effort?
 
-- **A:** Enable DynamoDB TTL on the DynamoDB table. Adjust the application source code to set the TTL attribute appropriately.
-- **B:** Create an Amazon EventBridge rule that uses a daily cron expression to trigger an AWS Lambda function to delete items that are older than the specified age.
-- **C:** Add a lifecycle configuration to the DynamoDB table that deletes items that are older than the specified age.
+- A. **A:** Enable DynamoDB TTL on the DynamoDB table. Adjust the application source code to set the TTL attribute appropriately.
+- B. **B:** Create an Amazon EventBridge rule that uses a daily cron expression to trigger an AWS Lambda function to delete items that are older than the specified age.
+- C. **C:** Add a lifecycle configuration to the DynamoDB table that deletes items that are older than the specified age.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/315507-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-256-discussion/
 
 ---
 
-## Q126. [examtopics] #266
-*App id: `LOC-052`*
+## Q52. [examtopics] #266
+*App id: `LOC-052` · type: `single`*
 
 Question #: 266 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is developing machine learning (ML) models. A data engineer needs to apply data quality rules to training data. The company stores the training data in an Amazon S3 bucket. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -1763,27 +1001,35 @@ Question #: 266 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/382571-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-266-discussion/
 
 ---
 
-## Q127. [examtopics] #267
-*App id: `LOC-053`*
+## Q53. [examtopics] #267
+*App id: `LOC-053` · type: `multi`*
 
 Question #: 267 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to analyze time-sensitive sales data. The company stores the data in an Amazon S3 bucket. The data engineer uses AWS Glue Data Catalog to access the data. When the data engineer performs the analysis, the data engineer notices that some records are missing or out of date. What is the likely cause of these issues?
 
-- **A:** AWS Glue Data Catalog is not up to date with the latest S3 partition changes.
-- **B:** Incorrect IAM roles are assigned to the AWS Glue jobs.
-- **C:** Versioning is not enabled on the S3 bucket.
+- A. **A:** AWS Glue Data Catalog is not up to date with the latest S3 partition changes.
+- B. **B:** Incorrect IAM roles are assigned to the AWS Glue jobs.
+- C. **C:** Versioning is not enabled on the S3 bucket.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/382572-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-267-discussion/
 
 ---
 
-## Q128. [examtopics] #279
-*App id: `LOC-054`*
+## Q54. [examtopics] #279
+*App id: `LOC-054` · type: `single`*
 
 Question #: 279 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to optimize storage costs for an Amazon S3 bucket. The S3 bucket receives 10 million objects every day. The objects range in size from 2 KB to 5 MB. The objects need to be immediately accessible for the first 60 days. Users access objects infrequently from 61 to 180 days. The objects must be accessible within an hour from 181 to 365 days. The company can delete the objects after 365 days. Which solution will meet these requirements?
 
@@ -1793,12 +1039,16 @@ Question #: 279 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/382564-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-279-discussion/
 
 ---
 
-## Q129. [examtopics] #297
-*App id: `LOC-055`*
+## Q55. [examtopics] #297
+*App id: `LOC-055` · type: `single`*
 
 Question #: 297 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A manufacturing company uses AWS Glue jobs to process IoT sensor data to generate predictive maintenance models. A data engineer needs to implement automated data quality checks to identify temperature readings that are outside the expected range of -50°C to 150°C. The data quality checks must also identify records that are missing timestamp values. The data engineer needs a solution that requires minimal coding and can automatically flag the specified issues. Which solution will meet these requirements?
 
@@ -1808,12 +1058,16 @@ Question #: 297 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/389729-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-297-discussion/
 
 ---
 
-## Q130. [examtopics] #299
-*App id: `LOC-056`*
+## Q56. [examtopics] #299
+*App id: `LOC-056` · type: `single`*
 
 Question #: 299 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company generates yearly financial statements for customers and stores the statements in an Amazon S3 bucket. Customers rarely access the documents after 1 week. The company must retain the statements for 7 years. The statements must remain readily accessible for customers. Which solution will meet these requirements in the MOST cost-effective way?
 
@@ -1823,25 +1077,16 @@ Question #: 299 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401526-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-299-discussion/
 
 ---
 
-## Q131. [examtopics] #300
-*App id: `LOC-372`*
-
-Question #: 300 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company runs an extract, transform, and load (ETL) job in AWS Glue. The job processes personally identifiable information (PII) data and writes logs to an Amazon CloudWatch Logs log group. A data engineer needs to mask PII data in the CloudWatch logs group. Which solution will meet these requirements?
-
-- A. Attach an AWS Glue security configuration to the ETL job.
-- B. B. Configure a data protection policy. Attach the policy to the CloudWatch log group.
-- C. Run an Amazon Macie sensitive data discovery job.
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401527-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-300-discussion/
-
----
-
-## Q132. [examtopics] #301
-*App id: `LOC-057`*
+## Q57. [examtopics] #301
+*App id: `LOC-057` · type: `single`*
 
 Question #: 301 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company creates a new non-production application that runs on an Amazon EC2 instance. The application needs to communicate with an Amazon RDS database instance using Java Database Connectivity (JDBC). The EC2 instances and the RDS database instance are in the same subnet. Which solution will meet this requirement?
 
@@ -1851,12 +1096,16 @@ Question #: 301 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401528-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-301-discussion/
 
 ---
 
-## Q133. [examtopics] #302
-*App id: `LOC-058`*
+## Q58. [examtopics] #302
+*App id: `LOC-058` · type: `single`*
 
 Question #: 302 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A retail company wants to implement real-time analytics for an ecommerce platform. The company needs to collect clickstream data from the company's website and mobile apps. The company needs to store the data for analytics. Which solution will meet these requirements with the LEAST ongoing maintenance?
 
@@ -1866,12 +1115,16 @@ Question #: 302 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401529-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-302-discussion/
 
 ---
 
-## Q134. [examtopics] #303
-*App id: `LOC-059`*
+## Q59. [examtopics] #303
+*App id: `LOC-059` · type: `single`*
 
 Question #: 303 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses AWS Glue ETL pipelines to process data. The company uses Amazon Athena to analyze data in an Amazon S3 bucket. To better understand shipping timelines, the company decides to collect and store shipping and delivery dates in addition to order data. The company adds a data quality check to ensure that shipping date is greater than order date and that delivery date is greater than shipping date. Orders that fail the quality check must be stored in a second S3 bucket. Which solution will meet these requirements MOST cost-effectively?
 
@@ -1881,27 +1134,16 @@ Question #: 303 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401530-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-303-discussion/
 
 ---
 
-## Q135. [examtopics] #304
-*App id: `LOC-373`*
-
-Question #: 304 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is designing a log table for an application that requires continuous ingestion. The application must provide dependable API-based access to specific records from other applications. The application must handle more than 4,000 concurrent write operations and 6,500 read operations every second. Which solution will meet these requirements?
-
-- A. Create an Amazon Redshift table with the KEY distribution style. Use the Amazon Redshift Data API to perform all read and write operations.
-- B. Store the log files in an Amazon S3 Standard bucket. Register the schema in AWS Glue Data Catalog. Create an external Redshift table that points to the AWS Glue schema. Use the table to perform Amazon Redshift Spectrum read operations.
-- C. Create an Amazon Redshift table with the EVEN distribution style. Use the Amazon Redshift Java Database Connectivity (JDBC) connector to establish a database connection. Use the database connection to perform all read and write operations.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401531-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-304-discussion/
-
----
-
-## Q136. [examtopics] #305
-*App id: `LOC-060`*
+## Q60. [examtopics] #305
+*App id: `LOC-060` · type: `single`*
 
 Question #: 305 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to store and analyze a large amount of IoT sensor data. The company needs to retain the data indefinitely. The company analyzes the data in an Amazon Redshift cluster. Which solution will meet these requirements MOST cost-effectively?
 
@@ -1911,12 +1153,16 @@ Question #: 305 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401532-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-305-discussion/
 
 ---
 
-## Q137. [examtopics] #306
-*App id: `LOC-061`*
+## Q61. [examtopics] #306
+*App id: `LOC-061` · type: `single`*
 
 Question #: 306 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an Amazon S3 based data lake. The data lake contains datasets that belong to multiple departments. The data lake ingests millions of customer records each day. A data engineer needs to design an access and storage solution that allows departments to access only the subset of the company's dataset that each department requires. The solution must follow the principle of least privilege. Which solution will meet these requirements with the LEAST operational effort?
 
@@ -1926,12 +1172,16 @@ Question #: 306 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401533-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-306-discussion/
 
 ---
 
-## Q138. [examtopics] #307
-*App id: `LOC-062`*
+## Q62. [examtopics] #307
+*App id: `LOC-062` · type: `single`*
 
 Question #: 307 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A healthcare company stores patient records in an on-premises MySQL database. The company creates an application to access the MySQL database. The company must enforce security protocols to protect the patient records. The company currently rotates database credentials every 30 days to minimize the risk of unauthorized access. The company wants a solution that does require the company to modify the application code for each credential rotation. Which solution will meet this requirement with the LEAST operational overhead?
 
@@ -1941,27 +1191,16 @@ Question #: 307 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401534-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-307-discussion/
 
 ---
 
-## Q139. [examtopics] #308
-*App id: `LOC-374`*
-
-Question #: 308 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A retail company needs to implement a solution to capture data updates from multiple Amazon Aurora MySQL databases. The company needs to make the updates available for analytics in near real time. The solution must be serverless and require minimal maintenance. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Set up AWS Database Migration Service (AWS DMS) tasks that perform schema conversions for each database. Load the changes into Amazon Redshift Serverless.
-- B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) Connect with Debezium connectors to load data into Amazon Redshift Serverless.
-- C. Use AWS Database Migration Service (AWS DMS) to set up binary log replication to Amazon Kinesis Data Streams. Load the data into Amazon Redshift Serverless after schema conversion.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401535-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-308-discussion/
-
----
-
-## Q140. [examtopics] #309
-*App id: `LOC-063`*
+## Q63. [examtopics] #309
+*App id: `LOC-063` · type: `single`*
 
 Question #: 309 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is writing a query to join two tables in Amazon Athena. The data engineer needs to choose the correct join order for the tables to optimize query performance. Which solution will meet these requirements?
 
@@ -1971,28 +1210,34 @@ Question #: 309 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401536-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-309-discussion/
 
 ---
 
-## Q141. [examtopics] #310
-*App id: `LOC-064`*
+## Q64. [examtopics] #310
+*App id: `LOC-064` · type: `multi`*
 
 Question #: 310 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company generates reports from 30 tables in an Amazon Redshift data warehouse. The data source is an operational Amazon Aurora MySQL database that contains 100 tables. Currently, the company refreshes all data from Aurora to Amazon Redshift every hour, which causes delays in report generation. Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)
 
-- **A:** Use AWS Database Migration Service (AWS DMS) to create a replication task. Select only the required tables.
-- **B:** Create a database in Amazon Redshift that uses the integration.
-- **C:** Create a zero-ETL integration in Amazon Aurora. Select only the required tables.
-- **D:** Use query editor v2 in Amazon Redshift to access the data in Aurora.
+- A. **A:** Use AWS Database Migration Service (AWS DMS) to create a replication task. Select only the required tables.
+- B. **B:** Create a database in Amazon Redshift that uses the integration.
+- C. **C:** Create a zero-ETL integration in Amazon Aurora. Select only the required tables.
+- D. **D:** Use query editor v2 in Amazon Redshift to access the data in Aurora.
 
-**Answer:** ABCDE
+**Answer:** ABCD
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401537-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-310-discussion/
 
 ---
 
-## Q142. [examtopics] #311
-*App id: `LOC-065`*
+## Q65. [examtopics] #311
+*App id: `LOC-065` · type: `single`*
 
 Question #: 311 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs a fully automated solution to check for new data in multiple databases and process data that the solution finds. The solution must run every hour. The solution must be compatible with Amazon RDS, Amazon DynamoDB, and Amazon OpenSearch Service. The solution must be able to process up to 10 MB of data at one time. The solution must be optimized for costs and operational overhead. The solution must have robust error handling capabilities. Which solution will meet these requirements?
 
@@ -2002,27 +1247,16 @@ Question #: 311 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401538-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-311-discussion/
 
 ---
 
-## Q143. [examtopics] #312
-*App id: `LOC-375`*
-
-Question #: 312 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses an Amazon Redshift cluster to manage data, including vendor sales data. The company wants to store a copy of the vendor data in an Amazon S3 bucket. A data engineer sets up an AWS Glue job to upload the data to the S3 bucket data on a schedule. The data engineer set up a network connection to allow private traffic between Amazon Redshift and Amazon S3. What is the next step required to meet this requirement?
-
-- A. The company wants to store a copy of the vendor data in an Amazon S3 bucket. A data engineer sets up an AWS Glue job to upload the data to the S3 bucket data on a schedule. The data engineer set up a network connection to allow private traffic between Amazon Redshift and Amazon S3. What is the next step required to meet this requirement? A. Create an IAM role that has permission to write to the S3 bucket. Associate the IAM role with the Amazon Redshift cluster.
-- B. Add the S3 bucket to an AWS Glue Data Catalog. Configure Amazon Redshift Spectrum to access the Data Catalog.
-- C. Enable the Amazon Redshift data sharing feature. Set the S3 bucket as a target bucket for data sharing.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401539-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-312-discussion/
-
----
-
-## Q144. [examtopics] #313
-*App id: `LOC-066`*
+## Q66. [examtopics] #313
+*App id: `LOC-066` · type: `single`*
 
 Question #: 313 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores a 100 MB dataset in an Amazon S3 bucket as an Apache Parquet file. A data engineer needs to profile the data before performing data preparation steps on the data. Which solution will meet this requirement in the MOST operationally efficient way?
 
@@ -2032,12 +1266,16 @@ Question #: 313 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401540-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-313-discussion/
 
 ---
 
-## Q145. [examtopics] #314
-*App id: `LOC-067`*
+## Q67. [examtopics] #314
+*App id: `LOC-067` · type: `single`*
 
 Question #: 314 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to implement real-time analytics for a retail shopping platform. The company wants to capture clickstream data, process the data, and load the data into Amazon Redshift for analysis. The solution must handle hundreds of megabytes of data every second. Which solution will meet these requirements with the LEAST query latency for analytics?
 
@@ -2047,12 +1285,16 @@ Question #: 314 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401541-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-314-discussion/
 
 ---
 
-## Q146. [examtopics] #315
-*App id: `LOC-068`*
+## Q68. [examtopics] #315
+*App id: `LOC-068` · type: `single`*
 
 Question #: 315 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has a data pipeline that processes transaction data in real time. The company needs a notification system that alerts different teams based on the type of processing error without any delay. For security-related errors, the system must immediately notify the security team. For data validation errors, the system must notify the data quality team. For system errors, the system must notify the operations team. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2062,12 +1304,16 @@ Question #: 315 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401542-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-315-discussion/
 
 ---
 
-## Q147. [examtopics] #316
-*App id: `LOC-069`*
+## Q69. [examtopics] #316
+*App id: `LOC-069` · type: `single`*
 
 Question #: 316 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A global ecommerce company processes customer transactions, inventory updates, and user activity logs across multiple AWS services. The company needs a scalable, fully managed, and event-driven orchestration solution to coordinate complex extract, transform, and load (ETL) workflows. The solution must use AWS Glue and Amazon EMR to process data. The data will be stored in Amazon Redshift and Amazon S3. The solution must support dependency management, automated retries, and data pipeline monitoring. Which solution will meet these requirements?
 
@@ -2077,12 +1323,16 @@ Question #: 316 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401543-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-316-discussion/
 
 ---
 
-## Q148. [examtopics] #317
-*App id: `LOC-070`*
+## Q70. [examtopics] #317
+*App id: `LOC-070` · type: `single`*
 
 Question #: 317 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A global company currently uses Amazon Redshift to store data and Amazon Quick Suite (previously known as Amazon QuickSight) to generate reports. A team of business analysts have varying levels of technical expertise. Some analysts lack SQL knowledge. All the analysts need to create new reports frequently. The company wants to use natural program language queries to create dashboards and reports more efficiently. Which solution will meet these requirements with the LEAST operational effort?
 
@@ -2092,27 +1342,16 @@ Question #: 317 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401544-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-317-discussion/
 
 ---
 
-## Q149. [examtopics] #318
-*App id: `LOC-376`*
-
-Question #: 318 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is setting up a new Amazon SageMaker Unified Studio domain. Each of the company's business units needs isolated control over its own assets, projects, and metadata. Specific datasets must be shareable with other business units upon approval. The company also requires centralized user authentication and identity mapping. Which solution will meet these requirements?
-
-- A. Specific datasets must be shareable with other business units upon approval. The company also requires centralized user authentication and identity mapping. Which solution will meet these requirements? A. Configure each business unit as a domain unit with delegated ownership and fine-grained permissions policies. Give users the ability to share assets across domain units with explicit access control. Assign API keys to users for authentication to access the domain portal.
-- B. Configure business units as separate domain units with owner permissions. Restrict projects exclusively to owners to prevent data sharing between domains. Configure AWS IAM Identity Center for centralized authentication. Map user profiles to their respective domain units.
-- C. Configure business units to be represented as separate domains. Establish isolated environments with no shared administrative policies. Configure AWS IAM Identity Center for centralized authentication. Delegate administration at the domain level.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401545-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-318-discussion/
-
----
-
-## Q150. [examtopics] #319
-*App id: `LOC-071`*
+## Q71. [examtopics] #319
+*App id: `LOC-071` · type: `single`*
 
 Question #: 319 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer at a large company needs to create centralized datasets that are optimized for Amazon Redshift performance. The company has multiple downstream teams that use their own AWS accounts and dedicated Amazon Redshift clusters with RA3 nodes. All downstream teams need access to the centralized datasets. Which solution will provide immediate access to the datasets and maintain the current Amazon Redshift performance?
 
@@ -2122,12 +1361,16 @@ Question #: 319 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401546-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-319-discussion/
 
 ---
 
-## Q151. [examtopics] #320
-*App id: `LOC-072`*
+## Q72. [examtopics] #320
+*App id: `LOC-072` · type: `single`*
 
 Question #: 320 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A global finance company needs to implement near real-time cross-Region synchronization of trading data between trading centers in the us-east-1 Region, the eu-west-2 Region, and the ap-northeast-1 Region. The company must ensure that data is encrypted in transit. The solution must ensure data ordering and consistency and must support cross-Region disaster recovery. The solution must provide data latency of less than 500 milliseconds. Which solution will meet these requirements with the LEAST operational effort?
 
@@ -2137,12 +1380,16 @@ Question #: 320 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401547-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-320-discussion/
 
 ---
 
-## Q152. [examtopics] #321
-*App id: `LOC-073`*
+## Q73. [examtopics] #321
+*App id: `LOC-073` · type: `single`*
 
 Question #: 321 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company’s application needs to search and analyze data in near real time. The application must handle up to 1,000 requests each second with low query latency. The company wants a solution that individual data teams can own and configure to meet each team's cost and performance optimization requirements. Which solution will meet these requirements?
 
@@ -2152,24 +1399,16 @@ Question #: 321 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401548-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-321-discussion/
 
 ---
 
-## Q153. [examtopics] #322
-*App id: `LOC-377`*
-
-Question #: 322 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon Redshift for its data warehouse. A data engineer must query a table named orders.complete_orders_history, which contains 100 columns. The query must return all columns except columns named companyId and unique_system_id. Which Amazon Redshift SQL statement will meet this requirement?
-
-
-**Answer:** A
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401549-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-322-discussion/
-
----
-
-## Q154. [examtopics] #323
-*App id: `LOC-074`*
+## Q74. [examtopics] #323
+*App id: `LOC-074` · type: `single`*
 
 Question #: 323 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores sensitive transaction data in an Amazon S3 bucket. A data engineer must implement controls to prevent accidental deletions. Which solution will meet this requirement?
 
@@ -2179,12 +1418,16 @@ Question #: 323 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401550-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-323-discussion/
 
 ---
 
-## Q155. [examtopics] #324
-*App id: `LOC-075`*
+## Q75. [examtopics] #324
+*App id: `LOC-075` · type: `single`*
 
 Question #: 324 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores historical customer data in an Amazon Redshift table. A column named Email contains null entries and values that are not email addresses. The quality of the Email column is critical for multiple downstream processes. A data engineer must create an AWS Glue Data Quality rule that fails when the percentage of valid email addresses in the Email column is less than 90%. Which component of an AWS Glue Data Quality rule will meet these requirements?
 
@@ -2194,12 +1437,16 @@ Question #: 324 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401551-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-324-discussion/
 
 ---
 
-## Q156. [examtopics] #325
-*App id: `LOC-076`*
+## Q76. [examtopics] #325
+*App id: `LOC-076` · type: `single`*
 
 Question #: 325 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is building data processing pipelines by using AWS Glue. The pipelines access data stored in Amazon S3. The company has organized the data into folders with prefixes that represent different classification levels. The company needs to restrict AWS Glue jobs to access only specific prefixes based on the data classification. The company must also restrict access to business hours (9 AM to 5 PM). Which elements must the company include in a custom IAM policy to meet these requirements?
 
@@ -2209,27 +1456,16 @@ Question #: 325 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401552-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-325-discussion/
 
 ---
 
-## Q157. [examtopics] #326
-*App id: `LOC-378`*
-
-Question #: 326 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to collect logs for an Amazon RDS for MySQL database and make the logs available for audits. The logs must track each user that modifies data in the database or makes changes to the database instance. Which solution will meet these requirements?
-
-- A. Enable Amazon CloudWatch Logs. Create metric filters to monitor database changes and instance-level changes. Configure automated notification systems to send near real-time alerts for suspicious database operations.
-- B. Configure an Amazon EventBridge rule to monitor database activity. Create an AWS Lambda function to process EventBridge events and store them in Amazon OpenSearch Service.
-- C. Configure AWS CloudTrail to log API calls. Use Amazon CloudWatch Logs for basic monitoring. Use IAM policies to control access to the logs. Set up scheduled reporting for log audits.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401553-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-326-discussion/
-
----
-
-## Q158. [examtopics] #327
-*App id: `LOC-077`*
+## Q77. [examtopics] #327
+*App id: `LOC-077` · type: `single`*
 
 Question #: 327 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company processes a CSV file that contains millions of transaction records every day. The file is stored in Amazon S3. Each transaction must be validated before updating a database. The company needs a solution that will process the data in parallel. The solution must use error handling that stops the entire process if more than 15% of the records fail validation. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2239,27 +1475,16 @@ Question #: 327 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401554-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-327-discussion/
 
 ---
 
-## Q159. [examtopics] #328
-*App id: `LOC-379`*
-
-Question #: 328 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to generate a one-time performance report by joining data that is stored in Amazon DynamoDB. Amazon RDS. Amazon Redshift. and Amazon S3. The company wants to avoid unnecessary data movement and to minimize query execution time. Which solution will meet these requirements?
-
-- A. Capture data from DynamoDB by using DynamoDB Streams. Migrate data from Amazon RDS by using AWS DMS. Export Amazon Redshift data. Store all data in Amazon S3. Use Redshift Spectrum to run queries.
-- B. Amazon RDS. Amazon Redshift. and Amazon S3. The company wants to avoid unnecessary data movement and to minimize query execution time. Which solution will meet these requirements? A. Capture data from DynamoDB by using DynamoDB Streams. Migrate data from Amazon RDS by using AWS DMS. Export Amazon Redshift data. Store all data in Amazon S3. Use Redshift Spectrum to run queries. B. Set up an AWS Glue ETL pipeline to extract, transform, and centralize data in Amazon S3. Use Amazon Athena to run analytical queries.
-- C. Deploy an Amazon EMR cluster powered by Apache Spark to ingest, process, and merge datasets from multiple sources. Run analytical workloads on the merged data.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401555-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-328-discussion/
-
----
-
-## Q160. [examtopics] #329
-*App id: `LOC-078`*
+## Q78. [examtopics] #329
+*App id: `LOC-078` · type: `multi`*
 
 Question #: 329 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is building a serverless. multi-step extract, transform, and load (ETL) pipeline. The pipeline extracts data from an Amazon S3 data lake and transforms the data by using AWS Glue ETL jobs. The pipeline then loads the results into an Amazon Redshift database. The data engineer needs to orchestrate the serverless ETL workflow. Which solutions will meet these requirements? (Choose two.)
 
@@ -2270,12 +1495,14 @@ Question #: 329 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401556-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-329-discussion/
 
 ---
 
-## Q161. [examtopics] #330
-*App id: `LOC-079`*
+## Q79. [examtopics] #330
+*App id: `LOC-079` · type: `single`*
 
 Question #: 330 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A media company uploads large video files to Amazon S3 for processing. After processing, the company needs to keep the original files for 90 days in case the files require reprocessing. After 90 days, the company can delete the files to reduce storage costs. The company stores the processed videos in a different S3 bucket. Which S3 Lifecycle configuration will meet these requirements for the original files MOST cost-effectively?
 
@@ -2285,12 +1512,16 @@ Question #: 330 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401557-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-330-discussion/
 
 ---
 
-## Q162. [examtopics] #331
-*App id: `LOC-080`*
+## Q80. [examtopics] #331
+*App id: `LOC-080` · type: `single`*
 
 Question #: 331 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A university is developing an educational application that analyzes student essays. The application provides personalized feedback with accurate citations to the university's textbooks. The application needs to process essays in multiple languages. Application responses must include direct references to specific sections in the course materials and must be in the student’s selected language. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2300,12 +1531,16 @@ Question #: 331 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401558-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-331-discussion/
 
 ---
 
-## Q163. [examtopics] #332
-*App id: `LOC-081`*
+## Q81. [examtopics] #332
+*App id: `LOC-081` · type: `single`*
 
 Question #: 332 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs a solution that restricts access to Amazon S3 data and encrypts the data by using AWS managed keys. The solution must manage database credentials that an AWS Lambda function uses and must rotate the credentials automatically. Which solution will meet these requirements?
 
@@ -2315,115 +1550,111 @@ Question #: 332 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401559-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-332-discussion/
 
 ---
 
-## Q164. [examtopics] #333
-*App id: `LOC-380`*
-
-Question #: 333 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to store semi-structured transactional data for an application in a database. The database must be serverless. The application writes the data infrequently, but it reads the data frequently. The application must retrieve the data within milliseconds. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Store the data in an Amazon S3 Standard bucket. Enable S3 Transfer Acceleration.
-- B. Store the data in an Amazon S3 Apache Iceberg table. Enable S3 Transfer Acceleration.
-- C. Store the data in an Amazon RDS for MySQL cluster. Configure RDS Optimized Reads for the cluster.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401560-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-333-discussion/
-
----
-
-## Q165. [examtopics] #334
-*App id: `LOC-381`*
-
-Question #: 334 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company runs concurrent analytical queries on Amazon Redshift tables multiple times each day. The queries require consistent data views three times each day. The company runs extract, transform, and load (ETL) operations that update dimension tables while the queries run. The company has noticed that the queries cause table-level locks during the ETL operations. The company’s current solution experiences query timeouts and deadlocks during peak processing hours, which affects analytical reporting and on-demand analysis. Which solution will fix this issue?
-
-- A. Use Amazon Redshift materialized views for analytical queries. Schedule ETL operations during off-peak hours to minimize lock contention.
-- B. Configure Amazon Redshift federated queries to access source data directly. Use read replicas to isolate analytical workloads from ETL operations.
-- C. Use Amazon Redshift Spectrum to query data in Amazon S3 for analytical workloads. Maintain ETL operations on Amazon Redshift tables with transaction isolation.
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/401561-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-334-discussion/
-
----
-
-## Q166. [examtopics] #335
-*App id: `LOC-082`*
+## Q82. [examtopics] #335
+*App id: `LOC-082` · type: `multi`*
 
 Question #: 335 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company aggregates high-frequency sensor telemetry into an Amazon S3 data lake. Each sensor stream emits structured records every hour. The records include metadata such as sensor category, unit ID, operational state, event timestamp, and site location. The data scales up to millions of records each day. The company runs complex queries each day to uncover performance insights specific to sensor categories. Which solution will meet these requirements with the FASTEST query execution time?
 
-- **A:** Persist the data in Apache ORC format. Partition the data by date. Sort the data by sensor category.
-- **B:** Persist the data in CSV format. Partition the data by date. Sort the data by operational status.
-- **C:** Persist the data in Parquet format. Partition the data by sensor category. Sort the data by date
+- A. **A:** Persist the data in Apache ORC format. Partition the data by date. Sort the data by sensor category.
+- B. **B:** Persist the data in CSV format. Partition the data by date. Sort the data by operational status.
+- C. **C:** Persist the data in Parquet format. Partition the data by sensor category. Sort the data by date
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401562-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-335-discussion/
 
 ---
 
-## Q167. [examtopics] #336
-*App id: `LOC-083`*
+## Q83. [examtopics] #336
+*App id: `LOC-083` · type: `multi`*
 
 Question #: 336 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon Redshift to store order transactions from the current day. The company has an orders table that contains the previous order data. The company also has a staging table that contains new or updated order records. The company needs to remove stale records from the orders table and insert the most recent data in the orders table from the staging table. Several downstream applications need the orders table to display up-to-date information. Which solution will meet these requirements?
 
-- **A:** Use Amazon Redshift Spectrum to delete stale records from the orders table and insert records from the staging table into the orders table.
-- **B:** Unload the orders table and the staging table to Amazon S3. Delete stale orders table data and insert new staging table data in Amazon S3 by using Amazon Athena. Copy the orders S3 table to the orders Amazon Redshift table.
-- **C:** Use Amazon Athena federated queries to read stale records from the orders table. Delete the stale records and insert the records from the staging table into the orders table.
+- A. **A:** Use Amazon Redshift Spectrum to delete stale records from the orders table and insert records from the staging table into the orders table.
+- B. **B:** Unload the orders table and the staging table to Amazon S3. Delete stale orders table data and insert new staging table data in Amazon S3 by using Amazon Athena. Copy the orders S3 table to the orders Amazon Redshift table.
+- C. **C:** Use Amazon Athena federated queries to read stale records from the orders table. Delete the stale records and insert the records from the staging table into the orders table.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401563-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-336-discussion/
 
 ---
 
-## Q168. [examtopics] #337
-*App id: `LOC-084`*
+## Q84. [examtopics] #337
+*App id: `LOC-084` · type: `multi`*
 
 Question #: 337 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is developing a log streaming pipeline that uses Amazon Data Firehose. The pipeline streams Amazon CloudWatch Logs data to an Amazon S3 bucket. The company's analytics team needs to use the data in audits. The pipeline must deliver only the relevant logs to the S3 bucket in a compatible format for the team's analysis. Which solution will meet these requirements and maintain reliable performance?
 
-- **A:** Set the S3 bucket rules to allow logs from only specific timestamp ranges. Create an AWS Lambda function that converts the log files to the desired format. Use an S3 trigger to invoke the Lambda function.
-- **B:** Create a subscription filter in the CloudWatch Logs log group that uses the Firehose delivery stream as the destination. Create an AWS Lambda function that converts the log files to the desired format. Configure Firehose to invoke the Lambda function.
-- **C:** Create a subscription filter in the CloudWatch Logs log group. Configure the filter to monitor the Firehose stream. Create an AWS Lambda function to convert the log files to the desired format. Configure Firehose to invoke the Lambda function.
+- A. **A:** Set the S3 bucket rules to allow logs from only specific timestamp ranges. Create an AWS Lambda function that converts the log files to the desired format. Use an S3 trigger to invoke the Lambda function.
+- B. **B:** Create a subscription filter in the CloudWatch Logs log group that uses the Firehose delivery stream as the destination. Create an AWS Lambda function that converts the log files to the desired format. Configure Firehose to invoke the Lambda function.
+- C. **C:** Create a subscription filter in the CloudWatch Logs log group. Configure the filter to monitor the Firehose stream. Create an AWS Lambda function to convert the log files to the desired format. Configure Firehose to invoke the Lambda function.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401564-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-337-discussion/
 
 ---
 
-## Q169. [examtopics] #338
-*App id: `LOC-085`*
+## Q85. [examtopics] #338
+*App id: `LOC-085` · type: `multi`*
 
 Question #: 338 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A media company wants to build a real-time analytics pipeline to process customer activity events across the company's website and mobile app. The company wants to build a solution to ingest millions of events with minimum latency. The solution must be scalable and durable enough so that no data is lost. Which solution will meet these requirements in the MOST cost-effective way?
 
-- **A:** Set up an Amazon Kinesis Data Streams pipeline to ingest data, process the data by using AWS Lambda functions, and store the results in Amazon Redshift for analytics.
-- **B:** Schedule an AWS Glue job to fetch user interaction logs every 10 minutes from Amazon S3. Configure the AWS Glue job to transform and store the data in Amazon Redshift for analytics.
-- **C:** Configure Amazon S3 Event Notifications to invoke an AWS Lambda function to process every new interaction log file. Store the result in Amazon Redshift for analytics.
+- A. **A:** Set up an Amazon Kinesis Data Streams pipeline to ingest data, process the data by using AWS Lambda functions, and store the results in Amazon Redshift for analytics.
+- B. **B:** Schedule an AWS Glue job to fetch user interaction logs every 10 minutes from Amazon S3. Configure the AWS Glue job to transform and store the data in Amazon Redshift for analytics.
+- C. **C:** Configure Amazon S3 Event Notifications to invoke an AWS Lambda function to process every new interaction log file. Store the result in Amazon Redshift for analytics.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401565-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-338-discussion/
 
 ---
 
-## Q170. [examtopics] #339
-*App id: `LOC-086`*
+## Q86. [examtopics] #339
+*App id: `LOC-086` · type: `multi`*
 
 Question #: 339 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores a large dataset in an Amazon S3 bucket. A data engineer frequently runs complex queries on the dataset by using Amazon Athena. The data engineer needs to optimize query performance and optimize costs for queries that are run multiple times with the same parameters. Which solution will meet these requirements?
 
-- **A:** Convert the dataset to JSON format before running Athena queries.
-- **B:** Use Amazon EMR to pre-process the data before running Athena queries.
-- **C:** Configure query result reuse settings in the Athena workgroup.
+- A. **A:** Convert the dataset to JSON format before running Athena queries.
+- B. **B:** Use Amazon EMR to pre-process the data before running Athena queries.
+- C. **C:** Configure query result reuse settings in the Athena workgroup.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401566-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-339-discussion/
 
 ---
 
-## Q171. [examtopics] #340
-*App id: `LOC-087`*
+## Q87. [examtopics] #340
+*App id: `LOC-087` · type: `single`*
 
 Question #: 340 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores raw clickstream data in an Amazon S3 bucket. The company needs a solution to process the data every day by using complex PySpark transformations that rely on custom internal libraries. After the data is transformed, the company must store the data in Amazon Redshift for analytics. The solution must be highly scalable to handle large data workloads. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2433,12 +1664,16 @@ Question #: 340 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401567-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-340-discussion/
 
 ---
 
-## Q172. [examtopics] #341
-*App id: `LOC-088`*
+## Q88. [examtopics] #341
+*App id: `LOC-088` · type: `single`*
 
 Question #: 341 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] An application uses an AWS Lambda function that is configured with managed runtimes. The Lambda function successfully writes logs to the default Amazon CloudWatch Logs log group. A data engineer wants to modify the logging behavior to show only ERROR level logs for application logs and WARN level logs for system logs. Which solution will meet these requirements?
 
@@ -2448,12 +1683,16 @@ Question #: 341 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/401568-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-341-discussion/
 
 ---
 
-## Q173. [examtopics] #342
-*App id: `LOC-089`*
+## Q89. [examtopics] #342
+*App id: `LOC-089` · type: `single`*
 
 Question #: 342 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses AWS Step Functions to orchestrate a data pipeline. The company has configured the Step Functions logs to push to Amazon CloudWatch Logs when the log level is FATAL The company has enabled logs for all AWS services in the pipeline. A state named "preprocessing" invokes an AWS Lambda function named "preprocessing." The Lambda function preprocesses data before proceeding to the next state. The company needs to find error details if an error occurs during the data preprocessing. Which CloudWatch Logs log group should the company check to find the error details?
 
@@ -2463,68 +1702,54 @@ Question #: 342 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406573-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-342-discussion/
 
 ---
 
-## Q174. [examtopics] #343
-*App id: `LOC-382`*
-
-Question #: 343 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A research company stores data in an Amazon Redshift cluster. The company needs to share data between departments and maintain regulatory compliance. The company needs a solution that gives researchers access to only the records from their own departments and does not create multiple dataset copies. The solution must also ensure that personally identifiable information (PII) is protected from unauthorized access. Which solution will meet these requirements?
-
-- A. Create a datashare in Amazon Redshift for each department. Use cross-Region data sharing to distribute copies of the entire dataset to each department's Amazon Redshift cluster.
-- B. Implement row-level security policies with basic SQL filters based on department. Attach the security policies to the data tables. Grant EXPLAIN RLS permission to authorized researchers.
-- C. Create separate schemas for each department with appropriate views that filter data. Grant each department access to only their respective schema.
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/406574-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-343-discussion/
-
----
-
-## Q175. [examtopics] #344
-*App id: `LOC-383`*
-
-Question #: 344 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores analysis results for thousands of daily customer service call transcripts in an Amazon DynamoDB table. An application generates business reports by using only the previous 7 working days of data. To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead?
-
-- A. To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead? A. Enable TTL on the DynamoDB table. Add an expiration timestamp attribute to each item in the table.
-- B. Use Amazon EventBridge to invoke an AWS Lambda function on a schedule to delete old records every day.
-- C. Create a new DynamoDB table. Enable TTL on the new table. Migrate the data to the new table. Update the application to use the new table.
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/406575-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-344-discussion/
-
----
-
-## Q176. [examtopics] #345
-*App id: `LOC-090`*
+## Q90. [examtopics] #345
+*App id: `LOC-090` · type: `multi`*
 
 Question #: 345 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to design a data pipeline that invokes an AWS Glue job. After the AWS Glue job finishes successfully, the pipeline needs to invoke three AWS Lambda functions. The pipeline must be serverless. The data engineer wants to see the entire pipeline lineage in a single interface. Which solution will meet these requirements?
 
-- **A:** Configure a workflow in AWS Step Functions that invokes the AWS Glue job and the Lambda functions. View the lineage in Step Functions Workflow Studio.
-- **B:** Deploy an Apache Airflow workflow that invokes the AWS Glue job and the Lambda functions. View the lineage in the Airflow UI.
-- **C:** Build the pipeline in the AWS Glue job. Invoke the Lambda functions after the AWS Glue job runs. Use Amazon CloudWatch Logs Insights to view the lineage.
+- A. **A:** Configure a workflow in AWS Step Functions that invokes the AWS Glue job and the Lambda functions. View the lineage in Step Functions Workflow Studio.
+- B. **B:** Deploy an Apache Airflow workflow that invokes the AWS Glue job and the Lambda functions. View the lineage in the Airflow UI.
+- C. **C:** Build the pipeline in the AWS Glue job. Invoke the Lambda functions after the AWS Glue job runs. Use Amazon CloudWatch Logs Insights to view the lineage.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/406576-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-345-discussion/
 
 ---
 
-## Q177. [examtopics] #346
-*App id: `LOC-091`*
+## Q91. [examtopics] #346
+*App id: `LOC-091` · type: `multi`*
 
 Question #: 346 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A manufacturing company is setting up an IoT monitoring system that generates large, complex data streams. The company wants to store the data in an Amazon S3 data lake for real-time and historical analysis. The company needs a solution that can process data quickly, provide short query times, and use resources efficiently without slowing down data ingestion. The solution must use a Spark streaming extract, transform, and load (ETL) job on Amazon EMR that is configured to write data to an Iceberg table. Which solution will meet these requirements?
 
-- **A:** Use Amazon Kinesis Data Streams to ingest the data. Configure the Iceberg table with copy on write (CoW) mode. Enable the AWS Glue Data Catalog compaction optimizer.
-- **B:** Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to ingest the data. Configure the Iceberg table with copy on write (CoW) mode. Schedule an AWS Glue job for compaction to optimize the Iceberg table.
-- **C:** Use Amazon Kinesis Data Streams to ingest the data. Configure the Iceberg table with merge on read (MoR) mode. Enable the AWS Glue Data Catalog compaction optimizer.
+- A. **A:** Use Amazon Kinesis Data Streams to ingest the data. Configure the Iceberg table with copy on write (CoW) mode. Enable the AWS Glue Data Catalog compaction optimizer.
+- B. **B:** Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to ingest the data. Configure the Iceberg table with copy on write (CoW) mode. Schedule an AWS Glue job for compaction to optimize the Iceberg table.
+- C. **C:** Use Amazon Kinesis Data Streams to ingest the data. Configure the Iceberg table with merge on read (MoR) mode. Enable the AWS Glue Data Catalog compaction optimizer.
 
-**Answer:** ABCD
+**Answer:** ABC
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: ABCD. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/406577-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-346-discussion/
 
 ---
 
-## Q178. [examtopics] #347
-*App id: `LOC-092`*
+## Q92. [examtopics] #347
+*App id: `LOC-092` · type: `single`*
 
 Question #: 347 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A media streaming company is moving its application to AWS. The company wants to avoid data quality issues in user engagement analytics. The company needs to be able to reprocess several days of historical data without duplicates and without interrupting current real-time processing. Which solution will meet these requirements?
 
@@ -2534,27 +1759,16 @@ Question #: 347 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406578-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-347-discussion/
 
 ---
 
-## Q179. [examtopics] #348
-*App id: `LOC-384`*
-
-Question #: 348 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A global ecommerce company occasionally receives customer data files in its Amazon S3 data lake. The company needs to automatically detect new data and mask sensitive data before making the data available to the company's analytics team. Which solution will meet these requirements with the LEAST operational overhead?
-
-- A. Configure Amazon S3 Event Notifications to detect the new data and trigger an AWS Glue job. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift.
-- B. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift. B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to detect incoming data. Use Amazon EMR workflows to detect and mask sensitive data. Store the processed data in Amazon S3.
-- C. Use Amazon Kinesis Data Streams to capture new data. Use Amazon Comprehend to detect and mask the sensitive data. Store the processed data in Amazon DynamoDB tables.
-
-**Answer:** D
-
-Source URL: https://www.examtopics.com/discussions/amazon/view/406579-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-348-discussion/
-
----
-
-## Q180. [examtopics] #349
-*App id: `LOC-093`*
+## Q93. [examtopics] #349
+*App id: `LOC-093` · type: `single`*
 
 Question #: 349 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon SageMaker AI for its machine learning (ML) workflows. The company is organized into several project groups that use sensitive data. The company needs to give the project groups the ability to discover available datasets across different AWS accounts. The solution must maintain access controls and track all data access for compliance purposes. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2564,12 +1778,16 @@ Question #: 349 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406580-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-349-discussion/
 
 ---
 
-## Q181. [examtopics] #350
-*App id: `LOC-094`*
+## Q94. [examtopics] #350
+*App id: `LOC-094` · type: `single`*
 
 Question #: 350 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an application that is deployed on AWS. The application uses Amazon Simple Notification Service (Amazon SNS) with multiple topics. The company's security team needs to be able to audit all Publish and PublishBatch API actions for all the SNS topics. The company's application team and security team must also be able to query the audit data. The company has already established an event data store in AWS CloudTrail Lake to collect all events. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2579,12 +1797,16 @@ Question #: 350 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406581-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-350-discussion/
 
 ---
 
-## Q182. [examtopics] #351
-*App id: `LOC-095`*
+## Q95. [examtopics] #351
+*App id: `LOC-095` · type: `single`*
 
 Question #: 351 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to validate the quality of files that are uploaded to an Amazon S3 bucket every day. The files are in CSV and JSON formats and schema variations exist. The data engineer needs a repeatable process to monitor data quality metrics such as null values, format inconsistencies, and outliers. The process must provide reusable rule-based profiling and scale across multiple datasets with minimal manual effort or custom code. Which solution will meet these requirements?
 
@@ -2594,12 +1816,16 @@ Question #: 351 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406582-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-351-discussion/
 
 ---
 
-## Q183. [examtopics] #352
-*App id: `LOC-096`*
+## Q96. [examtopics] #352
+*App id: `LOC-096` · type: `single`*
 
 Question #: 352 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs a solution to process streaming data by using Apache Spark in a Kubernetes environment. The solution must support event-driven scaling and optimize resource utilization. The company needs to integrate the solution with existing Kubernetes infrastructure deployed on Amazon Elastic Kubernetes Service (Amazon EKS). Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2609,12 +1835,16 @@ Question #: 352 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406583-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-352-discussion/
 
 ---
 
-## Q184. [examtopics] #353
-*App id: `LOC-097`*
+## Q97. [examtopics] #353
+*App id: `LOC-097` · type: `single`*
 
 Question #: 353 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A legal company is building a data pipeline to power an application that will handle peak traffic during business hours. The application will provide information about relevant laws and available lawyers. The legal document database will be updated one time each day. The application must display up-to-date lawyer availability from a calendar database and provide complex full-text search of legal documents. The company wants to use AWS Glue for extract, transform, and load (ETL) processes. Lawyer availability information must be current within 5 minutes of any schedule changes. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2624,12 +1854,16 @@ Question #: 353 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406584-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-353-discussion/
 
 ---
 
-## Q185. [examtopics] #354
-*App id: `LOC-098`*
+## Q98. [examtopics] #354
+*App id: `LOC-098` · type: `single`*
 
 Question #: 354 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer needs to deploy a serverless data pipeline. In the pipeline, CSV files are uploaded to an Amazon S3 bucket, which invokes an AWS Lambda function. The Lambda function transforms the CSV files to JSON format and stores the results in a second S3 bucket. The data engineer has created an AWS Serverless Application Model (AWS SAM) template that includes the Lambda function. The data engineer wants to use AWS SAM for the pipeline deployment. Which solution will package and deploy this serverless data pipeline?
 
@@ -2639,12 +1873,16 @@ Question #: 354 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406489-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-354-discussion/
 
 ---
 
-## Q186. [examtopics] #355
-*App id: `LOC-099`*
+## Q99. [examtopics] #355
+*App id: `LOC-099` · type: `single`*
 
 Question #: 355 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores objects in an Amazon S3 bucket. The company crawls the objects so that Amazon Athena can query the data. A data engineer manually moved all objects from the partition with a path prefix of status=01 to the prefix status=02. The status=01 partition location is now empty. However, the status=01 partition location still appears in the AWS Glue Data Catalog metadata. Which Athena command should the data engineer run to resolve the metadata discrepancy?
 
@@ -2654,12 +1892,16 @@ Question #: 355 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/406490-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-355-discussion/
 
 ---
 
-## Q187. [examtopics] #358
-*App id: `LOC-100`*
+## Q100. [examtopics] #358
+*App id: `LOC-100` · type: `single`*
 
 Question #: 358 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineering team needs to deploy an AWS CloudFormation template for its data pipeline across development, testing, and production AWS accounts. The team requires a solution that automatically updates deployments when changes are committed to the team’s Git repository. The solution must also provide centralized management across all accounts. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2669,12 +1911,16 @@ Question #: 358 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/417368-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-358-discussion/
 
 ---
 
-## Q188. [examtopics] #362
-*App id: `LOC-101`*
+## Q101. [examtopics] #362
+*App id: `LOC-101` · type: `single`*
 
 Question #: 362 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has text files that are stored in an Amazon S3 bucket. The structure of the files can change over time as the company adds new columns to the files. The company wants to give users the ability to query the data by using Amazon Athena and Amazon Quick Suite (previously known as Amazon QuickSight). The company wants to use predefined column names for the data in the text files. Which solution will meet these requirements with the LEAST operational overhead?
 
@@ -2684,12 +1930,16 @@ Question #: 362 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/417381-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-362-discussion/
 
 ---
 
-## Q189. [github_examtopics_cache]
-*App id: `LOC-102`*
+## Q102. [github_examtopics_cache]
+*App id: `LOC-102` · type: `single`*
 
 A banking company uses an application to collect large volumes of transactional data. The company uses Amazon Kinesis Data Streams for real-time analytics. The company’s application uses the PutRecord action to send data to Kinesis Data Streams.
 
@@ -2704,12 +1954,16 @@ Which solution will meet this requirement?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143062-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q190. [github_examtopics_cache]
-*App id: `LOC-103`*
+## Q103. [github_examtopics_cache]
+*App id: `LOC-103` · type: `single`*
 
 A car sales company maintains data about cars that are listed for sale in an area. The company receives data about new car listings from vendors who upload the data daily as compressed files into Amazon S3. The compressed files are up to 5 KB in size. The company wants to see the most up-to-date listings as soon as the data is uploaded to Amazon S3.
 
@@ -2724,12 +1978,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151942-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q191. [github_examtopics_cache]
-*App id: `LOC-104`*
+## Q104. [github_examtopics_cache]
+*App id: `LOC-104` · type: `single`*
 
 A company analyzes data in a data lake every quarter to perform inventory assessments. A data engineer uses AWS Glue DataBrew to detect any personally identifiable formation (PII) about customers within the data. The company's privacy policy considers some custom categories of information to be PII. However, the categories are not included in standard DataBrew data quality rules.
 
@@ -2744,12 +2002,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151939-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q192. [github_examtopics_cache]
-*App id: `LOC-105`*
+## Q105. [github_examtopics_cache]
+*App id: `LOC-105` · type: `single`*
 
 A company currently stores all of its data in Amazon S3 by using the S3 Standard storage class.
 A data engineer examined data access patterns to identify trends. During the first 6 months, most data files are accessed several times each day. Between 6 months and 2 years, most data files are accessed once or twice each month. After 2 years, data files are accessed only once or twice each year.
@@ -2763,12 +2025,16 @@ Which solution will meet these requirements in the MOST cost-effective way?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132654-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q193. [github_examtopics_cache]
-*App id: `LOC-106`*
+## Q106. [github_examtopics_cache]
+*App id: `LOC-106` · type: `single`*
 
 A company currently uses a provisioned Amazon EMR cluster that includes general purpose Amazon EC2 instances. The EMR cluster uses EMR managed scaling between one to five task nodes for the company’s long-running Apache Spark extract, transform, and load (ETL) job. The company runs the ETL job every day.
 
@@ -2785,12 +2051,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145106-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q194. [github_examtopics_cache]
-*App id: `LOC-107`*
+## Q107. [github_examtopics_cache]
+*App id: `LOC-107` · type: `single`*
 
 A company extracts approximately 1 TB of data every day from data sources such as SAP HANA, Microsoft SQL Server, MongoDB, Apache Kafka, and Amazon DynamoDB. Some of the data sources have undefined data schemas or data schemas that change.
 A data engineer must implement a solution that can detect the schema for these data sources. The solution must extract, transform, and load the data to an Amazon S3 bucket. The company has a service level agreement (SLA) to load the data into the S3 bucket within 15 minutes of data creation.
@@ -2803,12 +2073,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132706-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q195. [github_examtopics_cache]
-*App id: `LOC-108`*
+## Q108. [github_examtopics_cache]
+*App id: `LOC-108` · type: `single`*
 
 A company has AWS resources in multiple AWS Regions. The company has an Amazon EFS file system in each Region where the company operates. The company’s data science team operates within only a single Region. The data that the data science team works with must remain within the team's Region.
 
@@ -2823,12 +2097,16 @@ Which solution will meet these requirements with the LEAST effort?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/152459-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q196. [github_examtopics_cache]
-*App id: `LOC-109`*
+## Q109. [github_examtopics_cache]
+*App id: `LOC-109` · type: `single`*
 
 A company has a business intelligence platform on AWS. The company uses an AWS Storage Gateway Amazon S3 File Gateway to transfer files from the company's on-premises environment to an Amazon S3 bucket.
 
@@ -2843,12 +2121,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142560-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q197. [github_examtopics_cache]
-*App id: `LOC-110`*
+## Q110. [github_examtopics_cache]
+*App id: `LOC-110` · type: `single`*
 
 A company has a data lake in Amazon S3. The company uses AWS Glue to catalog data and AWS Glue Studio to implement data extract, transform, and load (ETL) pipelines.
 
@@ -2863,12 +2145,16 @@ Which solution will meet these requirements with the LEAST implementation effort
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151925-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q198. [github_examtopics_cache]
-*App id: `LOC-111`*
+## Q111. [github_examtopics_cache]
+*App id: `LOC-111` · type: `multi`*
 
 A company has a data lake in Amazon S3. The company collects AWS CloudTrail logs for multiple applications. The company stores the logs in the data lake, catalogs the logs in AWS Glue, and partitions the logs based on the year. The company uses Amazon Athena to analyze the logs.
 
@@ -2884,12 +2170,16 @@ Which combination of troubleshooting steps should the data engineer take? (Choos
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150586-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q199. [github_examtopics_cache]
-*App id: `LOC-112`*
+## Q112. [github_examtopics_cache]
+*App id: `LOC-112` · type: `single`*
 
 A company has a data lake on AWS. The data lake ingests sources of data from business units. The company uses Amazon Athena for queries. The storage layer is Amazon S3 with an AWS Glue Data Catalog as a metadata repository.
 
@@ -2904,12 +2194,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142565-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q200. [github_examtopics_cache]
-*App id: `LOC-113`*
+## Q113. [github_examtopics_cache]
+*App id: `LOC-113` · type: `single`*
 
 A company has a data processing pipeline that includes several dozen steps. The data processing pipeline needs to send alerts in real time when a step fails or succeeds. The data processing pipeline uses a combination of Amazon S3 buckets, AWS Lambda functions, and AWS Step Functions state machines.
 
@@ -2924,12 +2218,16 @@ Which solution will meet these requirements?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/156779-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q201. [github_examtopics_cache]
-*App id: `LOC-114`*
+## Q114. [github_examtopics_cache]
+*App id: `LOC-114` · type: `single`*
 
 A company has a data warehouse in Amazon Redshift. To comply with security regulations, the company needs to log and store all user activities and connection activities for the data warehouse.
 
@@ -2942,12 +2240,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153155-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q202. [github_examtopics_cache]
-*App id: `LOC-115`*
+## Q115. [github_examtopics_cache]
+*App id: `LOC-115` · type: `single`*
 
 A company has a data warehouse that contains a table that is named Sales. The company stores the table in Amazon Redshift. The table includes a column that is named city_name. The company wants to query the table to find all rows that have a city_name that starts with "San" or "El".
 
@@ -2960,12 +2262,16 @@ Which SQL query will meet this requirement?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142569-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q203. [github_examtopics_cache]
-*App id: `LOC-116`*
+## Q116. [github_examtopics_cache]
+*App id: `LOC-116` · type: `single`*
 
 A company has a frontend ReactJS website that uses Amazon API Gateway to invoke REST APIs. The APIs perform the functionality of the website. A data engineer needs to write a Python script that can be occasionally invoked through API Gateway. The code must return results to API Gateway.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -2977,12 +2283,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132630-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q204. [github_examtopics_cache]
-*App id: `LOC-117`*
+## Q117. [github_examtopics_cache]
+*App id: `LOC-117` · type: `single`*
 
 A company has a gaming application that stores data in Amazon DynamoDB tables. A data engineer needs to ingest the game data into an Amazon OpenSearch Service cluster. Data updates must occur in near real time.
 
@@ -2995,12 +2305,16 @@ Which solution will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151927-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q205. [github_examtopics_cache]
-*App id: `LOC-118`*
+## Q118. [github_examtopics_cache]
+*App id: `LOC-118` · type: `single`*
 
 A company has a production AWS account that runs company workloads. The company's security team created a security AWS account to store and analyze security logs from the production AWS account. The security logs in the production AWS account are stored in Amazon CloudWatch Logs.
 The company needs to use Amazon Kinesis Data Streams to deliver the security logs to the security AWS account.
@@ -3013,12 +2327,16 @@ Which solution will meet these requirements?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/133056-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q206. [github_examtopics_cache]
-*App id: `LOC-119`*
+## Q119. [github_examtopics_cache]
+*App id: `LOC-119` · type: `single`*
 
 A company has an Amazon Redshift data warehouse that users access by using a variety of IAM roles. More than 100 users access the data warehouse every day.
 
@@ -3033,12 +2351,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153158-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q207. [github_examtopics_cache]
-*App id: `LOC-120`*
+## Q120. [github_examtopics_cache]
+*App id: `LOC-120` · type: `single`*
 
 A company has an application that uses an Amazon API Gateway REST API and an AWS Lambda function to retrieve data from an Amazon DynamoDB instance. Users recently reported intermittent high latency in the application's response times. A data engineer finds that the Lambda function experiences frequent throttling when the company's other Lambda functions experience increased invocations.
 
@@ -3053,12 +2375,16 @@ Which solution will meet this requirement MOST cost-effectively?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/156780-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q208. [github_examtopics_cache]
-*App id: `LOC-121`*
+## Q121. [github_examtopics_cache]
+*App id: `LOC-121` · type: `multi`*
 
 A company has an application that uses a microservice architecture. The company hosts the application on an Amazon Elastic Kubernetes Services (Amazon EKS) cluster.
 
@@ -3074,12 +2400,16 @@ Which combination of steps will meet these requirements with the LEAST developme
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151926-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q209. [github_examtopics_cache]
-*App id: `LOC-122`*
+## Q122. [github_examtopics_cache]
+*App id: `LOC-122` · type: `single`*
 
 A company has developed several AWS Glue extract, transform, and load (ETL) jobs to validate and transform data from Amazon S3. The ETL jobs load the data into Amazon RDS for MySQL in batches once every day. The ETL jobs use a DynamicFrame to read the S3 data.
 
@@ -3094,12 +2424,16 @@ Which solution will meet this requirement with the LEAST coding effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142566-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q210. [github_examtopics_cache]
-*App id: `LOC-123`*
+## Q123. [github_examtopics_cache]
+*App id: `LOC-123` · type: `multi`*
 
 A company has five offices in different AWS Regions. Each office has its own human resources (HR) department that uses a unique IAM role. The company stores employee records in a data lake that is based on Amazon S3 storage.
 A data engineering team needs to limit access to the records. Each HR department should be able to access records for only employees who are within the HR department's Region.
@@ -3113,12 +2447,16 @@ Which combination of steps should the data engineering team take to meet this re
 
 **Answer:** BD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132348-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q211. [github_examtopics_cache]
-*App id: `LOC-124`*
+## Q124. [github_examtopics_cache]
+*App id: `LOC-124` · type: `single`*
 
 A company has implemented a lake house architecture in Amazon Redshift. The company needs to give users the ability to authenticate into Redshift query editor by using a third-party identity provider (IdP).
 
@@ -3133,12 +2471,16 @@ What is the first step the data engineer should take to meet this requirement?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145294-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q212. [github_examtopics_cache]
-*App id: `LOC-125`*
+## Q125. [github_examtopics_cache]
+*App id: `LOC-125` · type: `single`*
 
 A company has multiple applications that use datasets that are stored in an Amazon S3 bucket. The company has an ecommerce application that generates a dataset that contains personally identifiable information (PII). The company has an internal analytics application that does not require access to the PII.
 To comply with regulations, the company must not share PII unnecessarily. A data engineer needs to implement a solution that with redact PII dynamically, based on the needs of each application that accesses the dataset.
@@ -3151,12 +2493,16 @@ Which solution will meet the requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132707-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q213. [github_examtopics_cache]
-*App id: `LOC-126`*
+## Q126. [github_examtopics_cache]
+*App id: `LOC-126` · type: `single`*
 
 A company has three subsidiaries. Each subsidiary uses a different data warehousing solution. The first subsidiary hosts its data warehouse in Amazon Redshift. The second subsidiary uses Teradata Vantage on AWS. The third subsidiary uses Google BigQuery.
 
@@ -3173,12 +2519,16 @@ Which solution will meet these requirements with the LEAST operational effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150342-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q214. [github_examtopics_cache]
-*App id: `LOC-127`*
+## Q127. [github_examtopics_cache]
+*App id: `LOC-127` · type: `single`*
 
 A company has used an Amazon Redshift table that is named Orders for 6 months. The company performs weekly updates and deletes on the table. The table has an interleaved sort key on a column that contains AWS Regions.
 The company wants to reclaim disk space so that the company will not run out of storage space. The company also wants to analyze the sort key column.
@@ -3191,12 +2541,16 @@ Which Amazon Redshift command will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/135091-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q215. [github_examtopics_cache]
-*App id: `LOC-128`*
+## Q128. [github_examtopics_cache]
+*App id: `LOC-128` · type: `single`*
 
 A company hosts its applications on Amazon EC2 instances. The company must use SSL/TLS connections that encrypt data in transit to communicate securely with AWS infrastructure that is managed by a customer.
 
@@ -3211,12 +2565,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151944-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q216. [github_examtopics_cache]
-*App id: `LOC-129`*
+## Q129. [github_examtopics_cache]
+*App id: `LOC-129` · type: `multi`*
 
 A company implements a data mesh that has a central governance account. The company needs to catalog all data in the governance account. The governance account uses AWS Lake Formation to centrally share data and grant access permissions.
 
@@ -3232,12 +2590,16 @@ Which combination of steps should the data engineer take to meet these requireme
 
 **Answer:** BD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150341-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q217. [github_examtopics_cache]
-*App id: `LOC-130`*
+## Q130. [github_examtopics_cache]
+*App id: `LOC-130` · type: `single`*
 
 A company ingests data from multiple data sources and stores the data in an Amazon S3 bucket. An AWS Glue extract, transform, and load (ETL) job transforms the data and writes the transformed data to an Amazon S3 based data lake. The company uses Amazon Athena to query the data that is in the data lake.
 
@@ -3252,12 +2614,16 @@ Which solution will meet this requirement?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145116-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q218. [github_examtopics_cache]
-*App id: `LOC-131`*
+## Q131. [github_examtopics_cache]
+*App id: `LOC-131` · type: `single`*
 
 A company is building a data lake for a new analytics team. The company is using Amazon S3 for storage and Amazon Athena for query analysis. All data that is in Amazon S3 is in Apache Parquet format.
 
@@ -3272,12 +2638,16 @@ Which solution will meet this requirement with the LEAST effort?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/146993-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q219. [github_examtopics_cache]
-*App id: `LOC-132`*
+## Q132. [github_examtopics_cache]
+*App id: `LOC-132` · type: `single`*
 
 A company is building a data stream processing application. The application runs in an Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The application stores processed data in an Amazon DynamoDB table.
 
@@ -3292,12 +2662,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151854-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q220. [github_examtopics_cache]
-*App id: `LOC-133`*
+## Q133. [github_examtopics_cache]
+*App id: `LOC-133` · type: `multi`*
 
 A company is building an analytics solution. The solution uses Amazon S3 for data lake storage and Amazon Redshift for a data warehouse. The company wants to use Amazon Redshift Spectrum to query the data that is in Amazon S3.
 Which actions will provide the FASTEST queries? (Choose two.)
@@ -3310,12 +2684,16 @@ Which actions will provide the FASTEST queries? (Choose two.)
 
 **Answer:** BC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132737-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q221. [github_examtopics_cache]
-*App id: `LOC-134`*
+## Q134. [github_examtopics_cache]
+*App id: `LOC-134` · type: `multi`*
 
 A company is building an inventory management system and an inventory reordering system to automatically reorder products. Both systems use Amazon Kinesis Data Streams. The inventory management system uses the Amazon Kinesis Producer Library (KPL) to publish data to a stream. The inventory reordering system uses the Amazon Kinesis Client Library (KCL) to consume data from the stream. The company configures the stream to scale up and down as needed.
 
@@ -3331,12 +2709,16 @@ Which factors could have caused the reordering system to receive duplicated data
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150357-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q222. [github_examtopics_cache]
-*App id: `LOC-135`*
+## Q135. [github_examtopics_cache]
+*App id: `LOC-135` · type: `single`*
 
 A company is creating near real-time dashboards to visualize time series data. The company ingests data into Amazon Managed Streaming for Apache Kafka (Amazon MSK). A customized data pipeline consumes the data. The pipeline then writes data to Amazon Keyspaces (for Apache Cassandra), Amazon OpenSearch Service, and Apache Avro objects in Amazon S3.
 
@@ -3349,12 +2731,16 @@ Which solution will make the data available for the data visualizations with the
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145714-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q223. [github_examtopics_cache]
-*App id: `LOC-136`*
+## Q136. [github_examtopics_cache]
+*App id: `LOC-136` · type: `single`*
 
 A company is designing a serverless data processing workflow in AWS Step Functions that involves multiple steps. The processing workflow ingests data from an external API, transforms the data by using multiple AWS Lambda functions, and loads the transformed data into Amazon DynamoDB.
 
@@ -3369,12 +2755,16 @@ Which Step Functions state type should the company use to meet this requirement?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153367-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q224. [github_examtopics_cache]
-*App id: `LOC-137`*
+## Q137. [github_examtopics_cache]
+*App id: `LOC-137` · type: `single`*
 
 A company is developing an application that runs on Amazon EC2 instances. Currently, the data that the application generates is temporary. However, the company needs to persist the data, even if the EC2 instances are terminated.
 A data engineer must launch new EC2 instances from an Amazon Machine Image (AMI) and configure the instances to preserve the data.
@@ -3387,12 +2777,16 @@ Which solution will meet this requirement?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132354-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q225. [github_examtopics_cache]
-*App id: `LOC-138`*
+## Q138. [github_examtopics_cache]
+*App id: `LOC-138` · type: `single`*
 
 A company is migrating a legacy application to an Amazon S3 based data lake. A data engineer reviewed data that is associated with the legacy application. The data engineer found that the legacy data contained some duplicate information.
 The data engineer must identify and remove duplicate information from the legacy application data.
@@ -3405,12 +2799,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132774-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q226. [github_examtopics_cache]
-*App id: `LOC-139`*
+## Q139. [github_examtopics_cache]
+*App id: `LOC-139` · type: `single`*
 
 A company is migrating its database servers from Amazon EC2 instances that run Microsoft SQL Server to Amazon RDS for Microsoft SQL Server DB instances. The company's analytics team must export large data elements every day until the migration is complete. The data elements are the result of SQL joins across multiple tables. The data must be in Apache Parquet format. The analytics team must store the data in Amazon S3.
 Which solution will meet these requirements in the MOST operationally efficient way?
@@ -3422,12 +2820,16 @@ Which solution will meet these requirements in the MOST operationally efficient 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132742-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q227. [github_examtopics_cache]
-*App id: `LOC-140`*
+## Q140. [github_examtopics_cache]
+*App id: `LOC-140` · type: `single`*
 
 A company is migrating on-premises workloads to AWS. The company wants to reduce overall operational overhead. The company also wants to explore serverless options.
 The company's current workloads use Apache Pig, Apache Oozie, Apache Spark, Apache Hbase, and Apache Flink. The on-premises workloads process petabytes of data in seconds. The company must maintain similar or better performance after the migration to AWS.
@@ -3440,12 +2842,16 @@ Which extract, transform, and load (ETL) service will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131684-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q228. [github_examtopics_cache]
-*App id: `LOC-141`*
+## Q141. [github_examtopics_cache]
+*App id: `LOC-141` · type: `single`*
 
 A company is planning to migrate on-premises Apache Hadoop clusters to Amazon EMR. The company also needs to migrate a data catalog into a persistent storage solution.
 The company currently stores the data catalog in an on-premises Apache Hive metastore on the Hadoop clusters. The company requires a serverless solution to migrate the data catalog.
@@ -3458,12 +2864,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132680-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q229. [github_examtopics_cache]
-*App id: `LOC-142`*
+## Q142. [github_examtopics_cache]
+*App id: `LOC-142` · type: `single`*
 
 A company is planning to upgrade its Amazon Elastic Block Store (Amazon EBS) General Purpose SSD storage from gp2 to gp3. The company wants to prevent any interruptions in its Amazon EC2 instances that will cause data loss during the migration to the upgraded storage.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -3475,12 +2885,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132762-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q230. [github_examtopics_cache]
-*App id: `LOC-143`*
+## Q143. [github_examtopics_cache]
+*App id: `LOC-143` · type: `multi`*
 
 A company is planning to use a provisioned Amazon EMR cluster that runs Apache Spark jobs to perform big data analysis. The company requires high reliability. A big data team must follow best practices for running cost-optimized and long-running workloads on Amazon EMR. The team must find a solution that will maintain the company's current level of performance.
 Which combination of resources will meet these requirements MOST cost-effectively? (Choose two.)
@@ -3493,12 +2907,16 @@ Which combination of resources will meet these requirements MOST cost-effectivel
 
 **Answer:** BD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131713-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q231. [github_examtopics_cache]
-*App id: `LOC-144`*
+## Q144. [github_examtopics_cache]
+*App id: `LOC-144` · type: `single`*
 
 A company is using Amazon Redshift to build a data warehouse solution. The company is loading hundreds of files into a fact table that is in a Redshift cluster.
 
@@ -3513,12 +2931,16 @@ Which solution will meet these requirements?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145007-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q232. [github_examtopics_cache]
-*App id: `LOC-145`*
+## Q145. [github_examtopics_cache]
+*App id: `LOC-145` · type: `single`*
 
 A company is using an AWS Transfer Family server to migrate data from an on-premises environment to AWS. Company policy mandates the use of TLS 1.2 or above to encrypt the data in transit.
 
@@ -3531,12 +2953,16 @@ Which solution will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143058-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q233. [github_examtopics_cache]
-*App id: `LOC-146`*
+## Q146. [github_examtopics_cache]
+*App id: `LOC-146` · type: `single`*
 
 A company loads transaction data for each day into Amazon Redshift tables at the end of each day. The company wants to have the ability to track which tables have been loaded and which tables still need to be loaded.
 A data engineer wants to store the load statuses of Redshift tables in an Amazon DynamoDB table. The data engineer creates an AWS Lambda function to publish the details of the load statuses to DynamoDB.
@@ -3549,12 +2975,16 @@ How should the data engineer invoke the Lambda function to write load statuses t
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131675-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q234. [github_examtopics_cache]
-*App id: `LOC-147`*
+## Q147. [github_examtopics_cache]
+*App id: `LOC-147` · type: `single`*
 
 A company maintains a data warehouse in an on-premises Oracle database. The company wants to build a data lake on AWS. The company wants to load data warehouse tables into Amazon S3 and synchronize the tables with incremental data that arrives from the data warehouse every day.
 
@@ -3569,12 +2999,16 @@ Which solution will meet these requirements in the MOST operationally efficient 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/147821-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q235. [github_examtopics_cache]
-*App id: `LOC-148`*
+## Q148. [github_examtopics_cache]
+*App id: `LOC-148` · type: `single`*
 
 A company maintains an Amazon Redshift provisioned cluster that the company uses for extract, transform, and load (ETL) operations to support critical analysis tasks. A sales team within the company maintains a Redshift cluster that the sales team uses for business intelligence (BI) tasks.
 The sales team recently requested access to the data that is in the ETL Redshift cluster so the team can perform weekly summary analysis tasks. The sales team needs to join data from the ETL cluster with data that is in the sales team's BI cluster.
@@ -3588,12 +3022,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131711-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q236. [github_examtopics_cache]
-*App id: `LOC-149`*
+## Q149. [github_examtopics_cache]
+*App id: `LOC-149` · type: `single`*
 
 A company maintains multiple extract, transform, and load (ETL) workflows that ingest data from the company's operational databases into an Amazon S3 based data lake. The ETL workflows use AWS Glue and Amazon EMR to process data.
 The company wants to improve the existing architecture to provide automated orchestration and to require minimal manual effort.
@@ -3606,12 +3044,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131710-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q237. [github_examtopics_cache]
-*App id: `LOC-150`*
+## Q150. [github_examtopics_cache]
+*App id: `LOC-150` · type: `single`*
 
 A company needs a solution to manage costs for an existing Amazon DynamoDB table. The company also needs to control the size of the table. The solution must not disrupt any ongoing read or write operations. The company wants to use a solution that automatically deletes data from the table after 1 month.
 
@@ -3624,12 +3066,16 @@ Which solution will meet these requirements with the LEAST ongoing maintenance?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151941-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q238. [github_examtopics_cache]
-*App id: `LOC-151`*
+## Q151. [github_examtopics_cache]
+*App id: `LOC-151` · type: `single`*
 
 A company needs to build a data lake in AWS. The company must provide row-level data access and column-level data access to specific teams. The teams will access the data by using Amazon Athena, Amazon Redshift Spectrum, and Apache Hive from Amazon EMR.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -3641,12 +3087,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132686-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q239. [github_examtopics_cache]
-*App id: `LOC-152`*
+## Q152. [github_examtopics_cache]
+*App id: `LOC-152` · type: `single`*
 
 A company needs to load customer data that comes from a third party into an Amazon Redshift data warehouse. The company stores order data and product data in the same data warehouse. The company wants to use the combined dataset to identify potential new customers.
 
@@ -3661,12 +3111,16 @@ How should the data engineer load the JSON data into the data warehouse with the
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150740-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q240. [github_examtopics_cache]
-*App id: `LOC-153`*
+## Q153. [github_examtopics_cache]
+*App id: `LOC-153` · type: `single`*
 
 A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format: s3://bucket/prefix/year=2023/month=01/day=01.
 A data engineer must ensure that the AWS Glue Data Catalog synchronizes with the S3 storage when the company adds new partitions to the bucket.
@@ -3679,12 +3133,16 @@ Which solution will meet these requirements with the LEAST latency?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132364-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q241. [github_examtopics_cache]
-*App id: `LOC-154`*
+## Q154. [github_examtopics_cache]
+*App id: `LOC-154` · type: `single`*
 
 A company needs to send customer call data from its on-premises PostgreSQL database to AWS to generate near real-time insights. The solution must capture and load updates from operational data stores that run in the PostgreSQL database. The data changes continuously.
 
@@ -3701,12 +3159,16 @@ Which solution will confirm that the PostgreSQL database is the source of the hi
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142571-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q242. [github_examtopics_cache]
-*App id: `LOC-155`*
+## Q155. [github_examtopics_cache]
+*App id: `LOC-155` · type: `single`*
 
 A company needs to set up a data catalog and metadata management for data sources that run in the AWS Cloud. The company will use the data catalog to maintain the metadata of all the objects that are in a set of data stores. The data stores include structured sources such as Amazon RDS and Amazon Redshift. The data stores also include semistructured sources such as JSON files and .xml files that are stored in Amazon S3.
 The company needs a solution that will update the data catalog on a regular basis. The solution also must detect changes to the source metadata.
@@ -3719,12 +3181,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132677-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q243. [github_examtopics_cache]
-*App id: `LOC-156`*
+## Q156. [github_examtopics_cache]
+*App id: `LOC-156` · type: `single`*
 
 A company plans to provision a log delivery stream within a VPC. The company configured the VPC flow logs to publish to Amazon CloudWatch Logs. The company needs to send the flow logs to Splunk in near real time for further analysis.
 
@@ -3737,12 +3203,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142564-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q244. [github_examtopics_cache]
-*App id: `LOC-157`*
+## Q157. [github_examtopics_cache]
+*App id: `LOC-157` · type: `single`*
 
 A company plans to use Amazon Kinesis Data Firehose to store data in Amazon S3. The source data consists of 2 MB .csv files. The company must convert the .csv files to JSON format. The company must store the files in Apache Parquet format.
 
@@ -3755,12 +3225,16 @@ Which solution will meet these requirements with the LEAST development effort?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143057-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q245. [github_examtopics_cache]
-*App id: `LOC-158`*
+## Q158. [github_examtopics_cache]
+*App id: `LOC-158` · type: `single`*
 
 A company reads data from customer databases that run on Amazon RDS. The databases contain many inconsistent fields. For example, a customer record field that iPnamed place_id in one database is named location_id in another database. The company needs to link customer records across different databases, even when customer record fields do not match.
 
@@ -3773,12 +3247,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145289-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q246. [github_examtopics_cache]
-*App id: `LOC-159`*
+## Q159. [github_examtopics_cache]
+*App id: `LOC-159` · type: `single`*
 
 A company receives .csv files that contain physical address data. The data is in columns that have the following names: Door_No, Street_Name, City, and Zip_Code. The company wants to create a single column to store these values in the following format:
 //IMG//
@@ -3792,12 +3270,16 @@ Which solution will meet this requirement with the LEAST coding effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/135424-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q247. [github_examtopics_cache]
-*App id: `LOC-160`*
+## Q160. [github_examtopics_cache]
+*App id: `LOC-160` · type: `single`*
 
 A company receives a daily file that contains customer data in .xls format. The company stores the file in Amazon S3. The daily file is approximately 2 GB in size.
 A data engineer concatenates the column in the file that contains customer first names and the column that contains customer last names. The data engineer needs to determine the number of distinct customers in the file.
@@ -3810,12 +3292,16 @@ Which solution will meet this requirement with the LEAST operational effort?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132700-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q248. [github_examtopics_cache]
-*App id: `LOC-161`*
+## Q161. [github_examtopics_cache]
+*App id: `LOC-161` · type: `single`*
 
 A company receives a data file from a partner each day in an Amazon S3 bucket. The company uses a daily AWS Glue extract, transform, and load (ETL) pipeline to clean and transform each data file. The output of the ETL pipeline is written to a CSV file named Daily.csv in a second S3 bucket.
 
@@ -3832,12 +3318,16 @@ Which solution will meet these requirements with the LEAST effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151940-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q249. [github_examtopics_cache]
-*App id: `LOC-162`*
+## Q162. [github_examtopics_cache]
+*App id: `LOC-162` · type: `single`*
 
 A company receives call logs as Amazon S3 objects that contain sensitive customer information. The company must protect the S3 objects by using encryption. The company must also use encryption keys that only specific employees can access.
 Which solution will meet these requirements with the LEAST effort?
@@ -3849,12 +3339,16 @@ Which solution will meet these requirements with the LEAST effort?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132696-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q250. [github_examtopics_cache]
-*App id: `LOC-163`*
+## Q163. [github_examtopics_cache]
+*App id: `LOC-163` · type: `single`*
 
 A company receives test results from testing facilities that are located around the world. The company stores the test results in millions of 1 KB JSON files in an Amazon S3 bucket. A data engineer needs to process the files, convert them into Apache Parquet format, and load them into Amazon Redshift tables. The data engineer uses AWS Glue to process the files, AWS Step Functions to orchestrate the processes, and Amazon EventBridge to schedule jobs.
 
@@ -3869,12 +3363,16 @@ Which solution will MOST reduce the data processing time?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145729-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q251. [github_examtopics_cache]
-*App id: `LOC-164`*
+## Q164. [github_examtopics_cache]
+*App id: `LOC-164` · type: `multi`*
 
 A company saves customer data to an Amazon S3 bucket. The company uses server-side encryption with AWS KMS keys (SSE-KMS) to encrypt the bucket. The dataset includes personally identifiable information (PII) such as social security numbers and account details.
 
@@ -3890,12 +3388,16 @@ Which combination of solutions will meet these requirements? (Choose two.)
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151945-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q252. [github_examtopics_cache]
-*App id: `LOC-165`*
+## Q165. [github_examtopics_cache]
+*App id: `LOC-165` · type: `single`*
 
 A company stores 10 to 15 TB of uncompressed .csv files in Amazon S3. The company is evaluating Amazon Athena as a one-time query engine.
 
@@ -3910,12 +3412,16 @@ Which file format and compression solution will meet these requirements for Athe
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142529-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q253. [github_examtopics_cache]
-*App id: `LOC-166`*
+## Q166. [github_examtopics_cache]
+*App id: `LOC-166` · type: `single`*
 
 A company stores CSV files in an Amazon S3 bucket. A data engineer needs to process the data in the CSV files and store the processed data in a new S3 bucket.
 
@@ -3930,12 +3436,16 @@ Which solution will meet these requirements with the LEAST development effort?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/152017-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q254. [github_examtopics_cache]
-*App id: `LOC-167`*
+## Q167. [github_examtopics_cache]
+*App id: `LOC-167` · type: `single`*
 
 A company stores customer data in an Amazon S3 bucket. Multiple teams in the company want to use the customer data for downstream analysis. The company needs to ensure that the teams do not have access to personally identifiable information (PII) about the customers.
 
@@ -3948,12 +3458,16 @@ Which solution will meet this requirement with LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150743-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q255. [github_examtopics_cache]
-*App id: `LOC-168`*
+## Q168. [github_examtopics_cache]
+*App id: `LOC-168` · type: `single`*
 
 A company stores customer data tables that include customer addresses in an AWS Lake Formation data lake. To comply with new regulations, the company must ensure that users cannot access data for customers who are in Canada.
 
@@ -3968,12 +3482,16 @@ Which solution will meet this requirement with the LEAST operational effort?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145293-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q256. [github_examtopics_cache]
-*App id: `LOC-169`*
+## Q169. [github_examtopics_cache]
+*App id: `LOC-169` · type: `single`*
 
 A company stores customer data that contains personally identifiable information (PII) in an Amazon Redshift cluster. The company's marketing, claims, and analytics teams need to be able to access the customer data.
 
@@ -3988,12 +3506,16 @@ Which solution will enforce these data access requirements with the LEAST admini
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150885-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q257. [github_examtopics_cache]
-*App id: `LOC-170`*
+## Q170. [github_examtopics_cache]
+*App id: `LOC-170` · type: `single`*
 
 A company stores customer records in Amazon S3. The company must not delete or modify the customer record data for 7 years after each record is created. The root user also must not have the ability to delete or modify the data.
 
@@ -4008,12 +3530,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151919-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q258. [github_examtopics_cache]
-*App id: `LOC-171`*
+## Q171. [github_examtopics_cache]
+*App id: `LOC-171` · type: `single`*
 
 A company stores daily records of the financial performance of investment portfolios in .csv format in an Amazon S3 bucket. A data engineer uses AWS Glue crawlers to crawl the S3 data.
 The data engineer must make the S3 data accessible daily in the AWS Glue Data Catalog.
@@ -4026,12 +3552,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131709-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q259. [github_examtopics_cache]
-*App id: `LOC-172`*
+## Q172. [github_examtopics_cache]
+*App id: `LOC-172` · type: `single`*
 
 A company stores data from an application in an Amazon DynamoDB table that operates in provisioned capacity mode. The workloads of the application have predictable throughput load on a regular schedule. Every Monday, there is an immediate increase in activity early in the morning. The application has very low usage during weekends.
 The company must ensure that the application performs consistently during peak usage times.
@@ -4044,12 +3574,16 @@ Which solution will meet these requirements in the MOST cost-effective way?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132678-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q260. [github_examtopics_cache]
-*App id: `LOC-173`*
+## Q173. [github_examtopics_cache]
+*App id: `LOC-173` · type: `single`*
 
 A company stores data in a data lake that is in Amazon S3. Some data that the company stores in the data lake contains personally identifiable information (PII). Multiple user groups need to access the raw data. The company must ensure that user groups can access only the PII that they require.
 Which solution will meet these requirements with the LEAST effort?
@@ -4061,12 +3595,16 @@ Which solution will meet these requirements with the LEAST effort?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132689-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q261. [github_examtopics_cache]
-*App id: `LOC-174`*
+## Q174. [github_examtopics_cache]
+*App id: `LOC-174` · type: `single`*
 
 A company stores datasets in JSON format and .csv format in an Amazon S3 bucket. The company has Amazon RDS for Microsoft SQL Server databases, Amazon DynamoDB tables that are in provisioned capacity mode, and an Amazon Redshift cluster. A data engineering team must develop a solution that will give data scientists the ability to query all data sources by using syntax similar to SQL.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -4078,12 +3616,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132702-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q262. [github_examtopics_cache]
-*App id: `LOC-175`*
+## Q175. [github_examtopics_cache]
+*App id: `LOC-175` · type: `single`*
 
 A company stores details about transactions in an Amazon S3 bucket. The company wants to log all writes to the S3 bucket into another S3 bucket that is in the same AWS Region.
 Which solution will meet this requirement with the LEAST operational effort?
@@ -4095,12 +3637,16 @@ Which solution will meet this requirement with the LEAST operational effort?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132684-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q263. [github_examtopics_cache]
-*App id: `LOC-176`*
+## Q176. [github_examtopics_cache]
+*App id: `LOC-176` · type: `multi`*
 
 A company stores employee data in Amazon Resdshift. A table names Employee uses columns named Region ID, Department ID, and Role ID as a compound sort key.
 
@@ -4114,12 +3660,16 @@ Which queries will MOST increase the speed of query by using a compound sort key
 
 **Answer:** BE
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BE. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145119-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q264. [github_examtopics_cache]
-*App id: `LOC-177`*
+## Q177. [github_examtopics_cache]
+*App id: `LOC-177` · type: `single`*
 
 A company stores its processed data in an S3 bucket. The company has a strict data access policy. The company uses IAM roles to grant teams within the company different levels of access to the S3 bucket.
 
@@ -4134,12 +3684,16 @@ Which solution will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150741-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q265. [github_examtopics_cache]
-*App id: `LOC-178`*
+## Q178. [github_examtopics_cache]
+*App id: `LOC-178` · type: `single`*
 
 A company stores logs in an Amazon S3 bucket. When a data engineer attempts to access several log files, the data engineer discovers that some files have been unintentionally deleted.
 
@@ -4154,12 +3708,16 @@ Which solution will meet this requirement with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143120-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q266. [github_examtopics_cache]
-*App id: `LOC-179`*
+## Q179. [github_examtopics_cache]
+*App id: `LOC-179` · type: `single`*
 
 A company stores petabytes of data in thousands of Amazon S3 buckets in the S3 Standard storage class. The data supports analytics workloads that have unpredictable and variable data access patterns.
 The company does not access some data for months. However, the company must be able to retrieve all data within milliseconds. The company needs to optimize S3 storage costs.
@@ -4172,12 +3730,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132697-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q267. [github_examtopics_cache]
-*App id: `LOC-180`*
+## Q180. [github_examtopics_cache]
+*App id: `LOC-180` · type: `single`*
 
 A company stores server logs in an Amazon S3 bucket. The company needs to keep the logs for 1 year. The logs are not required after 1 year.
 
@@ -4192,12 +3754,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153366-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q268. [github_examtopics_cache]
-*App id: `LOC-181`*
+## Q181. [github_examtopics_cache]
+*App id: `LOC-181` · type: `single`*
 
 A company uploads .csv files to an Amazon S3 bucket. The company’s data platform team has set up an AWS Glue crawler to perform data discovery and to create the tables and schemas.
 
@@ -4214,12 +3780,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145107-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q269. [github_examtopics_cache]
-*App id: `LOC-182`*
+## Q182. [github_examtopics_cache]
+*App id: `LOC-182` · type: `single`*
 
 A company uses AWS Glue Data Catalog to index data that is uploaded to an Amazon S3 bucket every day. The company uses a daily batch processes in an extract, transform, and load (ETL) pipeline to upload data from external sources into the S3 bucket.
 
@@ -4234,12 +3804,16 @@ Which solution will meet this requirement with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151935-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q270. [github_examtopics_cache]
-*App id: `LOC-183`*
+## Q183. [github_examtopics_cache]
+*App id: `LOC-183` · type: `multi`*
 
 A company uses AWS Step Functions to orchestrate a data pipeline. The pipeline consists of Amazon EMR jobs that ingest data from data sources and store the data in an Amazon S3 bucket. The pipeline also includes EMR jobs that load the data to Amazon Redshift.
 The company's cloud infrastructure team manually built a Step Functions state machine. The cloud infrastructure team launched an EMR cluster into a VPC to support the EMR jobs. However, the deployed Step Functions state machine is not able to run the EMR jobs.
@@ -4253,12 +3827,16 @@ Which combination of steps should the company take to identify the reason the St
 
 **Answer:** BD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132353-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q271. [github_examtopics_cache]
-*App id: `LOC-184`*
+## Q184. [github_examtopics_cache]
+*App id: `LOC-184` · type: `single`*
 
 A company uses Amazon Athena to run SQL queries for extract, transform, and load (ETL) tasks by using Create Table As Select (CTAS). The company must use Apache Spark instead of SQL to generate analytics.
 Which solution will give the company the ability to use Spark to access Athena?
@@ -4270,12 +3848,16 @@ Which solution will give the company the ability to use Spark to access Athena?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132667-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q272. [github_examtopics_cache]
-*App id: `LOC-185`*
+## Q185. [github_examtopics_cache]
+*App id: `LOC-185` · type: `single`*
 
 A company uses Amazon DataZone as a data governance and business catalog solution. The company stores data in an Amazon S3 data lake. The company uses AWS Glue with an AWS Glue Data Catalog.
 
@@ -4290,12 +3872,16 @@ Which solution will meet this requirement?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153156-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q273. [github_examtopics_cache]
-*App id: `LOC-186`*
+## Q186. [github_examtopics_cache]
+*App id: `LOC-186` · type: `single`*
 
 A company uses Amazon EMR as an extract, transform, and load (ETL) pipeline to transform data that comes from multiple sources. A data engineer must orchestrate the pipeline to maximize performance.
 
@@ -4308,12 +3894,16 @@ Which AWS service will meet this requirement MOST cost effectively?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142535-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q274. [github_examtopics_cache]
-*App id: `LOC-187`*
+## Q187. [github_examtopics_cache]
+*App id: `LOC-187` · type: `multi`*
 
 A company uses Amazon RDS for MySQL as the database for a critical application. The database workload is mostly writes, with a small number of reads.
 A data engineer notices that the CPU utilization of the DB instance is very high. The high CPU utilization is slowing down the application. The data engineer must reduce the CPU utilization of the DB Instance.
@@ -4327,12 +3917,16 @@ Which actions should the data engineer take to meet this requirement? (Choose tw
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/135451-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q275. [github_examtopics_cache]
-*App id: `LOC-188`*
+## Q188. [github_examtopics_cache]
+*App id: `LOC-188` · type: `multi`*
 
 A company uses Amazon RDS to store transactional data. The company runs an RDS DB instance in a private subnet. A developer wrote an AWS Lambda function with default settings to insert, update, or delete data in the DB instance.
 The developer needs to give the Lambda function the ability to connect to the DB instance privately without using the public internet.
@@ -4346,12 +3940,16 @@ Which combination of steps will meet this requirement with the LEAST operational
 
 **Answer:** CD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: CD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132738-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q276. [github_examtopics_cache]
-*App id: `LOC-189`*
+## Q189. [github_examtopics_cache]
+*App id: `LOC-189` · type: `single`*
 
 A company uses Amazon Redshift as its data warehouse. Data encoding is applied to the existing tables of the data warehouse. A data engineer discovers that the compression encoding applied to some of the tables is not the best fit for the data.
 
@@ -4366,12 +3964,16 @@ Which solution will meet this requirement?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150749-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q277. [github_examtopics_cache]
-*App id: `LOC-190`*
+## Q190. [github_examtopics_cache]
+*App id: `LOC-190` · type: `single`*
 
 A company uses Amazon Redshift as its data warehouse service. A data engineer needs to design a physical data model.
 
@@ -4386,12 +3988,16 @@ Which distribution style should the data engineer use to meet these requirements
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151853-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q278. [github_examtopics_cache]
-*App id: `LOC-191`*
+## Q191. [github_examtopics_cache]
+*App id: `LOC-191` · type: `single`*
 
 A company uses Amazon Redshift for its data warehouse. The company must automate refresh schedules for Amazon Redshift materialized views.
 Which solution will meet this requirement with the LEAST effort?
@@ -4403,12 +4009,16 @@ Which solution will meet this requirement with the LEAST effort?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132674-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q279. [github_examtopics_cache]
-*App id: `LOC-192`*
+## Q192. [github_examtopics_cache]
+*App id: `LOC-192` · type: `single`*
 
 A company uses Amazon S3 as a data lake. The company sets up a data warehouse by using a multi-node Amazon Redshift cluster. The company organizes the data files in the data lake based on the data source of each data file.
 
@@ -4423,12 +4033,16 @@ Which solution will meet these requirements?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143056-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q280. [github_examtopics_cache]
-*App id: `LOC-193`*
+## Q193. [github_examtopics_cache]
+*App id: `LOC-193` · type: `multi`*
 
 A company uses Amazon S3 to store data and Amazon QuickSight to create visualizations,
 
@@ -4446,12 +4060,14 @@ Which combination of steps will meet this requirement? (Choose two.)
 
 **Answer:** E
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `github_examtopics_cache`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150344-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q281. [github_examtopics_cache]
-*App id: `LOC-194`*
+## Q194. [github_examtopics_cache]
+*App id: `LOC-194` · type: `single`*
 
 A company uses Amazon S3 to store semi-structured data in a transactional data lake. Some of the data files are small, but other data files are tens of terabytes.
 A data engineer must perform a change data capture (CDC) operation to identify changed data from the data source. The data source sends a full snapshot as a JSON file every day and ingests the changed data into the data lake.
@@ -4464,12 +4080,16 @@ Which solution will capture the changed data MOST cost-effectively?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131705-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q282. [github_examtopics_cache]
-*App id: `LOC-195`*
+## Q195. [github_examtopics_cache]
+*App id: `LOC-195` · type: `single`*
 
 A company uses Apache Airflow to orchestrate the company's current on-premises data pipelines. The company runs SQL data quality check tasks as part of the pipelines. The company wants to migrate the pipelines to AWS and to use AWS managed services.
 
@@ -4482,12 +4102,16 @@ Which solution will meet these requirements with the LEAST amount of refactoring
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142558-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q283. [github_examtopics_cache]
-*App id: `LOC-196`*
+## Q196. [github_examtopics_cache]
+*App id: `LOC-196` · type: `single`*
 
 A company uses a data lake that is based on an Amazon S3 bucket. To comply with regulations, the company must apply two layers of server-side encryption to files that are uploaded to the S3 bucket. The company wants to use an AWS Lambda function to apply the necessary encryption.
 
@@ -4500,12 +4124,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142579-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q284. [github_examtopics_cache]
-*App id: `LOC-197`*
+## Q197. [github_examtopics_cache]
+*App id: `LOC-197` · type: `single`*
 
 A company uses a variety of AWS and third-party data stores. The company wants to consolidate all the data into a central data warehouse to perform analytics. Users need fast response times for analytics queries.
 
@@ -4520,12 +4148,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/152992-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q285. [github_examtopics_cache]
-*App id: `LOC-198`*
+## Q198. [github_examtopics_cache]
+*App id: `LOC-198` · type: `single`*
 
 A company uses an AWS Lambda function to transfer files from a legacy SFTP environment to Amazon S3 buckets. The Lambda function is VPC enabled to ensure that all communications between the Lambda function and other AVS services that are in the same VPC environment will occur over a secure network.
 
@@ -4540,12 +4172,16 @@ Which solution will meet these requirements in the MOST cost-effective way?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145187-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q286. [github_examtopics_cache]
-*App id: `LOC-199`*
+## Q199. [github_examtopics_cache]
+*App id: `LOC-199` · type: `multi`*
 
 A company uses an Amazon QuickSight dashboard to monitor usage of one of the company's applications. The company uses AWS Glue jobs to process data for the dashboard. The company stores the data in a single Amazon S3 bucket. The company adds new data every day.
 A data engineer discovers that dashboard queries are becoming slower over time. The data engineer determines that the root cause of the slowing queries is long-running AWS Glue jobs.
@@ -4559,12 +4195,16 @@ Which actions should the data engineer take to improve the performance of the AW
 
 **Answer:** AB
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AB. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132734-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q287. [github_examtopics_cache]
-*App id: `LOC-200`*
+## Q200. [github_examtopics_cache]
+*App id: `LOC-200` · type: `single`*
 
 A company uses an Amazon Redshift cluster that runs on RA3 nodes. The company wants to scale read and write capacity to meet demand. A data engineer needs to identify a solution that will turn on concurrency scaling.
 Which solution will meet this requirement?
@@ -4576,12 +4216,16 @@ Which solution will meet this requirement?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131680-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q288. [github_examtopics_cache]
-*App id: `LOC-201`*
+## Q201. [github_examtopics_cache]
+*App id: `LOC-201` · type: `single`*
 
 A company uses an Amazon Redshift provisioned cluster as its database. The Redshift cluster has five reserved ra3.4xlarge nodes and uses key distribution.
 A data engineer notices that one of the nodes frequently has a CPU load over 90%. SQL Queries that run on the node are queued. The other four nodes usually have a CPU load under 15% during daily operations.
@@ -4595,12 +4239,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132681-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q289. [github_examtopics_cache]
-*App id: `LOC-202`*
+## Q202. [github_examtopics_cache]
+*App id: `LOC-202` · type: `single`*
 
 A company uses an on-premises Microsoft SQL Server database to store financial transaction data. The company migrates the transaction data from the on-premises database to AWS at the end of each month. The company has noticed that the cost to migrate data from the on-premises database to an Amazon RDS for SQL Server database has increased recently.
 The company requires a cost-effective solution to migrate the data to AWS. The solution must cause minimal downtown for the applications that access the database.
@@ -4613,12 +4261,16 @@ Which AWS service should the company use to meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131677-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q290. [github_examtopics_cache]
-*App id: `LOC-203`*
+## Q203. [github_examtopics_cache]
+*App id: `LOC-203` · type: `single`*
 
 A company wants to analyze sales records that the company stores in a MySQL database. The company wants to correlate the records with sales opportunities identified by Salesforce.
 
@@ -4633,12 +4285,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153160-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q291. [github_examtopics_cache]
-*App id: `LOC-204`*
+## Q204. [github_examtopics_cache]
+*App id: `LOC-204` · type: `single`*
 
 A company wants to implement real-time analytics capabilities. The company wants to use Amazon Kinesis Data Streams and Amazon Redshift to ingest and process streaming data at the rate of several gigabytes per second. The company wants to derive near real-time insights by using existing business intelligence (BI) and analytics tools.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -4650,12 +4306,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/133048-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q292. [github_examtopics_cache]
-*App id: `LOC-205`*
+## Q205. [github_examtopics_cache]
+*App id: `LOC-205` · type: `single`*
 
 A company wants to migrate a data warehouse from Teradata to Amazon Redshift.
 
@@ -4668,12 +4328,16 @@ Which solution will meet this requirement with the LEAST operational effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153154-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q293. [github_examtopics_cache]
-*App id: `LOC-206`*
+## Q206. [github_examtopics_cache]
+*App id: `LOC-206` · type: `single`*
 
 A company wants to migrate an application and an on-premises Apache Kafka server to AWS. The application processes incremental updates that an on-premises Oracle database sends to the Kafka server. The company wants to use the replatform migration strategy instead of the refactor strategy.
 
@@ -4686,12 +4350,16 @@ Which solution will meet these requirements with the LEAST management overhead?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143060-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q294. [github_examtopics_cache]
-*App id: `LOC-207`*
+## Q207. [github_examtopics_cache]
+*App id: `LOC-207` · type: `single`*
 
 A company wants to migrate data from an Amazon RDS for PostgreSQL DB instance in the eu-east-1 Region of an AWS account named Account_A. The company will migrate the data to an Amazon Redshift cluster in the eu-west-1 Region of an AWS account named Account_B.
 
@@ -4704,12 +4372,16 @@ Which solution will give AWS Database Migration Service (AWS DMS) the ability to
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143054-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q295. [github_examtopics_cache]
-*App id: `LOC-208`*
+## Q208. [github_examtopics_cache]
+*App id: `LOC-208` · type: `multi`*
 
 A company wants to use machine learning (ML) to perform analytics on data that is in an Amazon S3 data lake. The company has two data transformation requirements that will give consumers within the company the ability to create reports.
 
@@ -4725,12 +4397,16 @@ Which combination of tasks should the company schedule in the Amazon MWAA DAGs t
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142573-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q296. [github_examtopics_cache]
-*App id: `LOC-209`*
+## Q209. [github_examtopics_cache]
+*App id: `LOC-209` · type: `single`*
 
 A company's data engineer needs to optimize the performance of table SQL queries. The company stores data in an Amazon Redshift cluster. The data engineer cannot increase the size of the cluster because of budget constraints.
 The company stores the data in multiple tables and loads the data by using the EVEN distribution style. Some tables are hundreds of gigabytes in size. Other tables are less than 10 MB in size.
@@ -4743,12 +4419,16 @@ Which solution will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132695-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q297. [github_examtopics_cache]
-*App id: `LOC-210`*
+## Q210. [github_examtopics_cache]
+*App id: `LOC-210` · type: `multi`*
 
 A data engineer configured an AWS Glue Data Catalog for data that is stored in Amazon S3 buckets. The data engineer needs to configure the Data Catalog to receive incremental updates.
 
@@ -4764,12 +4444,16 @@ Which combination of steps should the data engineer take to meet these requireme
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150401-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q298. [github_examtopics_cache]
-*App id: `LOC-211`*
+## Q211. [github_examtopics_cache]
+*App id: `LOC-211` · type: `single`*
 
 A data engineer created a table named cloudtrail_logs in Amazon Athena to query AWS CloudTrail logs and prepare data for audits. The data engineer needs to write a query to display errors with error codes that have occurred since the beginning of 2024. The query must return the 10 most recent errors.
 
@@ -4782,12 +4466,16 @@ Which query will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153159-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q299. [github_examtopics_cache]
-*App id: `LOC-212`*
+## Q212. [github_examtopics_cache]
+*App id: `LOC-212` · type: `single`*
 
 A data engineer creates an AWS Glue Data Catalog table by using an AWS Glue crawler that is named Orders. The data engineer wants to add the following new partitions:
 
@@ -4799,20 +4487,24 @@ The data engineer must edit the metadata to include the new partitions in the ta
 Which data definition language (DDL) statement should the data engineer use in Amazon Athena?
 
 - A. ALTER TABLE Orders ADD PARTITION(order_date=’2023-01-01’) LOCATION ‘s3://transactions/orders/order_date=2023-01-01’;
-- ALTER TABLE Orders ADD PARTITION(order_date=’2023-01-02’) LOCATION ‘s3://transactions/orders/order_date=2023-01-02’;
+- B. ALTER TABLE Orders ADD PARTITION(order_date=’2023-01-02’) LOCATION ‘s3://transactions/orders/order_date=2023-01-02’;
 - B. MSCK REPAIR TABLE Orders;
 - C. REPAIR TABLE Orders;
 - D. ALTER TABLE Orders MODIFY PARTITION(order_date=’2023-01-01’) LOCATION ‘s3://transactions/orders/2023-01-01’;
-- ALTER TABLE Orders MODIFY PARTITION(order_date=’2023-01-02’) LOCATION ‘s3://transactions/orders/2023-01-02’;
+- F. ALTER TABLE Orders MODIFY PARTITION(order_date=’2023-01-02’) LOCATION ‘s3://transactions/orders/2023-01-02’;
 
 **Answer:** A
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/142527-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q300. [github_examtopics_cache]
-*App id: `LOC-213`*
+## Q213. [github_examtopics_cache]
+*App id: `LOC-213` · type: `single`*
 
 A data engineer creates an AWS Lambda function that an Amazon EventBridge event will invoke. When the data engineer tries to invoke the Lambda function by using an EventBridge event, an AccessDeniedException message appears.
 
@@ -4825,12 +4517,16 @@ How should the data engineer resolve the exception?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142578-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q301. [github_examtopics_cache]
-*App id: `LOC-214`*
+## Q214. [github_examtopics_cache]
+*App id: `LOC-214` · type: `single`*
 
 A data engineer finished testing an Amazon Redshift stored procedure that processes and inserts data into a table that is not mission critical. The engineer wants to automatically run the stored procedure on a daily basis.
 
@@ -4843,12 +4539,16 @@ Which solution will meet this requirement in the MOST cost-effective way?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142543-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q302. [github_examtopics_cache]
-*App id: `LOC-215`*
+## Q215. [github_examtopics_cache]
+*App id: `LOC-215` · type: `single`*
 
 A data engineer has a one-time task to read data from objects that are in Apache Parquet format in an Amazon S3 bucket. The data engineer needs to query only one column of the data.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -4860,12 +4560,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132673-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q303. [github_examtopics_cache]
-*App id: `LOC-216`*
+## Q216. [github_examtopics_cache]
+*App id: `LOC-216` · type: `single`*
 
 A data engineer has implemented data quality rules in 1,000 AWS Glue Data Catalog tables. Because of a recent change in business requirements, the data engineer must edit the data quality rules.
 
@@ -4878,12 +4582,16 @@ How should the data engineer meet this requirement with the LEAST operational ov
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145726-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q304. [github_examtopics_cache]
-*App id: `LOC-217`*
+## Q217. [github_examtopics_cache]
+*App id: `LOC-217` · type: `single`*
 
 A data engineer is building a data orchestration workflow. The data engineer plans to use a hybrid model that includes some on-premises resources and some resources that are in the cloud. The data engineer wants to prioritize portability and open source resources.
 
@@ -4896,12 +4604,16 @@ Which service should the data engineer use in both the on-premises environment a
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142577-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q305. [github_examtopics_cache]
-*App id: `LOC-218`*
+## Q218. [github_examtopics_cache]
+*App id: `LOC-218` · type: `multi`*
 
 A data engineer is building a data pipeline on AWS by using AWS Glue extract, transform, and load (ETL) jobs. The data engineer needs to process data from Amazon RDS and MongoDB, perform transformations, and load the transformed data into Amazon Redshift for analytics. The data updates must occur every hour.
 Which combination of tasks will meet these requirements with the LEAST operational overhead? (Choose two.)
@@ -4914,12 +4626,16 @@ Which combination of tasks will meet these requirements with the LEAST operation
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131679-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q306. [github_examtopics_cache]
-*App id: `LOC-219`*
+## Q219. [github_examtopics_cache]
+*App id: `LOC-219` · type: `single`*
 
 A data engineer is building an automated extract, transform, and load (ETL) ingestion pipeline by using AWS Glue. The pipeline ingests compressed files that are in an Amazon S3 bucket. The ingestion pipeline must support incremental data processing.
 
@@ -4932,12 +4648,16 @@ Which AWS Glue feature should the data engineer use to meet this requirement?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143061-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q307. [github_examtopics_cache]
-*App id: `LOC-220`*
+## Q220. [github_examtopics_cache]
+*App id: `LOC-220` · type: `single`*
 
 A data engineer is configuring Amazon SageMaker Studio to use AWS Glue interactive sessions to prepare data for machine learning (ML) models.
 The data engineer receives an access denied error when the data engineer tries to prepare the data by using SageMaker Studio.
@@ -4950,12 +4670,16 @@ Which change should the engineer make to gain access to SageMaker Studio?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132703-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q308. [github_examtopics_cache]
-*App id: `LOC-221`*
+## Q221. [github_examtopics_cache]
+*App id: `LOC-221` · type: `single`*
 
 A data engineer is launching an Amazon EMR cluster. The data that the data engineer needs to load into the new cluster is currently in an Amazon S3 bucket. The data engineer needs to ensure that data is encrypted both at rest and in transit.
 
@@ -4970,12 +4694,16 @@ Which solution will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151948-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q309. [github_examtopics_cache]
-*App id: `LOC-222`*
+## Q222. [github_examtopics_cache]
+*App id: `LOC-222` · type: `single`*
 
 A data engineer is processing and analyzing multiple terabytes of raw data that is in Amazon S3. The data engineer needs to clean and prepare the data. Then the data engineer needs to load the data into Amazon Redshift for analytics.
 
@@ -4990,12 +4718,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145188-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q310. [github_examtopics_cache]
-*App id: `LOC-223`*
+## Q223. [github_examtopics_cache]
+*App id: `LOC-223` · type: `single`*
 
 A data engineer is using Amazon Athena to analyze sales data that is in Amazon S3. The data engineer writes a query to retrieve sales amounts for 2023 for several products from a table named sales_data. However, the query does not return results for all of the products that are in the sales_data table. The data engineer needs to troubleshoot the query to resolve the issue.
 The data engineer's original query is as follows:
@@ -5015,12 +4747,16 @@ How should the data engineer modify the Athena query to meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132672-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q311. [github_examtopics_cache]
-*App id: `LOC-224`*
+## Q224. [github_examtopics_cache]
+*App id: `LOC-224` · type: `single`*
 
 A data engineer is using Amazon QuickSight to build a dashboard to report a company’s revenue in multiple AWS Regions. The data engineer wants the dashboard to display the total revenue for a Region, regardless of the drill-down levels shown in the visual.
 
@@ -5033,12 +4769,16 @@ Which solution will meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/152019-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q312. [github_examtopics_cache]
-*App id: `LOC-225`*
+## Q225. [github_examtopics_cache]
+*App id: `LOC-225` · type: `single`*
 
 A data engineer is using an AWS Glue crawler to catalog data that is in an Amazon S3 bucket. The S3 bucket contains both .csv and json files. The data engineer configured the crawler to exclude the .json files from the catalog.
 
@@ -5053,12 +4793,16 @@ Which solution will meet this requirement with the SHORTEST query times?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145607-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q313. [github_examtopics_cache]
-*App id: `LOC-226`*
+## Q226. [github_examtopics_cache]
+*App id: `LOC-226` · type: `single`*
 
 A data engineer maintains a materialized view that is based on an Amazon Redshift database. The view has a column named load_date that stores the date when each row was loaded.
 
@@ -5069,17 +4813,21 @@ Which command will reclaim the MOST database storage space?
 - A. DELETE FROM materialized_view_name where 1=1
 - B. TRUNCATE materialized_view_name
 - C. VACUUM table_name where load_date<=current_date
-- materializedview
+- D. materializedview
 - D. DELETE FROM materialized_view_name where load_date<=current_date
 
 **Answer:** B
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/150336-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q314. [github_examtopics_cache]
-*App id: `LOC-227`*
+## Q227. [github_examtopics_cache]
+*App id: `LOC-227` · type: `multi`*
 
 A data engineer must build an extract, transform, and load (ETL) pipeline to process and load data from 10 source systems into 10 tables that are in an Amazon Redshift database. All the source systems generate .csv, JSON, or Apache Parquet files every 15 minutes. The source systems all deliver files into one Amazon S3 bucket. The file sizes range from 10 MB to 20 GB. The ETL pipeline must function correctly despite changes to the data schema.
 Which data pipeline solutions will meet these requirements? (Choose two.)
@@ -5092,12 +4840,16 @@ Which data pipeline solutions will meet these requirements? (Choose two.)
 
 **Answer:** BD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132744-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q315. [github_examtopics_cache]
-*App id: `LOC-228`*
+## Q228. [github_examtopics_cache]
+*App id: `LOC-228` · type: `single`*
 
 A data engineer must ingest a source of structured data that is in .csv format into an Amazon S3 data lake. The .csv files contain 15 columns. Data analysts need to run Amazon Athena queries on one or two columns of the dataset. The data analysts rarely query the entire file.
 Which solution will meet these requirements MOST cost-effectively?
@@ -5109,12 +4861,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132349-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q316. [github_examtopics_cache]
-*App id: `LOC-229`*
+## Q229. [github_examtopics_cache]
+*App id: `LOC-229` · type: `single`*
 
 A data engineer must manage the ingestion of real-time streaming data into AWS. The data engineer wants to perform real-time analytics on the incoming streaming data by using time-based aggregations over a window of up to 30 minutes. The data engineer needs a solution that is highly fault tolerant.
 Which solution will meet these requirements with the LEAST operational overhead?
@@ -5126,12 +4882,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132739-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q317. [github_examtopics_cache]
-*App id: `LOC-230`*
+## Q230. [github_examtopics_cache]
+*App id: `LOC-230` · type: `single`*
 
 A data engineer must orchestrate a data pipeline that consists of one AWS Lambda function and one AWS Glue job. The solution must integrate with AWS services.
 Which solution will meet these requirements with the LEAST management overhead?
@@ -5143,12 +4903,16 @@ Which solution will meet these requirements with the LEAST management overhead?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132676-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q318. [github_examtopics_cache]
-*App id: `LOC-231`*
+## Q231. [github_examtopics_cache]
+*App id: `LOC-231` · type: `multi`*
 
 A data engineer must orchestrate a series of Amazon Athena queries that will run every day. Each query can run for more than 15 minutes.
 Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)
@@ -5161,12 +4925,16 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 
 **Answer:** AB
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AB. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131683-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q319. [github_examtopics_cache]
-*App id: `LOC-232`*
+## Q232. [github_examtopics_cache]
+*App id: `LOC-232` · type: `single`*
 
 A data engineer must use AWS services to ingest a dataset into an Amazon S3 data lake. The data engineer profiles the dataset and discovers that the dataset contains personally identifiable information (PII). The data engineer must implement a solution to profile the dataset and obfuscate the PII.
 Which solution will meet this requirement with the LEAST operational effort?
@@ -5178,12 +4946,16 @@ Which solution will meet this requirement with the LEAST operational effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132653-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q320. [github_examtopics_cache]
-*App id: `LOC-233`*
+## Q233. [github_examtopics_cache]
+*App id: `LOC-233` · type: `single`*
 
 A data engineer needs Amazon Athena queries to finish faster. The data engineer notices that all the files the Athena queries use are currently stored in uncompressed .csv format. The data engineer also notices that users perform most queries by selecting a specific column.
 Which solution will MOST speed up the Athena query performance?
@@ -5195,12 +4967,16 @@ Which solution will MOST speed up the Athena query performance?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131473-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q321. [github_examtopics_cache]
-*App id: `LOC-234`*
+## Q234. [github_examtopics_cache]
+*App id: `LOC-234` · type: `single`*
 
 A data engineer needs to build an enterprise data catalog based on the company's Amazon S3 buckets and Amazon RDS databases. The data catalog must include storage format metadata for the data in the catalog.
 
@@ -5213,12 +4989,16 @@ Which solution will meet these requirements with the LEAST effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151938-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q322. [github_examtopics_cache]
-*App id: `LOC-235`*
+## Q235. [github_examtopics_cache]
+*App id: `LOC-235` · type: `single`*
 
 A data engineer needs to build an extract, transform, and load (ETL) job. The ETL job will process daily incoming .csv files that users upload to an Amazon S3 bucket. The size of each S3 object is less than 100 MB.
 Which solution will meet these requirements MOST cost-effectively?
@@ -5230,12 +5010,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132708-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q323. [github_examtopics_cache]
-*App id: `LOC-236`*
+## Q236. [github_examtopics_cache]
+*App id: `LOC-236` · type: `single`*
 
 A data engineer needs to create a new empty table in Amazon Athena that has the same schema as an existing table named old_table.
 
@@ -5248,12 +5032,16 @@ Which SQL statement should the data engineer use to meet this requirement?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150339-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q324. [github_examtopics_cache]
-*App id: `LOC-237`*
+## Q237. [github_examtopics_cache]
+*App id: `LOC-237` · type: `single`*
 
 A data engineer needs to create an Amazon Athena table based on a subset of data from an existing Athena table named cities_world. The cities_world table contains cities that are located around the world. The data engineer must create a new table named cities_us to contain only the cities from cities_world that are located in the US.
 
@@ -5266,39 +5054,47 @@ Which SQL statement should the data engineer use to meet this requirement?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150340-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q325. [github_examtopics_cache]
-*App id: `LOC-238`*
+## Q238. [github_examtopics_cache]
+*App id: `LOC-238` · type: `multi`*
 
 A data engineer needs to create an empty copy of an existing table in Amazon Athena to perform data processing tasks. The existing table in Athena contains 1,000 rows.
 
 Which query will meet this requirement?
 
 - A. CREATE TABLE new_table -
-- LIKE old_table;
+- B. LIKE old_table;
 - B. CREATE TABLE new_table -
-- AS SELECT *
-- FROM old_table -
-- WITH NO DATA;
+- D. AS SELECT *
+- E. FROM old_table -
+- F. WITH NO DATA;
 - C. CREATE TABLE new_table -
-- AS SELECT *
-- FROM old_table;
+- H. AS SELECT *
+- I. FROM old_table;
 - D. CREATE TABLE new_table -
-- as SELECT *
-- FROM old_cable -
-- WHERE 1=1;
+- K. as SELECT *
+- L. FROM old_cable -
+- M. WHERE 1=1;
 
-**Answer:** B
+**Answer:** BB
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/150345-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q326. [github_examtopics_cache]
-*App id: `LOC-239`*
+## Q239. [github_examtopics_cache]
+*App id: `LOC-239` · type: `single`*
 
 A data engineer needs to debug an AWS Glue job that reads from Amazon S3 and writes to Amazon Redshift. The data engineer enabled the bookmark feature for the AWS Glue job.
 The data engineer has set the maximum concurrency for the AWS Glue job to 1.
@@ -5314,12 +5110,16 @@ What is the likely reason the AWS Glue job is reprocessing the files?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143046-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q327. [github_examtopics_cache]
-*App id: `LOC-240`*
+## Q240. [github_examtopics_cache]
+*App id: `LOC-240` · type: `single`*
 
 A data engineer needs to join data from multiple sources to perform a one-time analysis job. The data is stored in Amazon DynamoDB, Amazon RDS, Amazon Redshift, and Amazon S3.
 Which solution will meet this requirement MOST cost-effectively?
@@ -5331,12 +5131,16 @@ Which solution will meet this requirement MOST cost-effectively?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131712-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q328. [github_examtopics_cache]
-*App id: `LOC-241`*
+## Q241. [github_examtopics_cache]
+*App id: `LOC-241` · type: `single`*
 
 A data engineer needs to maintain a central metadata repository that users access through Amazon EMR and Amazon Athena queries. The repository needs to provide the schema and properties of many tables. Some of the metadata is stored in Apache Hive. The data engineer needs to import the metadata from Hive into the central metadata repository.
 Which solution will meet these requirements with the LEAST development effort?
@@ -5348,12 +5152,16 @@ Which solution will meet these requirements with the LEAST development effort?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132685-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q329. [github_examtopics_cache]
-*App id: `LOC-242`*
+## Q242. [github_examtopics_cache]
+*App id: `LOC-242` · type: `single`*
 
 A data engineer needs to onboard a new data producer into AWS. The data producer needs to migrate data products to AWS.
 
@@ -5368,12 +5176,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151933-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q330. [github_examtopics_cache]
-*App id: `LOC-243`*
+## Q243. [github_examtopics_cache]
+*App id: `LOC-243` · type: `single`*
 
 A data engineer needs to securely transfer 5 TB of data from an on-premises data center to an Amazon S3 bucket. Approximately 5% of the data changes every day. Updates to the data need to be regularly proliferated to the S3 bucket. The data includes files that are in multiple formats. The data engineer needs to automate the transfer process and must schedule the process to run periodically.
 Which AWS service should the data engineer use to transfer the data in the MOST operationally efficient way?
@@ -5385,12 +5197,16 @@ Which AWS service should the data engineer use to transfer the data in the MOST 
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131676-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q331. [github_examtopics_cache]
-*App id: `LOC-244`*
+## Q244. [github_examtopics_cache]
+*App id: `LOC-244` · type: `single`*
 
 A data engineer needs to use AWS Step Functions to design an orchestration workflow. The workflow must parallel process a large collection of data files and apply a specific transformation to each file.
 Which Step Functions state should the data engineer use to meet these requirements?
@@ -5402,12 +5218,16 @@ Which Step Functions state should the data engineer use to meet these requiremen
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132773-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q332. [github_examtopics_cache]
-*App id: `LOC-245`*
+## Q245. [github_examtopics_cache]
+*App id: `LOC-245` · type: `multi`*
 
 A data engineer needs to use Amazon Neptune to develop graph applications.
 
@@ -5421,12 +5241,16 @@ Which programming languages should the engineer use to develop the graph applica
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151917-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q333. [github_examtopics_cache]
-*App id: `LOC-246`*
+## Q246. [github_examtopics_cache]
+*App id: `LOC-246` · type: `multi`*
 
 A data engineer needs to use an Amazon QuickSight dashboard that is based on Amazon Athena queries on data that is stored in an Amazon S3 bucket. When the data engineer connects to the QuickSight dashboard, the data engineer receives an error message that indicates insufficient permissions.
 Which factors could cause to the permissions-related errors? (Choose two.)
@@ -5439,12 +5263,16 @@ Which factors could cause to the permissions-related errors? (Choose two.)
 
 **Answer:** CD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: CD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132701-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q334. [github_examtopics_cache]
-*App id: `LOC-247`*
+## Q247. [github_examtopics_cache]
+*App id: `LOC-247` · type: `single`*
 
 A data engineer notices that Amazon Athena queries are held in a queue before the queries run.
 
@@ -5457,12 +5285,16 @@ How can the data engineer prevent the queries from queueing?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142580-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q335. [github_examtopics_cache]
-*App id: `LOC-248`*
+## Q248. [github_examtopics_cache]
+*App id: `LOC-248` · type: `multi`*
 
 A data engineer runs Amazon Athena queries on data that is in an Amazon S3 bucket. The Athena queries use AWS Glue Data Catalog as a metadata table.
 The data engineer notices that the Athena query plans are experiencing a performance bottleneck. The data engineer determines that the cause of the performance bottleneck is the large number of partitions that are in the S3 bucket. The data engineer must resolve the performance bottleneck and reduce Athena query planning time.
@@ -5476,12 +5308,16 @@ Which solutions will meet these requirements? (Choose two.)
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131708-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q336. [github_examtopics_cache]
-*App id: `LOC-249`*
+## Q249. [github_examtopics_cache]
+*App id: `LOC-249` · type: `single`*
 
 A data engineer set up an AWS Lambda function to read an object that is stored in an Amazon S3 bucket. The object is encrypted by an AWS KMS key.
 
@@ -5496,12 +5332,16 @@ What is the likely cause of the error?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145725-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q337. [github_examtopics_cache]
-*App id: `LOC-250`*
+## Q250. [github_examtopics_cache]
+*App id: `LOC-250` · type: `single`*
 
 A data engineer uses Amazon Kinesis Data Streams to ingest and process records that contain user behavior data from an application every day.
 
@@ -5516,12 +5356,16 @@ How should the data engineer resolve the throttling issue?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/156778-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q338. [github_examtopics_cache]
-*App id: `LOC-251`*
+## Q251. [github_examtopics_cache]
+*App id: `LOC-251` · type: `single`*
 
 A data engineer uses Amazon Managed Workflows for Apache Airflow (Amazon MWAA) to run data pipelines in an AWS account.
 
@@ -5536,12 +5380,16 @@ Which log type should the data engineer use to diagnose the cause of the failure
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145096-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q339. [github_examtopics_cache]
-*App id: `LOC-252`*
+## Q252. [github_examtopics_cache]
+*App id: `LOC-252` · type: `single`*
 
 A data engineer uses Amazon Redshift to run resource-intensive analytics processes once every month. Every month, the data engineer creates a new Redshift provisioned cluster. The data engineer deletes the Redshift provisioned cluster after the analytics processes are complete every month. Before the data engineer deletes the cluster each month, the data engineer unloads backup data from the cluster to an Amazon S3 bucket.
 The data engineer needs a solution to run the monthly analytics processes that does not require the data engineer to manage the infrastructure manually.
@@ -5554,12 +5402,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132699-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q340. [github_examtopics_cache]
-*App id: `LOC-253`*
+## Q253. [github_examtopics_cache]
+*App id: `LOC-253` · type: `single`*
 
 A data engineer wants to improve the performance of SQL queries in Amazon Athena that run against a sales data table.
 
@@ -5574,12 +5426,16 @@ Which statement does the data engineer need to run to meet these requirements?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142563-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q341. [github_examtopics_cache]
-*App id: `LOC-254`*
+## Q254. [github_examtopics_cache]
+*App id: `LOC-254` · type: `single`*
 
 A data engineer wants to orchestrate a set of extract, transform, and load (ETL) jobs that run on AWS. The ETL jobs contain tasks that must run Apache Spark jobs on Amazon EMR, make API calls to Salesforce, and load data into Amazon Redshift.
 
@@ -5594,12 +5450,16 @@ Which service will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150746-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q342. [github_examtopics_cache]
-*App id: `LOC-255`*
+## Q255. [github_examtopics_cache]
+*App id: `LOC-255` · type: `single`*
 
 A data engineering team is using an Amazon Redshift data warehouse for operational reporting. The team wants to prevent performance issues that might result from long- running queries. A data engineer must choose a system table in Amazon Redshift to record anomalies when a query optimizer identifies conditions that might indicate performance issues.
 Which table views should the data engineer use to meet this requirement?
@@ -5611,12 +5471,16 @@ Which table views should the data engineer use to meet this requirement?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132660-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q343. [github_examtopics_cache]
-*App id: `LOC-256`*
+## Q256. [github_examtopics_cache]
+*App id: `LOC-256` · type: `multi`*
 
 A finance company receives data from third-party data providers and stores the data as objects in an Amazon S3 bucket.
 
@@ -5634,12 +5498,16 @@ Which combination of solutions will meet this requirement? (Choose two.)
 
 **Answer:** AD
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AD. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145291-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q344. [github_examtopics_cache]
-*App id: `LOC-257`*
+## Q257. [github_examtopics_cache]
+*App id: `LOC-257` · type: `multi`*
 
 A finance company uses Amazon Redshift as a data warehouse. The company stores the data in a shared Amazon S3 bucket. The company uses Amazon Redshift Spectrum to access the data that is stored in the S3 bucket. The data comes from certified third-party data providers. Each third-party data provider has unique connection details.
 
@@ -5655,12 +5523,16 @@ Which combination of steps should the company take to meet these requirements? (
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/147826-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q345. [github_examtopics_cache]
-*App id: `LOC-258`*
+## Q258. [github_examtopics_cache]
+*App id: `LOC-258` · type: `single`*
 
 A financial company recently added more features to its mobile app. The new features required the company to create a new topic in an existing Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster.
 
@@ -5675,12 +5547,16 @@ How should the company address the CloudWatch alarm?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151937-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q346. [github_examtopics_cache]
-*App id: `LOC-259`*
+## Q259. [github_examtopics_cache]
+*App id: `LOC-259` · type: `single`*
 
 A financial company wants to use Amazon Athena to run on-demand SQL queries on a petabyte-scale dataset to support a business intelligence (BI) application. An AWS Glue job that runs during non-business hours updates the dataset once every day. The BI application has a standard data refresh frequency of 1 hour to comply with company policies.
 A data engineer wants to cost optimize the company's use of Amazon Athena without adding any additional infrastructure costs.
@@ -5693,12 +5569,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132694-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q347. [github_examtopics_cache]
-*App id: `LOC-260`*
+## Q260. [github_examtopics_cache]
+*App id: `LOC-260` · type: `single`*
 
 A gaming company uses Amazon Kinesis Data Streams to collect clickstream data. The company uses Amazon Data Firehose delivery streams to store the data in JSON format in Amazon S3. Data scientists at the company use Amazon Athena to query the most recent data to obtain business insights.
 
@@ -5713,12 +5593,16 @@ Which solution will meet these requirements with the LEAST management effort?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150779-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q348. [github_examtopics_cache]
-*App id: `LOC-261`*
+## Q261. [github_examtopics_cache]
+*App id: `LOC-261` · type: `single`*
 
 A gaming company uses a NoSQL database to store customer information. The company is planning to migrate to AWS.
 
@@ -5733,12 +5617,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142542-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q349. [github_examtopics_cache]
-*App id: `LOC-262`*
+## Q262. [github_examtopics_cache]
+*App id: `LOC-262` · type: `single`*
 
 A healthcare company uses Amazon Kinesis Data Streams to stream real-time health data from wearable devices, hospital equipment, and patient records.
 A data engineer needs to find a solution to process the streaming data. The data engineer needs to store the data in an Amazon Redshift Serverless warehouse. The solution must support near real-time analytics of the streaming data and the previous day's data.
@@ -5751,12 +5639,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132765-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q350. [github_examtopics_cache]
-*App id: `LOC-263`*
+## Q263. [github_examtopics_cache]
+*App id: `LOC-263` · type: `single`*
 
 A lab uses IoT sensors to monitor humidity, temperature, and pressure for a project. The sensors send 100 KB of data every 10 seconds. A downstream process will read the data from an Amazon S3 bucket every 30 seconds.
 
@@ -5769,12 +5661,16 @@ Which solution will deliver the data to the S3 bucket with the LEAST latency?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142561-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q351. [github_examtopics_cache]
-*App id: `LOC-264`*
+## Q264. [github_examtopics_cache]
+*App id: `LOC-264` · type: `single`*
 
 A manufacturing company collects sensor data from its factory floor to monitor and enhance operational efficiency. The company uses Amazon Kinesis Data Streams to publish the data that the sensors collect to a data stream. Then Amazon Kinesis Data Firehose writes the data to an Amazon S3 bucket.
 The company needs to display a real-time view of operational efficiency on a large screen in the manufacturing facility.
@@ -5787,12 +5683,16 @@ Which solution will meet these requirements with the LOWEST latency?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/131474-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q352. [github_examtopics_cache]
-*App id: `LOC-265`*
+## Q265. [github_examtopics_cache]
+*App id: `LOC-265` · type: `single`*
 
 A manufacturing company has many IoT devices in facilities around the world. The company uses Amazon Kinesis Data Streams to collect data from the devices. The data includes device ID, capture date, measurement type, measurement value, and facility ID. The company uses facility ID as the partition key.
 
@@ -5807,12 +5707,16 @@ How should the company resolve the issues that the operations team observed?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142562-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q353. [github_examtopics_cache]
-*App id: `LOC-266`*
+## Q266. [github_examtopics_cache]
+*App id: `LOC-266` · type: `single`*
 
 A manufacturing company wants to collect data from sensors. A data engineer needs to implement a solution that ingests sensor data in near real time.
 The solution must store the data to a persistent data store. The solution must store the data in nested JSON format. The company must have the ability to query from the data store with a latency of less than 10 milliseconds.
@@ -5825,12 +5729,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132688-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q354. [github_examtopics_cache]
-*App id: `LOC-267`*
+## Q267. [github_examtopics_cache]
+*App id: `LOC-267` · type: `multi`*
 
 A marketing company collects clickstream data. The company sends the clickstream data to Amazon Kinesis Data Firehose and stores the clickstream data in Amazon S3. The company wants to build a series of dashboards that hundreds of users from multiple departments will use.
 
@@ -5846,12 +5754,16 @@ Which combination of steps will meet these requirements MOST cost-effectively? (
 
 **Answer:** BE
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: BE. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142576-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q355. [github_examtopics_cache]
-*App id: `LOC-268`*
+## Q268. [github_examtopics_cache]
+*App id: `LOC-268` · type: `single`*
 
 A marketing company uses Amazon S3 to store marketing data. The company uses versioning in some buckets. The company runs several jobs to read and load data into the buckets.
 
@@ -5866,12 +5778,16 @@ Which solution will meet these requirements with the LEAST operational effort?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150343-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q356. [github_examtopics_cache]
-*App id: `LOC-269`*
+## Q269. [github_examtopics_cache]
+*App id: `LOC-269` · type: `single`*
 
 A marketing company uses Amazon S3 to store clickstream data. The company queries the data at the end of each day by using a SQL JOIN clause on S3 objects that are stored in separate buckets.
 
@@ -5886,12 +5802,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143053-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q357. [github_examtopics_cache]
-*App id: `LOC-270`*
+## Q270. [github_examtopics_cache]
+*App id: `LOC-270` · type: `single`*
 
 A media company uses software as a service (SaaS) applications to gather data by using third-party tools. The company needs to store the data in an Amazon S3 bucket. The company will use Amazon Redshift to perform analytics based on the data.
 Which AWS service or feature will meet these requirements with the LEAST operational overhead?
@@ -5903,12 +5823,16 @@ Which AWS service or feature will meet these requirements with the LEAST operati
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132669-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q358. [github_examtopics_cache]
-*App id: `LOC-271`*
+## Q271. [github_examtopics_cache]
+*App id: `LOC-271` · type: `single`*
 
 A media company wants to use Amazon OpenSearch Service to analyze rea-time data about popular musical artists and songs. The company expects to ingest millions of new data events every day. The new data events will arrive through an Amazon Kinesis data stream. The company must transform the data and then ingest the data into the OpenSearch Service domain.
 
@@ -5921,12 +5845,16 @@ Which method should the company use to ingest the data with the LEAST operationa
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145715-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q359. [github_examtopics_cache]
-*App id: `LOC-272`*
+## Q272. [github_examtopics_cache]
+*App id: `LOC-272` · type: `single`*
 
 A mobile gaming company wants to capture data from its gaming app. The company wants to make the data available to three internal consumers of the data. The data records are approximately 20 KB in size.
 
@@ -5941,12 +5869,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/147824-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q360. [github_examtopics_cache]
-*App id: `LOC-273`*
+## Q273. [github_examtopics_cache]
+*App id: `LOC-273` · type: `single`*
 
 A retail company is expanding its operations globally. The company needs to use Amazon QuickSight to accurately calculate currency exchange rates for financial reports. The company has an existing dashboard that includes a visual that is based on an analysis of a dataset that contains global currency values and exchange rates.
 
@@ -5961,12 +5893,16 @@ Which solution will meet these requirements?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151931-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q361. [github_examtopics_cache]
-*App id: `LOC-274`*
+## Q274. [github_examtopics_cache]
+*App id: `LOC-274` · type: `multi`*
 
 A retail company is using an Amazon Redshift cluster to support real-time inventory management. The company has deployed an ML model on a real-time endpoint in Amazon SageMaker.
 
@@ -5982,12 +5918,16 @@ Which solutions will meet these requirements? (Choose two.)
 
 **Answer:** AB
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AB. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151958-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q362. [github_examtopics_cache]
-*App id: `LOC-275`*
+## Q275. [github_examtopics_cache]
+*App id: `LOC-275` · type: `single`*
 
 A retail company stores customer data in an Amazon S3 bucket. Some of the customer data contains personally identifiable information (PII) about customers. The company must not share PII data with business partners.
 
@@ -6002,12 +5942,16 @@ Which solution will meet this requirement with the LEAST manual intervention?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/150748-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q363. [github_examtopics_cache]
-*App id: `LOC-276`*
+## Q276. [github_examtopics_cache]
+*App id: `LOC-276` · type: `single`*
 
 A retail company stores data from a product lifecycle management (PLM) application in an on-premises MySQL database. The PLM application frequently updates the database when transactions occur.
 
@@ -6024,12 +5968,16 @@ Which solution will meet these requirements with the LEAST development effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143051-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q364. [github_examtopics_cache]
-*App id: `LOC-277`*
+## Q277. [github_examtopics_cache]
+*App id: `LOC-277` · type: `single`*
 
 A retail company stores transactions, store locations, and customer information tables in four reserved ra3.4xlarge Amazon Redshift cluster nodes. All three tables use even table distribution.
 
@@ -6046,12 +5994,16 @@ Which solution will meet these requirements in the MOST cost-effective way?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142568-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q365. [github_examtopics_cache]
-*App id: `LOC-278`*
+## Q278. [github_examtopics_cache]
+*App id: `LOC-278` · type: `single`*
 
 A retail company uses AWS Glue for extract, transform, and load (ETL) operations on a dataset that contains information about customer orders. The company wants to implement specific validation rules to ensure data accuracy and consistency.
 
@@ -6064,12 +6016,16 @@ Which solution will meet these requirements?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142574-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q366. [github_examtopics_cache]
-*App id: `LOC-279`*
+## Q279. [github_examtopics_cache]
+*App id: `LOC-279` · type: `multi`*
 
 A retail company uses Amazon Aurora PostgreSQL to process and store live transactional data. The company uses an Amazon Redshift cluster for a data warehouse.
 
@@ -6087,12 +6043,14 @@ Which combination of steps will meet these requirements? (Choose two.)
 
 **Answer:** A
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `github_examtopics_cache`.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142537-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q367. [github_examtopics_cache]
-*App id: `LOC-280`*
+## Q280. [github_examtopics_cache]
+*App id: `LOC-280` · type: `multi`*
 
 A retail company uses an Amazon Redshift data warehouse and an Amazon S3 bucket. The company ingests retail order data into the S3 bucket every day.
 
@@ -6110,12 +6068,16 @@ Which combination of steps will meet this requirement with LEAST developmental e
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151918-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q368. [github_examtopics_cache]
-*App id: `LOC-281`*
+## Q281. [github_examtopics_cache]
+*App id: `LOC-281` · type: `single`*
 
 A security company stores IoT data that is in JSON format in an Amazon S3 bucket. The data structure can change when the company upgrades the IoT devices. The company wants to create a data catalog that includes the IoT data. The company's analytics department will use the data catalog to index the data.
 Which solution will meet these requirements MOST cost-effectively?
@@ -6127,12 +6089,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132683-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q369. [github_examtopics_cache]
-*App id: `LOC-282`*
+## Q282. [github_examtopics_cache]
+*App id: `LOC-282` · type: `single`*
 
 A technology company currently uses Amazon Kinesis Data Streams to collect log data in real time. The company wants to use Amazon Redshift for downstream real-time queries and to enrich the log data.
 
@@ -6145,12 +6111,16 @@ Which solution will ingest data into Amazon Redshift with the LEAST operational 
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/146967-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q370. [github_examtopics_cache]
-*App id: `LOC-283`*
+## Q283. [github_examtopics_cache]
+*App id: `LOC-283` · type: `single`*
 
 A telecommunications company collects network usage data throughout each day at a rate of several thousand data points each second. The company runs an application to process the usage data in real time. The company aggregates and stores the data in an Amazon Aurora DB instance.
 
@@ -6165,12 +6135,16 @@ Which solution will meet this requirement with the LEAST latency?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143122-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q371. [github_examtopics_cache]
-*App id: `LOC-284`*
+## Q284. [github_examtopics_cache]
+*App id: `LOC-284` · type: `single`*
 
 A transportation company wants to track vehicle movements by capturing geolocation records. The records are 10 bytes in size. The company receives up to 10.000 records every second. Data transmission delays of a few minutes are acceptable because of unreliable network conditions.
 
@@ -6185,12 +6159,16 @@ Which solution will meet these requirements in the MOST operationally efficient 
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/147168-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q372. [github_examtopics_cache]
-*App id: `LOC-285`*
+## Q285. [github_examtopics_cache]
+*App id: `LOC-285` · type: `multi`*
 
 An airline company is collecting metrics about flight activities for analytics. The company is conducting a proof of concept (POC) test to show how analytics can provide insights that the company can use to increase on-time departures.
 The POC test uses objects in Amazon S3 that contain the metrics in .csv format. The POC test uses Amazon Athena to query the data. The data is partitioned in the S3 bucket by date.
@@ -6205,12 +6183,16 @@ Which combination of solutions will meet these requirements? (Choose two.)
 
 **Answer:** CE
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: CE. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132687-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q373. [github_examtopics_cache]
-*App id: `LOC-286`*
+## Q286. [github_examtopics_cache]
+*App id: `LOC-286` · type: `multi`*
 
 An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application.
 
@@ -6224,12 +6206,16 @@ Which solutions will minimize data loss for the application? (Choose two.)
 
 **Answer:** AC
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: AC. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145713-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q374. [github_examtopics_cache]
-*App id: `LOC-287`*
+## Q287. [github_examtopics_cache]
+*App id: `LOC-287` · type: `single`*
 
 An ecommerce company operates a complex order fulfilment process that spans several operational systems hosted in AWS. Each of the operational systems has a Java Database
 Connectivity (JDBC)-compliant relational database where the latest processing state is captured.
@@ -6245,12 +6231,16 @@ Which solution will meet these requirements with the LEAST development overhead?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/151928-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q375. [github_examtopics_cache]
-*App id: `LOC-288`*
+## Q288. [github_examtopics_cache]
+*App id: `LOC-288` · type: `single`*
 
 An ecommerce company wants to use AWS to migrate data pipelines from an on-premises environment into the AWS Cloud. The company currently uses a third-party tool in the on-premises environment to orchestrate data ingestion processes.
 
@@ -6265,12 +6255,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/143047-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q376. [github_examtopics_cache]
-*App id: `LOC-289`*
+## Q289. [github_examtopics_cache]
+*App id: `LOC-289` · type: `single`*
 
 An insurance company stores transaction data that the company compressed with gzip.
 
@@ -6285,12 +6279,16 @@ Which solution will meet this requirement in the MOST cost-effective way?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142575-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q377. [github_examtopics_cache]
-*App id: `LOC-290`*
+## Q290. [github_examtopics_cache]
+*App id: `LOC-290` · type: `single`*
 
 An investment company needs to manage and extract insights from a volume of semi-structured data that grows continuously.
 
@@ -6305,12 +6303,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/147823-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q378. [github_examtopics_cache]
-*App id: `LOC-291`*
+## Q291. [github_examtopics_cache]
+*App id: `LOC-291` · type: `single`*
 
 An online retail company has an application that runs on Amazon EC2 instances that are in a VPC. The company wants to collect flow logs for the VPC and analyze network traffic.
 
@@ -6323,12 +6325,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142567-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q379. [github_examtopics_cache]
-*App id: `LOC-292`*
+## Q292. [github_examtopics_cache]
+*App id: `LOC-292` · type: `single`*
 
 An online retail company stores Application Load Balancer (ALB) access logs in an Amazon S3 bucket. The company wants to use Amazon Athena to query the logs to analyze traffic patterns.
 
@@ -6343,12 +6349,16 @@ Which solution will meet these requirements with the LEAST operational effort?
 
 **Answer:** B
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: B. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/142559-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q380. [github_examtopics_cache]
-*App id: `LOC-293`*
+## Q293. [github_examtopics_cache]
+*App id: `LOC-293` · type: `single`*
 
 An online retailer uses multiple delivery partners to deliver products to customers. The delivery partners send order summaries to the retailer. The retailer stores the order summaries in Amazon S3.
 
@@ -6363,12 +6373,16 @@ Which solution will meet these requirements with the LEAST operational overhead?
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/153157-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q381. [github_examtopics_cache]
-*App id: `LOC-294`*
+## Q294. [github_examtopics_cache]
+*App id: `LOC-294` · type: `multi`*
 
 During a security review, a company identified a vulnerability in an AWS Glue job. The company discovered that credentials to access an Amazon Redshift cluster were hard coded in the job script.
 A data engineer must remediate the security vulnerability in the AWS Glue job. The solution must securely store the credentials.
@@ -6382,12 +6396,16 @@ Which combination of steps should the data engineer take to meet these requireme
 
 **Answer:** DE
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: DE. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/132698-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q382. [github_examtopics_cache]
-*App id: `LOC-295`*
+## Q295. [github_examtopics_cache]
+*App id: `LOC-295` · type: `single`*
 
 Files from multiple data sources arrive in an Amazon S3 bucket on a regular basis. A data engineer wants to ingest new files into Amazon Redshift in near real time when the new files arrive in the S3 bucket.
 
@@ -6400,12 +6418,16 @@ Which solution will meet these requirements?
 
 **Answer:** D
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: D. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/146986-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q383. [github_examtopics_cache]
-*App id: `LOC-296`*
+## Q296. [github_examtopics_cache]
+*App id: `LOC-296` · type: `single`*
 
 The company stores a large volume of customer records in Amazon S3. To comply with regulations, the company must be able to access new customer records immediately for the first 30 days after the records are created. The company accesses records that are older than 30 days infrequently.
 
@@ -6420,12 +6442,16 @@ Which solution will meet these requirements MOST cost-effectively?
 
 **Answer:** A
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: A. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/152018-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
-## Q384. [github_examtopics_cache]
-*App id: `LOC-297`*
+## Q297. [github_examtopics_cache]
+*App id: `LOC-297` · type: `single`*
 
 Two developers are working on separate application releases. The developers have created feature branches named Branch A and Branch B by using a GitHub repository’s master branch as the source.
 
@@ -6434,29 +6460,1308 @@ The developer for Branch A deployed code to the production system. The code for 
 Which command should the developer for Branch B run before the developer raises a pull request to the master branch?
 
 - A. git diff branchB master
-- git commit -m
+- B. git commit -m
 - B. git pull master
 - C. git rebase master
 - D. git fetch -b master
 
 **Answer:** C
 
+**Explanation / Pembahasan:**
+
+Answer key from local source `github_examtopics_cache`: C. Verify against AWS docs; third-party keys are not official.
+
 Source URL: https://www.examtopics.com/discussions/amazon/view/145728-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
 ---
 
+## Q298. [pdf_exam_dumps] #1
+*App id: `LOC-298` · type: `single`*
+
+A data engineer is confguring an AWS Glue job to read data from an Amazon S3 bucket. The data engineer has set up the necessary AWS Glue connection details and an associated IAM role. However, when the data engineer aflempts to run the AWS Glue job, Glue job, the data engineer receives an error message that indicates that there are problems with the Amazon S3 VPC gateway endpoint. The data engineer must resolve the error and connect the AWS Glue job to the S3 bucket. Which solution will meet this requirement?
+
+- A. Update the AWS Glue security group to allow inbound traffic from the Amazon S3 VPC gateway endpoint. gateway endpoint.
+- B. Confgure an S3 bucket policy to explicitly grant the AWS Glue job permissions to access the S3 bucket.
+- C. Review the AWS Glue job code to ensure that the AWS Glue connection details include a fully qualifed domain name.
+- D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
+- E. D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q299. [pdf_exam_dumps] #2
+*App id: `LOC-299` · type: `single`*
+
+A retail company has a customer data hub in an Amazon S3 bucket. Employees from many countries use the data hub to support company-wide analytics A governance team must ensure that the company's data analysts can access data only for customers who are within the same country as the analysts. Which solution will meet these requirements with the LEAST operafonal etiort?
+
+- A. Create a separate table for each country's customer data. Provide access to each analyst each analyst based on the country that the analyst serves. analyst serves.
+- B. Register the S3 bucket as a data lake locafon in AWS Lake Formafon. Use the Lake Formafon row-level security features to enforce the company's access policies.
+- C. Move the data to AWS Regions that are close to the countries where the customers are. Provide access to each analyst based on the country that the analyst serves.
+- D. Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. Assign the appropriate roles to the analysts.
+- E. Provide access to each analyst based on the country that the analyst serves. D. Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. Assign the appropriate roles to the analysts.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q300. [pdf_80_mock] #3
+*App id: `LOC-300` · type: `single`*
+
+A media company wants to improve a system that recommends media content to customers based on user behaviour and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company’s existing analytics platform. The company wants to minimise the effort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Use API calls to access and integrate third-party datasets from AWS Data Exchange.
+- B. Use API calls to access and integrate third-party datasets from AWS DataSyn
+- C. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories.
+- D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
+- E. B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories. D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q301. [pdf_exam_dumps] #3
+*App id: `LOC-301` · type: `single`*
+
+A media company wants to improve a system that recommends media content to customer based on user behaviour and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company's existing analytics plaftorm. The The company wants to minimize the estort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Use API calls to access and integrate third-party datasets from AWS Data Exchange.
+- B. Use API calls to access and integrate third-party datasets from AWS DataSyn
+- C. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories.
+- D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
+- E. B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories. D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q302. [pdf_80_mock] #4
+*App id: `LOC-302` · type: `multi`*
+
+A financial company wants to implement a data mesh. The data mesh must support centralised data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
+
+- A. Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.
+- B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
+- C. Use AWS Glue DataBrew for centralised data governance and access control.
+- D. Use Amazon RDS for data storag
+- E. Use an Amazon Redshift provisioned cluster for data analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue DataBrew for centralised data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formation for centralised data governance and access control.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q303. [pdf_exam_dumps] #4
+*App id: `LOC-303` · type: `multi`*
+
+A fnancial ) A fnancial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
+
+- A. Use Amazon Aurora for data storage. Use an Amazon Redshiffl provisioned cluster for data analysis. analysis.
+- B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
+- C. Use AWS Glue Data Brew for centralized data governance and access control.
+- D. Use Amazon RDS for data storag
+- E. Use an Amazon Redshiffl provisioned cluster for data analysis. analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue Data Brew for centralized data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formafon for centralized data governance and access control.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q304. [pdf_exam_dumps] #5
+*App id: `LOC-304` · type: `single`*
+
+A data engineer maintains custom Python scripts that perform a data formaffng process that that many AWS Lambda functions use. When the data engineer needs to modify the Python scripts, the data engineer must manually update all the Lambda functions. The data engineer requires a less manual way to update the Lambda functions. Which solution will meet this requirement?
+
+- A. Store a pointer to the custom Python scripts in the execution context object in a shared Amazon S3 bucket.
+- B. Package the custom Python scripts into Lambda layers. Apply the Lambda layers to the Lambda funcfons. Lambda funcfons.
+- C. Store a pointer to the custom Python scripts in environment variables in a shared Amazon S3 bucket. S3 bucket.
+- D. Assign the same alias to each Lambda function. Call reach Lambda function by specifying the function's alias.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q305. [pdf_exam_dumps] #6
+*App id: `LOC-305` · type: `single`*
+
+A company created an extract, transform, and load (ETL) data pipeline in AWS Glue. A data engineer must crawl a table that is in Microsoffl SQL Server. The data engineer needs to extract, transform, and load the output of the crawl to an Amazon S3 bucket. The data engineer also must orchestrate the data pipeline. Which AWS service or feature will meet these requirements MOST cost-etiecfvely?
+
+- A. AWS Step Functions
+- B. AWS Glue workflows
+- C. AWS Glue Studio
+- D. Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA)
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q306. [pdf_exam_dumps] #7
+*App id: `LOC-306` · type: `single`*
+
+A fnancial services company stores fnancial data in Amazon Redshiffl. A data engineer wants to run real-time queries on the fnancial data to support a web-based trading application. The data engineer wants to run the queries from within the trading application. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Establish WebSocket connections to Amazon Redshiffl.
+- B. Use the Amazon Redshiffi Data API.
+- C. Set up Java Database Connectivity (JDBC) connections to Amazon Redshiffl.
+- D. Store frequently accessed data in Amazon S3. Use Amazon S3 Select to run the queries.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q307. [pdf_exam_dumps] #9
+*App id: `LOC-307` · type: `single`*
+
+A data engineer needs to schedule a workfiow that runs a set of AWS Glue jobs every day. The data engineer does not require the Glue jobs to run or fnish at a specifc time. Which solution will run the Glue jobs in the MOST cost-etiecfve way?
+
+- A. Choose the FLEX execufon class in the Glue job properfes
+- B. Use the Spot Instance type in Glue job properties.
+- C. Choose the STANDARD execution class in the Glue job properties.
+- D. Choose the latest version in the GlueVersion feld in the Glue job properties. properties.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q308. [pdf_exam_dumps] #10
+*App id: `LOC-308` · type: `single`*
+
+data engineer needs to create an AWS Lambda function that converts the format of data data from .csv to Apache Parquet. The Lambda function must run only if a user uploads a .csv fle to an Amazon S3 bucket. Which solution will meet these requirements with the LEAST operafonal LEAST operafonal overhead? overhead?
+
+- A. Create an S3 event noffflcafon that has an event type of s3:ObjectCreated:*. Use a ffllter rule to generate noffflcafons only when the suftx includes .csv. Set the Amazon Resource Name (ARN) of the Lambda funcfon as the desfnafon for the event noffflcafon.
+- B. Create an $3 event notifcation that has an event type of s3:ObjectTagging:* for objects for objects that have a tag set to .csv. Set the Amazon Resource Name (ARN) of the Lambda function as the destination for the event notifcation.
+- C. Create an S3 event notifcation that has an event type of s3:*. Use a flter rule to generate generate notifcations only when the suffix includes .csv. Set the Amazon Resource Name (ARN) of the the Lambda function as the destination for the event notifcation.
+- D. Create an S3 event notifcation that has an event type of s3:ObjectCreated:*. Use a flter flter rule to generate notifcations only when the suffix includes .csv. Set an Amazon Simple Notifcation Service (Amazon SNS) topic as the destination for the event notifcation. Subscribe the Lambda function to the SNS topic.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q309. [pdf_exam_dumps] #11
+*App id: `LOC-309` · type: `single`*
+
+A data engineer needs Amazon Athena queries to fnish faster. The data engineer notices that all the fles the Athena queries use are currently stored in uncompressed .csv format. The data engineer also notices that users perform most queries by selecting a specifc column. Which solution will MOST speed up the Athena query performance?
+
+- A. Change the data format from .csv to JSON format. Apply Snappy compression.
+- B. Compress the .csv fles by using Snappy compression.
+- C. Change the data format from .csv to Apache Parquet. Apply Snappy compression.
+- D. Compress the .csv fles by using gzip compression.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q310. [pdf_exam_dumps] #12
+*App id: `LOC-310` · type: `single`*
+
+A manufacturing company collects sensor data from its factory fioor to monitor and enhance enhance operational efficiency. The company uses Amazon Kinesis Data Streams to publish the data that the sensors collect to a data stream. Then Amazon Kinesis Data Firehose writes the data to an Amazon S3 bucket. S3 bucket. The company needs to display a real-time view of operational efficiency on a large screen in the manufacturing facility. Which solution will meet these requirements with the LOWEST latency LOWEST latency?
+
+- A. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to process the sensor data. Use a connector for Apache Flink to write data to an Amazon Timestream database. Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard.
+- B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard.
+- C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream database. Use the Timestream database as a source to create an Amazon QuickSight dashboar
+- D. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard. C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream databas
+- E. Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard. C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream database. Use the Timestream database as a source to create an Amazon QuickSight dashboard. D. Use AWS Glue bookmarks to read sensor data from the S3 bucket in real time. Publish the data to an Amazon Timestream database. Use the Timestream database as a source to create a Grafana dashboard.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q311. [pdf_exam_dumps] #13
+*App id: `LOC-311` · type: `single`*
+
+A company stores daily records of the fnancial performance of investment porftolios in .csv .csv format in an Amazon S3 bucket. A data engineer uses AWS Glue crawlers to crawl the S3 data. The data engineer must make the S3 data accessible daily in the AWS Glue Data Catalog. Which solution will meet these requirements?
+
+- A. Create an IAM role that includes the Amazon S3 Full Access policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Confgure the output destination to a new path in the existing S3 bucket.
+- B. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Specify a database name for the output.
+- C. Create an IAM role that includes the AmazonS3FullAccess policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Specify a database name for the output.
+- D. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the crawler's data stor
+- E. Create a daily schedule to run the crawler. Confgure the output destination to a new path in the existing S3 bucket. B. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Specify a database name for the output. C. Create an IAM role that includes the AmazonS3FullAccess policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Specify a database name for the output. D. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Confgure the output destination to a new path in the existing S3 bucket.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q312. [pdf_exam_dumps] #14
+*App id: `LOC-312` · type: `single`*
+
+A company loads transaction data for each day into Amazon Redshiffl tables at the end of each day. The company wants to have the ability to track which tables have been loaded and which tables still need to be loaded. A data engineer wants to store the load statuses of Redshiffl tables in an Amazon DynamoDB table. The data engineer creates an AWS Lambda function to publish the details of the load statuses to DynamoDB. DynamoDB. How should the data engineer invoke the Lambda function to write load statuses to the DynamoDB table? table?
+
+- A. Use a second Lambda function to invoke the frst Lambda function based on Amazon Amazon CloudWatch events. CloudWatch events.
+- B. Use the Amazon Redshiffi Data API to publish an event to Amazon EventBridge. Confflgure an EventBridge rule to invoke the Lambda funcfon.
+- C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function.
+- D. Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
+- E. Confflgure an EventBridge rule to invoke the Lambda funcfon. C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function. D. Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q313. [pdf_exam_dumps] #15
+*App id: `LOC-313` · type: `single`*
+
+A data engineer needs to securely transfer 5 TB of data from an on-premises data center to an Amazon S3 bucket. Approximately 5% of the data changes every day. Updates to the data need to be regularly proliferated to the S3 bucket. The data includes fles that are in multiple formats. The data engineer needs to automate the transfer process and must schedule the process to run periodically. run periodically. Which AWS service should the data engineer use to transfer the data in the MOST operationally MOST operationally efficient way? efficient way?
+
+- A. AWS DataSync
+- B. AWS Glue
+- C. AWS Direct Connect
+- D. Amazon S3 Transfer Acceleration
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q314. [pdf_exam_dumps] #16
+*App id: `LOC-314` · type: `single`*
+
+A company uses an on-premises Microsoffl SQL Server database to store fnancial transaction data. The company migrates the transaction data from the on-premises database to AWS at the end of each month. The company has noticed that the cost to migrate data from the on-premises database to an Amazon RDS for SQL Server database has increased recently. The company requires a cost-estective solution to migrate the data to AWS. The solufon must cause minimal downtown for the applicafons that access the database. Which AWS service should the company use to meet these requirements?
+
+- A. AWS Lambda
+- B. AWS Database Migrafon Service (AWS DMS)
+- C. AWS Direct Connect
+- D. AWS DataSync
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q315. [pdf_80_mock] #16
+*App id: `LOC-315` · type: `single`*
+
+A company uses an on-premises Microsoft SQL Server database to store financial transaction data. The company migrates the transaction data from the on-premises database to AWS at the end of each month. The company has noticed that the cost to migrate data from the on-premises database to an Amazon RDS for SQL Server database has increased recently. The company requires a cost-effective solution to migrate the data to AWS. The solution must cause minimal downtime for the applications that access the database. Which AWS service should the company use to meet these requirements?
+
+- A. AWS Lambda
+- B. AWS Database Migration Service (AWS DMS)
+- C. AWS Direct Connect
+- D. AWS DataSync
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q316. [pdf_exam_dumps] #17
+*App id: `LOC-316` · type: `multi`*
+
+A data engineer is building a data pipeline on AWS by using AWS Glue extract, transform, and load (ETL) jobs. The data engineer needs to process data from Amazon RDS and MongoDB, perform transformations, and load the transformed data into Amazon Redshiffl for analytics. The data updates must occur every hour. Which combination of tasks will meet these requirements with the LEAST operafonal overhead? (Choose two.) (Choose two.)
+
+- A. Confflgure AWS Glue triggers to run the ETL jobs every hour.
+- B. Use AWS Glue DataBrew to clean and prepare the data for analytics.
+- C. Use AWS Lambda functions to schedule and run the ETL jobs every hour.
+- D. Use AWS Glue connecfons to establish connecfvity between the data sources and Amazon Redshiffi. Amazon Redshiffi.
+- E. Use the Redshiffl Data API to load transformed data into Amazon Redshiffl.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q317. [pdf_exam_dumps] #18
+*App id: `LOC-317` · type: `single`*
+
+A company uses an Amazon Redshiffl cluster that runs on RA3 nodes. The company wants to scale read and write capacity to meet demand. A data engineer needs to identify a solution that will will turn on turn on concurrency scaling. Which solution will meet this requirement? requirement?
+
+- A. Turn on concurrency scaling in workload management (WLM) for Redshiffl Serverless Serverless workgroups. workgroups.
+- B. Turn on concurrency scaling at the workload management (WLM) queue level in the Redshiffi cluster. Redshiffi cluster.
+- C. Turn on concurrency scaling in the seffngs during the creation of any new Redshiffl cluster. cluster.
+- D. Turn on concurrency scaling for the daily usage quota for the Redshiffl cluster.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q318. [pdf_exam_dumps] #19
+*App id: `LOC-318` · type: `multi`*
+
+A data A data engineer must orchestrate a series of Amazon Athena queries that will run every day. Each query can run for more than 15 minutes. Which combination of steps will meet these requirements MOST cost-etiecfvely? (Choose two.) (Choose two.)
+
+- A. Use an AWS Lambda funcfon and the Athena Boto3 client start_query_execufon API call to invoke the Athena queries programmafcally.
+- B. Create an AWS Step Funcfons workflow and add two states. Add the fflrst state before the Lambda funcfon. Confflgure the second state as a Wait state to periodically check whether the Athena query has fflnished using the Athena Boto3 get_query_execufon API call. Confflgure the workflow to invoke the next query when the current query has fflnished running. running.
+- C. Use an AWS Glue Python shell job and the Athena Boto3 client start_query_execution API call to invoke the A call to invoke the Athena queries programmatically.
+- D. Use an AWS Glue Python shell script to run a sleep timer that checks every 5 minutes to determine whether the current Athena query has fnished running successfully. Confgure the Python shell script to invoke the next query when the current query has fnished fnished running. running.
+- E. Use Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) to orchestrate the Athena queries in AWS Batch.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q319. [pdf_exam_dumps] #20
+*App id: `LOC-319` · type: `single`*
+
+A company is migrating on-premises workloads to AWS. The company wants to reduce overall reduce overall operational overhead. The company also wants to explore serverless options. The company's current workloads use Apache Pig, Apache Oozie, Apache Spark, Apache Hbase, and Hbase, and Apache Flink Apache Flink. The on-premises workloads process petabytes of data in seconds. The c . The on-premises workloads process petabytes of data in seconds. The company must ompany must maintain similar or befler performance affler the migration to AWS. AWS. Which extract, transform, and load (ETL) service will meet these requirements?
+
+- A. AWS Glue
+- B. Amazon EMR
+- C. AWS Lambda
+- D. Amazon Redshiffl
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q320. [pdf_exam_dumps] #21
+*App id: `LOC-320` · type: `single`*
+
+A data engineer must use AWS services to ingest a dataset into an Amazon S3 data lake. The data engineer profles the dataset and discovers that the dataset contains personally identifable information (PII). The data engineer must implement a solution to profle the dataset and obfuscate the PII. the PII. Which solution will meet this requirement with the LEAST operafonal etiort?
+
+- A. Use an Amazon Kinesis Data Firehose delivery stream to process the dataset. Create an AWS Lambda transform function to identify the PII. Use an AWS SDK to obfuscate the PII. Set the S3 data lake as the target for the delivery stream.
+- B. Use the Detect PII transform in AWS Glue Studio to identify the PII. Obfuscate the PII. Use Use an AWS Step Functions state machine to orchestrate a data pipeline to ingest the data into the S3 data lake.
+- C. Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons state machine to orchestrate a data pipeline to ingest the data into the S3 data lake.
+- D. Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lak
+- E. C. Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons state machine to orchestrate a data pipeline to ingest the data into the S3 data lake. D. Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lake.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q321. [pdf_exam_dumps] #22
+*App id: `LOC-321` · type: `single`*
+
+A company maintains multiple extract, transform, and load (ETL) workfiows that ingest data from from the company's operational databases into an Amazon S3 based data lake. The ETL workfiows use AWS Glue and Amazon EMR to process data. The company wants to improve the existing architecture to provide automated orchestration and to require minimal manual estort. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. AWS Glue workflows
+- B. AWS Step Functions tasks
+- C. AWS Lambda functions
+- D. Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) workfiows
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q322. [pdf_exam_dumps] #23
+*App id: `LOC-322` · type: `single`*
+
+A company currently stores all of its data in Amazon S3 by using the S3 Standard storage class. A data engineer examined data access paflerns to identify trends. During the frst 6 months, most data fles are accessed several times each day. Between 6 months and 2 years, most data fles are are accessed once or twice each month. Affler 2 years, data fles are accessed only once or twice each year. year. The data engineer needs to use an S3 Lifecycle policy to develop new data storage rules. The new storage solution must continue to provide high availability. Which solution will meet these requirements in the MOST cost-etiecfve way?
+
+- A. Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. 6 months. Transfer objects to S3 Glacier Flexible Retrieval affler 2 years.
+- B. Transition objects to S3 Standard-Infrequent Access (S3 Standard-IA) affler 6 months. Transfer objects to S3 Glacier Flexible Retrieval affler 2 years.
+- C. Transifon objects to S3 Standard-Infrequent Access (S3 Standard-IA) affier 6 months. Transfer objects to S3 Glacier Deep Archive affier 2 years.
+- D. Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. months. Transfer objects to S3 Glacier Deep Archive affler 2 years.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q323. [pdf_exam_dumps] #24
+*App id: `LOC-323` · type: `single`*
+
+A company maintains an Amazon Redshiffl provisioned cluster that the company uses for extract, extract, transform, and load (ETL) operations to support critical analysis tasks. A sales team within the company maintains a Redshiffl cluster that the sales team uses for business intelligence (BI) tasks. The sales team recently requested access to the data that is in the ETL Redshiffl cluster so the team can perform weekly summary analysis tasks. The sales team needs to join data from the ETL cluster with data that is in the sales team's Bl cluster. The company needs a solution that will share the ETL cluster data with the sales team without team without interrupting the critical analysis tasks. The solution must minimize usage of the computing resources of the ETL cluster. Which solution will meet these requirements?
+
+- A. Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshiffi data sharing. sharing.
+- B. Create materialized views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- C. Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- D. Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshiffl Spectrum table based on the content of the ETL cluster.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q324. [pdf_80_mock] #24
+*App id: `LOC-324` · type: `single`*
+
+A company maintains an Amazon Redshift provisioned cluster that the company uses for extract, transform, and load (ETL) operations to support critical analysis tasks. A sales team within the company maintains a Redshift cluster that the sales team uses for business intelligence (BI) tasks. The sales team recently requested access to the data that is in the ETL Redshift cluster so the team can perform weekly summary analysis tasks. The sales team needs to join data from the ETL cluster with data that is in the sales team's BI cluster. The company needs a solution that will share the ETL cluster data with the sales team without interrupting the critical analysis tasks. The solution must minimise usage of the computing resources of the ETL cluster. Which solution will meet these requirements?
+
+- A. Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshift data sharing.
+- B. Create materialised views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- C. Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- D. Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshift Spectrum table based on the content of the ETL cluster.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q325. [pdf_exam_dumps] #25
+*App id: `LOC-325` · type: `single`*
+
+A data engineer needs to join data from multiple sources to perform a one-time analysis job. The data is stored in Amazon DynamoDB, Amazon RDS, Amazon Redshiffl, and Amazon S3. Which solution will meet this requirement MOST cost-etiecfvely?
+
+- A. Use an Amazon EMR provisioned cluster to read from all sources. Use Apache Spark to join the data and perform the analysis.
+- B. Copy the data from DynamoDB, Amazon RDS, and Amazon Redshiffl into Amazon S3. Run Amazon Athena queries directly on the S3 fles.
+- C. Use Amazon Athena Federated Query to join the data from all data sources.
+- D. Use Redshiffl Spectrum to query data from DynamoDB, Amazon RDS, and Amazon S3 directly from Redshiffl.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q326. [pdf_80_mock] #26
+*App id: `LOC-326` · type: `multi`*
+
+A company is planning to use a provisioned Amazon EMR cluster that runs Apache Spark jobs to perform big data analysis. The company requires high reliability. A big data team must follow best practices for running cost-optimised and long-running workloads on Amazon EMR. The team must find a solution that will maintain the company's current level of performance. Which combination of resources will meet these requirements MOST cost-effectively? (Choose two.)
+
+- A. Use Hadoop Distributed File System (HDFS) as a persistent data store.
+- B. Use Amazon S3 as a persistent data store.
+- C. Use x86-based instances for core nodes and task nodes.
+- D. Use Graviton instances for core nodes and task nodes.
+- E. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q327. [pdf_exam_dumps] #26
+*App id: `LOC-327` · type: `multi`*
+
+A company is planning to use a provisioned Amazon EMR cluster that runs Apache Spark jobs to perform big data analysis. The company requires high reliability. A big data team must follow best practices for running cost-optimized and long-running workloads on Amazon EMR. The team must fnd a solution that will maintain the company's current level of performance. Which combination of resources will meet these requirements MOST cost-etiecfvely? (Choose two.) (Choose two.)
+
+- A. Use Hadoop Distributed File System (HDFS) as a persistent data store. store.
+- B. Use Amazon S3 as a persistent data store.
+- C. Use x86-based instances for core nodes and task nodes. task nodes.
+- D. Use Graviton instances for core nodes and task nodes.
+- E. store. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes. primary nodes.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q328. [pdf_exam_dumps] #27
+*App id: `LOC-328` · type: `single`*
+
+A company wants to implement real-time analytics capabilities. The company wants to use Amazon Kinesis Data Streams and Amazon Redshiffl to ingest and process streaming data at the rate of several gigabytes per second. The company wants to derive near real-time insights by using existing business intelligence (BI) and analytics tools. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Use Kinesis Data Streams to stage data in Amazon S3. Use the COPY command to load data from Amazon S3 directly into Amazon Redshiffl to make the data immediately available for real-time analysis.
+- B. Access the data from Kinesis Data Streams by using SQL queries. Create materialized views directly on top of the stream. Refresh the materialized views regularly to query the most recent stream data.
+- C. Create an external schema in Amazon Redshiffi to map the data from Kinesis Data Streams to an Amazon Redshiffi object. Create a materialized view to read data from the stream. Set the materialized view to auto refresh.
+- D. Connect Kinesis Data Streams to Amazon Kinesis Data Firehos
+- E. Use Kinesis Data Firehose Firehose to stage the data in Amazon S3. Use the COPY command to load the data from Amazon S3 to a table in Amazon Redshiffl.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q329. [pdf_exam_dumps] #28
+*App id: `LOC-329` · type: `multi`*
+
+A company uses an Amazon QuickSight dashboard to monitor usage of one of the company's applications. The company uses AWS Glue jobs to process data for the dashboard. The company stores the data in a single Amazon S3 bucket. The company adds new data every day. A data engineer discovers that dashboard queries are becoming slower over time. The data engineer determines that the root cause of the slowing queries is long-running AWS Glue jobs. Which actions should the data engineer take to improve the performance of the AWS Glue jobs? (Choose two.) (Choose two.)
+
+- A. Parffon the data that is in the S3 bucket. Organize the data by year, month, and day.
+- B. Increase the AWS Glue instance size by scaling up the worker type.
+- C. Convert the AWS Glue schema to the DynamicFrame schema class.
+- D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day.
+- E. C. Convert the AWS Glue schema to the DynamicFrame schema class. D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day. E. Modify the IAM role that grants access to AWS glue to grant access to all S3 features.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q330. [pdf_exam_dumps] #29
+*App id: `LOC-330` · type: `single`*
+
+A data engineer needs to use AWS Step Functions to design an orchestration workfiow. The workfiow must parallel process a large collection of data fles and apply a specifc transformation to each fle. Which Step Functions state should the data engineer use to meet these requirements?
+
+- A. Parallel state
+- B. Choice state
+- C. Map state
+- D. Wait state
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q331. [pdf_exam_dumps] #30
+*App id: `LOC-331` · type: `single`*
+
+A company is migrating a legacy application to an Amazon S3 based data lake. A data engineer reviewed data that is associated with the legacy application. The data engineer found that the legacy data contained some duplicate information. The data engineer must identify and remove duplicate information from the legacy application data. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Write a custom extract, transform, and load (ETL) job in Python. Use the DataFrame.drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication.
+- B. Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication.
+- C. Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. deduplication.
+- D. Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
+- E. drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication. B. Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication. C. Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. deduplication. D. Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q332. [pdf_exam_dumps] #31
+*App id: `LOC-332` · type: `multi`*
+
+A company is building an analytics solution. The solution uses Amazon S3 for data lake storage and Amazon Redshiffl for a data warehouse. The company wants to use Amazon Redshiffl Spectrum Spectrum to query the data that is in Amazon S3. Which actions will provide the FASTEST queries? (Choose two.)
+
+- A. Use gzip compression to compress individual fles to sizes that are between 1 GB and 5 G
+- B. GB. B. Use a columnar storage fflle format.
+- C. Parffon the data based on the most common query predicates.
+- D. Split the data into fles that are less than 10 KB.
+- E. Use fle formats that are not spliflable. not spliflable.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q333. [pdf_exam_dumps] #32
+*App id: `LOC-333` · type: `multi`*
+
+A company uses Amazon RDS to store transactional data. The company runs an RDS DB instance in a private subnet. A developer wrote an AWS Lambda function with default seffngs to insert, update, or delete data in the DB instance. instance. The developer needs to give the Lambda function the ability to connect to the DB instance privately instance privately without using the public internet. Which combination of steps will meet this requirement with the LEAST operafonal overhead? (Choose two.) (Choose two.)
+
+- A. Turn on the public access seffng for the DB instance.
+- B. Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port.
+- C. Confflgure the Lambda funcfon to run in the same subnet that the DB instance uses.
+- D. Aflach the same security group to the Lambda function and the DB instanc
+- E. B. Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port. C. Confflgure the Lambda funcfon to run in the same subnet that the DB instance uses. D. Aflach the same security group to the Lambda function and the DB instance. Include a self- referencing rule that allows access through the database port. E. Update the network ACL of the private subnet to include a self-referencing rule that allows access through the database port.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q334. [pdf_exam_dumps] #33
+*App id: `LOC-334` · type: `single`*
+
+A company has a frontend ReactJS website that uses Amazon API Gateway to invoke REST APIs. The APIs perform the functionality of the website. A data engineer needs to write a Python script that can be occasionally invoked through API Gateway. The code must return results to API Gateway. API Gateway. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Deploy a custom Python script on an Amazon Elastic Container Service (Amazon ECS) cluster. cluster.
+- B. Create an AWS Lambda Python funcfon with provisioned concurrency.
+- C. Deploy a custom Python script that can integrate with API Gateway on Amazon Elastic Kubernetes Service (Amazon EKS).
+- D. Create an AWS Lambda function. Ensure that the function is warm by scheduling an scheduling an Amazon EventBridge rule to invoke the Lambda function every 5 minutes by using mock events. events.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q335. [pdf_80_mock] #34
+*App id: `LOC-335` · type: `single`*
+
+A company has a production AWS account that runs company workloads. The company's security team created a security AWS account to store and analyse security logs from the production AWS account. The security logs in the production AWS account are stored in Amazon CloudWatch Logs. The company needs to use Amazon Kinesis Data Streams to deliver the security logs to the security AWS account. Which solution will meet these requirements?
+
+- A. Create a destination data stream in the production AWS account. In the security AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the production AWS account.
+- B. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription filter in the security AWS account.
+- C. Create a destination data stream in the production AWS account. In the production AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the security AWS account.
+- D. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription filter in the production AWS account.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q336. [pdf_exam_dumps] #34
+*App id: `LOC-336` · type: `single`*
+
+A company has a production AWS account that runs company workloads. The company's security team created a security AWS account to store and analyze security logs from the production AWS account. The security logs in the production AWS account are stored in Amazon CloudWatch Logs. The company needs to use Amazon Kinesis Data Streams to deliver the security logs to the security the security AWS account. AWS account. Which solution will meet these requirements?
+
+- A. Create a desfnafon data stream in the producfon AWS account. In the security AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the producfon AWS account.
+- B. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription flter in the security AWS account.
+- C. Create a desfnafon data stream in the producfon AWS account. In the producfon AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the security AWS account.
+- D. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription flter in the production AWS account.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q337. [pdf_exam_dumps] #35
+*App id: `LOC-337` · type: `single`*
+
+A company uses Amazon S3 to store semi-structured data in a transactional data lake. Some of the data fles are small, but other data fles are tens of terabytes. terabytes. A data engineer must perform a change data capture (CDC) operation to identify changed data from from the data source. The data source sends a full snapshot as a JSON fle every day and ingests the changed data into the data lake. Which solution will capture the changed data MOST cost-etiecfvely?
+
+- A. Create an AWS Lambda function to identify the changes between the previous data and the current data. Confgure the Lambda function to ingest the changes into the data lake.
+- B. Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake.
+- C. Use an open source data lake format to merge the data source with the S3 data lake to insert the new data and update the exisfng data.
+- D. Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lak
+- E. B. Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake. C. Use an open source data lake format to merge the data source with the S3 data lake to insert the new data and update the exisfng data. D. Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q338. [pdf_exam_dumps] #36
+*App id: `LOC-338` · type: `multi`*
+
+A data engineer runs Amazon Athena queries on data that is in an Amazon S3 bucket. The Athena queries use AWS Glue Data Catalog as a metadata table. The data engineer notices that the Athena query plans are experiencing a performance boflleneck. The data engineer determines that the cause of the performance boflleneck is the large number of partitions that are in the S3 bucket. The data engineer must resolve the performance boflleneck and reduce Athena query planning time. Which solutions will meet these requirements? (Choose two.)
+
+- A. Create an AWS Glue parffon index. Enable parffon fflltering.
+- B. Bucket the data based on a column that the data have in common in a WHERE clause of the user query.
+- C. Use Athena parffon projecfon based on the S3 bucket prefflx.
+- D. Transform the data that is in the S3 bucket to Apache Parquet format.
+- E. Use the Amazon EMR S3DistCP utility to combine smaller objects in the 53 bucket into larger objects. larger objects.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q339. [pdf_exam_dumps] #37
+*App id: `LOC-339` · type: `single`*
+
+A data A data engineer must manage the ingestion of real-time streaming data into AWS. The data The data engineer wants to perform real-time analytics on the incoming streaming data by using time-based aggregations over a window of up to 30 minutes. The data engineer needs a solution that is highly is highly fault tolerant. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Use an AWS Lambda function that includes both the business and the analytics logic to ic to perform time-based aggregations over a window of up to 30 minutes for the data in Amazon Amazon Kinesis Data Streams.
+- B. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) to analyze the data that might occasionally contain duplicates by using multiple multiple types of aggregations.
+- C. Use an AWS Lambda function that includes both the business and the analytics logic to logic to perform aggregations for a tumbling window of up to 30 minutes, based on the event the event timestamp. timestamp.
+- D. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to analyze the data by using mulfple types of aggregafons to perform fme-based analyfcs over a window of up to 30 minutes.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q340. [pdf_exam_dumps] #38
+*App id: `LOC-340` · type: `single`*
+
+A company is planning to upgrade its Amazon Elastic Block Store (Amazon EBS) General Purpose SSD storage from gp2 to gp3. The company wants to prevent any interruptions in its Amazon EC2 instances that will cause data loss during the migration to the upgraded storage. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Create snapshots of the gp2 volumes. Create new gp3 volumes from the snapshots. Aflach the new gp3 volumes to the EC2 instances.
+- B. Create new gp3 volumes. Gradually transfer the data to the new gp3 volumes. When the transfer is complete, mount the new gp3 volumes to the EC2 instances to replace the gp2 volumes. volumes.
+- C. Change the volume type of the exisfng gp2 volumes to gp3. Enter new values for volume size, IOPS, and throughput.
+- D. Use AWS DataSync to create new gp3 volumes. Transfer the data from the original gp2 volumes to the new gp3 volumes.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q341. [pdf_exam_dumps] #39
+*App id: `LOC-341` · type: `single`*
+
+A company is migrating its database servers from Amazon EC2 instances that run Microsoffl SQL Server to Amazon RDS for Microsoffl SQL Server DB instances. The company's analytics team must export large data elements every day until the migration is complete. The data elements are the result of SQL joins across multiple tables. The data must be in Apache Parquet format. The analytics team must store the data in Amazon S3. Which solution will meet these requirements in the MOST operafonally eftcient way?
+
+- A. Create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create an AWS Glue job that selects the data directly from the view and view and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day. every day.
+- B. Schedule SQL Server Agent to run a daily SQL query that selects the desired data elements from the EC2 instance-based SQL Server databases. Confgure the query to direct the direct the output .csv objects to an S3 bucket. Create an S3 event that invokes an AWS Lambda function to transform the output format from .csv to Parquet. to Parquet.
+- C. Use a SQL query to create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create and run an AWS Glue crawler to read the view. Create an AWS Glue job that retrieves the data and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day.
+- D. Create an AWS Lambda function that queries the EC2 instance-based databases by using Java Database Connectivity (JDBC). Confgure the Lambda function to retrieve the required data, transform the data into Parquet format, and transfer the data into an S3 bucket. Use bucket. Use Amazon EventBridge to schedule the Lambda function to run every day.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q342. [pdf_exam_dumps] #40
+*App id: `LOC-342` · type: `single`*
+
+A data engineering team is using an Amazon Redshiffl data warehouse for operational reporting. The team wants to prevent performance issues that might result from long-running queries. A data data engineer must choose a system table in Amazon Redshiffl to edshiffl to record anomalies when a query optimizer identifes conditions that might indicate performance issues. Which table views should the data engineer use to meet this requirement?
+
+- A. STL_USAGE_CONTROL
+- B. STL_ALERT_EVENT_LOG
+- C. STL_QUERY_METRICS
+- D. STL_PLAN_INFO
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q343. [pdf_exam_dumps] #41
+*App id: `LOC-343` · type: `single`*
+
+A data engineer must ingest a source of structured data that is in .csv format into an Amazon S3 data lake. The .csv fles contain 15 columns. Data analysts need to run Amazon Athena queries on one or two columns of the dataset. The data analysts rarely query the entire fle. Which solution will meet these requirements MOST cost-etiecfvely?
+
+- A. Use an AWS Glue PySpark job to ingest the source data into the data lake in .csv format.
+- B. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confgure the job to ingest the data into the data lake in JSON format.
+- C. Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format.
+- D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data sourc
+- E. Confgure the job to ingest the data into the data lake in JSON format. C. Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format. D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confflgure the job to write the data into the data lake in Apache Parquet format. Parquet format.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q344. [pdf_exam_dumps] #42
+*App id: `LOC-344` · type: `multi`*
+
+A company has fve offices in disterent AWS Regions. Each office has its own human resources (HR) department that uses a unique IAM role. The company stores employee records in a data lake lake that is based on Amazon S3 storage. A data engineering team needs to limit access to the records. Each HR department should be able to access records for only employees who are within the HR department's Region. Which combination of steps should the data engineering team take to meet this requirement with the the LEAST operafonal overhead? (Choose two.) ? (Choose two.)
+
+- A. Use data flters for each Region to register the S3 paths as data locations.
+- B. Register the S3 path as an AWS Lake Formafon locafon.
+- C. Modify the IAM roles of the HR departments to add a data flter for each department's department's Region. Region.
+- D. Enable fflne-grained access control in AWS Lake Formafon. Add a data ffllter for each Region. Region.
+- E. Create a separate S3 bucket for each Region. Confgure an IAM policy to allow $3 access. Restrict access based on Region.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q345. [pdf_exam_dumps] #43
+*App id: `LOC-345` · type: `multi`*
+
+A company uses AWS Step Functions to orchestrate a data pipeline. The pipeline consists of Amazon EMR jobs that ingest data from data sources and store the data in an Amazon S3 bucket. The pipeline also includes EMR jobs that load the data to A load the data to Amazon Redshiffl. mazon Redshiffl. The company's cloud infrastructure team manually built a Step Functions state machine. The cloud infrastructure team launched an EMR cluster into a VPC to support the EMR jobs. However, the deployed Step Functions state machine is not able to run the EMR jobs. Which combination of steps should the company take to identify the reason the Step Functions state machine is not able to run the EMR jobs? (Choose two.)
+
+- A. Use AWS CloudFormation to automate the Step Functions state machine deployment. Create a step to pause the state machine during the EMR jobs that fail. Confgure the step to wait for a human user to send approval through an email message. Include details of the EMR task in the email message for further analysis.
+- B. Verify that the Step Funcfons state machine code has all IAM permissions that are necessary to create and run the EMR jobs. Verify that the Step Funcfons state machine code also includes IAM permissions to access the Amazon S3 buckets that the EMR jobs use. Use Access Analyzer for S3 to check the S3 access properfes.
+- C. Check for entries in Amazon CloudWatch for the newly created EMR cluster. Change the Change the AWS Step Functions state machine code to use Amazon EMR on EKS. Change the IAM access policies and the security group confguration for the Step Functions state machine code to refiect inclusion of Amazon Elastic Kubernetes Service (Amazon ĔKS). ĔKS).
+- D. Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports.
+- E. Include details of the EMR task in the email message for further analysis. B. Verify that the Step Funcfons state machine code has all IAM permissions that are necessary to create and run the EMR jobs. Verify that the Step Funcfons state machine code also includes IAM permissions to access the Amazon S3 buckets that the EMR jobs use. Use Access Analyzer for S3 to check the S3 access properfes. C. Check for entries in Amazon CloudWatch for the newly created EMR cluster. Change the Change the AWS Step Functions state machine code to use Amazon EMR on EKS. Change the IAM access policies and the security group confguration for the Step Functions state machine code to refiect inclusion of Amazon Elastic Kubernetes Service (Amazon ĔKS). ĔKS). D. Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports. E. Check the retry scenarios that the company confgured for the EMR jobs. Increase the Increase the number of seconds in the interval between each EMR ...
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q346. [pdf_exam_dumps] #44
+*App id: `LOC-346` · type: `single`*
+
+A company is developing an application that runs on Amazon EC2 instances. Currently, the data that the application generates is temporary. However, the company needs to persist the data, even , even if the EC2 instances are terminated. A data engineer must launch new EC2 instances from an Amazon Machine Image (AMI) and MI) and confgure the instances to preserve the data. Which solution will meet this requirement?
+
+- A. Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume that contains the application data. Apply the default seffngs to the EC2 instances.
+- B. Launch new EC2 instances by using an AMI that is backed by a root Amazon Elasfc Block Store (Amazon EBS) volume that contains the applicafon data. Apply the default seffngs to the EC2 instances.
+- C. Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances.
+- D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volum
+- E. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances. D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volume. Aflach an additional EC2 instance store volume to contain the application data. Apply the default seffngs to the EC2 instances.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q347. [pdf_exam_dumps] #45
+*App id: `LOC-347` · type: `single`*
+
+A company uses Amazon Athena to run SQL queries for extract, transform, and load (ETL) tasks by using Create Table As Select (CTAS). The company must use Apache Spark instead of SQL to SQL to generate analytics. Which solution will give the company the ability to use Spark to access Athena?
+
+- A. Athena query seffngs
+- B. Athena workgroup
+- C. Athena data source
+- D. Athena query editor
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q348. [pdf_80_mock] #46
+*App id: `LOC-348` · type: `single`*
+
+A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format: s3://bucket/prefix/ year=2023/month=01/day=01. A data engineer must ensure that the AWS Glue Data Catalog synchronises with the S3 storage when the company adds new partitions to the bucket. Which solution will meet these requirements with the LEAST latency?
+
+- A. Schedule an AWS Glue crawler to run every morning.
+- B. Manually run the AWS Glue CreatePartition API twice each day.
+- C. Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.
+- D. Run the MSCK REPAIR TABLE command from the AWS Glue consol
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q349. [pdf_exam_dumps] #46
+*App id: `LOC-349` · type: `single`*
+
+A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format: s3://bucket/prefx/year=2023/month=01/day=01. A data engineer must ensure that the AWS Glue Data Catalog synchronizes with the S3 storage when storage when the company adds new partitions to the bucket. Which solution will meet these requirements with the LEAST latency LEAST latency?
+
+- A. Schedule an AWS Glue crawler to run every morning.
+- B. Manually run the AWS Glue CreatePartition API twice each day.
+- C. Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_parffon API call. API call.
+- D. Run the MSCK REPAIR TABLE command from the AWS Glue consol
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q350. [pdf_exam_dumps] #47
+*App id: `LOC-350` · type: `single`*
+
+A media company uses sofflware as a service (SaaS) applications to gather data by using third- party tools. The company needs to store the data in an Amazon S3 bucket. The company will use Amazon Redshiffl to perform analytics based on the data. data. Which AWS service or feature will meet these requirements with the LEAST operafonal overhead?
+
+- A. Amazon Managed Streaming for Apache Kaa (Amazon MSK)
+- B. Amazon AppFlow
+- C. AWS Glue Data Catalog
+- D. Amazon Kinesis
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q351. [pdf_exam_dumps] #48
+*App id: `LOC-351` · type: `single`*
+
+A data engineer is using Amazon Athena to analyze sales data that is in Amazon S3. The data engineer writes a query to retrieve sales amounts for 2023 for several products from a table named sales_data. However, the query does not return results for all of the products that are in the the sales_data table. The data engineer needs to troubleshoot the query to resolve the issue. issue. The data engineer's original query is as follows: follows: SELECT product_name, sum(sales_amount) FROM sales_data- FROM sales_data- WHERE year = 2023 - GROUP BY product_name - How should the data engineer modify the Athena query to meet these requirements?
+
+- A. Replace sum(sales_amount) with count(*) for the aggregation. gregation.
+- B. Change WHERE year = 2023 to WHERE extract(year FROM sales_data) = 2023.
+- C. Add HAVING sum(sales_amount) > 0 affier the GROUP BY clause.
+- D. Remove the GROUP BY claus
+- E. D. Remove the GROUP BY clause.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q352. [pdf_exam_dumps] #49
+*App id: `LOC-352` · type: `single`*
+
+A data A data engineer has a one-time task to read data from objects that are in Apache Parquet format Parquet format in an Amazon S3 bucket. The data engineer needs to query only one column of the data. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Confgure an AWS Lambda function to load data from the S3 bucket into a pandas dataframe. Write a SQL SELECT statement on the dataframe to query the required column.
+- B. Use S3 Select to write a SQL SELECT statement to retrieve the required column from the S3 objects. S3 objects.
+- C. Prepare an AWS Glue DataBrew project to consume the S3 objects and to query the required column. required column.
+- D. Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
+- E. Write a SQL SELECT statement on the dataframe to query the required column. B. Use S3 Select to write a SQL SELECT statement to retrieve the required column from the S3 objects. S3 objects. C. Prepare an AWS Glue DataBrew project to consume the S3 objects and to query the required column. required column. D. Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q353. [pdf_exam_dumps] #50
+*App id: `LOC-353` · type: `single`*
+
+A company uses Amazon Redshiffl for its data warehouse. The company must automate refresh schedules for Amazon Redshiffl materialized views. Which solution will meet this requirement with the LEAST estort? estort?
+
+- A. Use Apache Airfiow to refresh the materialized views.
+- B. Use an AWS Lambda user-defned function (UDF) within Amazon Redshiffl to refresh the materialized views.
+- C. Use the query editor v2 in Amazon Redshiffi to refresh the materialized views.
+- D. Use an AWS Glue workfiow to refresh the materialized views.
+- F. within Amazon Redshiffl to refresh the materialized views. C. Use the query editor v2 in Amazon Redshiffi to refresh the materialized views. D. Use an AWS Glue workfiow to refresh the materialized views.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q354. [pdf_80_mock] #50
+*App id: `LOC-354` · type: `single`*
+
+A company uses Amazon Redshift for its data warehouse. The company must automate refresh schedules for Amazon Redshift materialised views. Which solution will meet this requirement with the LEAST effort?
+
+- A. Use Apache Airflow to refresh the materialised views.
+- B. Use an AWS Lambda user-defined function (UDF) within Amazon Redshift to refresh the materialised views.
+- C. Use the query editor v2 in Amazon Redshift to refresh the materialised views.
+- D. Use an AWS Glue workflow to refresh the materialised views.
+- F. within Amazon Redshift to refresh the materialised views. C. Use the query editor v2 in Amazon Redshift to refresh the materialised views. D. Use an AWS Glue workflow to refresh the materialised views.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q355. [pdf_exam_dumps] #52
+*App id: `LOC-355` · type: `single`*
+
+A company needs to set up a data catalog and metadata management for data sources that run in the AWS Cloud. The company will use the data catalog to maintain the metadata of all the objects that are in a set of data stores. The data stores include structured sources such as Amazon RDS and Amazon Redshiffl. The data stores also include semistructured sources such as JSON fles and .xml fles that are stored in Amazon S3. The company needs a solution that will update the data catalog on a regular basis. The solution also must detect changes to the source metadata. Which solution will meet these requirements with the LEAST operafonal overhead?
+
+- A. Use Amazon Aurora as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information fro from m mul multipl tiple e sou source rces s and and to to upd update ate the Aurora data cat catalo alog. g. Sch Schedu edule le the the Lam Lambda bda functions to run periodically.
+- B. Use the AWS Glue Data Catalog as the central metadata repository. Use AWS Glue crawlers to connect to mulfple data stores and to update the Data Catalog with metadata changes. Schedule the crawlers to run periodically to update the metadata catalog.
+- C. Use Amazon DynamoDB as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information from multiple sources and to update the DynamoDB data catalog. Schedule the Lambda functions to run periodically.
+- D. Use the AWS Glue Data Catalog as the central metadata repository. Extract the schema for Amazon RDS and Amazon Redshiffl sources, and build the Data Catalog. Use AWS Glue crawlers for data that is in Amazon S3 to infer the schema and to automatically update the Data Catalog Data Catalog
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q356. [pdf_exam_dumps] #53
+*App id: `LOC-356` · type: `single`*
+
+A company stores data from an application in an Amazon DynamoDB table that operates in provisioned capacity mode. The workloads of the application have predictable throughput load on a regular schedule. Every Monday, there is an immediate increase in activity early in the morning. The application has very low usage during weekends. The company must ensure that the application performs consistently during peak usage times. Which solution will meet these requirements in the MOST cost-etiecfve way?
+
+- A. Increase the provisioned capacity to the maximum capacity that is currently present during peak load times.
+- B. Divide the table into two tables. Provision each table with half of the provisioned capacity of the original table. Spread queries evenly across both tables.
+- C. Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capacity during oti-peak fmes.
+- D. Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the tabl
+- E. Spread queries evenly across both tables. C. Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capacity during oti-peak fmes. D. Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the table.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+
+---
+
+## Q357. [pdf_80_mock] #60
+*App id: `LOC-357` · type: `multi`*
+
+An airline company is collecting metrics about flight activities for analytics. The company is conducting a proof of concept (POC) test to show how analytics can provide insights that the company can use to increase on-time departures. The POC test uses objects in Amazon S3 that contain the metrics in .csv format. The POC test uses Amazon Athena to query the data. The data is partitioned in the S3 bucket by date. As the amount of data increases, the company wants to optimise the storage solution to improve query performance. Which combination of solutions will meet these requirements? (Choose two.)
+
+- A. Add a randomised string to the beginning of the keys in Amazon S3 to get more throughput across partitions.
+- B. Use an S3 bucket that is in the same account that uses Athena to query the data.
+- C. Use an S3 bucket that is in the same AWS Region where the company runs Athena queries.
+- D. Preprocess the .csv data to JSON format by fetching only the document keys that the query requires.
+- E. Preprocess the .csv data to Apache Parquet format by fetching only the data blocks that are needed for predicates.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q358. [pdf_80_mock] #61
+*App id: `LOC-358` · type: `multi`*
+
+A company uses Amazon RDS for MySQL as the database for a critical application. The database workload is mostly writes, with a small number of reads. A data engineer notices that the CPU utilisation of the DB instance is very high. The high CPU utilisation is slowing down the application. The data engineer must reduce the CPU utilisation of the DB instance. Which actions should the data engineer take to meet this requirement? (Choose two.)
+
+- A. Use the Performance Insights feature of Amazon RDS to identify queries that have high CPU utilisation. Optimise the problematic queries.
+- B. Modify the database schema to include additional tables and indexes.
+- C. Reboot the RDS DB instance once each week.
+- D. Upgrade to a larger instance siz
+- E. E. Implement caching to reduce the database query load.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q359. [pdf_80_mock] #62
+*App id: `LOC-359` · type: `single`*
+
+A company has used an Amazon Redshift table that is named Orders for 6 months. The company performs weekly updates and deletes on the table. The table has an interleaved sort key on a column that contains AWS Regions. The company wants to reclaim disk space so that the company will not run out of storage space. The company also wants to analyse the sort key column. Which Amazon Redshift command will meet these requirements?
+
+- A. V ACUUM FULL Orders
+- B. V ACUUM DELETE ONLY Orders
+- C. V ACUUM REINDEX Orders
+- D. V ACUUM SORT ONLY Orders
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q360. [pdf_80_mock] #66
+*App id: `LOC-360` · type: `single`*
+
+A financial company wants to use Amazon Athena to run on-demand SQL queries on a petabyte- scale dataset to support a business intelligence (BI) application. An AWS Glue job that runs during non-business hours updates the dataset once every day. The BI application has a standard data refresh frequency of 1 hour to comply with company policies. A data engineer wants to cost optimise the company's use of Amazon Athena without adding any additional infrastructure costs. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Configure an Amazon S3 Lifecycle policy to move data to the S3 Glacier Deep Archive storage class after 1 day.
+- B. Use the query result reuse feature of Amazon Athena for the SQL queries.
+- C. Add an Amazon ElastiCache cluster between the BI application and Athena.
+- D. Change the format of the files that are in the dataset to Apache Parquet.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q361. [pdf_80_mock] #67
+*App id: `LOC-361` · type: `single`*
+
+A company's data engineer needs to optimise the performance of table SQL queries. The company stores data in an Amazon Redshift cluster. The data engineer cannot increase the size of the cluster because of budget constraints. The company stores the data in multiple tables and loads the data by using the EVEN distribution style. Some tables are hundreds of gigabytes in size. Other tables are less than 10 MB in size. Which solution will meet these requirements?
+
+- A. Keep using the EVEN distribution style for all tables. Specify primary and foreign keys for all tables.
+- B. Use the ALL distribution style for large tables. Specify primary and foreign keys for all tables.
+- C. Use the ALL distribution style for rarely updated small tables. Specify primary and foreign keys for all tables.
+- D. Specify a combination of distribution, sort, and partition keys for all tables.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q362. [pdf_80_mock] #68
+*App id: `LOC-362` · type: `single`*
+
+A company receives .csv files that contain physical address data. The data is in columns that have the following names: Door_No, Street_Name, City, and Zip_Code. The company wants to create a single column to store these values in the following format: { "Door_No": "24", "Street_Name": "AAA street", "City": "BBB", "Zip_Code": "111111" } Which solution will meet this requirement with the LEAST coding effort?
+
+- A. Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column.
+- B. Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column.
+- C. Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column.
+- D. Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q363. [pdf_80_mock] #70
+*App id: `LOC-363` · type: `single`*
+
+A company stores petabytes of data in thousands of Amazon S3 buckets in the S3 Standard storage class. The data supports analytics workloads that have unpredictable and variable data access patterns. The company does not access some data for months. However, the company must be able to retrieve all data within milliseconds. The company needs to optimise S3 storage costs. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Use S3 Storage Lens standard metrics to determine when to move objects to more cost-optimised storage classes. Create S3 Lifecycle policies for the S3 buckets to move objects to cost-optimised storage classes. Continue to refine the S3 Lifecycle policies in the future to optimise storage costs.
+- B. Use S3 Storage Lens activity metrics to identify S3 buckets that the company accesses infrequently. Configure S3 Lifecycle rules to move objects from S3 Standard to the S3 Standard- Infrequent Access (S3 Standard-IA) and S3 Glacier storage classes based on the age of the data.
+- C. Use S3 Intelligent-Tiering. Activate the Deep Archive Access tier.
+- D. Use S3 Intelligent-Tiering. Use the default access tier.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q364. [pdf_80_mock] #74
+*App id: `LOC-364` · type: `single`*
+
+A healthcare company uses Amazon Kinesis Data Streams to stream real-time health data from wearable devices, hospital equipment, and patient records. A data engineer needs to find a solution to process the streaming data and store the data in an Amazon Redshift Serverless warehouse. The solution must support near real-time analytics of the streaming data and the previous day's data. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Load data into Amazon Kinesis Data Firehose. Load the data into Amazon Redshift.
+- B. Use the streaming ingestion feature of Amazon Redshift.
+- C. Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift.
+- D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
+- E. Load the data into Amazon Redshift. B. Use the streaming ingestion feature of Amazon Redshift. C. Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift. D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q365. [pdf_80_mock] #75
+*App id: `LOC-365` · type: `multi`*
+
+A data engineer needs to use an Amazon QuickSight dashboard that is based on Amazon Athena queries on data that is stored in an Amazon S3 bucket. When the data engineer connects to the QuickSight dashboard, the data engineer receives an error message that indicates insufficient permissions. Which factors could cause the permissions-related errors? (Choose two.)
+
+- A. There is no connection between QuickSight and Athena.
+- B. The Athena tables are not cataloged.
+- C. QuickSight does not have access to the S3 bucket.
+- D. C. QuickSight does not have access to the S3 bucket. D. QuickSight does not have access to decrypt S3 data.
+- E. There is no IAM role assigned to QuickSight.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q366. [pdf_80_mock] #79
+*App id: `LOC-366` · type: `single`*
+
+A company has multiple applications that use datasets that are stored in an Amazon S3 bucket. The company has an ecommerce application that generates a dataset that contains personally identifiable information (PII). The company has an internal analytics application that does not require access to the PII. To comply with regulations, the company must not share PII unnecessarily. A data engineer needs to implement a solution that will redact PII dynamically, based on the needs of each application that accesses the dataset. Which solution will meet the requirements with the LEAST operational overhead?
+
+- A. Create an S3 bucket policy to limit the access each application has. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.
+- B. Create an S3 Object Lambda endpoint. Use the S3 Object Lambda endpoint to read data from the S3 bucket. Implement redaction logic within an S3 Object Lambda function to dynamically redact PII based on the needs of each application that accesses the data.
+- C. Use AWS Glue to transform the data for each application. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.
+- D. Create an API Gateway endpoint that has custom authorisers. Use the API Gateway endpoint to read data from the S3 bucket. Initiate a REST API call to dynamically redact PII based on the needs of each application that accesses the data.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+
+---
+
+## Q367. [examtopics] #136
+*App id: `LOC-367` · type: `single`*
+
+Question #: 136 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer set up an AWS Lambda function to read an object that is stored in an Amazon S3 bucket. The object is encrypted by an AWS KMS key. The data engineer configured the Lambda function’s execution role to access the S3 bucket. However, the Lambda function encountered an error and failed to retrieve the content of the object. What is the likely cause of the error?
+
+- A. The data engineer misconfigured the permissions of the S3 bucket. The Lambda function could not access the object.
+- B. The Lambda function is using an outdated SDK version, which caused the read failure.
+- C. The S3 bucket is located in a different AWS Region than the Region where the data engineer works. Latency issues caused the Lambda function to encounter an error.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/145725-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-136-discussion/
+
+---
+
+## Q368. [examtopics] #206
+*App id: `LOC-368` · type: `single`*
+
+Question #: 206 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has a data processing pipeline that includes several dozen steps. The data processing pipeline needs to send alerts in real time when a step fails or succeeds. The data processing pipeline uses a combination of Amazon S3 buckets, AWS Lambda functions, and AWS Step Functions state machines. A data engineer needs to create a solution to monitor the entire pipeline. Which solution will meet these requirements?
+
+- A. Configure the Step Functions state machines to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the S3 bucket.
+- B. Configure the AWS Lambda functions to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the S3 bucket.
+- C. Use AWS CloudTrail to send a message to an Amazon Simple Notification Service (Amazon SNS) topic that sends notifications when a state machine fails to run or succeeds to run.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/156779-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-206-discussion/
+
+---
+
+## Q369. [examtopics] #222
+*App id: `LOC-369` · type: `single`*
+
+Question #: 222 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company wants to build a dimension table in an Amazon S3 bucket. The bucket contains historical data that includes 10 million records. The historical data is 1 TB in size. A data engineer needs a solution to update changes for up to 10,000 records in the base table every day. Which solution will meet this requirement with the LOWEST runtime?
+
+- A. Develop an Apache Spark job in Amazon EMR to read the historical data and the new changes into two Spark DataFrames. Use the Spark update method to update the base table.
+- B. Develop an AWS Glue Python job to read the historical data and new changes into two Pandas DataFrames. Use the Pandas update method to update the base table.
+- C. Develop an AWS Glue Apache Spark job to read the historical data and new changes into two Spark DataFrames. Use the Spark update method to update the base table.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/305569-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-222-discussion/
+
+---
+
+## Q370. [examtopics] #241
+*App id: `LOC-370` · type: `single`*
+
+Question #: 241 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses AWS Glue Apache Spark jobs to handle extract, transform, and load (ETL) workloads. The company has enabled logging and monitoring for all AWS Glue jobs. One of the AWS Glue jobs begins to fail. A data engineer investigates the error and wants to examine metrics for all individual stages within the job. How can the data engineer access the stage metrics?
+
+- A. Examine the AWS Glue job and stage details in the Spark UI.
+- B. How can the data engineer access the stage metrics? A. Examine the AWS Glue job and stage details in the Spark UI. B. Examine the AWS Glue job and stage metrics in Amazon CloudWatch.
+- C. Examine the AWS Glue job and stage logs in AWS CloudTrail logs.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/305587-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-241-discussion/
+
+---
+
+## Q371. [examtopics] #250
+*App id: `LOC-371` · type: `single`*
+
+Question #: 250 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to use Amazon Athena to analyze data that is in an Amazon S3 bucket. A data engineer needs to configure AWS Glue table partitions for year, month, and day. The data engineer needs to create the partitions every day to adjust to schema changes in the data. Which solution will meet these requirements?
+
+- A. Which solution will meet these requirements? A. Use AWS Glue DataBrew to create the partitions for the AWS Glue table.
+- B. Use an AWS Lambda function to create the partitions for the AWS Glue table.
+- C. Set partition projection properties for the AWS Glue table.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/315501-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-250-discussion/
+
+---
+
+## Q372. [examtopics] #300
+*App id: `LOC-372` · type: `single`*
+
+Question #: 300 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company runs an extract, transform, and load (ETL) job in AWS Glue. The job processes personally identifiable information (PII) data and writes logs to an Amazon CloudWatch Logs log group. A data engineer needs to mask PII data in the CloudWatch logs group. Which solution will meet these requirements?
+
+- A. Attach an AWS Glue security configuration to the ETL job.
+- B. B. Configure a data protection policy. Attach the policy to the CloudWatch log group.
+- C. Run an Amazon Macie sensitive data discovery job.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401527-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-300-discussion/
+
+---
+
+## Q373. [examtopics] #304
+*App id: `LOC-373` · type: `single`*
+
+Question #: 304 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer is designing a log table for an application that requires continuous ingestion. The application must provide dependable API-based access to specific records from other applications. The application must handle more than 4,000 concurrent write operations and 6,500 read operations every second. Which solution will meet these requirements?
+
+- A. Create an Amazon Redshift table with the KEY distribution style. Use the Amazon Redshift Data API to perform all read and write operations.
+- B. Store the log files in an Amazon S3 Standard bucket. Register the schema in AWS Glue Data Catalog. Create an external Redshift table that points to the AWS Glue schema. Use the table to perform Amazon Redshift Spectrum read operations.
+- C. Create an Amazon Redshift table with the EVEN distribution style. Use the Amazon Redshift Java Database Connectivity (JDBC) connector to establish a database connection. Use the database connection to perform all read and write operations.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401531-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-304-discussion/
+
+---
+
+## Q374. [examtopics] #308
+*App id: `LOC-374` · type: `single`*
+
+Question #: 308 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A retail company needs to implement a solution to capture data updates from multiple Amazon Aurora MySQL databases. The company needs to make the updates available for analytics in near real time. The solution must be serverless and require minimal maintenance. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Set up AWS Database Migration Service (AWS DMS) tasks that perform schema conversions for each database. Load the changes into Amazon Redshift Serverless.
+- B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) Connect with Debezium connectors to load data into Amazon Redshift Serverless.
+- C. Use AWS Database Migration Service (AWS DMS) to set up binary log replication to Amazon Kinesis Data Streams. Load the data into Amazon Redshift Serverless after schema conversion.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401535-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-308-discussion/
+
+---
+
+## Q375. [examtopics] #312
+*App id: `LOC-375` · type: `single`*
+
+Question #: 312 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses an Amazon Redshift cluster to manage data, including vendor sales data. The company wants to store a copy of the vendor data in an Amazon S3 bucket. A data engineer sets up an AWS Glue job to upload the data to the S3 bucket data on a schedule. The data engineer set up a network connection to allow private traffic between Amazon Redshift and Amazon S3. What is the next step required to meet this requirement?
+
+- A. The company wants to store a copy of the vendor data in an Amazon S3 bucket. A data engineer sets up an AWS Glue job to upload the data to the S3 bucket data on a schedule. The data engineer set up a network connection to allow private traffic between Amazon Redshift and Amazon S3. What is the next step required to meet this requirement? A. Create an IAM role that has permission to write to the S3 bucket. Associate the IAM role with the Amazon Redshift cluster.
+- B. Add the S3 bucket to an AWS Glue Data Catalog. Configure Amazon Redshift Spectrum to access the Data Catalog.
+- C. Enable the Amazon Redshift data sharing feature. Set the S3 bucket as a target bucket for data sharing.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401539-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-312-discussion/
+
+---
+
+## Q376. [examtopics] #318
+*App id: `LOC-376` · type: `single`*
+
+Question #: 318 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company is setting up a new Amazon SageMaker Unified Studio domain. Each of the company's business units needs isolated control over its own assets, projects, and metadata. Specific datasets must be shareable with other business units upon approval. The company also requires centralized user authentication and identity mapping. Which solution will meet these requirements?
+
+- A. Specific datasets must be shareable with other business units upon approval. The company also requires centralized user authentication and identity mapping. Which solution will meet these requirements? A. Configure each business unit as a domain unit with delegated ownership and fine-grained permissions policies. Give users the ability to share assets across domain units with explicit access control. Assign API keys to users for authentication to access the domain portal.
+- B. Configure business units as separate domain units with owner permissions. Restrict projects exclusively to owners to prevent data sharing between domains. Configure AWS IAM Identity Center for centralized authentication. Map user profiles to their respective domain units.
+- C. Configure business units to be represented as separate domains. Establish isolated environments with no shared administrative policies. Configure AWS IAM Identity Center for centralized authentication. Delegate administration at the domain level.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401545-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-318-discussion/
+
+---
+
+## Q377. [examtopics] #322
+*App id: `LOC-377` · type: `single`*
+
+Question #: 322 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company uses Amazon Redshift for its data warehouse. A data engineer must query a table named orders.complete_orders_history, which contains 100 columns. The query must return all columns except columns named companyId and unique_system_id. Which Amazon Redshift SQL statement will meet this requirement?
+
+- A. Opsi tidak terekstrak lengkap dari sumber — pelajari stem / Knowledge.
+- B. Lanjut ke pembahasan / dokumentasi AWS terkait layanan di stem.
+
+**Answer:** A
+
+**Explanation / Pembahasan:**
+
+Answer key from local source `examtopics`: A. Verify against AWS docs; third-party keys are not official.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401549-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-322-discussion/
+
+---
+
+## Q378. [examtopics] #326
+*App id: `LOC-378` · type: `single`*
+
+Question #: 326 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to collect logs for an Amazon RDS for MySQL database and make the logs available for audits. The logs must track each user that modifies data in the database or makes changes to the database instance. Which solution will meet these requirements?
+
+- A. Enable Amazon CloudWatch Logs. Create metric filters to monitor database changes and instance-level changes. Configure automated notification systems to send near real-time alerts for suspicious database operations.
+- B. Configure an Amazon EventBridge rule to monitor database activity. Create an AWS Lambda function to process EventBridge events and store them in Amazon OpenSearch Service.
+- C. Configure AWS CloudTrail to log API calls. Use Amazon CloudWatch Logs for basic monitoring. Use IAM policies to control access to the logs. Set up scheduled reporting for log audits.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401553-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-326-discussion/
+
+---
+
+## Q379. [examtopics] #328
+*App id: `LOC-379` · type: `single`*
+
+Question #: 328 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to generate a one-time performance report by joining data that is stored in Amazon DynamoDB. Amazon RDS. Amazon Redshift. and Amazon S3. The company wants to avoid unnecessary data movement and to minimize query execution time. Which solution will meet these requirements?
+
+- A. Capture data from DynamoDB by using DynamoDB Streams. Migrate data from Amazon RDS by using AWS DMS. Export Amazon Redshift data. Store all data in Amazon S3. Use Redshift Spectrum to run queries.
+- B. Amazon RDS. Amazon Redshift. and Amazon S3. The company wants to avoid unnecessary data movement and to minimize query execution time. Which solution will meet these requirements? A. Capture data from DynamoDB by using DynamoDB Streams. Migrate data from Amazon RDS by using AWS DMS. Export Amazon Redshift data. Store all data in Amazon S3. Use Redshift Spectrum to run queries. B. Set up an AWS Glue ETL pipeline to extract, transform, and centralize data in Amazon S3. Use Amazon Athena to run analytical queries.
+- C. Deploy an Amazon EMR cluster powered by Apache Spark to ingest, process, and merge datasets from multiple sources. Run analytical workloads on the merged data.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401555-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-328-discussion/
+
+---
+
+## Q380. [examtopics] #333
+*App id: `LOC-380` · type: `single`*
+
+Question #: 333 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company needs to store semi-structured transactional data for an application in a database. The database must be serverless. The application writes the data infrequently, but it reads the data frequently. The application must retrieve the data within milliseconds. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Store the data in an Amazon S3 Standard bucket. Enable S3 Transfer Acceleration.
+- B. Store the data in an Amazon S3 Apache Iceberg table. Enable S3 Transfer Acceleration.
+- C. Store the data in an Amazon RDS for MySQL cluster. Configure RDS Optimized Reads for the cluster.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401560-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-333-discussion/
+
+---
+
+## Q381. [examtopics] #334
+*App id: `LOC-381` · type: `single`*
+
+Question #: 334 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company runs concurrent analytical queries on Amazon Redshift tables multiple times each day. The queries require consistent data views three times each day. The company runs extract, transform, and load (ETL) operations that update dimension tables while the queries run. The company has noticed that the queries cause table-level locks during the ETL operations. The company’s current solution experiences query timeouts and deadlocks during peak processing hours, which affects analytical reporting and on-demand analysis. Which solution will fix this issue?
+
+- A. Use Amazon Redshift materialized views for analytical queries. Schedule ETL operations during off-peak hours to minimize lock contention.
+- B. Configure Amazon Redshift federated queries to access source data directly. Use read replicas to isolate analytical workloads from ETL operations.
+- C. Use Amazon Redshift Spectrum to query data in Amazon S3 for analytical workloads. Maintain ETL operations on Amazon Redshift tables with transaction isolation.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/401561-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-334-discussion/
+
+---
+
+## Q382. [examtopics] #343
+*App id: `LOC-382` · type: `single`*
+
+Question #: 343 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A research company stores data in an Amazon Redshift cluster. The company needs to share data between departments and maintain regulatory compliance. The company needs a solution that gives researchers access to only the records from their own departments and does not create multiple dataset copies. The solution must also ensure that personally identifiable information (PII) is protected from unauthorized access. Which solution will meet these requirements?
+
+- A. Create a datashare in Amazon Redshift for each department. Use cross-Region data sharing to distribute copies of the entire dataset to each department's Amazon Redshift cluster.
+- B. Implement row-level security policies with basic SQL filters based on department. Attach the security policies to the data tables. Grant EXPLAIN RLS permission to authorized researchers.
+- C. Create separate schemas for each department with appropriate views that filter data. Grant each department access to only their respective schema.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/406574-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-343-discussion/
+
+---
+
+## Q383. [examtopics] #344
+*App id: `LOC-383` · type: `single`*
+
+Question #: 344 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company stores analysis results for thousands of daily customer service call transcripts in an Amazon DynamoDB table. An application generates business reports by using only the previous 7 working days of data. To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead?
+
+- A. To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead? A. Enable TTL on the DynamoDB table. Add an expiration timestamp attribute to each item in the table.
+- B. Use Amazon EventBridge to invoke an AWS Lambda function on a schedule to delete old records every day.
+- C. Create a new DynamoDB table. Enable TTL on the new table. Migrate the data to the new table. Update the application to use the new table.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/406575-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-344-discussion/
+
+---
+
+## Q384. [examtopics] #348
+*App id: `LOC-384` · type: `single`*
+
+Question #: 348 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A global ecommerce company occasionally receives customer data files in its Amazon S3 data lake. The company needs to automatically detect new data and mask sensitive data before making the data available to the company's analytics team. Which solution will meet these requirements with the LEAST operational overhead?
+
+- A. Configure Amazon S3 Event Notifications to detect the new data and trigger an AWS Glue job. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift.
+- B. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift. B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to detect incoming data. Use Amazon EMR workflows to detect and mask sensitive data. Store the processed data in Amazon S3.
+- C. Use Amazon Kinesis Data Streams to capture new data. Use Amazon Comprehend to detect and mask the sensitive data. Store the processed data in Amazon DynamoDB tables.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+
+Source URL: https://www.examtopics.com/discussions/amazon/view/406579-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-348-discussion/
+
+---
+
 ## Q385. [pdf_slide_deck]
-*App id: `LOC-385`*
+*App id: `LOC-385` · type: `single`*
 
 What should the data engineer change?
 
-- A. com 11/ 35 --- page 575 --- D30PS WORKEDSCENARI02 0F4 query them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with no retention policy set, and the Cloudwatch bill has grown steadily. The security team also needs to run occasional forensic searches over the last thirty days, interactively. Which approach best meets both needs? Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs PAUSE AND DECIDE MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 21/46 --- page 576 --- D30PS WORKED SCENARI0 2 0F 4-WORKED Which approach best meets both needs? Everything in Cloudwatch forever Thirty day retention, export to S3, lifecycle to Meetsbothrequirements atCloudWatchLogsstorage Glacier, query with Athena pricesfor seven years.That is the bill they complained Recent logs stay interactive; archives move to storage about. priced for the access pattern and stay queryable. Seven years of OpenSearch indices Thirty days only Keepssevenyears of data on a clustersized forsearch,for Solves the cost problem by breaking the regulatory two queries a year. The most expensive option here. requirement. Never theanswer. THE SIGNAL Two access patterns, thirty days and seven years, need two storage tiers. This is module eight's lifecycle argument applied to logs. MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 22/46 --- page 699 --- D4SEC WORKEDSCENARI03 0F 4 A financial services company runs Glue jobs in private subnets. A compliance requirement states that no data may traverse the public internet, and that jobs must be able to reach only two named s3 buckets, not any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and the jobs reach Amazon S3 over the public endpoint.
+- A. com 11/ 35 --- page 575 --- D30PS WORKEDSCENARI02 0F4 query them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with no retention policy set, and the Cloudwatch bill has grown steadily. The security team also needs to run occasional forensic searches over the last thirty days, interactively. Which approach best meets both needs? Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs PAUSE AND DECIDE MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 21/46 --- page 576 --- D30PS WORKED SCENARI0 2 0F 4-WORKED Which approach best meets both needs? Everything in Cloudwatch forever Thirty day retention, export to S3, lifecycle to Meetsbothrequirements atCloudWatchLogsstorage Glacier, query with Athena pricesfor seven years.That is the bill they complained Recent logs stay interactive; archives move to storage about. priced for the access pattern and stay quer...
 - E. Seven years of OpenSearch indices Thirty days only Keepssevenyears of data on a clustersized forsearch,for Solves the cost problem by breaking the regulatory two queries a year. The most expensive option here. requirement. Never theanswer. THE SIGNAL Two access patterns, thirty days and seven years, need two storage tiers. This is module eight's lifecycle argument applied to logs. MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 22/46 --- page 699 --- D4SEC WORKEDSCENARI03 0F 4 A financial services company runs Glue jobs in private subnets. A compliance requirement states that no data may traverse the public internet, and that jobs must be able to reach only two named s3 buckets, not any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and the jobs reach Amazon S3 over the public endpoint.
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
 
 ---
 
 ## Q386. [pdf_slide_deck]
-*App id: `LOC-386`*
+*App id: `LOC-386` · type: `single`*
 
 What should the data engineer configure now?
 
@@ -6464,10 +7769,12 @@ What should the data engineer configure now?
 - D. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.
 - E. The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read more than a set Allows expensive queries to run for longer. It is the opposite volume, so a single accidental query cannot run up a large of a guardrail. bill. THE SIGNAL Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards. PRACTICE EXAM 3 admin@sthithapragna.com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
 
 ## Q387. [pdf_slide_deck]
-*App id: `LOC-387`*
+*App id: `LOC-387` · type: `single`*
 
 What should the data engineer configure?
 
@@ -6475,10 +7782,12 @@ What should the data engineer configure?
 - D. only copy in a single Availability Zon
 - E. THE SIGNAL "Nobody can predict" and "expected to change" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3 admin@sthithapragna.com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
 
 ## Q388. [pdf_slide_deck]
-*App id: `LOC-388`*
+*App id: `LOC-388` · type: `single`*
 
 What should the data engineer do?
 
@@ -6486,30 +7795,36 @@ What should the data engineer do?
 - D. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signatur
 - E. The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signature. PRACTICE EXAM 3 admin@sthithapragna.com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
 
 ## Q389. [pdf_slide_deck]
-*App id: `LOC-389`*
+*App id: `LOC-389` · type: `single`*
 
 What should the data engineer implement?
 
 - A. com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred
 - D. More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes detection.It is decide, which was the stated problem. the opposite of what therequirement describes. THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both. PRACTICE EXAM 3 admin@sthｉthapragna.com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
 
 ## Q390. [pdf_slide_deck]
-*App id: `LOC-390`*
+*App id: `LOC-390` · type: `single`*
 
 What should the data engineer recommend?
 
 - A. com 31/43 --- page 466 --- D2ST0RE
 - E. Here it means a one query in one system the team already runs. second system to run and the filter columns living elsewhere. MemoryDB Athena over document text Lowest latency, at in-memory prices for two million vectors, Keyword matching over files.The whole requirement is and nothing here requires microseconds. finding matches where the wording differs. THE SIGNAL CHOOSING A DATA STORE admin@sthithapragna.com 31/43 --- page 466 --- D2ST0RE
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
 
 ## Q391. [pdf_slide_deck]
-*App id: `LOC-391`*
+*App id: `LOC-391` · type: `single`*
 
 What should the data engineer use?
 
@@ -6517,10 +7832,12 @@ What should the data engineer use?
 - D. hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte fil
 - E. Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all. PRACTICE EXAM 3 admin@sthithapragna.com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
 
 ## Q392. [pdf_slide_deck]
-*App id: `LOC-392`*
+*App id: `LOC-392` · type: `single`*
 
 Why did the first attempt fail, and what should replace it?
 
@@ -6528,4 +7845,1129 @@ Why did the first attempt fail, and what should replace it?
 - D. Matches the access pattern. reads. Faster than Athena, still the wrong shap
 - E. THE SIGNAL Compare with scenario 1. There, streaming was overkill. Here, an analytical store is underpowered. Same question, opposite direction. THE MENTAL MODEL admin@sthithapragna.com 22 / 24 --- page 183 --- D1INGEST
 
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+
 ---
+
+## Q393. [pdf_slide_practice_exam] #1
+*App id: `LOC-393` · type: `single`*
+
+A logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Around forty microservices produce and consume from it using Kafka client libraries and a schema registry. The operations team spends significant time patching brokers and rebalancing partitions. The company wants to reduce that operational work. Throughput is high, steady and well understood, and the services must not be rewritten. What should the data engineer recommend?
+
+- A. Amazon Msk Serverless
+- B. Amazon Kinesis Data Streams in on-demand
+- C. Amazon MsK Provisioned, migrating the existing
+- D. Amazon Data Firehose delivering to Amazon s3
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q394. [pdf_slide_practice_exam] #2
+*App id: `LOC-394` · type: `single`*
+
+An Aws Glue job reads JsON files from a partner and writes Parquet to a curated table. It has run nightly for a year. Last week the partner added a nested field and changed one integer column to sometimes contain a string. The job now fails on some nights and succeeds on others. When it succeeds, downstream totals are slightly lower than the source system reports. What should the data engineer implement?
+
+- A. Increase the number of workers so the job has
+- B. Enable job bookmarks so previously processed
+- C. files are skipped
+- D. Configure the crawler's schema change policy
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q395. [pdf_slide_practice_exam] #3
+*App id: `LOC-395` · type: `single`*
+
+A Step Functions state machine starts an Aws Glue job, then runs a Glue crawler, then every night. Analysts report that the crawler sometimes registers only part of the day's data, and the What is the most likely cause?
+
+- A. The Lambda function is timing out before the
+- B. The crawler needs a longer schedule interval
+- C. summary is written
+- D. The Glue job is being invoked with the default
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What is the most likely cause? The Lambda function timing out B A longer crawler interval A timeout would fail the state, and the state machine The crawler is not on a schedule; the state machine reports success every night. invokes it. There is no interval to change. Request-response instead of .sync Express workflows The APl call succeeds immediately, so the state machine Changes duration limits and pricing. It has nothing to do moves on while the Glue job is still writing. The crawler then with whether a step waits for a job. sees partial data. THE SIGNAL Every step succeeds and the output is wrong. That combination points at ordering rather than failure. PRACTICE EXAM 1
+
+**THE SIGNAL:** Every step succeeds and the output is wrong. That combination points at ordering rather than failure.
+
+---
+
+## Q396. [pdf_slide_practice_exam] #4
+*App id: `LOC-396` · type: `single`*
+
+A nightly Aws Glue job processes about four hundred gigabytes and takes ninety minutes. It at two. The company wants to reduce cost. evenly utilised throughout. What should the data engineer do?
+
+- A. Migrate the job to Amazon EMR on EC2 with Spot
+- B. Run the job on Glue Flex execution
+- C. Switch to memory-optimised R workers
+- D. Reduce the worker count to five and accept a
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer do? EMR with Spot Glue Flex A Spot is genuinely cheap, and this introduces a cluster to Up to 34 percent cheaper for jobs with no tight deadline. Six operate for a job Glue already runs well. hours of slack is exactly the condition Flex exists for. R workers Five workers More memory per worker, at a higher price. Workers are Fewer, slower workers process the same data. Glue bills evenly utilised, so memory is not the constraint. DPU-hours, so the total is broadly unchanged. THE SIGNAL Six hours of slack before the deadline is the planted detail. Flex trades start-time certainty for a discount. PRACTICE EXAM 1
+
+**THE SIGNAL:** Six hours of slack before the deadline is the planted detail. Flex trades start-time certainty for a discount.
+
+---
+
+## Q397. [pdf_slide_practice_exam] #6
+*App id: `LOC-397` · type: `single`*
+
+A retailer sends clickstream events to Amazon Data Firehose, which writes raw JsoN to Amazon S3 in a single prefix. Analysts query the data with Amazon Athena and costs are rising steeply. A fraud team has now also asked to consume the same events within seconds, independently. The team wants to address both the query cost and the fraud team's requirement. What should the data engineer implement?
+
+- A. Increase the Firehose buffer size so fewer, larger
+- B. Enable Firehose format conversion to Parquet
+- C. files are written
+- D. with dynamic partitioning, and add a second
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer implement? Larger buffers Conversion plus a second Firehose stream Produces fewer, larger files, which helps a little and leaves Fixes the cost properly, and a second Firehose stream raw JsoN unpartitioned. It does nothing for the fraud team. deliverstoadestinationratherthangivingthefraud team a live feed. Fraud team queries S3 DataStream infront,Firehoseasoneconsumer Files appear after buffering, so the fraud team is always Conversion and partitioning fix the Athena cost; the stream behind. Seconds was the stated requirement. gives thefraud teaman independent consumer reading within seconds. THE SIGNAL Two requirements again. Format and partitioning fix the cost; multiple consumers is the capability Firehose lacks. PRACTICE EXAM 1
+
+**THE SIGNAL:** Two requirements again. Format and partitioning fix the cost; multiple consumers is the capability Firehose lacks.
+
+---
+
+## Q398. [pdf_slide_practice_exam] #7
+*App id: `LOC-398` · type: `single`*
+
+An AwS Lambda function converts small JsON files to Parquet as they arrive in Amazon S3. It is configured with 5l2 MB of memory and takes about twenty five seconds per file. CloudWatch shows peak memory usage of around 2o0 MB. The conversion is CPU bound. The company processes around one hundred thousand files a month and wants to reduce the Lambda cost. What should the data engineer do?
+
+- A. Increase the memory allocation, measure the
+- B. Reduce the memory allocation to 256 MB to
+- C. change in duration, and select the cheapest
+- D. match observed usage
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer do? Raise memory, measure, choose the cheapest Halve the memory Memory buys CPU. A CPU-bound function finishes Halves the CPU too. A CPU-bound function takes roughly proportionally sooner, and duration times rate often falls. twice as long, so the bill barely moves and may rise. Provisioned concurrency A longer timeout Removes cold start latency at a continuous charge. The Nothing is timing out. A timeout is a ceiling, not a worktakes twentyfiveseconds;cold start isnot the cost. performance or cost setting. THE SIGNAL "CPU bound" and "memory barely used" together are the exam pointing directly at the memory-equals-CPU relationship. PRACTICE EXAM 1
+
+**THE SIGNAL:** "CPU bound" and "memory barely used" together are the exam pointing directly at the memory-equals-CPU relationship.
+
+---
+
+## Q399. [pdf_slide_practice_exam] #8
+*App id: `LOC-399` · type: `single`*
+
+A company stores sensor readings in Amazon s3. Objects average 30 kilobytes. Data is queried frequently for fourteen days, then very rarely, but must be retained for five years for regulatory reasons. A data engineer proposes a lifecycle rule transitioning objects to s3 Standard-lnfrequent Access after fourteen days, and expiring them after five years. What is the problem with this proposal?
+
+- A. Standard-IA retrieval takes several hours, which
+- B. Standard-iA cannot be used for objects
+- C. is too slow for regulatory access
+- D. retained longer than one year
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What is theproblem with this proposal? Hours to retrieve A one year limit Standard-IA returns inmilliseconds.Hoursdescribes Invented. There is no maximum retention for any storage GlacierFlexibleRetrieval orDeepArchive. class. A thirty day transition floor 128 KB billing minimum Standard-iA has a thirty day minimum storage duration, Each 30 KB object is billed as 128KB, more than four times not a minimum agebefore transition.Transitioning at its real size. The cheaper class becomes more expensive. fourteen days incurs theremainder. THE SIGNAL Thirty kilobyte objects is the planted number. Check it against the 128 KB minimum before anything else. PRACTICE EXAM 1
+
+**THE SIGNAL:** Thirty kilobyte objects is the planted number. Check it against the 128 KB minimum before anything else.
+
+---
+
+## Q400. [pdf_slide_practice_exam] #9
+*App id: `LOC-400` · type: `single`*
+
+Amazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over eight months, query times have roughly tripled and storage costs have grown faster than the underlying data volume. The platform team is two people supporting twenty pipelines and has no capacity to build and operate maintenance jobs. What should the data engineer recommend?
+
+- A. Increase the Firehose buffer interval to reduce
+- B. Migrate the tables to Amazon s3 Tables, which
+- C. the number of files written
+- D. performs compaction and snapshot
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q401. [pdf_slide_practice_exam] #10
+*App id: `LOC-401` · type: `single`*
+
+An Amazon Redshift cluster holds a three billion row events table and a fifty thousand row campaigns table. Almost every query joins the two on campaign ID and filters on an event date range covering the last seven days. Both tables currently use EVEN distribution and neither has a sort key. Monitoring shows heavy data redistribution during joins. Which combination will most improve performance?
+
+- A. Enable concurrency scaling on the cluster
+- B. Add four more nodes to the cluster
+- C. Set both tables to KEY distribution on campaign
+- D. Set the events table toKEY distribution on
+
+**Answer:** C
+
+**Pembahasan:** Jawaban yang tepat adalah **C**.
+
+Which combination will most improve performance? Concurrency scaling Four more nodes Addresses queries waiting to start. These queries are slow More slices performing the same redistribution on every while running. join. Cost rises and the cause remains. KEY on both, interleaved sort KEY on events, ALL on campaigns, sort on date KEY on a small dimensionwastesthemechanism,and Fiftythousandrowsreplicatedtoeverynoderemovesthe interleaved suitsunpredictable filters.Thesealwaysfilteron exchange, and a date sort key lets zone maps skip date. everything outside seven days. THE SIGNAL Fifty thousand rows is small enough for ALl. Three billion joined on one column is the KEY case. PRACTICE EXAM 1 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 23/47
+
+**THE SIGNAL:** Fifty thousand rows is small enough for ALl. Three billion joined on one column is the KEY case.
+
+---
+
+## Q402. [pdf_slide_practice_exam] #11
+*App id: `LOC-402` · type: `single`*
+
+An application stores orders in Amazon DynamoDB with order ID as the partition key. A new requirement is to list all orders for a given customer, sorted by order date. The table already holds two hundred million items. Reads for this new pattern do not need to reflect the most recent write immediately. What should the data engineer implement?
+
+- A. A global secondary index partitioned by
+- B. A local secondary index with customer ID as the
+- C. customerID and sorted by order date
+- D. A Scanwith a filter expressiononcustomer ID
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer implement? A GSl on customer ID, sorted by order date A local secondary index A different partition key groups items by customer, the sort An LSl keeps the table's partition key, so it cannot group by key ordersthem, and eventual consistency is acceptable customer,and itcannotbeadded toanexistingtable. here. A Scan with a filter Export and query with Athena Readsalltwohundredmillionitemsanddiscardsmostof An analytical answer to an operational lookup. It is also them, on every request. stale between exports. THE SIGNAL An existing table plus a new access pattern is always a Gsl. LSls cannot be added after creation. PRACTICE EXAM 1
+
+**THE SIGNAL:** An existing table plus a new access pattern is always a Gsl. LSls cannot be added after creation.
+
+---
+
+## Q403. [pdf_slide_practice_exam] #12
+*App id: `LOC-403` · type: `single`*
+
+A Glue job writes hourly output to Amazon S3 under Hive-style partitions. A crawler runs every ten minutes to register new partitions so Athena users can query recent data. Finance has flagged the crawler's cost, and analysts still wait up to ten minutes for new data to appear. The table is also queried by Amazon Redshift Spectrum. What should the data engineer do?
+
+- A. Reduce the crawler schedule to every three
+- B. Configure partition projection on the table in
+- C. EnableenableUpdateCatalogontheGlue job
+- D. RunMSCK REPAIRTABLEona scheduleinstead of
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer do? Crawl every three minutes Partition projection Triples thenumber of ten-minutebilling minimums, to A real answer for a predictable pattern, and Athena-only. Redshift Spectrumreads thesame table and would lose partition awareness. enableUpdateCatalog,remove the crawler ScheduledMSCKREPAIRTABLE The partition is registered as it is written, so data is visible Scans the location to find missing partitions. Slow on a immediately and the crawler cost disappears. largetable,and itkeepsboththedelay and ascheduled component. THE SIGNAL Spectrum also queries this table. That single sentence is what rules out partition projection. PRACTICE EXAM 1
+
+**THE SIGNAL:** Spectrum also queries this table. That single sentence is what rules out partition projection.
+
+---
+
+## Q404. [pdf_slide_practice_exam] #14
+*App id: `LOC-404` · type: `single`*
+
+A nightly Aws Glue job loads data into Amazon Redshift. An operations team has a Cloudwatch alarm on the job's failed run count. It has worked for eighteen months. During a recent change, the EventBridge rule that triggers the job was disabled. The job did not run for three nights. No alarm fired, and the problem was found when a business user noticed stale figures. What change would have detected this?
+
+- A. Lower the failure alarm threshold to fire on a
+- B. Enable Aws CloudTrail so the rule change is
+- C. single failed run
+- D. Create an alarm on the job's succeeded run
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q405. [pdf_slide_practice_exam] #15
+*App id: `LOC-405` · type: `single`*
+
+A Glue pipeline joins transactions to a merchant reference table before loading a warehouse. Finance reports that monthly revenue is consistently around half a percent below the source system. The job succeeds every night and row counts between the job's output and the warehouse match exactly. New merchant codes are added to the source system regularly. What is the most likely cause, and which check would detect it?
+
+- A. The row count check is sufficient, so the source
+- B. The job is running out of memory and dropping
+- C. system figure must be wrong
+- D. records. A Cloudwatch memory alarm would
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q406. [pdf_slide_practice_exam] #16
+*App id: `LOC-406` · type: `single`*
+
+An Amazon Redshift cluster serves dashboards for two hundred analysts each weekday morning. Users report slowness during the busiest hour. Query history shows execution times snuw aa o aaue to sa m nanb puo 'spuooas fu b puo auo punon o ass during that hour. An overnight transformation job sometimes overruns into the morning. Which combination best addresses this?
+
+- A. Enable concurrency scaling on the dashboard
+- B. Add sort and distribution keys to the dashboard
+- C. queue and set WLM query priority above the
+- D. transformation workload
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q407. [pdf_slide_practice_exam] #17
+*App id: `LOC-407` · type: `single`*
+
+bucket policy grants the partner's role s3:GetObject, and the partner's role policy allows the subsequent KMs Decrypt call being denied. What is missing?
+
+- A. The KMs key policy does not permit the partner's
+- B. The objects must be re-encrypted with sSE-s3
+- C. role to use the key
+- D. for cross-account access
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What is missing? The key policy does not allow the partner B Re-encrypt with SSE-S3 CloudTrail says it directly. GetObject succeeded and Would work by removing the key control the company Decrypt was denied, so the object permissions are right chose deliberately. It solves the symptom by abandoning and the key permission is not. the requirement. Enable Bucket Keys Create an IAm user for the partner A cost optimisation reducing KMS request volume. It has no Cross-account access uses roles and resource policies. bearing on whether a principal may decrypt. Creating users for external parties is the pattern to avoid. THE SIGNAL Cross-account access to encrypted data needs three policies to align. CloudTrail names which one failed. PRACTICE EXAM 1
+
+**THE SIGNAL:** Cross-account access to encrypted data needs three policies to align. CloudTrail names which one failed.
+
+---
+
+## Q408. [pdf_slide_practice_exam] #18
+*App id: `LOC-408` · type: `single`*
+
+A bank stores customer records in Amazon S3, catalogued in Aws Glue and queried with Amazon Athena. A modelling team must analyse transaction behaviour but must never see customer name, address or account number. A data engineer proposes writing an IAM policy for the modelling team's role that denies access to those three columns. Why will this not work, and what should be done?
+
+- A. Encrypt the three columns with a KMS key the
+- B. IAM cannot express column-level permissions.
+- C. modelling team cannot use
+- D. Use Aws Lake Formation column-level grants or
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Why will this not work, and what should be done? Encrypt the columns IAMcannotdocolumns.UseLakeFormation Client-side column encryption is possible and complex. IAM grants actions on resources named by ARN. A column Lake Formation addresses this directly. has no ARN, so there is nothing a policy can name. A redacted copy Attach it to the bucket It works, and creates two datasets to keep in step, doubling A bucket policy has the same vocabulary. Objects and prefixes, not columns. THE SIGNAL The proposal is impossible rather than merely suboptimal. Recognising that is faster than weighing the alternatives. PRACTICE EXAM 1 admｉn@sthｉthａpragnａ.com 39/47
+
+**THE SIGNAL:** The proposal is impossible rather than merely suboptimal. Recognising that is faster than weighing the alternatives.
+
+---
+
+## Q409. [pdf_slide_practice_exam] #19
+*App id: `LOC-409` · type: `single`*
+
+An Aws Glue job connects to a third-party analytics APl using an APl key, and to Amazon Redshift using a database password. Both are currently stored as Glue job parameters. A security review requires that both credentials are stored outside the job definition, and that the Redshift password is rotated automatically every thirty days. What should the data engineer implement?
+
+- A. Store both in Systems Manager Parameter Store
+- B. Store both in Aws Secrets Manager, with
+- C. as Securestring parameters
+- D. rotation enabled ontheRedshiftsecret
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer implement? Both in Parameter Store Both in Secrets Manager, rotation on Redshift Meets the storage requirement and not the rotation one. Both leave the job definition, and Secrets Manager has Parameter Store has norotation capability. built-in rotation for Redshift, updating the stored value and the database together. Split between the two stores An IAM role covering both Workable,and it introducesasecondstoretomanagefor A role authenticates toAws. It cannot representanidentity no benefit. Both are secrets, not configuration. in a third party's system. THE SIGNAL One word decides it. Rotation eliminates Parameter Store, and a third-party APl key eliminates a role. PRACTICE EXAM 1
+
+**THE SIGNAL:** One word decides it. Rotation eliminates Parameter Store, and a third-party APl key eliminates a role.
+
+---
+
+## Q410. [pdf_slide_practice_exam] #20
+*App id: `LOC-410` · type: `single`*
+
+A healthcare provider must keep all patient data within one country. The data lake and An audit finds that Redshift snapshots are copied to a second Region for disaster recovery, and that an Athena workgroup writes query results to a bucket in a third Region created several years ago. What should the data engineer do?
+
+- A. Encrypt the snapshots and query results so their
+- B. Apply Lake Formation row-level filters to the
+- C. location is no longer material
+- D. affected tables
+
+**Answer:** C
+
+**Pembahasan:** Jawaban yang tepat adalah **C**.
+
+What should the data engineer do? Encrypt them instead Row-level filters Residency is about physical location. Encrypted regulated Controls which rows a principal sees. It has nothing to do data in the wrong country is still in the wrong country. with where bytes are physically stored. Delete the DR snapshots Relocate both, and restrict Regions with an SCP Addresses one finding by removing a resilience capability, Both findings are derived copies outside the boundary. rather thanrelocating it. The Athena resultsremain. Relocating fixes today; the SCP prevents the next one appearing. THE SIGNAL Two findings, one cause. Both are derived artefacts that inherited the data's sensitivity but not its constraint. PRACTICE EXAM 1
+
+**THE SIGNAL:** Two findings, one cause. Both are derived artefacts that inherited the data's sensitivity but not its constraint.
+
+---
+
+## Q411. [pdf_slide_practice_exam] #21
+*App id: `LOC-411` · type: `single`*
+
+A payments company streams card transactions into Amazon Kinesis Data Streams. A new requirement is to detect, within seconds, when a single card is used more than five times in ananb wbansumop p o pbo asoue ysllqnd o pup 'mopuim anu om Kun The team wants to avoid building and operating stream processing infrastructure. What should the data engineer use?
+
+- A. Amazon Managed Service for Apache Flink with
+- B. Amazon Data Firehose delivering to Amazon S3,
+- C. a two minute tumbling window
+- D. with a scheduled Glue job checking for the
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer use? Managed Service for Apache Flink B Firehose plus a scheduled Glue job Windowed aggregation over a stream is exactly what Flink Batch analysis of delivered files. The detection would arrive minutes or hours late, not within seconds. operate. A Lambda consumer counting in memory Athena on a schedule Lambda invocations are stateless and independent, so An analytical engine over files, run every minute. It is neither counts across a window would be lost between them. fast enough nor a stream processor. THE SIGNAL "within any two minute window" is the windowing signal. Counting across time is what separates Flink from Firehose. PRACTICE EXAM 2
+
+**THE SIGNAL:** "within any two minute window" is the windowing signal. Counting across time is what separates Flink from Firehose.
+
+---
+
+## Q412. [pdf_slide_practice_exam] #22
+*App id: `LOC-412` · type: `single`*
+
+An Aws Glue job reads a growing Amazon s3 prefix every night and writes aggregates to a curated table. Input volume has grown from two hundred gigabytes to four terabytes over Files are only ever added to the prefix; existing files are never modified. Each run reprocesses the entire prefix. What should the data engineer do?
+
+- A. Increase the number of workers so the job
+- B. Enable job bookmarks so each run processes
+- C. completes in the original time
+- D. only files added since the last run
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer do? A More workers Enable job bookmarks Restores the runtime by paying proportionally more. The Append-only input with unmodified files is exactly the job still reads four terabytes to process one night's data. bookmark case. Each run reads only what is new. Glue Flex Partition the output A discount on the same wasted work. It reduces the rate Improves how the results are queried. It does nothing rather than the volume. about how much input the job reads. THE SIGNAL Cost growing with total accumulated data rather than with daily volume is the reprocessing signature. PRACTICE EXAM 2
+
+**THE SIGNAL:** Cost growing with total accumulated data rather than with daily volume is the reprocessing signature.
+
+---
+
+## Q413. [pdf_slide_practice_exam] #23
+*App id: `LOC-413` · type: `single`*
+
+A company runs an Amazon EMR cluster on EC2 continuously. It executes a four hour Apache Hive job each night and is otherwise idle. Intermediate data is written to HDFS on the core nodes, and the team has a large body of existing Hive scripts. be rewritten. Which combination reduces cost the most?
+
+- A. Migrate the Hive scripts to Aws Glue and run
+- B. Move all core nodes to Spot Instances and keep
+- C. them as Spark jobs
+- D. the cluster running
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Which combination reduces cost the most? Migrate Hive to Glue All core nodes on Spot Glue does not run Hive, so this means rewriting every script. Core nodes hold HDFS. An interruption loses data mid-job, The question forbids it explicitly. and the cluster still runs all day. Halve the cluster EMRFS, transient cluster, Spot task nodes Saves half of a bill you should not be paying. The waste is Stops paying for twenty idle hours a day and discounts the the idle time,not thenode count. four that remain. Hive runs unchanged. THE SIGNAL Twenty four hours of cluster for four hours of work. The waste is time, and Hive rules out Glue in one word. PRACTICE EXAM 2
+
+**THE SIGNAL:** Twenty four hours of cluster for four hours of work. The waste is time, and Hive rules out Glue in one word.
+
+---
+
+## Q414. [pdf_slide_practice_exam] #24
+*App id: `LOC-414` · type: `single`*
+
+A pipeline converts uploaded video metadata files into a normalised format. Each file takes between eight and forty minutes to process depending on size, and processing is single- The current implementation is an Aws Lambda function, and the longer files now fail. What should the data engineer use?
+
+- A. Increase the Lambda function's timeout and
+- B. An Amazon EMR cluster with a step per file
+- C. memory allocation
+- D. Aws Batch, running each file as a containerised
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer use? A A longer Lambda timeout B An EMR cluster Lambda's maximum is fifteen minutes and it cannot be A cluster to operate for sixty single-threaded jobs a day raised. Files taking forty minutes will always fail. arriving unpredictably. AWS Batch A Glue Spark job per file No time limit, containerised, and it provisions compute per Spark distributes work the question says cannot be job then shuts down. It fills the gap above Lambda. distributed, and adds startup overhead to every file. THE SIGNAL Forty minutes crosses Lambda's hard fifteen minute ceiling. That number is in the question to eliminate Lambda. PRACTICE EXAM 2
+
+**THE SIGNAL:** Forty minutes crosses Lambda's hard fifteen minute ceiling. That number is in the question to eliminate Lambda.
+
+---
+
+## Q415. [pdf_slide_practice_exam] #25
+*App id: `LOC-415` · type: `single`*
+
+S3 daily, with field mapping and light filtering applied. A developer has proposed writing a Lambda function that calls the Salesforce REST APl, handles pagination, manages OAuth token refresh and retries, and writes JsoN to Amazon s3. The team wants to minimise the code they build and maintain. What should the data engineer recommend?
+
+- A. Amazon AppFlow, with a scheduled flow
+- B. Build the Lambda function as proposed, with
+- C. performing the mapping and filtering
+- D. EventBridge Scheduler triggering it daily
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer recommend? Amazon AppFlow Build the Lambda function A managed connector for Salesforce, with mapping and Works, and means owning pagination, token refresh, retries filtering as configuration. Authentication and pagination and APl changes forever. That is the code they said they are handled. want to avoid. AWS DMS AWS DataSync Migrates and replicates databases. Salesforce is a SaaS Moves files between file systems and object storage. It has application, not a database endpoint. no concept of a Saas APl. THE SIGNAL The proposal lists four things AppFlow does for you. A question describing that much plumbing is naming the managed service. PRACTICE EXAM 2
+
+**THE SIGNAL:** The proposal lists four things AppFlow does for you. A question describing that much plumbing is naming the managed service.
+
+---
+
+## Q416. [pdf_slide_practice_exam] #27
+*App id: `LOC-416` · type: `single`*
+
+A retailer writes order events to Amazon Kinesis Data Streams using store ID as the partition key. The chain has four hundred stores, but one flagship store generates around thirty percent of all events. Producers receive throttling errors during peak hours while total stream utilisation is around forty percent. The team has already increased the shard count twice without improvement. What should the data engineer do?
+
+- A. Increase the shard count again
+- B. Switch the stream to on-demand capacity
+- C. Use a composite partition key combining store
+- D. Enableenhancedfan-outfortheconsumers
+
+**Answer:** C
+
+**Pembahasan:** Jawaban yang tepat adalah **C**.
+
+What should the data engineer do? More shards again On-demand capacity Twice already, without improvement. The flagshipstore's Removes shard management and does not change how a key still hashes to one shard however many exist. key maps to a shard. A hot key still throttles. A composite key with a random suffix Enhanced fan-out Spreads the hot store across several shards, so its traffic no Gives each consumer dedicated read throughput. The longer concentrates on one. Consumers reassemble by throttling here is on the write side. store. THE SIGNAL Throttling at forty percent utilisation, unimproved by two capacity increases, is the hot partition signature. PRACTICE EXAM 2
+
+**THE SIGNAL:** Throttling at forty percent utilisation, unimproved by two capacity increases, is the hot partition signature.
+
+---
+
+## Q417. [pdf_slide_practice_exam] #28
+*App id: `LOC-417` · type: `single`*
+
+A subscription business stores customer interaction records as Parquet in Amazon s3, partitioned by month, and queries them with Amazon Athena. Under privacy legislation it must erase all records for a customer within thirty days of a request, and receives around sixty such requests a month. Currently an engineer identifies affected files, rewrites each without the customer's rows, and What should the company implement?
+
+- A. Convert the dataset to Apachelceberg tables
+- B. EnableS3Versioningso a failed rewritecanbe
+- C. and use DELETE statements
+- D. Repartition the data by customer identifier so
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the company implement? lceberg tables with DELETE S3 Versioning Row-leveldeletionbecomesoneatomicSQLstatement.A Makes the corruption recoverable without making the failure leaves the table untouched rather than corrupted. process faster or less manual. Days per request remains. Partition by customer Object Lock The over-partitioning trap. Thousands of tiny partitions, and Makes objects undeletable, which directly conflicts with an queries filter by month rather thanby customer. erasure obligation. THE SIGNAL Row-level deletion inside shared files is precisely the problem open table formats exist to solve. PRACTICE EXAM 2
+
+**THE SIGNAL:** Row-level deletion inside shared files is precisely the problem open table formats exist to solve.
+
+---
+
+## Q418. [pdf_slide_practice_exam] #29
+*App id: `LOC-418` · type: `single`*
+
+A company keeps six years of order history in an Amazon Redshift cluster, totalling ninety terabytes. The last six months are queried continuously by three hundred users. Older data is queried a handful of times each year for audits, and those audits must join old and recent data in a single query. Managed storage is now the largest line on the Redshift bill. What should the data engineer implement?
+
+- A. Reduce the cluster node count to lower the
+- B. Move the older data to a second Redshift
+- C. storage cost
+- D. cluster and use data sharing
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer implement? Fewer nodes B A second cluster with data sharing On managed storage, compute and storage are billed Data sharing avoids copies between warehouses. It does independently. Shrinking the cluster does not reduce the not move data to cheaper storage. storage bill. Unload to Parquet, query with Spectrum Auditors use Athena Cold data moves to s3 prices, and an external table joins to Saves the same money and breaks the single-query warehouse tables in one statement. requirement. Athena and Redshift are separate engines. THE SIGNAL "Join old and recent data in a single query" is the clause that makes it Spectrum rather than Athena. PRACTICE EXAM 2
+
+**THE SIGNAL:** "Join old and recent data in a single query" is the clause that makes it Spectrum rather than Athena.
+
+---
+
+## Q419. [pdf_slide_practice_exam] #30
+*App id: `LOC-419` · type: `single`*
+
+A media company runs a self-managed MongoDB cluster on Amazon EC2 holding a content catalogue. Around eighty services query it using MongoDB drivers and aggregation pipelines. The operations team wants to stop managing replica sets and backups. What should the data engineer recommend?
+
+- A. Amazon Keyspaces, which is designed for
+- B. Amazon DynamoDB, which is fully managed
+- C. flexible schemas
+- D. and handles document workloads
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer recommend? Amazon Keyspaces B DynamoDB Cassandra compatible, not MongoDB compatible. Wide Fully managed, and a different APl and data model. Eighty column is a different model from documents. rewritten. Aurora PostgreSQL with JSONB Amazon DocumentDB Can store documents, and every one of the eighty services MongoDB compatible, so the drivers and aggregation would need rewriting to use SQL. pipelines continue to work while AwS operates the cluster. THE SIGNAL Eighty services using MongoDB drivers is a compatibility requirement. Aggregation pipelines make it stricter still. PRACTICE EXAM 2
+
+**THE SIGNAL:** Eighty services using MongoDB drivers is a compatibility requirement. Aggregation pipelines make it stricter still.
+
+---
+
+## Q420. [pdf_slide_practice_exam] #31
+*App id: `LOC-420` · type: `single`*
+
+stayed around twenty terabytes. S3 Storage Lens reports approximately seventy terabytes of billed storage. Which combination explains the gap and addresses it?
+
+- A. Enable S3 Intelligent-Tiering so infrequently
+- B. Enable Cross-Region Replication and delete the
+- C. accessed data moves to cheaper tiers
+- D. primary copies
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Which combination explains the gap and addresses it? Intelligent-Tiering Replication Makes the invisible fifty terabytes cheaper without Copies the problem to a second Region. Deleting primaries removing it. You would still be storing seventy. onaversionedbucketaddsdeletemarkersratherthan freeing space. Disable versioning Expire noncurrent versions, abort incomplete Stops new versions accumulating, leaves the existing ones, uploads and discards theprotection it was enabled for. A nightly overwrite on a versioned bucket retains every previous version, and failed uploads leave billed parts that never appear in a listing. THE SIGNAL Twenty terabytes known, seventy billed. Two planted details, versioning and failed uploads, explain the fifty. PRACTICE EXAM 2
+
+**THE SIGNAL:** Twenty terabytes known, seventy billed. Two planted details, versioning and failed uploads, explain the fifty.
+
+---
+
+## Q421. [pdf_slide_practice_exam] #32
+*App id: `LOC-421` · type: `single`*
+
+A crawler has catalogued a set of pipe-delimited text files in Amazon S3. Analysts querying colo, containing the entire line as one string. The files have a consistent structure with a header row. What should the data engineer do?
+
+- A. Increase the crawler's sample size so it reads
+- B. Create a custom classifier defining the pipe
+- C. delimiter, and rerun the crawler
+- D. Set the crawler's schema change policy to
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer do? A larger sample A custom classifier for the delimiter Reading more files does not help when the crawler cannot The crawler could not recognise the delimiter, so it treated parse the format of any of them. each line as one value. A classifier tells it how to read the file. Update the schema on change Convert to Parquet first Controls what happens when the schema changes. The Would work, and requires a job to parse the files, which is schema was never inferred correctly in the first place. the very thing that is failing. THE SIGNAL One column holding the whole line is the classic unrecognised-format symptom. A classifier is the fix. PRACTICE EXAM 2
+
+**THE SIGNAL:** One column holding the whole line is the classic unrecognised-format symptom. A classifier is the fix.
+
+---
+
+## Q422. [pdf_slide_practice_exam] #33
+*App id: `LOC-422` · type: `single`*
+
+An Athena table over five years of Parquet data is partitioned by a string column named event_date. Analysts filter with a function that extracts the date from an event_timestamp column instead.Results are correct. Queries scan the entire table every time, and the Athena bill is far higher than expected. What is the cause?
+
+- A. The table needs a Glue partition index
+- B. The workgroup's data scan limit has been set
+- C. Thefilter is applied toa derived value, so
+- D. Parquet files are too small and need
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What is thecause? A partition index The scan limit A guardrail that cancels expensive queries. It does not partition is being read, which is a pruning problem. cause a query to read more than it needs. Thefilter uses a derived value Small files The engine cannot connect a function's output to the Adds request overhead.It doesnotexplain scanning the entire tablewhena narrowdatefilter is applied. THE SIGNAL Correct results and a full table scan together is the silent pruning failure. Nothing errors. PRACTICE EXAM2
+
+**THE SIGNAL:** Correct results and a full table scan together is the silent pruning failure. Nothing errors.
+
+---
+
+## Q423. [pdf_slide_practice_exam] #34
+*App id: `LOC-423` · type: `single`*
+
+An Amazon EMR transient cluster runs a nightly Spark job and terminates on completion. Last night the job failed after ninety minutes. The cluster terminated automatically and the operations team can see only that the step failed. No application logs are available. The team needs to diagnose this and prevent the same blind spot recurring. What should the data engineer do?
+
+- A. Rerun the job on a long-running cluster to
+- B. Configure the cluster to archive logs to Amazon
+- C. reproduce the failure
+- D. S3 and enable the persistent Spark history
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer do? Reproduce on a long-running cluster Archive logs to s3, persistent history server May work for this onefailure, at the cost of a rerun and a Logs survive termination and Spark's own view of the run is cluster, and it fixes nothing for next time. retained, so every future failure is diagnosable. Enable CloudTrail A bigger cluster RecordstheAPl callsthatcreated theclusterand Capacity for a failure nobody has diagnosed. It might be submitted the step. It contains nothing about why Spark skew, bad data or a code error. failed. THE SIGNAL Log delivery is configured at cluster creation. After a transient cluster terminates, the decision has already been made. PRACTICE EXAM 2
+
+**THE SIGNAL:** Log delivery is configured at cluster creation. After a transient cluster terminates, the decision has already been made.
+
+---
+
+## Q424. [pdf_slide_practice_exam] #35
+*App id: `LOC-424` · type: `single`*
+
+A daily pipeline loads product data into a warehouse. Aws Glue Data Quality rules check that key columns are complete and that prices fall within an expected range. All rules pass every day. Over three weeks, the proportion of products with a null description rose from under one What should the data engineer implement?
+
+- A. Add an IsCompleterule on the description
+- B. Run the ruleset twice daily instead of once
+- C. column with a one hundred percent threshold
+- D. Increase the Glue job's worker count so more
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q425. [pdf_slide_practice_exam] #37
+*App id: `LOC-425` · type: `single`*
+
+A bank runs Glue jobs in private subnets. Compliance requires that no data traverses the public internet, and that jobs can reach only three named Amazon S3 buckets rather than any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and jobs reach Amazon S3 over its public endpoint. What should the data engineer implement?
+
+- A. An IAM policy on the Glue role permitting only
+- B. Bucket policies on each of the three buckets,
+- C. those three buckets
+- D. keeping the NAT gateway
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer implement? An IAM policy on the role Bucket policies plus NAT Governs the identity rather than the network path, and anyonewhocan edit therolecanwiden it.Trafficstilluses about traffic to somebody else's, and the internet path the internet. remains. Public subnets Gateway endpoint with an endpoint policy Solves a routing inconveniencebyplacing the jobs on the Traffic leaves the internet path entirely, and the endpoint internet,which istheoppositeof therequirement. policy restricts which buckets are reachable through it. THE SIGNAL Two requirements: a private path, and a restricted set of destinations. Only an endpoint policy delivers the second. PRACTICE EXAM 2 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 37/47
+
+**THE SIGNAL:** Two requirements: a private path, and a restricted set of destinations. Only an endpoint policy delivers the second.
+
+---
+
+## Q426. [pdf_slide_practice_exam] #38
+*App id: `LOC-426` · type: `single`*
+
+A company has configured Aws Lake Formation column-level grants excluding three sensitive columns from an analytics team. The grants appear correctly in the Lake Formation console. Testing shows the analytics team can still query all columns through Amazon Athena. The database was created before Lake Formation was adopted. What is the most likely cause?
+
+- A. Column-level grants only apply to Amazon
+- B. The IAMAllowedPrincipals setting is still present,
+- C. Redshift Spectrum, not to Athena
+- D. so Lake Formation defers to IAM
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What is the most likely cause? Athena is not covered IAMAllowedPrincipals still present False. Lake Formation permissions are enforced in Athena, That setting makes Lake Formation defer to IAM entirely, so RedshiftSpectrum,EMRand Gluealike. grants are recorded and never consulted. Common on pre-existing databases. Propagation delay Convert to Iceberg Invented.Grantstakeeffectpromptly;thereis notwenty Lake FormationgovernsplainParquet tablesperfectlywell. four hour window. Iceberg is not a prerequisite. THE SIGNAL Grants that appear configured and do nothing is the classic Lake Formation surprise. The pre-existing database is the clue. PRACTICE EXAM 2
+
+**THE SIGNAL:** Grants that appear configured and do nothing is the classic Lake Formation surprise. The pre-existing database is the clue.
+
+---
+
+## Q427. [pdf_slide_practice_exam] #39
+*App id: `LOC-427` · type: `single`*
+
+A company enabled Amazon Macie across its data lake nine months ago. The lake holds sixty terabytes across three hundred buckets, all encrypted with SSE-KMS using several A manual review of two datasets has found unredacted email addresses and payment card numbers. What is the most likely explanation?
+
+- A. Macie lacks permission to use the KMs keys, so it
+- B. Macie does not detect payment card numbers
+- C. can only report object metadata
+- D. without a custom data identifier
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What is the most likely explanation? No permission to use the KMs keys No detector for card numbers Macie can only decrypt SSE-KMS objects if the key policy Paymentcard numbersand emailaddressesareboth allows it. Without that it reports metadata and finds covered by built-in managed data identifiers. nothing. First megabyte only Findings expired Invented.Maciesamplesintelligently acrossobjectsrather Detailed results expire after ninety days.That would not than truncating each one. explain nine months of near-total silence. THE SIGNAL Near silence across three hundred encrypted buckets is a symptom, not a clean result. Ask what the tool could see. PRACTICE EXAM 2 ａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com 41/ 47
+
+**THE SIGNAL:** Near silence across three hundred encrypted buckets is a symptom, not a clean result. Ask what the tool could see.
+
+---
+
+## Q428. [pdf_slide_practice_exam] #40
+*App id: `LOC-428` · type: `single`*
+
+A market research firm wants to sell three curated datasets to around one hundred and fifty external customers. Subscribers should receive quarterly revisions automatically, and access must end when a subscription lapses. The firm does not want to build entitlement management or billing. A proposal is to create an s3 bucket per customer and copy the datasets into each after every revision. What should the data engineer recommend instead?
+
+- A. A single bucket with a bucket policy listing all
+- B. Automate the per-customer copying with a
+- C. one hundred and fifty accounts
+- D. scheduled Glue job
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer recommend instead? One bucket policy naming 150 accounts B Automate the copying A A policy that size is unmaintainable and hits length limits, One hundred and fifty copies, automated. The duplication, and it manages no subscription lifecycle. the storage and the revocation problem all remain. 150 Lake Formation grants AWS Data Exchange Technically workable for access, and it leaves billing, Entitlement, revisions, subscription lifecycle and delivery are entitlement and lapse handling entirely to the firm. the product. None of it has to be built. THE SIGNAL Subscribers, automatic revisions, and access ending on lapse. Those three words are the Data Exchange signal. PRACTICE EXAM 2
+
+**THE SIGNAL:** Subscribers, automatic revisions, and access ending on lapse. Those three words are the Data Exchange signal.
+
+---
+
+## Q429. [pdf_slide_practice_exam] #41
+*App id: `LOC-429` · type: `single`*
+
+A company needs order events available in Amazon Redshift within seconds for an operational dashboard. Events are produced to Amazon Kinesis Data Streams. The team does not want to stage files in Amazon s3 or operate a consumer application. Volumes are moderate and the dashboard queries aggregate the most recent events. What should the data engineer implement?
+
+- A. Amazon Data Firehose delivering to Amazon S3,
+- B. Redshift streaming ingestion, materialising the
+- C. with a scheduled COPY into Redshift
+- D. stream into a materialized view
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer implement? Firehose to S3, then COPY Redshift streaming ingestion Stages files in s3, which the question rules out, and adds Connects the warehouse directly to the stream, buffering plus a scheduled load to a seconds requirement. materialising records into a view with no s3 staging and no consumer to run. A Lambda consumer using the Data API A Glue streaming job A consumer application to build, deploy and operate, Also a consumer to operate, and a minute of latency which the question explicitly excludes. where seconds were asked for. THE SIGNAL No s3 staging and no consumer to operate. Those two constraints together leave one option. PRACTICE EXAM3
+
+**THE SIGNAL:** No s3 staging and no consumer to operate. Those two constraints together leave one option.
+
+---
+
+## Q430. [pdf_slide_practice_exam] #42
+*App id: `LOC-430` · type: `single`*
+
+An Aws Glue job created two years ago still runs with default settings. It processes about eight gigabytes nightly. Monitoring shows executor utilisation below fifteen percent throughout, and the job completes in twelve minutes. A cost review has flagged it as one of the more expensive jobs in the account relative to the data it handles. What should the data engineer do?
+
+- A. Switch the job to Glue Flex execution
+- B. Enable job bookmarks
+- C. Move the job to Amazon EMR Serverless
+- D. Reduce the number of workers from the default
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer do? Glue Flex B Job bookmarks A discount on capacity that is eighty five percent idle. It Prevents reprocessing. Nothing here suggests the job is re- reduces the rate rather than the over-provisioning. minutes. EMR Serverless Right-size the worker count Introduces a different service to solve a configuration Fifteen percent utilisation on default settings means the job problem inside the one already running the job. was never sized. Matching workers to the work is the direct fix. THE SIGNAL Two years old, default settings, fifteen percent utilisation. The defaults are the answer. PRACTICE EXAM 3
+
+**THE SIGNAL:** Two years old, default settings, fifteen percent utilisation. The defaults are the answer.
+
+---
+
+## Q431. [pdf_slide_practice_exam] #43
+*App id: `LOC-431` · type: `single`*
+
+Amazon RDs for PostgreSQL database. During bulk uploads, thousands of files arrive at once and Lambda scales to hundreds of concurrent executions. The database exhausts its connection limit and the application that also uses it begins failing. What should the data engineer implement?
+
+- A. Increase the RDs instance size to raise the
+- B. Enable provisioned concurrency on the Lambda
+- C. connection limit
+- D. Set reserved concurrency on the Lambda
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer implement? A larger RDs instance B Provisioned concurrency Buys headroom and moves the ceiling. A larger bulk Keeps environments warm to remove cold starts. It does upload exhausts the new limit and the application fails not limit concurrency; it can increase readiness to scale. again. Reserved concurrency A longer timeout Caps how many functions run at once, protecting the Nothing is timing out. Functions are failing to obtain a connection, which happens immediately. application stays up. THE SIGNAL Parallelism upstream became a bottleneck downstream. Reserved concurrency is a throttle you apply to yourself. PRACTICE EXAM 3
+
+**THE SIGNAL:** Parallelism upstream became a bottleneck downstream. Reserved concurrency is a throttle you apply to yourself.
+
+---
+
+## Q432. [pdf_slide_practice_exam] #44
+*App id: `LOC-432` · type: `single`*
+
+A company must process around four million individual small JsoN objects in Amazon S3, applying a transformation to each and writing the result back. The work is embarrassingly parallel and each object takes under a second. The team wants to run this without building custom fan-out logic, and needs per-object success and failure tracking. Whatshould thedata engineer use?
+
+- A. An Aws Glue Spark job listing the prefix and
+- B. A single Lambda function iterating over the
+- C. processing every object
+- D. objects in a loop
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q433. [pdf_slide_practice_exam] #45
+*App id: `LOC-433` · type: `single`*
+
+Sixty suppliers send daily inventory files to a retailer. Each supplier uses SFTP with its own credentials and cannot change how it transmits files. The retailer wants the files to land in Amazon S3 and to stop operating the current SFTP servers on Amazon EC2. File sizes are modest and arrive throughout the day. What should the data engineer implement?
+
+- A. AWS Transfer Family with an SFTP endpoint
+- B. AWs DataSync agents at each supplier site
+- C. backed by Amazon S3
+- D. Amazon AppFlow with an SFTP connector
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer implement? AWS Transfer Family Datasync agents at each site A managed SFTP endpoint writing straight into S3. Suppliers Requires software deployed on sixty third-party networks, keep their protocol and credentials; the EC2 servers go and changes how every supplier transmits. away. AppFlow with SFTP Snowball Edge AppFlow connects to SaaS applications. SFTP file transfer is Physical devices for very large offline transfers. These are not what it does. modest daily files, and Snowball is closed to new customers. THE SIGNAL "Cannot change how it transmits" plus SFTP names Transfer Family. The protocol is the requirement. PRACTICE EXAM 3
+
+**THE SIGNAL:** "Cannot change how it transmits" plus SFTP names Transfer Family. The protocol is the requirement.
+
+---
+
+## Q434. [pdf_slide_practice_exam] #47
+*App id: `LOC-434` · type: `single`*
+
+dates, and writes Parquet. It currently runs as an Aws Glue Spark job with the default allocation and takes about four minutes, most of which is startup. The team wants the lowest cost for this specific step. What should the data engineer use?
+
+- A. An AwS Lambda function triggered by the file
+- B. Keep the Glue Spark job and reduce it to the
+- C. minimum two DPUs
+- D. A Glue Python shell job
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer use? A Lambda function Two DPUs on Spark Megabytes, three trivial transformations, seconds of work. A real improvement, and still a Spark cluster starting up for No startup overhead and no billing minimumbeyond the two megabytes, with a one minute billing minimum each milliseconds used. hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte file. Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all. PRACTICE EXAM 3
+
+**THE SIGNAL:** Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all.
+
+---
+
+## Q435. [pdf_slide_practice_exam] #48
+*App id: `LOC-435` · type: `single`*
+
+A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess. What should the data engineer configure?
+
+- A. A lifecycle rule transitioning to Standard-IA after
+- B. S3 Intelligent-Tiering
+- C. A lifecycle rule transitioning to Glacier Instant
+- D. S3 One Zone-Infrequent Access from the outset
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer configure? Lifecycle to Standard-IA S3 Intelligent-Tiering A lifecycle rule encodes a guess about access. The Moves objects between tiers based on observed access, withnoretrieval feesand nominimumduration.Built for means retrieval charges. unknown patterns. Glacier Instant Retrieval after seven days One Zone-lA from the outset Assumes infrequent access from day one, and stores the accesswouldbechargedandearlydeletionpenalised. only copy in a single Availability Zone. THE SIGNAL "Nobody can predict" and "expected to change" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3
+
+**THE SIGNAL:** "Nobody can predict" and "expected to change" is the Intelligent-Tiering signal, almost word for word.
+
+---
+
+## Q436. [pdf_slide_practice_exam] #49
+*App id: `LOC-436` · type: `single`*
+
+A nightly pipeline loads order records into an Amazon Redshift table that has a declared primary key on order ID. After a failure and rerun last week, the table now contains around twelve thousand duplicated orders and reports are overstated. What is the cause, and what should be implemented?
+
+- A. The rerun used a different distribution key,
+- B. The primary key was declared after the table
+- C. creating duplicate slices
+- D. was created, so it applies only to new rows
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What is the cause, and what should be implemented? A different distribution key Declared after creation Distributiondecideswhichsliceholdsarow.Itdoesnot Invented. Primary keys in Redshift are never enforced, duplicate rows. whenever they are declared. Constraints are informational; use staging and Automatic table optimization MERGE Manages sort and distribution keys based on query Redshift does not enforce primary keys. Idempotency has patterns. It does not enforce constraints. to come from the load, and COPY to staging then MERGE is the standard pattern. THE SIGNAL A declared primary key that did not prevent duplicates is not a bug. Redshift constraints are hints to the planner. PRACTICE EXAM 3 ａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com 21/50
+
+**THE SIGNAL:** A declared primary key that did not prevent duplicates is not a bug. Redshift constraints are hints to the planner.
+
+---
+
+## Q437. [pdf_slide_practice_exam] #50
+*App id: `LOC-437` · type: `single`*
+
+writes must complete in microseconds, and the data must survive an Availability Zone failure without loss because it is the authoritative record for in-flight sessions. The team currently uses an in-memory cache backed by a relational database. What should the data engineer recommend?
+
+- A. Amazon DynamoDB with DynamoDB
+- B. Amazon s3 Express One Zone
+- C. Amazon Aurora PostgreSQL with a large buffer
+- D. Amazon MemoryDB
+
+**Answer:** D
+
+**Pembahasan:** Jawaban yang tepat adalah **D**.
+
+What should the data engineer recommend? DynamoDB with DAX B S3 Express One Zone DAX is a cache in front of DynamoDB, so it is not the Single-digit milliseconds, and a single Availability Zone, authoritative record, and DynamoDB itself is single-digit which the durability requirement rules out. milliseconds. Aurora with a large cache Amazon MemoryDB Milliseconds at best, and a cache hit is not a durability In-memory speed with durability across Availability Zones, guarantee. so it can be the primary store rather than a cache. THE SIGNAL Microseconds and durable and authoritative. That combination is MemoryDB rather than any cache. PRACTICE EXAM 3
+
+**THE SIGNAL:** Microseconds and durable and authoritative. That combination is MemoryDB rather than any cache.
+
+---
+
+## Q438. [pdf_slide_practice_exam] #51
+*App id: `LOC-438` · type: `single`*
+
+Amazon s3, because the business term has changed. Historical queries must continue to return the same rows, and rewriting five years of files is not acceptable. The table is queried by Amazon Athena and Amazon EMR. What should the data engineer do?
+
+- A. Rename the column in the Glue Data Catalog
+- B. Create a view that aliases the old column name
+- C. and leave the files unchanged
+- D. to the new one
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q439. [pdf_slide_practice_exam] #52
+*App id: `LOC-439` · type: `single`*
+
+A table in the Aws Glue Data Catalog has around one hundred and forty thousand partitions after four years of hourly partitioning. Athena queries take fifteen to twenty five seconds before scanning begins, regardless of how narrow the filter is. Once scanning starts, they complete quickly. Analysts filter by date range and occasionally by hour. Which action addresses the delay while preserving the hourly granularity analysts occasionally use?
+
+- A. Repartition the data by day and discard the
+- B. Add a Glue partition index on the partition keys
+- C. hour partition
+- D. Increase theAthena workgroup'squery timeout
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q440. [pdf_slide_practice_exam] #53
+*App id: `LOC-440` · type: `single`*
+
+An application writes a log line containing the text RECORD_REJECTED whenever it discards a malformed record. These lines go to CloudWatch Logs. Operations want to be notified when the rate of rejections exceeds a threshold. They have tried and failed to configure a Cloudwatch alarm directly against the log group. What should the data engineer implement?
+
+- A. A CloudWatch Logs metric filter matching the
+- B. A CloudWatch alarm configured with the log
+- C. pattern, with an alarm on the resulting metric
+- D. group as its metric source
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer implement? A metric filter, then an alarm on the metric B An alarm on the log group Alarms evaluate metrics, not log content. A metric filter is Not possible. This is what the team already tried and could the bridge, counting matching events into a metric an not configure. alarm can watch. A subscription filter to S3 An EventBridge rule on log content Streams matching events onward for storage or EventBridge matches events services emit, not arbitrary processing. It creates no metric and raises no alert. text inside application log lines. THE SIGNAL The team's failed attempt is the clue. Alarms cannot watch logs directly, which is exactly why metric filters exist. PRACTICE EXAM3
+
+**THE SIGNAL:** The team's failed attempt is the clue. Alarms cannot watch logs directly, which is exactly why metric filters exist.
+
+---
+
+## Q441. [pdf_slide_practice_exam] #54
+*App id: `LOC-441` · type: `single`*
+
+An executive dashboard built on Amazon Redshift is opened by around eight hundred people between eight and nine each morning. The underlying data is refreshed once overnight and does not change during the day. During that hour, other analytical workloads on the cluster slow noticeably. Every viewer's dashboard runs the same set of queries. What is the most appropriate change?
+
+- A. Import the dashboard dataset into SPiCE and
+- B. Enable Redshift concurrency scaling so
+- C. refresh it after the overnight load completes
+- D. additional clusters absorb the morning burst
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q442. [pdf_slide_practice_exam] #56
+*App id: `LOC-442` · type: `single`*
+
+An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter. What should the data engineer configure now?
+
+- A. Remove the analyst's Athena permissions
+- B. AnAwsBudgetalertontheAthenaservice
+- C. A per-query data scan limit on the Athena
+- D. Increase the workgroup's query timeout so
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer configure now? Remove the permissions A Budget alert Tells you afterwards that spend crossed a line. The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read more than a set Allows expensive queries to run for longer. It is the opposite volume, so a single accidental query cannot run up a large of a guardrail. bill. THE SIGNAL Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards. PRACTICE EXAM 3
+
+**THE SIGNAL:** Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards.
+
+---
+
+## Q443. [pdf_slide_practice_exam] #57
+*App id: `LOC-443` · type: `single`*
+
+A company has fifteen Aws accounts and around sixty engineers. Each engineer has an IAM security team cannot confirm all their credentials were removed. The company wants access to end when employment ends, and to stop issuing long-lived keys. What should the company implement?
+
+- A. A scheduled Lambda function deleting lAM
+- B. A ninety day access key rotation policy
+- C. users inactive for sixty days
+- D. enforced across all accounts
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the company implement? Delete inactive users Ninety day key rotation Cleans up on a sixty day delay, during which a departed Shortens thelife of aleaked key whilekeeping long-lived engineer's key remains valid. keys in existence, which the company said it wants to stop. Identity Center federated to the directory Fewer accounts Identity lives in one place tied to employment, and access Reduces the number of places to clean up, and does is temporary role credentials rather than keys. nothing about identity being tied to employment. THE SIGNAL "Access should end when employment ends" is a statement about where identity lives. Only federation satisfies it. PRACTICE EXAM 3
+
+**THE SIGNAL:** "Access should end when employment ends" is a statement about where identity lives. Only federation satisfies it.
+
+---
+
+## Q444. [pdf_slide_practice_exam] #58
+*App id: `LOC-444` · type: `single`*
+
+An insurer holds claims data in Amazon Redshift. Regional teams must see only their own region's claims. A fraud team must see all regions. A support team must see all regions but with the claimant's national identifier partially masked, while the fraud team sees it in full. There are currently eleven views maintaining these combinations, and keeping them aligned with schema changes has become a burden. What should the data engineer implement?
+
+- A. Create one table per region with the identifier
+- B. Continue with views, generating them
+- C. column omitted where required
+- D. automatically when the schema changes
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+What should the data engineer implement? A One table per region B Generate the views automatically Multiplies the schema, the pipelines and the drift, and still Automates the maintenance of eleven objects rather than does not address the two masking audiences. removing them. The duplication remains. Move to s3 and use Lake Formation Row-level security plus dynamic data masking Relocates warehouse data to the lake to reach capabilities One table, one schema. Rows filter by the session's role and Redshift already has natively. the identifier masks by role, with nothing to keep aligned. THE SIGNAL Two distinct requirements, two native Redshift features. The eleven views exist because neither was used. PRACTICE EXAM3
+
+**THE SIGNAL:** Two distinct requirements, two native Redshift features. The eleven views exist because neither was used.
+
+---
+
+## Q445. [pdf_slide_practice_exam] #59
+*App id: `LOC-445` · type: `single`*
+
+A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored. What should the data engineer do?
+
+- A. Movethedata toS3Standard-Infrequent
+- B. Switch the bucket to SSE-s3 encryption
+- C. Request a KMS request quota increase
+- D. Enable S3 Bucket Keys on the bucket
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer do? Standard-IA Switch to SSE-S3 Changes storage cost and adds a retrieval charge.The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signature. PRACTICE EXAM 3
+
+**THE SIGNAL:** decryption signature.
+
+---
+
+## Q446. [pdf_slide_practice_exam] #60
+*App id: `LOC-446` · type: `single`*
+
+requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit. What should the data engineer implement?
+
+- A. Granteachbusinessunitdatabase-levelLake
+- B. Publish datasets as assets in Amazon
+- C. Formation permissions on its own databases
+- D. SageMaker Catalog and use the subscription
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+What should the data engineer implement? Database-level grants per business unit SageMaker Catalog subscription workflow Removes the queue by granting broadly. It cannot Consumers request, the data owner approves, and Lake distinguish sensitivity within a business unit, and records no Formation permissions are applied automatically with the decision. decision recorded. More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes detection.It is decide, which was the stated problem. the opposite of what therequirement describes. THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both. PRACTICE EXAM 3
+
+**THE SIGNAL:** Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both.
+
+---
+
+## Q447. [pdf_slide_practice_exam] #5
+*App id: `LOC-447` · type: `multi`*
+
+source database must remain available to its application throughout, and cutover downtime must be under fifteen minutes. The database contains a number of large object columns. The team has assessed the schema and knows some stored procedures need manual work. Select Two actions the data engineer should take (Choose two.)
+
+- A. Run an AWs DMS task with full load plus change
+- B. Run an Aws DMs full load only task during a
+- C. data capture
+- D. maintenance window
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q448. [pdf_slide_practice_exam] #13
+*App id: `LOC-448` · type: `multi`*
+
+An analytics team queries a fifty terabyte dataset in Amazon s3 with Amazon Athena. The data is Parquet, partitioned by date. Costs have risen sharply. Investigation shows analysts write queries as SELECT star across ninety columns, and six dashboards each re-run the same four queries every ten minutes against data that is refreshed once daily. Select Two changes that will most reduce the Athena bill (Choose two.)
+
+- A. Name only the required columns in queries
+- B. Enable query result reuse for the dashboard
+- C. Move the dataset to s3 Standard-lnfrequent
+- D. Repartition the data by hour instead of by date
+
+**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+
+---
+
+## Q449. [pdf_slide_practice_exam] #26
+*App id: `LOC-449` · type: `multi`*
+
+Four Aws Glue jobs run nightly, each triggered by its own cron schedule spaced ninety minutes apart. Job two occasionally overruns, and when it does, job three starts against incomplete data and produces incorrect aggregates. No error is raised. The team wants the pipeline to be dependency-driven and to be alerted when any step fails. Select Two actions the data engineer should take (Choose two.)
+
+- A. Replace the cron schedules with an Aws Step
+- B. Widen the gaps between the cron schedules to
+- C. Functions state machine invoking each job in
+- D. Add a Catch on each state routing failures to
+
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Select Two actions the data engineer should take. A Step Functions state machine Widen the cron gaps Each job starts only when the previous one has succeeded. Guessing at timing more conservatively. The same failure That is what dependency-driven means. returns on a slower night, and every night finishes later. Catch routing to SNS Max concurrent runs of one Delivers the alerting requirement, declared per state rather Stops a job overlapping itself. It says nothing about a than written into each job. different job starting on incomplete data. THE SIGNAL Two requirements stated, two answers. Dependency ordering and failure alerting are separate things. PRACTICE EXAM 2
+
+**THE SIGNAL:** Two requirements stated, two answers. Dependency ordering and failure alerting are separate things.
+
+---
+
+## Q450. [pdf_slide_practice_exam] #36
+*App id: `LOC-450` · type: `multi`*
+
+An analytics team's Amazon Athena spend has grown to a level finance has queried. The data is uncompressed JsON in Amazon S3 in a single prefix, and queries filter on a date field and read eight columns out of seventy. A proposal has been made to purchase Athena capacity reservations to make the cost predictable. Select Two changes the data engineer should make first (Choose two.)
+
+- A. Convert the data to Parquet with Snappy
+- B. Partition the data by date
+- C. Purchase Athena capacity reservations
+- D. Move thedatatoS3Glacier InstantRetrieval
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Select Two changes the data engineer should make first. Convert to Parquet with Snappy Partition by date Eight columns of seventy means reading roughly a ninth of Queries filter on date against a single unpartitioned prefix, the data, and compression reduces the bytes billed. Capacity reservations Glacier Instant Retrieval Makes the cost predictable by fixing it, sized around queries Storage cost, plus a retrieval fee. Athena bills bytes thatread seventycolumns ofrawJsoN. scanned regardless of storage class. THE SIGNAL Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work. PRACTICE EXAM 2 admｉn@sthｉthａｐragnａ.com 35/47
+
+**THE SIGNAL:** Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work.
+
+---
+
+## Q451. [pdf_slide_practice_exam] #46
+*App id: `LOC-451` · type: `multi`*
+
+A Glue job writes to a curated Amazon S3 table used by Athena. Output consists of roughly forty thousand files per day, most under two hundred kilobytes, because the job writes one file per input partition. Athena queries have become slow, spending most of their time before any data is read. The data is Parquet and correctly partitioned by date. Select Two actions that will improve query performance (Choose two.)
+
+- A. Coalesce or repartition the output so the job
+- B. Run a scheduled compaction job over existing
+- C. writes fewer, larger files
+- D. Convert the output from Parquet to Csv
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Select Two actions that will improve query performance. Coalesce the output Compact existing partitions Fixes the cause, so tomorrow's output is a manageable Fixes the accumulated problem. Without it, every partition number of files rather than forty thousand. already written stays slow to query. Convert to CsV More workers Abandons columnar storage. It would increase bytes More workers typically write more files, not fewer. It makes scanned substantially. the small file problem worse. THE SIGNAL Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape. PRACTICE EXAM 3
+
+**THE SIGNAL:** Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape.
+
+---
+
+## Q452. [pdf_slide_practice_exam] #55
+*App id: `LOC-452` · type: `multi`*
+
+Occasionally a small number of records arrive with a missing settlement currency. Partial figures are worse than no figures for this use case, because reports built on incomplete data have twice been filed. The team wants to catch this and does not want to write custom validation code. SelectTwoactions the data engineer should take (Choose two.)
+
+- A. Add AWS Glue Data Quality rules inside the ETL
+- B. Configure the job to fail when the ruleset does
+- C. job checking completeness of the currency
+- D. not pass, so nothing downstream is loaded
+
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Select Two actions the data engineer should take. Glue Data Quality rules in the job Fail the job on violation Adeclarativecompletenessrule,evaluatedasdataflows through, with no custom validation code to maintain. so stopping is correct and quarantining would publish incomplete data. Quarantine and continue Alarm on failed runs Right when partial data has value. Here the question states Useful once the job fails, and on its own it detects nothing, the opposite, and incompletereports havealreadybeen because today the job succeeds withbad data. filed. THE SIGNAL "Partial figures are worse than no figures" is the clause choosing fail over quarantine. It is the only difference. PRACTICE EXAM 3 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 33/50
+
+**THE SIGNAL:** "Partial figures are worse than no figures" is the clause choosing fail over quarantine. It is the only difference.
+
+---
+
