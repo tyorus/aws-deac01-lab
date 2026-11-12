@@ -36,16 +36,22 @@ for (const raw of questions) {
   if (!['draft', 'reviewed', 'published'].includes(raw.status)) fail('invalid status')
   if (!Array.isArray(raw.options) || raw.options.length < 2) fail('options missing')
   const correct = (raw.options || []).filter((o) => o.correct)
-  if (raw.type === 'single' && correct.length !== 1) fail('single must have exactly one correct')
-  if (raw.type === 'multi' && correct.length < 2) fail('multi must have >=2 correct')
+  const hasKey = raw.has_answer_key !== false && correct.length > 0
+  if (raw.has_answer_key === false) {
+    // study-only items may have zero correct flags
+  } else if (raw.type === 'single' && correct.length !== 1) {
+    fail('single must have exactly one correct')
+  } else if (raw.type === 'multi' && correct.length < 2) {
+    fail('multi must have >=2 correct')
+  }
   if (!raw.explanation || raw.explanation.length < 20) fail('explanation too short')
   if (!raw.stem || raw.stem.length < 20) fail('stem too short')
 
   const chooseMatch = String(raw.stem || '').match(/\(\s*Choose\s+(two|three|four|five)\.?\s*\)/i)
-  if (chooseMatch && raw.status === 'published') {
+  if (chooseMatch && raw.status === 'published' && hasKey) {
     const want = { two: 2, three: 3, four: 4, five: 5 }[chooseMatch[1].toLowerCase()]
     if (raw.type !== 'multi' || correct.length !== want) {
-      fail(`published Choose-${want} must be multi with exactly ${want} correct`)
+      fail(`published Choose-${want} with key must be multi with exactly ${want} correct`)
     }
   }
 }
@@ -55,4 +61,8 @@ if (errors) {
   process.exit(1)
 }
 
-console.log(`Validated ${questions.length} compiled questions OK (${bankPath}).`)
+const published = questions.filter((q) => q.status === 'published')
+const keyed = published.filter((q) => q.has_answer_key !== false && (q.options || []).some((o) => o.correct))
+console.log(
+  `Validated ${questions.length} compiled questions OK (${bankPath}). published=${published.length} with_key=${keyed.length} study_only=${published.length - keyed.length}`,
+)

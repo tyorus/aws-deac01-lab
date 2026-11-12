@@ -194,6 +194,32 @@ def load_scraped() -> list[dict]:
     return out
 
 
+def load_pdf_retry_items() -> list[dict]:
+    """Include OCR/repaired dumps + slide scenarios used for the 392 unique-stem bank."""
+    out: list[dict] = []
+    retry = OUT / "pdf-retry"
+    mapping = [
+        ("dumps-items.json", "pdf_exam_dumps"),
+        ("slide-items.json", "pdf_slide_deck"),
+    ]
+    for name, src in mapping:
+        path = retry / name
+        if not path.exists():
+            continue
+        for it in json.loads(path.read_text(encoding="utf-8")):
+            stem = (it.get("question_text") or "").strip()
+            if len(stem) < 25:
+                continue
+            row = dict(it)
+            row["source"] = row.get("source") or src
+            row["stem_hash"] = row.get("stem_hash") or stem_hash(stem)
+            row["answer_options"] = row.get("answer_options") or []
+            row["source_answer"] = row.get("source_answer") or ""
+            row["source_explanation"] = row.get("source_explanation") or ""
+            out.append(row)
+    return out
+
+
 def load_pdfs() -> list[dict]:
     items = []
     mapping = [
@@ -218,13 +244,17 @@ def load_pdfs() -> list[dict]:
         items.extend(parsed)
         notes.append(f"{src}: pages={len(reader.pages)} parsed={len(parsed)} chars={len(text)}")
 
+    retry_items = load_pdf_retry_items()
+    items.extend(retry_items)
+    notes.append(f"pdf_retry_json: {len(retry_items)}")
+
     slide = DOCS / "DEA-C01-complete-slide-deck.pdf"
     if slide.exists():
         reader = PdfReader(str(slide))
         sample = "".join((reader.pages[i].extract_text() or "") for i in range(min(20, len(reader.pages))))
         notes.append(
             f"slide_deck: pages={len(reader.pages)} extractable_chars_sample={len(sample)} "
-            f"(skipped — appears image-only / no question text)"
+            f"(OCR scenarios come from pdf-retry/slide-items.json)"
         )
     (OUT / "pdf-parse-notes.json").write_text(
         json.dumps({"notes": notes}, indent=2) + "\n", encoding="utf-8"
@@ -252,7 +282,10 @@ def prefer(a: dict, b: dict) -> dict:
 
 
 def to_quiz(item: dict, idx: int) -> dict | None:
-    stem = item["question_text"]
+    """Convert any unique stem into a web quiz/study item (including no answer key)."""
+    stem = (item.get("question_text") or "").strip()
+    if len(stem) < 25:
+        return None
     raw_opts = item.get("answer_options") or []
     options = []
     for i, o in enumerate(raw_opts):
@@ -264,6 +297,9 @@ def to_quiz(item: dict, idx: int) -> dict | None:
             letter, body = chr(65 + i), o
         if not body:
             continue
+        # Keep option bodies usable in UI (OCR noise still better than dropping the stem)
+        if len(body) > 1200:
+            body = body[:1197] + "..."
         options.append(
             {
                 "id": f"opt-{letter.lower()}",
@@ -273,35 +309,51 @@ def to_quiz(item: dict, idx: int) -> dict | None:
             }
         )
     if len(options) < 2:
-        return None
+        options = [
+            {
+                "id": "opt-a",
+                "label": "A",
+                "body": "Opsi tidak terekstrak lengkap dari sumber — pelajari stem / Knowledge.",
+                "correct": False,
+            },
+            {
+                "id": "opt-b",
+                "label": "B",
+                "body": "Lanjut ke pembahasan / dokumentasi AWS terkait layanan di stem.",
+                "correct": False,
+            },
+        ]
+
     ans = re.sub(r"[^A-F]", "", (item.get("source_answer") or "").upper())
     if ans:
         for o in options:
             if o["label"] in ans:
                 o["correct"] = True
-    else:
-        # No key — still include for study MD but mark draft for quiz skip
-        return None
-
-    if not any(o["correct"] for o in options):
-        return None
 
     correct_n = sum(1 for o in options if o["correct"])
+    has_answer_key = correct_n >= 1
     choose_m = re.search(r"\(\s*Choose\s+(two|three|four|five)\.?\s*\)", stem, re.I)
     choose_n = {"two": 2, "three": 3, "four": 4, "five": 5}.get(
         (choose_m.group(1).lower() if choose_m else ""), 0
     )
     qtype = "multi" if correct_n > 1 or choose_n > 1 else "single"
-    # Incomplete Choose-N keys cannot be graded fairly — keep out of published quiz pool.
-    status = "published"
-    if choose_n and correct_n != choose_n:
-        status = "draft"
+    # Incomplete Choose-N keys: keep in pool but flag as study/uncertain for grading.
+    if choose_n and correct_n and correct_n != choose_n:
+        has_answer_key = False
+
     expl = (item.get("source_explanation") or "").strip()
     if len(expl) < 20:
-        expl = (
-            f"Answer key from local source `{item.get('source')}`: {ans}. "
-            "Verify against AWS docs; third-party keys are not official."
-        )
+        if has_answer_key:
+            expl = (
+                f"Answer key from local source `{item.get('source')}`: {ans}. "
+                "Verify against AWS docs; third-party keys are not official."
+            )
+        else:
+            expl = (
+                "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. "
+                "Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; "
+                f"sumber ekstraksi: `{item.get('source')}`."
+            )
 
     return {
         "id": f"LOC-{idx:03d}",
@@ -314,8 +366,9 @@ def to_quiz(item: dict, idx: int) -> dict | None:
         "options": options,
         "explanation": expl[:4000],
         "provenance": f"local-compile:{item.get('source')}",
-        "verification_status": "community",
-        "status": status,
+        "verification_status": "community" if has_answer_key else "uncertain",
+        "status": "published",
+        "has_answer_key": has_answer_key,
         "reviewed_at": datetime.now(timezone.utc).date().isoformat(),
         "source_meta": {
             "source": item.get("source"),
@@ -327,16 +380,20 @@ def to_quiz(item: dict, idx: int) -> dict | None:
 
 
 def to_markdown(items: list[dict], quiz: list[dict]) -> str:
+    keyed = sum(1 for q in quiz if q.get("has_answer_key"))
+    study = len(quiz) - keyed
     lines = [
         "# DEA-C01 Compiled Local Question Bank",
         "",
         f"Generated: {datetime.now(timezone.utc).isoformat()}",
         "",
-        "Third-party / scraped / PDF-extracted study material. **Not** official AWS exam content.",
-        "Original lab items remain under `content/questions/` (DEA-001…).",
+        "Third-party / scraped / PDF-extracted study material. Not official AWS exam content.",
+        "Original lab items remain under content/questions (DEA-001...).",
         "",
         f"- Unique stems compiled: **{len(items)}**",
-        f"- Quiz-ready with answer key: **{len(quiz)}**",
+        f"- Web items (all stems): **{len(quiz)}**",
+        f"- With answer key: **{keyed}**",
+        f"- Study-only (no reliable key): **{study}**",
         "",
         "---",
         "",
@@ -396,13 +453,51 @@ def main() -> None:
         ),
     )
 
+    # Preserve existing LOC ids by stem_hash when recompiling into practice bank.
+    existing_path = PRACTICE / "research-questions.json"
+    existing_by_hash: dict[str, str] = {}
+    if existing_path.exists():
+        prev = json.loads(existing_path.read_text(encoding="utf-8"))
+        prev_list = prev if isinstance(prev, list) else prev.get("questions") or []
+        for pq in prev_list:
+            h = (pq.get("source_meta") or {}).get("stem_hash")
+            if h and pq.get("id"):
+                existing_by_hash[h] = pq["id"]
+
     quiz = []
-    idx = 1
+    used_ids: set[str] = set()
+    next_idx = 1
+
+    max_existing = 0
+    for pid in existing_by_hash.values():
+        m = re.match(r"LOC-(\d+)$", pid)
+        if m:
+            max_existing = max(max_existing, int(m.group(1)))
+    next_idx = max(max_existing + 1, 1)
+
+    def alloc_id(stem_h: str | None) -> str:
+        nonlocal next_idx
+        if stem_h and stem_h in existing_by_hash:
+            cand = existing_by_hash[stem_h]
+            if cand not in used_ids:
+                used_ids.add(cand)
+                return cand
+        while True:
+            cand = f"LOC-{next_idx:03d}"
+            next_idx += 1
+            if cand not in used_ids:
+                used_ids.add(cand)
+                return cand
+
     for it in items:
-        q = to_quiz(it, idx)
-        if q:
-            quiz.append(q)
-            idx += 1
+        q = to_quiz(it, 0)
+        if not q:
+            continue
+        q["id"] = alloc_id(it.get("stem_hash") or "")
+        quiz.append(q)
+
+    # Stable order by LOC number for the web bank
+    quiz.sort(key=lambda q: int(re.search(r"\d+", q["id"]).group()))
 
     md = to_markdown(items, quiz)
     md_path = OUT / "all-available-questions.md"
@@ -411,29 +506,35 @@ def main() -> None:
     practice_path.write_text(md, encoding="utf-8")
 
     quiz_path = OUT / "research-questions.json"
+    quiz_doc = {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "count": len(quiz),
+        "with_answer_key": sum(1 for q in quiz if q.get("has_answer_key")),
+        "study_only": sum(1 for q in quiz if not q.get("has_answer_key")),
+        "note": "All unique compiled stems for web drill/study. Not official AWS content.",
+        "questions": quiz,
+    }
     quiz_path.write_text(
-        json.dumps(
-            {
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-                "count": len(quiz),
-                "note": "Research/local compile bank for web drill. Not content/questions originals.",
-                "questions": quiz,
-            },
-            indent=2,
-            ensure_ascii=False,
-        )
-        + "\n",
+        json.dumps(quiz_doc, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+    # Committed source of truth for the app
+    existing_path.write_text(
+        json.dumps(quiz, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
 
     summary = {
         "unique_stems": len(items),
-        "quiz_ready": len(quiz),
+        "web_items": len(quiz),
+        "quiz_ready": sum(1 for q in quiz if q.get("has_answer_key")),
+        "study_only": sum(1 for q in quiz if not q.get("has_answer_key")),
         "scraped_in": len(scraped),
         "pdf_in": len(pdfs),
         "markdown": str(md_path),
         "practice_markdown": str(practice_path),
         "research_json": str(quiz_path),
+        "practice_research_json": str(existing_path),
         "by_source": {},
     }
     for it in items:
