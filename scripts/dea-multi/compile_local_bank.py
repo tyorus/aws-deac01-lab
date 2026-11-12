@@ -342,18 +342,16 @@ def to_quiz(item: dict, idx: int) -> dict | None:
         has_answer_key = False
 
     expl = (item.get("source_explanation") or "").strip()
-    if len(expl) < 20:
-        if has_answer_key:
-            expl = (
-                f"Answer key from local source `{item.get('source')}`: {ans}. "
-                "Verify against AWS docs; third-party keys are not official."
-            )
-        else:
-            expl = (
-                "**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. "
-                "Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; "
-                f"sumber ekstraksi: `{item.get('source')}`."
-            )
+    if len(expl) < 80 or expl.startswith("Answer key from local source"):
+        # Build a real study explanation from stem/options/key (not a one-line stub).
+        from enrich_pembahasan import generate_pembahasan
+
+        expl = generate_pembahasan(
+            {
+                "stem": stem,
+                "options": options,
+            }
+        )
 
     return {
         "id": f"LOC-{idx:03d}",
