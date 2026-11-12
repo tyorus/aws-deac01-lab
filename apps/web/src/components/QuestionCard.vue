@@ -17,6 +17,16 @@ const emit = defineEmits<{
 
 const isMulti = computed(() => props.question.type === 'multi')
 
+const chooseHint = computed(() => {
+  if (!isMulti.value) return ''
+  const m = props.question.stem.match(/\(Choose\s+(two|three|four|five)\)/i)
+  if (m) {
+    const n = ({ two: 2, three: 3, four: 4, five: 5 } as Record<string, number>)[m[1].toLowerCase()]
+    return n ? `Pilih ${n} jawaban.` : 'Pilih semua yang benar.'
+  }
+  return 'Pilih semua yang benar (bisa lebih dari satu).'
+})
+
 const explanationHtml = computed(() => {
   const raw = props.grade?.explanation || ''
   const cleaned = raw.replace(/^\*\*Pembahasan:\*\*\s*/i, '').trim()
@@ -53,22 +63,48 @@ function optionClass(id: string) {
     <div class="flex flex-wrap gap-2 text-xs text-[var(--color-ink-muted)] mb-3">
       <span class="px-2 py-0.5 rounded border border-[var(--color-border)]">{{ question.domain_id }}</span>
       <span class="px-2 py-0.5 rounded border border-[var(--color-border)]">{{ question.difficulty }}</span>
-      <span class="px-2 py-0.5 rounded border border-[var(--color-border)]">{{ question.type }}</span>
+      <span
+        class="px-2 py-0.5 rounded border"
+        :class="isMulti ? 'border-[var(--color-accent)] text-[var(--color-accent)]' : 'border-[var(--color-border)]'"
+      >
+        {{ isMulti ? 'multi-select' : 'single' }}
+      </span>
     </div>
     <h2 class="text-lg font-medium leading-relaxed">{{ question.stem }}</h2>
-    <p v-if="isMulti" class="mt-2 text-xs text-[var(--color-ink-muted)]">Select all that apply.</p>
-    <div class="mt-4 space-y-2">
+    <p v-if="isMulti" class="mt-2 text-sm text-[var(--color-accent)]">
+      {{ chooseHint }}
+      <span v-if="selected.length" class="text-[var(--color-ink-muted)]"> · {{ selected.length }} dipilih</span>
+    </p>
+    <div class="mt-4 space-y-2" :role="isMulti ? 'group' : 'radiogroup'" :aria-label="isMulti ? 'Pilihan ganda' : 'Pilihan tunggal'">
       <button
         v-for="opt in question.options"
         :key="opt.id"
         type="button"
-        class="w-full text-left rounded-lg border px-3 py-3 transition-colors"
+        class="w-full text-left rounded-lg border px-3 py-3 transition-colors flex items-start gap-3"
         :class="optionClass(opt.id)"
         :disabled="disabled"
+        :aria-pressed="selected.includes(opt.id)"
+        :role="isMulti ? 'checkbox' : 'radio'"
+        :aria-checked="selected.includes(opt.id)"
         @click="toggle(opt.id)"
       >
-        <span class="font-mono text-xs text-[var(--color-accent)] mr-2">{{ opt.label }}</span>
-        <span>{{ opt.body }}</span>
+        <span
+          class="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center border border-current"
+          :class="[
+            isMulti ? 'rounded-sm' : 'rounded-full',
+            selected.includes(opt.id) ? 'bg-[var(--color-accent)] text-white border-[var(--color-accent)]' : 'text-[var(--color-ink-muted)]',
+          ]"
+          aria-hidden="true"
+        >
+          <svg v-if="selected.includes(opt.id) && isMulti" viewBox="0 0 16 16" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3.5 8.5 6.5 11.5 12.5 4.5" />
+          </svg>
+          <span v-else-if="selected.includes(opt.id)" class="h-1.5 w-1.5 rounded-full bg-white" />
+        </span>
+        <span class="min-w-0">
+          <span class="font-mono text-xs text-[var(--color-accent)] mr-2">{{ opt.label }}</span>
+          <span>{{ opt.body }}</span>
+        </span>
       </button>
     </div>
     <div
@@ -80,6 +116,9 @@ function optionClass(id: string) {
         :class="grade.correct ? 'text-[var(--color-success)]' : 'text-[var(--color-danger)]'"
       >
         {{ grade.correct ? 'Benar' : 'Salah' }}
+        <span v-if="isMulti && !grade.correct" class="font-normal text-[var(--color-ink-muted)]">
+          · kunci: {{ grade.correct_option_ids.length }} opsi
+        </span>
       </div>
       <div class="mt-3 border-t border-[var(--color-border)] pt-3">
         <div class="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)] mb-2">

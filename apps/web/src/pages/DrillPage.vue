@@ -212,7 +212,8 @@ async function reviewIncorrect() {
         <button
           v-if="feedback === 'immediate' && !session.lastGrade"
           type="button"
-          class="rounded-md bg-[var(--color-accent)] text-white px-3 py-2 text-sm"
+          class="rounded-md bg-[var(--color-accent)] text-white px-3 py-2 text-sm disabled:opacity-50"
+          :disabled="selected.length === 0"
           @click="check"
         >
           Check answer
