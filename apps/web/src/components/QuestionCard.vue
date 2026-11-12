@@ -112,12 +112,21 @@ function optionClass(id: string) {
     >
       <div
         class="font-medium"
-        :class="grade.correct ? 'text-[var(--color-success)]' : 'text-[var(--color-danger)]'"
+        :class="
+          grade.ungraded
+            ? 'text-[var(--color-warn)]'
+            : grade.correct
+              ? 'text-[var(--color-success)]'
+              : 'text-[var(--color-danger)]'
+        "
       >
-        {{ grade.correct ? 'Benar' : 'Salah' }}
-        <span v-if="isMulti && !grade.correct" class="font-normal text-[var(--color-ink-muted)]">
-          · kunci: {{ grade.correct_option_ids.length }} opsi
-        </span>
+        <template v-if="grade.ungraded">Study only · belum ada kunci jawaban</template>
+        <template v-else>
+          {{ grade.correct ? 'Benar' : 'Salah' }}
+          <span v-if="isMulti && !grade.correct" class="font-normal text-[var(--color-ink-muted)]">
+            · kunci: {{ grade.correct_option_ids.length }} opsi
+          </span>
+        </template>
       </div>
       <div class="mt-3 border-t border-[var(--color-border)] pt-3">
         <div class="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)] mb-2">

@@ -11,6 +11,8 @@ export interface QuestionFilters {
   difficulty?: string
   type?: QuestionType | ''
   status?: string
+  /** When true, only items with a gradable answer key. When false, study-only. */
+  hasAnswerKey?: boolean
 }
 
 export function getAllRawQuestions(): RawQuestion[] {
@@ -29,6 +31,14 @@ export function filterRawQuestions(filters?: QuestionFilters): RawQuestion[] {
   if (filters?.topic) items = items.filter((q) => q.topics.includes(filters.topic!))
   if (filters?.service) items = items.filter((q) => q.services.includes(filters.service!))
   if (filters?.type) items = items.filter((q) => q.type === filters.type)
+  if (filters?.hasAnswerKey != null) {
+    items = items.filter((q) => {
+      const keyed =
+        (q as { has_answer_key?: boolean }).has_answer_key !== false &&
+        (q.options || []).some((o) => o.correct)
+      return filters.hasAnswerKey ? keyed : !keyed
+    })
+  }
   return items
 }
 
@@ -58,11 +68,18 @@ export function getDrillCatalog(status = 'published') {
   const serviceCounts: Record<string, number> = {}
   const difficultyCounts: Record<string, number> = {}
   const typeCounts: Record<string, number> = {}
+  let withAnswerKey = 0
+  let studyOnly = 0
 
   for (const q of published) {
     domainCounts[q.domain] = (domainCounts[q.domain] || 0) + 1
     difficultyCounts[q.difficulty] = (difficultyCounts[q.difficulty] || 0) + 1
     typeCounts[q.type] = (typeCounts[q.type] || 0) + 1
+    const keyed =
+      (q as { has_answer_key?: boolean }).has_answer_key !== false &&
+      (q.options || []).some((o) => o.correct)
+    if (keyed) withAnswerKey += 1
+    else studyOnly += 1
     for (const s of q.services || []) {
       serviceCounts[s] = (serviceCounts[s] || 0) + 1
     }
@@ -70,6 +87,8 @@ export function getDrillCatalog(status = 'published') {
 
   return {
     total: published.length,
+    withAnswerKey,
+    studyOnly,
     domainCounts,
     serviceCounts,
     difficultyCounts,

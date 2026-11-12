@@ -18,6 +18,18 @@ export function gradeLocally(questionId: string, selectedIds: string[]): GradeRe
     }
   }
   const correct = raw.options.filter((o) => o.correct).map((o) => o.id)
+  const hasKey = (raw as { has_answer_key?: boolean }).has_answer_key !== false && correct.length > 0
+  if (!hasKey) {
+    return {
+      correct: false,
+      correct_option_ids: [],
+      explanation:
+        raw.explanation ||
+        'Kunci jawaban belum tersedia untuk soal ini. Mode study — bandingkan opsi dengan dokumentasi AWS.',
+      selected_ids: selectedIds,
+      ungraded: true,
+    }
+  }
   const selected = [...selectedIds].sort()
   const expected = [...correct].sort()
   const ok =

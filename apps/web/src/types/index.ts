@@ -53,6 +53,8 @@ export interface GradeResult {
   correct_option_ids: string[]
   explanation: string
   selected_ids: string[]
+  /** True when the bank has no reliable answer key (study-only item). */
+  ungraded?: boolean
 }
 
 export interface QuizSession {

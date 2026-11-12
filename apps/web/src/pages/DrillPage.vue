@@ -18,6 +18,7 @@ const domain = ref('')
 const service = ref('')
 const difficulty = ref('')
 const questionType = ref<'' | QuestionType>('')
+const keyFilter = ref<'all' | 'keyed' | 'study'>('all')
 const feedback = ref<'immediate' | 'delayed'>('immediate')
 const countMode = ref<'all' | 'custom'>('all')
 const customCount = ref(20)
@@ -34,6 +35,7 @@ const matchingCount = computed(() =>
     service: service.value || undefined,
     difficulty: difficulty.value || undefined,
     type: questionType.value || undefined,
+    hasAnswerKey: keyFilter.value === 'all' ? undefined : keyFilter.value === 'keyed',
   }).length,
 )
 
@@ -86,6 +88,7 @@ async function start() {
       service: service.value || undefined,
       difficulty: difficulty.value || undefined,
       type: questionType.value || undefined,
+      hasAnswerKey: keyFilter.value === 'all' ? undefined : keyFilter.value === 'keyed',
       count: effectiveCount.value,
       loadAll: countMode.value === 'all',
       feedback: feedback.value,
@@ -122,7 +125,7 @@ async function check() {
     correct: grade.correct,
     difficulty: q.difficulty,
   })
-  if (!grade.correct) {
+  if (!grade.ungraded && !grade.correct) {
     incorrect.value = [...new Set([q.id, ...incorrect.value])]
     localStorage.setItem('dea-incorrect', JSON.stringify(incorrect.value))
   }
@@ -183,7 +186,8 @@ async function reviewIncorrect() {
     <div>
       <h1 class="text-2xl font-semibold tracking-tight">Question drill</h1>
       <p class="text-sm text-[var(--color-ink-muted)] mt-1">
-        {{ catalog.total }} soal published · filter domain / service / tipe, lalu load semua atau sebagian.
+        {{ catalog.total }} unique stem · {{ catalog.withAnswerKey }} ber-kunci ·
+        {{ catalog.studyOnly }} study-only · filter lalu load semua atau sebagian.
       </p>
     </div>
 
@@ -245,6 +249,14 @@ async function reviewIncorrect() {
             <option v-for="(n, key) in catalog.difficultyCounts" :key="key" :value="key">
               {{ key }} ({{ n }})
             </option>
+          </select>
+        </label>
+        <label class="text-sm">
+          <span class="text-[var(--color-ink-muted)]">Answer key</span>
+          <select v-model="keyFilter" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
+            <option value="all">All ({{ catalog.total }})</option>
+            <option value="keyed">With key ({{ catalog.withAnswerKey }})</option>
+            <option value="study">Study-only ({{ catalog.studyOnly }})</option>
           </select>
         </label>
         <label class="text-sm">

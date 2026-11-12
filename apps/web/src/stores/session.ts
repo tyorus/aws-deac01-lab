@@ -63,6 +63,7 @@ export const useSessionStore = defineStore('session', () => {
     topic?: string
     difficulty?: string
     type?: 'single' | 'multi'
+    hasAnswerKey?: boolean
     count?: number
     /** When true (or count >= pool size), load every matching question. */
     loadAll?: boolean
@@ -77,12 +78,15 @@ export const useSessionStore = defineStore('session', () => {
     const auth = useAuthStore()
 
     try {
+      const mode = opts.mode ?? 'drill'
       let pool = await loadLocalQuestions({
         domain: opts.domain,
         service: opts.service,
         topic: opts.topic,
         difficulty: opts.difficulty,
         type: opts.type,
+        // Exam simulator only uses gradable items so scores stay meaningful.
+        hasAnswerKey: mode === 'exam' ? true : opts.hasAnswerKey,
         status: 'published',
       })
 
@@ -107,7 +111,7 @@ export const useSessionStore = defineStore('session', () => {
       const localSession: QuizSession = {
         id: crypto.randomUUID(),
         user_id: auth.user?.id ?? 'local',
-        mode: opts.mode ?? 'drill',
+        mode,
         status: 'active',
         config: { ...opts },
         question_ids: shuffled.map((q) => q.id),
