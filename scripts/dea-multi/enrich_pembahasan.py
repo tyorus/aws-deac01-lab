@@ -97,11 +97,31 @@ def pick_blurbs(text: str) -> list[str]:
     return out[:3]
 
 
+def stem_goal(stem: str) -> str:
+    """The ask / must-do sentence — better than only the opening story sentence."""
+    s = norm(stem)
+    for pat in [
+        r"((?:The data engineer|The company|They|You) must[^.?]+\.?)",
+        r"((?:Which|What) (?:solution|combination|approach|action|actions)[^.?]*\?)",
+        r"(Select Two[^.?]*\.?)",
+    ]:
+        m = re.search(pat, s, re.I)
+        if m:
+            return norm(m.group(1))
+    parts = re.split(r"(?<=\.)\s+", s)
+    if len(parts) >= 2:
+        return parts[-1] if len(parts[-1]) > 30 else parts[-2]
+    return s[:220]
+
+
 def extract_requirements(stem: str) -> list[str]:
     """Pull exam-style constraints from the stem for explanatory framing."""
     s = stem or ""
     reqs: list[str] = []
-    low = s.lower()
+
+    goal = stem_goal(s)
+    if goal:
+        reqs.append(f"tujuan: {goal}")
 
     if re.search(r"LEAST operational|least development|overhead|minimal(?:\s+\w+)?\s+effort", s, re.I):
         reqs.append(
@@ -123,13 +143,18 @@ def extract_requirements(stem: str) -> list[str]:
         reqs.append("semantik pengiriman/pemrosesan (exactly-once / anti-duplikat) penting")
     if re.search(r"Select\s*Two|Choose\s+two", s, re.I):
         reqs.append("jawaban majemuk: biasanya dua mekanisme terpisah untuk dua requirement")
+    if re.search(r"Glue crawler|Data Catalog|crawl", s, re.I):
+        reqs.append(
+            "crawler butuh IAM role yang tepat (biasanya AWSGlueServiceRole) + path sumber yang benar agar Data Catalog ter-update"
+        )
+    if re.search(r"IAM|permission|policy|role", s, re.I) and re.search(
+        r"Glue|SageMaker|Lake Formation|crawler", s, re.I
+    ):
+        reqs.append(
+            "izin harus least-privilege dan terpasang ke principal/service yang menjalankan pekerjaan"
+        )
 
-    # Fallback: first sentence as problem framing
-    if not reqs:
-        first = re.split(r"(?<=\.)\s+", norm(s), maxsplit=1)[0]
-        if len(first) > 40:
-            reqs.append(f"fokus pada requirement inti stem: {first[:220].rstrip('.')}")
-    return reqs[:5]
+    return reqs[:6]
 
 
 def summarize_option(body: str, max_len: int = 110) -> str:
@@ -191,26 +216,225 @@ def explain_correct(opt: dict, stem: str, reqs: list[str]) -> str:
         why.append(
             "mengurangi small files memangkas overhead listing/planning query di Athena/Spark."
         )
+    if "assumerole" in low.replace(" ", "") or "sts:assumerole" in low.replace(" ", ""):
+        why.append(
+            "sts:AssumeRole ke principal Glue/SageMaker memungkinkan Studio/interactive session "
+            "memakai role layanan yang benar — sesuai pola IAM lintas layanan di stem."
+        )
+    if "awsglueservicerole" in low.replace(" ", "") and "crawler" in (low + stem_l):
+        why.append(
+            "AWSGlueServiceRole + path sumber + (jadwal/database Catalog) adalah paket minimal "
+            "agar crawler mengisi Data Catalog secara teratur."
+        )
+    if "datasync" in low:
+        why.append(
+            "DataSync adalah jalur transfer terkelola yang menempatkan data di lokasi compute "
+            "tanpa mount lintas Region atau operasi replikasi manual."
+        )
 
     if not why:
-        # Generic but still explanatory
+        goal = stem_goal(stem)
         if any("least operational" in r.lower() or "effort" in r.lower() for r in reqs):
             why.append(
-                "opsi ini memakai kapabilitas managed yang paling langsung menutup requirement "
-                "tanpa menambah lapisan operasional yang tidak perlu."
+                "memakai kapabilitas managed yang langsung menutup requirement "
+                f"({goal[:160].rstrip('.')}) tanpa menambah lapisan operasional."
             )
         else:
             why.append(
-                "opsi ini menutup requirement inti di stem dengan mekanisme layanan yang tepat, "
-                "bukan workaround yang hanya menyelesaikan sebagian masalah."
+                f"menutup requirement stem ({goal[:180].rstrip('.')}) dengan mekanisme layanan yang tepat."
             )
 
     bits.append(" ".join(why))
     return "\n".join(bits)
 
 
+def _tokens(text: str) -> set[str]:
+    return {t for t in re.findall(r"[a-z0-9+]{3,}", (text or "").lower()) if t not in {
+        "the", "and", "for", "with", "that", "this", "from", "into", "onto", "over",
+        "when", "will", "must", "data", "engineer", "company", "amazon", "aws",
+        "using", "create", "configure", "add", "use", "set", "run",
+    }}
+
+
+def contrast_wrong(opt_body: str, stem: str, correct: list[dict]) -> str:
+    """Stem-aware contrast vs correct option(s) — never a vague default phrase."""
+    low = opt_body.lower()
+    stem_l = stem.lower()
+    goal = stem_goal(stem).lower()
+    cbody = " ".join(norm(c.get("body") or "") for c in correct)
+    c_low = cbody.lower()
+    c_tok = _tokens(cbody)
+    o_tok = _tokens(opt_body)
+    missing = sorted(c_tok - o_tok)
+    extra = sorted(o_tok - c_tok)
+
+    # --- IAM / role / policy (SageMaker Studio + Glue interactive, crawlers, etc.) ---
+    if "awsglueservicerole" in low.replace(" ", "") or "awsglueservicerole" in low:
+        if "iam user" in low or "engineer's iam" in low:
+            return (
+                "AWSGlueServiceRole adalah managed policy untuk *role* layanan Glue (job/crawler), "
+                "bukan izin yang ditempel ke IAM user agar Studio bisa memakai Glue interactive sessions; "
+                "yang dibutuhkan adalah kemampuan assume role lintas layanan"
+            )
+        if "amazons3fullaccess" in c_low.replace(" ", "") or (
+            "glueservicerole" in c_low.replace(" ", "") and "s3fullaccess" in low.replace(" ", "")
+        ):
+            pass  # handled below
+        if "crawler" in stem_l or "data catalog" in stem_l:
+            if "schedule" in c_low and "schedule" not in low and "dpu" in low:
+                return (
+                    "menyetel DPU/output path saja tidak menggantikan jadwal crawler + nama database Catalog "
+                    "yang diminta agar metadata harian ter-refresh otomatis"
+                )
+
+    if "amazons3fullaccess" in low.replace(" ", "") or "amazon s3 full access" in low:
+        if "crawler" in stem_l or "glue" in stem_l:
+            bits = [
+                "AmazonS3FullAccess terlalu luas dan tidak menggantikan AWSGlueServiceRole yang dibutuhkan "
+                "crawler untuk menulis ke Data Catalog"
+            ]
+            if "dpu" in low and "schedule" in c_low:
+                bits.append(
+                    "alokasi DPU juga bukan pengganti jadwal harian crawler di jawaban benar"
+                )
+            elif "schedule" in low and "glueservicerole" in c_low.replace(" ", ""):
+                bits.append(
+                    "meski ada schedule, tanpa AWSGlueServiceRole crawler tetap gagal mengisi Catalog"
+                )
+            return "; ".join(bits)
+
+    if "amazonsagemakerfullaccess" in low.replace(" ", "") or "sagemakerfullaccess" in low:
+        return (
+            "AmazonSageMakerFullAccess pada IAM user memberi akses luas ke SageMaker, tetapi tidak "
+            "menyelesaikan trust/assume-role ke principal Glue+SageMaker yang dibutuhkan interactive sessions; "
+            "izin salah tempat dan terlalu broad"
+        )
+
+    if "sts:addassociation" in low.replace(" ", "") or "addassociation" in low:
+        return (
+            "sts:AddAssociation bukan action yang dipakai untuk menyerahkan sesi ke Glue/SageMaker; "
+            "stem butuh sts:AssumeRole agar user/Studio bisa memakai role layanan yang benar"
+        )
+
+    if "assumerole" in c_low.replace(" ", "") and "assumerole" not in low.replace(" ", ""):
+        if "policy" in low or "iam" in low or "role" in low:
+            return (
+                "opsi ini tidak memasang sts:AssumeRole ke principal Glue/SageMaker seperti jawaban benar; "
+                "tanpa assume role, Studio/interactive session tidak bisa memakai role layanan yang dimaksud stem"
+            )
+
+    if "managed policy" in low and "iam user" in low and (
+        "glue" in stem_l or "sagemaker" in stem_l or "interactive" in stem_l
+    ):
+        return (
+            "menempel managed policy layanan ke IAM *user* salah target: permission untuk job/session "
+            "harus lewat role yang di-assume, bukan full managed policy di identitas manusia"
+        )
+
+    # --- Crawler / Catalog shape ---
+    if "crawler" in stem_l or "data catalog" in stem_l:
+        if "dpu" in low and "schedule" in c_low and "schedule" not in low:
+            return (
+                "alokasi DPU bukan cara menjadwalkan crawler harian; soal meminta schedule + database "
+                "Catalog sebagai output metadata, bukan menulis ulang path data di S3"
+            )
+        if "new path" in low and "database" in c_low and "database" not in low:
+            return (
+                "mengarahkan output ke path S3 baru tidak mengisi Glue Data Catalog; yang diminta adalah "
+                "nama database Catalog agar tabel bisa di-query setelah crawl"
+            )
+        if "amazons3fullaccess" in low.replace(" ", ""):
+            return (
+                "S3FullAccess tidak mencakup izin crawler menulis ke Data Catalog; butuh AWSGlueServiceRole "
+                "(plus path sumber + schedule/database sesuai jawaban benar)"
+            )
+
+    # --- Known architecture contrasts ---
+    if "datasync" in c_low and "datasync" not in low:
+        if "efs" in stem_l or "efs" in c_low:
+            return (
+                "tidak memakai DataSync untuk menyalin data ke EFS di Region compute; "
+                "masih menyisakan akses lintas Region atau duplikasi deploy yang ditolak stem"
+            )
+        return (
+            "tidak memakai DataSync sebagai jalur transfer terkelola yang dipilih jawaban benar "
+            "untuk requirement lokasi data vs compute di stem"
+        )
+    if "lake formation" in c_low and "lake formation" not in low:
+        if "bucket policy" in low or "acl" in low or "iam policy" in low:
+            return (
+                "kontrol di S3/IAM terlalu kasar dibanding Lake Formation; tidak memenuhi "
+                "row/column/governance fine-grained yang diminta stem"
+            )
+        return (
+            "tidak memakai Lake Formation untuk governance fine-grained yang menjadi inti requirement akses"
+        )
+    if "step functions" in c_low and "step functions" not in low:
+        return (
+            "tetap mengandalkan penjadwalan/concurrency kasar alih-alih orkestrasi dependency Step Functions "
+            "yang menutup race antar-job di stem"
+        )
+    if ("kinesis" in c_low or "data stream" in c_low) and not (
+        "kinesis" in low or "data stream" in low
+    ):
+        if "within seconds" in stem_l or "real-time" in stem_l or "fraud" in stem_l:
+            return (
+                "jalur batch/S3/query tertunda tidak memenuhi latensi near-real-time yang diminta; "
+                "jawaban benar memakai stream"
+            )
+    if ("parquet" in c_low or "partition" in c_low) and not (
+        "parquet" in low or "partition" in low
+    ):
+        if re.search(r"cost|athena|scan|bill", stem_l):
+            return (
+                "tidak memperbaiki format/partisi yang menekan data-scan; jadi tidak menjawab akar biaya/kinerja query di stem"
+            )
+
+    # --- Effort / cost / security from stem ---
+    if re.search(r"least operational|least development|overhead|minimal(?:\s+\w+)?\s+effort", stem, re.I):
+        if any(x in low for x in ("ec2", "always on", "manual", "custom", "lambda in each", "each region")):
+            return (
+                "menambah permukaan operasi (compute sendiri / multi-deploy) berlawanan dengan "
+                "least operational/development effort di stem"
+            )
+    if re.search(r"most cost|cost-effective|least cost|reduce (?:the )?cost", stem, re.I):
+        if not any(k in low for k in ("parquet", "partition", "compress", "column", "lifecycle", "intelligent", "spot")):
+            if any(k in c_low for k in ("parquet", "partition", "compress", "lifecycle", "intelligent")):
+                return (
+                    "tidak menyentuh tuas biaya yang dipakai jawaban benar (format/partisi/lifecycle); "
+                    "jadi tidak memenuhi optimasi biaya di stem"
+                )
+
+    # --- Diff-based fallback (still specific) ---
+    goal_bits = []
+    if "must" in goal:
+        goal_bits.append(goal[:160])
+    ask = stem_goal(stem)
+    if missing and len(missing) <= 8:
+        key_miss = [m for m in missing if m in {
+            "datasync", "efs", "parquet", "partition", "lake", "formation", "assumerole",
+            "schedule", "database", "crawler", "stream", "kinesis", "step", "functions",
+            "glue", "catalog", "kms", "encrypt",
+        }] or missing[:4]
+        return (
+            f"dibanding jawaban benar, opsi ini mengabaikan elemen kunci ({', '.join(key_miss)}); "
+            f"itu yang diminta stem: {ask[:180].rstrip('.')}"
+        )
+    if extra and len(extra) <= 6 and missing:
+        return (
+            f"opsi ini menekankan {', '.join(extra[:3])} tetapi meninggalkan "
+            f"{', '.join(missing[:3])} yang ada di solusi benar — tidak menutup requirement: {ask[:160].rstrip('.')}"
+        )
+
+    # Last resort: name the unmet stem ask (still not the banned vague line)
+    return (
+        f"tidak menyelesaikan yang diminta stem ({ask[:200].rstrip('.')}) "
+        f"dengan mekanisme yang sama seperti jawaban benar"
+    )
+
+
 def classify_wrong(opt: dict, stem: str, correct: list[dict]) -> str:
-    """Explain *why* an option fails — not by pasting the option text."""
+    """Explain *why* an option fails — tied to stem + contrast vs correct."""
     label = opt.get("label") or "?"
     body = norm(opt.get("body") or "")
     low = body.lower()
@@ -258,8 +482,6 @@ def classify_wrong(opt: dict, stem: str, correct: list[dict]) -> str:
             "reservasi kapasitas menstabilkan tagihan tetapi tidak memperbaiki akar (format/partisi/scan); "
             "biasanya dikerjakan setelah fondasi data benar"
         )
-    if "select star" in stem_l and "name only" not in low and "column" not in low:
-        pass  # not this option
 
     # Orchestration / cron
     if "widen" in low and ("cron" in low or "gap" in low):
@@ -278,42 +500,11 @@ def classify_wrong(opt: dict, stem: str, correct: list[dict]) -> str:
         )
     if "glue databrew" in low and "governance" in stem_l:
         reasons.append(
-            "DataBrew fokusokus preparasi/visual cleansing, bukan tata kelola akses terpusat data mesh/lake"
+            "DataBrew fokus preparasi/visual cleansing, bukan tata kelola akses terpusat data mesh/lake"
         )
 
-    # Generic operational / cost mismatches
     if not reasons:
-        if any(x in low for x in ("ec2", "always on", "manual", "custom")) and re.search(
-            r"LEAST operational|overhead|effort", stem, re.I
-        ):
-            reasons.append(
-                "menambah komponen yang harus dioperasikan sendiri, berlawanan dengan least operational effort"
-            )
-        elif re.search(r"cost|bill|Athena", stem, re.I) and not any(
-            k in low for k in ("parquet", "partition", "compress", "column", "lifecycle", "intelligent")
-        ):
-            reasons.append(
-                "tidak menyentuh penyebab utama biaya/kinerja yang disebut di stem (scan, format, atau pola akses)"
-            )
-        elif correct:
-            # Contrast with correct approach at high level
-            cbody = " ".join(norm(c.get("body") or "") for c in correct).lower()
-            if "datasync" in cbody and "datasync" not in low:
-                reasons.append(
-                    "tidak memindahkan data ke lokasi compute yang sama; masih menyisakan akses jarak jauh atau duplikasi proses"
-                )
-            elif "lake formation" in cbody and "lake formation" not in low:
-                reasons.append(
-                    "tidak memakai kontrol governance fine-grained yang diminta requirement akses"
-                )
-            else:
-                reasons.append(
-                    "hanya menutup sebagian gejala atau memakai pola yang tidak selaras dengan constraint utama stem"
-                )
-        else:
-            reasons.append(
-                "tidak memenuhi seluruh constraint yang ditanyakan (kelengkapan solusi / trade-off yang diminta)"
-            )
+        reasons.append(contrast_wrong(body, stem, correct))
 
     tip = summarize_option(body, 90)
     return f"- **{label}**: {reasons[0]}. *(ringkas opsi: {tip})*"
