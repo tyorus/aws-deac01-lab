@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { GradeResult, Question } from '@/types'
+import { renderMarkdown } from '@/services/markdown'
 
 const props = defineProps<{
   question: Question
@@ -15,6 +16,12 @@ const emit = defineEmits<{
 }>()
 
 const isMulti = computed(() => props.question.type === 'multi')
+
+const explanationHtml = computed(() => {
+  const raw = props.grade?.explanation || ''
+  const cleaned = raw.replace(/^\*\*Pembahasan:\*\*\s*/i, '').trim()
+  return renderMarkdown(cleaned)
+})
 
 function toggle(id: string) {
   if (props.disabled) return
@@ -72,9 +79,14 @@ function optionClass(id: string) {
         class="font-medium"
         :class="grade.correct ? 'text-[var(--color-success)]' : 'text-[var(--color-danger)]'"
       >
-        {{ grade.correct ? 'Correct' : 'Incorrect' }}
+        {{ grade.correct ? 'Benar' : 'Salah' }}
       </div>
-      <p class="mt-2 text-[var(--color-ink-muted)] leading-relaxed">{{ grade.explanation }}</p>
+      <div class="mt-3 border-t border-[var(--color-border)] pt-3">
+        <div class="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)] mb-2">
+          Pembahasan
+        </div>
+        <div class="prose-explain" v-html="explanationHtml" />
+      </div>
     </div>
   </article>
 </template>

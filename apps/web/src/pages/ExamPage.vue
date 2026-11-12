@@ -4,8 +4,15 @@ import QuestionCard from '@/components/QuestionCard.vue'
 import { examConfig } from '@/generated/index'
 import { useSessionStore } from '@/stores/session'
 import { gradeLocally } from '@/services/localGrader'
+import { renderMarkdown } from '@/services/markdown'
 import { recordLocalExam } from '@/services/analytics'
 import type { ExamResultSummary } from '@/types'
+
+function explanationHtml(questionId: string, selectedIds: string[]) {
+  const raw = gradeLocally(questionId, selectedIds).explanation || ''
+  const cleaned = raw.replace(/^\*\*Pembahasan:\*\*\s*/i, '').trim()
+  return renderMarkdown(cleaned)
+}
 
 const session = useSessionStore()
 const presetId = ref('full')
@@ -208,7 +215,15 @@ function optionReviewClass(questionId: string, optionId: string) {
               <span class="font-mono text-xs mr-2">{{ opt.label }}</span>{{ opt.body }}
             </li>
           </ul>
-          <p class="mt-3 text-sm text-[var(--color-ink-muted)]">{{ gradeLocally(q.id, result.answers[q.id] || []).explanation }}</p>
+          <div class="mt-3 border-t border-[var(--color-border)] pt-3">
+            <div class="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)] mb-2">
+              Pembahasan
+            </div>
+            <div
+              class="prose-explain text-sm"
+              v-html="explanationHtml(q.id, result.answers[q.id] || [])"
+            />
+          </div>
         </article>
       </section>
     </div>

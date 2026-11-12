@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { getRawById } from '@/services/localQuestions'
+import { renderMarkdown } from '@/services/markdown'
 import { useSessionStore } from '@/stores/session'
 
 interface SrsEntry {
@@ -31,6 +32,12 @@ const flashIds = computed(() => {
 const currentFlash = computed(() => {
   const id = flashIds.value[flashIndex.value]
   return id ? getRawById(id) : null
+})
+
+const flashExplanationHtml = computed(() => {
+  const raw = currentFlash.value?.explanation || ''
+  const cleaned = raw.replace(/^\*\*Pembahasan:\*\*\s*/i, '').trim()
+  return renderMarkdown(cleaned)
 })
 
 async function startDue() {
@@ -88,7 +95,7 @@ function nextCard() {
       >
         <div class="text-xs text-[var(--color-ink-muted)] mb-2">{{ flipped ? 'Explanation' : 'Prompt' }} · click to flip</div>
         <p v-if="!flipped" class="leading-relaxed">{{ currentFlash.stem }}</p>
-        <p v-else class="leading-relaxed text-[var(--color-ink-muted)]">{{ currentFlash.explanation }}</p>
+        <div v-else class="prose-explain leading-relaxed" v-html="flashExplanationHtml" />
       </button>
     </section>
   </div>

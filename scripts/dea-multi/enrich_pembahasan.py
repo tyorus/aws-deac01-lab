@@ -104,57 +104,59 @@ def generate_pembahasan(q: dict) -> str:
     wrong = [o for o in opts if not o.get("correct")]
     letters = "".join(o.get("label", "") for o in correct) or "?"
 
-    lines = []
-    lines.append(f"**Pembahasan:** Jawaban yang tepat adalah **{letters}**.")
+    blocks: list[str] = []
+    blocks.append(f"**Pembahasan:** Jawaban yang tepat adalah **{letters}**.")
 
     if len(correct) == 1:
         c = correct[0]
-        lines.append(
-            f"Opsi {c['label']} paling sesuai karena: {norm(c.get('body') or '')}."
-        )
+        body = norm(c.get("body") or "").rstrip(".")
+        blocks.append(f"Opsi {c['label']} paling sesuai karena: {body}.")
     else:
-        lines.append("Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:")
+        multi_lines = [
+            "Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:"
+        ]
         for c in correct:
-            lines.append(f"- **{c['label']}**: {norm(c.get('body') or '')}")
+            body = norm(c.get("body") or "").rstrip(".")
+            multi_lines.append(f"- **{c['label']}**: {body}.")
+        blocks.append("\n".join(multi_lines))
 
     blurbs = pick_blurbs(stem + " " + " ".join(o.get("body", "") for o in correct))
     if blurbs:
-        lines.append("Konteks layanan terkait:")
-        for b in blurbs:
-            lines.append(f"- {b}")
+        blocks.append("Konteks layanan terkait:\n" + "\n".join(f"- {b}" for b in blurbs))
 
     # Tie back to stem keywords
     if re.search(r"LEAST operational|least operational|overhead|effort", stem, re.I):
-        lines.append(
+        blocks.append(
             "Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom."
         )
     if re.search(r"MOST (?:cost|secure|scalable)|cost-effective|LEAST cost", stem, re.I):
-        lines.append(
+        blocks.append(
             "Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering."
         )
     if re.search(r"real-?time|continuously|stream", stem, re.I):
-        lines.append(
+        blocks.append(
             "Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata."
         )
     if re.search(r"row-?level|column|governance|Lake Formation", stem, re.I):
-        lines.append(
+        blocks.append(
             "Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket."
         )
 
     if wrong:
-        lines.append("Mengapa opsi lain kurang tepat:")
+        wrong_lines = ["Mengapa opsi lain kurang tepat:"]
         for w in wrong[:4]:
             body = norm(w.get("body") or "")
             if len(body) > 160:
                 body = body[:157] + "..."
-            lines.append(
+            wrong_lines.append(
                 f"- **{w['label']}**: tidak memenuhi constraint utama soal — {body}"
             )
+        blocks.append("\n".join(wrong_lines))
 
-    lines.append(
+    blocks.append(
         "_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._"
     )
-    return "\n".join(lines)
+    return "\n\n".join(blocks)
 
 
 def items_from_quiz(quiz: list[dict]) -> list[dict]:
