@@ -286,7 +286,16 @@ def to_quiz(item: dict, idx: int) -> dict | None:
     if not any(o["correct"] for o in options):
         return None
 
-    qtype = "multi" if sum(1 for o in options if o["correct"]) > 1 else "single"
+    correct_n = sum(1 for o in options if o["correct"])
+    choose_m = re.search(r"\(\s*Choose\s+(two|three|four|five)\.?\s*\)", stem, re.I)
+    choose_n = {"two": 2, "three": 3, "four": 4, "five": 5}.get(
+        (choose_m.group(1).lower() if choose_m else ""), 0
+    )
+    qtype = "multi" if correct_n > 1 or choose_n > 1 else "single"
+    # Incomplete Choose-N keys cannot be graded fairly — keep out of published quiz pool.
+    status = "published"
+    if choose_n and correct_n != choose_n:
+        status = "draft"
     expl = (item.get("source_explanation") or "").strip()
     if len(expl) < 20:
         expl = (
@@ -306,7 +315,7 @@ def to_quiz(item: dict, idx: int) -> dict | None:
         "explanation": expl[:4000],
         "provenance": f"local-compile:{item.get('source')}",
         "verification_status": "community",
-        "status": "published",
+        "status": status,
         "reviewed_at": datetime.now(timezone.utc).date().isoformat(),
         "source_meta": {
             "source": item.get("source"),

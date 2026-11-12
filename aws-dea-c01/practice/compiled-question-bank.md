@@ -1,13 +1,13 @@
 # DEA-C01 Compiled Local Question Bank
 
-Generated: 2026-11-12T01:49:30.300Z
+Generated: 2026-11-12T02:40:55.403Z
 
 Bank soal lokal (scrape + PDF) lengkap dengan **pembahasan**.
 Bukan materi resmi AWS.
 
 - Total entri quiz-ready: **297**
 - Dengan pembahasan: **297**
-- Multi-select: **42**
+- Multi-select: **45**
 
 ---
 
@@ -155,7 +155,7 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-4
 ---
 
 ## Q7. [examtopics] #4
-*App id: `LOC-007` · type: `single`*
+*App id: `LOC-007` · type: `multi`*
 
 Question #: 4 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
 
@@ -163,10 +163,11 @@ Question #: 4 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Qu
 - B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
 - C. Use AWS Glue DataBrew for centralized data governance and access control.
 - D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis.
+- E. Use AWS Lake Formation for centralized data governance and access control.
 
-**Answer:** B
+**Answer:** BE
 
-**Pembahasan:** Jawaban yang tepat adalah **B**.
+**Pembahasan:** Jawaban yang tepat adalah **BE**.
 
 Opsi B paling sesuai karena: Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
 
@@ -633,7 +634,7 @@ Source URL: https://www.examtopics.com/discussions/amazon/view/142580-exam-aws-c
 ---
 
 ## Q23. [examtopics] #125
-*App id: `LOC-023` · type: `single`*
+*App id: `LOC-023` · type: `multi`*
 
 Question #: 125 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application. Which solutions will minimize data loss for the application? (Choose two.)
 
@@ -641,10 +642,11 @@ Question #: 125 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Increase the visibility timeout.
 - C. Attach a dead-letter queue (DLQ) to the SQS queue.
 - D. Use a delay queue to delay message delivery
+- E. Reduce message processing time.
 
-**Answer:** A
+**Answer:** AC
 
-**Pembahasan:** Jawaban yang tepat adalah **A**.
+**Pembahasan:** Jawaban yang tepat adalah **AC**.
 
 Opsi A paling sesuai karena: Increase the message retention period.
 
@@ -780,7 +782,7 @@ Source URL: https://www.examtopics.com/discussions/amazon/view/151925-exam-aws-c
 ---
 
 ## Q28. [examtopics] #159
-*App id: `LOC-028` · type: `single`*
+*App id: `LOC-028` · type: `multi`*
 
 Question #: 159 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an application that uses a microservice architecture. The company hosts the application on an Amazon Elastic Kubernetes Services (Amazon EKS) cluster. The company wants to set up a robust monitoring system for the application. The company needs to analyze the logs from the EKS cluster and the application. The company needs to correlate the cluster's logs with the application's traces to identify points of failure in the whole application request flow. Which combination of steps will meet these requirements with the LEAST development effort? (Choose two.)
 
@@ -788,10 +790,11 @@ Question #: 159 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Use Amazon CloudWatch to collect logs. Use Amazon Kinesis to collect traces.
 - C. Use Amazon CloudWatch to collect logs. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to collect traces.
 - D. Use Amazon OpenSearch to correlate the logs and traces.
+- E. Use AWS Glue to correlate the logs and traces.
 
-**Answer:** A
+**Answer:** AD
 
-**Pembahasan:** Jawaban yang tepat adalah **A**.
+**Pembahasan:** Jawaban yang tepat adalah **AD**.
 
 Opsi A paling sesuai karena: Use FluentBit to collect logs. Use OpenTelemetry to collect traces.
 Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.

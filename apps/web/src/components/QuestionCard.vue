@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import type { GradeResult, Question } from '@/types'
 import { renderMarkdown } from '@/services/markdown'
+import { chooseCountFromStem, isMultiQuestion, multiSelectHint } from '@/services/questionMeta'
 
 const props = defineProps<{
   question: Question
@@ -15,17 +16,9 @@ const emit = defineEmits<{
   select: [ids: string[]]
 }>()
 
-const isMulti = computed(() => props.question.type === 'multi')
-
-const chooseHint = computed(() => {
-  if (!isMulti.value) return ''
-  const m = props.question.stem.match(/\(Choose\s+(two|three|four|five)\)/i)
-  if (m) {
-    const n = ({ two: 2, three: 3, four: 4, five: 5 } as Record<string, number>)[m[1].toLowerCase()]
-    return n ? `Pilih ${n} jawaban.` : 'Pilih semua yang benar.'
-  }
-  return 'Pilih semua yang benar (bisa lebih dari satu).'
-})
+const isMulti = computed(() => isMultiQuestion(props.question))
+const expectedCount = computed(() => chooseCountFromStem(props.question.stem))
+const chooseHint = computed(() => (isMulti.value ? multiSelectHint(props.question.stem) : ''))
 
 const explanationHtml = computed(() => {
   const raw = props.grade?.explanation || ''
@@ -74,6 +67,12 @@ function optionClass(id: string) {
     <p v-if="isMulti" class="mt-2 text-sm text-[var(--color-accent)]">
       {{ chooseHint }}
       <span v-if="selected.length" class="text-[var(--color-ink-muted)]"> · {{ selected.length }} dipilih</span>
+      <span
+        v-if="expectedCount && selected.length > 0 && selected.length !== expectedCount"
+        class="text-[var(--color-warn)]"
+      >
+        · perlu {{ expectedCount }}
+      </span>
     </p>
     <div class="mt-4 space-y-2" :role="isMulti ? 'group' : 'radiogroup'" :aria-label="isMulti ? 'Pilihan ganda' : 'Pilihan tunggal'">
       <button

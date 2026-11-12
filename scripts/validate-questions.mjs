@@ -40,6 +40,14 @@ for (const raw of questions) {
   if (raw.type === 'multi' && correct.length < 2) fail('multi must have >=2 correct')
   if (!raw.explanation || raw.explanation.length < 20) fail('explanation too short')
   if (!raw.stem || raw.stem.length < 20) fail('stem too short')
+
+  const chooseMatch = String(raw.stem || '').match(/\(\s*Choose\s+(two|three|four|five)\.?\s*\)/i)
+  if (chooseMatch && raw.status === 'published') {
+    const want = { two: 2, three: 3, four: 4, five: 5 }[chooseMatch[1].toLowerCase()]
+    if (raw.type !== 'multi' || correct.length !== want) {
+      fail(`published Choose-${want} must be multi with exactly ${want} correct`)
+    }
+  }
 }
 
 if (errors) {

@@ -323,7 +323,7 @@
       "glue"
     ],
     "difficulty": "medium",
-    "type": "single",
+    "type": "multi",
     "stem": "Question #: 4 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)",
     "options": [
       {
@@ -349,9 +349,15 @@
         "label": "D",
         "body": "Use Amazon RDS for data storage. Use Amazon EMR for data analysis.",
         "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Use AWS Lake Formation for centralized data governance and access control.",
+        "correct": true
       }
     ],
-    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nOpsi B paling sesuai karena: Use Amazon S3 for data storage. Use Amazon Athena for data analysis.\n\nKonteks layanan terkait:\n- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.\n- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.\n- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.\nKontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.\n\nMengapa opsi lain kurang tepat:\n- **A**: tidak memenuhi constraint utama soal — Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.\n- **C**: tidak memenuhi constraint utama soal — Use AWS Glue DataBrew for centralized data governance and access control.\n- **D**: tidak memenuhi constraint utama soal — Use Amazon RDS for data storage. Use Amazon EMR for data analysis.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **BE**.\n\nOpsi B paling sesuai karena: Use Amazon S3 for data storage. Use Amazon Athena for data analysis.\n\nKonteks layanan terkait:\n- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.\n- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.\n- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.\nKontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.\n\nMengapa opsi lain kurang tepat:\n- **A**: tidak memenuhi constraint utama soal — Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.\n- **C**: tidak memenuhi constraint utama soal — Use AWS Glue DataBrew for centralized data governance and access control.\n- **D**: tidak memenuhi constraint utama soal — Use Amazon RDS for data storage. Use Amazon EMR for data analysis.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:examtopics",
     "verification_status": "community",
     "status": "published",
@@ -1093,7 +1099,7 @@
       "aws"
     ],
     "difficulty": "medium",
-    "type": "single",
+    "type": "multi",
     "stem": "Question #: 125 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application. Which solutions will minimize data loss for the application? (Choose two.)",
     "options": [
       {
@@ -1112,16 +1118,22 @@
         "id": "opt-c",
         "label": "C",
         "body": "Attach a dead-letter queue (DLQ) to the SQS queue.",
-        "correct": false
+        "correct": true
       },
       {
         "id": "opt-d",
         "label": "D",
         "body": "Use a delay queue to delay message delivery",
         "correct": false
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Reduce message processing time.",
+        "correct": false
       }
     ],
-    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nOpsi A paling sesuai karena: Increase the message retention period.\n\nMengapa opsi lain kurang tepat:\n- **B**: tidak memenuhi constraint utama soal — Increase the visibility timeout.\n- **C**: tidak memenuhi constraint utama soal — Attach a dead-letter queue (DLQ) to the SQS queue.\n- **D**: tidak memenuhi constraint utama soal — Use a delay queue to delay message delivery\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **AC**.\n\nOpsi A paling sesuai karena: Increase the message retention period.\n\nMengapa opsi lain kurang tepat:\n- **B**: tidak memenuhi constraint utama soal — Increase the visibility timeout.\n- **C**: tidak memenuhi constraint utama soal — Attach a dead-letter queue (DLQ) to the SQS queue.\n- **D**: tidak memenuhi constraint utama soal — Use a delay queue to delay message delivery\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:examtopics",
     "verification_status": "community",
     "status": "published",
@@ -1328,7 +1340,7 @@
       "aws"
     ],
     "difficulty": "medium",
-    "type": "single",
+    "type": "multi",
     "stem": "Question #: 159 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an application that uses a microservice architecture. The company hosts the application on an Amazon Elastic Kubernetes Services (Amazon EKS) cluster. The company wants to set up a robust monitoring system for the application. The company needs to analyze the logs from the EKS cluster and the application. The company needs to correlate the cluster's logs with the application's traces to identify points of failure in the whole application request flow. Which combination of steps will meet these requirements with the LEAST development effort? (Choose two.)",
     "options": [
       {
@@ -1353,10 +1365,16 @@
         "id": "opt-d",
         "label": "D",
         "body": "Use Amazon OpenSearch to correlate the logs and traces.",
+        "correct": true
+      },
+      {
+        "id": "opt-e",
+        "label": "E",
+        "body": "Use AWS Glue to correlate the logs and traces.",
         "correct": false
       }
     ],
-    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nOpsi A paling sesuai karena: Use FluentBit to collect logs. Use OpenTelemetry to collect traces.\nSoal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.\n\nMengapa opsi lain kurang tepat:\n- **B**: tidak memenuhi constraint utama soal — Use Amazon CloudWatch to collect logs. Use Amazon Kinesis to collect traces.\n- **C**: tidak memenuhi constraint utama soal — Use Amazon CloudWatch to collect logs. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to collect traces.\n- **D**: tidak memenuhi constraint utama soal — Use Amazon OpenSearch to correlate the logs and traces.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
+    "explanation": "**Pembahasan:** Jawaban yang tepat adalah **AD**.\n\nOpsi A paling sesuai karena: Use FluentBit to collect logs. Use OpenTelemetry to collect traces.\nSoal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.\n\nMengapa opsi lain kurang tepat:\n- **B**: tidak memenuhi constraint utama soal — Use Amazon CloudWatch to collect logs. Use Amazon Kinesis to collect traces.\n- **C**: tidak memenuhi constraint utama soal — Use Amazon CloudWatch to collect logs. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to collect traces.\n- **D**: tidak memenuhi constraint utama soal — Use Amazon OpenSearch to correlate the logs and traces.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:examtopics",
     "verification_status": "community",
     "status": "published",
@@ -1637,7 +1655,7 @@
     "explanation": "**Pembahasan:** Jawaban yang tepat adalah **B**.\n\nOpsi B paling sesuai karena: Use the Spark UI and AWS Glue metrics to monitor data skew in the Spark executors.\n\nKonteks layanan terkait:\n- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.\nPerhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.\n\nMengapa opsi lain kurang tepat:\n- **A**: tidak memenuhi constraint utama soal — Scale out the workers vertically to address data skewness.\n- **C**: tidak memenuhi constraint utama soal — Scale out the number of workers horizontally to address data skewness.\n- **D**: tidak memenuhi constraint utama soal — Enable the --write-shuffie-files-to-s3 job parameter. Use the salting technique.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:examtopics",
     "verification_status": "community",
-    "status": "published",
+    "status": "draft",
     "reviewed_at": "2026-11-11",
     "source_meta": {
       "source": "examtopics",
@@ -3010,7 +3028,7 @@
     "explanation": "**Pembahasan:** Jawaban yang tepat adalah **ABCD**.\n\nIni soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:\n- **A**: **A:** Use AWS Database Migration Service (AWS DMS) to create a replication task. Select only the required tables.\n- **B**: **B:** Create a database in Amazon Redshift that uses the integration.\n- **C**: **C:** Create a zero-ETL integration in Amazon Aurora. Select only the required tables.\n- **D**: **D:** Use query editor v2 in Amazon Redshift to access the data in Aurora.\n\nKonteks layanan terkait:\n- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.\n- DMS memindahkan/mereplikasi data antar store dengan beban operasional lebih rendah dari ETL custom.\nSoal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:examtopics",
     "verification_status": "community",
-    "status": "published",
+    "status": "draft",
     "reviewed_at": "2026-11-11",
     "source_meta": {
       "source": "examtopics",
@@ -3654,7 +3672,7 @@
     "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nOpsi A paling sesuai karena: Implement the workflow by using AWS Step Functions. Configure Step Functions to coordinate the AWS Glue ETL jobs and handle error conditions with automatic retries.\n\nKonteks layanan terkait:\n- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.\n- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.\n- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.\n\nMengapa opsi lain kurang tepat:\n- **B**: tidak memenuhi constraint utama soal — Use AWS Glue workflows to create a graph of the ETL tasks that visually represents the dependencies between jobs and the job triggers.\n- **C**: tidak memenuhi constraint utama soal — Provision an always on Amazon EC2 instance. Create a cron job that invokes the AWS Glue ETL jobs in sequence based on a predefined scheduleю\n- **D**: tidak memenuhi constraint utama soal — Use Amazon EventBridge rules to invoke the AWS Glue ETL jobs based on S3 object creation events. Configure the rules to chain the AWS Glue ETL jobs in sequen..\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:examtopics",
     "verification_status": "community",
-    "status": "published",
+    "status": "draft",
     "reviewed_at": "2026-11-11",
     "source_meta": {
       "source": "examtopics",
@@ -9524,7 +9542,7 @@
     "explanation": "**Pembahasan:** Jawaban yang tepat adalah **E**.\n\nOpsi E paling sesuai karena: Add the KMS key as a resource that the QuickSight service role can access.\n\nKonteks layanan terkait:\n- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.\n- KMS mengelola kunci enkripsi; pastikan grant/policy sesuai akses layanan.\n\nMengapa opsi lain kurang tepat:\n- **A**: tidak memenuhi constraint utama soal — Use the existing AWS KMS key to encrypt connections from QuickSight to the S3 bucket.\n- **B**: tidak memenuhi constraint utama soal — Add the S3 bucket as a resource that the QuickSight service role can access.\n- **C**: tidak memenuhi constraint utama soal — Use AWS Resource Access Manager (AWS RAM) to share the S3 bucket with the BI-Account account.\n- **D**: tidak memenuhi constraint utama soal — Add an IAM policy to the QuickSight service role to give QuickSight access to the KMS key that encrypts the S3 bucket.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:github_examtopics_cache",
     "verification_status": "community",
-    "status": "published",
+    "status": "draft",
     "reviewed_at": "2026-11-11",
     "source_meta": {
       "source": "github_examtopics_cache",
@@ -14107,7 +14125,7 @@
     "explanation": "**Pembahasan:** Jawaban yang tepat adalah **A**.\n\nOpsi A paling sesuai karena: Configure the Amazon Redshift Federated Query feature to query live transactional data that is in the PostgreSQL database.\n\nKonteks layanan terkait:\n- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.\n\nMengapa opsi lain kurang tepat:\n- **B**: tidak memenuhi constraint utama soal — Configure Amazon Redshift Spectrum to query live transactional data that is in the PostgreSQL database.\n- **C**: tidak memenuhi constraint utama soal — Schedule a monthly job to copy data that is older than 15 months to Amazon S3 by using the UNLOAD command. Delete the old data from the Redshift cluster. Con..\n- **D**: tidak memenuhi constraint utama soal — Schedule a monthly job to copy data that is older than 15 months to Amazon S3 Glacier Flexible Retrieval by using the UNLOAD command. Delete the old data fro..\n- **E**: tidak memenuhi constraint utama soal — Create a materialized view in Amazon Redshift that combines live, current, and historical data from different sources.\n\n_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._\n",
     "provenance": "local-compile:github_examtopics_cache",
     "verification_status": "community",
-    "status": "published",
+    "status": "draft",
     "reviewed_at": "2026-11-11",
     "source_meta": {
       "source": "github_examtopics_cache",
