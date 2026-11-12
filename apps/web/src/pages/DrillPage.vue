@@ -1,22 +1,67 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import QuestionCard from '@/components/QuestionCard.vue'
 import { useSessionStore } from '@/stores/session'
 import { recordLocalAttempt } from '@/services/analytics'
 import { scheduleReview, defaultSm2State, confidenceToQuality } from '@/services/sm2'
+import { filterRawQuestions, getDrillCatalog } from '@/services/localQuestions'
+import { examConfig } from '@/generated/index'
+import type { QuestionType } from '@/types'
 
 const session = useSessionStore()
+const catalog = getDrillCatalog('published')
+const domainNames = Object.fromEntries(
+  (examConfig.official?.domain_weights || []).map((d: { code: string; name: string }) => [d.code, d.name]),
+)
+
 const domain = ref('')
 const service = ref('')
-const topic = ref('')
 const difficulty = ref('')
+const questionType = ref<'' | QuestionType>('')
 const feedback = ref<'immediate' | 'delayed'>('immediate')
-const count = ref(10)
+const countMode = ref<'all' | 'custom'>('all')
+const customCount = ref(20)
 const confidence = ref(3)
 const busy = ref(false)
 const message = ref('')
 const bookmarks = ref<string[]>(JSON.parse(localStorage.getItem('dea-bookmarks') || '[]'))
 const incorrect = ref<string[]>(JSON.parse(localStorage.getItem('dea-incorrect') || '[]'))
+
+const matchingCount = computed(() =>
+  filterRawQuestions({
+    status: 'published',
+    domain: domain.value || undefined,
+    service: service.value || undefined,
+    difficulty: difficulty.value || undefined,
+    type: questionType.value || undefined,
+  }).length,
+)
+
+const domainOptions = computed(() =>
+  Object.keys(catalog.domainCounts)
+    .sort()
+    .map((code) => ({
+      code,
+      count: catalog.domainCounts[code],
+      label: domainNames[code] ? `${code} — ${domainNames[code]}` : code,
+    })),
+)
+
+const serviceOptions = computed(() => catalog.services)
+
+const effectiveCount = computed(() =>
+  countMode.value === 'all' ? matchingCount.value : Math.min(Math.max(1, customCount.value || 1), matchingCount.value || 1),
+)
+
+const countPresets = computed(() => {
+  const n = matchingCount.value
+  const presets = [10, 20, 40, 65].filter((p) => p < n)
+  return presets
+})
+
+watch(matchingCount, (n) => {
+  if (countMode.value === 'custom' && customCount.value > n) customCount.value = Math.max(1, n)
+})
 
 const selected = computed(() => {
   const q = session.currentQuestion
@@ -29,15 +74,20 @@ const showFeedback = computed(
 )
 
 async function start() {
+  if (!matchingCount.value) {
+    message.value = 'Tidak ada soal untuk filter ini.'
+    return
+  }
   busy.value = true
   message.value = ''
   try {
     await session.startDrill({
       domain: domain.value || undefined,
       service: service.value || undefined,
-      topic: topic.value || undefined,
       difficulty: difficulty.value || undefined,
-      count: count.value,
+      type: questionType.value || undefined,
+      count: effectiveCount.value,
+      loadAll: countMode.value === 'all',
       feedback: feedback.value,
       mode: 'drill',
     })
@@ -46,6 +96,11 @@ async function start() {
   } finally {
     busy.value = false
   }
+}
+
+function setDomain(code: string) {
+  domain.value = code
+  countMode.value = 'all'
 }
 
 function onSelect(ids: string[]) {
@@ -116,6 +171,7 @@ async function reviewIncorrect() {
   await session.startDrill({
     questionIds: incorrect.value,
     count: incorrect.value.length,
+    loadAll: true,
     feedback: 'immediate',
     mode: 'drill',
   })
@@ -126,55 +182,144 @@ async function reviewIncorrect() {
   <div class="space-y-5">
     <div>
       <h1 class="text-2xl font-semibold tracking-tight">Question drill</h1>
-      <p class="text-sm text-[var(--color-ink-muted)] mt-1">Filter by domain, service, topic, or difficulty.</p>
+      <p class="text-sm text-[var(--color-ink-muted)] mt-1">
+        {{ catalog.total }} soal published · filter domain / service / tipe, lalu load semua atau sebagian.
+      </p>
     </div>
 
     <form
       v-if="!session.current || session.current.mode !== 'drill' || session.current.status !== 'active'"
-      class="grid md:grid-cols-3 gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4"
+      class="space-y-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4"
       @submit.prevent="start"
     >
-      <label class="text-sm">
-        <span class="text-[var(--color-ink-muted)]">Domain code</span>
-        <input v-model="domain" placeholder="D1 / D2 / D3 / D4" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2" />
-      </label>
-      <label class="text-sm">
-        <span class="text-[var(--color-ink-muted)]">Service slug</span>
-        <input v-model="service" placeholder="glue / redshift / kinesis" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2" />
-      </label>
-      <label class="text-sm">
-        <span class="text-[var(--color-ink-muted)]">Topic</span>
-        <input v-model="topic" placeholder="orchestration" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2" />
-      </label>
-      <label class="text-sm">
-        <span class="text-[var(--color-ink-muted)]">Difficulty</span>
-        <select v-model="difficulty" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
-          <option value="">Any</option>
-          <option value="easy">Easy</option>
-          <option value="medium">Medium</option>
-          <option value="hard">Hard</option>
-        </select>
-      </label>
-      <label class="text-sm">
-        <span class="text-[var(--color-ink-muted)]">Feedback</span>
-        <select v-model="feedback" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
-          <option value="immediate">Immediate</option>
-          <option value="delayed">Delayed</option>
-        </select>
-      </label>
-      <label class="text-sm">
-        <span class="text-[var(--color-ink-muted)]">Count</span>
-        <input v-model.number="count" type="number" min="1" max="65" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2" />
-      </label>
-      <div class="md:col-span-3 flex flex-wrap gap-2">
-        <button type="submit" class="rounded-md bg-[var(--color-accent)] text-white px-4 py-2 text-sm font-medium" :disabled="busy">
-          Start practice
+      <div>
+        <div class="text-sm text-[var(--color-ink-muted)] mb-2">Domain</div>
+        <div class="flex flex-wrap gap-2">
+          <button
+            type="button"
+            class="rounded-md border px-3 py-1.5 text-sm"
+            :class="!domain ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)]' : 'border-[var(--color-border)]'"
+            @click="setDomain('')"
+          >
+            Semua ({{ catalog.total }})
+          </button>
+          <button
+            v-for="d in domainOptions"
+            :key="d.code"
+            type="button"
+            class="rounded-md border px-3 py-1.5 text-sm"
+            :class="domain === d.code ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)]' : 'border-[var(--color-border)]'"
+            :title="d.label"
+            @click="setDomain(d.code)"
+          >
+            {{ d.code }} ({{ d.count }})
+          </button>
+        </div>
+        <p v-if="domain && domainNames[domain]" class="mt-2 text-xs text-[var(--color-ink-muted)]">
+          {{ domainNames[domain] }}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-3">
+        <label class="text-sm">
+          <span class="text-[var(--color-ink-muted)]">Service</span>
+          <select v-model="service" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
+            <option value="">Any service</option>
+            <option v-for="s in serviceOptions" :key="s.slug" :value="s.slug">
+              {{ s.slug }} ({{ s.count }})
+            </option>
+          </select>
+        </label>
+        <label class="text-sm">
+          <span class="text-[var(--color-ink-muted)]">Question type</span>
+          <select v-model="questionType" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
+            <option value="">Any type</option>
+            <option value="single">Single ({{ catalog.typeCounts.single || 0 }})</option>
+            <option value="multi">Multi-select ({{ catalog.typeCounts.multi || 0 }})</option>
+          </select>
+        </label>
+        <label class="text-sm">
+          <span class="text-[var(--color-ink-muted)]">Difficulty</span>
+          <select v-model="difficulty" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
+            <option value="">Any</option>
+            <option v-for="(n, key) in catalog.difficultyCounts" :key="key" :value="key">
+              {{ key }} ({{ n }})
+            </option>
+          </select>
+        </label>
+        <label class="text-sm">
+          <span class="text-[var(--color-ink-muted)]">Feedback</span>
+          <select v-model="feedback" class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2">
+            <option value="immediate">Immediate</option>
+            <option value="delayed">Delayed</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="rounded-lg border border-[var(--color-border)] p-3 space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="text-sm font-medium">Jumlah soal</div>
+          <div class="text-sm text-[var(--color-ink-muted)]">
+            cocok filter: <span class="tabular-nums text-[var(--color-ink)]">{{ matchingCount }}</span>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <button
+            type="button"
+            class="rounded-md border px-3 py-1.5 text-sm"
+            :class="countMode === 'all' ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)]' : 'border-[var(--color-border)]'"
+            :disabled="!matchingCount"
+            @click="countMode = 'all'"
+          >
+            Load semua ({{ matchingCount }})
+          </button>
+          <button
+            v-for="p in countPresets"
+            :key="p"
+            type="button"
+            class="rounded-md border px-3 py-1.5 text-sm border-[var(--color-border)]"
+            @click="countMode = 'custom'; customCount = p"
+          >
+            {{ p }}
+          </button>
+          <button
+            type="button"
+            class="rounded-md border px-3 py-1.5 text-sm"
+            :class="countMode === 'custom' ? 'border-[var(--color-accent)] bg-[var(--color-accent)]/10 text-[var(--color-accent)]' : 'border-[var(--color-border)]'"
+            :disabled="!matchingCount"
+            @click="countMode = 'custom'"
+          >
+            Custom
+          </button>
+        </div>
+        <label v-if="countMode === 'custom'" class="block text-sm max-w-xs">
+          <span class="text-[var(--color-ink-muted)]">Custom count (1–{{ matchingCount || 1 }})</span>
+          <input
+            v-model.number="customCount"
+            type="number"
+            min="1"
+            :max="matchingCount || 1"
+            class="mt-1 w-full rounded-md border border-[var(--color-border)] bg-transparent px-3 py-2"
+          />
+        </label>
+        <p class="text-xs text-[var(--color-ink-muted)]">
+          Session akan memuat <span class="tabular-nums font-medium text-[var(--color-ink)]">{{ effectiveCount }}</span> soal (acak dari filter aktif). Tidak ada batas 65.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="submit"
+          class="rounded-md bg-[var(--color-accent)] text-white px-4 py-2 text-sm font-medium disabled:opacity-50"
+          :disabled="busy || !matchingCount"
+        >
+          Start practice ({{ effectiveCount }})
         </button>
         <button type="button" class="rounded-md border border-[var(--color-border)] px-4 py-2 text-sm" @click="reviewIncorrect">
-          Review incorrect
+          Review incorrect ({{ incorrect.length }})
         </button>
       </div>
-      <p v-if="message" class="md:col-span-3 text-sm text-[var(--color-danger)]">{{ message }}</p>
+      <p v-if="message" class="text-sm text-[var(--color-danger)]">{{ message }}</p>
     </form>
 
     <div v-else-if="session.currentQuestion" class="space-y-4">

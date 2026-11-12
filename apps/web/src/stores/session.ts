@@ -62,7 +62,10 @@ export const useSessionStore = defineStore('session', () => {
     service?: string
     topic?: string
     difficulty?: string
+    type?: 'single' | 'multi'
     count?: number
+    /** When true (or count >= pool size), load every matching question. */
+    loadAll?: boolean
     feedback?: FeedbackMode
     timedMinutes?: number
     questionIds?: string[]
@@ -79,6 +82,7 @@ export const useSessionStore = defineStore('session', () => {
         service: opts.service,
         topic: opts.topic,
         difficulty: opts.difficulty,
+        type: opts.type,
         status: 'published',
       })
 
@@ -87,7 +91,10 @@ export const useSessionStore = defineStore('session', () => {
         pool = pool.filter((q) => set.has(q.id))
       }
 
-      const count = opts.count ?? Math.min(10, pool.length)
+      if (!pool.length) throw new Error('No published questions match the selected filters.')
+
+      const loadAll = Boolean(opts.loadAll) || opts.count == null || opts.count >= pool.length
+      const count = loadAll ? pool.length : Math.max(1, Math.min(opts.count!, pool.length))
       const shuffled = [...pool].sort(() => Math.random() - 0.5).slice(0, count)
       if (!shuffled.length) throw new Error('No published questions match the selected filters.')
 
