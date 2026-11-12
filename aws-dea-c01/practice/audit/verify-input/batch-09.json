@@ -1,0 +1,1799 @@
+[
+ {
+  "group_id": "G380",
+  "q_no_in_markdown": [
+   380
+  ],
+  "ids": [
+   "LOC-380"
+  ],
+  "baseline_id": "LOC-380",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs to store semi-structured transactional data for an application in a database. The database must be serverless. The application writes the data infrequently, but it reads the data frequently. The application must retrieve the data within milliseconds. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Store the data in an Amazon S3 Standard bucket. Enable S3 Transfer Acceleration.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Store the data in an Amazon S3 Apache Iceberg table. Enable S3 Transfer Acceleration.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Store the data in an Amazon RDS for MySQL cluster. Configure RDS Optimized Reads for the cluster.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "copy_keys": {
+   "LOC-380": "A"
+  },
+  "copy_sources": {
+   "LOC-380": "examtopics"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-380": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G381",
+  "q_no_in_markdown": [
+   381
+  ],
+  "ids": [
+   "LOC-381"
+  ],
+  "baseline_id": "LOC-381",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company runs concurrent analytical queries on Amazon Redshift tables multiple times each day. The queries require consistent data views three times each day. The company runs extract, transform, and load (ETL) operations that update dimension tables while the queries run. The company has noticed that the queries cause table-level locks during the ETL operations. The company’s current solution experiences query timeouts and deadlocks during peak processing hours, which affects analytical reporting and on-demand analysis. Which solution will fix this issue?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Redshift materialized views for analytical queries. Schedule ETL operations during off-peak hours to minimize lock contention.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Configure Amazon Redshift federated queries to access source data directly. Use read replicas to isolate analytical workloads from ETL operations.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Redshift Spectrum to query data in Amazon S3 for analytical workloads. Maintain ETL operations on Amazon Redshift tables with transaction isolation.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "copy_keys": {
+   "LOC-381": "A"
+  },
+  "copy_sources": {
+   "LOC-381": "examtopics"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-381": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G382",
+  "q_no_in_markdown": [
+   382
+  ],
+  "ids": [
+   "LOC-382"
+  ],
+  "baseline_id": "LOC-382",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A research company stores data in an Amazon Redshift cluster. The company needs to share data between departments and maintain regulatory compliance. The company needs a solution that gives researchers access to only the records from their own departments and does not create multiple dataset copies. The solution must also ensure that personally identifiable information (PII) is protected from unauthorized access. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create a datashare in Amazon Redshift for each department. Use cross-Region data sharing to distribute copies of the entire dataset to each department's Amazon Redshift cluster.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Implement row-level security policies with basic SQL filters based on department. Attach the security policies to the data tables. Grant EXPLAIN RLS permission to authorized researchers.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create separate schemas for each department with appropriate views that filter data. Grant each department access to only their respective schema.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "copy_keys": {
+   "LOC-382": "A"
+  },
+  "copy_sources": {
+   "LOC-382": "examtopics"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-382": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G383",
+  "q_no_in_markdown": [
+   383
+  ],
+  "ids": [
+   "LOC-383"
+  ],
+  "baseline_id": "LOC-383",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company stores analysis results for thousands of daily customer service call transcripts in an Amazon DynamoDB table. An application generates business reports by using only the previous 7 working days of data. To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead? A. Enable TTL on the DynamoDB table. Add an expiration timestamp attribute to each item in the table.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon EventBridge to invoke an AWS Lambda function on a schedule to delete old records every day.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create a new DynamoDB table. Enable TTL on the new table. Migrate the data to the new table. Update the application to use the new table.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "copy_keys": {
+   "LOC-383": "A"
+  },
+  "copy_sources": {
+   "LOC-383": "examtopics"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-383": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G384",
+  "q_no_in_markdown": [
+   384
+  ],
+  "ids": [
+   "LOC-384"
+  ],
+  "baseline_id": "LOC-384",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A global ecommerce company occasionally receives customer data files in its Amazon S3 data lake. The company needs to automatically detect new data and mask sensitive data before making the data available to the company's analytics team. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure Amazon S3 Event Notifications to detect the new data and trigger an AWS Glue job. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift. B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to detect incoming data. Use Amazon EMR workflows to detect and mask sensitive data. Store the processed data in Amazon S3.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Kinesis Data Streams to capture new data. Use Amazon Comprehend to detect and mask the sensitive data. Store the processed data in Amazon DynamoDB tables.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "options_merged_in_one"
+  ],
+  "copy_keys": {
+   "LOC-384": "A"
+  },
+  "copy_sources": {
+   "LOC-384": "examtopics"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-384": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G385",
+  "q_no_in_markdown": [
+   385
+  ],
+  "ids": [
+   "LOC-385"
+  ],
+  "baseline_id": "LOC-385",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer change?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 11/ 35 --- page 575 --- D30PS WORKEDSCENARI02 0F4 query them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with no retention policy set, and the Cloudwatch bill has grown steadily. The security team also needs to run occasional forensic searches over the last thirty days, interactively. Which approach best meets both needs? Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs PAUSE AND DECIDE MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 21/46 --- page 576 --- D30PS WORKED SCENARI0 2 0F 4-WORKED Which approach best meets both needs? Everything in Cloudwatch forever Thirty day retention, export to S3, lifecycle to Meetsbothrequirements atCloudWatchLogsstorage Glacier, query with Athena pricesfor seven years.That is the bill they complained Recent logs stay interactive; archives move to storage about. priced for the access pattern and stay quer...",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Seven years of OpenSearch indices Thirty days only Keepssevenyears of data on a clustersized forsearch,for Solves the cost problem by breaking the regulatory two queries a year. The most expensive option here. requirement. Never theanswer. THE SIGNAL Two access patterns, thirty days and seven years, need two storage tiers. This is module eight's lifecycle argument applied to logs. MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 22/46 --- page 699 --- D4SEC WORKEDSCENARI03 0F 4 A financial services company runs Glue jobs in private subnets. A compliance requirement states that no data may traverse the public internet, and that jobs must be able to reach only two named s3 buckets, not any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and the jobs reach Amazon S3 over the public endpoint.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-385": "A"
+  },
+  "copy_sources": {
+   "LOC-385": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-385": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G386",
+  "q_no_in_markdown": [
+   386
+  ],
+  "ids": [
+   "LOC-386"
+  ],
+  "baseline_id": "LOC-386",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer configure now?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read more than a set Allows expensive queries to run for longer. It is the opposite volume, so a single accidental query cannot run up a large of a guardrail. bill. THE SIGNAL Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards. PRACTICE EXAM 3 admin@sthithapragna.com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-386": "A"
+  },
+  "copy_sources": {
+   "LOC-386": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-386": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G387",
+  "q_no_in_markdown": [
+   387
+  ],
+  "ids": [
+   "LOC-387"
+  ],
+  "baseline_id": "LOC-387",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer configure?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "only copy in a single Availability Zon",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "THE SIGNAL \"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3 admin@sthithapragna.com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-387": "A"
+  },
+  "copy_sources": {
+   "LOC-387": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-387": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G388",
+  "q_no_in_markdown": [
+   388
+  ],
+  "ids": [
+   "LOC-388"
+  ],
+  "baseline_id": "LOC-388",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signatur",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signature. PRACTICE EXAM 3 admin@sthithapragna.com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-388": "A"
+  },
+  "copy_sources": {
+   "LOC-388": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-388": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G389",
+  "q_no_in_markdown": [
+   389
+  ],
+  "ids": [
+   "LOC-389"
+  ],
+  "baseline_id": "LOC-389",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes detection.It is decide, which was the stated problem. the opposite of what therequirement describes. THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both. PRACTICE EXAM 3 admin@sthｉthapragna.com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-389": "A"
+  },
+  "copy_sources": {
+   "LOC-389": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-389": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G390",
+  "q_no_in_markdown": [
+   390
+  ],
+  "ids": [
+   "LOC-390"
+  ],
+  "baseline_id": "LOC-390",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 31/43 --- page 466 --- D2ST0RE",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Here it means a one query in one system the team already runs. second system to run and the filter columns living elsewhere. MemoryDB Athena over document text Lowest latency, at in-memory prices for two million vectors, Keyword matching over files.The whole requirement is and nothing here requires microseconds. finding matches where the wording differs. THE SIGNAL CHOOSING A DATA STORE admin@sthithapragna.com 31/43 --- page 466 --- D2ST0RE",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-390": "A"
+  },
+  "copy_sources": {
+   "LOC-390": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-390": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G391",
+  "q_no_in_markdown": [
+   391
+  ],
+  "ids": [
+   "LOC-391"
+  ],
+  "baseline_id": "LOC-391",
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte fil",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all. PRACTICE EXAM 3 admin@sthithapragna.com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-391": "A"
+  },
+  "copy_sources": {
+   "LOC-391": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-391": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G392",
+  "q_no_in_markdown": [
+   392
+  ],
+  "ids": [
+   "LOC-392"
+  ],
+  "baseline_id": "LOC-392",
+  "type": "single",
+  "choose_n": null,
+  "stem": "Why did the first attempt fail, and what should replace it?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 22 / 24 --- page 183 --- D1INGEST",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Matches the access pattern. reads. Faster than Athena, still the wrong shap",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "THE SIGNAL Compare with scenario 1. There, streaming was overkill. Here, an analytical store is underpowered. Same question, opposite direction. THE MENTAL MODEL admin@sthithapragna.com 22 / 24 --- page 183 --- D1INGEST",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "copy_keys": {
+   "LOC-392": "A"
+  },
+  "copy_sources": {
+   "LOC-392": "pdf_slide_deck"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-392": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G393",
+  "q_no_in_markdown": [
+   393
+  ],
+  "ids": [
+   "LOC-393"
+  ],
+  "baseline_id": "LOC-393",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Around forty microservices produce and consume from it using Kafka client libraries and a schema registry. The operations team spends significant time patching brokers and rebalancing partitions. The company wants to reduce that operational work. Throughput is high, steady and well understood, and the services must not be rewritten. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Msk Serverless",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Amazon Kinesis Data Streams in on-demand",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Amazon MsK Provisioned, migrating the existing",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon Data Firehose delivering to Amazon s3",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-393": "A"
+  },
+  "copy_sources": {
+   "LOC-393": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-393": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G394",
+  "q_no_in_markdown": [
+   394
+  ],
+  "ids": [
+   "LOC-394"
+  ],
+  "baseline_id": "LOC-394",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Aws Glue job reads JsON files from a partner and writes Parquet to a curated table. It has run nightly for a year. Last week the partner added a nested field and changed one integer column to sometimes contain a string. The job now fails on some nights and succeeds on others. When it succeeds, downstream totals are slightly lower than the source system reports. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the number of workers so the job has",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Enable job bookmarks so previously processed",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "files are skipped",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Configure the crawler's schema change policy",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-394": "A"
+  },
+  "copy_sources": {
+   "LOC-394": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-394": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G395",
+  "q_no_in_markdown": [
+   395
+  ],
+  "ids": [
+   "LOC-395"
+  ],
+  "baseline_id": "LOC-395",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A Step Functions state machine starts an Aws Glue job, then runs a Glue crawler, then every night. Analysts report that the crawler sometimes registers only part of the day's data, and the What is the most likely cause?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The Lambda function is timing out before the",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "The crawler needs a longer schedule interval",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "summary is written",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "The Glue job is being invoked with the default",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-395": "A"
+  },
+  "copy_sources": {
+   "LOC-395": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-395": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G396",
+  "q_no_in_markdown": [
+   396
+  ],
+  "ids": [
+   "LOC-396"
+  ],
+  "baseline_id": "LOC-396",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A nightly Aws Glue job processes about four hundred gigabytes and takes ninety minutes. It at two. The company wants to reduce cost. evenly utilised throughout. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Migrate the job to Amazon EMR on EC2 with Spot",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Run the job on Glue Flex execution",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Switch to memory-optimised R workers",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Reduce the worker count to five and accept a",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-396": "A"
+  },
+  "copy_sources": {
+   "LOC-396": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-396": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G397",
+  "q_no_in_markdown": [
+   397
+  ],
+  "ids": [
+   "LOC-397"
+  ],
+  "baseline_id": "LOC-397",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retailer sends clickstream events to Amazon Data Firehose, which writes raw JsoN to Amazon S3 in a single prefix. Analysts query the data with Amazon Athena and costs are rising steeply. A fraud team has now also asked to consume the same events within seconds, independently. The team wants to address both the query cost and the fraud team's requirement. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the Firehose buffer size so fewer, larger",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Enable Firehose format conversion to Parquet",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "files are written",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "with dynamic partitioning, and add a second",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-397": "A"
+  },
+  "copy_sources": {
+   "LOC-397": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-397": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G398",
+  "q_no_in_markdown": [
+   398
+  ],
+  "ids": [
+   "LOC-398"
+  ],
+  "baseline_id": "LOC-398",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An AwS Lambda function converts small JsON files to Parquet as they arrive in Amazon S3. It is configured with 5l2 MB of memory and takes about twenty five seconds per file. CloudWatch shows peak memory usage of around 2o0 MB. The conversion is CPU bound. The company processes around one hundred thousand files a month and wants to reduce the Lambda cost. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the memory allocation, measure the",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Reduce the memory allocation to 256 MB to",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "change in duration, and select the cheapest",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "match observed usage",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-398": "A"
+  },
+  "copy_sources": {
+   "LOC-398": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-398": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G399",
+  "q_no_in_markdown": [
+   399
+  ],
+  "ids": [
+   "LOC-399"
+  ],
+  "baseline_id": "LOC-399",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company stores sensor readings in Amazon s3. Objects average 30 kilobytes. Data is queried frequently for fourteen days, then very rarely, but must be retained for five years for regulatory reasons. A data engineer proposes a lifecycle rule transitioning objects to s3 Standard-lnfrequent Access after fourteen days, and expiring them after five years. What is the problem with this proposal?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Standard-IA retrieval takes several hours, which",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Standard-iA cannot be used for objects",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "is too slow for regulatory access",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "retained longer than one year",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-399": "B"
+  },
+  "copy_sources": {
+   "LOC-399": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-399": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G400",
+  "q_no_in_markdown": [
+   400
+  ],
+  "ids": [
+   "LOC-400"
+  ],
+  "baseline_id": "LOC-400",
+  "type": "single",
+  "choose_n": null,
+  "stem": "Amazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over eight months, query times have roughly tripled and storage costs have grown faster than the underlying data volume. The platform team is two people supporting twenty pipelines and has no capacity to build and operate maintenance jobs. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the Firehose buffer interval to reduce",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Migrate the tables to Amazon s3 Tables, which",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "the number of files written",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "performs compaction and snapshot",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-400": "A"
+  },
+  "copy_sources": {
+   "LOC-400": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-400": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G401",
+  "q_no_in_markdown": [
+   401
+  ],
+  "ids": [
+   "LOC-401"
+  ],
+  "baseline_id": "LOC-401",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Amazon Redshift cluster holds a three billion row events table and a fifty thousand row campaigns table. Almost every query joins the two on campaign ID and filters on an event date range covering the last seven days. Both tables currently use EVEN distribution and neither has a sort key. Monitoring shows heavy data redistribution during joins. Which combination will most improve performance?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Enable concurrency scaling on the cluster",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Add four more nodes to the cluster",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Set both tables to KEY distribution on campaign",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Set the events table toKEY distribution on",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-401": "C"
+  },
+  "copy_sources": {
+   "LOC-401": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-401": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G402",
+  "q_no_in_markdown": [
+   402
+  ],
+  "ids": [
+   "LOC-402"
+  ],
+  "baseline_id": "LOC-402",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An application stores orders in Amazon DynamoDB with order ID as the partition key. A new requirement is to list all orders for a given customer, sorted by order date. The table already holds two hundred million items. Reads for this new pattern do not need to reflect the most recent write immediately. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "global secondary index partitioned by",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "local secondary index with customer ID as the",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "customerID and sorted by order date",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Scanwith a filter expressiononcustomer ID",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-402": "B"
+  },
+  "copy_sources": {
+   "LOC-402": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-402": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G403",
+  "q_no_in_markdown": [
+   403
+  ],
+  "ids": [
+   "LOC-403"
+  ],
+  "baseline_id": "LOC-403",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A Glue job writes hourly output to Amazon S3 under Hive-style partitions. A crawler runs every ten minutes to register new partitions so Athena users can query recent data. Finance has flagged the crawler's cost, and analysts still wait up to ten minutes for new data to appear. The table is also queried by Amazon Redshift Spectrum. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Reduce the crawler schedule to every three",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Configure partition projection on the table in",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "EnableenableUpdateCatalogontheGlue job",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "RunMSCK REPAIRTABLEona scheduleinstead of",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-403": "B"
+  },
+  "copy_sources": {
+   "LOC-403": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-403": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G404",
+  "q_no_in_markdown": [
+   404
+  ],
+  "ids": [
+   "LOC-404"
+  ],
+  "baseline_id": "LOC-404",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A nightly Aws Glue job loads data into Amazon Redshift. An operations team has a Cloudwatch alarm on the job's failed run count. It has worked for eighteen months. During a recent change, the EventBridge rule that triggers the job was disabled. The job did not run for three nights. No alarm fired, and the problem was found when a business user noticed stale figures. What change would have detected this?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Lower the failure alarm threshold to fire on a",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Enable Aws CloudTrail so the rule change is",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "single failed run",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create an alarm on the job's succeeded run",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-404": "A"
+  },
+  "copy_sources": {
+   "LOC-404": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-404": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G405",
+  "q_no_in_markdown": [
+   405
+  ],
+  "ids": [
+   "LOC-405"
+  ],
+  "baseline_id": "LOC-405",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A Glue pipeline joins transactions to a merchant reference table before loading a warehouse. Finance reports that monthly revenue is consistently around half a percent below the source system. The job succeeds every night and row counts between the job's output and the warehouse match exactly. New merchant codes are added to the source system regularly. What is the most likely cause, and which check would detect it?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The row count check is sufficient, so the source",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "The job is running out of memory and dropping",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "system figure must be wrong",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "records. A Cloudwatch memory alarm would",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-405": "A"
+  },
+  "copy_sources": {
+   "LOC-405": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-405": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G406",
+  "q_no_in_markdown": [
+   406
+  ],
+  "ids": [
+   "LOC-406"
+  ],
+  "baseline_id": "LOC-406",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Amazon Redshift cluster serves dashboards for two hundred analysts each weekday morning. Users report slowness during the busiest hour. Query history shows execution times snuw aa o aaue to sa m nanb puo 'spuooas fu b puo auo punon o ass during that hour. An overnight transformation job sometimes overruns into the morning. Which combination best addresses this?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Enable concurrency scaling on the dashboard",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Add sort and distribution keys to the dashboard",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "queue and set WLM query priority above the",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "transformation workload",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-406": "A"
+  },
+  "copy_sources": {
+   "LOC-406": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-406": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G407",
+  "q_no_in_markdown": [
+   407
+  ],
+  "ids": [
+   "LOC-407"
+  ],
+  "baseline_id": "LOC-407",
+  "type": "single",
+  "choose_n": null,
+  "stem": "bucket policy grants the partner's role s3:GetObject, and the partner's role policy allows the subsequent KMs Decrypt call being denied. What is missing?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The KMs key policy does not permit the partner's",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "The objects must be re-encrypted with sSE-s3",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "role to use the key",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "for cross-account access",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-407": "A"
+  },
+  "copy_sources": {
+   "LOC-407": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-407": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G408",
+  "q_no_in_markdown": [
+   408
+  ],
+  "ids": [
+   "LOC-408"
+  ],
+  "baseline_id": "LOC-408",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A bank stores customer records in Amazon S3, catalogued in Aws Glue and queried with Amazon Athena. A modelling team must analyse transaction behaviour but must never see customer name, address or account number. A data engineer proposes writing an IAM policy for the modelling team's role that denies access to those three columns. Why will this not work, and what should be done?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Encrypt the three columns with a KMS key the",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "IAM cannot express column-level permissions.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "modelling team cannot use",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use Aws Lake Formation column-level grants or",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-408": "A"
+  },
+  "copy_sources": {
+   "LOC-408": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-408": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G409",
+  "q_no_in_markdown": [
+   409
+  ],
+  "ids": [
+   "LOC-409"
+  ],
+  "baseline_id": "LOC-409",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Aws Glue job connects to a third-party analytics APl using an APl key, and to Amazon Redshift using a database password. Both are currently stored as Glue job parameters. A security review requires that both credentials are stored outside the job definition, and that the Redshift password is rotated automatically every thirty days. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Store both in Systems Manager Parameter Store",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Store both in Aws Secrets Manager, with",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "as Securestring parameters",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "rotation enabled ontheRedshiftsecret",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-409": "B"
+  },
+  "copy_sources": {
+   "LOC-409": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-409": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G410",
+  "q_no_in_markdown": [
+   410
+  ],
+  "ids": [
+   "LOC-410"
+  ],
+  "baseline_id": "LOC-410",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A healthcare provider must keep all patient data within one country. The data lake and An audit finds that Redshift snapshots are copied to a second Region for disaster recovery, and that an Athena workgroup writes query results to a bucket in a third Region created several years ago. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Encrypt the snapshots and query results so their",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Apply Lake Formation row-level filters to the",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "location is no longer material",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "affected tables",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-410": "C"
+  },
+  "copy_sources": {
+   "LOC-410": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-410": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G411",
+  "q_no_in_markdown": [
+   411
+  ],
+  "ids": [
+   "LOC-411"
+  ],
+  "baseline_id": "LOC-411",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A payments company streams card transactions into Amazon Kinesis Data Streams. A new requirement is to detect, within seconds, when a single card is used more than five times in ananb wbansumop p o pbo asoue ysllqnd o pup 'mopuim anu om Kun The team wants to avoid building and operating stream processing infrastructure. What should the data engineer use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Managed Service for Apache Flink with",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Amazon Data Firehose delivering to Amazon S3,",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "a two minute tumbling window",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "with a scheduled Glue job checking for the",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-411": "A"
+  },
+  "copy_sources": {
+   "LOC-411": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-411": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G412",
+  "q_no_in_markdown": [
+   412
+  ],
+  "ids": [
+   "LOC-412"
+  ],
+  "baseline_id": "LOC-412",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Aws Glue job reads a growing Amazon s3 prefix every night and writes aggregates to a curated table. Input volume has grown from two hundred gigabytes to four terabytes over Files are only ever added to the prefix; existing files are never modified. Each run reprocesses the entire prefix. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the number of workers so the job",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Enable job bookmarks so each run processes",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "completes in the original time",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "only files added since the last run",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-412": "B"
+  },
+  "copy_sources": {
+   "LOC-412": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-412": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G413",
+  "q_no_in_markdown": [
+   413
+  ],
+  "ids": [
+   "LOC-413"
+  ],
+  "baseline_id": "LOC-413",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company runs an Amazon EMR cluster on EC2 continuously. It executes a four hour Apache Hive job each night and is otherwise idle. Intermediate data is written to HDFS on the core nodes, and the team has a large body of existing Hive scripts. be rewritten. Which combination reduces cost the most?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Migrate the Hive scripts to Aws Glue and run",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Move all core nodes to Spot Instances and keep",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "them as Spark jobs",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "the cluster running",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-413": "A"
+  },
+  "copy_sources": {
+   "LOC-413": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-413": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G414",
+  "q_no_in_markdown": [
+   414
+  ],
+  "ids": [
+   "LOC-414"
+  ],
+  "baseline_id": "LOC-414",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A pipeline converts uploaded video metadata files into a normalised format. Each file takes between eight and forty minutes to process depending on size, and processing is single- The current implementation is an Aws Lambda function, and the longer files now fail. What should the data engineer use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the Lambda function's timeout and",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "An Amazon EMR cluster with a step per file",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "memory allocation",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Aws Batch, running each file as a containerised",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-414": "A"
+  },
+  "copy_sources": {
+   "LOC-414": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-414": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G415",
+  "q_no_in_markdown": [
+   415
+  ],
+  "ids": [
+   "LOC-415"
+  ],
+  "baseline_id": "LOC-415",
+  "type": "single",
+  "choose_n": null,
+  "stem": "S3 daily, with field mapping and light filtering applied. A developer has proposed writing a Lambda function that calls the Salesforce REST APl, handles pagination, manages OAuth token refresh and retries, and writes JsoN to Amazon s3. The team wants to minimise the code they build and maintain. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon AppFlow, with a scheduled flow",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Build the Lambda function as proposed, with",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "performing the mapping and filtering",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "EventBridge Scheduler triggering it daily",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-415": "B"
+  },
+  "copy_sources": {
+   "LOC-415": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-415": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G416",
+  "q_no_in_markdown": [
+   416
+  ],
+  "ids": [
+   "LOC-416"
+  ],
+  "baseline_id": "LOC-416",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retailer writes order events to Amazon Kinesis Data Streams using store ID as the partition key. The chain has four hundred stores, but one flagship store generates around thirty percent of all events. Producers receive throttling errors during peak hours while total stream utilisation is around forty percent. The team has already increased the shard count twice without improvement. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the shard count again",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Switch the stream to on-demand capacity",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use a composite partition key combining store",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Enableenhancedfan-outfortheconsumers",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-416": "C"
+  },
+  "copy_sources": {
+   "LOC-416": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-416": []
+  },
+  "alt_option_sets": []
+ }
+]

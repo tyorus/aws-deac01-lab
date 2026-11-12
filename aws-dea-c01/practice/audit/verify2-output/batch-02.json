@@ -1,0 +1,289 @@
+[
+ {
+  "group_id": "G204",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan Redshift streaming ingestion: buat external schema yang memetakan Kinesis Data Streams, buat materialized view di atas stream dan aktifkan AUTO REFRESH sehingga data masuk langsung ke Redshift tanpa staging S3.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Redshift menyatakan streaming ingestion membaca langsung dari Kinesis Data Streams ke materialized view tanpa landing area sementara seperti S3, dan satu refresh dapat mengingest ratusan MB per detik. AUTO REFRESH dapat diaktifkan pada MV streaming sehingga data selalu near real-time dan dapat diakses oleh alat BI yang sudah ada. Opsi A/D/E (Firehose/S3 + COPY) menambah komponen dan latensi; opsi B mengada-ada (tidak ada materialized view langsung pada stream tanpa external schema).",
+  "docs_opened": ["https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-streaming-ingestion.html"],
+  "docs_unreachable": [],
+  "notes": "Set opsi utama terpotong/tercampur (D terpotong, E adalah lanjutan D dengan salah ketik 'Redshiffl'); alt_option_sets memberi 4 opsi bersih dan C tetap jawabannya."
+ },
+ {
+  "group_id": "G210",
+  "answer": "AB",
+  "answer_status": "determined",
+  "correct_solution_summary": "Buat Glue crawler mode S3 event (mengonsumsi event dari antrean SQS) dan jalankan crawler tersebut dengan jadwal berbasis waktu sehingga hanya folder yang berubah yang di-crawl secara inkremental.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Glue: 'The Amazon S3 event crawl runs by consuming Amazon S3 events from the SQS queue based on the crawler schedule', dan setelah crawl pertama crawler dapat dijalankan manual atau dengan jadwal; hanya objek dari event yang di-list. Jadi A (crawler event-based) dan B (jadwal) memberi pembaruan inkremental dengan overhead paling rendah. C (Lambda yang memperbarui Data Catalog langsung) dan E (Step Functions) butuh kode/orkestrasi kustom, D (manual) tidak otomatis.",
+  "docs_opened": ["https://docs.aws.amazon.com/glue/latest/dg/crawler-s3-event-notifications.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber 'AC' tampak keliru: C adalah solusi kustom dengan overhead tinggi. Pasangan lain yang masuk akal secara teknis hanya A+B (jadwal diperlukan agar crawler mengonsumsi SQS). Ada sedikit ambiguitas soal maksud 'incremental' pada B."
+ },
+ {
+  "group_id": "G211",
+  "answer": null,
+  "answer_status": "flawed_question",
+  "correct_solution_summary": "Query yang benar seharusnya memfilter errorcode IS NOT NULL dan eventtime >= '2024-01-01T00:00:00Z' lalu ORDER BY eventtime DESC LIMIT 10 untuk mendapat 10 error paling baru.",
+  "confidence": "medium",
+  "reasoning": "Stem meminta 10 error TERBARU sejak awal 2024, sehingga query perlu filter errorcode tidak null, filter eventtime, dan pengurutan menurun berdasarkan eventtime. Tidak ada opsi yang menggunakan ORDER BY eventtime DESC: A mengurutkan berdasarkan jumlah kejadian (TotalEvents), B/C tidak memfilter errorcode, C mengurutkan berdasarkan nama event, D tanpa ORDER BY. Halaman dokumentasi Athena untuk CloudTrail mengonfirmasi tabel CloudTrail memiliki kolom eventtime/errorcode yang dapat dikueri langsung dari S3.",
+  "docs_opened": ["https://docs.aws.amazon.com/athena/latest/ug/cloudtrail-logs.html"],
+  "docs_unreachable": [],
+  "notes": "Opsi terdekat dengan maksud soal dan kunci sumber adalah A (satu-satunya yang memfilter errorcode IS NOT NULL dan eventtime sekaligus dengan ORDER BY dan LIMIT), tetapi mengurutkan menurut frekuensi, bukan waktu. Kemungkinan soal asli salah ketik/kunci dibuat longgar. Jika harus memilih, pilih A."
+ },
+ {
+  "group_id": "G223",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Filter tahun harus diterapkan dengan benar terhadap kolom tanggal/waktu (extract(year FROM <kolom tanggal>) = 2023) alih-alih membandingkan kolom 'year' yang tidak sesuai dengan data/partisi.",
+  "confidence": "low",
+  "reasoning": "Masalah ada di klausa WHERE: kolom/partisi 'year' tidak menyaring data secara benar sehingga produk tertentu tidak muncul. Mengganti agregasi (A), menambah HAVING (C), atau menghapus GROUP BY (D/E) tidak memperbaiki penyaringan baris tahun 2023; hanya B yang mengubah predikat penyaringan tahun. Dokumentasi Athena tentang partisi menegaskan hanya partisi/kolom yang dirujuk di WHERE yang dipindai, sehingga predikat harus sesuai struktur data.",
+  "docs_opened": ["https://docs.aws.amazon.com/athena/latest/ug/partitions.html"],
+  "docs_unreachable": [],
+  "notes": "Soal cacat sebagian: opsi B menulis extract(year FROM sales_data) padahal sales_data adalah nama tabel (seharusnya kolom tanggal); stem juga berisi teks duplikat/terpotong akibat scrape. Opsi E duplikat D (terpotong). B tetap satu-satunya yang memperbaiki predikat, kunci sumber juga B."
+ },
+ {
+  "group_id": "G238",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan CTAS dengan WITH NO DATA: CREATE TABLE new_table AS SELECT * FROM old_table WITH NO DATA; yang membuat tabel kosong dengan skema yang sama.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Athena CREATE TABLE AS: 'If WITH NO DATA is used, a new empty table with the same schema as the original table is created.' Opsi tanpa WITH NO DATA (SELECT * FROM old_table, atau WHERE 1=1) akan menyalin 1.000 baris. Sintaks CREATE TABLE ... LIKE tidak ada pada sintaks CREATE TABLE Athena yang dibaca di dokumentasi, sehingga opsi LIKE bukan jawaban.",
+  "docs_opened": [
+    "https://docs.aws.amazon.com/athena/latest/ug/create-table-as.html",
+    "https://docs.aws.amazon.com/athena/latest/ug/create-table.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Label hasil scrape rusak (potongan baris dipecah ke label A..M dengan duplikat B/C/D). Setelah direkonstruksi ada 4 opsi logis: A=CREATE TABLE ... LIKE old_table; B=CTAS ... WITH NO DATA; C=CTAS ... FROM old_table; D=CTAS ... WHERE 1=1. Jawaban 'B' merujuk pada opsi logis kedua (CTAS WITH NO DATA), sesuai kunci sumber. Tipe 'multi' tanpa choose_n adalah artefak; sebenarnya single."
+ },
+ {
+  "group_id": "G257",
+  "answer": "AC",
+  "answer_status": "determined",
+  "correct_solution_summary": "Tempatkan cluster Redshift di private subnet dengan akses privat (interface VPC endpoint/NAT untuk S3) dan aktifkan enhanced VPC routing serta konektivitas privat (Direct Connect) dari tiap penyedia data ke VPC perusahaan sehingga lalu lintas tidak melewati internet publik.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi menyatakan dengan enhanced VPC routing Redshift mengarahkan trafik melalui VPC, dan akses S3/Glue untuk data lake memerlukan endpoint S3 gateway/Glue interface atau NAT gateway; NAT gateway disebut sebagai jalur ke S3. Direct Connect memberi koneksi privat dari tiap penyedia ke VPC tanpa internet publik. Opsi B (CloudHSM per penyedia) tidak relevan dengan isolasi akses, D (constraint PK/FK) tidak menyangkut keamanan jaringan, dan E salah karena gateway VPC endpoint hanya untuk S3/DynamoDB, bukan untuk federated query.",
+  "docs_opened": ["https://docs.aws.amazon.com/redshift/latest/mgmt/spectrum-enhanced-vpc.html"],
+  "docs_unreachable": [],
+  "notes": "Soal hasil rancangan ujian dengan opsi yang kurang rapi (A memakai NAT gateway untuk S3 padahal gateway endpoint lebih lazim). Kombinasi AC adalah yang paling konsisten dengan stem; confidence medium."
+ },
+ {
+  "group_id": "G263",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Pakai Kinesis Data Streams dengan consumer kustom (KCL) yang menulis ke S3 dengan buffer ~5 detik, sehingga data mendarat jauh lebih cepat daripada buffer default Firehose (300 detik).",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Firehose: BufferingHints default IntervalInSeconds = 300 dan buffer 5 MB, sehingga opsi A terlalu lambat untuk pembaca yang menarik data tiap 30 detik; opsi B (Kinesis Data Streams saja) tidak bisa mengirim langsung ke S3. Firehose sebenarnya mendukung buffer hingga 0 detik, tetapi opsi D menambah lapisan Managed Service for Apache Flink yang menambah latensi dan kompleksitas, sedangkan C hanya memakai buffer 5 detik dari aplikasi KCL.",
+  "docs_opened": [
+    "https://docs.aws.amazon.com/firehose/latest/APIReference/API_BufferingHints.html",
+    "https://aws.amazon.com/about-aws/whats-new/2023/12/amazon-kinesis-data-firehose-zero-buffering/",
+    "https://docs.aws.amazon.com/firehose/latest/APIReference/API_CreateDeliveryStream.html"
+  ],
+  "docs_unreachable": [
+    "https://docs.aws.amazon.com/firehose/latest/dev/buffering-hints.html",
+    "https://docs.aws.amazon.com/firehose/latest/dev/create-configure.html"
+  ],
+  "notes": "Ambigu antara C dan D karena sama-sama buffer 5 detik; C dipilih karena tidak ada hop Flink tambahan dan sesuai kunci sumber. Firehose kini mendukung zero buffering (interval 0 detik) sehingga jawaban lebih mutakhir bisa Firehose tanpa buffer, tetapi tidak ada opsi demikian."
+ },
+ {
+  "group_id": "G279",
+  "answer": "AC",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan Redshift Federated Query untuk data live di Aurora PostgreSQL, serta UNLOAD data lebih dari 15 bulan ke S3 (hapus dari Redshift) dan akses lewat Redshift Spectrum.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi: federated query dapat bekerja dengan Amazon Aurora PostgreSQL dan menggabungkan data live dengan query Redshift dan S3. Redshift Spectrum membaca file di S3 tanpa memuatnya ke tabel, dan UNLOAD menulis hasil query ke S3. Opsi B salah karena Spectrum tidak membaca PostgreSQL, D salah karena Spectrum tidak dapat membaca S3 Glacier Flexible Retrieval secara langsung, E tidak dapat menggabungkan live/historis dengan MV sederhana.",
+  "docs_opened": [
+    "https://docs.aws.amazon.com/redshift/latest/dg/federated-overview.html",
+    "https://docs.aws.amazon.com/redshift/latest/dg/c-using-spectrum.html",
+    "https://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber hanya 'A' (tidak lengkap untuk soal choose 2); AC adalah pasangan benar."
+ },
+ {
+  "group_id": "G281",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan Athena (serverless, bayar per query) dengan Glue Data Catalog/tabel di workgroup untuk mengeksplorasi dan meng-catalog JSON di S3 langsung tanpa memuatnya ke Redshift.",
+  "confidence": "low",
+  "reasoning": "Athena serverless dan dapat menjalankan Apache Spark tanpa perencanaan/pengelolaan sumber daya (dokumentasi Athena Spark), sehingga tidak ada biaya klaster/data warehouse dan tidak perlu ETL. Opsi A dan D mengingest data ke Redshift Serverless (biaya komputasi/penyimpanan tambahan plus Glue/Step Functions/Lambda), dan B memakai klaster Redshift provisioned yang paling mahal. Karena struktur JSON dapat berubah, query-in-place di S3 lebih murah dan lebih fleksibel.",
+  "docs_opened": ["https://docs.aws.amazon.com/athena/latest/ug/notebooks-spark.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber 'A' bertentangan dengan analisis biaya; keputusan C berdasarkan 'MOST cost-effective'. Ambigu: opsi C tidak menyebut crawler/Glue Data Catalog secara eksplisit (catalog Athena memakai Glue Data Catalog), dan A mengeksplisitkan 'Data Catalog + Schema Registry'. Confidence rendah."
+ },
+ {
+  "group_id": "G289",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "Untuk data gzip yang jarang di-query (audit), simpan di S3 Glacier Instant Retrieval (biaya penyimpanan rendah, akses milidetik) dan query dengan Athena; hindari Glacier Select/S3 Select yang sudah tertutup/deprecated.",
+  "confidence": "low",
+  "reasoning": "Dokumentasi S3 Select: tidak lagi tersedia untuk pelanggan baru, hanya dapat query satu objek per request, dan tidak dapat query objek Glacier Flexible Retrieval/Deep Archive; ini membuat A dan B kurang tepat untuk dataset transaksi. Athena dapat membaca data terkompresi (gzip) di S3 tanpa mengelola server, dan untuk audit yang jarang, Glacier Instant Retrieval menurunkan biaya penyimpanan dibanding S3 Standard sambil tetap dapat dikueri langsung (Athena hanya meminta restore untuk Flexible Retrieval/Deep Archive).",
+  "docs_opened": [
+    "https://docs.aws.amazon.com/AmazonS3/latest/userguide/selecting-content-from-objects.html",
+    "https://docs.aws.amazon.com/athena/latest/ug/querying-glacier.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Ambigu (C vs D vs B sumber). S3 Select dan S3 Glacier Select deprecated/tertutup untuk pelanggan baru. Pilihan D didasarkan pada biaya penyimpanan rendah untuk akses jarang; jika audit lebih sering, C (S3 Standard + Athena) bisa lebih murah karena tidak ada biaya retrieval. 'Amazon Glacier Instant Retrieval' adalah salah nama untuk S3 Glacier Instant Retrieval."
+ },
+ {
+  "group_id": "G306",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan Amazon Redshift Data API: endpoint HTTP aman yang menjalankan SQL tanpa mengelola koneksi/driver database, cocok untuk dipanggil langsung dari aplikasi web.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Data API: 'doesn't require a persistent connection', menyediakan secure HTTP endpoint dan integrasi dengan AWS SDK sehingga dapat menjalankan SQL tanpa mengelola koneksi. Ini memberi overhead operasional paling kecil dibanding JDBC (perlu driver, connection pool, jaringan). WebSocket tidak didukung Redshift dan S3 Select tidak dapat meng-query data Redshift.",
+  "docs_opened": ["https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber kosong. Catatan: S3 Select tertutup untuk pelanggan baru (opsi D juga tidak relevan)."
+ },
+ {
+  "group_id": "G309",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Konversi CSV ke format kolumnar Apache Parquet (dengan kompresi Snappy) karena query hanya memilih kolom tertentu.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Athena menyatakan Parquet/ORC memakai kompresi per kolom, predicate pushdown, dan splitting yang meningkatkan paralelisme sehingga hanya blok/kolom yang dibutuhkan yang dibaca. Kompresi saja (Snappy/gzip pada CSV) atau konversi ke JSON (A) tidak memberi manfaat pemilihan kolom. Parquet dapat dibuat lewat CTAS atau Glue job.",
+  "docs_opened": ["https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber kosong."
+ },
+ {
+  "group_id": "G314",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan AWS Database Migration Service (DMS) untuk migrasi SQL Server on-premises ke RDS for SQL Server dengan downtime minimal (full load + replikasi perubahan) dan biaya pay-as-you-go.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi DMS: dapat melakukan migrasi sekali jalan atau mereplikasi perubahan berkelanjutan untuk menjaga sumber dan target tetap sinkron, memakai model pay-as-you-go, dan mengelola infrastruktur replikasi otomatis. Lambda bukan layanan migrasi database, Direct Connect hanya konektivitas jaringan, dan DataSync untuk transfer file/objek, bukan migrasi database.",
+  "docs_opened": ["https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber kosong."
+ },
+ {
+  "group_id": "G320",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan transform Detect PII di AWS Glue Studio untuk mendeteksi sekaligus menyamarkan PII (redact/hash) dalam pipeline Glue, diorkestrasi dengan Step Functions.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Glue: transform Detect PII dapat mendeteksi, menyamarkan (redact, partial redact) atau melakukan SHA-256 hash pada entitas PII, sehingga tidak perlu fungsi kustom. Glue Data Quality (opsi C/E) adalah untuk aturan validasi kualitas data, bukan untuk menyamarkan PII. Opsi A (Firehose + Lambda + SDK) dan D (DynamoDB + Lambda) membutuhkan kode kustom dan upaya operasional jauh lebih besar.",
+  "docs_opened": ["https://docs.aws.amazon.com/glue/latest/dg/detect-PII.html"],
+  "docs_unreachable": [],
+  "notes": "Opsi B dalam teks scrape kurang jelas ('Obfuscate the PII.' berdiri sendiri; tampaknya merujuk pada aksi Detect PII). Opsi E adalah gabungan C+D hasil scrape rusak (duplikat). Kunci sumber kosong."
+ },
+ {
+  "group_id": "G330",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan state Map (mode Distributed untuk dataset besar) untuk menjalankan langkah transformasi yang sama secara paralel pada setiap item/file.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Step Functions: state Map menjalankan sekumpulan langkah untuk setiap item dalam dataset dan iterasinya berjalan paralel; mode Distributed mendukung hingga 10.000 eksekusi child paralel dan dapat membaca daftar objek S3 atau CSV. State Parallel menjalankan cabang tetap berbeda, bukan iterasi atas koleksi dinamis; Choice dan Wait tidak untuk pemrosesan paralel.",
+  "docs_opened": ["https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber kosong."
+ },
+ {
+  "group_id": "G350",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan Amazon AppFlow, layanan terkelola penuh untuk memindahkan data dari aplikasi SaaS ke S3 dan Redshift tanpa kode.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi AppFlow: layanan integrasi terkelola penuh untuk bertukar data antara aplikasi SaaS (misalnya Salesforce, Zendesk) dan layanan AWS seperti S3 dan Redshift, dapat dijadwalkan atau on-demand tanpa menulis kode. MSK dan Kinesis adalah layanan streaming yang butuh producer/konektor kustom, dan Glue Data Catalog hanya metadata.",
+  "docs_opened": ["https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber kosong."
+ },
+ {
+  "group_id": "G353",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan scheduled queries di Redshift query editor v2 untuk menjalankan REFRESH MATERIALIZED VIEW secara otomatis sesuai jadwal dengan usaha minimal.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi query editor v2: scheduled queries menjalankan pernyataan SQL otomatis pada waktu/interval tertentu, termasuk untuk menyegarkan dashboard dan rutinitas data, sehingga REFRESH MATERIALIZED VIEW dapat dijadwalkan tanpa infrastruktur tambahan. Airflow (A) dan Glue workflow (D) memerlukan setup/pengelolaan tambahan, dan Lambda UDF (B) bukan mekanisme penjadwalan.",
+  "docs_opened": [
+    "https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-schedule-query.html",
+    "https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-refresh.html"
+  ],
+  "docs_unreachable": ["https://docs.aws.amazon.com/redshift/latest/dg/mv-auto-mv.html"],
+  "notes": "Redshift juga punya AUTO REFRESH bawaan pada materialized view (tidak ada di opsi). Opsi 'F' hasil scrape hanyalah pecahan teks B-D (artefak). Kunci sumber kosong."
+ },
+ {
+  "group_id": "G369",
+  "answer": null,
+  "answer_status": "correct_option_missing",
+  "correct_solution_summary": "Gunakan tabel format terbuka transaksional (misalnya Apache Iceberg) di S3 dengan job AWS Glue Apache Spark yang melakukan MERGE (upsert) hanya untuk perubahan harian, bukan menulis ulang seluruh tabel.",
+  "confidence": "medium",
+  "reasoning": "Opsi A, B, C menyebut 'Spark/Pandas update method' pada DataFrame, padahal DataFrame bersifat immutable dan tidak punya operasi update in-place pada file S3; Pandas pada satu node juga tidak skalabel untuk 1 TB. Dokumentasi Glue menjelaskan dukungan Iceberg (Glue 3.0+), format tabel yang mendukung operasi tulis/perubahan sehingga hanya file terpengaruh yang ditulis ulang, jauh lebih cepat untuk 10.000 perubahan. Opsi benar (kemungkinan D) tidak terlihat.",
+  "docs_opened": ["https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-format-iceberg.html"],
+  "docs_unreachable": [],
+  "notes": "Hanya 3 dari 4 opsi tampak; kunci sumber 'D' hilang. Isi D tidak diketahui sehingga tidak ditebak. Halaman Glue-Iceberg menyatakan 'Update is not supported' untuk jalur DataFrame/API tertentu, tetapi MERGE INTO via Spark SQL pada Iceberg adalah pendekatan standar."
+ },
+ {
+  "group_id": "G371",
+  "answer": null,
+  "answer_status": "correct_option_missing",
+  "correct_solution_summary": "Untuk partisi year/month/day yang teratur, partition projection di Athena menghitung partisi dari properti tabel Glue sehingga tidak perlu membuat partisi manual setiap hari; alternatifnya crawler Glue terjadwal harian.",
+  "confidence": "low",
+  "reasoning": "Dokumentasi Athena: partition projection menghitung nilai dan lokasi partisi dari properti tabel dan 'removes the need to manually create partitions in Athena, AWS Glue'. Opsi C yang terlihat konsisten dengan ini, tetapi stem menyebut 'create the partitions every day to adjust to schema changes', yang lebih mengarah pada mekanisme yang membuat partisi/mendeteksi perubahan skema secara terjadwal. Kunci sumber 'D' menunjuk opsi yang tidak terlihat sehingga tidak dapat dipastikan.",
+  "docs_opened": [
+    "https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html",
+    "https://docs.aws.amazon.com/athena/latest/ug/partitions.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi D hilang (options_lt4); teks opsi A tercemar stem. C (partition projection) adalah alternatif valid secara teknis dan mungkin jawaban jika kunci sumber salah, tetapi tidak cukup bukti. Disarankan memverifikasi dari salinan lain soal ini."
+ },
+ {
+  "group_id": "G372",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Buat data protection policy pada CloudWatch Logs log group untuk mengaudit dan menyamarkan (mask) data sensitif/PII pada log yang masuk.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi CloudWatch Logs: log group data protection policy dapat mengaudit dan menyamarkan data sensitif pada event log yang di-ingest, dengan managed data identifier termasuk PII; data disamarkan di semua titik egress, dan hanya pengguna dengan izin logs:Unmask yang dapat melihatnya. Security configuration Glue hanya mengenkripsi log, dan Macie menemukan data sensitif di S3, bukan menyamarkan log CloudWatch.",
+  "docs_opened": ["https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html"],
+  "docs_unreachable": [],
+  "notes": "Hanya 3 opsi terlihat (options_lt4) tetapi B jelas benar menurut dokumentasi. Masking hanya berlaku untuk log yang di-ingest setelah policy dipasang."
+ },
+ {
+  "group_id": "G373",
+  "answer": null,
+  "answer_status": "correct_option_missing",
+  "correct_solution_summary": "Gunakan Amazon DynamoDB (mode on-demand atau provisioned dengan auto scaling) sebagai tabel log, yang menyediakan akses berbasis API ke item tertentu dengan latensi milidetik satu digit pada throughput tulis/baca tinggi.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi DynamoDB: database NoSQL serverless dengan kinerja milidetik satu digit pada skala berapa pun, kapasitas on-demand otomatis menyesuaikan, dan diakses melalui API. Opsi A-C memakai Redshift (data warehouse analitik) yang tidak dirancang untuk >4.000 penulisan konkuren dan 6.500 pembacaan per detik pada rekaman spesifik, dan Redshift Spectrum hanya untuk read atas S3. Opsi benar (kemungkinan D, DynamoDB) tidak terlihat.",
+  "docs_opened": ["https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"],
+  "docs_unreachable": [],
+  "notes": "Hanya 3 dari 4 opsi tampak; kunci sumber 'D' hilang. Jawaban DynamoDB adalah inferensi dari kebutuhan, bukan teks opsi yang terlihat."
+ },
+ {
+  "group_id": "G375",
+  "answer": "A",
+  "answer_status": "determined",
+  "correct_solution_summary": "Buat IAM role dengan izin menulis ke bucket S3 dan kaitkan ke cluster Amazon Redshift agar Redshift dapat menulis (UNLOAD) data ke S3.",
+  "confidence": "low",
+  "reasoning": "Dokumentasi UNLOAD Redshift: menulis ke S3 memerlukan parameter iam_role, yaitu role IAM yang diberikan ke cluster dengan izin pada bucket tujuan. Jaringan privat sudah disiapkan, sehingga langkah berikutnya adalah otorisasi. Opsi B (Spectrum/Data Catalog) adalah untuk membaca data S3, dan C (data sharing) adalah berbagi antar-Redshift dan tidak menjadikan S3 sebagai target.",
+  "docs_opened": ["https://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html"],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber 'D' menunjuk opsi yang tidak terlihat (options_lt4); teks opsi A tercemar teks stem namun isinya (IAM role + associate ke cluster) terbaca jelas. Ada kemungkinan opsi D yang hilang adalah jawaban yang dimaksud; confidence rendah."
+ },
+ {
+  "group_id": "G381",
+  "answer": null,
+  "answer_status": "correct_option_missing",
+  "correct_solution_summary": "Gunakan isolasi SNAPSHOT di Redshift (default pada cluster/workgroup baru) agar query baca tidak saling memblokir dengan ETL yang menulis ke tabel dimensi, sehingga mengurangi lock, timeout, dan deadlock sambil menjaga tampilan data yang konsisten.",
+  "confidence": "low",
+  "reasoning": "Dokumentasi Redshift: setiap transaksi memakai snapshot data yang di-commit pada awal transaksi dan transaksi saling terisolasi; SNAPSHOT isolation memproses volume lebih besar lebih cepat dibanding SERIALIZABLE, yang membatalkan transaksi konkuren saat terjadi pelanggaran serialisasi. Opsi A (jadwal off-peak) tidak menyelesaikan akar masalah, B salah karena Redshift tidak memiliki read replica dan federated query bukan isolasi beban, dan C memindahkan analitik ke Spectrum yang tidak menjamin tampilan konsisten atas tabel dimensi yang diubah ETL. Opsi benar tidak terlihat.",
+  "docs_opened": ["https://docs.aws.amazon.com/redshift/latest/dg/c_serial_isolation.html"],
+  "docs_unreachable": [],
+  "notes": "Hanya 3 opsi terlihat (options_lt4), kunci sumber kosong; isi opsi D tidak diketahui. Kemungkinan jawaban yang dimaksud berkaitan dengan isolation level/concurrency scaling, tidak dapat dipastikan."
+ },
+ {
+  "group_id": "G389",
+  "answer": null,
+  "answer_status": "stem_or_options_unusable",
+  "correct_solution_summary": "Tidak dapat ditentukan: stem hanya 'What should the data engineer implement?' tanpa konteks, dan opsi berisi noise OCR dari halaman ujian latihan (bukan opsi nyata).",
+  "confidence": "low",
+  "reasoning": "Teks stem tidak memuat skenario dan opsi hasil scrape hanya serpihan penjelasan jawaban/OCR (mis. 'THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both.'). Serpihan tersebut mengisyaratkan solusi berupa workflow subscription/persetujuan oleh pemilik data (kemungkinan terkait Amazon DataZone/SageMaker Catalog), tetapi tidak cukup untuk menentukan pilihan huruf. Dokumentasi AWS tidak dapat dikaitkan tanpa skenario yang utuh.",
+  "docs_opened": [],
+  "docs_unreachable": [],
+  "notes": "Tidak ada dokumentasi yang dibuka karena soal tidak dapat dipakai (stem terlalu pendek, opsi OCR noise); tidak ada halaman yang relevan untuk diverifikasi. Perlu sumber soal asli."
+ }
+]

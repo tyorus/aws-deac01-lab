@@ -1,0 +1,2495 @@
+[
+ {
+  "group_id": "G123",
+  "q_no_in_markdown": [
+   123,
+   344
+  ],
+  "ids": [
+   "LOC-123",
+   "LOC-344"
+  ],
+  "baseline_id": "LOC-123",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company has five offices in different AWS Regions. Each office has its own human resources (HR) department that uses a unique IAM role. The company stores employee records in a data lake that is based on Amazon S3 storage. A data engineering team needs to limit access to the records. Each HR department should be able to access records for only employees who are within the HR department's Region. Which combination of steps should the data engineering team take to meet this requirement with the LEAST operational overhead? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use data filters for each Region to register the S3 paths as data locations.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Register the S3 path as an AWS Lake Formation location.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Modify the IAM roles of the HR departments to add a data filter for each department's Region.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Enable fine-grained access control in AWS Lake Formation. Add a data filter for each Region.",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Create a separate S3 bucket for each Region. Configure an IAM policy to allow S3 access. Restrict access based on Region.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-123": "BD",
+   "LOC-344": "AB"
+  },
+  "copy_sources": {
+   "LOC-123": "github_examtopics_cache",
+   "LOC-344": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "BD"
+  ],
+  "entry_flags": {
+   "LOC-123": [],
+   "LOC-344": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-344",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use data flters for each Region to register the S3 paths as data locations.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Register the S3 path as an AWS Lake Formafon locafon.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Modify the IAM roles of the HR departments to add a data flter for each department's department's Region. Region.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Enable fflne-grained access control in AWS Lake Formafon. Add a data ffllter for each Region. Region.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "Create a separate S3 bucket for each Region. Confgure an IAM policy to allow $3 access. Restrict access based on Region.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G124",
+  "q_no_in_markdown": [
+   124
+  ],
+  "ids": [
+   "LOC-124"
+  ],
+  "baseline_id": "LOC-124",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has implemented a lake house architecture in Amazon Redshift. The company needs to give users the ability to authenticate into Redshift query editor by using a third-party identity provider (IdP). A data engineer must set up the authentication mechanism. What is the first step the data engineer should take to meet this requirement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Register the third-party IdP as an identity provider in the configuration settings of the Redshift cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Register the third-party IdP as an identity provider from within Amazon Redshift.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Register the third-party IdP as an identity provider for AVS Secrets Manager. Configure Amazon Redshift to use Secrets Manager to manage user credentials.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Register the third-party IdP as an identity provider for AWS Certificate Manager (ACM). Configure Amazon Redshift to use ACM to manage user credentials.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-124": "B"
+  },
+  "copy_sources": {
+   "LOC-124": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-124": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G125",
+  "q_no_in_markdown": [
+   125,
+   366
+  ],
+  "ids": [
+   "LOC-125",
+   "LOC-366"
+  ],
+  "baseline_id": "LOC-125",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has multiple applications that use datasets that are stored in an Amazon S3 bucket. The company has an ecommerce application that generates a dataset that contains personally identifiable information (PII). The company has an internal analytics application that does not require access to the PII. To comply with regulations, the company must not share PII unnecessarily. A data engineer needs to implement a solution that with redact PII dynamically, based on the needs of each application that accesses the dataset. Which solution will meet the requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create an S3 bucket policy to limit the access each application has. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an S3 Object Lambda endpoint. Use the S3 Object Lambda endpoint to read data from the S3 bucket. Implement redaction logic within an S3 Object Lambda function to dynamically redact PII based on the needs of each application that accesses the data.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use AWS Glue to transform the data for each application. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create an API Gateway endpoint that has custom authorizers. Use the API Gateway endpoint to read data from the S3 bucket. Initiate a REST API call to dynamically redact PII based on the needs of each application that accesses the data.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-125": "B",
+   "LOC-366": "B"
+  },
+  "copy_sources": {
+   "LOC-125": "github_examtopics_cache",
+   "LOC-366": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-125": [],
+   "LOC-366": []
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-366",
+    "options": [
+     {
+      "label": "A",
+      "text": "Create an S3 bucket policy to limit the access each application has. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.",
+      "marked_correct": false
+     },
+     {
+      "label": "B",
+      "text": "Create an S3 Object Lambda endpoint. Use the S3 Object Lambda endpoint to read data from the S3 bucket. Implement redaction logic within an S3 Object Lambda function to dynamically redact PII based on the needs of each application that accesses the data.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Use AWS Glue to transform the data for each application. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Create an API Gateway endpoint that has custom authorisers. Use the API Gateway endpoint to read data from the S3 bucket. Initiate a REST API call to dynamically redact PII based on the needs of each application that accesses the data.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G126",
+  "q_no_in_markdown": [
+   126
+  ],
+  "ids": [
+   "LOC-126"
+  ],
+  "baseline_id": "LOC-126",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has three subsidiaries. Each subsidiary uses a different data warehousing solution. The first subsidiary hosts its data warehouse in Amazon Redshift. The second subsidiary uses Teradata Vantage on AWS. The third subsidiary uses Google BigQuery. The company wants to aggregate all the data into a central Amazon S3 data lake. The company wants to use Apache Iceberg as the table format. A data engineer needs to build a new pipeline to connect to all the data sources, run transformations by using each source engine, join the data, and write the data to Iceberg. Which solution will meet these requirements with the LEAST operational effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use native Amazon Redshift, Teradata, and BigQuery connectors to build the pipeline in AWS Glue. Use native AWS Glue transforms to join the data. Run a Merge operation on the data lake Iceberg table.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use the Amazon Athena federated query connectors for Amazon Redshift, Teradata, and BigQuery to build the pipeline in Athena. Write a SQL query to read from all the data sources, join the data, and run a Merge operation on the data lake Iceberg table.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use the native Amazon Redshift connector, the Java Database Connectivity (JDBC) connector for Teradata, and the open source Apache Spark BigQuery connector to build the pipeline in Amazon EMR. Write code in PySpark to join the data. Run a Merge operation on the data lake Iceberg table.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use the native Amazon Redshift, Teradata, and BigQuery connectors in Amazon Appflow to write data to Amazon S3 and AWS Glue Data Catalog. Use Amazon Athena to join the data. Run a Merge operation on the data lake Iceberg table.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-126": "B"
+  },
+  "copy_sources": {
+   "LOC-126": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-126": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G127",
+  "q_no_in_markdown": [
+   127,
+   359
+  ],
+  "ids": [
+   "LOC-127",
+   "LOC-359"
+  ],
+  "baseline_id": "LOC-127",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has used an Amazon Redshift table that is named Orders for 6 months. The company performs weekly updates and deletes on the table. The table has an interleaved sort key on a column that contains AWS Regions. The company wants to reclaim disk space so that the company will not run out of storage space. The company also wants to analyze the sort key column. Which Amazon Redshift command will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "VACUUM FULL Orders",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "VACUUM DELETE ONLY Orders",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "VACUUM REINDEX Orders",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "VACUUM SORT ONLY Orders",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-127": "C",
+   "LOC-359": "A"
+  },
+  "copy_sources": {
+   "LOC-127": "github_examtopics_cache",
+   "LOC-359": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-127": [],
+   "LOC-359": [
+    "bank_key_A_differs_from_source_C"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-359",
+    "options": [
+     {
+      "label": "A",
+      "text": "V ACUUM FULL Orders",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "V ACUUM DELETE ONLY Orders",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "V ACUUM REINDEX Orders",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "V ACUUM SORT ONLY Orders",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G128",
+  "q_no_in_markdown": [
+   128
+  ],
+  "ids": [
+   "LOC-128"
+  ],
+  "baseline_id": "LOC-128",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company hosts its applications on Amazon EC2 instances. The company must use SSL/TLS connections that encrypt data in transit to communicate securely with AWS infrastructure that is managed by a customer. A data engineer needs to implement a solution to simplify the generation, distribution, and rotation of digital certificates. The solution must automatically renew and deploy SSL/TLS certificates. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Store self-managed certificates on the EC2 instances.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use AWS Certificate Manager (ACM).",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Implement custom automation scripts in AWS Secrets Manager.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use Amazon Elastic Container Service (Amazon ECS) Service Connect.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-128": "B"
+  },
+  "copy_sources": {
+   "LOC-128": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-128": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G129",
+  "q_no_in_markdown": [
+   129
+  ],
+  "ids": [
+   "LOC-129"
+  ],
+  "baseline_id": "LOC-129",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company implements a data mesh that has a central governance account. The company needs to catalog all data in the governance account. The governance account uses AWS Lake Formation to centrally share data and grant access permissions. The company has created a new data product that includes a group of Amazon Redshift Serverless tables. A data engineer needs to share the data product with a marketing team. The marketing team must have access to only a subset of columns. The data engineer needs to share the same data product with a compliance team. The compliance team must have access to a different subset of columns than the marketing team needs access to. Which combination of steps should the data engineer take to meet these requirements? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create views of the tables that need to be shared. Include only the required columns.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an Amazon Redshift data share that includes the tables that need to be shared.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Create an Amazon Redshift managed VPC endpoint in the marketing team’s account. Grant the marketing team access to the views.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Share the Amazon Redshift data share to the Lake Formation catalog in the governance account.",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Share the Amazon Redshift data share to the Amazon Redshift Serverless workgroup in the marketing team's account.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-129": "BD"
+  },
+  "copy_sources": {
+   "LOC-129": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "BD"
+  ],
+  "entry_flags": {
+   "LOC-129": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G130",
+  "q_no_in_markdown": [
+   130
+  ],
+  "ids": [
+   "LOC-130"
+  ],
+  "baseline_id": "LOC-130",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company ingests data from multiple data sources and stores the data in an Amazon S3 bucket. An AWS Glue extract, transform, and load (ETL) job transforms the data and writes the transformed data to an Amazon S3 based data lake. The company uses Amazon Athena to query the data that is in the data lake. The company needs to identify matching records even when the records do not have a common unique identifier. Which solution will meet this requirement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Macie pattern matching as part of the ETL job.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Train and use the AWS Glue PySpark Filter class in the ETL job.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Partition tables and use the ETL job to partition the data on a unique identifier.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Train and use the AWS Lake Formation FindMatches transform in the ETL job.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-130": "D"
+  },
+  "copy_sources": {
+   "LOC-130": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-130": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G131",
+  "q_no_in_markdown": [
+   131
+  ],
+  "ids": [
+   "LOC-131"
+  ],
+  "baseline_id": "LOC-131",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is building a data lake for a new analytics team. The company is using Amazon S3 for storage and Amazon Athena for query analysis. All data that is in Amazon S3 is in Apache Parquet format. The company is running a new Oracle database as a source system in the company’s data center. The company has 70 tables in the Oracle database. All the tables have primary keys. Data can occasionally change in the source system. The company wants to ingest the tables every day into the data lake. Which solution will meet this requirement with the LEAST effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create an Apache Sqoop job in Amazon EMR to read the data from the Oracle database. Configure the Sqoop job to write the data to Amazon S3 in Parquet format.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an AWS Glue connection to the Oracle database. Create an AWS Glue bookmark job to ingest the data incrementally and to write the data to Amazon S3 in Parquet format.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create an AWS Database Migration Service (AWS DMS) task for ongoing replication. Set the Oracle database as the source. Set Amazon S3 as the target. Configure the task to write the data in Parquet format.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Create an Oracle database in Amazon RDS. Use AWS Database Migration Service (AWS DMS) to migrate the on-premises Oracle database to Amazon RDS. Configure triggers on the tables to invoke AWS Lambda functions to write changed records to Amazon S3 in Parquet format.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-131": "C"
+  },
+  "copy_sources": {
+   "LOC-131": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-131": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G132",
+  "q_no_in_markdown": [
+   132
+  ],
+  "ids": [
+   "LOC-132"
+  ],
+  "baseline_id": "LOC-132",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is building a data stream processing application. The application runs in an Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The application stores processed data in an Amazon DynamoDB table. The company needs the application containers in the EKS cluster to have secure access to the DynamoDB table. The company does not want to embed AWS credentials in the containers. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Store the AWS credentials in an Amazon S3 bucket. Grant the EKS containers access to the S3 bucket to retrieve the credentials.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Attach an IAM role to the EKS worker nodes, Grant the IAM role access to DynamoDUse the IAM role to set up IAM roles service accounts (IRSA) functionality.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Create an IAM user that has an access key to access the DynamoDB table. Use environment variables in the EKS containers to store the IAM user access key data.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create an IAM user that has an access key to access the DynamoDB table. Use Kubernetes secrets that are mounted in a volume of the EKS duster nodes to store the user access key data.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-132": "B"
+  },
+  "copy_sources": {
+   "LOC-132": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-132": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G133",
+  "q_no_in_markdown": [
+   133,
+   332
+  ],
+  "ids": [
+   "LOC-133",
+   "LOC-332"
+  ],
+  "baseline_id": "LOC-133",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company is building an analytics solution. The solution uses Amazon S3 for data lake storage and Amazon Redshift for a data warehouse. The company wants to use Amazon Redshift Spectrum to query the data that is in Amazon S3. Which actions will provide the FASTEST queries? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use gzip compression to compress individual files to sizes that are between 1 GB and 5 GB.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use a columnar storage file format.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Partition the data based on the most common query predicates.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Split the data into files that are less than 10 KB.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Use file formats that are not splittable.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-133": "BC",
+   "LOC-332": "AB"
+  },
+  "copy_sources": {
+   "LOC-133": "github_examtopics_cache",
+   "LOC-332": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "BC"
+  ],
+  "entry_flags": {
+   "LOC-133": [],
+   "LOC-332": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-332",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use gzip compression to compress individual fles to sizes that are between 1 GB and 5 G",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "GB. B. Use a columnar storage fflle format.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Parffon the data based on the most common query predicates.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Split the data into fles that are less than 10 KB.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "Use fle formats that are not spliflable. not spliflable.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G134",
+  "q_no_in_markdown": [
+   134
+  ],
+  "ids": [
+   "LOC-134"
+  ],
+  "baseline_id": "LOC-134",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company is building an inventory management system and an inventory reordering system to automatically reorder products. Both systems use Amazon Kinesis Data Streams. The inventory management system uses the Amazon Kinesis Producer Library (KPL) to publish data to a stream. The inventory reordering system uses the Amazon Kinesis Client Library (KCL) to consume data from the stream. The company configures the stream to scale up and down as needed. Before the company deploys the systems to production, the company discovers that the inventory reordering system received duplicated data. Which factors could have caused the reordering system to receive duplicated data? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "The producer experienced network-related timeouts.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "The stream’s value for the IteratorAgeMilliseconds metric was too high.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "There was a change in the number of shards, record processors, or both.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "The AggregationEnabled configuration property was set to true.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "The max_records configuration property was set to a number that was too high.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-134": "AC"
+  },
+  "copy_sources": {
+   "LOC-134": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "AC"
+  ],
+  "entry_flags": {
+   "LOC-134": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G136",
+  "q_no_in_markdown": [
+   136
+  ],
+  "ids": [
+   "LOC-136"
+  ],
+  "baseline_id": "LOC-136",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is designing a serverless data processing workflow in AWS Step Functions that involves multiple steps. The processing workflow ingests data from an external API, transforms the data by using multiple AWS Lambda functions, and loads the transformed data into Amazon DynamoDB. The company needs the workflow to perform specific steps based on the content of the incoming data. Which Step Functions state type should the company use to meet this requirement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Parallel",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Choice",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Task",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Map",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "option_too_short"
+  ],
+  "copy_keys": {
+   "LOC-136": "B"
+  },
+  "copy_sources": {
+   "LOC-136": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-136": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G137",
+  "q_no_in_markdown": [
+   137,
+   346
+  ],
+  "ids": [
+   "LOC-137",
+   "LOC-346"
+  ],
+  "baseline_id": "LOC-137",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is developing an application that runs on Amazon EC2 instances. Currently, the data that the application generates is temporary. However, the company needs to persist the data, even if the EC2 instances are terminated. A data engineer must launch new EC2 instances from an Amazon Machine Image (AMI) and configure the instances to preserve the data. Which solution will meet this requirement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume that contains the application data. Apply the default settings to the EC2 instances.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Launch new EC2 instances by using an AMI that is backed by a root Amazon Elastic Block Store (Amazon EBS) volume that contains the application data. Apply the default settings to the EC2 instances.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume. Attach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default settings to the EC2 instances.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volume. Attach an additional EC2 instance store volume to contain the application data. Apply the default settings to the EC2 instances.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-137": "C",
+   "LOC-346": "A"
+  },
+  "copy_sources": {
+   "LOC-137": "github_examtopics_cache",
+   "LOC-346": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-137": [],
+   "LOC-346": [
+    "bank_key_A_differs_from_source_C"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-346",
+    "options": [
+     {
+      "label": "A",
+      "text": "Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume that contains the application data. Apply the default seffngs to the EC2 instances.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Launch new EC2 instances by using an AMI that is backed by a root Amazon Elasfc Block Store (Amazon EBS) volume that contains the applicafon data. Apply the default seffngs to the EC2 instances.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volum",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances. D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volume. Aflach an additional EC2 instance store volume to",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G138",
+  "q_no_in_markdown": [
+   138,
+   331
+  ],
+  "ids": [
+   "LOC-138",
+   "LOC-331"
+  ],
+  "baseline_id": "LOC-138",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is migrating a legacy application to an Amazon S3 based data lake. A data engineer reviewed data that is associated with the legacy application. The data engineer found that the legacy data contained some duplicate information. The data engineer must identify and remove duplicate information from the legacy application data. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Write a custom extract, transform, and load (ETL) job in Python. Use the DataFrame.drop_duplicates() function by importing the Pandas library to perform data deduplication.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplication.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-138": "B",
+   "LOC-331": "A"
+  },
+  "copy_sources": {
+   "LOC-138": "github_examtopics_cache",
+   "LOC-331": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-138": [],
+   "LOC-331": [
+    "bank_key_A_differs_from_source_B"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-331",
+    "options": [
+     {
+      "label": "A",
+      "text": "Write a custom extract, transform, and load (ETL) job in Python. Use the DataFrame.drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. deduplication.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication. B. Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication. C. Write a custom extract, tr",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G139",
+  "q_no_in_markdown": [
+   139,
+   341
+  ],
+  "ids": [
+   "LOC-139",
+   "LOC-341"
+  ],
+  "baseline_id": "LOC-139",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is migrating its database servers from Amazon EC2 instances that run Microsoft SQL Server to Amazon RDS for Microsoft SQL Server DB instances. The company's analytics team must export large data elements every day until the migration is complete. The data elements are the result of SQL joins across multiple tables. The data must be in Apache Parquet format. The analytics team must store the data in Amazon S3. Which solution will meet these requirements in the MOST operationally efficient way?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create an AWS Glue job that selects the data directly from the view and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Schedule SQL Server Agent to run a daily SQL query that selects the desired data elements from the EC2 instance-based SQL Server databases. Configure the query to direct the output .csv objects to an S3 bucket. Create an S3 event that invokes an AWS Lambda function to transform the output format from .csv to Parquet.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use a SQL query to create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create and run an AWS Glue crawler to read the view. Create an AWS Glue job that retrieves the data and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create an AWS Lambda function that queries the EC2 instance-based databases by using Java Database Connectivity (JDBC). Configure the Lambda function to retrieve the required data, transform the data into Parquet format, and transfer the data into an S3 bucket. Use Amazon EventBridge to schedule the Lambda function to run every day.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-139": "A",
+   "LOC-341": "A"
+  },
+  "copy_sources": {
+   "LOC-139": "github_examtopics_cache",
+   "LOC-341": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-139": [],
+   "LOC-341": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-341",
+    "options": [
+     {
+      "label": "A",
+      "text": "Create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create an AWS Glue job that selects the data directly from the view and view and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day. every day.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Schedule SQL Server Agent to run a daily SQL query that selects the desired data elements from the EC2 instance-based SQL Server databases. Confgure the query to direct the direct the output .csv objects to an S3 bucket. Create an S3 event that invokes an AWS Lambda function to transform the output ",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use a SQL query to create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create and run an AWS Glue crawler to read the view. Create an AWS Glue job that retrieves the data and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glu",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Create an AWS Lambda function that queries the EC2 instance-based databases by using Java Database Connectivity (JDBC). Confgure the Lambda function to retrieve the required data, transform the data into Parquet format, and transfer the data into an S3 bucket. Use bucket. Use Amazon EventBridge to s",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G140",
+  "q_no_in_markdown": [
+   140,
+   319
+  ],
+  "ids": [
+   "LOC-140",
+   "LOC-319"
+  ],
+  "baseline_id": "LOC-140",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is migrating on-premises workloads to AWS. The company wants to reduce overall operational overhead. The company also wants to explore serverless options. The company's current workloads use Apache Pig, Apache Oozie, Apache Spark, Apache Hbase, and Apache Flink. The on-premises workloads process petabytes of data in seconds. The company must maintain similar or better performance after the migration to AWS. Which extract, transform, and load (ETL) service will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "AWS Glue",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Amazon EMR",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "AWS Lambda",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon Redshift",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-140": "B",
+   "LOC-319": "A"
+  },
+  "copy_sources": {
+   "LOC-140": "github_examtopics_cache",
+   "LOC-319": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-140": [],
+   "LOC-319": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-319",
+    "options": [
+     {
+      "label": "A",
+      "text": "AWS Glue",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Amazon EMR",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "AWS Lambda",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Amazon Redshiffl",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G141",
+  "q_no_in_markdown": [
+   141
+  ],
+  "ids": [
+   "LOC-141"
+  ],
+  "baseline_id": "LOC-141",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is planning to migrate on-premises Apache Hadoop clusters to Amazon EMR. The company also needs to migrate a data catalog into a persistent storage solution. The company currently stores the data catalog in an on-premises Apache Hive metastore on the Hadoop clusters. The company requires a serverless solution to migrate the data catalog. Which solution will meet these requirements MOST cost-effectively?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS Database Migration Service (AWS DMS) to migrate the Hive metastore into Amazon S3. Configure AWS Glue Data Catalog to scan Amazon S3 to produce the data catalog.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Configure a Hive metastore in Amazon EMR. Migrate the existing on-premises Hive metastore into Amazon EMR. Use AWS Glue Data Catalog to store the company's data catalog as an external data catalog.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Configure an external Hive metastore in Amazon EMR. Migrate the existing on-premises Hive metastore into Amazon EMR. Use Amazon Aurora MySQL to store the company's data catalog.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Configure a new Hive metastore in Amazon EMR. Migrate the existing on-premises Hive metastore into Amazon EMR. Use the new metastore as the company's data catalog.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-141": "B"
+  },
+  "copy_sources": {
+   "LOC-141": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-141": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G142",
+  "q_no_in_markdown": [
+   142,
+   340
+  ],
+  "ids": [
+   "LOC-142",
+   "LOC-340"
+  ],
+  "baseline_id": "LOC-142",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is planning to upgrade its Amazon Elastic Block Store (Amazon EBS) General Purpose SSD storage from gp2 to gp3. The company wants to prevent any interruptions in its Amazon EC2 instances that will cause data loss during the migration to the upgraded storage. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create snapshots of the gp2 volumes. Create new gp3 volumes from the snapshots. Attach the new gp3 volumes to the EC2 instances.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create new gp3 volumes. Gradually transfer the data to the new gp3 volumes. When the transfer is complete, mount the new gp3 volumes to the EC2 instances to replace the gp2 volumes.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Change the volume type of the existing gp2 volumes to gp3. Enter new values for volume size, IOPS, and throughput.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Use AWS DataSync to create new gp3 volumes. Transfer the data from the original gp2 volumes to the new gp3 volumes.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-142": "C",
+   "LOC-340": "A"
+  },
+  "copy_sources": {
+   "LOC-142": "github_examtopics_cache",
+   "LOC-340": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-142": [],
+   "LOC-340": [
+    "bank_key_A_differs_from_source_C"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-340",
+    "options": [
+     {
+      "label": "A",
+      "text": "Create snapshots of the gp2 volumes. Create new gp3 volumes from the snapshots. Aflach the new gp3 volumes to the EC2 instances.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Create new gp3 volumes. Gradually transfer the data to the new gp3 volumes. When the transfer is complete, mount the new gp3 volumes to the EC2 instances to replace the gp2 volumes. volumes.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Change the volume type of the exisfng gp2 volumes to gp3. Enter new values for volume size, IOPS, and throughput.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use AWS DataSync to create new gp3 volumes. Transfer the data from the original gp2 volumes to the new gp3 volumes.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G143",
+  "q_no_in_markdown": [
+   143,
+   326,
+   327
+  ],
+  "ids": [
+   "LOC-143",
+   "LOC-326",
+   "LOC-327"
+  ],
+  "baseline_id": "LOC-143",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company is planning to use a provisioned Amazon EMR cluster that runs Apache Spark jobs to perform big data analysis. The company requires high reliability. A big data team must follow best practices for running cost-optimized and long-running workloads on Amazon EMR. The team must find a solution that will maintain the company's current level of performance. Which combination of resources will meet these requirements MOST cost-effectively? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Hadoop Distributed File System (HDFS) as a persistent data store.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon S3 as a persistent data store.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use x86-based instances for core nodes and task nodes.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use Graviton instances for core nodes and task nodes.",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Use Spot Instances for all primary nodes.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-143": "BD",
+   "LOC-326": "BD",
+   "LOC-327": "AB"
+  },
+  "copy_sources": {
+   "LOC-143": "github_examtopics_cache",
+   "LOC-326": "pdf_80_mock",
+   "LOC-327": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "BD"
+  ],
+  "entry_flags": {
+   "LOC-143": [],
+   "LOC-326": [],
+   "LOC-327": [
+    "bank_key_AB_differs_from_source_BD"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-326",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use Hadoop Distributed File System (HDFS) as a persistent data store.",
+      "marked_correct": false
+     },
+     {
+      "label": "B",
+      "text": "Use Amazon S3 as a persistent data store.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Use x86-based instances for core nodes and task nodes.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use Graviton instances for core nodes and task nodes.",
+      "marked_correct": true
+     },
+     {
+      "label": "E",
+      "text": "Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes.",
+      "marked_correct": false
+     }
+    ]
+   },
+   {
+    "id": "LOC-327",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use Hadoop Distributed File System (HDFS) as a persistent data store. store.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Use Amazon S3 as a persistent data store.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Use x86-based instances for core nodes and task nodes. task nodes.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use Graviton instances for core nodes and task nodes.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "store. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes. primary nodes.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G144",
+  "q_no_in_markdown": [
+   144
+  ],
+  "ids": [
+   "LOC-144"
+  ],
+  "baseline_id": "LOC-144",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is using Amazon Redshift to build a data warehouse solution. The company is loading hundreds of files into a fact table that is in a Redshift cluster. The company wants the data warehouse solution to achieve the greatest possible throughput. The solution must use cluster resources optimally when the company loads data into the fact table. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use multiple COPY commands to load the data into the Redshift cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use S3DistCp to load multiple files into Hadoop Distributed File System (HDFS). Use an HDFS connector to ingest the data into the Redshift cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use a number of INSERT statements equal to the number of Redshift cluster nodes. Load the data in parallel into each node.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use a single COPY command to load the data into the Redshift cluster.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-144": "D"
+  },
+  "copy_sources": {
+   "LOC-144": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-144": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G145",
+  "q_no_in_markdown": [
+   145
+  ],
+  "ids": [
+   "LOC-145"
+  ],
+  "baseline_id": "LOC-145",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is using an AWS Transfer Family server to migrate data from an on-premises environment to AWS. Company policy mandates the use of TLS 1.2 or above to encrypt the data in transit. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Generate new SSH keys for the Transfer Family server. Make the old keys and the new keys available for use.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Update the security group rules for the on-premises network to allow only connections that use TLS 1.2 or above.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Update the security policy of the Transfer Family server to specify a minimum protocol version of TLS 1.2",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Install an SSL certificate on the Transfer Family server to encrypt data transfers by using TLS 1.2.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-145": "C"
+  },
+  "copy_sources": {
+   "LOC-145": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-145": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G146",
+  "q_no_in_markdown": [
+   146,
+   312
+  ],
+  "ids": [
+   "LOC-146",
+   "LOC-312"
+  ],
+  "baseline_id": "LOC-146",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company loads transaction data for each day into Amazon Redshift tables at the end of each day. The company wants to have the ability to track which tables have been loaded and which tables still need to be loaded. A data engineer wants to store the load statuses of Redshift tables in an Amazon DynamoDB table. The data engineer creates an AWS Lambda function to publish the details of the load statuses to DynamoDB. How should the data engineer invoke the Lambda function to write load statuses to the DynamoDB table?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use a second Lambda function to invoke the first Lambda function based on Amazon CloudWatch events.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use the Amazon Redshift Data API to publish an event to Amazon EventBridge. Configure an EventBridge rule to invoke the Lambda function.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use the Amazon Redshift Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Configure the SQS queue to invoke the Lambda function.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use a second Lambda function to invoke the first Lambda function based on AWS CloudTrail events.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-146": "B",
+   "LOC-312": "A"
+  },
+  "copy_sources": {
+   "LOC-146": "github_examtopics_cache",
+   "LOC-312": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-146": [],
+   "LOC-312": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-312",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use a second Lambda function to invoke the frst Lambda function based on Amazon Amazon CloudWatch events. CloudWatch events.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Use the Amazon Redshiffi Data API to publish an event to Amazon EventBridge. Confflgure an EventBridge rule to invoke the Lambda funcfon.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "Confflgure an EventBridge rule to invoke the Lambda funcfon. C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function. D. Use a second Lambda function to invoke the frst Lambda funct",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G147",
+  "q_no_in_markdown": [
+   147
+  ],
+  "ids": [
+   "LOC-147"
+  ],
+  "baseline_id": "LOC-147",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company maintains a data warehouse in an on-premises Oracle database. The company wants to build a data lake on AWS. The company wants to load data warehouse tables into Amazon S3 and synchronize the tables with incremental data that arrives from the data warehouse every day. Each table has a column that contains monotonically increasing values. The size of each table is less than 50 GB. The data warehouse tables are refreshed every night between 1 AM and 2 AM. A business intelligence team queries the tables between 10 AM and 8 PM every day. Which solution will meet these requirements in the MOST operationally efficient way?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use an AWS Database Migration Service (AWS DMS) full load plus CDC job to load tables that contain monotonically increasing data columns from the on-premises data warehouse to Amazon S3. Use custom logic in AWS Glue to append the daily incremental data to a full-load copy that is in Amazon S3.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Use an AWS Glue Java Database Connectivity (JDBC) connection. Configure a job bookmark for a column that contains monotonically increasing values. Write custom logic to append the daily incremental data to a full-load copy that is in Amazon S3.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use an AWS Database Migration Service (AWS DMS) full load migration to load the data warehouse tables into Amazon S3 every day. Overwrite the previous day's full-load copy every day.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use AWS Glue to load a full copy of the data warehouse tables into Amazon S3 every day. Overwrite the previous day's full-load copy every day.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-147": "A"
+  },
+  "copy_sources": {
+   "LOC-147": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-147": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G148",
+  "q_no_in_markdown": [
+   148,
+   323,
+   324
+  ],
+  "ids": [
+   "LOC-148",
+   "LOC-323",
+   "LOC-324"
+  ],
+  "baseline_id": "LOC-148",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company maintains an Amazon Redshift provisioned cluster that the company uses for extract, transform, and load (ETL) operations to support critical analysis tasks. A sales team within the company maintains a Redshift cluster that the sales team uses for business intelligence (BI) tasks. The sales team recently requested access to the data that is in the ETL Redshift cluster so the team can perform weekly summary analysis tasks. The sales team needs to join data from the ETL cluster with data that is in the sales team's BI cluster. The company needs a solution that will share the ETL cluster data with the sales team without interrupting the critical analysis tasks. The solution must minimize usage of the computing resources of the ETL cluster. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshift data sharing.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Create materialized views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshift Spectrum table based on the content of the ETL cluster.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-148": "A",
+   "LOC-323": "A",
+   "LOC-324": "A"
+  },
+  "copy_sources": {
+   "LOC-148": "github_examtopics_cache",
+   "LOC-323": "pdf_exam_dumps",
+   "LOC-324": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-148": [],
+   "LOC-323": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "LOC-324": []
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-323",
+    "options": [
+     {
+      "label": "A",
+      "text": "Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshiffi data sharing. sharing.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Create materialized views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshiffl Spectrum table based on the content of the ETL cluster.",
+      "marked_correct": false
+     }
+    ]
+   },
+   {
+    "id": "LOC-324",
+    "options": [
+     {
+      "label": "A",
+      "text": "Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshift data sharing.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Create materialised views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshift Spectrum table based on the content of the ETL cluster.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G149",
+  "q_no_in_markdown": [
+   149,
+   321
+  ],
+  "ids": [
+   "LOC-149",
+   "LOC-321"
+  ],
+  "baseline_id": "LOC-149",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company maintains multiple extract, transform, and load (ETL) workflows that ingest data from the company's operational databases into an Amazon S3 based data lake. The ETL workflows use AWS Glue and Amazon EMR to process data. The company wants to improve the existing architecture to provide automated orchestration and to require minimal manual effort. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "AWS Glue workflows",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "AWS Step Functions tasks",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "AWS Lambda functions",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) workflows",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-149": "B",
+   "LOC-321": "A"
+  },
+  "copy_sources": {
+   "LOC-149": "github_examtopics_cache",
+   "LOC-321": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-149": [],
+   "LOC-321": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-321",
+    "options": [
+     {
+      "label": "A",
+      "text": "AWS Glue workflows",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "AWS Step Functions tasks",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "AWS Lambda functions",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) workfiows",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G150",
+  "q_no_in_markdown": [
+   150
+  ],
+  "ids": [
+   "LOC-150"
+  ],
+  "baseline_id": "LOC-150",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs a solution to manage costs for an existing Amazon DynamoDB table. The company also needs to control the size of the table. The solution must not disrupt any ongoing read or write operations. The company wants to use a solution that automatically deletes data from the table after 1 month. Which solution will meet these requirements with the LEAST ongoing maintenance?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use the DynamoDB TTL feature to automatically expire data based on timestamps.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Configure a scheduled Amazon EventBridge rule to invoke an AWS Lambda function to check for data that is older than 1 month. Configure the Lambda function to delete old data.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Configure a stream on the DynamoDB table to invoke an AWS Lambda function. Configure the Lambda function to delete data in the table that is older than 1 month.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use an AWS Lambda function to periodically scan the DynamoDB table for data that is older than 1 month. Configure the Lambda function to delete old data.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-150": "A"
+  },
+  "copy_sources": {
+   "LOC-150": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-150": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G151",
+  "q_no_in_markdown": [
+   151
+  ],
+  "ids": [
+   "LOC-151"
+  ],
+  "baseline_id": "LOC-151",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs to build a data lake in AWS. The company must provide row-level data access and column-level data access to specific teams. The teams will access the data by using Amazon Athena, Amazon Redshift Spectrum, and Apache Hive from Amazon EMR. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon S3 for data lake storage. Use S3 access policies to restrict data access by rows and columns. Provide data access through Amazon S3.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon S3 for data lake storage. Use Apache Ranger through Amazon EMR to restrict data access by rows and columns. Provide data access by using Apache Pig.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Redshift for data lake storage. Use Redshift security policies to restrict data access by rows and columns. Provide data access by using Apache Spark and Amazon Athena federated queries.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use Amazon S3 for data lake storage. Use AWS Lake Formation to restrict data access by rows and columns. Provide data access through AWS Lake Formation.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-151": "D"
+  },
+  "copy_sources": {
+   "LOC-151": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-151": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G152",
+  "q_no_in_markdown": [
+   152
+  ],
+  "ids": [
+   "LOC-152"
+  ],
+  "baseline_id": "LOC-152",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs to load customer data that comes from a third party into an Amazon Redshift data warehouse. The company stores order data and product data in the same data warehouse. The company wants to use the combined dataset to identify potential new customers. A data engineer notices that one of the fields in the source data includes values that are in JSON format. How should the data engineer load the JSON data into the data warehouse with the LEAST effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use the SUPER data type to store the data in the Amazon Redshift table.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Use AWS Glue to flatten the JSON data and ingest it into the Amazon Redshift table.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon S3 to store the JSON data. Use Amazon Athena to query the data.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use an AWS Lambda function to flatten the JSON data. Store the data in Amazon S3.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-152": "A"
+  },
+  "copy_sources": {
+   "LOC-152": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-152": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G153",
+  "q_no_in_markdown": [
+   153,
+   348,
+   349
+  ],
+  "ids": [
+   "LOC-153",
+   "LOC-348",
+   "LOC-349"
+  ],
+  "baseline_id": "LOC-153",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs to partition the Amazon S3 storage that the company uses for a data lake. The partitioning will use a path of the S3 object keys in the following format: s3://bucket/prefix/year=2023/month=01/day=01. A data engineer must ensure that the AWS Glue Data Catalog synchronizes with the S3 storage when the company adds new partitions to the bucket. Which solution will meet these requirements with the LEAST latency?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Schedule an AWS Glue crawler to run every morning.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Manually run the AWS Glue CreatePartition API twice each day.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Run the MSCK REPAIR TABLE command from the AWS Glue console.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-153": "C",
+   "LOC-348": "A",
+   "LOC-349": "A"
+  },
+  "copy_sources": {
+   "LOC-153": "github_examtopics_cache",
+   "LOC-348": "pdf_80_mock",
+   "LOC-349": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-153": [],
+   "LOC-348": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "LOC-349": [
+    "bank_key_A_differs_from_source_C"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-348",
+    "options": [
+     {
+      "label": "A",
+      "text": "Schedule an AWS Glue crawler to run every morning.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Manually run the AWS Glue CreatePartition API twice each day.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Run the MSCK REPAIR TABLE command from the AWS Glue consol",
+      "marked_correct": false
+     }
+    ]
+   },
+   {
+    "id": "LOC-349",
+    "options": [
+     {
+      "label": "A",
+      "text": "Schedule an AWS Glue crawler to run every morning.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Manually run the AWS Glue CreatePartition API twice each day.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_parffon API call. API call.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Run the MSCK REPAIR TABLE command from the AWS Glue consol",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G154",
+  "q_no_in_markdown": [
+   154
+  ],
+  "ids": [
+   "LOC-154"
+  ],
+  "baseline_id": "LOC-154",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs to send customer call data from its on-premises PostgreSQL database to AWS to generate near real-time insights. The solution must capture and load updates from operational data stores that run in the PostgreSQL database. The data changes continuously. A data engineer configures an AWS Database Migration Service (AWS DMS) ongoing replication task. The task reads changes in near real time from the PostgreSQL source database transaction logs for each table. The task then sends the data to an Amazon Redshift cluster for processing. The data engineer discovers latency issues during the change data capture (CDC) of the task. The data engineer thinks that the PostgreSQL source database is causing the high latency. Which solution will confirm that the PostgreSQL database is the source of the high latency?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon CloudWatch to monitor the DMS task. Examine the CDCIncomingChanges metric to identify delays in the CDC from the source database.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Verify that logical replication of the source database is configured in the postgresql.conf configuration file.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Enable Amazon CloudWatch Logs for the DMS endpoint of the source database. Check for error messages.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use Amazon CloudWatch to monitor the DMS task. Examine the CDCLatencySource metric to identify delays in the CDC from the source database.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-154": "D"
+  },
+  "copy_sources": {
+   "LOC-154": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-154": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G155",
+  "q_no_in_markdown": [
+   155,
+   355
+  ],
+  "ids": [
+   "LOC-155",
+   "LOC-355"
+  ],
+  "baseline_id": "LOC-155",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs to set up a data catalog and metadata management for data sources that run in the AWS Cloud. The company will use the data catalog to maintain the metadata of all the objects that are in a set of data stores. The data stores include structured sources such as Amazon RDS and Amazon Redshift. The data stores also include semistructured sources such as JSON files and .xml files that are stored in Amazon S3. The company needs a solution that will update the data catalog on a regular basis. The solution also must detect changes to the source metadata. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Aurora as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Configure the Lambda functions to gather the metadata information from multiple sources and to update the Aurora data catalog. Schedule the Lambda functions to run periodically.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use the AWS Glue Data Catalog as the central metadata repository. Use AWS Glue crawlers to connect to multiple data stores and to update the Data Catalog with metadata changes. Schedule the crawlers to run periodically to update the metadata catalog.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon DynamoDB as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Configure the Lambda functions to gather the metadata information from multiple sources and to update the DynamoDB data catalog. Schedule the Lambda functions to run periodically.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use the AWS Glue Data Catalog as the central metadata repository. Extract the schema for Amazon RDS and Amazon Redshift sources, and build the Data Catalog. Use AWS Glue crawlers for data that is in Amazon S3 to infer the schema and to automatically update the Data Catalog.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-155": "B",
+   "LOC-355": "A"
+  },
+  "copy_sources": {
+   "LOC-155": "github_examtopics_cache",
+   "LOC-355": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-155": [],
+   "LOC-355": [
+    "bank_key_A_differs_from_source_B"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-355",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use Amazon Aurora as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information fro from m mul multipl tiple e sou source rces s and and to to upd update ate the Aurora data cat catalo alog. g. Sch Schedu edul",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Use the AWS Glue Data Catalog as the central metadata repository. Use AWS Glue crawlers to connect to mulfple data stores and to update the Data Catalog with metadata changes. Schedule the crawlers to run periodically to update the metadata catalog.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use Amazon DynamoDB as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information from multiple sources and to update the DynamoDB data catalog. Schedule the Lambda functions to run periodically.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use the AWS Glue Data Catalog as the central metadata repository. Extract the schema for Amazon RDS and Amazon Redshiffl sources, and build the Data Catalog. Use AWS Glue crawlers for data that is in Amazon S3 to infer the schema and to automatically update the Data Catalog Data Catalog",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G156",
+  "q_no_in_markdown": [
+   156
+  ],
+  "ids": [
+   "LOC-156"
+  ],
+  "baseline_id": "LOC-156",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company plans to provision a log delivery stream within a VPC. The company configured the VPC flow logs to publish to Amazon CloudWatch Logs. The company needs to send the flow logs to Splunk in near real time for further analysis. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure an Amazon Kinesis Data Streams data stream to use Splunk as the destination. Create a CloudWatch Logs subscription filter to send log events to the data stream.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an Amazon Kinesis Data Firehose delivery stream to use Splunk as the destination. Create a CloudWatch Logs subscription filter to send log events to the delivery stream.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Create an Amazon Kinesis Data Firehose delivery stream to use Splunk as the destination. Create an AWS Lambda function to send the flow logs from CloudWatch Logs to the delivery stream.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Configure an Amazon Kinesis Data Streams data stream to use Splunk as the destination. Create an AWS Lambda function to send the flow logs from CloudWatch Logs to the data stream.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-156": "B"
+  },
+  "copy_sources": {
+   "LOC-156": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-156": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G157",
+  "q_no_in_markdown": [
+   157
+  ],
+  "ids": [
+   "LOC-157"
+  ],
+  "baseline_id": "LOC-157",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company plans to use Amazon Kinesis Data Firehose to store data in Amazon S3. The source data consists of 2 MB .csv files. The company must convert the .csv files to JSON format. The company must store the files in Apache Parquet format. Which solution will meet these requirements with the LEAST development effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Kinesis Data Firehose to convert the .csv files to JSON. Use an AWS Lambda function to store the files in Parquet format.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Kinesis Data Firehose to convert the .csv files to JSON and to store the files in Parquet format.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Kinesis Data Firehose to invoke an AWS Lambda function that transforms the .csv files to JSON and stores the files in Parquet format.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use Kinesis Data Firehose to invoke an AWS Lambda function that transforms the .csv files to JSON. Use Kinesis Data Firehose to store the files in Parquet format.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-157": "D"
+  },
+  "copy_sources": {
+   "LOC-157": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-157": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G158",
+  "q_no_in_markdown": [
+   158
+  ],
+  "ids": [
+   "LOC-158"
+  ],
+  "baseline_id": "LOC-158",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company reads data from customer databases that run on Amazon RDS. The databases contain many inconsistent fields. For example, a customer record field that iPnamed place_id in one database is named location_id in another database. The company needs to link customer records across different databases, even when customer record fields do not match. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create a provisioned Amazon EMR cluster to process and analyze data in the databases. Connect to the Apache Zeppelin notebook. Use the FindMatches transform to find duplicate records in the data.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an AWS Glue crawler to craw the databases. Use the FindMatches transform to find duplicate records in the data. Evaluate and tune the transform by evaluating the performance and results.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Create an AWS Glue crawler to craw the databases. Use Amazon SageMaker to construct Apache Spark ML pipelines to find duplicate records in the data.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create a provisioned Amazon EMR cluster to process and analyze data in the databases. Connect to the Apache Zeppelin notebook. Use an Apache Spark ML model to find duplicate records in the data. Evaluate and tune the model by evaluating the performance and results.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-158": "B"
+  },
+  "copy_sources": {
+   "LOC-158": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-158": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G159",
+  "q_no_in_markdown": [
+   159,
+   362
+  ],
+  "ids": [
+   "LOC-159",
+   "LOC-362"
+  ],
+  "baseline_id": "LOC-159",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company receives .csv files that contain physical address data. The data is in columns that have the following names: Door_No, Street_Name, City, and Zip_Code. The company wants to create a single column to store these values in the following format: //IMG// Which solution will meet this requirement with the LEAST coding effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-159": "B",
+   "LOC-362": "A"
+  },
+  "copy_sources": {
+   "LOC-159": "github_examtopics_cache",
+   "LOC-362": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-159": [],
+   "LOC-362": [
+    "bank_key_A_differs_from_source_B"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-362",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G160",
+  "q_no_in_markdown": [
+   160
+  ],
+  "ids": [
+   "LOC-160"
+  ],
+  "baseline_id": "LOC-160",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company receives a daily file that contains customer data in .xls format. The company stores the file in Amazon S3. The daily file is approximately 2 GB in size. A data engineer concatenates the column in the file that contains customer first names and the column that contains customer last names. The data engineer needs to determine the number of distinct customers in the file. Which solution will meet this requirement with the LEAST operational effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create and run an Apache Spark job in an AWS Glue notebook. Configure the job to read the S3 file and calculate the number of distinct customers.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an AWS Glue crawler to create an AWS Glue Data Catalog of the S3 file. Run SQL queries from Amazon Athena to calculate the number of distinct customers.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create and run an Apache Spark job in Amazon EMR Serverless to calculate the number of distinct customers.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use AWS Glue DataBrew to create a recipe that uses the COUNT_DISTINCT aggregate function to calculate the number of distinct customers.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-160": "D"
+  },
+  "copy_sources": {
+   "LOC-160": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-160": []
+  },
+  "alt_option_sets": []
+ }
+]

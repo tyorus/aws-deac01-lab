@@ -1,0 +1,2132 @@
+[
+ {
+  "group_id": "G240",
+  "q_no_in_markdown": [
+   240,
+   325
+  ],
+  "ids": [
+   "LOC-240",
+   "LOC-325"
+  ],
+  "baseline_id": "LOC-240",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer needs to join data from multiple sources to perform a one-time analysis job. The data is stored in Amazon DynamoDB, Amazon RDS, Amazon Redshift, and Amazon S3. Which solution will meet this requirement MOST cost-effectively?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use an Amazon EMR provisioned cluster to read from all sources. Use Apache Spark to join the data and perform the analysis.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Copy the data from DynamoDB, Amazon RDS, and Amazon Redshift into Amazon S3. Run Amazon Athena queries directly on the S3 files.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Athena Federated Query to join the data from all data sources.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Use Redshift Spectrum to query data from DynamoDB, Amazon RDS, and Amazon S3 directly from Redshift.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-240": "C",
+   "LOC-325": "A"
+  },
+  "copy_sources": {
+   "LOC-240": "github_examtopics_cache",
+   "LOC-325": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-240": [],
+   "LOC-325": [
+    "bank_key_A_differs_from_source_C"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-325",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use an Amazon EMR provisioned cluster to read from all sources. Use Apache Spark to join the data and perform the analysis.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Copy the data from DynamoDB, Amazon RDS, and Amazon Redshiffl into Amazon S3. Run Amazon Athena queries directly on the S3 fles.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "Use Amazon Athena Federated Query to join the data from all data sources.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use Redshiffl Spectrum to query data from DynamoDB, Amazon RDS, and Amazon S3 directly from Redshiffl.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G241",
+  "q_no_in_markdown": [
+   241
+  ],
+  "ids": [
+   "LOC-241"
+  ],
+  "baseline_id": "LOC-241",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer needs to maintain a central metadata repository that users access through Amazon EMR and Amazon Athena queries. The repository needs to provide the schema and properties of many tables. Some of the metadata is stored in Apache Hive. The data engineer needs to import the metadata from Hive into the central metadata repository. Which solution will meet these requirements with the LEAST development effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon EMR and Apache Ranger.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use a Hive metastore on an EMR cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use the AWS Glue Data Catalog.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Use a metastore on an Amazon RDS for MySQL DB instance.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-241": "C"
+  },
+  "copy_sources": {
+   "LOC-241": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-241": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G242",
+  "q_no_in_markdown": [
+   242
+  ],
+  "ids": [
+   "LOC-242"
+  ],
+  "baseline_id": "LOC-242",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer needs to onboard a new data producer into AWS. The data producer needs to migrate data products to AWS. The data producer maintains many data pipelines that support a business application. Each pipeline must have service accounts and their corresponding credentials. The data engineer must establish a secure connection from the data producer's on-premises data center to AWS. The data engineer must not use the public internet to transfer data from an on-premises data center to AWS. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Instruct the new data producer to create Amazon Machine Images (AMIs) on Amazon Elastic Container Service (Amazon ECS) to store the code base of the application. Create security groups in a public subnet that allow connections only to the on-premises data center.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create an AWS Direct Connect connection to the on-premises data center. Store the service account credentials in AWS Secrets manager.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Create a security group in a public subnet. Configure the security group to allow only connections from the CIDR blocks that correspond to the data producer. Create Amazon S3 buckets than contain presigned URLS that have one-day expiration dates.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create an AWS Direct Connect connection to the on-premises data center. Store the application keys in AWS Secrets Manager. Create Amazon S3 buckets that contain presigned URLS that have one-day expiration dates.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-242": "B"
+  },
+  "copy_sources": {
+   "LOC-242": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-242": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G243",
+  "q_no_in_markdown": [
+   243,
+   313
+  ],
+  "ids": [
+   "LOC-243",
+   "LOC-313"
+  ],
+  "baseline_id": "LOC-243",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer needs to securely transfer 5 TB of data from an on-premises data center to an Amazon S3 bucket. Approximately 5% of the data changes every day. Updates to the data need to be regularly proliferated to the S3 bucket. The data includes files that are in multiple formats. The data engineer needs to automate the transfer process and must schedule the process to run periodically. Which AWS service should the data engineer use to transfer the data in the MOST operationally efficient way?",
+  "options": [
+   {
+    "label": "A",
+    "text": "AWS DataSync",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "AWS Glue",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "AWS Direct Connect",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon S3 Transfer Acceleration",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-243": "A",
+   "LOC-313": "A"
+  },
+  "copy_sources": {
+   "LOC-243": "github_examtopics_cache",
+   "LOC-313": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-243": [],
+   "LOC-313": []
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-313",
+    "options": [
+     {
+      "label": "A",
+      "text": "AWS DataSync",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "AWS Glue",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "AWS Direct Connect",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Amazon S3 Transfer Acceleration",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G244",
+  "q_no_in_markdown": [
+   244
+  ],
+  "ids": [
+   "LOC-244"
+  ],
+  "baseline_id": "LOC-244",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer needs to use AWS Step Functions to design an orchestration workflow. The workflow must parallel process a large collection of data files and apply a specific transformation to each file. Which Step Functions state should the data engineer use to meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Parallel state",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Choice state",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Map state",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Wait state",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-244": "C"
+  },
+  "copy_sources": {
+   "LOC-244": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-244": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G245",
+  "q_no_in_markdown": [
+   245
+  ],
+  "ids": [
+   "LOC-245"
+  ],
+  "baseline_id": "LOC-245",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A data engineer needs to use Amazon Neptune to develop graph applications. Which programming languages should the engineer use to develop the graph applications? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Gremlin",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "SQL",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "ANSI SQL",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "SPARQL",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Spark SQL",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "option_too_short"
+  ],
+  "copy_keys": {
+   "LOC-245": "AD"
+  },
+  "copy_sources": {
+   "LOC-245": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "AD"
+  ],
+  "entry_flags": {
+   "LOC-245": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G246",
+  "q_no_in_markdown": [
+   246,
+   365
+  ],
+  "ids": [
+   "LOC-246",
+   "LOC-365"
+  ],
+  "baseline_id": "LOC-246",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A data engineer needs to use an Amazon QuickSight dashboard that is based on Amazon Athena queries on data that is stored in an Amazon S3 bucket. When the data engineer connects to the QuickSight dashboard, the data engineer receives an error message that indicates insufficient permissions. Which factors could cause to the permissions-related errors? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "There is no connection between QuickSight and Athena.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "The Athena tables are not cataloged.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "QuickSight does not have access to the S3 bucket.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "QuickSight does not have access to decrypt S3 data.",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "There is no IAM role assigned to QuickSight.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-246": "CD",
+   "LOC-365": "AB"
+  },
+  "copy_sources": {
+   "LOC-246": "github_examtopics_cache",
+   "LOC-365": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "CD"
+  ],
+  "entry_flags": {
+   "LOC-246": [],
+   "LOC-365": [
+    "bank_key_AB_differs_from_source_CD"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-365",
+    "options": [
+     {
+      "label": "A",
+      "text": "There is no connection between QuickSight and Athena.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "The Athena tables are not cataloged.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "QuickSight does not have access to the S3 bucket.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "QuickSight does not have access to the S3 bucket. D. QuickSight does not have access to decrypt S3 data.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "There is no IAM role assigned to QuickSight.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G248",
+  "q_no_in_markdown": [
+   248,
+   338
+  ],
+  "ids": [
+   "LOC-248",
+   "LOC-338"
+  ],
+  "baseline_id": "LOC-248",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A data engineer runs Amazon Athena queries on data that is in an Amazon S3 bucket. The Athena queries use AWS Glue Data Catalog as a metadata table. The data engineer notices that the Athena query plans are experiencing a performance bottleneck. The data engineer determines that the cause of the performance bottleneck is the large number of partitions that are in the S3 bucket. The data engineer must resolve the performance bottleneck and reduce Athena query planning time. Which solutions will meet these requirements? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create an AWS Glue partition index. Enable partition filtering.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Bucket the data based on a column that the data have in common in a WHERE clause of the user query.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Athena partition projection based on the S3 bucket prefix.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Transform the data that is in the S3 bucket to Apache Parquet format.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Use the Amazon EMR S3DistCP utility to combine smaller objects in the S3 bucket into larger objects.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-248": "AC",
+   "LOC-338": "AB"
+  },
+  "copy_sources": {
+   "LOC-248": "github_examtopics_cache",
+   "LOC-338": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "AC"
+  ],
+  "entry_flags": {
+   "LOC-248": [],
+   "LOC-338": [
+    "bank_key_AB_differs_from_source_AC"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-338",
+    "options": [
+     {
+      "label": "A",
+      "text": "Create an AWS Glue parffon index. Enable parffon fflltering.",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "Bucket the data based on a column that the data have in common in a WHERE clause of the user query.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Use Athena parffon projecfon based on the S3 bucket prefflx.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Transform the data that is in the S3 bucket to Apache Parquet format.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "Use the Amazon EMR S3DistCP utility to combine smaller objects in the 53 bucket into larger objects. larger objects.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G249",
+  "q_no_in_markdown": [
+   249,
+   367
+  ],
+  "ids": [
+   "LOC-249",
+   "LOC-367"
+  ],
+  "baseline_id": "LOC-249",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer set up an AWS Lambda function to read an object that is stored in an Amazon S3 bucket. The object is encrypted by an AWS KMS key. The data engineer configured the Lambda function’s execution role to access the S3 bucket. However, the Lambda function encountered an error and failed to retrieve the content of the object. What is the likely cause of the error?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The data engineer misconfigured the permissions of the S3 bucket. The Lambda function could not access the object.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "The Lambda function is using an outdated SDK version, which caused the read failure.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "The S3 bucket is located in a different AWS Region than the Region where the data engineer works. Latency issues caused the Lambda function to encounter an error.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "The Lambda function’s execution role does not have the necessary permissions to access the KMS key that can decrypt the S3 object.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-249": "D",
+   "LOC-367": "D"
+  },
+  "copy_sources": {
+   "LOC-249": "github_examtopics_cache",
+   "LOC-367": "examtopics"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-249": [],
+   "LOC-367": []
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-367",
+    "options": [
+     {
+      "label": "A",
+      "text": "The data engineer misconfigured the permissions of the S3 bucket. The Lambda function could not access the object.",
+      "marked_correct": false
+     },
+     {
+      "label": "B",
+      "text": "The Lambda function is using an outdated SDK version, which caused the read failure.",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "The S3 bucket is located in a different AWS Region than the Region where the data engineer works. Latency issues caused the Lambda function to encounter an error.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "The Lambda function’s execution role does not have the necessary permissions to access the KMS key that can decrypt the S3 object.",
+      "marked_correct": true
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G251",
+  "q_no_in_markdown": [
+   251
+  ],
+  "ids": [
+   "LOC-251"
+  ],
+  "baseline_id": "LOC-251",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer uses Amazon Managed Workflows for Apache Airflow (Amazon MWAA) to run data pipelines in an AWS account. A workflow recently failed to run. The data engineer needs to use Apache Airflow logs to diagnose the failure of the workflow. Which log type should the data engineer use to diagnose the cause of the failure?",
+  "options": [
+   {
+    "label": "A",
+    "text": "YourEnvironmentName-WebServer",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "YourEnvironmentName-Scheduler",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "YourEnvironmentName-DAGProcessing",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "YourEnvironmentName-Task",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-251": "D"
+  },
+  "copy_sources": {
+   "LOC-251": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-251": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G252",
+  "q_no_in_markdown": [
+   252
+  ],
+  "ids": [
+   "LOC-252"
+  ],
+  "baseline_id": "LOC-252",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer uses Amazon Redshift to run resource-intensive analytics processes once every month. Every month, the data engineer creates a new Redshift provisioned cluster. The data engineer deletes the Redshift provisioned cluster after the analytics processes are complete every month. Before the data engineer deletes the cluster each month, the data engineer unloads backup data from the cluster to an Amazon S3 bucket. The data engineer needs a solution to run the monthly analytics processes that does not require the data engineer to manage the infrastructure manually. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Step Functions to pause the Redshift cluster when the analytics processes are complete and to resume the cluster to run new processes every month.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon Redshift Serverless to automatically process the analytics workload.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use the AWS CLI to automatically process the analytics workload.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use AWS CloudFormation templates to automatically process the analytics workload.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-252": "B"
+  },
+  "copy_sources": {
+   "LOC-252": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-252": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G253",
+  "q_no_in_markdown": [
+   253
+  ],
+  "ids": [
+   "LOC-253"
+  ],
+  "baseline_id": "LOC-253",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer wants to improve the performance of SQL queries in Amazon Athena that run against a sales data table. The data engineer wants to understand the execution plan of a specific SQL statement. The data engineer also wants to see the computational cost of each operation in a SQL query. Which statement does the data engineer need to run to meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "EXPLAIN SELECT * FROM sales;",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "EXPLAIN ANALYZE FROM sales;",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "EXPLAIN ANALYZE SELECT * FROM sales;",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "EXPLAIN FROM sales;",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-253": "C"
+  },
+  "copy_sources": {
+   "LOC-253": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-253": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G254",
+  "q_no_in_markdown": [
+   254
+  ],
+  "ids": [
+   "LOC-254"
+  ],
+  "baseline_id": "LOC-254",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer wants to orchestrate a set of extract, transform, and load (ETL) jobs that run on AWS. The ETL jobs contain tasks that must run Apache Spark jobs on Amazon EMR, make API calls to Salesforce, and load data into Amazon Redshift. The ETL jobs need to handle failures and retries automatically. The data engineer needs to use Python to orchestrate the jobs. Which service will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA)",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "AWS Step Functions",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "AWS Glue",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon EventBridge",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-254": "A"
+  },
+  "copy_sources": {
+   "LOC-254": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-254": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G255",
+  "q_no_in_markdown": [
+   255,
+   342
+  ],
+  "ids": [
+   "LOC-255",
+   "LOC-342"
+  ],
+  "baseline_id": "LOC-255",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineering team is using an Amazon Redshift data warehouse for operational reporting. The team wants to prevent performance issues that might result from long- running queries. A data engineer must choose a system table in Amazon Redshift to record anomalies when a query optimizer identifies conditions that might indicate performance issues. Which table views should the data engineer use to meet this requirement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "STL_USAGE_CONTROL",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "STL_ALERT_EVENT_LOG",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "STL_QUERY_METRICS",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "STL_PLAN_INFO",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-255": "B",
+   "LOC-342": "A"
+  },
+  "copy_sources": {
+   "LOC-255": "github_examtopics_cache",
+   "LOC-342": "pdf_exam_dumps"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-255": [],
+   "LOC-342": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-342",
+    "options": [
+     {
+      "label": "A",
+      "text": "STL_USAGE_CONTROL",
+      "marked_correct": true
+     },
+     {
+      "label": "B",
+      "text": "STL_ALERT_EVENT_LOG",
+      "marked_correct": false
+     },
+     {
+      "label": "C",
+      "text": "STL_QUERY_METRICS",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "STL_PLAN_INFO",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G256",
+  "q_no_in_markdown": [
+   256
+  ],
+  "ids": [
+   "LOC-256"
+  ],
+  "baseline_id": "LOC-256",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A finance company receives data from third-party data providers and stores the data as objects in an Amazon S3 bucket. The company ran an AWS Glue crawler on the objects to create a data catalog. The AWS Glue crawler created multiple tables. However, the company expected that the crawler would create only one table. The company needs a solution that will ensure the AVS Glue crawler creates only one table. Which combination of solutions will meet this requirement? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Ensure that the object format, compression type, and schema are the same for each object.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Ensure that the object format and schema are the same for each object. Do not enforce consistency for the compression type of each object.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Ensure that the schema is the same for each object. Do not enforce consistency for the file format and compression type of each object.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Ensure that the structure of the prefix for each S3 object name is consistent.",
+    "marked_correct": true
+   },
+   {
+    "label": "E",
+    "text": "Ensure that all S3 object names follow a similar pattern.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-256": "AD"
+  },
+  "copy_sources": {
+   "LOC-256": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "AD"
+  ],
+  "entry_flags": {
+   "LOC-256": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G257",
+  "q_no_in_markdown": [
+   257
+  ],
+  "ids": [
+   "LOC-257"
+  ],
+  "baseline_id": "LOC-257",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A finance company uses Amazon Redshift as a data warehouse. The company stores the data in a shared Amazon S3 bucket. The company uses Amazon Redshift Spectrum to access the data that is stored in the S3 bucket. The data comes from certified third-party data providers. Each third-party data provider has unique connection details. To comply with regulations, the company must ensure that none of the data is accessible from outside the company's AWS environment. Which combination of steps should the company take to meet these requirements? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Replace the existing Redshift cluster with a new Redshift cluster that is in a private subnet. Use an interface VPC endpoint to connect to the Redshift cluster. Use a NAT gateway to give Redshift access to the S3 bucket.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Create an AWS CloudHSM hardware security module (HSM) for each data provider. Encrypt each data provider's data by using the corresponding HSM for each data provider.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Turn on enhanced VPC routing for the Amazon Redshift cluster. Set up an AWS Direct Connect connection and configure a connection between each data provider and the finance company’s VPC.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Define table constraints for the primary keys and the foreign keys.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Use federated queries to access the data from each data provider. Do not upload the data to the S3 bucket. Perform the federated queries through a gateway VPC endpoint.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-257": "AC"
+  },
+  "copy_sources": {
+   "LOC-257": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "AC"
+  ],
+  "entry_flags": {
+   "LOC-257": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G258",
+  "q_no_in_markdown": [
+   258
+  ],
+  "ids": [
+   "LOC-258"
+  ],
+  "baseline_id": "LOC-258",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A financial company recently added more features to its mobile app. The new features required the company to create a new topic in an existing Amazon Managed Streaming for Apache Kafka (Amazon MSK) cluster. A few days after the company added the new topic, Amazon CloudWatch raised an alarm on the RootDiskUsed metric for the MSK cluster. How should the company address the CloudWatch alarm?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Expand the storage of the MSK broker. Configure the MSK cluster storage to expand automatically.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Expand the storage of the Apache ZooKeeper nodes.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Update the MSK broker instance to a larger instance type. Restart the MSK cluster.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Specify the Target Volume-in-GiB parameter for the existing topic.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-258": "A"
+  },
+  "copy_sources": {
+   "LOC-258": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-258": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G259",
+  "q_no_in_markdown": [
+   259,
+   360
+  ],
+  "ids": [
+   "LOC-259",
+   "LOC-360"
+  ],
+  "baseline_id": "LOC-259",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A financial company wants to use Amazon Athena to run on-demand SQL queries on a petabyte-scale dataset to support a business intelligence (BI) application. An AWS Glue job that runs during non-business hours updates the dataset once every day. The BI application has a standard data refresh frequency of 1 hour to comply with company policies. A data engineer wants to cost optimize the company's use of Amazon Athena without adding any additional infrastructure costs. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure an Amazon S3 Lifecycle policy to move data to the S3 Glacier Deep Archive storage class after 1 day.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use the query result reuse feature of Amazon Athena for the SQL queries.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Add an Amazon ElastiCache cluster between the BI application and Athena.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Change the format of the files that are in the dataset to Apache Parquet.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-259": "B",
+   "LOC-360": "B"
+  },
+  "copy_sources": {
+   "LOC-259": "github_examtopics_cache",
+   "LOC-360": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-259": [],
+   "LOC-360": []
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-360",
+    "options": [
+     {
+      "label": "A",
+      "text": "Configure an Amazon S3 Lifecycle policy to move data to the S3 Glacier Deep Archive storage class after 1 day.",
+      "marked_correct": false
+     },
+     {
+      "label": "B",
+      "text": "Use the query result reuse feature of Amazon Athena for the SQL queries.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Add an Amazon ElastiCache cluster between the BI application and Athena.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Change the format of the files that are in the dataset to Apache Parquet.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G260",
+  "q_no_in_markdown": [
+   260
+  ],
+  "ids": [
+   "LOC-260"
+  ],
+  "baseline_id": "LOC-260",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A gaming company uses Amazon Kinesis Data Streams to collect clickstream data. The company uses Amazon Data Firehose delivery streams to store the data in JSON format in Amazon S3. Data scientists at the company use Amazon Athena to query the most recent data to obtain business insights. The company wants to reduce Athena costs but does not want to recreate the data pipeline. Which solution will meet these requirements with the LEAST management effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Change the Firehose output format to Apache Parquet. Provide a custom S3 object YYYYMMDD prefix expression and specify a large buffer size. For the existing data, create an AWS Glue extract, transform, and load (ETL) job. Configure the ETL job to combine small JSON files, convert the JSON files to large Parquet files, and add the YYYYMMDD prefix. Use the ALTER TABLE ADD PARTITION statement to reflect the partition on the existing Athena table.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Create an Apache Spark job that combines JSON files and converts the JSON files to Apache Parquet files. Launch an Amazon EMR ephemeral cluster every day to run the Spark job to create new Parquet files in a different S3 location. Use the ALTER TABLE SET LOCATION statement to reflect the new S3 location on the existing Athena table.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create a Kinesis data stream as a delivery destination for Firehose. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) to run Apache Flink on the Kinesis data stream. Use Flink to aggregate the data and save the data to Amazon S3 in Apache Parquet format with a custom S3 object YYYYMMDD prefix. Use the ALTER TABLE ADD PARTITION statement to reflect the partition on the existing Athena table.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Integrate an AWS Lambda function with Firehose to convert source records to Apache Parquet and write them to Amazon S3. In parallel, run an AWS Glue extract, transform, and load (ETL) job to combine the JSON files and convert the JSON files to large Parquet files. Create a custom S3 object YYYYMMDD prefix. Use the ALTER TABLE ADD PARTITION statement to reflect the partition on the existing Athena table.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [
+   "option_very_long"
+  ],
+  "copy_keys": {
+   "LOC-260": "A"
+  },
+  "copy_sources": {
+   "LOC-260": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-260": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G261",
+  "q_no_in_markdown": [
+   261
+  ],
+  "ids": [
+   "LOC-261"
+  ],
+  "baseline_id": "LOC-261",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A gaming company uses a NoSQL database to store customer information. The company is planning to migrate to AWS. The company needs a fully managed AWS solution that will handle high online transaction processing (OLTP) workload, provide single-digit millisecond performance, and provide high availability around the world. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Keyspaces (for Apache Cassandra)",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Amazon DocumentDB (with MongoDB compatibility)",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Amazon DynamoDB",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Amazon Timestream",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-261": "C"
+  },
+  "copy_sources": {
+   "LOC-261": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-261": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G262",
+  "q_no_in_markdown": [
+   262,
+   364
+  ],
+  "ids": [
+   "LOC-262",
+   "LOC-364"
+  ],
+  "baseline_id": "LOC-262",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A healthcare company uses Amazon Kinesis Data Streams to stream real-time health data from wearable devices, hospital equipment, and patient records. A data engineer needs to find a solution to process the streaming data. The data engineer needs to store the data in an Amazon Redshift Serverless warehouse. The solution must support near real-time analytics of the streaming data and the previous day's data. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Load data into Amazon Kinesis Data Firehose. Load the data into Amazon Redshift.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use the streaming ingestion feature of Amazon Redshift.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use the Amazon Aurora zero-ETL integration with Amazon Redshift.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-262": "B",
+   "LOC-364": "B"
+  },
+  "copy_sources": {
+   "LOC-262": "github_examtopics_cache",
+   "LOC-364": "pdf_80_mock"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-262": [],
+   "LOC-364": []
+  },
+  "alt_option_sets": [
+   {
+    "id": "LOC-364",
+    "options": [
+     {
+      "label": "A",
+      "text": "Load data into Amazon Kinesis Data Firehose. Load the data into Amazon Redshift.",
+      "marked_correct": false
+     },
+     {
+      "label": "B",
+      "text": "Use the streaming ingestion feature of Amazon Redshift.",
+      "marked_correct": true
+     },
+     {
+      "label": "C",
+      "text": "Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift.",
+      "marked_correct": false
+     },
+     {
+      "label": "D",
+      "text": "Use the Amazon Aurora zero-ETL integration with Amazon Redshift.",
+      "marked_correct": false
+     },
+     {
+      "label": "E",
+      "text": "Load the data into Amazon Redshift. B. Use the streaming ingestion feature of Amazon Redshift. C. Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift. D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.",
+      "marked_correct": false
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G263",
+  "q_no_in_markdown": [
+   263
+  ],
+  "ids": [
+   "LOC-263"
+  ],
+  "baseline_id": "LOC-263",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A lab uses IoT sensors to monitor humidity, temperature, and pressure for a project. The sensors send 100 KB of data every 10 seconds. A downstream process will read the data from an Amazon S3 bucket every 30 seconds. Which solution will deliver the data to the S3 bucket with the LEAST latency?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Kinesis Data Streams and Amazon Kinesis Data Firehose to deliver the data to the S3 bucket. Use the default buffer interval for Kinesis Data Firehose.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon Kinesis Data Streams to deliver the data to the S3 bucket. Configure the stream to use 5 provisioned shards.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Kinesis Data Streams and call the Kinesis Client Library to deliver the data to the S3 bucket. Use a 5 second buffer interval from an application.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) and Amazon Kinesis Data Firehose to deliver the data to the S3 bucket. Use a 5 second buffer interval for Kinesis Data Firehose.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-263": "C"
+  },
+  "copy_sources": {
+   "LOC-263": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-263": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G265",
+  "q_no_in_markdown": [
+   265
+  ],
+  "ids": [
+   "LOC-265"
+  ],
+  "baseline_id": "LOC-265",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A manufacturing company has many IoT devices in facilities around the world. The company uses Amazon Kinesis Data Streams to collect data from the devices. The data includes device ID, capture date, measurement type, measurement value, and facility ID. The company uses facility ID as the partition key. The company's operations team recently observed many WriteThroughputExceeded exceptions. The operations team found that some shards were heavily used but other shards were generally idle. How should the company resolve the issues that the operations team observed?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Change the partition key from facility ID to a randomly generated key.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Increase the number of shards.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Archive the data on the producer's side.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Change the partition key from facility ID to capture date.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-265": "A"
+  },
+  "copy_sources": {
+   "LOC-265": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-265": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G266",
+  "q_no_in_markdown": [
+   266
+  ],
+  "ids": [
+   "LOC-266"
+  ],
+  "baseline_id": "LOC-266",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A manufacturing company wants to collect data from sensors. A data engineer needs to implement a solution that ingests sensor data in near real time. The solution must store the data to a persistent data store. The solution must store the data in nested JSON format. The company must have the ability to query from the data store with a latency of less than 10 milliseconds. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use a self-hosted Apache Kafka cluster to capture the sensor data. Store the data in Amazon S3 for querying.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use AWS Lambda to process the sensor data. Store the data in Amazon S3 for querying.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Kinesis Data Streams to capture the sensor data. Store the data in Amazon DynamoDB for querying.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Use Amazon Simple Queue Service (Amazon SQS) to buffer incoming sensor data. Use AWS Glue to store the data in Amazon RDS for querying.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-266": "C"
+  },
+  "copy_sources": {
+   "LOC-266": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-266": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G267",
+  "q_no_in_markdown": [
+   267
+  ],
+  "ids": [
+   "LOC-267"
+  ],
+  "baseline_id": "LOC-267",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A marketing company collects clickstream data. The company sends the clickstream data to Amazon Kinesis Data Firehose and stores the clickstream data in Amazon S3. The company wants to build a series of dashboards that hundreds of users from multiple departments will use. The company will use Amazon QuickSight to develop the dashboards. The company wants a solution that can scale and provide daily updates about clickstream activity. Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Redshift to store and query the clickstream data.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon Athena to query the clickstream data",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon S3 analytics to query the clickstream data.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Access the query data through a QuickSight direct SQL query.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Access the query data through QuickSight SPICE (Super-fast, Parallel, In-memory Calculation Engine). Configure a daily refresh for the dataset.",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-267": "BE"
+  },
+  "copy_sources": {
+   "LOC-267": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "BE"
+  ],
+  "entry_flags": {
+   "LOC-267": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G268",
+  "q_no_in_markdown": [
+   268
+  ],
+  "ids": [
+   "LOC-268"
+  ],
+  "baseline_id": "LOC-268",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A marketing company uses Amazon S3 to store marketing data. The company uses versioning in some buckets. The company runs several jobs to read and load data into the buckets. To help cost-optimize its storage, the company wants to gather information about incomplete multipart uploads and outdated versions that are present in the S3 buckets. Which solution will meet these requirements with the LEAST operational effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS CLI to gather the information.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon S3 Inventory configurations reports to gather the information.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use the Amazon S3 Storage Lens dashboard to gather the information.",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Use AWS usage reports for Amazon S3 to gather the information.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-268": "C"
+  },
+  "copy_sources": {
+   "LOC-268": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-268": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G269",
+  "q_no_in_markdown": [
+   269
+  ],
+  "ids": [
+   "LOC-269"
+  ],
+  "baseline_id": "LOC-269",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A marketing company uses Amazon S3 to store clickstream data. The company queries the data at the end of each day by using a SQL JOIN clause on S3 objects that are stored in separate buckets. The company creates key performance indicators (KPIs) based on the objects. The company needs a serverless solution that will give users the ability to query data by partitioning the data. The solution must maintain the atomicity, consistency, isolation, and durability (ACID) properties of the data. Which solution will meet these requirements MOST cost-effectively?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon S3 Select",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Amazon Redshift Spectrum",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Amazon Athena",
+    "marked_correct": true
+   },
+   {
+    "label": "D",
+    "text": "Amazon EMR",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-269": "C"
+  },
+  "copy_sources": {
+   "LOC-269": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "C"
+  ],
+  "entry_flags": {
+   "LOC-269": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G270",
+  "q_no_in_markdown": [
+   270
+  ],
+  "ids": [
+   "LOC-270"
+  ],
+  "baseline_id": "LOC-270",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A media company uses software as a service (SaaS) applications to gather data by using third-party tools. The company needs to store the data in an Amazon S3 bucket. The company will use Amazon Redshift to perform analytics based on the data. Which AWS service or feature will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Managed Streaming for Apache Kafka (Amazon MSK)",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Amazon AppFlow",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "AWS Glue Data Catalog",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon Kinesis",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-270": "B"
+  },
+  "copy_sources": {
+   "LOC-270": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-270": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G271",
+  "q_no_in_markdown": [
+   271
+  ],
+  "ids": [
+   "LOC-271"
+  ],
+  "baseline_id": "LOC-271",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A media company wants to use Amazon OpenSearch Service to analyze rea-time data about popular musical artists and songs. The company expects to ingest millions of new data events every day. The new data events will arrive through an Amazon Kinesis data stream. The company must transform the data and then ingest the data into the OpenSearch Service domain. Which method should the company use to ingest the data with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Kinesis Data Firehose and an AWS Lambda function to transform the data and deliver the transformed data to OpenSearch Service.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Use a Logstash pipeline that has prebuilt filters to transform the data and deliver the transformed data to OpenSearch Service.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Use an AWS Lambda function to call the Amazon Kinesis Agent to transform the data and deliver the transformed data OpenSearch Service.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use the Kinesis Client Library (KCL) to transform the data and deliver the transformed data to OpenSearch Service.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-271": "A"
+  },
+  "copy_sources": {
+   "LOC-271": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-271": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G272",
+  "q_no_in_markdown": [
+   272
+  ],
+  "ids": [
+   "LOC-272"
+  ],
+  "baseline_id": "LOC-272",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A mobile gaming company wants to capture data from its gaming app. The company wants to make the data available to three internal consumers of the data. The data records are approximately 20 KB in size. The company wants to achieve optimal throughput from each device that runs the gaming app. Additionally, the company wants to develop an application to process data streams. The stream-processing application must have dedicated throughput for each internal consumer. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure the mobile app to call the PutRecords API operation to send data to Amazon Kinesis Data Streams. Use the enhanced fan-out feature with a stream for each internal consumer.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Configure the mobile app to call the PutRecordBatch API operation to send data to Amazon Kinesis Data Firehose. Submit an AWS Support case to turn on dedicated throughput for the company’s AWS account. Allow each internal consumer to access the stream.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Configure the mobile app to use the Amazon Kinesis Producer Library (KPL) to send data to Amazon Kinesis Data Firehose. Use the enhanced fan-out feature with a stream for each internal consumer.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Configure the mobile app to call the PutRecords API operation to send data to Amazon Kinesis Data Streams. Host the stream-processing application for each internal consumer on Amazon EC2 instances. Configure auto scaling for the EC2 instances.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-272": "A"
+  },
+  "copy_sources": {
+   "LOC-272": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-272": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G273",
+  "q_no_in_markdown": [
+   273
+  ],
+  "ids": [
+   "LOC-273"
+  ],
+  "baseline_id": "LOC-273",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retail company is expanding its operations globally. The company needs to use Amazon QuickSight to accurately calculate currency exchange rates for financial reports. The company has an existing dashboard that includes a visual that is based on an analysis of a dataset that contains global currency values and exchange rates. A data engineer needs to ensure that exchange rates are calculated with a precision of four decimal places. The calculations must be precomputed. The data engineer must materialize results in QuickSight super-fast, parallel, in-memory calculation engine (SPICE). Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Define and create the calculated field in the dataset.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Define and create the calculated field in the analysis.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Define and create the calculated field in the visual.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Define and create the calculated field in the dashboard.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-273": "A"
+  },
+  "copy_sources": {
+   "LOC-273": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-273": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G274",
+  "q_no_in_markdown": [
+   274
+  ],
+  "ids": [
+   "LOC-274"
+  ],
+  "baseline_id": "LOC-274",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A retail company is using an Amazon Redshift cluster to support real-time inventory management. The company has deployed an ML model on a real-time endpoint in Amazon SageMaker. The company wants to make real-time inventory recommendations. The company also wants to make predictions about future inventory needs. Which solutions will meet these requirements? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Redshift ML to generate inventory recommendations.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Use SQL to invoke a remote SageMaker endpoint for prediction.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Redshift ML to schedule regular data exports for offline model training.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use SageMaker Autopilot to create inventory management dashboards in Amazon Redshift.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Use Amazon Redshift as a file storage system to archive old inventory management reports.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-274": "AB"
+  },
+  "copy_sources": {
+   "LOC-274": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "AB"
+  ],
+  "entry_flags": {
+   "LOC-274": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G275",
+  "q_no_in_markdown": [
+   275
+  ],
+  "ids": [
+   "LOC-275"
+  ],
+  "baseline_id": "LOC-275",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retail company stores customer data in an Amazon S3 bucket. Some of the customer data contains personally identifiable information (PII) about customers. The company must not share PII data with business partners. A data engineer must determine whether a dataset contains PII before making objects in the dataset available to business partners. Which solution will meet this requirement with the LEAST manual intervention?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure the S3 bucket and S3 objects to allow access to Amazon Macie. Use automated sensitive data discovery in Macie.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Configure AWS CloudTrail to monitor S3 PUT operations. Inspect the CloudTrail trails to identify operations that save PII.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Create an AWS Lambda function to identify PII in S3 objects. Schedule the function to run periodically.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Create a table in AWS Glue Data Catalog. Write custom SQL queries to identify PII in the table. Use Amazon Athena to run the queries.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-275": "A"
+  },
+  "copy_sources": {
+   "LOC-275": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-275": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G276",
+  "q_no_in_markdown": [
+   276
+  ],
+  "ids": [
+   "LOC-276"
+  ],
+  "baseline_id": "LOC-276",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retail company stores data from a product lifecycle management (PLM) application in an on-premises MySQL database. The PLM application frequently updates the database when transactions occur. The company wants to gather insights from the PLM application in near real time. The company wants to integrate the insights with other business datasets and to analyze the combined dataset by using an Amazon Redshift data warehouse. The company has already established an AWS Direct Connect connection between the on-premises infrastructure and AWS. Which solution will meet these requirements with the LEAST development effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Run a scheduled AWS Glue extract, transform, and load (ETL) job to get the MySQL database updates by using a Java Database Connectivity (JDBC) connection. Set Amazon Redshift as the destination for the ETL job.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Run a full load plus CDC task in AWS Database Migration Service (AWS DMS) to continuously replicate the MySQL database changes. Set Amazon Redshift as the destination for the task.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use the Amazon AppFlow SDK to build a custom connector for the MySQL database to continuously replicate the database changes. Set Amazon Redshift as the destination for the connector.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Run scheduled AWS DataSync tasks to synchronize data from the MySQL database. Set Amazon Redshift as the destination for the tasks.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-276": "B"
+  },
+  "copy_sources": {
+   "LOC-276": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-276": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G277",
+  "q_no_in_markdown": [
+   277
+  ],
+  "ids": [
+   "LOC-277"
+  ],
+  "baseline_id": "LOC-277",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retail company stores transactions, store locations, and customer information tables in four reserved ra3.4xlarge Amazon Redshift cluster nodes. All three tables use even table distribution. The company updates the store location table only once or twice every few years. A data engineer notices that Redshift queues are slowing down because the whole store location table is constantly being broadcast to all four compute nodes for most queries. The data engineer wants to speed up the query performance by minimizing the broadcasting of the store location table. Which solution will meet these requirements in the MOST cost-effective way?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Change the distribution style of the store location table from EVEN distribution to ALL distribution.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Change the distribution style of the store location table to KEY distribution based on the column that has the highest dimension.",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Add a join column named store_id into the sort key for all the tables.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Upgrade the Redshift reserved node to a larger instance size in the same instance family.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-277": "A"
+  },
+  "copy_sources": {
+   "LOC-277": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-277": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G278",
+  "q_no_in_markdown": [
+   278
+  ],
+  "ids": [
+   "LOC-278"
+  ],
+  "baseline_id": "LOC-278",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A retail company uses AWS Glue for extract, transform, and load (ETL) operations on a dataset that contains information about customer orders. The company wants to implement specific validation rules to ensure data accuracy and consistency. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS Glue job bookmarks to track the data for accuracy and consistency.",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create custom AWS Glue Data Quality rulesets to define specific data quality checks.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Use the built-in AWS Glue Data Quality transforms for standard data quality validations.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Use AWS Glue Data Catalog to maintain a centralized data schema and metadata repository.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-278": "B"
+  },
+  "copy_sources": {
+   "LOC-278": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-278": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G279",
+  "q_no_in_markdown": [
+   279
+  ],
+  "ids": [
+   "LOC-279"
+  ],
+  "baseline_id": "LOC-279",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A retail company uses Amazon Aurora PostgreSQL to process and store live transactional data. The company uses an Amazon Redshift cluster for a data warehouse. An extract, transform, and load (ETL) job runs every morning to update the Redshift cluster with new data from the PostgreSQL database. The company has grown rapidly and needs to cost optimize the Redshift cluster. A data engineer needs to create a solution to archive historical data. The data engineer must be able to run analytics queries that effectively combine data from live transactional data in PostgreSQL, current data in Redshift, and archived historical data. The solution must keep only the most recent 15 months of data in Amazon Redshift to reduce costs. Which combination of steps will meet these requirements? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure the Amazon Redshift Federated Query feature to query live transactional data that is in the PostgreSQL database.",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Configure Amazon Redshift Spectrum to query live transactional data that is in the PostgreSQL database.",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Schedule a monthly job to copy data that is older than 15 months to Amazon S3 by using the UNLOAD command. Delete the old data from the Redshift cluster. Configure Amazon Redshift Spectrum to access historical data in Amazon S3.",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Schedule a monthly job to copy data that is older than 15 months to Amazon S3 Glacier Flexible Retrieval by using the UNLOAD command. Delete the old data from the Redshift cluster. Configure Redshift Spectrum to access historical data from S3 Glacier Flexible Retrieval.",
+    "marked_correct": false
+   },
+   {
+    "label": "E",
+    "text": "Create a materialized view in Amazon Redshift that combines live, current, and historical data from different sources.",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-279": "AB"
+  },
+  "copy_sources": {
+   "LOC-279": "github_examtopics_cache"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-279": [
+    "bank_key_AB_differs_from_source_A"
+   ]
+  },
+  "alt_option_sets": []
+ }
+]

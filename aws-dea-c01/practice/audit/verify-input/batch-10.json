@@ -1,0 +1,1774 @@
+[
+ {
+  "group_id": "G417",
+  "q_no_in_markdown": [
+   417
+  ],
+  "ids": [
+   "LOC-417"
+  ],
+  "baseline_id": "LOC-417",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A subscription business stores customer interaction records as Parquet in Amazon s3, partitioned by month, and queries them with Amazon Athena. Under privacy legislation it must erase all records for a customer within thirty days of a request, and receives around sixty such requests a month. Currently an engineer identifies affected files, rewrites each without the customer's rows, and What should the company implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Convert the dataset to Apachelceberg tables",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "EnableS3Versioningso a failed rewritecanbe",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "and use DELETE statements",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Repartition the data by customer identifier so",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-417": "A"
+  },
+  "copy_sources": {
+   "LOC-417": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-417": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G418",
+  "q_no_in_markdown": [
+   418
+  ],
+  "ids": [
+   "LOC-418"
+  ],
+  "baseline_id": "LOC-418",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company keeps six years of order history in an Amazon Redshift cluster, totalling ninety terabytes. The last six months are queried continuously by three hundred users. Older data is queried a handful of times each year for audits, and those audits must join old and recent data in a single query. Managed storage is now the largest line on the Redshift bill. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Reduce the cluster node count to lower the",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Move the older data to a second Redshift",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "storage cost",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "cluster and use data sharing",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-418": "A"
+  },
+  "copy_sources": {
+   "LOC-418": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-418": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G419",
+  "q_no_in_markdown": [
+   419
+  ],
+  "ids": [
+   "LOC-419"
+  ],
+  "baseline_id": "LOC-419",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A media company runs a self-managed MongoDB cluster on Amazon EC2 holding a content catalogue. Around eighty services query it using MongoDB drivers and aggregation pipelines. The operations team wants to stop managing replica sets and backups. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Keyspaces, which is designed for",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Amazon DynamoDB, which is fully managed",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "flexible schemas",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "and handles document workloads",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-419": "B"
+  },
+  "copy_sources": {
+   "LOC-419": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-419": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G420",
+  "q_no_in_markdown": [
+   420
+  ],
+  "ids": [
+   "LOC-420"
+  ],
+  "baseline_id": "LOC-420",
+  "type": "single",
+  "choose_n": null,
+  "stem": "stayed around twenty terabytes. S3 Storage Lens reports approximately seventy terabytes of billed storage. Which combination explains the gap and addresses it?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Enable S3 Intelligent-Tiering so infrequently",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Enable Cross-Region Replication and delete the",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "accessed data moves to cheaper tiers",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "primary copies",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-420": "B"
+  },
+  "copy_sources": {
+   "LOC-420": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-420": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G421",
+  "q_no_in_markdown": [
+   421
+  ],
+  "ids": [
+   "LOC-421"
+  ],
+  "baseline_id": "LOC-421",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A crawler has catalogued a set of pipe-delimited text files in Amazon S3. Analysts querying colo, containing the entire line as one string. The files have a consistent structure with a header row. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the crawler's sample size so it reads",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Create a custom classifier defining the pipe",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "delimiter, and rerun the crawler",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Set the crawler's schema change policy to",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-421": "B"
+  },
+  "copy_sources": {
+   "LOC-421": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-421": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G422",
+  "q_no_in_markdown": [
+   422
+  ],
+  "ids": [
+   "LOC-422"
+  ],
+  "baseline_id": "LOC-422",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Athena table over five years of Parquet data is partitioned by a string column named event_date. Analysts filter with a function that extracts the date from an event_timestamp column instead.Results are correct. Queries scan the entire table every time, and the Athena bill is far higher than expected. What is the cause?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The table needs a Glue partition index",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "The workgroup's data scan limit has been set",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Thefilter is applied toa derived value, so",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Parquet files are too small and need",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-422": "A"
+  },
+  "copy_sources": {
+   "LOC-422": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-422": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G423",
+  "q_no_in_markdown": [
+   423
+  ],
+  "ids": [
+   "LOC-423"
+  ],
+  "baseline_id": "LOC-423",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Amazon EMR transient cluster runs a nightly Spark job and terminates on completion. Last night the job failed after ninety minutes. The cluster terminated automatically and the operations team can see only that the step failed. No application logs are available. The team needs to diagnose this and prevent the same blind spot recurring. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rerun the job on a long-running cluster to",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Configure the cluster to archive logs to Amazon",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "reproduce the failure",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "S3 and enable the persistent Spark history",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-423": "B"
+  },
+  "copy_sources": {
+   "LOC-423": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-423": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G424",
+  "q_no_in_markdown": [
+   424
+  ],
+  "ids": [
+   "LOC-424"
+  ],
+  "baseline_id": "LOC-424",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A daily pipeline loads product data into a warehouse. Aws Glue Data Quality rules check that key columns are complete and that prices fall within an expected range. All rules pass every day. Over three weeks, the proportion of products with a null description rose from under one What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Add an IsCompleterule on the description",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Run the ruleset twice daily instead of once",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "column with a one hundred percent threshold",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Increase the Glue job's worker count so more",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-424": "A"
+  },
+  "copy_sources": {
+   "LOC-424": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-424": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G425",
+  "q_no_in_markdown": [
+   425
+  ],
+  "ids": [
+   "LOC-425"
+  ],
+  "baseline_id": "LOC-425",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A bank runs Glue jobs in private subnets. Compliance requires that no data traverses the public internet, and that jobs can reach only three named Amazon S3 buckets rather than any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and jobs reach Amazon S3 over its public endpoint. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "An IAM policy on the Glue role permitting only",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Bucket policies on each of the three buckets,",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "those three buckets",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "keeping the NAT gateway",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-425": "A"
+  },
+  "copy_sources": {
+   "LOC-425": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-425": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G426",
+  "q_no_in_markdown": [
+   426
+  ],
+  "ids": [
+   "LOC-426"
+  ],
+  "baseline_id": "LOC-426",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has configured Aws Lake Formation column-level grants excluding three sensitive columns from an analytics team. The grants appear correctly in the Lake Formation console. Testing shows the analytics team can still query all columns through Amazon Athena. The database was created before Lake Formation was adopted. What is the most likely cause?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Column-level grants only apply to Amazon",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "The IAMAllowedPrincipals setting is still present,",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Redshift Spectrum, not to Athena",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "so Lake Formation defers to IAM",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-426": "B"
+  },
+  "copy_sources": {
+   "LOC-426": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-426": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G427",
+  "q_no_in_markdown": [
+   427
+  ],
+  "ids": [
+   "LOC-427"
+  ],
+  "baseline_id": "LOC-427",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company enabled Amazon Macie across its data lake nine months ago. The lake holds sixty terabytes across three hundred buckets, all encrypted with SSE-KMS using several A manual review of two datasets has found unredacted email addresses and payment card numbers. What is the most likely explanation?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Macie lacks permission to use the KMs keys, so it",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Macie does not detect payment card numbers",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "can only report object metadata",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "without a custom data identifier",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-427": "A"
+  },
+  "copy_sources": {
+   "LOC-427": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-427": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G428",
+  "q_no_in_markdown": [
+   428
+  ],
+  "ids": [
+   "LOC-428"
+  ],
+  "baseline_id": "LOC-428",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A market research firm wants to sell three curated datasets to around one hundred and fifty external customers. Subscribers should receive quarterly revisions automatically, and access must end when a subscription lapses. The firm does not want to build entitlement management or billing. A proposal is to create an s3 bucket per customer and copy the datasets into each after every revision. What should the data engineer recommend instead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "single bucket with a bucket policy listing all",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Automate the per-customer copying with a",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "one hundred and fifty accounts",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "scheduled Glue job",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-428": "A"
+  },
+  "copy_sources": {
+   "LOC-428": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-428": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G429",
+  "q_no_in_markdown": [
+   429
+  ],
+  "ids": [
+   "LOC-429"
+  ],
+  "baseline_id": "LOC-429",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company needs order events available in Amazon Redshift within seconds for an operational dashboard. Events are produced to Amazon Kinesis Data Streams. The team does not want to stage files in Amazon s3 or operate a consumer application. Volumes are moderate and the dashboard queries aggregate the most recent events. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Data Firehose delivering to Amazon S3,",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Redshift streaming ingestion, materialising the",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "with a scheduled COPY into Redshift",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "stream into a materialized view",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-429": "B"
+  },
+  "copy_sources": {
+   "LOC-429": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-429": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G430",
+  "q_no_in_markdown": [
+   430
+  ],
+  "ids": [
+   "LOC-430"
+  ],
+  "baseline_id": "LOC-430",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Aws Glue job created two years ago still runs with default settings. It processes about eight gigabytes nightly. Monitoring shows executor utilisation below fifteen percent throughout, and the job completes in twelve minutes. A cost review has flagged it as one of the more expensive jobs in the account relative to the data it handles. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Switch the job to Glue Flex execution",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Enable job bookmarks",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Move the job to Amazon EMR Serverless",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Reduce the number of workers from the default",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-430": "B"
+  },
+  "copy_sources": {
+   "LOC-430": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-430": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G431",
+  "q_no_in_markdown": [
+   431
+  ],
+  "ids": [
+   "LOC-431"
+  ],
+  "baseline_id": "LOC-431",
+  "type": "single",
+  "choose_n": null,
+  "stem": "Amazon RDs for PostgreSQL database. During bulk uploads, thousands of files arrive at once and Lambda scales to hundreds of concurrent executions. The database exhausts its connection limit and the application that also uses it begins failing. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the RDs instance size to raise the",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Enable provisioned concurrency on the Lambda",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "connection limit",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Set reserved concurrency on the Lambda",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-431": "B"
+  },
+  "copy_sources": {
+   "LOC-431": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-431": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G432",
+  "q_no_in_markdown": [
+   432
+  ],
+  "ids": [
+   "LOC-432"
+  ],
+  "baseline_id": "LOC-432",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company must process around four million individual small JsoN objects in Amazon S3, applying a transformation to each and writing the result back. The work is embarrassingly parallel and each object takes under a second. The team wants to run this without building custom fan-out logic, and needs per-object success and failure tracking. Whatshould thedata engineer use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "An Aws Glue Spark job listing the prefix and",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "single Lambda function iterating over the",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "processing every object",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "objects in a loop",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-432": "A"
+  },
+  "copy_sources": {
+   "LOC-432": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-432": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G433",
+  "q_no_in_markdown": [
+   433
+  ],
+  "ids": [
+   "LOC-433"
+  ],
+  "baseline_id": "LOC-433",
+  "type": "single",
+  "choose_n": null,
+  "stem": "Sixty suppliers send daily inventory files to a retailer. Each supplier uses SFTP with its own credentials and cannot change how it transmits files. The retailer wants the files to land in Amazon S3 and to stop operating the current SFTP servers on Amazon EC2. File sizes are modest and arrive throughout the day. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "AWS Transfer Family with an SFTP endpoint",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "AWs DataSync agents at each supplier site",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "backed by Amazon S3",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon AppFlow with an SFTP connector",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-433": "B"
+  },
+  "copy_sources": {
+   "LOC-433": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-433": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G434",
+  "q_no_in_markdown": [
+   434
+  ],
+  "ids": [
+   "LOC-434"
+  ],
+  "baseline_id": "LOC-434",
+  "type": "single",
+  "choose_n": null,
+  "stem": "dates, and writes Parquet. It currently runs as an Aws Glue Spark job with the default allocation and takes about four minutes, most of which is startup. The team wants the lowest cost for this specific step. What should the data engineer use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "An AwS Lambda function triggered by the file",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Keep the Glue Spark job and reduce it to the",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "minimum two DPUs",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Glue Python shell job",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-434": "A"
+  },
+  "copy_sources": {
+   "LOC-434": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-434": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G435",
+  "q_no_in_markdown": [
+   435
+  ],
+  "ids": [
+   "LOC-435"
+  ],
+  "baseline_id": "LOC-435",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess. What should the data engineer configure?",
+  "options": [
+   {
+    "label": "A",
+    "text": "lifecycle rule transitioning to Standard-IA after",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "S3 Intelligent-Tiering",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "lifecycle rule transitioning to Glacier Instant",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "S3 One Zone-Infrequent Access from the outset",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-435": "B"
+  },
+  "copy_sources": {
+   "LOC-435": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-435": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G436",
+  "q_no_in_markdown": [
+   436
+  ],
+  "ids": [
+   "LOC-436"
+  ],
+  "baseline_id": "LOC-436",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A nightly pipeline loads order records into an Amazon Redshift table that has a declared primary key on order ID. After a failure and rerun last week, the table now contains around twelve thousand duplicated orders and reports are overstated. What is the cause, and what should be implemented?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The rerun used a different distribution key,",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "The primary key was declared after the table",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "creating duplicate slices",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "was created, so it applies only to new rows",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-436": "B"
+  },
+  "copy_sources": {
+   "LOC-436": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-436": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G437",
+  "q_no_in_markdown": [
+   437
+  ],
+  "ids": [
+   "LOC-437"
+  ],
+  "baseline_id": "LOC-437",
+  "type": "single",
+  "choose_n": null,
+  "stem": "writes must complete in microseconds, and the data must survive an Availability Zone failure without loss because it is the authoritative record for in-flight sessions. The team currently uses an in-memory cache backed by a relational database. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon DynamoDB with DynamoDB",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Amazon s3 Express One Zone",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Amazon Aurora PostgreSQL with a large buffer",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Amazon MemoryDB",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-437": "D"
+  },
+  "copy_sources": {
+   "LOC-437": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "D"
+  ],
+  "entry_flags": {
+   "LOC-437": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G438",
+  "q_no_in_markdown": [
+   438
+  ],
+  "ids": [
+   "LOC-438"
+  ],
+  "baseline_id": "LOC-438",
+  "type": "single",
+  "choose_n": null,
+  "stem": "Amazon s3, because the business term has changed. Historical queries must continue to return the same rows, and rewriting five years of files is not acceptable. The table is queried by Amazon Athena and Amazon EMR. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rename the column in the Glue Data Catalog",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Create a view that aliases the old column name",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "and leave the files unchanged",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "to the new one",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-438": "A"
+  },
+  "copy_sources": {
+   "LOC-438": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-438": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G439",
+  "q_no_in_markdown": [
+   439
+  ],
+  "ids": [
+   "LOC-439"
+  ],
+  "baseline_id": "LOC-439",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A table in the Aws Glue Data Catalog has around one hundred and forty thousand partitions after four years of hourly partitioning. Athena queries take fifteen to twenty five seconds before scanning begins, regardless of how narrow the filter is. Once scanning starts, they complete quickly. Analysts filter by date range and occasionally by hour. Which action addresses the delay while preserving the hourly granularity analysts occasionally use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Repartition the data by day and discard the",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Add a Glue partition index on the partition keys",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "hour partition",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Increase theAthena workgroup'squery timeout",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-439": "A"
+  },
+  "copy_sources": {
+   "LOC-439": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-439": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G440",
+  "q_no_in_markdown": [
+   440
+  ],
+  "ids": [
+   "LOC-440"
+  ],
+  "baseline_id": "LOC-440",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An application writes a log line containing the text RECORD_REJECTED whenever it discards a malformed record. These lines go to CloudWatch Logs. Operations want to be notified when the rate of rejections exceeds a threshold. They have tried and failed to configure a Cloudwatch alarm directly against the log group. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "CloudWatch Logs metric filter matching the",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "CloudWatch alarm configured with the log",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "pattern, with an alarm on the resulting metric",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "group as its metric source",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-440": "A"
+  },
+  "copy_sources": {
+   "LOC-440": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-440": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G441",
+  "q_no_in_markdown": [
+   441
+  ],
+  "ids": [
+   "LOC-441"
+  ],
+  "baseline_id": "LOC-441",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An executive dashboard built on Amazon Redshift is opened by around eight hundred people between eight and nine each morning. The underlying data is refreshed once overnight and does not change during the day. During that hour, other analytical workloads on the cluster slow noticeably. Every viewer's dashboard runs the same set of queries. What is the most appropriate change?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Import the dashboard dataset into SPiCE and",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Enable Redshift concurrency scaling so",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "refresh it after the overnight load completes",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "additional clusters absorb the morning burst",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-441": "A"
+  },
+  "copy_sources": {
+   "LOC-441": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-441": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G442",
+  "q_no_in_markdown": [
+   442
+  ],
+  "ids": [
+   "LOC-442"
+  ],
+  "baseline_id": "LOC-442",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter. What should the data engineer configure now?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Remove the analyst's Athena permissions",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "AnAwsBudgetalertontheAthenaservice",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "per-query data scan limit on the Athena",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Increase the workgroup's query timeout so",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-442": "A"
+  },
+  "copy_sources": {
+   "LOC-442": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-442": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G443",
+  "q_no_in_markdown": [
+   443
+  ],
+  "ids": [
+   "LOC-443"
+  ],
+  "baseline_id": "LOC-443",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has fifteen Aws accounts and around sixty engineers. Each engineer has an IAM security team cannot confirm all their credentials were removed. The company wants access to end when employment ends, and to stop issuing long-lived keys. What should the company implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "scheduled Lambda function deleting lAM",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "ninety day access key rotation policy",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "users inactive for sixty days",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "enforced across all accounts",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-443": "A"
+  },
+  "copy_sources": {
+   "LOC-443": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-443": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G444",
+  "q_no_in_markdown": [
+   444
+  ],
+  "ids": [
+   "LOC-444"
+  ],
+  "baseline_id": "LOC-444",
+  "type": "single",
+  "choose_n": null,
+  "stem": "An insurer holds claims data in Amazon Redshift. Regional teams must see only their own region's claims. A fraud team must see all regions. A support team must see all regions but with the claimant's national identifier partially masked, while the fraud team sees it in full. There are currently eleven views maintaining these combinations, and keeping them aligned with schema changes has become a burden. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create one table per region with the identifier",
+    "marked_correct": false
+   },
+   {
+    "label": "B",
+    "text": "Continue with views, generating them",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "column omitted where required",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "automatically when the schema changes",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-444": "B"
+  },
+  "copy_sources": {
+   "LOC-444": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-444": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G445",
+  "q_no_in_markdown": [
+   445
+  ],
+  "ids": [
+   "LOC-445"
+  ],
+  "baseline_id": "LOC-445",
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Movethedata toS3Standard-Infrequent",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Switch the bucket to SSE-s3 encryption",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Request a KMS request quota increase",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Enable S3 Bucket Keys on the bucket",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-445": "A"
+  },
+  "copy_sources": {
+   "LOC-445": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-445": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G446",
+  "q_no_in_markdown": [
+   446
+  ],
+  "ids": [
+   "LOC-446"
+  ],
+  "baseline_id": "LOC-446",
+  "type": "single",
+  "choose_n": null,
+  "stem": "requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Granteachbusinessunitdatabase-levelLake",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Publish datasets as assets in Amazon",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Formation permissions on its own databases",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "SageMaker Catalog and use the subscription",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-446": "A"
+  },
+  "copy_sources": {
+   "LOC-446": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-446": []
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G447",
+  "q_no_in_markdown": [
+   447
+  ],
+  "ids": [
+   "LOC-447"
+  ],
+  "baseline_id": "LOC-447",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "source database must remain available to its application throughout, and cutover downtime must be under fifteen minutes. The database contains a number of large object columns. The team has assessed the schema and knows some stored procedures need manual work. Select Two actions the data engineer should take (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Run an AWs DMS task with full load plus change",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Run an Aws DMs full load only task during a",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "data capture",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "maintenance window",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-447": "AB"
+  },
+  "copy_sources": {
+   "LOC-447": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-447": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G448",
+  "q_no_in_markdown": [
+   448
+  ],
+  "ids": [
+   "LOC-448"
+  ],
+  "baseline_id": "LOC-448",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "An analytics team queries a fifty terabyte dataset in Amazon s3 with Amazon Athena. The data is Parquet, partitioned by date. Costs have risen sharply. Investigation shows analysts write queries as SELECT star across ninety columns, and six dashboards each re-run the same four queries every ten minutes against data that is refreshed once daily. Select Two changes that will most reduce the Athena bill (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Name only the required columns in queries",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Enable query result reuse for the dashboard",
+    "marked_correct": false
+   },
+   {
+    "label": "C",
+    "text": "Move the dataset to s3 Standard-lnfrequent",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Repartition the data by hour instead of by date",
+    "marked_correct": true
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-448": "AD"
+  },
+  "copy_sources": {
+   "LOC-448": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [],
+  "entry_flags": {
+   "LOC-448": [
+    "no_source_answer_key_origin_unknown"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G449",
+  "q_no_in_markdown": [
+   449
+  ],
+  "ids": [
+   "LOC-449"
+  ],
+  "baseline_id": "LOC-449",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "Four Aws Glue jobs run nightly, each triggered by its own cron schedule spaced ninety minutes apart. Job two occasionally overruns, and when it does, job three starts against incomplete data and produces incorrect aggregates. No error is raised. The team wants the pipeline to be dependency-driven and to be alerted when any step fails. Select Two actions the data engineer should take (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Replace the cron schedules with an Aws Step",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Widen the gaps between the cron schedules to",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Functions state machine invoking each job in",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Add a Catch on each state routing failures to",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-449": "AB"
+  },
+  "copy_sources": {
+   "LOC-449": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "B"
+  ],
+  "entry_flags": {
+   "LOC-449": [
+    "bank_key_AB_differs_from_source_B"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G450",
+  "q_no_in_markdown": [
+   450
+  ],
+  "ids": [
+   "LOC-450"
+  ],
+  "baseline_id": "LOC-450",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "An analytics team's Amazon Athena spend has grown to a level finance has queried. The data is uncompressed JsON in Amazon S3 in a single prefix, and queries filter on a date field and read eight columns out of seventy. A proposal has been made to purchase Athena capacity reservations to make the cost predictable. Select Two changes the data engineer should make first (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Convert the data to Parquet with Snappy",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Partition the data by date",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "Purchase Athena capacity reservations",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Move thedatatoS3Glacier InstantRetrieval",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-450": "AB"
+  },
+  "copy_sources": {
+   "LOC-450": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-450": [
+    "bank_key_AB_differs_from_source_A"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G451",
+  "q_no_in_markdown": [
+   451
+  ],
+  "ids": [
+   "LOC-451"
+  ],
+  "baseline_id": "LOC-451",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A Glue job writes to a curated Amazon S3 table used by Athena. Output consists of roughly forty thousand files per day, most under two hundred kilobytes, because the job writes one file per input partition. Athena queries have become slow, spending most of their time before any data is read. The data is Parquet and correctly partitioned by date. Select Two actions that will improve query performance (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Coalesce or repartition the output so the job",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Run a scheduled compaction job over existing",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "writes fewer, larger files",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "Convert the output from Parquet to Csv",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-451": "AB"
+  },
+  "copy_sources": {
+   "LOC-451": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-451": [
+    "bank_key_AB_differs_from_source_A"
+   ]
+  },
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G452",
+  "q_no_in_markdown": [
+   452
+  ],
+  "ids": [
+   "LOC-452"
+  ],
+  "baseline_id": "LOC-452",
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "Occasionally a small number of records arrive with a missing settlement currency. Partial figures are worse than no figures for this use case, because reports built on incomplete data have twice been filed. The team wants to catch this and does not want to write custom validation code. SelectTwoactions the data engineer should take (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Add AWS Glue Data Quality rules inside the ETL",
+    "marked_correct": true
+   },
+   {
+    "label": "B",
+    "text": "Configure the job to fail when the ruleset does",
+    "marked_correct": true
+   },
+   {
+    "label": "C",
+    "text": "job checking completeness of the currency",
+    "marked_correct": false
+   },
+   {
+    "label": "D",
+    "text": "not pass, so nothing downstream is loaded",
+    "marked_correct": false
+   }
+  ],
+  "baseline_flags": [],
+  "copy_keys": {
+   "LOC-452": "AB"
+  },
+  "copy_sources": {
+   "LOC-452": "pdf_slide_practice_exam"
+  },
+  "raw_source_answers": [
+   "A"
+  ],
+  "entry_flags": {
+   "LOC-452": [
+    "bank_key_AB_differs_from_source_A"
+   ]
+  },
+  "alt_option_sets": []
+ }
+]

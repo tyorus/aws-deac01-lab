@@ -1,0 +1,590 @@
+[
+ {
+  "group_id": "G123",
+  "ids": ["LOC-123", "LOC-344"],
+  "current_key": "BD",
+  "verdict": "key_correct",
+  "correct_answer": "BD",
+  "correct_answer_summary": "Register the S3 path as a Lake Formation data location and enable fine-grained access control with a Lake Formation data filter per Region.",
+  "confidence": "high",
+  "reasoning": "Lake Formation memungkinkan lokasi S3 didaftarkan (B) lalu memberi izin row-level lewat data filter per Region (D) kepada IAM role tiap departemen HR, sehingga overhead operasional minimal. Opsi A salah karena data filter tidak dipakai untuk mendaftarkan data location; C salah karena data filter tidak dilampirkan ke IAM role; E membutuhkan banyak bucket dan kebijakan IAM manual. Salinan LOC-344 (pdf_exam_dumps) berkunci AB tanpa sumber, jelas salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html",
+   "https://docs.aws.amazon.com/lake-formation/latest/dg/register-location.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G124",
+  "ids": ["LOC-124"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Register the third-party IdP with Amazon Redshift itself (CREATE IDENTITY PROVIDER) so Redshift can authenticate IdP tokens.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi native IdP federation Redshift menyatakan langkah pendaftaran IdP dilakukan dengan pernyataan SQL (CREATE IDENTITY PROVIDER) di dalam Amazon Redshift, bukan di pengaturan konfigurasi cluster, Secrets Manager, atau ACM. Karena itu B benar dan A/C/D tidak sesuai mekanisme AWS. Catatan: untuk Query Editor v2 versi terbaru AWS juga menyarankan IAM Identity Center, tetapi di antara opsi yang ada B tetap yang paling tepat.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-native-idp.html",
+   "https://docs.aws.amazon.com/redshift/latest/mgmt/redshift-iam-access-control-native-idp-setup.html",
+   "https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_IDENTITY_PROVIDER.html"
+  ],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": {
+   "stem": "A company has implemented a lake house architecture in Amazon Redshift. The company needs to give users the ability to authenticate into Redshift query editor by using a third-party identity provider (IdP). A data engineer must set up the authentication mechanism. What is the first step the data engineer should take to meet this requirement?",
+   "options": [
+    {"label": "A", "text": "Register the third-party IdP as an identity provider in the configuration settings of the Redshift cluster."},
+    {"label": "B", "text": "Register the third-party IdP as an identity provider from within Amazon Redshift."},
+    {"label": "C", "text": "Register the third-party IdP as an identity provider for AWS Secrets Manager. Configure Amazon Redshift to use Secrets Manager to manage user credentials."},
+    {"label": "D", "text": "Register the third-party IdP as an identity provider for AWS Certificate Manager (ACM). Configure Amazon Redshift to use ACM to manage user credentials."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G125",
+  "ids": ["LOC-125", "LOC-366"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use an S3 Object Lambda access point with a Lambda function that redacts PII dynamically per requesting application.",
+  "confidence": "high",
+  "reasoning": "S3 Object Lambda mengubah data secara dinamis saat GET dengan Lambda sehingga satu dataset dapat diredaksi sesuai aplikasi tanpa membuat salinan data. A dan C membuat banyak salinan (overhead tinggi), D memakai API Gateway yang tidak terintegrasi langsung untuk membaca objek S3 skala besar. Kunci konsisten di kedua salinan.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html",
+   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/tutorial-s3-object-lambda-redact-pii.html"
+  ],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G126",
+  "ids": ["LOC-126"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use Athena federated query connectors (Redshift, Teradata, BigQuery) in a single SQL query and MERGE INTO the Iceberg table.",
+  "confidence": "medium",
+  "reasoning": "Athena memiliki data source connector untuk Redshift, Teradata, dan Google BigQuery serta mendukung federated query (termasuk pass-through query yang dijalankan di engine sumber), sehingga join lintas sumber dan MERGE INTO ke tabel Iceberg bisa dilakukan lewat SQL tanpa mengelola infrastruktur. A (Glue) tidak menjalankan transformasi di engine sumber dan butuh kode ETL; C (EMR) dan D (AppFlow, yang tidak punya konektor Teradata/BigQuery untuk sumber ini) lebih besar usahanya.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/athena/latest/ug/connect-to-a-data-source.html",
+   "https://docs.aws.amazon.com/athena/latest/ug/merge-into-statement.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G127",
+  "ids": ["LOC-127", "LOC-359"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "VACUUM REINDEX Orders analyzes the interleaved sort key column distribution and then performs a full vacuum (reclaims space and re-sorts).",
+  "confidence": "high",
+  "reasoning": "Dokumentasi VACUUM: REINDEX 'analyzes the distribution of the values in interleaved sort key columns, then performs a full VACUUM'. VACUUM FULL tidak melakukan reindex untuk tabel interleaved, DELETE ONLY tidak mengurutkan, SORT ONLY tidak mengklaim ruang. Salinan LOC-359 berkunci A (dari pdf_80_mock) salah dan bertentangan dengan sumber C.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/r_VACUUM_command.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G128",
+  "ids": ["LOC-128"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use AWS Certificate Manager (ACM) for managed provisioning, renewal, and deployment of SSL/TLS certificates.",
+  "confidence": "high",
+  "reasoning": "ACM menyederhanakan pembuatan, distribusi, dan perpanjangan otomatis sertifikat SSL/TLS (managed renewal) dengan overhead minimal. Sertifikat self-managed, skrip kustom Secrets Manager, atau ECS Service Connect tidak memberi siklus hidup sertifikat otomatis yang sama untuk kasus ini.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G129",
+  "ids": ["LOC-129"],
+  "current_key": "BD",
+  "verdict": "key_correct",
+  "correct_answer": "BD",
+  "correct_answer_summary": "Create a Redshift datashare containing the tables, then share it to the Lake Formation catalog in the governance account and use Lake Formation column-level permissions per team.",
+  "confidence": "medium",
+  "reasoning": "Redshift datashare yang dibagikan ke Lake Formation dapat dikelola dengan izin Lake Formation (federated database) termasuk column-level filter berbeda untuk tim marketing dan compliance, sesuai pola data mesh dengan akun governance terpusat. Opsi A membutuhkan view terpisah per tim dan tidak memakai Lake Formation; C dan E membagikan langsung ke akun/workgroup konsumen sehingga melewati tata kelola Lake Formation.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/lf_datashare_overview.html",
+   "https://docs.aws.amazon.com/lake-formation/latest/dg/data-sharing-redshift.html",
+   "https://docs.aws.amazon.com/redshift/latest/dg/lake-formation-considerations.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G130",
+  "ids": ["LOC-130"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Train and use the FindMatches ML transform (AWS Glue / Lake Formation) in the ETL job to match records without a common unique identifier.",
+  "confidence": "high",
+  "reasoning": "FindMatches adalah transform ML di AWS Glue yang mengidentifikasi record cocok/duplikat meski tidak punya identifier unik bersama. Macie hanya mendeteksi data sensitif, Filter class PySpark tidak berbasis ML, dan partisi per identifier unik tidak berlaku karena tidak ada identifier.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/machine-learning.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G131",
+  "ids": ["LOC-131"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use an AWS DMS ongoing replication task from Oracle to Amazon S3 with Parquet output.",
+  "confidence": "medium",
+  "reasoning": "DMS dapat mereplikasi 70 tabel dari Oracle on-premises ke S3 dalam format Parquet dan menangkap perubahan (CDC) tanpa kode. Glue job bookmark (B) untuk JDBC hanya melacak baris baru berdasarkan bookmark key sehingga tidak menangkap update/delete pada data yang berubah; Sqoop (A) dan trigger+Lambda (D) butuh usaha jauh lebih besar.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html",
+   "https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G132",
+  "ids": ["LOC-132"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use IAM roles for service accounts (IRSA) so pods obtain temporary credentials to access DynamoDB without embedded keys.",
+  "confidence": "medium",
+  "reasoning": "IRSA memberi pod IAM role (kredensial sementara via OIDC) sehingga tidak perlu menyimpan access key di container. Opsi A, C, D menyimpan kredensial statis di S3, environment variable, atau Kubernetes secret. Teks opsi B rusak (OCR: 'DynamoDUse', 'IAM roles service accounts') namun maksudnya jelas dan hanya B yang menyebut IRSA.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html"
+  ],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": {
+   "stem": "A company is building a data stream processing application. The application runs in an Amazon Elastic Kubernetes Service (Amazon EKS) cluster. The application stores processed data in an Amazon DynamoDB table. The company needs the application containers in the EKS cluster to have secure access to the DynamoDB table. The company does not want to embed AWS credentials in the containers. Which solution will meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Store the AWS credentials in an Amazon S3 bucket. Grant the EKS containers access to the S3 bucket to retrieve the credentials."},
+    {"label": "B", "text": "Attach an IAM role to the EKS worker nodes. Grant the IAM role access to DynamoDB. Use the IAM role to set up IAM roles for service accounts (IRSA) functionality."},
+    {"label": "C", "text": "Create an IAM user that has an access key to access the DynamoDB table. Use environment variables in the EKS containers to store the IAM user access key data."},
+    {"label": "D", "text": "Create an IAM user that has an access key to access the DynamoDB table. Use Kubernetes secrets that are mounted in a volume of the EKS cluster nodes to store the user access key data."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G133",
+  "ids": ["LOC-133", "LOC-332"],
+  "current_key": "BC",
+  "verdict": "key_correct",
+  "correct_answer": "BC",
+  "correct_answer_summary": "Use a columnar format (e.g., Parquet) and partition the data on the most common query predicates.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi performa Redshift Spectrum merekomendasikan format kolumnar (Parquet), partisi berdasarkan predikat query paling umum, dan file berukuran lebih dari 64 MB dengan ukuran seragam. Gzip pada file individual (A) tidak splittable sehingga menghambat paralelisme, file <10 KB (D) dan format non-splittable (E) memperlambat. Salinan LOC-332 berkunci AB (tanpa sumber) salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/c-spectrum-external-performance.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G134",
+  "ids": ["LOC-134"],
+  "current_key": "AC",
+  "verdict": "key_correct",
+  "correct_answer": "AC",
+  "correct_answer_summary": "Duplicates come from producer retries after network timeouts and from consumer record-processor restarts when shards or workers change.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Kinesis Data Streams menyebut dua penyebab duplikasi: producer retry (mis. network timeout setelah PutRecord) dan consumer retry saat record processor restart, termasuk ketika shard di-merge/split atau worker ditambah/dikurangi. IteratorAgeMilliseconds, AggregationEnabled, dan max_records tidak menyebabkan duplikasi.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/streams/latest/dev/kinesis-record-processor-duplicates.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G136",
+  "ids": ["LOC-136"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use the Choice state to branch the workflow based on the content of the input data.",
+  "confidence": "high",
+  "reasoning": "State Choice di Step Functions menambahkan logika percabangan berbasis nilai input. Parallel menjalankan cabang bersamaan, Task menjalankan satu unit kerja, dan Map mengiterasi array. Flag option_too_short adalah false positive karena opsi memang nama state satu kata.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/step-functions/latest/dg/state-choice.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G137",
+  "ids": ["LOC-137", "LOC-346"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use an instance-store-backed AMI and attach a separate EBS volume for application data (non-root EBS volumes are preserved on termination by default).",
+  "confidence": "medium",
+  "reasoning": "Volume EBS tambahan (non-root) secara default memiliki DeleteOnTermination=false sehingga data bertahan setelah instance dihentikan, sedangkan root volume EBS default dihapus saat terminasi (B salah) dan instance store bersifat sementara (A, D salah). Salinan LOC-346 berkunci A salah dan teksnya terpotong/menyatu.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html",
+   "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "options_merged", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G138",
+  "ids": ["LOC-138", "LOC-331"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use an AWS Glue ETL job with the FindMatches ML transform to deduplicate data with the least operational overhead.",
+  "confidence": "medium",
+  "reasoning": "Glue serverless dengan transform FindMatches adalah solusi terkelola untuk deduplikasi tanpa mengelola infrastruktur atau pustaka kustom. Opsi A dan C memakai ETL Python kustom yang butuh runtime/skala dikelola sendiri, sedangkan D menambah pustaka dedupe pihak ketiga ke Glue. Salinan LOC-331 berkunci A tidak berdasar.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/machine-learning.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "options_merged", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G139",
+  "ids": ["LOC-139", "LOC-341"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Create a view on the source SQL Server databases and schedule an AWS Glue job that reads from the view over JDBC and writes Parquet to S3.",
+  "confidence": "medium",
+  "reasoning": "Glue job dapat membaca langsung dari view lewat koneksi JDBC dan menulis Parquet ke S3 dengan jadwal harian tanpa komponen tambahan. Opsi C menambah crawler yang tidak diperlukan, B memerlukan CSV lalu konversi Lambda, dan D membatasi pada batas waktu/memori Lambda untuk data besar.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect-sqlserver-home.html"
+  ],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G140",
+  "ids": ["LOC-140", "LOC-319"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Amazon EMR supports Pig, Oozie, Spark, HBase, and Flink at petabyte scale.",
+  "confidence": "high",
+  "reasoning": "Hanya Amazon EMR yang mendukung semua aplikasi tersebut (Pig, Oozie, Spark, HBase, Flink) dengan performa setara untuk data skala petabyte. AWS Glue tidak menjalankan Pig/Oozie/HBase, Lambda tidak cocok untuk beban ini, dan Redshift adalah data warehouse. Salinan LOC-319 berkunci A (tanpa sumber) salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-components.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G141",
+  "ids": ["LOC-141"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Migrate the Hive metastore and use the serverless AWS Glue Data Catalog as the persistent catalog (external metastore for EMR).",
+  "confidence": "medium",
+  "reasoning": "AWS Glue Data Catalog adalah metastore Hive serverless dan persisten yang direkomendasikan untuk EMR, dan migrasi dilakukan dengan memuat metadata Hive ke Data Catalog. Opsi C (Aurora) tidak serverless dan lebih mahal, D menyimpan katalog di cluster EMR (tidak persisten), dan A (DMS ke S3 + crawler) tidak menjaga metadata metastore asli. Opsi B kurang rapi (menyebut metastore EMR perantara) tetapi paling mendekati solusi Glue Data Catalog.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-hive-metastore-glue.html",
+   "https://aws.amazon.com/blogs/big-data/migrate-and-deploy-your-apache-hive-metastore-on-amazon-emr/"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G142",
+  "ids": ["LOC-142", "LOC-340"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use EBS Elastic Volumes to modify the existing gp2 volumes to gp3 in place, without detaching or interrupting the instance.",
+  "confidence": "high",
+  "reasoning": "Elastic Volumes memungkinkan mengubah tipe volume, ukuran, IOPS, dan throughput saat volume terpasang dan digunakan tanpa downtime, sehingga overhead paling kecil. Opsi A, B, D membuat volume baru dan memigrasikan data secara manual. Salinan LOC-340 berkunci A salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/ebs/latest/userguide/requesting-ebs-volume-modifications.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G143",
+  "ids": ["LOC-143", "LOC-326", "LOC-327"],
+  "current_key": "BD",
+  "verdict": "key_correct",
+  "correct_answer": "BD",
+  "correct_answer_summary": "Use Amazon S3 (EMRFS) as the persistent data store and Graviton instances for core and task nodes.",
+  "confidence": "high",
+  "reasoning": "S3 sebagai penyimpanan persisten memisahkan storage dari compute dan meningkatkan keandalan, sedangkan instance Graviton memberi price-performance lebih baik daripada x86 untuk Spark. HDFS (A) bersifat sementara di cluster, dan Spot untuk primary node (E) membahayakan keandalan. Salinan LOC-327 berkunci AB salah; LOC-326 memiliki opsi E yang menyatu dengan teks opsi lain.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-instances-guidelines.html",
+   "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-storage.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "options_merged", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G144",
+  "ids": ["LOC-144"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Use a single COPY command so Redshift loads the files in parallel across all slices.",
+  "confidence": "high",
+  "reasoning": "Best practice Redshift: gunakan satu perintah COPY untuk memuat banyak file dari S3 agar dibagi paralel ke seluruh slice cluster. Beberapa COPY ke tabel yang sama memuat secara serial dan tidak optimal, sedangkan INSERT atau jalur HDFS/S3DistCp jauh lebih lambat.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/c_best-practices-single-copy-command.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G145",
+  "ids": ["LOC-145"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Update the Transfer Family server's security policy to a policy with minimum TLS 1.2.",
+  "confidence": "high",
+  "reasoning": "Versi TLS minimum pada server AWS Transfer Family dikontrol melalui security policy server. Security group tidak memeriksa versi TLS, key SSH tidak terkait TLS, dan memasang sertifikat saja tidak memaksa versi protokol minimum.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G146",
+  "ids": ["LOC-146", "LOC-312"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Have the Redshift Data API emit an event to EventBridge (WithEvent) and use an EventBridge rule to invoke the Lambda function.",
+  "confidence": "high",
+  "reasoning": "Redshift Data API mengirim event status statement (FINISHED/FAILED/ABORTED) ke EventBridge jika WithEvent=true, lalu rule EventBridge memanggil Lambda untuk menulis status ke DynamoDB. Data API tidak mempublikasikan pesan langsung ke SQS, dan memicu Lambda dari Lambda lain via CloudWatch/CloudTrail tidak perlu. Salinan LOC-312 berkunci A salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api-monitoring-events.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "options_merged", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G147",
+  "ids": ["LOC-147"],
+  "current_key": "A",
+  "verdict": "ambiguous",
+  "correct_answer": null,
+  "correct_answer_summary": "Either DMS full load plus CDC (A) or an AWS Glue JDBC job bookmark on the monotonically increasing column (B) is defensible; the stem does not clearly separate them.",
+  "confidence": "low",
+  "reasoning": "Glue job bookmark untuk sumber JDBC memakai kolom bookmark key yang harus monoton naik/turun, dan stem menyebut kolom monotonically increasing sehingga B tampak dirancang untuk fitur ini. Namun bookmark hanya mendeteksi baris baru dan kedua opsi A dan B sama-sama menyebut 'custom logic' untuk append. Kunci A berasal dari komunitas tanpa konfirmasi dokumentasi yang tegas, sehingga tidak bisa dipastikan.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html",
+   "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G148",
+  "ids": ["LOC-148", "LOC-323", "LOC-324"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Use Redshift data sharing with the sales BI cluster as a consumer of the ETL cluster's data.",
+  "confidence": "high",
+  "reasoning": "Data sharing memberi akses data langsung dan transaksional lintas cluster tanpa menyalin data, dan beban query berjalan di compute cluster konsumen sehingga tidak mengganggu cluster ETL. Opsi B dan C tetap memakai resource cluster ETL, dan D menambah salinan dan proses UNLOAD.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html"
+  ],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G149",
+  "ids": ["LOC-149", "LOC-321"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use AWS Step Functions, which orchestrates both AWS Glue and Amazon EMR serverlessly.",
+  "confidence": "high",
+  "reasoning": "Glue workflows hanya mengorkestrasi crawler dan job Glue sehingga tidak mencakup EMR. Step Functions memiliki integrasi service untuk Glue dan EMR dan bersifat serverless (overhead rendah), sedangkan MWAA membutuhkan pengelolaan environment Airflow dan Lambda bukan orkestrator. Salinan LOC-321 berkunci A salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html",
+   "https://docs.aws.amazon.com/step-functions/latest/dg/connect-emr.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G150",
+  "ids": ["LOC-150"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Use DynamoDB TTL to expire items automatically based on a timestamp attribute.",
+  "confidence": "high",
+  "reasoning": "TTL menghapus item kedaluwarsa di latar belakang tanpa biaya write capacity dan tanpa mengganggu operasi baca/tulis, serta tanpa kode atau penjadwalan. Opsi B, C, D memerlukan Lambda dan scan/delete yang dipelihara sendiri.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G151",
+  "ids": ["LOC-151"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Use S3 for storage and AWS Lake Formation to enforce row- and column-level access for Athena, Redshift Spectrum, and EMR Hive.",
+  "confidence": "high",
+  "reasoning": "Lake Formation menyediakan data filter row/column/cell-level terpusat yang diterapkan oleh Athena, Redshift Spectrum, dan EMR. Kebijakan S3 tidak bisa membatasi baris/kolom, Ranger di EMR menambah overhead dan tidak mencakup Athena/Spectrum, dan Redshift sebagai storage tidak sesuai kebutuhan data lake.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G152",
+  "ids": ["LOC-152"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Load the JSON field into a Redshift SUPER column and query it with PartiQL.",
+  "confidence": "high",
+  "reasoning": "Tipe data SUPER menyimpan data semi-terstruktur (JSON) langsung di Redshift dan dapat di-query dengan PartiQL tanpa ETL perataan, sehingga usaha paling kecil dan mudah digabung dengan data order/produk. Opsi B dan D membutuhkan perataan, dan C memisahkan data di luar warehouse.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/r_SUPER_type.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G153",
+  "ids": ["LOC-153", "LOC-348", "LOC-349"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Have the writer code call the AWS Glue CreatePartition API (Boto3) right after writing to S3, so the catalog updates immediately.",
+  "confidence": "medium",
+  "reasoning": "Memanggil create_partition saat data ditulis memperbarui Data Catalog seketika sehingga latensi paling rendah. Crawler terjadwal pagi hari (A) dan pemanggilan manual dua kali sehari (B) menyebabkan jeda panjang, dan MSCK REPAIR TABLE (D) adalah perintah Athena/Hive, bukan dari konsol Glue. Salinan LOC-348 dan LOC-349 berkunci A salah; opsi D pada salinan terpotong.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/webapi/API_CreatePartition.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G154",
+  "ids": ["LOC-154"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Monitor the DMS task's CDCLatencySource CloudWatch metric to confirm delay reading changes from the PostgreSQL source.",
+  "confidence": "high",
+  "reasoning": "CDCLatencySource mengukur jeda antara perubahan terakhir di sumber dan event terakhir yang ditangkap DMS, sehingga membuktikan sumber sebagai penyebab latensi (berbeda dari CDCLatencyTarget). CDCIncomingChanges hanya menghitung perubahan yang menunggu diterapkan ke target, sedangkan opsi B dan C hanya verifikasi konfigurasi/error, bukan konfirmasi latensi.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Monitoring.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G155",
+  "ids": ["LOC-155", "LOC-355"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use the AWS Glue Data Catalog with scheduled AWS Glue crawlers across RDS, Redshift, and S3 to detect and update metadata changes.",
+  "confidence": "high",
+  "reasoning": "Glue crawlers dapat terhubung ke RDS, Redshift (JDBC), dan S3, menginfer skema JSON/XML, dan memperbarui Data Catalog sesuai jadwal sehingga mendeteksi perubahan metadata dengan overhead minimal. Opsi A dan C membangun katalog kustom dengan Lambda, dan D hanya memakai crawler untuk S3 sehingga sumber RDS/Redshift harus diurus manual. Salinan LOC-355 berkunci A salah.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html"
+  ],
+  "structure_issues": ["duplicate_copy_key_conflict", "ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G156",
+  "ids": ["LOC-156"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Create a Firehose delivery stream with Splunk as destination and a CloudWatch Logs subscription filter pointing to it.",
+  "confidence": "high",
+  "reasoning": "Amazon Data Firehose (dulu Kinesis Data Firehose) memiliki tujuan Splunk bawaan dan CloudWatch Logs subscription filter dapat mengirim log langsung ke delivery stream tanpa kode. Kinesis Data Streams tidak punya tujuan Splunk langsung, dan Lambda tambahan (C, D) menambah overhead.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/firehose/latest/dev/writing-with-cloudwatch-logs.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G157",
+  "ids": ["LOC-157"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Use a Firehose Lambda transformation to convert CSV to JSON, then let Firehose's built-in record format conversion write Parquet.",
+  "confidence": "high",
+  "reasoning": "Format conversion bawaan Firehose hanya menerima input JSON dan mengeluarkan Parquet/ORC, sehingga CSV harus diubah ke JSON dulu lewat Lambda transform, lalu Firehose menyimpan Parquet. Opsi A, B, dan C keliru karena Firehose tidak mengonversi CSV ke JSON sendiri dan Lambda tidak perlu menulis Parquet (usaha lebih besar).",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G158",
+  "ids": ["LOC-158"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Crawl the databases with AWS Glue and use the FindMatches ML transform, then tune it.",
+  "confidence": "high",
+  "reasoning": "FindMatches di AWS Glue menghubungkan record yang cocok walau nama field/identifier berbeda tanpa membangun model sendiri, dan serverless sehingga overhead rendah. Opsi A, C, D memerlukan EMR provisioned, Zeppelin, atau pipeline Spark ML/SageMaker kustom.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/glue/latest/dg/machine-learning.html"
+  ],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G159",
+  "ids": ["LOC-159", "LOC-362"],
+  "current_key": "B",
+  "verdict": "unverifiable",
+  "correct_answer": null,
+  "correct_answer_summary": "Target output format is an image placeholder (//IMG//) that is missing, so the right DataBrew transformation cannot be confirmed; NEST_TO_MAP is most plausible if the target is key-value pairs.",
+  "confidence": "low",
+  "reasoning": "NEST_TO_MAP di DataBrew mengubah kolom terpilih menjadi pasangan key-value (nama kolom sebagai key), sedangkan NEST_TO_ARRAY hanya menggabungkan nilai menjadi array tanpa nama kolom. Format keluaran yang diminta hilang ('//IMG//') sehingga kunci B (sumber komunitas) tidak bisa dipastikan. Salinan LOC-362 berkunci A tidak ada dasarnya.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions.NEST_TO_MAP.html"
+  ],
+  "structure_issues": ["stem_header_scrape", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G160",
+  "ids": ["LOC-160"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Use AWS Glue DataBrew, which reads Excel files natively, with a recipe using COUNT_DISTINCT.",
+  "confidence": "medium",
+  "reasoning": "DataBrew mendukung format Microsoft Excel sebagai sumber dan menyediakan fungsi agregat COUNT_DISTINCT tanpa kode. Crawler Glue/Athena, Spark di Glue, dan EMR Serverless tidak membaca file Excel secara native sehingga butuh kode/library tambahan. Catatan: dokumentasi menyebut ekstensi .xlsx, sementara stem menyebut .xls.",
+  "aws_doc_urls": [
+   "https://docs.aws.amazon.com/databrew/latest/dg/supported-data-file-sources.html"
+  ],
+  "structure_issues": [],
+  "fix_proposal": null
+ }
+]

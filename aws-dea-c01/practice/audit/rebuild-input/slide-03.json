@@ -1,0 +1,665 @@
+[
+ {
+  "id": "LOC-419",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "A media company runs a self-managed MongoDB cluster on Amazon EC2 holding a content catalogue. Around eighty services query it using MongoDB drivers and aggregation pipelines. The operations team wants to stop managing replica sets and backups. What should the data engineer recommend?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Amazon Keyspaces, which is designed for",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Amazon DynamoDB, which is fully managed",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "flexible schemas",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "and handles document workloads",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 989,
+  "exam_number": 2,
+  "source_question_number": 30,
+  "ocr_pages": {
+   "989": "ALL DOMAINS\nQUESTION 10 0F 20 : D0MAIN 2\nA media company runs a self-managed MongoDB cluster on Amazon EC2 holding a content\ncatalogue. Around eighty services query it using MongoDB drivers and aggregation pipelines.\nThe operations team wants to stop managing replica sets and backups.\nWhat should the data engineer recommend?\nAmazon Keyspaces, which is designed for\nB\nAmazon DynamoDB, which is fully managed\nflexible schemas\nand handles document workloads\nAmazon Aurora PostgreSQL using JSONB\nAmazon DocumentDB, which is MongoDB\ncolumns\ncompatible\nPAUSEANDDECIDE\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n22/ 47",
+   "990": "ALL DOMAINS\nQUESTION 10 · WORKED\nWhat should the data engineer recommend?\nAmazon Keyspaces\nB\nDynamoDB\nCassandra compatible, not MongoDB compatible. Wide\nFully managed, and a different APl and data model. Eighty\ncolumn is a different model from documents.\nrewritten.\nAurora PostgreSQL with JSONB\nAmazon DocumentDB\nCan store documents, and every one of the eighty services\nMongoDB compatible, so the drivers and aggregation\nwould need rewriting to use SQL.\npipelines continue to work while AwS operates the cluster.\nTHE SIGNAL\nEighty services using MongoDB drivers is a compatibility requirement. Aggregation\npipelines make it stricter still.\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n23 / 47"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-420",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "stayed around twenty terabytes. S3 Storage Lens reports approximately seventy terabytes of billed storage. Which combination explains the gap and addresses it?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Enable S3 Intelligent-Tiering so infrequently",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Enable Cross-Region Replication and delete the",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "accessed data moves to cheaper tiers",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "primary copies",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 991,
+  "exam_number": 2,
+  "source_question_number": 31,
+  "ocr_pages": {
+   "991": "ALL DOMAINS\nQUESTI0N 11 0F 20 : D0MAIN 2\nstayed around twenty terabytes. S3 Storage Lens reports approximately seventy terabytes of\nbilled storage.\nWhich combination explains the gap and addresses it?\nEnable S3 Intelligent-Tiering so infrequently\nB\nEnable Cross-Region Replication and delete the\naccessed data moves to cheaper tiers\nprimary copies\nDisable versioning to stop old versions\nAdd lifecycle rules to expire noncurrent versions\naccumulating\nand to abort incomplete multipart uploads\nPAUSEANDDECIDE\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n24/ 47",
+   "992": "ALL DOMAINS\nQUESTION 11· WORKED\nWhich combination explains the gap and addresses it?\nIntelligent-Tiering\nReplication\nMakes the invisible fifty terabytes cheaper without\nCopies the problem to a second Region. Deleting primaries\nremoving it. You would still be storing seventy.\nonaversionedbucketaddsdeletemarkersratherthan\nfreeing space.\nDisable versioning\nExpire noncurrent versions, abort incomplete\nStops new versions accumulating, leaves the existing ones,\nuploads\nand discards theprotection it was enabled for.\nA nightly overwrite on a versioned bucket retains every\nprevious version, and failed uploads leave billed parts that\n never appear in a listing.\nTHE SIGNAL\nTwenty terabytes known, seventy billed. Two planted details, versioning and failed\nuploads, explain the fifty.\nPRACTICE EXAM 2\nadmin@sthithapragna. com\n25/47"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-421",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "A crawler has catalogued a set of pipe-delimited text files in Amazon S3. Analysts querying colo, containing the entire line as one string. The files have a consistent structure with a header row. What should the data engineer do?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Increase the crawler's sample size so it reads",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Create a custom classifier defining the pipe",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "delimiter, and rerun the crawler",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Set the crawler's schema change policy to",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 993,
+  "exam_number": 2,
+  "source_question_number": 32,
+  "ocr_pages": {
+   "993": "ALL DOMAINS\nQUESTI0N 12 0F 20 · D0MAIN 2\nA crawler has catalogued a set of pipe-delimited text files in Amazon S3. Analysts querying\ncolo, containing the entire line as one string.\nThe files have a consistent structure with a header row.\nWhat should the data engineer do?\nIncrease the crawler's sample size so it reads\nB\nCreate a custom classifier defining the pipe\nmore files\ndelimiter, and rerun the crawler\nSet the crawler's schema change policy to\nConvert the files to Parquet before crawling\nupdate the table\nthem\nPAUSE ANDDECIDE\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n26/ 47",
+   "994": "ALL DOMAINS\nQUESTI0N 12 · W0RKED\nWhat should the data engineer do?\nA larger sample\nA custom classifier for the delimiter\nReading more files does not help when the crawler cannot\nThe crawler could not recognise the delimiter, so it treated\nparse the format of any of them.\neach line as one value. A classifier tells it how to read the\nfile.\nUpdate the schema on change\nConvert to Parquet first\nControls what happens when the schema changes. The\nWould work, and requires a job to parse the files, which is\nschema was never inferred correctly in the first place.\nthe very thing that is failing.\nTHE SIGNAL\nOne column holding the whole line is the classic unrecognised-format symptom. A\nclassifier is the fix.\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n27 / 47"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-422",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D3",
+  "current": {
+   "stem": "An Athena table over five years of Parquet data is partitioned by a string column named event_date. Analysts filter with a function that extracts the date from an event_timestamp column instead.Results are correct. Queries scan the entire table every time, and the Athena bill is far higher than expected. What is the cause?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "The table needs a Glue partition index",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "The workgroup's data scan limit has been set",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "Thefilter is applied toa derived value, so",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Parquet files are too small and need",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 995,
+  "exam_number": 2,
+  "source_question_number": 33,
+  "ocr_pages": {
+   "995": "ALL DOMAINS\nQUESTI0N 13 0F 20· D0MAIN3\nAn Athena table over five years of Parquet data is partitioned by a string column named\nevent_date. Analysts filter with a function that extracts the date from an event_timestamp\ncolumn instead.Results are correct.\nQueries scan the entire table every time, and the Athena bill is far higher than expected.\nWhat is the cause?\nThe table needs a Glue partition index\nThe workgroup's data scan limit has been set\ntoo high\nThefilter is applied toa derived value, so\nParquet files are too small and need\nAthena cannot prune partitions\ncompaction\nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthｉthapragna.com\n28/47",
+   "996": "ALL DOMAINS\nQUESTI0N13·W0RKED\nWhat is thecause?\nA partition index\nThe scan limit\nA guardrail that cancels expensive queries. It does not\npartition is being read, which is a pruning problem.\ncause a query to read more than it needs.\nThefilter uses a derived value\nSmall files\nThe engine cannot connect a function's output to the\nAdds request overhead.It doesnotexplain scanning the\nentire tablewhena narrowdatefilter is applied.\nTHE SIGNAL\nCorrect results and a full table scan together is the silent pruning failure. Nothing errors.\nPRACTICE EXAM2\nadmin@sthithapragna.com\n29/47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-423",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D3",
+  "current": {
+   "stem": "An Amazon EMR transient cluster runs a nightly Spark job and terminates on completion. Last night the job failed after ninety minutes. The cluster terminated automatically and the operations team can see only that the step failed. No application logs are available. The team needs to diagnose this and prevent the same blind spot recurring. What should the data engineer do?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Rerun the job on a long-running cluster to",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Configure the cluster to archive logs to Amazon",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "reproduce the failure",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "S3 and enable the persistent Spark history",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 997,
+  "exam_number": 2,
+  "source_question_number": 34,
+  "ocr_pages": {
+   "997": "ALL DOMAINS\nQUESTI0N 14 0F 20·D0MAIN 3\nAn Amazon EMR transient cluster runs a nightly Spark job and terminates on completion. Last\nnight the job failed after ninety minutes. The cluster terminated automatically and the\noperations team can see only that the step failed.\nNo application logs are available. The team needs to diagnose this and prevent the same\nblind spot recurring.\nWhat should the data engineer do?\nRerun the job on a long-running cluster to\nConfigure the cluster to archive logs to Amazon\nreproduce the failure\nS3 and enable the persistent Spark history\nserver\nEnable Aws CloudTrail to record what the job\nIncreasetheclustersizesothejobdoesnotfail\ndid\nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthｉthapragna.com\n30/47",
+   "998": "ALL DOMAINS\nQUESTI0N14·W0RKED\nWhat should the data engineer do?\nReproduce on a long-running cluster\nArchive logs to s3, persistent history server\nMay work for this onefailure, at the cost of a rerun and a\nLogs survive termination and Spark's own view of the run is\ncluster, and it fixes nothing for next time.\nretained, so every future failure is diagnosable.\nEnable CloudTrail\nA bigger cluster\nRecordstheAPl callsthatcreated theclusterand\nCapacity for a failure nobody has diagnosed. It might be\nsubmitted the step. It contains nothing about why Spark\nskew, bad data or a code error.\nfailed.\nTHE SIGNAL\nLog delivery is configured at cluster creation. After a transient cluster terminates, the\ndecision has already been made.\nPRACTICE EXAM 2\nadmin@sthｉthapragna.com\n31/47"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-424",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D3",
+  "current": {
+   "stem": "A daily pipeline loads product data into a warehouse. Aws Glue Data Quality rules check that key columns are complete and that prices fall within an expected range. All rules pass every day. Over three weeks, the proportion of products with a null description rose from under one What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Add an IsCompleterule on the description",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Run the ruleset twice daily instead of once",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "column with a one hundred percent threshold",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Increase the Glue job's worker count so more",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 999,
+  "exam_number": 2,
+  "source_question_number": 35,
+  "ocr_pages": {
+   "999": "ALL DOMAINS\nQUESTI0N15 0F 20·D0MAIN3\nA daily pipeline loads product data into a warehouse. Aws Glue Data Quality rules check that\nkey columns are complete and that prices fall within an expected range. All rules pass every\nday.\nOver three weeks, the proportion of products with a null description rose from under one\nWhat should the data engineer implement?\nAdd an IsCompleterule on the description\n Run the ruleset twice daily instead of once\ncolumn with a one hundred percent threshold\nIncrease the Glue job's worker count so more\nEnable anomaly detection so statistics\nrecords arevalidated\ngathered across runs flag unexpected changes \nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthithapragna. com\n32/47",
+   "1000": "ALL DOMAINS\nQUESTI0N 15·I\nWORKED\nWhat should the data engineer implement?\nIsComplete at one hundred percent\nTwice daily\nDescription is evidently optional, since one percent were\nRuns the same passing rules more often. A rule that does\nalwaysnull. This rulewould fail every singleday andbe\nnot fire is not improved by firing more frequently.\nmuted.\nMore workers\nAnomaly detection\nCapacity for a data quality question. Every record is\nA gradual shift breaks no fixed threshold. Detection over\nalready being validated.\nstatistics gathered across runs is what catches a changing\npattern.\nTHE SIGNAL\nA gradual drift with all rules passing is exactly the failure static rules cannot catch. That\nis what anomaly detection is for.\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n33/47"
+  },
+  "source_answer_from_parse": ""
+ },
+ {
+  "id": "LOC-425",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D4",
+  "current": {
+   "stem": "A bank runs Glue jobs in private subnets. Compliance requires that no data traverses the public internet, and that jobs can reach only three named Amazon S3 buckets rather than any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and jobs reach Amazon S3 over its public endpoint. What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "An IAM policy on the Glue role permitting only",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Bucket policies on each of the three buckets,",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "those three buckets",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "keeping the NAT gateway",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1003,
+  "exam_number": 2,
+  "source_question_number": 37,
+  "ocr_pages": {
+   "1003": "ALL DOMAINS\nQUESTI0N 17 0F 20·D0MAIN 4\nA bank runs Glue jobs in private subnets. Compliance requires that no data traverses the\npublic internet, and that jobs can reach only three named Amazon S3 buckets rather than\nany bucket in Aws.\nThe subnets currently route outbound traffic through a NAT gateway, and jobs reach Amazon\nS3 over its public endpoint.\nWhat should the data engineer implement?\nAn IAM policy on the Glue role permitting only\nBucket policies on each of the three buckets,\nthose three buckets\nkeeping the NAT gateway\nMove the Glue jobs into public subnets to\nAn S3 gateway endpoint with an endpoint\nsimplify routing\npolicy naming the three buckets, and remove\nthe S3 route through the NAT gateway\nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthｉthapragna.com\n36/47",
+   "1004": "ALL DOMAINS\nQUESTI0N 17· W0RKED\nWhat should the data engineer implement?\nAn IAM policy on the role\nBucket policies plus NAT\nGoverns the identity rather than the network path, and\nanyonewhocan edit therolecanwiden it.Trafficstilluses\nabout traffic to somebody else's, and the internet path\nthe internet.\nremains.\nPublic subnets\nGateway endpoint with an endpoint policy\nSolves a routing inconveniencebyplacing the jobs on the\nTraffic leaves the internet path entirely, and the endpoint\ninternet,which istheoppositeof therequirement.\npolicy restricts which buckets are reachable through it.\nTHE SIGNAL\nTwo requirements: a private path, and a restricted set of destinations. Only an endpoint\npolicy delivers the second.\nPRACTICE EXAM 2\nａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com\n37/47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-426",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D4",
+  "current": {
+   "stem": "A company has configured Aws Lake Formation column-level grants excluding three sensitive columns from an analytics team. The grants appear correctly in the Lake Formation console. Testing shows the analytics team can still query all columns through Amazon Athena. The database was created before Lake Formation was adopted. What is the most likely cause?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Column-level grants only apply to Amazon",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "The IAMAllowedPrincipals setting is still present,",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "Redshift Spectrum, not to Athena",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "so Lake Formation defers to IAM",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1005,
+  "exam_number": 2,
+  "source_question_number": 38,
+  "ocr_pages": {
+   "1005": "ALL DOMAINS\nQUESTI0N 18 0F 20·D0MAIN4\nA company has configured Aws Lake Formation column-level grants excluding three\nsensitive columns from an analytics team. The grants appear correctly in the Lake Formation\nconsole.\nTesting shows the analytics team can still query all columns through Amazon Athena. The\ndatabase was created before Lake Formation was adopted.\nWhat is the most likely cause?\nColumn-level grants only apply to Amazon\nThe IAMAllowedPrincipals setting is still present,\nRedshift Spectrum, not to Athena\nso Lake Formation defers to IAM\nThe grants need up to twenty four hours to\nThe table must be converted to Apache Iceberg\npropagate\nfor column grants to apply\nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthｉthapragna.com\n38/47",
+   "1006": "ALL DOMAINS\nQUESTI0N 18· W0RKED\nWhat is the most likely cause?\nAthena is not covered\nIAMAllowedPrincipals still present\nFalse. Lake Formation permissions are enforced in Athena,\nThat setting makes Lake Formation defer to IAM entirely, so\nRedshiftSpectrum,EMRand Gluealike.\ngrants are recorded and never consulted. Common on \npre-existing databases.\nPropagation delay\nConvert to Iceberg\nInvented.Grantstakeeffectpromptly;thereis notwenty\nLake FormationgovernsplainParquet tablesperfectlywell.\nfour hour window.\nIceberg is not a prerequisite.\nTHE SIGNAL\nGrants that appear configured and do nothing is the classic Lake Formation surprise.\nThe pre-existing database is the clue.\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n39/47"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-427",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D4",
+  "current": {
+   "stem": "A company enabled Amazon Macie across its data lake nine months ago. The lake holds sixty terabytes across three hundred buckets, all encrypted with SSE-KMS using several A manual review of two datasets has found unredacted email addresses and payment card numbers. What is the most likely explanation?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Macie lacks permission to use the KMs keys, so it",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Macie does not detect payment card numbers",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "can only report object metadata",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "without a custom data identifier",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1007,
+  "exam_number": 2,
+  "source_question_number": 39,
+  "ocr_pages": {
+   "1007": "ALL DOMAINS\nQUESTI0N 19 0F 20· D0MAIN 4\nA company enabled Amazon Macie across its data lake nine months ago. The lake holds\nsixty terabytes across three hundred buckets, all encrypted with SSE-KMS using several\nA manual review of two datasets has found unredacted email addresses and payment card\nnumbers.\nWhat is the most likely explanation?\nMacie lacks permission to use the KMs keys, so it\nMacie does not detect payment card numbers\ncan only report object metadata\nwithout a custom data identifier\nMacie samples only the first megabyte of each\nThe findings expired, because Macie retains\nobject\nresults for ninety days\nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthｉthapragna.com\n40/47",
+   "1008": "ALL DOMAINS\nQUESTI0N 19· W0RKED\nWhat is the most likely explanation?\nNo permission to use the KMs keys\nNo detector for card numbers\nMacie can only decrypt SSE-KMS objects if the key policy\nPaymentcard numbersand emailaddressesareboth\nallows it. Without that it reports metadata and finds\ncovered by built-in managed data identifiers.\nnothing.\nFirst megabyte only\nFindings expired\nInvented.Maciesamplesintelligently acrossobjectsrather\nDetailed results expire after ninety days.That would not\nthan truncating each one.\nexplain nine months of near-total silence.\nTHE SIGNAL\nNear silence across three hundred encrypted buckets is a symptom, not a clean result.\nAsk what the tool could see.\nPRACTICE EXAM 2\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com\n41/ 47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-428",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D4",
+  "current": {
+   "stem": "A market research firm wants to sell three curated datasets to around one hundred and fifty external customers. Subscribers should receive quarterly revisions automatically, and access must end when a subscription lapses. The firm does not want to build entitlement management or billing. A proposal is to create an s3 bucket per customer and copy the datasets into each after every revision. What should the data engineer recommend instead?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "A single bucket with a bucket policy listing all",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Automate the per-customer copying with a",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "one hundred and fifty accounts",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "scheduled Glue job",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1009,
+  "exam_number": 2,
+  "source_question_number": 40,
+  "ocr_pages": {
+   "1009": "ALL DOMAINS\nQUESTI0N 20 0F 20 · D0MAIN 4\nA market research firm wants to sell three curated datasets to around one hundred and fifty\nexternal customers. Subscribers should receive quarterly revisions automatically, and access\nmust end when a subscription lapses.\nThe firm does not want to build entitlement management or billing. A proposal is to create\nan s3 bucket per customer and copy the datasets into each after every revision.\nWhat should the data engineer recommend instead?\nA single bucket with a bucket policy listing all\nB\nAutomate the per-customer copying with a\none hundred and fifty accounts\nscheduled Glue job\nAws Lake Formation cross-account grants to\nAWs Data Exchange, publishing the datasets\neach customer account\nwith managed entitlements and revisions\nPAUSE AND DECIDE\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n42/ 47",
+   "1010": "ALL DOMAINS\nQUESTION 20 · WORKED\nWhat should the data engineer recommend instead?\nOne bucket policy naming 150 accounts\nB\nAutomate the copying\nA\nA policy that size is unmaintainable and hits length limits,\nOne hundred and fifty copies, automated. The duplication,\nand it manages no subscription lifecycle.\nthe storage and the revocation problem all remain.\n150 Lake Formation grants\nAWS Data Exchange\nTechnically workable for access, and it leaves billing,\nEntitlement, revisions, subscription lifecycle and delivery are\nentitlement and lapse handling entirely to the firm.\nthe product. None of it has to be built.\nTHE SIGNAL\nSubscribers, automatic revisions, and access ending on lapse. Those three words are\nthe Data Exchange signal.\nPRACTICE EXAM 2\nadmin@sthithapragna.com\n43/ 47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-429",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "A company needs order events available in Amazon Redshift within seconds for an operational dashboard. Events are produced to Amazon Kinesis Data Streams. The team does not want to stage files in Amazon s3 or operate a consumer application. Volumes are moderate and the dashboard queries aggregate the most recent events. What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Amazon Data Firehose delivering to Amazon S3,",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Redshift streaming ingestion, materialising the",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "with a scheduled COPY into Redshift",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "stream into a materialized view",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1018,
+  "exam_number": 3,
+  "source_question_number": 41,
+  "ocr_pages": {
+   "1018": "ALL DOMAINS\nQUESTION 1 0F 20 : D0MAIN 1\nA company needs order events available in Amazon Redshift within seconds for an\noperational dashboard. Events are produced to Amazon Kinesis Data Streams. The team\ndoes not want to stage files in Amazon s3 or operate a consumer application.\nVolumes are moderate and the dashboard queries aggregate the most recent events.\nWhat should the data engineer implement?\nAmazon Data Firehose delivering to Amazon S3,\nB\nRedshift streaming ingestion, materialising the\nwith a scheduled COPY into Redshift\nstream into a materialized view\nAn Aws Lambda consumer writing rows to\nAWS Glue streaming job writing to Redshift\nRedshift with the Data APl\nevery minute\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n04/50",
+   "1019": "ALL DOMAINS\nQUESTION 1 · WORKED\nWhat should the data engineer implement?\nFirehose to S3, then COPY\nRedshift streaming ingestion\nStages files in s3, which the question rules out, and adds\nConnects the warehouse directly to the stream,\nbuffering plus a scheduled load to a seconds requirement.\nmaterialising records into a view with no s3 staging and no\nconsumer to run.\nA Lambda consumer using the Data API\nA Glue streaming job\nA consumer application to build, deploy and operate,\nAlso a consumer to operate, and a minute of latency\nwhich the question explicitly excludes.\nwhere seconds were asked for.\nTHE SIGNAL\nNo s3 staging and no consumer to operate. Those two constraints together leave one\noption.\nPRACTICE EXAM3\nadmin@sthithapragna.com\n05/50"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-430",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "An Aws Glue job created two years ago still runs with default settings. It processes about eight gigabytes nightly. Monitoring shows executor utilisation below fifteen percent throughout, and the job completes in twelve minutes. A cost review has flagged it as one of the more expensive jobs in the account relative to the data it handles. What should the data engineer do?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Switch the job to Glue Flex execution",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Enable job bookmarks",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "Move the job to Amazon EMR Serverless",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Reduce the number of workers from the default",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1020,
+  "exam_number": 3,
+  "source_question_number": 42,
+  "ocr_pages": {
+   "1020": "ALL DOMAINS\nQUESTI0N 2 0F 20 · D0MAIN 1\nAn Aws Glue job created two years ago still runs with default settings. It processes about\neight gigabytes nightly. Monitoring shows executor utilisation below fifteen percent\nthroughout, and the job completes in twelve minutes.\nA cost review has flagged it as one of the more expensive jobs in the account relative to the\ndata it handles.\nWhat should the data engineer do?\nSwitch the job to Glue Flex execution\nB\nEnable job bookmarks\nMove the job to Amazon EMR Serverless\nReduce the number of workers from the default\nallocation to match observed utilisation\nPAUSEANDDECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n06/50",
+   "1021": "ALL DOMAINS\nQUESTION 2 · WORKED\nWhat should the data engineer do?\nGlue Flex\nB\nJob bookmarks\nA discount on capacity that is eighty five percent idle. It\nPrevents reprocessing. Nothing here suggests the job is re-\nreduces the rate rather than the over-provisioning.\nminutes.\nEMR Serverless\nRight-size the worker count\nIntroduces a different service to solve a configuration\nFifteen percent utilisation on default settings means the job\nproblem inside the one already running the job.\nwas never sized. Matching workers to the work is the direct\nfix.\nTHE SIGNAL\nTwo years old, default settings, fifteen percent utilisation. The defaults are the answer.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n07/50"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-431",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "Amazon RDs for PostgreSQL database. During bulk uploads, thousands of files arrive at once and Lambda scales to hundreds of concurrent executions. The database exhausts its connection limit and the application that also uses it begins failing. What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Increase the RDs instance size to raise the",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Enable provisioned concurrency on the Lambda",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "connection limit",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Set reserved concurrency on the Lambda",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1022,
+  "exam_number": 3,
+  "source_question_number": 43,
+  "ocr_pages": {
+   "1022": "ALL DOMAINS\nQUESTI0N 3 0F 20 : D0MAIN 1\nAmazon RDs for PostgreSQL database. During bulk uploads, thousands of files arrive at once\nand Lambda scales to hundreds of concurrent executions.\nThe database exhausts its connection limit and the application that also uses it begins\nfailing.\nWhat should the data engineer implement?\nIncrease the RDs instance size to raise the\nB\nEnable provisioned concurrency on the Lambda\nconnection limit\nfunction\nSet reserved concurrency on the Lambda\nIncrease the Lambda function timeout\nfunction to cap simultaneous executions\nPAUSEANDDECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n08/50",
+   "1023": "ALL DOMAINS\nQUESTI0N 3 · W0RKED\nWhat should the data engineer implement?\nA larger RDs instance\nB\nProvisioned concurrency\nBuys headroom and moves the ceiling. A larger bulk\nKeeps environments warm to remove cold starts. It does\nupload exhausts the new limit and the application fails\nnot limit concurrency; it can increase readiness to scale.\nagain.\nReserved concurrency\nA longer timeout\nCaps how many functions run at once, protecting the\nNothing is timing out. Functions are failing to obtain a\nconnection, which happens immediately.\napplication stays up.\nTHE SIGNAL\nParallelism upstream became a bottleneck downstream. Reserved concurrency is a\nthrottle you apply to yourself.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n09/50"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-432",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "A company must process around four million individual small JsoN objects in Amazon S3, applying a transformation to each and writing the result back. The work is embarrassingly parallel and each object takes under a second. The team wants to run this without building custom fan-out logic, and needs per-object success and failure tracking. Whatshould thedata engineer use?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "An Aws Glue Spark job listing the prefix and",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "A single Lambda function iterating over the",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "processing every object",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "objects in a loop",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1024,
+  "exam_number": 3,
+  "source_question_number": 44,
+  "ocr_pages": {
+   "1024": "ALL DOMAINS\nQUESTION 4 0F 20·D0MAIN 1\nA company must process around four million individual small JsoN objects in Amazon S3,\napplying a transformation to each and writing the result back. The work is embarrassingly\nparallel and each object takes under a second.\nThe team wants to run this without building custom fan-out logic, and needs per-object\nsuccess and failure tracking.\nWhatshould thedata engineer use?\nAn Aws Glue Spark job listing the prefix and\nA single Lambda function iterating over the\nprocessing every object\nobjects in a loop\nA Step Functions inline Map state over a list of\nA Step Functions Distributed Map state invoking\nfour million keys\na Lambda functionper object\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthｉthapragna.com\n10/50",
+   "1025": "ALL DOMAINS\nQUESTION 4 : WORKED\nWhat should the data engineer use?\nA Glue Spark job\nB\nOne Lambda looping\nWorkable, and Spark on four million tiny objects spends\nFour million objects at under a second each is well past the\nmost of its time listing and opening files rather than\nfifteen minute limit, and it is serial.\ntransforming.\nAn inline Map state\nDistributed Map with a Lambda per object\nInline Map runs within the parent execution with limited\nReads the object list from s3, fans out at high concurrency,\nconcurrency and a payload ceiling. Four million items\nand reports per-item success and failure. No custom fan-\nexceeds it.\nout to build.\nTHE SIGNAL\nMillions of independent objects, no custom fan-out, per-item tracking. That\ncombination names Distributed Map.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n11 / 50"
+  },
+  "source_answer_from_parse": ""
+ },
+ {
+  "id": "LOC-433",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "Sixty suppliers send daily inventory files to a retailer. Each supplier uses SFTP with its own credentials and cannot change how it transmits files. The retailer wants the files to land in Amazon S3 and to stop operating the current SFTP servers on Amazon EC2. File sizes are modest and arrive throughout the day. What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "AWS Transfer Family with an SFTP endpoint",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "AWs DataSync agents at each supplier site",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "backed by Amazon S3",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Amazon AppFlow with an SFTP connector",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1026,
+  "exam_number": 3,
+  "source_question_number": 45,
+  "ocr_pages": {
+   "1026": "ALL DOMAINS\nQUESTI0N 5 0F 20 : D0MAIN 1\nSixty suppliers send daily inventory files to a retailer. Each supplier uses SFTP with its own\ncredentials and cannot change how it transmits files. The retailer wants the files to land in\nAmazon S3 and to stop operating the current SFTP servers on Amazon EC2.\nFile sizes are modest and arrive throughout the day.\nWhat should the data engineer implement?\nAWS Transfer Family with an SFTP endpoint\nB\nAWs DataSync agents at each supplier site\nbacked by Amazon S3\nAmazon AppFlow with an SFTP connector\nAws Snowball Edge devices shipped to each\nsupplier\nPAUSEANDDECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n12/ 50",
+   "1027": "ALL DOMAINS\nQUESTION 5 · WORKED\nWhat should the data engineer implement?\nAWS Transfer Family\nDatasync agents at each site\nA managed SFTP endpoint writing straight into S3. Suppliers\nRequires software deployed on sixty third-party networks,\nkeep their protocol and credentials; the EC2 servers go\nand changes how every supplier transmits.\naway.\nAppFlow with SFTP\nSnowball Edge\nAppFlow connects to SaaS applications. SFTP file transfer is\nPhysical devices for very large offline transfers. These are\nnot what it does.\nmodest daily files, and Snowball is closed to new\ncustomers.\nTHE SIGNAL\n\"Cannot change how it transmits\" plus SFTP names Transfer Family. The protocol is the\nrequirement.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n13/ 50"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-434",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "dates, and writes Parquet. It currently runs as an Aws Glue Spark job with the default allocation and takes about four minutes, most of which is startup. The team wants the lowest cost for this specific step. What should the data engineer use?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "An AwS Lambda function triggered by the file",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Keep the Glue Spark job and reduce it to the",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "minimum two DPUs",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "A Glue Python shell job",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1030,
+  "exam_number": 3,
+  "source_question_number": 47,
+  "ocr_pages": {
+   "1030": "ALL DOMAINS\nQUESTI0N 70F 20·D0MAIN1\ndates, and writes Parquet. It currently runs as an Aws Glue Spark job with the default\nallocation and takes about four minutes, most of which is startup.\nThe team wants the lowest cost for this specific step.\nWhat should the data engineer use?\nAn AwS Lambda function triggered by the file\nKeep the Glue Spark job and reduce it to the\narrival\nminimum two DPUs\n A Glue Python shell job\nAnAmazon EMR Serverless application\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n16/50",
+   "1031": "ALL DOMAINS\nQUESTION7·WORKED\nWhat should the data engineer use?\nA Lambda function\nTwo DPUs on Spark\nMegabytes, three trivial transformations, seconds of work.\nA real improvement, and still a Spark cluster starting up for\nNo startup overhead and no billing minimumbeyond the\ntwo megabytes, with a one minute billing minimum each\nmilliseconds used.\nhour.\nA Glue Python shell job\nEMR Serverless\nGenuinely close, and cheaper than Spark. It still carries Glue\nA Spark runtime for a two megabyte file. Heavier than the\nstartup time and a oneminuteminimum,twentyfour times\noption it would replace.\na day.\nTHE SIGNAL\nTwo megabytes and three trivial transformations. Nothing here needs a distributed\nengine at all.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n17 /50"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-435",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess. What should the data engineer configure?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "A lifecycle rule transitioning to Standard-IA after",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "S3 Intelligent-Tiering",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "A lifecycle rule transitioning to Glacier Instant",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "S3 One Zone-Infrequent Access from the outset",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 1032,
+  "exam_number": 3,
+  "source_question_number": 48,
+  "ocr_pages": {
+   "1032": "ALL DOMAINS\nQUESTION80F 20·D0MAIN2\nA company is launching a new product and will store its telemetry in Amazon S3. Nobody\ncan predict how often the data will be read, and access patterns are expected to change as\nthe product matures. Objects average four megabytes.\nThe team wants to minimise storage cost without risking retrieval charges from a wrong\nguess.\nWhat should the data engineer configure?\nA lifecycle rule transitioning to Standard-IA after\n S3 Intelligent-Tiering\nthirty days\nA lifecycle rule transitioning to Glacier Instant\nS3 One Zone-Infrequent Access from the outset\nRetrieval after seven days\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n18/50",
+   "1033": "ALL DOMAINS\nQUESTION8·WORKED\nWhat should the data engineer configure?\nLifecycle to Standard-IA\nS3 Intelligent-Tiering\nA lifecycle rule encodes a guess about access. The\nMoves objects between tiers based on observed access,\nwithnoretrieval feesand nominimumduration.Built for\nmeans retrieval charges.\nunknown patterns.\nGlacier Instant Retrieval after seven days\nOne Zone-lA from the outset\nAssumes infrequent access from day one, and stores the\naccesswouldbechargedandearlydeletionpenalised.\nonly copy in a single Availability Zone.\nTHE SIGNAL\n\"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost\nword for word.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n19/50"
+  },
+  "source_answer_from_parse": "B"
+ }
+]

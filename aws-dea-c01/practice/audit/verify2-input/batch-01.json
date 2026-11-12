@@ -1,0 +1,811 @@
+[
+ {
+  "group_id": "G023",
+  "ids": [
+   "LOC-023",
+   "LOC-286"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application. Which solutions will minimize data loss for the application? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the message retention period"
+   },
+   {
+    "label": "B",
+    "text": "Increase the visibility timeout."
+   },
+   {
+    "label": "C",
+    "text": "Attach a dead-letter queue (DLQ) to the SQS queue."
+   },
+   {
+    "label": "D",
+    "text": "Use a delay queue to delay message delivery"
+   },
+   {
+    "label": "E",
+    "text": "Reduce message processing time."
+   }
+  ],
+  "raw_source_answers": [
+   "A",
+   "AC"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": [
+   {
+    "id": "LOC-286",
+    "options": [
+     {
+      "label": "A",
+      "text": "Increase the message retention period"
+     },
+     {
+      "label": "B",
+      "text": "Increase the visibility timeout."
+     },
+     {
+      "label": "C",
+      "text": "Attach a dead-letter queue (DLQ) to the SQS queue."
+     },
+     {
+      "label": "D",
+      "text": "Use a delay queue to delay message delivery"
+     },
+     {
+      "label": "E",
+      "text": "Reduce message processing time."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G034",
+  "ids": [
+   "LOC-034"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A data engineer develops an AWS Glue Apache Spark ETL job to perform transformations on a dataset. When the data engineer runs the job, the job returns an error that reads, “No space left on device.” The data engineer needs to identify the source of the error and provide a solution. Which combinations of steps will meet this requirement MOST cost-effectively? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Scale out the workers vertically to address data skewness."
+   },
+   {
+    "label": "B",
+    "text": "Use the Spark UI and AWS Glue metrics to monitor data skew in the Spark executors."
+   },
+   {
+    "label": "C",
+    "text": "Scale out the number of workers horizontally to address data skewness."
+   },
+   {
+    "label": "D",
+    "text": "Enable the --write-shuffie-files-to-s3 job parameter. Use the salting technique."
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G037",
+  "ids": [
+   "LOC-037"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company uses an Amazon Redshift cluster as a data warehouse that is shared across two departments. To comply with a security policy, each department must have unique access permissions. Department A must have access to tables and views for Department A. Department B must have access to tables and views for Department B. The company often runs SQL queries that use objects from both departments in one query. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Group tables and views for each department into dedicated schemas. Manage permissions at the schema level."
+   },
+   {
+    "label": "B",
+    "text": "Group tables and views for each department into dedicated databases. Manage permissions at the database level."
+   },
+   {
+    "label": "C",
+    "text": "Update the names of the tables and views to follow a naming convention that contains the department names. Manage permissions based on the new naming convention."
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "options_merged_in_one",
+   "stem_no_terminal_punct"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G046",
+  "ids": [
+   "LOC-046"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company uses Amazon S3 and AWS Glue Data Catalog to manage a data lake that contains contact information for customers. The company uses PySpark and AWS Glue jobs with a DynamicFrame to run a workflow that processes data within the data lake. A data engineer notices that the workflow is generating errors as a result of how customer postal codes are stored in the data lake. Some postal codes include unnecessary numbers or invalid characters. The data engineer needs a solution to address the errors and correct the postal codes in the data lake.",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create a schema definition for PySpark that matches the format the processing workflow requires for postal codes. Pass the schema to the DynamicFrame during processing."
+   },
+   {
+    "label": "B",
+    "text": "Use AWS Glue workflow properties to allow job state sharing. Configure the AWS Glue jobs to read values from the postal code column by using the properties from a previously successful run of the jobs."
+   },
+   {
+    "label": "C",
+    "text": "Configure the column.push_down_predicate setting and the catalogPartitionPredicate settings for the postal code column in the DynamicFrame."
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G051",
+  "ids": [
+   "LOC-051"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A data engineer is building a new data pipeline that stores metadata in an Amazon DynamoDB table. The data engineer must ensure that all items that are older than a specified age are removed from the DynamoDB table daily. Which solution will meet this requirement with the LEAST configuration effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Enable DynamoDB TTL on the DynamoDB table. Adjust the application source code to set the TTL attribute appropriately."
+   },
+   {
+    "label": "B",
+    "text": "Create an Amazon EventBridge rule that uses a daily cron expression to trigger an AWS Lambda function to delete items that are older than the specified age."
+   },
+   {
+    "label": "C",
+    "text": "Add a lifecycle configuration to the DynamoDB table that deletes items that are older than the specified age."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G053",
+  "ids": [
+   "LOC-053"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A data engineer needs to analyze time-sensitive sales data. The company stores the data in an Amazon S3 bucket. The data engineer uses AWS Glue Data Catalog to access the data. When the data engineer performs the analysis, the data engineer notices that some records are missing or out of date. What is the likely cause of these issues?",
+  "options": [
+   {
+    "label": "A",
+    "text": "AWS Glue Data Catalog is not up to date with the latest S3 partition changes."
+   },
+   {
+    "label": "B",
+    "text": "Incorrect IAM roles are assigned to the AWS Glue jobs."
+   },
+   {
+    "label": "C",
+    "text": "Versioning is not enabled on the S3 bucket."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G064",
+  "ids": [
+   "LOC-064"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company generates reports from 30 tables in an Amazon Redshift data warehouse. The data source is an operational Amazon Aurora MySQL database that contains 100 tables. Currently, the company refreshes all data from Aurora to Amazon Redshift every hour, which causes delays in report generation. Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS Database Migration Service (AWS DMS) to create a replication task. Select only the required tables."
+   },
+   {
+    "label": "B",
+    "text": "Create a database in Amazon Redshift that uses the integration."
+   },
+   {
+    "label": "C",
+    "text": "Create a zero-ETL integration in Amazon Aurora. Select only the required tables."
+   },
+   {
+    "label": "D",
+    "text": "Use query editor v2 in Amazon Redshift to access the data in Aurora."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCDE"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G065",
+  "ids": [
+   "LOC-065"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineer needs a fully automated solution to check for new data in multiple databases and process data that the solution finds. The solution must run every hour. The solution must be compatible with Amazon RDS, Amazon DynamoDB, and Amazon OpenSearch Service. The solution must be able to process up to 10 MB of data at one time. The solution must be optimized for costs and operational overhead. The solution must have robust error handling capabilities. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon EventBridge to invoke AWS Step Functions every hour to deploy an AWS Lambda function to check for data. Configure Step Functions steps to process data that the Lambda function finds. Implement error handling in each state."
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon EventBridge to invoke an AWS Lambda function every hour to check for data. Configure the function to send a message to an Amazon Simple Queue Service (Amazon SQS) queue when the function finds new data. Use a second Lambda function to read the queue and perform the processing."
+   },
+   {
+    "label": "C",
+    "text": "Configure an Apache Spark application to run on Amazon EMR to check for data. Implement error handling in the application. Use Amazon EventBridge to invoke the application every hour."
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G076",
+  "ids": [
+   "LOC-076"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company is building data processing pipelines by using AWS Glue. The pipelines access data stored in Amazon S3. The company has organized the data into folders with prefixes that represent different classification levels. The company needs to restrict AWS Glue jobs to access only specific prefixes based on the data classification. The company must also restrict access to business hours (9 AM to 5 PM). Which elements must the company include in a custom IAM policy to meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Resource element with S3 object Amazon Resource Name (ARN) patterns that use wildcards for each prefix and a Condition element that uses the $util.time variable with TimeGreaterThan and TimeLessThan operators"
+   },
+   {
+    "label": "B",
+    "text": "Resource element with S3 object Amazon Resource Name (ARN) patterns that use wildcards for each prefix and a Condition element that uses the aws:CurrentTime condition key with DateGreaterThan and DateLessThan operators"
+   },
+   {
+    "label": "C",
+    "text": "Condition element that uses the s3:prefix condition key to restrict folder access and aws:CurrentTime with DateGreaterThanEquals and DateLessThanEquals to restrict hours of operation"
+   }
+  ],
+  "raw_source_answers": [
+   "C"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G080",
+  "ids": [
+   "LOC-080"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A university is developing an educational application that analyzes student essays. The application provides personalized feedback with accurate citations to the university's textbooks. The application needs to process essays in multiple languages. Application responses must include direct references to specific sections in the course materials and must be in the student’s selected language. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Build a custom vector database by using Amazon OpenSearch Serverless. Store textbook content as multilingual embeddings. Create an AWS Lambda function that queues the database when generating responses with Amazon Bedrock."
+   },
+   {
+    "label": "B",
+    "text": "Create a knowledge base in Amazon Bedrock Knowledge Bases with the university’s textbooks. Configure a multilingual model to generate responses with source citations."
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Comprehend to detect the language and key topics in the essays. Use Amazon Kendra to search for relevant textbook passages. Create an AWS Lambda function that formats the textbook passages into feedback."
+   }
+  ],
+  "raw_source_answers": [
+   "C"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G082",
+  "ids": [
+   "LOC-082"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A company aggregates high-frequency sensor telemetry into an Amazon S3 data lake. Each sensor stream emits structured records every hour. The records include metadata such as sensor category, unit ID, operational state, event timestamp, and site location. The data scales up to millions of records each day. The company runs complex queries each day to uncover performance insights specific to sensor categories. Which solution will meet these requirements with the FASTEST query execution time?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Persist the data in Apache ORC format. Partition the data by date. Sort the data by sensor category."
+   },
+   {
+    "label": "B",
+    "text": "Persist the data in CSV format. Partition the data by date. Sort the data by operational status."
+   },
+   {
+    "label": "C",
+    "text": "Persist the data in Parquet format. Partition the data by sensor category. Sort the data by date"
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G084",
+  "ids": [
+   "LOC-084"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A company is developing a log streaming pipeline that uses Amazon Data Firehose. The pipeline streams Amazon CloudWatch Logs data to an Amazon S3 bucket. The company's analytics team needs to use the data in audits. The pipeline must deliver only the relevant logs to the S3 bucket in a compatible format for the team's analysis. Which solution will meet these requirements and maintain reliable performance?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Set the S3 bucket rules to allow logs from only specific timestamp ranges. Create an AWS Lambda function that converts the log files to the desired format. Use an S3 trigger to invoke the Lambda function."
+   },
+   {
+    "label": "B",
+    "text": "Create a subscription filter in the CloudWatch Logs log group that uses the Firehose delivery stream as the destination. Create an AWS Lambda function that converts the log files to the desired format. Configure Firehose to invoke the Lambda function."
+   },
+   {
+    "label": "C",
+    "text": "Create a subscription filter in the CloudWatch Logs log group. Configure the filter to monitor the Firehose stream. Create an AWS Lambda function to convert the log files to the desired format. Configure Firehose to invoke the Lambda function."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G085",
+  "ids": [
+   "LOC-085"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A media company wants to build a real-time analytics pipeline to process customer activity events across the company's website and mobile app. The company wants to build a solution to ingest millions of events with minimum latency. The solution must be scalable and durable enough so that no data is lost. Which solution will meet these requirements in the MOST cost-effective way?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Set up an Amazon Kinesis Data Streams pipeline to ingest data, process the data by using AWS Lambda functions, and store the results in Amazon Redshift for analytics."
+   },
+   {
+    "label": "B",
+    "text": "Schedule an AWS Glue job to fetch user interaction logs every 10 minutes from Amazon S3. Configure the AWS Glue job to transform and store the data in Amazon Redshift for analytics."
+   },
+   {
+    "label": "C",
+    "text": "Configure Amazon S3 Event Notifications to invoke an AWS Lambda function to process every new interaction log file. Store the result in Amazon Redshift for analytics."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G086",
+  "ids": [
+   "LOC-086"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A company stores a large dataset in an Amazon S3 bucket. A data engineer frequently runs complex queries on the dataset by using Amazon Athena. The data engineer needs to optimize query performance and optimize costs for queries that are run multiple times with the same parameters. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Convert the dataset to JSON format before running Athena queries."
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon EMR to pre-process the data before running Athena queries."
+   },
+   {
+    "label": "C",
+    "text": "Configure query result reuse settings in the Athena workgroup."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G087",
+  "ids": [
+   "LOC-087"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company stores raw clickstream data in an Amazon S3 bucket. The company needs a solution to process the data every day by using complex PySpark transformations that rely on custom internal libraries. After the data is transformed, the company must store the data in Amazon Redshift for analytics. The solution must be highly scalable to handle large data workloads. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS Glue Studio to build and schedule PySpark jobs. Configure an AWS Glue data connection that includes the custom libraries."
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon EC2 Auto Scaling groups with a custom AMI that contains the custom libraries to run a PySpark application."
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon EMR to run PySpark jobs. Use bootstrap actions to install the custom libraries"
+   }
+  ],
+  "raw_source_answers": [
+   "C"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G090",
+  "ids": [
+   "LOC-090"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A data engineer needs to design a data pipeline that invokes an AWS Glue job. After the AWS Glue job finishes successfully, the pipeline needs to invoke three AWS Lambda functions. The pipeline must be serverless. The data engineer wants to see the entire pipeline lineage in a single interface. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Configure a workflow in AWS Step Functions that invokes the AWS Glue job and the Lambda functions. View the lineage in Step Functions Workflow Studio."
+   },
+   {
+    "label": "B",
+    "text": "Deploy an Apache Airflow workflow that invokes the AWS Glue job and the Lambda functions. View the lineage in the Airflow UI."
+   },
+   {
+    "label": "C",
+    "text": "Build the pipeline in the AWS Glue job. Invoke the Lambda functions after the AWS Glue job runs. Use Amazon CloudWatch Logs Insights to view the lineage."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G091",
+  "ids": [
+   "LOC-091"
+  ],
+  "type": "multi",
+  "choose_n": null,
+  "stem": "A manufacturing company is setting up an IoT monitoring system that generates large, complex data streams. The company wants to store the data in an Amazon S3 data lake for real-time and historical analysis. The company needs a solution that can process data quickly, provide short query times, and use resources efficiently without slowing down data ingestion. The solution must use a Spark streaming extract, transform, and load (ETL) job on Amazon EMR that is configured to write data to an Iceberg table. Which solution will meet these requirements?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use Amazon Kinesis Data Streams to ingest the data. Configure the Iceberg table with copy on write (CoW) mode. Enable the AWS Glue Data Catalog compaction optimizer."
+   },
+   {
+    "label": "B",
+    "text": "Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to ingest the data. Configure the Iceberg table with copy on write (CoW) mode. Schedule an AWS Glue job for compaction to optimize the Iceberg table."
+   },
+   {
+    "label": "C",
+    "text": "Use Amazon Kinesis Data Streams to ingest the data. Configure the Iceberg table with merge on read (MoR) mode. Enable the AWS Glue Data Catalog compaction optimizer."
+   }
+  ],
+  "raw_source_answers": [
+   "ABCD"
+  ],
+  "baseline_flags": [
+   "options_lt4",
+   "multi_without_choose_n"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G100",
+  "ids": [
+   "LOC-100"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data engineering team needs to deploy an AWS CloudFormation template for its data pipeline across development, testing, and production AWS accounts. The team requires a solution that automatically updates deployments when changes are committed to the team’s Git repository. The solution must also provide centralized management across all accounts. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create individual CloudFormation stacks in each account with self-managed permissions. Use AWS CodePipeline with webhooks to detect Git commits and update stacks."
+   },
+   {
+    "label": "B",
+    "text": "Use CloudFormation StackSets with service-managed permissions. Enable automatic deployments to target accounts by using an AWS Organizations integration."
+   },
+   {
+    "label": "C",
+    "text": "Set up an AWS Lambda function that is invoked by Git commits. Configure the Lambda function to use the CloudFormation API to update stacks in each account."
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G101",
+  "ids": [
+   "LOC-101"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has text files that are stored in an Amazon S3 bucket. The structure of the files can change over time as the company adds new columns to the files. The company wants to give users the ability to query the data by using Amazon Athena and Amazon Quick Suite (previously known as Amazon QuickSight). The company wants to use predefined column names for the data in the text files. Which solution will meet these requirements with the LEAST operational overhead?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Create a table in Athena that points to the S3 location and uses the predefined column names. Use the table in Athena and Quick Suite. Update the table when the company adds new columns."
+   },
+   {
+    "label": "B",
+    "text": "Write a custom grok classifier to match the predefined column names and schema. Create an AWS Glue crawler that uses the grok classifier and creates a table. Use the table in Athena and Quick Suite. Run the crawler when the company adds new columns."
+   },
+   {
+    "label": "C",
+    "text": "Use the built-in classifier in AWS Glue. Create an AWS Glue crawler that creates a table. Use the table in Athena and Quick Suite. Run the crawler when the company adds new columns."
+   }
+  ],
+  "raw_source_answers": [
+   "C"
+  ],
+  "baseline_flags": [
+   "options_lt4"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G108",
+  "ids": [
+   "LOC-108"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company has AWS resources in multiple AWS Regions. The company has an Amazon EFS file system in each Region where the company operates. The company’s data science team operates within only a single Region. The data that the data science team works with must remain within the team's Region. A data engineer needs to create a single dataset by processing files that are in each of the company's Regional EFS file systems. The data engineer wants to use an AWS Step Functions state machine to orchestrate AWS Lambda functions to process the data. Which solution will meet these requirements with the LEAST effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Peer the VPCs that host the EFS file systems in each Region with the VPC that is in the data science team’s Region. Enable EFS file locking. Configure the Lambda functions in the data science team's Region to mount each of the Region specific file systems. Use the Lambda functions to process the data."
+   },
+   {
+    "label": "B",
+    "text": "Configure each of the Regional EFS file systems to replicate data to the data science team's Region. In the data science team’s Region, configure the Lambda functions to mount the replica file systems. Use the Lambda functions to process the data."
+   },
+   {
+    "label": "C",
+    "text": "Deploy the Lambda functions to each Region. Mount the Regional EFS file systems to the Lambda functions. Use the Lambda functions to process the data. Store the output in an Amazon S3 bucket in the data science team’s Region."
+   },
+   {
+    "label": "D",
+    "text": "Use AWS DataSync to transfer files from each of the Regional EFS files systems to the file system that is in the data science team's Region. Configure the Lambda functions in the data science team's Region to mount the file system that is in the same Region. Use the Lambda functions to process the data."
+   }
+  ],
+  "raw_source_answers": [
+   "D"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G147",
+  "ids": [
+   "LOC-147"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company maintains a data warehouse in an on-premises Oracle database. The company wants to build a data lake on AWS. The company wants to load data warehouse tables into Amazon S3 and synchronize the tables with incremental data that arrives from the data warehouse every day. Each table has a column that contains monotonically increasing values. The size of each table is less than 50 GB. The data warehouse tables are refreshed every night between 1 AM and 2 AM. A business intelligence team queries the tables between 10 AM and 8 PM every day. Which solution will meet these requirements in the MOST operationally efficient way?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use an AWS Database Migration Service (AWS DMS) full load plus CDC job to load tables that contain monotonically increasing data columns from the on-premises data warehouse to Amazon S3. Use custom logic in AWS Glue to append the daily incremental data to a full-load copy that is in Amazon S3."
+   },
+   {
+    "label": "B",
+    "text": "Use an AWS Glue Java Database Connectivity (JDBC) connection. Configure a job bookmark for a column that contains monotonically increasing values. Write custom logic to append the daily incremental data to a full-load copy that is in Amazon S3."
+   },
+   {
+    "label": "C",
+    "text": "Use an AWS Database Migration Service (AWS DMS) full load migration to load the data warehouse tables into Amazon S3 every day. Overwrite the previous day's full-load copy every day."
+   },
+   {
+    "label": "D",
+    "text": "Use AWS Glue to load a full copy of the data warehouse tables into Amazon S3 every day. Overwrite the previous day's full-load copy every day."
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G159",
+  "ids": [
+   "LOC-159",
+   "LOC-362"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A company receives .csv files that contain physical address data. The data is in columns that have the following names: Door_No, Street_Name, City, and Zip_Code. The company wants to create a single column to store these values in the following format: //IMG// Which solution will meet this requirement with the LEAST coding effort?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column."
+   },
+   {
+    "label": "B",
+    "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column."
+   },
+   {
+    "label": "C",
+    "text": "Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column."
+   },
+   {
+    "label": "D",
+    "text": "Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column."
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": [
+   {
+    "id": "LOC-362",
+    "options": [
+     {
+      "label": "A",
+      "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column."
+     },
+     {
+      "label": "B",
+      "text": "Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column."
+     },
+     {
+      "label": "C",
+      "text": "Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column."
+     },
+     {
+      "label": "D",
+      "text": "Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "group_id": "G176",
+  "ids": [
+   "LOC-176"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company stores employee data in Amazon Resdshift. A table names Employee uses columns named Region ID, Department ID, and Role ID as a compound sort key. Which queries will MOST increase the speed of query by using a compound sort key of the table? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Select *from Employee where Region ID=’North America’;"
+   },
+   {
+    "label": "B",
+    "text": "Select *from Employee where Region ID=’North America’ and Department ID=20;"
+   },
+   {
+    "label": "C",
+    "text": "Select *from Employee where Department ID=20 and Region ID=’North America’;"
+   },
+   {
+    "label": "D",
+    "text": "Select *from Employee where Role ID=50;"
+   },
+   {
+    "label": "E",
+    "text": "Select *from Employee where Region ID=’North America’ and Role ID=50;"
+   }
+  ],
+  "raw_source_answers": [
+   "BE"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G193",
+  "ids": [
+   "LOC-193"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "A company uses Amazon S3 to store data and Amazon QuickSight to create visualizations, The company has an S3 bucket in an AWS account named Hub-Account. The S3 bucket is encrypted by an AWS Key Management Service (AWS KMS) key. The company's QuickSight instance is in a separate account named BI-Account. The company updates the S3 bucket policy to grant access to the QuickSight service role. The company wants to enable cross-account access to allow QuickSight to interact with the S3 bucket. Which combination of steps will meet this requirement? (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Use the existing AWS KMS key to encrypt connections from QuickSight to the S3 bucket."
+   },
+   {
+    "label": "B",
+    "text": "Add the S3 bucket as a resource that the QuickSight service role can access."
+   },
+   {
+    "label": "C",
+    "text": "Use AWS Resource Access Manager (AWS RAM) to share the S3 bucket with the BI-Account account."
+   },
+   {
+    "label": "D",
+    "text": "Add an IAM policy to the QuickSight service role to give QuickSight access to the KMS key that encrypts the S3 bucket."
+   },
+   {
+    "label": "E",
+    "text": "Add the KMS key as a resource that the QuickSight service role can access."
+   }
+  ],
+  "raw_source_answers": [
+   "E"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ }
+]

@@ -1,0 +1,753 @@
+[
+ {
+  "group_id": "G390",
+  "ids": [
+   "LOC-390"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 31/43 --- page 466 --- D2ST0RE"
+   },
+   {
+    "label": "E",
+    "text": "Here it means a one query in one system the team already runs. second system to run and the filter columns living elsewhere. MemoryDB Athena over document text Lowest latency, at in-memory prices for two million vectors, Keyword matching over files.The whole requirement is and nothing here requires microseconds. finding matches where the wording differs. THE SIGNAL CHOOSING A DATA STORE admin@sthithapragna.com 31/43 --- page 466 --- D2ST0RE"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "option_very_long",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G392",
+  "ids": [
+   "LOC-392"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "Why did the first attempt fail, and what should replace it?",
+  "options": [
+   {
+    "label": "A",
+    "text": "com 22 / 24 --- page 183 --- D1INGEST"
+   },
+   {
+    "label": "D",
+    "text": "Matches the access pattern. reads. Faster than Athena, still the wrong shap"
+   },
+   {
+    "label": "E",
+    "text": "THE SIGNAL Compare with scenario 1. There, streaming was overkill. Here, an analytical store is underpowered. Same question, opposite direction. THE MENTAL MODEL admin@sthithapragna.com 22 / 24 --- page 183 --- D1INGEST"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [
+   "options_lt4",
+   "label_sequence_broken",
+   "ocr_noise",
+   "stem_too_short"
+  ],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G393",
+  "ids": [
+   "LOC-393"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Around forty microservices produce and consume from it using Kafka client libraries and a schema registry. The operations team spends significant time patching brokers and rebalancing partitions. The company wants to reduce that operational work. Throughput is high, steady and well understood, and the services must not be rewritten. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon Msk Serverless"
+   },
+   {
+    "label": "B",
+    "text": "Amazon Kinesis Data Streams in on-demand"
+   },
+   {
+    "label": "C",
+    "text": "Amazon MsK Provisioned, migrating the existing"
+   },
+   {
+    "label": "D",
+    "text": "Amazon Data Firehose delivering to Amazon s3"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G395",
+  "ids": [
+   "LOC-395"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A Step Functions state machine starts an Aws Glue job, then runs a Glue crawler, then every night. Analysts report that the crawler sometimes registers only part of the day's data, and the What is the most likely cause?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The Lambda function is timing out before the"
+   },
+   {
+    "label": "B",
+    "text": "The crawler needs a longer schedule interval"
+   },
+   {
+    "label": "C",
+    "text": "summary is written"
+   },
+   {
+    "label": "D",
+    "text": "The Glue job is being invoked with the default"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G396",
+  "ids": [
+   "LOC-396"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A nightly Aws Glue job processes about four hundred gigabytes and takes ninety minutes. It at two. The company wants to reduce cost. evenly utilised throughout. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Migrate the job to Amazon EMR on EC2 with Spot"
+   },
+   {
+    "label": "B",
+    "text": "Run the job on Glue Flex execution"
+   },
+   {
+    "label": "C",
+    "text": "Switch to memory-optimised R workers"
+   },
+   {
+    "label": "D",
+    "text": "Reduce the worker count to five and accept a"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G400",
+  "ids": [
+   "LOC-400"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "Amazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over eight months, query times have roughly tripled and storage costs have grown faster than the underlying data volume. The platform team is two people supporting twenty pipelines and has no capacity to build and operate maintenance jobs. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the Firehose buffer interval to reduce"
+   },
+   {
+    "label": "B",
+    "text": "Migrate the tables to Amazon s3 Tables, which"
+   },
+   {
+    "label": "C",
+    "text": "the number of files written"
+   },
+   {
+    "label": "D",
+    "text": "performs compaction and snapshot"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G401",
+  "ids": [
+   "LOC-401"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Amazon Redshift cluster holds a three billion row events table and a fifty thousand row campaigns table. Almost every query joins the two on campaign ID and filters on an event date range covering the last seven days. Both tables currently use EVEN distribution and neither has a sort key. Monitoring shows heavy data redistribution during joins. Which combination will most improve performance?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Enable concurrency scaling on the cluster"
+   },
+   {
+    "label": "B",
+    "text": "Add four more nodes to the cluster"
+   },
+   {
+    "label": "C",
+    "text": "Set both tables to KEY distribution on campaign"
+   },
+   {
+    "label": "D",
+    "text": "Set the events table toKEY distribution on"
+   }
+  ],
+  "raw_source_answers": [
+   "C"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G402",
+  "ids": [
+   "LOC-402"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "An application stores orders in Amazon DynamoDB with order ID as the partition key. A new requirement is to list all orders for a given customer, sorted by order date. The table already holds two hundred million items. Reads for this new pattern do not need to reflect the most recent write immediately. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "global secondary index partitioned by"
+   },
+   {
+    "label": "B",
+    "text": "local secondary index with customer ID as the"
+   },
+   {
+    "label": "C",
+    "text": "customerID and sorted by order date"
+   },
+   {
+    "label": "D",
+    "text": "Scanwith a filter expressiononcustomer ID"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G403",
+  "ids": [
+   "LOC-403"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A Glue job writes hourly output to Amazon S3 under Hive-style partitions. A crawler runs every ten minutes to register new partitions so Athena users can query recent data. Finance has flagged the crawler's cost, and analysts still wait up to ten minutes for new data to appear. The table is also queried by Amazon Redshift Spectrum. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Reduce the crawler schedule to every three"
+   },
+   {
+    "label": "B",
+    "text": "Configure partition projection on the table in"
+   },
+   {
+    "label": "C",
+    "text": "EnableenableUpdateCatalogontheGlue job"
+   },
+   {
+    "label": "D",
+    "text": "RunMSCK REPAIRTABLEona scheduleinstead of"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G404",
+  "ids": [
+   "LOC-404"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A nightly Aws Glue job loads data into Amazon Redshift. An operations team has a Cloudwatch alarm on the job's failed run count. It has worked for eighteen months. During a recent change, the EventBridge rule that triggers the job was disabled. The job did not run for three nights. No alarm fired, and the problem was found when a business user noticed stale figures. What change would have detected this?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Lower the failure alarm threshold to fire on a"
+   },
+   {
+    "label": "B",
+    "text": "Enable Aws CloudTrail so the rule change is"
+   },
+   {
+    "label": "C",
+    "text": "single failed run"
+   },
+   {
+    "label": "D",
+    "text": "Create an alarm on the job's succeeded run"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G408",
+  "ids": [
+   "LOC-408"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A bank stores customer records in Amazon S3, catalogued in Aws Glue and queried with Amazon Athena. A modelling team must analyse transaction behaviour but must never see customer name, address or account number. A data engineer proposes writing an IAM policy for the modelling team's role that denies access to those three columns. Why will this not work, and what should be done?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Encrypt the three columns with a KMS key the"
+   },
+   {
+    "label": "B",
+    "text": "IAM cannot express column-level permissions."
+   },
+   {
+    "label": "C",
+    "text": "modelling team cannot use"
+   },
+   {
+    "label": "D",
+    "text": "Use Aws Lake Formation column-level grants or"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G414",
+  "ids": [
+   "LOC-414"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A pipeline converts uploaded video metadata files into a normalised format. Each file takes between eight and forty minutes to process depending on size, and processing is single- The current implementation is an Aws Lambda function, and the longer files now fail. What should the data engineer use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Increase the Lambda function's timeout and"
+   },
+   {
+    "label": "B",
+    "text": "An Amazon EMR cluster with a step per file"
+   },
+   {
+    "label": "C",
+    "text": "memory allocation"
+   },
+   {
+    "label": "D",
+    "text": "Aws Batch, running each file as a containerised"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G415",
+  "ids": [
+   "LOC-415"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "S3 daily, with field mapping and light filtering applied. A developer has proposed writing a Lambda function that calls the Salesforce REST APl, handles pagination, manages OAuth token refresh and retries, and writes JsoN to Amazon s3. The team wants to minimise the code they build and maintain. What should the data engineer recommend?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Amazon AppFlow, with a scheduled flow"
+   },
+   {
+    "label": "B",
+    "text": "Build the Lambda function as proposed, with"
+   },
+   {
+    "label": "C",
+    "text": "performing the mapping and filtering"
+   },
+   {
+    "label": "D",
+    "text": "EventBridge Scheduler triggering it daily"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G420",
+  "ids": [
+   "LOC-420"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "stayed around twenty terabytes. S3 Storage Lens reports approximately seventy terabytes of billed storage. Which combination explains the gap and addresses it?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Enable S3 Intelligent-Tiering so infrequently"
+   },
+   {
+    "label": "B",
+    "text": "Enable Cross-Region Replication and delete the"
+   },
+   {
+    "label": "C",
+    "text": "accessed data moves to cheaper tiers"
+   },
+   {
+    "label": "D",
+    "text": "primary copies"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G422",
+  "ids": [
+   "LOC-422"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Athena table over five years of Parquet data is partitioned by a string column named event_date. Analysts filter with a function that extracts the date from an event_timestamp column instead.Results are correct. Queries scan the entire table every time, and the Athena bill is far higher than expected. What is the cause?",
+  "options": [
+   {
+    "label": "A",
+    "text": "The table needs a Glue partition index"
+   },
+   {
+    "label": "B",
+    "text": "The workgroup's data scan limit has been set"
+   },
+   {
+    "label": "C",
+    "text": "Thefilter is applied toa derived value, so"
+   },
+   {
+    "label": "D",
+    "text": "Parquet files are too small and need"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G430",
+  "ids": [
+   "LOC-430"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "An Aws Glue job created two years ago still runs with default settings. It processes about eight gigabytes nightly. Monitoring shows executor utilisation below fifteen percent throughout, and the job completes in twelve minutes. A cost review has flagged it as one of the more expensive jobs in the account relative to the data it handles. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Switch the job to Glue Flex execution"
+   },
+   {
+    "label": "B",
+    "text": "Enable job bookmarks"
+   },
+   {
+    "label": "C",
+    "text": "Move the job to Amazon EMR Serverless"
+   },
+   {
+    "label": "D",
+    "text": "Reduce the number of workers from the default"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G433",
+  "ids": [
+   "LOC-433"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "Sixty suppliers send daily inventory files to a retailer. Each supplier uses SFTP with its own credentials and cannot change how it transmits files. The retailer wants the files to land in Amazon S3 and to stop operating the current SFTP servers on Amazon EC2. File sizes are modest and arrive throughout the day. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "AWS Transfer Family with an SFTP endpoint"
+   },
+   {
+    "label": "B",
+    "text": "AWs DataSync agents at each supplier site"
+   },
+   {
+    "label": "C",
+    "text": "backed by Amazon S3"
+   },
+   {
+    "label": "D",
+    "text": "Amazon AppFlow with an SFTP connector"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G438",
+  "ids": [
+   "LOC-438"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "Amazon s3, because the business term has changed. Historical queries must continue to return the same rows, and rewriting five years of files is not acceptable. The table is queried by Amazon Athena and Amazon EMR. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Rename the column in the Glue Data Catalog"
+   },
+   {
+    "label": "B",
+    "text": "Create a view that aliases the old column name"
+   },
+   {
+    "label": "C",
+    "text": "and leave the files unchanged"
+   },
+   {
+    "label": "D",
+    "text": "to the new one"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G439",
+  "ids": [
+   "LOC-439"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A table in the Aws Glue Data Catalog has around one hundred and forty thousand partitions after four years of hourly partitioning. Athena queries take fifteen to twenty five seconds before scanning begins, regardless of how narrow the filter is. Once scanning starts, they complete quickly. Analysts filter by date range and occasionally by hour. Which action addresses the delay while preserving the hourly granularity analysts occasionally use?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Repartition the data by day and discard the"
+   },
+   {
+    "label": "B",
+    "text": "Add a Glue partition index on the partition keys"
+   },
+   {
+    "label": "C",
+    "text": "hour partition"
+   },
+   {
+    "label": "D",
+    "text": "Increase theAthena workgroup'squery timeout"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G442",
+  "ids": [
+   "LOC-442"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter. What should the data engineer configure now?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Remove the analyst's Athena permissions"
+   },
+   {
+    "label": "B",
+    "text": "AnAwsBudgetalertontheAthenaservice"
+   },
+   {
+    "label": "C",
+    "text": "per-query data scan limit on the Athena"
+   },
+   {
+    "label": "D",
+    "text": "Increase the workgroup's query timeout so"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G445",
+  "ids": [
+   "LOC-445"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored. What should the data engineer do?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Movethedata toS3Standard-Infrequent"
+   },
+   {
+    "label": "B",
+    "text": "Switch the bucket to SSE-s3 encryption"
+   },
+   {
+    "label": "C",
+    "text": "Request a KMS request quota increase"
+   },
+   {
+    "label": "D",
+    "text": "Enable S3 Bucket Keys on the bucket"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G446",
+  "ids": [
+   "LOC-446"
+  ],
+  "type": "single",
+  "choose_n": null,
+  "stem": "requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit. What should the data engineer implement?",
+  "options": [
+   {
+    "label": "A",
+    "text": "Granteachbusinessunitdatabase-levelLake"
+   },
+   {
+    "label": "B",
+    "text": "Publish datasets as assets in Amazon"
+   },
+   {
+    "label": "C",
+    "text": "Formation permissions on its own databases"
+   },
+   {
+    "label": "D",
+    "text": "SageMaker Catalog and use the subscription"
+   }
+  ],
+  "raw_source_answers": [
+   "A"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G448",
+  "ids": [
+   "LOC-448"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "An analytics team queries a fifty terabyte dataset in Amazon s3 with Amazon Athena. The data is Parquet, partitioned by date. Costs have risen sharply. Investigation shows analysts write queries as SELECT star across ninety columns, and six dashboards each re-run the same four queries every ten minutes against data that is refreshed once daily. Select Two changes that will most reduce the Athena bill (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Name only the required columns in queries"
+   },
+   {
+    "label": "B",
+    "text": "Enable query result reuse for the dashboard"
+   },
+   {
+    "label": "C",
+    "text": "Move the dataset to s3 Standard-lnfrequent"
+   },
+   {
+    "label": "D",
+    "text": "Repartition the data by hour instead of by date"
+   }
+  ],
+  "raw_source_answers": [],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ },
+ {
+  "group_id": "G449",
+  "ids": [
+   "LOC-449"
+  ],
+  "type": "multi",
+  "choose_n": 2,
+  "stem": "Four Aws Glue jobs run nightly, each triggered by its own cron schedule spaced ninety minutes apart. Job two occasionally overruns, and when it does, job three starts against incomplete data and produces incorrect aggregates. No error is raised. The team wants the pipeline to be dependency-driven and to be alerted when any step fails. Select Two actions the data engineer should take (Choose two.)",
+  "options": [
+   {
+    "label": "A",
+    "text": "Replace the cron schedules with an Aws Step"
+   },
+   {
+    "label": "B",
+    "text": "Widen the gaps between the cron schedules to"
+   },
+   {
+    "label": "C",
+    "text": "Functions state machine invoking each job in"
+   },
+   {
+    "label": "D",
+    "text": "Add a Catch on each state routing failures to"
+   }
+  ],
+  "raw_source_answers": [
+   "B"
+  ],
+  "baseline_flags": [],
+  "alt_option_sets": []
+ }
+]

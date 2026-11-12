@@ -1,0 +1,8102 @@
+{
+ "entry_source_comparison": {
+  "LOC-001": {
+   "id": "LOC-001",
+   "key": "D",
+   "raw_hits": 3,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-002": {
+   "id": "LOC-002",
+   "key": "B",
+   "raw_hits": 4,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-003": {
+   "id": "LOC-003",
+   "key": "A",
+   "raw_hits": 4,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-004": {
+   "id": "LOC-004",
+   "key": "A",
+   "raw_hits": 4,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-005": {
+   "id": "LOC-005",
+   "key": "BE",
+   "raw_hits": 4,
+   "source_answers": [
+    "B",
+    "BE"
+   ],
+   "flags": [
+    "bank_key_BE_differs_from_source_B"
+   ],
+   "own_source_answer": "B|BE"
+  },
+  "LOC-006": {
+   "id": "LOC-006",
+   "key": "BE",
+   "raw_hits": 4,
+   "source_answers": [
+    "B",
+    "BE"
+   ],
+   "flags": [
+    "bank_key_BE_differs_from_source_B"
+   ],
+   "own_source_answer": "BE"
+  },
+  "LOC-007": {
+   "id": "LOC-007",
+   "key": "BE",
+   "raw_hits": 4,
+   "source_answers": [
+    "B",
+    "BE"
+   ],
+   "flags": [
+    "bank_key_BE_differs_from_source_B"
+   ],
+   "own_source_answer": "B|BE"
+  },
+  "LOC-008": {
+   "id": "LOC-008",
+   "key": "B",
+   "raw_hits": 3,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-009": {
+   "id": "LOC-009",
+   "key": "B",
+   "raw_hits": 3,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-010": {
+   "id": "LOC-010",
+   "key": "B",
+   "raw_hits": 3,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-011": {
+   "id": "LOC-011",
+   "key": "B",
+   "raw_hits": 3,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-012": {
+   "id": "LOC-012",
+   "key": "B",
+   "raw_hits": 3,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-013": {
+   "id": "LOC-013",
+   "key": "B",
+   "raw_hits": 4,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-014": {
+   "id": "LOC-014",
+   "key": "B",
+   "raw_hits": 4,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-015": {
+   "id": "LOC-015",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-016": {
+   "id": "LOC-016",
+   "key": "A",
+   "raw_hits": 3,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-017": {
+   "id": "LOC-017",
+   "key": "A",
+   "raw_hits": 3,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-018": {
+   "id": "LOC-018",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-019": {
+   "id": "LOC-019",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-020": {
+   "id": "LOC-020",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-021": {
+   "id": "LOC-021",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-022": {
+   "id": "LOC-022",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-023": {
+   "id": "LOC-023",
+   "key": "AC",
+   "raw_hits": 2,
+   "source_answers": [
+    "A",
+    "AC"
+   ],
+   "flags": [
+    "bank_key_AC_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-024": {
+   "id": "LOC-024",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B",
+    "A"
+   ],
+   "flags": [
+    "bank_key_B_differs_from_source_A"
+   ],
+   "own_source_answer": "B"
+  },
+  "LOC-025": {
+   "id": "LOC-025",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-026": {
+   "id": "LOC-026",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-027": {
+   "id": "LOC-027",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-028": {
+   "id": "LOC-028",
+   "key": "AD",
+   "raw_hits": 2,
+   "source_answers": [
+    "A",
+    "AD"
+   ],
+   "flags": [
+    "bank_key_AD_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-029": {
+   "id": "LOC-029",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-030": {
+   "id": "LOC-030",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B",
+    "A"
+   ],
+   "flags": [
+    "bank_key_B_differs_from_source_A"
+   ],
+   "own_source_answer": "B"
+  },
+  "LOC-031": {
+   "id": "LOC-031",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-032": {
+   "id": "LOC-032",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-033": {
+   "id": "LOC-033",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-034": {
+   "id": "LOC-034",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_B"
+   ],
+   "own_source_answer": "B"
+  },
+  "LOC-035": {
+   "id": "LOC-035",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-036": {
+   "id": "LOC-036",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-037": {
+   "id": "LOC-037",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-038": {
+   "id": "LOC-038",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-039": {
+   "id": "LOC-039",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-040": {
+   "id": "LOC-040",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-041": {
+   "id": "LOC-041",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-042": {
+   "id": "LOC-042",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-043": {
+   "id": "LOC-043",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-044": {
+   "id": "LOC-044",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-045": {
+   "id": "LOC-045",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-046": {
+   "id": "LOC-046",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-047": {
+   "id": "LOC-047",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-048": {
+   "id": "LOC-048",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-049": {
+   "id": "LOC-049",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-050": {
+   "id": "LOC-050",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-051": {
+   "id": "LOC-051",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-052": {
+   "id": "LOC-052",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-053": {
+   "id": "LOC-053",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-054": {
+   "id": "LOC-054",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-055": {
+   "id": "LOC-055",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-056": {
+   "id": "LOC-056",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-057": {
+   "id": "LOC-057",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-058": {
+   "id": "LOC-058",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-059": {
+   "id": "LOC-059",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-060": {
+   "id": "LOC-060",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-061": {
+   "id": "LOC-061",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-062": {
+   "id": "LOC-062",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-063": {
+   "id": "LOC-063",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-064": {
+   "id": "LOC-064",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCDE"
+   ],
+   "flags": [
+    "source_answer_ABCDE_not_in_visible_options",
+    "source_answer_placeholder_ABCDE",
+    "bank_key_AB_differs_from_source_ABCDE"
+   ],
+   "own_source_answer": "ABCDE"
+  },
+  "LOC-065": {
+   "id": "LOC-065",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-066": {
+   "id": "LOC-066",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-067": {
+   "id": "LOC-067",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-068": {
+   "id": "LOC-068",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-069": {
+   "id": "LOC-069",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-070": {
+   "id": "LOC-070",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-071": {
+   "id": "LOC-071",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-072": {
+   "id": "LOC-072",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-073": {
+   "id": "LOC-073",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-074": {
+   "id": "LOC-074",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-075": {
+   "id": "LOC-075",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-076": {
+   "id": "LOC-076",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-077": {
+   "id": "LOC-077",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-078": {
+   "id": "LOC-078",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-079": {
+   "id": "LOC-079",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-080": {
+   "id": "LOC-080",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-081": {
+   "id": "LOC-081",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-082": {
+   "id": "LOC-082",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-083": {
+   "id": "LOC-083",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-084": {
+   "id": "LOC-084",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-085": {
+   "id": "LOC-085",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-086": {
+   "id": "LOC-086",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-087": {
+   "id": "LOC-087",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-088": {
+   "id": "LOC-088",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-089": {
+   "id": "LOC-089",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-090": {
+   "id": "LOC-090",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-091": {
+   "id": "LOC-091",
+   "key": "ABC",
+   "raw_hits": 1,
+   "source_answers": [
+    "ABCD"
+   ],
+   "flags": [
+    "source_answer_ABCD_not_in_visible_options",
+    "source_answer_placeholder_ABCD",
+    "bank_key_ABC_differs_from_source_ABCD"
+   ],
+   "own_source_answer": "ABCD"
+  },
+  "LOC-092": {
+   "id": "LOC-092",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-093": {
+   "id": "LOC-093",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-094": {
+   "id": "LOC-094",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-095": {
+   "id": "LOC-095",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-096": {
+   "id": "LOC-096",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-097": {
+   "id": "LOC-097",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-098": {
+   "id": "LOC-098",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-099": {
+   "id": "LOC-099",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-100": {
+   "id": "LOC-100",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-101": {
+   "id": "LOC-101",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-102": {
+   "id": "LOC-102",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-103": {
+   "id": "LOC-103",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-104": {
+   "id": "LOC-104",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-105": {
+   "id": "LOC-105",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-106": {
+   "id": "LOC-106",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-107": {
+   "id": "LOC-107",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-108": {
+   "id": "LOC-108",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-109": {
+   "id": "LOC-109",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-110": {
+   "id": "LOC-110",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-111": {
+   "id": "LOC-111",
+   "key": "AC",
+   "raw_hits": 1,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [],
+   "own_source_answer": "AC"
+  },
+  "LOC-112": {
+   "id": "LOC-112",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-113": {
+   "id": "LOC-113",
+   "key": "D",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-114": {
+   "id": "LOC-114",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-115": {
+   "id": "LOC-115",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-116": {
+   "id": "LOC-116",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-117": {
+   "id": "LOC-117",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-118": {
+   "id": "LOC-118",
+   "key": "D",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-119": {
+   "id": "LOC-119",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-120": {
+   "id": "LOC-120",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-121": {
+   "id": "LOC-121",
+   "key": "AD",
+   "raw_hits": 2,
+   "source_answers": [
+    "A",
+    "AD"
+   ],
+   "flags": [
+    "bank_key_AD_differs_from_source_A"
+   ],
+   "own_source_answer": "AD"
+  },
+  "LOC-122": {
+   "id": "LOC-122",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-123": {
+   "id": "LOC-123",
+   "key": "BD",
+   "raw_hits": 1,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": "BD"
+  },
+  "LOC-124": {
+   "id": "LOC-124",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-125": {
+   "id": "LOC-125",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-126": {
+   "id": "LOC-126",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-127": {
+   "id": "LOC-127",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-128": {
+   "id": "LOC-128",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-129": {
+   "id": "LOC-129",
+   "key": "BD",
+   "raw_hits": 1,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": "BD"
+  },
+  "LOC-130": {
+   "id": "LOC-130",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-131": {
+   "id": "LOC-131",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-132": {
+   "id": "LOC-132",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-133": {
+   "id": "LOC-133",
+   "key": "BC",
+   "raw_hits": 1,
+   "source_answers": [
+    "BC"
+   ],
+   "flags": [],
+   "own_source_answer": "BC"
+  },
+  "LOC-134": {
+   "id": "LOC-134",
+   "key": "AC",
+   "raw_hits": 1,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [],
+   "own_source_answer": "AC"
+  },
+  "LOC-135": {
+   "id": "LOC-135",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B",
+    "A"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-136": {
+   "id": "LOC-136",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-137": {
+   "id": "LOC-137",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-138": {
+   "id": "LOC-138",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-139": {
+   "id": "LOC-139",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-140": {
+   "id": "LOC-140",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-141": {
+   "id": "LOC-141",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-142": {
+   "id": "LOC-142",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-143": {
+   "id": "LOC-143",
+   "key": "BD",
+   "raw_hits": 2,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": "BD"
+  },
+  "LOC-144": {
+   "id": "LOC-144",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-145": {
+   "id": "LOC-145",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-146": {
+   "id": "LOC-146",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-147": {
+   "id": "LOC-147",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-148": {
+   "id": "LOC-148",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-149": {
+   "id": "LOC-149",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-150": {
+   "id": "LOC-150",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-151": {
+   "id": "LOC-151",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-152": {
+   "id": "LOC-152",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-153": {
+   "id": "LOC-153",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-154": {
+   "id": "LOC-154",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-155": {
+   "id": "LOC-155",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-156": {
+   "id": "LOC-156",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-157": {
+   "id": "LOC-157",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-158": {
+   "id": "LOC-158",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-159": {
+   "id": "LOC-159",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-160": {
+   "id": "LOC-160",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-161": {
+   "id": "LOC-161",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-162": {
+   "id": "LOC-162",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-163": {
+   "id": "LOC-163",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-164": {
+   "id": "LOC-164",
+   "key": "AD",
+   "raw_hits": 1,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [],
+   "own_source_answer": "AD"
+  },
+  "LOC-165": {
+   "id": "LOC-165",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-166": {
+   "id": "LOC-166",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-167": {
+   "id": "LOC-167",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-168": {
+   "id": "LOC-168",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-169": {
+   "id": "LOC-169",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-170": {
+   "id": "LOC-170",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-171": {
+   "id": "LOC-171",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-172": {
+   "id": "LOC-172",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-173": {
+   "id": "LOC-173",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-174": {
+   "id": "LOC-174",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-175": {
+   "id": "LOC-175",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-176": {
+   "id": "LOC-176",
+   "key": "BE",
+   "raw_hits": 1,
+   "source_answers": [
+    "BE"
+   ],
+   "flags": [],
+   "own_source_answer": "BE"
+  },
+  "LOC-177": {
+   "id": "LOC-177",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-178": {
+   "id": "LOC-178",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-179": {
+   "id": "LOC-179",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-180": {
+   "id": "LOC-180",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-181": {
+   "id": "LOC-181",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-182": {
+   "id": "LOC-182",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-183": {
+   "id": "LOC-183",
+   "key": "BD",
+   "raw_hits": 2,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": "BD"
+  },
+  "LOC-184": {
+   "id": "LOC-184",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-185": {
+   "id": "LOC-185",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-186": {
+   "id": "LOC-186",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-187": {
+   "id": "LOC-187",
+   "key": "AD",
+   "raw_hits": 1,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [],
+   "own_source_answer": "AD"
+  },
+  "LOC-188": {
+   "id": "LOC-188",
+   "key": "CD",
+   "raw_hits": 2,
+   "source_answers": [
+    "CD"
+   ],
+   "flags": [],
+   "own_source_answer": "CD"
+  },
+  "LOC-189": {
+   "id": "LOC-189",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-190": {
+   "id": "LOC-190",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-191": {
+   "id": "LOC-191",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-192": {
+   "id": "LOC-192",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-193": {
+   "id": "LOC-193",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "E"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_E"
+   ],
+   "own_source_answer": "E"
+  },
+  "LOC-194": {
+   "id": "LOC-194",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-195": {
+   "id": "LOC-195",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-196": {
+   "id": "LOC-196",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-197": {
+   "id": "LOC-197",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-198": {
+   "id": "LOC-198",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-199": {
+   "id": "LOC-199",
+   "key": "AB",
+   "raw_hits": 2,
+   "source_answers": [
+    "AB"
+   ],
+   "flags": [],
+   "own_source_answer": "AB"
+  },
+  "LOC-200": {
+   "id": "LOC-200",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-201": {
+   "id": "LOC-201",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-202": {
+   "id": "LOC-202",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-203": {
+   "id": "LOC-203",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-204": {
+   "id": "LOC-204",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-205": {
+   "id": "LOC-205",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-206": {
+   "id": "LOC-206",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-207": {
+   "id": "LOC-207",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-208": {
+   "id": "LOC-208",
+   "key": "AD",
+   "raw_hits": 1,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [],
+   "own_source_answer": "AD"
+  },
+  "LOC-209": {
+   "id": "LOC-209",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-210": {
+   "id": "LOC-210",
+   "key": "AC",
+   "raw_hits": 1,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [],
+   "own_source_answer": "AC"
+  },
+  "LOC-211": {
+   "id": "LOC-211",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-212": {
+   "id": "LOC-212",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-213": {
+   "id": "LOC-213",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-214": {
+   "id": "LOC-214",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-215": {
+   "id": "LOC-215",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-216": {
+   "id": "LOC-216",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-217": {
+   "id": "LOC-217",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-218": {
+   "id": "LOC-218",
+   "key": "AD",
+   "raw_hits": 2,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [],
+   "own_source_answer": "AD"
+  },
+  "LOC-219": {
+   "id": "LOC-219",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-220": {
+   "id": "LOC-220",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-221": {
+   "id": "LOC-221",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-222": {
+   "id": "LOC-222",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-223": {
+   "id": "LOC-223",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-224": {
+   "id": "LOC-224",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-225": {
+   "id": "LOC-225",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-226": {
+   "id": "LOC-226",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-227": {
+   "id": "LOC-227",
+   "key": "BD",
+   "raw_hits": 1,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": "BD"
+  },
+  "LOC-228": {
+   "id": "LOC-228",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-229": {
+   "id": "LOC-229",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-230": {
+   "id": "LOC-230",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-231": {
+   "id": "LOC-231",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "AB"
+   ],
+   "flags": [],
+   "own_source_answer": "AB"
+  },
+  "LOC-232": {
+   "id": "LOC-232",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-233": {
+   "id": "LOC-233",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-234": {
+   "id": "LOC-234",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-235": {
+   "id": "LOC-235",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-236": {
+   "id": "LOC-236",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-237": {
+   "id": "LOC-237",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-238": {
+   "id": "LOC-238",
+   "key": "BB",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_BB_differs_from_source_B"
+   ],
+   "own_source_answer": "B"
+  },
+  "LOC-239": {
+   "id": "LOC-239",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-240": {
+   "id": "LOC-240",
+   "key": "C",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-241": {
+   "id": "LOC-241",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-242": {
+   "id": "LOC-242",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-243": {
+   "id": "LOC-243",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-244": {
+   "id": "LOC-244",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-245": {
+   "id": "LOC-245",
+   "key": "AD",
+   "raw_hits": 1,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [],
+   "own_source_answer": "AD"
+  },
+  "LOC-246": {
+   "id": "LOC-246",
+   "key": "CD",
+   "raw_hits": 1,
+   "source_answers": [
+    "CD"
+   ],
+   "flags": [],
+   "own_source_answer": "CD"
+  },
+  "LOC-247": {
+   "id": "LOC-247",
+   "key": "B",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-248": {
+   "id": "LOC-248",
+   "key": "AC",
+   "raw_hits": 2,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [],
+   "own_source_answer": "AC"
+  },
+  "LOC-249": {
+   "id": "LOC-249",
+   "key": "D",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-250": {
+   "id": "LOC-250",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B",
+    "A"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-251": {
+   "id": "LOC-251",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-252": {
+   "id": "LOC-252",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-253": {
+   "id": "LOC-253",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-254": {
+   "id": "LOC-254",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-255": {
+   "id": "LOC-255",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-256": {
+   "id": "LOC-256",
+   "key": "AD",
+   "raw_hits": 1,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [],
+   "own_source_answer": "AD"
+  },
+  "LOC-257": {
+   "id": "LOC-257",
+   "key": "AC",
+   "raw_hits": 1,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [],
+   "own_source_answer": "AC"
+  },
+  "LOC-258": {
+   "id": "LOC-258",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-259": {
+   "id": "LOC-259",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-260": {
+   "id": "LOC-260",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-261": {
+   "id": "LOC-261",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-262": {
+   "id": "LOC-262",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-263": {
+   "id": "LOC-263",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-264": {
+   "id": "LOC-264",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-265": {
+   "id": "LOC-265",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-266": {
+   "id": "LOC-266",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-267": {
+   "id": "LOC-267",
+   "key": "BE",
+   "raw_hits": 1,
+   "source_answers": [
+    "BE"
+   ],
+   "flags": [],
+   "own_source_answer": "BE"
+  },
+  "LOC-268": {
+   "id": "LOC-268",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-269": {
+   "id": "LOC-269",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-270": {
+   "id": "LOC-270",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-271": {
+   "id": "LOC-271",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-272": {
+   "id": "LOC-272",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-273": {
+   "id": "LOC-273",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-274": {
+   "id": "LOC-274",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "AB"
+   ],
+   "flags": [],
+   "own_source_answer": "AB"
+  },
+  "LOC-275": {
+   "id": "LOC-275",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-276": {
+   "id": "LOC-276",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-277": {
+   "id": "LOC-277",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-278": {
+   "id": "LOC-278",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-279": {
+   "id": "LOC-279",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-280": {
+   "id": "LOC-280",
+   "key": "AC",
+   "raw_hits": 1,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [],
+   "own_source_answer": "AC"
+  },
+  "LOC-281": {
+   "id": "LOC-281",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-282": {
+   "id": "LOC-282",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-283": {
+   "id": "LOC-283",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-284": {
+   "id": "LOC-284",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-285": {
+   "id": "LOC-285",
+   "key": "CE",
+   "raw_hits": 1,
+   "source_answers": [
+    "CE"
+   ],
+   "flags": [],
+   "own_source_answer": "CE"
+  },
+  "LOC-286": {
+   "id": "LOC-286",
+   "key": "AC",
+   "raw_hits": 2,
+   "source_answers": [
+    "A",
+    "AC"
+   ],
+   "flags": [
+    "bank_key_AC_differs_from_source_A"
+   ],
+   "own_source_answer": "AC"
+  },
+  "LOC-287": {
+   "id": "LOC-287",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-288": {
+   "id": "LOC-288",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-289": {
+   "id": "LOC-289",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-290": {
+   "id": "LOC-290",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-291": {
+   "id": "LOC-291",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-292": {
+   "id": "LOC-292",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-293": {
+   "id": "LOC-293",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-294": {
+   "id": "LOC-294",
+   "key": "DE",
+   "raw_hits": 1,
+   "source_answers": [
+    "DE"
+   ],
+   "flags": [],
+   "own_source_answer": "DE"
+  },
+  "LOC-295": {
+   "id": "LOC-295",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-296": {
+   "id": "LOC-296",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-297": {
+   "id": "LOC-297",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-298": {
+   "id": "LOC-298",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-299": {
+   "id": "LOC-299",
+   "key": "A",
+   "raw_hits": 4,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-300": {
+   "id": "LOC-300",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-301": {
+   "id": "LOC-301",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-302": {
+   "id": "LOC-302",
+   "key": "BE",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-303": {
+   "id": "LOC-303",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-304": {
+   "id": "LOC-304",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-305": {
+   "id": "LOC-305",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-306": {
+   "id": "LOC-306",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-307": {
+   "id": "LOC-307",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-308": {
+   "id": "LOC-308",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-309": {
+   "id": "LOC-309",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-310": {
+   "id": "LOC-310",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-311": {
+   "id": "LOC-311",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-312": {
+   "id": "LOC-312",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-313": {
+   "id": "LOC-313",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-314": {
+   "id": "LOC-314",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-315": {
+   "id": "LOC-315",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-316": {
+   "id": "LOC-316",
+   "key": "AB",
+   "raw_hits": 2,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_AD"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-317": {
+   "id": "LOC-317",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-318": {
+   "id": "LOC-318",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-319": {
+   "id": "LOC-319",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-320": {
+   "id": "LOC-320",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-321": {
+   "id": "LOC-321",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-322": {
+   "id": "LOC-322",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-323": {
+   "id": "LOC-323",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-324": {
+   "id": "LOC-324",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-325": {
+   "id": "LOC-325",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-326": {
+   "id": "LOC-326",
+   "key": "BD",
+   "raw_hits": 2,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-327": {
+   "id": "LOC-327",
+   "key": "AB",
+   "raw_hits": 2,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_BD"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-328": {
+   "id": "LOC-328",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-329": {
+   "id": "LOC-329",
+   "key": "AB",
+   "raw_hits": 2,
+   "source_answers": [
+    "AB"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-330": {
+   "id": "LOC-330",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-331": {
+   "id": "LOC-331",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-332": {
+   "id": "LOC-332",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-333": {
+   "id": "LOC-333",
+   "key": "AB",
+   "raw_hits": 2,
+   "source_answers": [
+    "CD"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_CD"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-334": {
+   "id": "LOC-334",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-335": {
+   "id": "LOC-335",
+   "key": "D",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-336": {
+   "id": "LOC-336",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-337": {
+   "id": "LOC-337",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-338": {
+   "id": "LOC-338",
+   "key": "AB",
+   "raw_hits": 2,
+   "source_answers": [
+    "AC"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_AC"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-339": {
+   "id": "LOC-339",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-340": {
+   "id": "LOC-340",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-341": {
+   "id": "LOC-341",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-342": {
+   "id": "LOC-342",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-343": {
+   "id": "LOC-343",
+   "key": "E",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-344": {
+   "id": "LOC-344",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-345": {
+   "id": "LOC-345",
+   "key": "BD",
+   "raw_hits": 2,
+   "source_answers": [
+    "BD"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-346": {
+   "id": "LOC-346",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-347": {
+   "id": "LOC-347",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-348": {
+   "id": "LOC-348",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-349": {
+   "id": "LOC-349",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-350": {
+   "id": "LOC-350",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-351": {
+   "id": "LOC-351",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-352": {
+   "id": "LOC-352",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-353": {
+   "id": "LOC-353",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-354": {
+   "id": "LOC-354",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-355": {
+   "id": "LOC-355",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-356": {
+   "id": "LOC-356",
+   "key": "A",
+   "raw_hits": 2,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-357": {
+   "id": "LOC-357",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "CE"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_CE"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-358": {
+   "id": "LOC-358",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "AD"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_AD"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-359": {
+   "id": "LOC-359",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_C"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-360": {
+   "id": "LOC-360",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-361": {
+   "id": "LOC-361",
+   "key": "C",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-362": {
+   "id": "LOC-362",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_A_differs_from_source_B"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-363": {
+   "id": "LOC-363",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "bank_key_C_differs_from_source_D"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-364": {
+   "id": "LOC-364",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-365": {
+   "id": "LOC-365",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "CD"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_CD"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-366": {
+   "id": "LOC-366",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": null
+  },
+  "LOC-367": {
+   "id": "LOC-367",
+   "key": "D",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-368": {
+   "id": "LOC-368",
+   "key": "D",
+   "raw_hits": 2,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-369": {
+   "id": "LOC-369",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-370": {
+   "id": "LOC-370",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-371": {
+   "id": "LOC-371",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-372": {
+   "id": "LOC-372",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-373": {
+   "id": "LOC-373",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-374": {
+   "id": "LOC-374",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-375": {
+   "id": "LOC-375",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-376": {
+   "id": "LOC-376",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-377": {
+   "id": "LOC-377",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-378": {
+   "id": "LOC-378",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-379": {
+   "id": "LOC-379",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-380": {
+   "id": "LOC-380",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-381": {
+   "id": "LOC-381",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-382": {
+   "id": "LOC-382",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-383": {
+   "id": "LOC-383",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-384": {
+   "id": "LOC-384",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [
+    "source_answer_D_not_in_visible_options",
+    "bank_key_A_differs_from_source_D"
+   ],
+   "own_source_answer": "D"
+  },
+  "LOC-385": {
+   "id": "LOC-385",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-386": {
+   "id": "LOC-386",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-387": {
+   "id": "LOC-387",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-388": {
+   "id": "LOC-388",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-389": {
+   "id": "LOC-389",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-390": {
+   "id": "LOC-390",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-391": {
+   "id": "LOC-391",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-392": {
+   "id": "LOC-392",
+   "key": "A",
+   "raw_hits": 0,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-393": {
+   "id": "LOC-393",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-394": {
+   "id": "LOC-394",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-395": {
+   "id": "LOC-395",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-396": {
+   "id": "LOC-396",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-397": {
+   "id": "LOC-397",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-398": {
+   "id": "LOC-398",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-399": {
+   "id": "LOC-399",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-400": {
+   "id": "LOC-400",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-401": {
+   "id": "LOC-401",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-402": {
+   "id": "LOC-402",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-403": {
+   "id": "LOC-403",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-404": {
+   "id": "LOC-404",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-405": {
+   "id": "LOC-405",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-406": {
+   "id": "LOC-406",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-407": {
+   "id": "LOC-407",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-408": {
+   "id": "LOC-408",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-409": {
+   "id": "LOC-409",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-410": {
+   "id": "LOC-410",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-411": {
+   "id": "LOC-411",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-412": {
+   "id": "LOC-412",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-413": {
+   "id": "LOC-413",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-414": {
+   "id": "LOC-414",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-415": {
+   "id": "LOC-415",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-416": {
+   "id": "LOC-416",
+   "key": "C",
+   "raw_hits": 1,
+   "source_answers": [
+    "C"
+   ],
+   "flags": [],
+   "own_source_answer": "C"
+  },
+  "LOC-417": {
+   "id": "LOC-417",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-418": {
+   "id": "LOC-418",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-419": {
+   "id": "LOC-419",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-420": {
+   "id": "LOC-420",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-421": {
+   "id": "LOC-421",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-422": {
+   "id": "LOC-422",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-423": {
+   "id": "LOC-423",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-424": {
+   "id": "LOC-424",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-425": {
+   "id": "LOC-425",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-426": {
+   "id": "LOC-426",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-427": {
+   "id": "LOC-427",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-428": {
+   "id": "LOC-428",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-429": {
+   "id": "LOC-429",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-430": {
+   "id": "LOC-430",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-431": {
+   "id": "LOC-431",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-432": {
+   "id": "LOC-432",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-433": {
+   "id": "LOC-433",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-434": {
+   "id": "LOC-434",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-435": {
+   "id": "LOC-435",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-436": {
+   "id": "LOC-436",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-437": {
+   "id": "LOC-437",
+   "key": "D",
+   "raw_hits": 1,
+   "source_answers": [
+    "D"
+   ],
+   "flags": [],
+   "own_source_answer": "D"
+  },
+  "LOC-438": {
+   "id": "LOC-438",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-439": {
+   "id": "LOC-439",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-440": {
+   "id": "LOC-440",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-441": {
+   "id": "LOC-441",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-442": {
+   "id": "LOC-442",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-443": {
+   "id": "LOC-443",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-444": {
+   "id": "LOC-444",
+   "key": "B",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [],
+   "own_source_answer": "B"
+  },
+  "LOC-445": {
+   "id": "LOC-445",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-446": {
+   "id": "LOC-446",
+   "key": "A",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [],
+   "own_source_answer": "A"
+  },
+  "LOC-447": {
+   "id": "LOC-447",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-448": {
+   "id": "LOC-448",
+   "key": "AD",
+   "raw_hits": 1,
+   "source_answers": [],
+   "flags": [
+    "no_source_answer_key_origin_unknown"
+   ],
+   "own_source_answer": null
+  },
+  "LOC-449": {
+   "id": "LOC-449",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "B"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_B"
+   ],
+   "own_source_answer": "B"
+  },
+  "LOC-450": {
+   "id": "LOC-450",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-451": {
+   "id": "LOC-451",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  },
+  "LOC-452": {
+   "id": "LOC-452",
+   "key": "AB",
+   "raw_hits": 1,
+   "source_answers": [
+    "A"
+   ],
+   "flags": [
+    "bank_key_AB_differs_from_source_A"
+   ],
+   "own_source_answer": "A"
+  }
+ },
+ "groups": [
+  {
+   "group_id": "G001",
+   "baseline_id": "LOC-298",
+   "member_ids": [
+    "LOC-001",
+    "LOC-298"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G002",
+   "baseline_id": "LOC-002",
+   "member_ids": [
+    "LOC-002",
+    "LOC-299"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G003",
+   "baseline_id": "LOC-003",
+   "member_ids": [
+    "LOC-003",
+    "LOC-004",
+    "LOC-300"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G005",
+   "baseline_id": "LOC-005",
+   "member_ids": [
+    "LOC-005",
+    "LOC-006",
+    "LOC-007",
+    "LOC-302",
+    "LOC-303"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G008",
+   "baseline_id": "LOC-008",
+   "member_ids": [
+    "LOC-008",
+    "LOC-304"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G009",
+   "baseline_id": "LOC-009",
+   "member_ids": [
+    "LOC-009",
+    "LOC-010",
+    "LOC-305"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G011",
+   "baseline_id": "LOC-011",
+   "member_ids": [
+    "LOC-011",
+    "LOC-012"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G013",
+   "baseline_id": "LOC-013",
+   "member_ids": [
+    "LOC-013",
+    "LOC-014"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G015",
+   "baseline_id": "LOC-015",
+   "member_ids": [
+    "LOC-015"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G016",
+   "baseline_id": "LOC-016",
+   "member_ids": [
+    "LOC-016",
+    "LOC-017",
+    "LOC-308"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G018",
+   "baseline_id": "LOC-233",
+   "member_ids": [
+    "LOC-018",
+    "LOC-233"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G019",
+   "baseline_id": "LOC-264",
+   "member_ids": [
+    "LOC-019",
+    "LOC-264",
+    "LOC-310"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G020",
+   "baseline_id": "LOC-213",
+   "member_ids": [
+    "LOC-020",
+    "LOC-213"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G021",
+   "baseline_id": "LOC-196",
+   "member_ids": [
+    "LOC-021",
+    "LOC-196"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G022",
+   "baseline_id": "LOC-247",
+   "member_ids": [
+    "LOC-022",
+    "LOC-247"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G023",
+   "baseline_id": "LOC-023",
+   "member_ids": [
+    "LOC-023",
+    "LOC-286"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G024",
+   "baseline_id": "LOC-135",
+   "member_ids": [
+    "LOC-024",
+    "LOC-135"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G025",
+   "baseline_id": "LOC-216",
+   "member_ids": [
+    "LOC-025",
+    "LOC-216"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G026",
+   "baseline_id": "LOC-163",
+   "member_ids": [
+    "LOC-026",
+    "LOC-163"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G027",
+   "baseline_id": "LOC-110",
+   "member_ids": [
+    "LOC-027",
+    "LOC-110"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G028",
+   "baseline_id": "LOC-028",
+   "member_ids": [
+    "LOC-028",
+    "LOC-121"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G029",
+   "baseline_id": "LOC-117",
+   "member_ids": [
+    "LOC-029",
+    "LOC-117"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G030",
+   "baseline_id": "LOC-250",
+   "member_ids": [
+    "LOC-030",
+    "LOC-250"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G031",
+   "baseline_id": "LOC-120",
+   "member_ids": [
+    "LOC-031",
+    "LOC-120"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G032",
+   "baseline_id": "LOC-032",
+   "member_ids": [
+    "LOC-032"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G033",
+   "baseline_id": "LOC-033",
+   "member_ids": [
+    "LOC-033"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G034",
+   "baseline_id": "LOC-034",
+   "member_ids": [
+    "LOC-034"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G035",
+   "baseline_id": "LOC-035",
+   "member_ids": [
+    "LOC-035"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G036",
+   "baseline_id": "LOC-036",
+   "member_ids": [
+    "LOC-036"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G037",
+   "baseline_id": "LOC-037",
+   "member_ids": [
+    "LOC-037"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G038",
+   "baseline_id": "LOC-038",
+   "member_ids": [
+    "LOC-038"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G039",
+   "baseline_id": "LOC-039",
+   "member_ids": [
+    "LOC-039"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G040",
+   "baseline_id": "LOC-040",
+   "member_ids": [
+    "LOC-040"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G041",
+   "baseline_id": "LOC-041",
+   "member_ids": [
+    "LOC-041"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G042",
+   "baseline_id": "LOC-042",
+   "member_ids": [
+    "LOC-042"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G043",
+   "baseline_id": "LOC-043",
+   "member_ids": [
+    "LOC-043"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G044",
+   "baseline_id": "LOC-044",
+   "member_ids": [
+    "LOC-044"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G045",
+   "baseline_id": "LOC-045",
+   "member_ids": [
+    "LOC-045"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G046",
+   "baseline_id": "LOC-046",
+   "member_ids": [
+    "LOC-046"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G047",
+   "baseline_id": "LOC-047",
+   "member_ids": [
+    "LOC-047"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G048",
+   "baseline_id": "LOC-048",
+   "member_ids": [
+    "LOC-048"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G049",
+   "baseline_id": "LOC-049",
+   "member_ids": [
+    "LOC-049"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G050",
+   "baseline_id": "LOC-050",
+   "member_ids": [
+    "LOC-050"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G051",
+   "baseline_id": "LOC-051",
+   "member_ids": [
+    "LOC-051"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G052",
+   "baseline_id": "LOC-052",
+   "member_ids": [
+    "LOC-052"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G053",
+   "baseline_id": "LOC-053",
+   "member_ids": [
+    "LOC-053"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G054",
+   "baseline_id": "LOC-054",
+   "member_ids": [
+    "LOC-054"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G055",
+   "baseline_id": "LOC-055",
+   "member_ids": [
+    "LOC-055"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G056",
+   "baseline_id": "LOC-056",
+   "member_ids": [
+    "LOC-056"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G057",
+   "baseline_id": "LOC-057",
+   "member_ids": [
+    "LOC-057"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G058",
+   "baseline_id": "LOC-058",
+   "member_ids": [
+    "LOC-058"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G059",
+   "baseline_id": "LOC-059",
+   "member_ids": [
+    "LOC-059"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G060",
+   "baseline_id": "LOC-060",
+   "member_ids": [
+    "LOC-060"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G061",
+   "baseline_id": "LOC-061",
+   "member_ids": [
+    "LOC-061"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G062",
+   "baseline_id": "LOC-062",
+   "member_ids": [
+    "LOC-062"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G063",
+   "baseline_id": "LOC-063",
+   "member_ids": [
+    "LOC-063"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G064",
+   "baseline_id": "LOC-064",
+   "member_ids": [
+    "LOC-064"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G065",
+   "baseline_id": "LOC-065",
+   "member_ids": [
+    "LOC-065"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G066",
+   "baseline_id": "LOC-066",
+   "member_ids": [
+    "LOC-066"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G067",
+   "baseline_id": "LOC-067",
+   "member_ids": [
+    "LOC-067"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G068",
+   "baseline_id": "LOC-068",
+   "member_ids": [
+    "LOC-068"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G069",
+   "baseline_id": "LOC-069",
+   "member_ids": [
+    "LOC-069"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G070",
+   "baseline_id": "LOC-070",
+   "member_ids": [
+    "LOC-070"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G071",
+   "baseline_id": "LOC-071",
+   "member_ids": [
+    "LOC-071"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G072",
+   "baseline_id": "LOC-072",
+   "member_ids": [
+    "LOC-072"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G073",
+   "baseline_id": "LOC-073",
+   "member_ids": [
+    "LOC-073"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G074",
+   "baseline_id": "LOC-074",
+   "member_ids": [
+    "LOC-074"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G075",
+   "baseline_id": "LOC-075",
+   "member_ids": [
+    "LOC-075"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G076",
+   "baseline_id": "LOC-076",
+   "member_ids": [
+    "LOC-076"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G077",
+   "baseline_id": "LOC-077",
+   "member_ids": [
+    "LOC-077"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G078",
+   "baseline_id": "LOC-078",
+   "member_ids": [
+    "LOC-078"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G079",
+   "baseline_id": "LOC-079",
+   "member_ids": [
+    "LOC-079"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G080",
+   "baseline_id": "LOC-080",
+   "member_ids": [
+    "LOC-080"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G081",
+   "baseline_id": "LOC-081",
+   "member_ids": [
+    "LOC-081"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G082",
+   "baseline_id": "LOC-082",
+   "member_ids": [
+    "LOC-082"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G083",
+   "baseline_id": "LOC-083",
+   "member_ids": [
+    "LOC-083"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G084",
+   "baseline_id": "LOC-084",
+   "member_ids": [
+    "LOC-084"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G085",
+   "baseline_id": "LOC-085",
+   "member_ids": [
+    "LOC-085"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G086",
+   "baseline_id": "LOC-086",
+   "member_ids": [
+    "LOC-086"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G087",
+   "baseline_id": "LOC-087",
+   "member_ids": [
+    "LOC-087"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G088",
+   "baseline_id": "LOC-088",
+   "member_ids": [
+    "LOC-088"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G089",
+   "baseline_id": "LOC-089",
+   "member_ids": [
+    "LOC-089"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G090",
+   "baseline_id": "LOC-090",
+   "member_ids": [
+    "LOC-090"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G091",
+   "baseline_id": "LOC-091",
+   "member_ids": [
+    "LOC-091"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G092",
+   "baseline_id": "LOC-092",
+   "member_ids": [
+    "LOC-092"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G093",
+   "baseline_id": "LOC-093",
+   "member_ids": [
+    "LOC-093"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G094",
+   "baseline_id": "LOC-094",
+   "member_ids": [
+    "LOC-094"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G095",
+   "baseline_id": "LOC-095",
+   "member_ids": [
+    "LOC-095"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G096",
+   "baseline_id": "LOC-096",
+   "member_ids": [
+    "LOC-096"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G097",
+   "baseline_id": "LOC-097",
+   "member_ids": [
+    "LOC-097"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G098",
+   "baseline_id": "LOC-098",
+   "member_ids": [
+    "LOC-098"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G099",
+   "baseline_id": "LOC-099",
+   "member_ids": [
+    "LOC-099"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G100",
+   "baseline_id": "LOC-100",
+   "member_ids": [
+    "LOC-100"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G101",
+   "baseline_id": "LOC-101",
+   "member_ids": [
+    "LOC-101"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G102",
+   "baseline_id": "LOC-102",
+   "member_ids": [
+    "LOC-102"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G103",
+   "baseline_id": "LOC-103",
+   "member_ids": [
+    "LOC-103"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G104",
+   "baseline_id": "LOC-104",
+   "member_ids": [
+    "LOC-104"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G105",
+   "baseline_id": "LOC-105",
+   "member_ids": [
+    "LOC-105",
+    "LOC-322"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G106",
+   "baseline_id": "LOC-106",
+   "member_ids": [
+    "LOC-106"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G107",
+   "baseline_id": "LOC-107",
+   "member_ids": [
+    "LOC-107"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G108",
+   "baseline_id": "LOC-108",
+   "member_ids": [
+    "LOC-108"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G109",
+   "baseline_id": "LOC-109",
+   "member_ids": [
+    "LOC-109"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G111",
+   "baseline_id": "LOC-111",
+   "member_ids": [
+    "LOC-111"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G112",
+   "baseline_id": "LOC-112",
+   "member_ids": [
+    "LOC-112"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G113",
+   "baseline_id": "LOC-113",
+   "member_ids": [
+    "LOC-113",
+    "LOC-368"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G114",
+   "baseline_id": "LOC-114",
+   "member_ids": [
+    "LOC-114"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G115",
+   "baseline_id": "LOC-115",
+   "member_ids": [
+    "LOC-115"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G116",
+   "baseline_id": "LOC-116",
+   "member_ids": [
+    "LOC-116",
+    "LOC-334"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G118",
+   "baseline_id": "LOC-118",
+   "member_ids": [
+    "LOC-118",
+    "LOC-335",
+    "LOC-336"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G119",
+   "baseline_id": "LOC-119",
+   "member_ids": [
+    "LOC-119"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G122",
+   "baseline_id": "LOC-122",
+   "member_ids": [
+    "LOC-122"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G123",
+   "baseline_id": "LOC-123",
+   "member_ids": [
+    "LOC-123",
+    "LOC-344"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G124",
+   "baseline_id": "LOC-124",
+   "member_ids": [
+    "LOC-124"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G125",
+   "baseline_id": "LOC-125",
+   "member_ids": [
+    "LOC-125",
+    "LOC-366"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G126",
+   "baseline_id": "LOC-126",
+   "member_ids": [
+    "LOC-126"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G127",
+   "baseline_id": "LOC-127",
+   "member_ids": [
+    "LOC-127",
+    "LOC-359"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G128",
+   "baseline_id": "LOC-128",
+   "member_ids": [
+    "LOC-128"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G129",
+   "baseline_id": "LOC-129",
+   "member_ids": [
+    "LOC-129"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G130",
+   "baseline_id": "LOC-130",
+   "member_ids": [
+    "LOC-130"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G131",
+   "baseline_id": "LOC-131",
+   "member_ids": [
+    "LOC-131"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G132",
+   "baseline_id": "LOC-132",
+   "member_ids": [
+    "LOC-132"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G133",
+   "baseline_id": "LOC-133",
+   "member_ids": [
+    "LOC-133",
+    "LOC-332"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G134",
+   "baseline_id": "LOC-134",
+   "member_ids": [
+    "LOC-134"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G136",
+   "baseline_id": "LOC-136",
+   "member_ids": [
+    "LOC-136"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G137",
+   "baseline_id": "LOC-137",
+   "member_ids": [
+    "LOC-137",
+    "LOC-346"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G138",
+   "baseline_id": "LOC-138",
+   "member_ids": [
+    "LOC-138",
+    "LOC-331"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G139",
+   "baseline_id": "LOC-139",
+   "member_ids": [
+    "LOC-139",
+    "LOC-341"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G140",
+   "baseline_id": "LOC-140",
+   "member_ids": [
+    "LOC-140",
+    "LOC-319"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G141",
+   "baseline_id": "LOC-141",
+   "member_ids": [
+    "LOC-141"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G142",
+   "baseline_id": "LOC-142",
+   "member_ids": [
+    "LOC-142",
+    "LOC-340"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G143",
+   "baseline_id": "LOC-143",
+   "member_ids": [
+    "LOC-143",
+    "LOC-326",
+    "LOC-327"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G144",
+   "baseline_id": "LOC-144",
+   "member_ids": [
+    "LOC-144"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G145",
+   "baseline_id": "LOC-145",
+   "member_ids": [
+    "LOC-145"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G146",
+   "baseline_id": "LOC-146",
+   "member_ids": [
+    "LOC-146",
+    "LOC-312"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G147",
+   "baseline_id": "LOC-147",
+   "member_ids": [
+    "LOC-147"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G148",
+   "baseline_id": "LOC-148",
+   "member_ids": [
+    "LOC-148",
+    "LOC-323",
+    "LOC-324"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G149",
+   "baseline_id": "LOC-149",
+   "member_ids": [
+    "LOC-149",
+    "LOC-321"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G150",
+   "baseline_id": "LOC-150",
+   "member_ids": [
+    "LOC-150"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G151",
+   "baseline_id": "LOC-151",
+   "member_ids": [
+    "LOC-151"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G152",
+   "baseline_id": "LOC-152",
+   "member_ids": [
+    "LOC-152"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G153",
+   "baseline_id": "LOC-153",
+   "member_ids": [
+    "LOC-153",
+    "LOC-348",
+    "LOC-349"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G154",
+   "baseline_id": "LOC-154",
+   "member_ids": [
+    "LOC-154"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G155",
+   "baseline_id": "LOC-155",
+   "member_ids": [
+    "LOC-155",
+    "LOC-355"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G156",
+   "baseline_id": "LOC-156",
+   "member_ids": [
+    "LOC-156"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G157",
+   "baseline_id": "LOC-157",
+   "member_ids": [
+    "LOC-157"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G158",
+   "baseline_id": "LOC-158",
+   "member_ids": [
+    "LOC-158"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G159",
+   "baseline_id": "LOC-159",
+   "member_ids": [
+    "LOC-159",
+    "LOC-362"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G160",
+   "baseline_id": "LOC-160",
+   "member_ids": [
+    "LOC-160"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G161",
+   "baseline_id": "LOC-161",
+   "member_ids": [
+    "LOC-161"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G162",
+   "baseline_id": "LOC-162",
+   "member_ids": [
+    "LOC-162"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G164",
+   "baseline_id": "LOC-164",
+   "member_ids": [
+    "LOC-164"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G165",
+   "baseline_id": "LOC-165",
+   "member_ids": [
+    "LOC-165"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G166",
+   "baseline_id": "LOC-166",
+   "member_ids": [
+    "LOC-166"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G167",
+   "baseline_id": "LOC-167",
+   "member_ids": [
+    "LOC-167"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G168",
+   "baseline_id": "LOC-168",
+   "member_ids": [
+    "LOC-168"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G169",
+   "baseline_id": "LOC-169",
+   "member_ids": [
+    "LOC-169"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G170",
+   "baseline_id": "LOC-170",
+   "member_ids": [
+    "LOC-170"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G171",
+   "baseline_id": "LOC-171",
+   "member_ids": [
+    "LOC-171",
+    "LOC-311"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G172",
+   "baseline_id": "LOC-172",
+   "member_ids": [
+    "LOC-172",
+    "LOC-356"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G173",
+   "baseline_id": "LOC-173",
+   "member_ids": [
+    "LOC-173"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G174",
+   "baseline_id": "LOC-174",
+   "member_ids": [
+    "LOC-174"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G175",
+   "baseline_id": "LOC-175",
+   "member_ids": [
+    "LOC-175"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G176",
+   "baseline_id": "LOC-176",
+   "member_ids": [
+    "LOC-176"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G177",
+   "baseline_id": "LOC-177",
+   "member_ids": [
+    "LOC-177"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G178",
+   "baseline_id": "LOC-178",
+   "member_ids": [
+    "LOC-178"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G179",
+   "baseline_id": "LOC-179",
+   "member_ids": [
+    "LOC-179",
+    "LOC-363"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G180",
+   "baseline_id": "LOC-180",
+   "member_ids": [
+    "LOC-180"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G181",
+   "baseline_id": "LOC-181",
+   "member_ids": [
+    "LOC-181"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G182",
+   "baseline_id": "LOC-182",
+   "member_ids": [
+    "LOC-182"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G183",
+   "baseline_id": "LOC-183",
+   "member_ids": [
+    "LOC-183",
+    "LOC-345"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G184",
+   "baseline_id": "LOC-184",
+   "member_ids": [
+    "LOC-184",
+    "LOC-347"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G185",
+   "baseline_id": "LOC-185",
+   "member_ids": [
+    "LOC-185"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G186",
+   "baseline_id": "LOC-186",
+   "member_ids": [
+    "LOC-186"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G187",
+   "baseline_id": "LOC-187",
+   "member_ids": [
+    "LOC-187",
+    "LOC-358"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G188",
+   "baseline_id": "LOC-188",
+   "member_ids": [
+    "LOC-188",
+    "LOC-333"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G189",
+   "baseline_id": "LOC-189",
+   "member_ids": [
+    "LOC-189"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G190",
+   "baseline_id": "LOC-190",
+   "member_ids": [
+    "LOC-190"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G191",
+   "baseline_id": "LOC-191",
+   "member_ids": [
+    "LOC-191",
+    "LOC-354"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G192",
+   "baseline_id": "LOC-192",
+   "member_ids": [
+    "LOC-192"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G193",
+   "baseline_id": "LOC-193",
+   "member_ids": [
+    "LOC-193"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G194",
+   "baseline_id": "LOC-194",
+   "member_ids": [
+    "LOC-194",
+    "LOC-337"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G195",
+   "baseline_id": "LOC-195",
+   "member_ids": [
+    "LOC-195"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G197",
+   "baseline_id": "LOC-197",
+   "member_ids": [
+    "LOC-197"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G198",
+   "baseline_id": "LOC-198",
+   "member_ids": [
+    "LOC-198"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G199",
+   "baseline_id": "LOC-199",
+   "member_ids": [
+    "LOC-199",
+    "LOC-329"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G200",
+   "baseline_id": "LOC-200",
+   "member_ids": [
+    "LOC-200",
+    "LOC-317"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G201",
+   "baseline_id": "LOC-201",
+   "member_ids": [
+    "LOC-201"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G202",
+   "baseline_id": "LOC-202",
+   "member_ids": [
+    "LOC-202",
+    "LOC-315"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G203",
+   "baseline_id": "LOC-203",
+   "member_ids": [
+    "LOC-203"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G204",
+   "baseline_id": "LOC-328",
+   "member_ids": [
+    "LOC-204",
+    "LOC-328"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G205",
+   "baseline_id": "LOC-205",
+   "member_ids": [
+    "LOC-205"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G206",
+   "baseline_id": "LOC-206",
+   "member_ids": [
+    "LOC-206"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G207",
+   "baseline_id": "LOC-207",
+   "member_ids": [
+    "LOC-207"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G208",
+   "baseline_id": "LOC-208",
+   "member_ids": [
+    "LOC-208"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G209",
+   "baseline_id": "LOC-209",
+   "member_ids": [
+    "LOC-209",
+    "LOC-361"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G210",
+   "baseline_id": "LOC-210",
+   "member_ids": [
+    "LOC-210"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G211",
+   "baseline_id": "LOC-211",
+   "member_ids": [
+    "LOC-211"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G212",
+   "baseline_id": "LOC-212",
+   "member_ids": [
+    "LOC-212"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G214",
+   "baseline_id": "LOC-214",
+   "member_ids": [
+    "LOC-214"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G215",
+   "baseline_id": "LOC-215",
+   "member_ids": [
+    "LOC-215",
+    "LOC-352"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G217",
+   "baseline_id": "LOC-217",
+   "member_ids": [
+    "LOC-217"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G218",
+   "baseline_id": "LOC-218",
+   "member_ids": [
+    "LOC-218",
+    "LOC-316"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G219",
+   "baseline_id": "LOC-219",
+   "member_ids": [
+    "LOC-219"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G220",
+   "baseline_id": "LOC-220",
+   "member_ids": [
+    "LOC-220"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G221",
+   "baseline_id": "LOC-221",
+   "member_ids": [
+    "LOC-221"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G222",
+   "baseline_id": "LOC-222",
+   "member_ids": [
+    "LOC-222"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G223",
+   "baseline_id": "LOC-351",
+   "member_ids": [
+    "LOC-223",
+    "LOC-351"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G224",
+   "baseline_id": "LOC-224",
+   "member_ids": [
+    "LOC-224"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G225",
+   "baseline_id": "LOC-225",
+   "member_ids": [
+    "LOC-225"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G226",
+   "baseline_id": "LOC-226",
+   "member_ids": [
+    "LOC-226"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G227",
+   "baseline_id": "LOC-227",
+   "member_ids": [
+    "LOC-227"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G228",
+   "baseline_id": "LOC-228",
+   "member_ids": [
+    "LOC-228",
+    "LOC-343"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G229",
+   "baseline_id": "LOC-229",
+   "member_ids": [
+    "LOC-229",
+    "LOC-339"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G230",
+   "baseline_id": "LOC-230",
+   "member_ids": [
+    "LOC-230"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G231",
+   "baseline_id": "LOC-231",
+   "member_ids": [
+    "LOC-231",
+    "LOC-318"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G232",
+   "baseline_id": "LOC-232",
+   "member_ids": [
+    "LOC-232"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G234",
+   "baseline_id": "LOC-234",
+   "member_ids": [
+    "LOC-234"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G235",
+   "baseline_id": "LOC-235",
+   "member_ids": [
+    "LOC-235"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G236",
+   "baseline_id": "LOC-236",
+   "member_ids": [
+    "LOC-236"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G237",
+   "baseline_id": "LOC-237",
+   "member_ids": [
+    "LOC-237"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G238",
+   "baseline_id": "LOC-238",
+   "member_ids": [
+    "LOC-238"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G239",
+   "baseline_id": "LOC-239",
+   "member_ids": [
+    "LOC-239"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G240",
+   "baseline_id": "LOC-240",
+   "member_ids": [
+    "LOC-240",
+    "LOC-325"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G241",
+   "baseline_id": "LOC-241",
+   "member_ids": [
+    "LOC-241"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G242",
+   "baseline_id": "LOC-242",
+   "member_ids": [
+    "LOC-242"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G243",
+   "baseline_id": "LOC-243",
+   "member_ids": [
+    "LOC-243",
+    "LOC-313"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G244",
+   "baseline_id": "LOC-244",
+   "member_ids": [
+    "LOC-244"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G245",
+   "baseline_id": "LOC-245",
+   "member_ids": [
+    "LOC-245"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G246",
+   "baseline_id": "LOC-246",
+   "member_ids": [
+    "LOC-246",
+    "LOC-365"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G248",
+   "baseline_id": "LOC-248",
+   "member_ids": [
+    "LOC-248",
+    "LOC-338"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G249",
+   "baseline_id": "LOC-249",
+   "member_ids": [
+    "LOC-249",
+    "LOC-367"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G251",
+   "baseline_id": "LOC-251",
+   "member_ids": [
+    "LOC-251"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G252",
+   "baseline_id": "LOC-252",
+   "member_ids": [
+    "LOC-252"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G253",
+   "baseline_id": "LOC-253",
+   "member_ids": [
+    "LOC-253"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G254",
+   "baseline_id": "LOC-254",
+   "member_ids": [
+    "LOC-254"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G255",
+   "baseline_id": "LOC-255",
+   "member_ids": [
+    "LOC-255",
+    "LOC-342"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G256",
+   "baseline_id": "LOC-256",
+   "member_ids": [
+    "LOC-256"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G257",
+   "baseline_id": "LOC-257",
+   "member_ids": [
+    "LOC-257"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G258",
+   "baseline_id": "LOC-258",
+   "member_ids": [
+    "LOC-258"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G259",
+   "baseline_id": "LOC-259",
+   "member_ids": [
+    "LOC-259",
+    "LOC-360"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G260",
+   "baseline_id": "LOC-260",
+   "member_ids": [
+    "LOC-260"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G261",
+   "baseline_id": "LOC-261",
+   "member_ids": [
+    "LOC-261"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G262",
+   "baseline_id": "LOC-262",
+   "member_ids": [
+    "LOC-262",
+    "LOC-364"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G263",
+   "baseline_id": "LOC-263",
+   "member_ids": [
+    "LOC-263"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G265",
+   "baseline_id": "LOC-265",
+   "member_ids": [
+    "LOC-265"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G266",
+   "baseline_id": "LOC-266",
+   "member_ids": [
+    "LOC-266"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G267",
+   "baseline_id": "LOC-267",
+   "member_ids": [
+    "LOC-267"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G268",
+   "baseline_id": "LOC-268",
+   "member_ids": [
+    "LOC-268"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G269",
+   "baseline_id": "LOC-269",
+   "member_ids": [
+    "LOC-269"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G270",
+   "baseline_id": "LOC-270",
+   "member_ids": [
+    "LOC-270"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G271",
+   "baseline_id": "LOC-271",
+   "member_ids": [
+    "LOC-271"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G272",
+   "baseline_id": "LOC-272",
+   "member_ids": [
+    "LOC-272"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G273",
+   "baseline_id": "LOC-273",
+   "member_ids": [
+    "LOC-273"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G274",
+   "baseline_id": "LOC-274",
+   "member_ids": [
+    "LOC-274"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G275",
+   "baseline_id": "LOC-275",
+   "member_ids": [
+    "LOC-275"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G276",
+   "baseline_id": "LOC-276",
+   "member_ids": [
+    "LOC-276"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G277",
+   "baseline_id": "LOC-277",
+   "member_ids": [
+    "LOC-277"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G278",
+   "baseline_id": "LOC-278",
+   "member_ids": [
+    "LOC-278"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G279",
+   "baseline_id": "LOC-279",
+   "member_ids": [
+    "LOC-279"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G280",
+   "baseline_id": "LOC-280",
+   "member_ids": [
+    "LOC-280"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G281",
+   "baseline_id": "LOC-281",
+   "member_ids": [
+    "LOC-281"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G282",
+   "baseline_id": "LOC-282",
+   "member_ids": [
+    "LOC-282"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G283",
+   "baseline_id": "LOC-283",
+   "member_ids": [
+    "LOC-283"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G284",
+   "baseline_id": "LOC-284",
+   "member_ids": [
+    "LOC-284"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G285",
+   "baseline_id": "LOC-285",
+   "member_ids": [
+    "LOC-285",
+    "LOC-357"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G287",
+   "baseline_id": "LOC-287",
+   "member_ids": [
+    "LOC-287"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G288",
+   "baseline_id": "LOC-288",
+   "member_ids": [
+    "LOC-288"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G289",
+   "baseline_id": "LOC-289",
+   "member_ids": [
+    "LOC-289"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G290",
+   "baseline_id": "LOC-290",
+   "member_ids": [
+    "LOC-290"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G291",
+   "baseline_id": "LOC-291",
+   "member_ids": [
+    "LOC-291"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G292",
+   "baseline_id": "LOC-292",
+   "member_ids": [
+    "LOC-292"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G293",
+   "baseline_id": "LOC-293",
+   "member_ids": [
+    "LOC-293"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G294",
+   "baseline_id": "LOC-294",
+   "member_ids": [
+    "LOC-294"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G295",
+   "baseline_id": "LOC-295",
+   "member_ids": [
+    "LOC-295"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G296",
+   "baseline_id": "LOC-296",
+   "member_ids": [
+    "LOC-296"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G297",
+   "baseline_id": "LOC-297",
+   "member_ids": [
+    "LOC-297"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G301",
+   "baseline_id": "LOC-301",
+   "member_ids": [
+    "LOC-301"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G306",
+   "baseline_id": "LOC-306",
+   "member_ids": [
+    "LOC-306"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G307",
+   "baseline_id": "LOC-307",
+   "member_ids": [
+    "LOC-307"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G309",
+   "baseline_id": "LOC-309",
+   "member_ids": [
+    "LOC-309"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G314",
+   "baseline_id": "LOC-314",
+   "member_ids": [
+    "LOC-314"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G320",
+   "baseline_id": "LOC-320",
+   "member_ids": [
+    "LOC-320"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G330",
+   "baseline_id": "LOC-330",
+   "member_ids": [
+    "LOC-330"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G350",
+   "baseline_id": "LOC-350",
+   "member_ids": [
+    "LOC-350"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G353",
+   "baseline_id": "LOC-353",
+   "member_ids": [
+    "LOC-353"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G369",
+   "baseline_id": "LOC-369",
+   "member_ids": [
+    "LOC-369"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G370",
+   "baseline_id": "LOC-370",
+   "member_ids": [
+    "LOC-370"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G371",
+   "baseline_id": "LOC-371",
+   "member_ids": [
+    "LOC-371"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G372",
+   "baseline_id": "LOC-372",
+   "member_ids": [
+    "LOC-372"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G373",
+   "baseline_id": "LOC-373",
+   "member_ids": [
+    "LOC-373"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G374",
+   "baseline_id": "LOC-374",
+   "member_ids": [
+    "LOC-374"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G375",
+   "baseline_id": "LOC-375",
+   "member_ids": [
+    "LOC-375"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G376",
+   "baseline_id": "LOC-376",
+   "member_ids": [
+    "LOC-376"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G377",
+   "baseline_id": "LOC-377",
+   "member_ids": [
+    "LOC-377"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G378",
+   "baseline_id": "LOC-378",
+   "member_ids": [
+    "LOC-378"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G379",
+   "baseline_id": "LOC-379",
+   "member_ids": [
+    "LOC-379"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G380",
+   "baseline_id": "LOC-380",
+   "member_ids": [
+    "LOC-380"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G381",
+   "baseline_id": "LOC-381",
+   "member_ids": [
+    "LOC-381"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G382",
+   "baseline_id": "LOC-382",
+   "member_ids": [
+    "LOC-382"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G383",
+   "baseline_id": "LOC-383",
+   "member_ids": [
+    "LOC-383"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G384",
+   "baseline_id": "LOC-384",
+   "member_ids": [
+    "LOC-384"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G385",
+   "baseline_id": "LOC-385",
+   "member_ids": [
+    "LOC-385"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G386",
+   "baseline_id": "LOC-386",
+   "member_ids": [
+    "LOC-386"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G387",
+   "baseline_id": "LOC-387",
+   "member_ids": [
+    "LOC-387"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G388",
+   "baseline_id": "LOC-388",
+   "member_ids": [
+    "LOC-388"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G389",
+   "baseline_id": "LOC-389",
+   "member_ids": [
+    "LOC-389"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G390",
+   "baseline_id": "LOC-390",
+   "member_ids": [
+    "LOC-390"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G391",
+   "baseline_id": "LOC-391",
+   "member_ids": [
+    "LOC-391"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G392",
+   "baseline_id": "LOC-392",
+   "member_ids": [
+    "LOC-392"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": true
+  },
+  {
+   "group_id": "G393",
+   "baseline_id": "LOC-393",
+   "member_ids": [
+    "LOC-393"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G394",
+   "baseline_id": "LOC-394",
+   "member_ids": [
+    "LOC-394"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G395",
+   "baseline_id": "LOC-395",
+   "member_ids": [
+    "LOC-395"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G396",
+   "baseline_id": "LOC-396",
+   "member_ids": [
+    "LOC-396"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G397",
+   "baseline_id": "LOC-397",
+   "member_ids": [
+    "LOC-397"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G398",
+   "baseline_id": "LOC-398",
+   "member_ids": [
+    "LOC-398"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G399",
+   "baseline_id": "LOC-399",
+   "member_ids": [
+    "LOC-399"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G400",
+   "baseline_id": "LOC-400",
+   "member_ids": [
+    "LOC-400"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G401",
+   "baseline_id": "LOC-401",
+   "member_ids": [
+    "LOC-401"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G402",
+   "baseline_id": "LOC-402",
+   "member_ids": [
+    "LOC-402"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G403",
+   "baseline_id": "LOC-403",
+   "member_ids": [
+    "LOC-403"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G404",
+   "baseline_id": "LOC-404",
+   "member_ids": [
+    "LOC-404"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G405",
+   "baseline_id": "LOC-405",
+   "member_ids": [
+    "LOC-405"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G406",
+   "baseline_id": "LOC-406",
+   "member_ids": [
+    "LOC-406"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G407",
+   "baseline_id": "LOC-407",
+   "member_ids": [
+    "LOC-407"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G408",
+   "baseline_id": "LOC-408",
+   "member_ids": [
+    "LOC-408"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G409",
+   "baseline_id": "LOC-409",
+   "member_ids": [
+    "LOC-409"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G410",
+   "baseline_id": "LOC-410",
+   "member_ids": [
+    "LOC-410"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G411",
+   "baseline_id": "LOC-411",
+   "member_ids": [
+    "LOC-411"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G412",
+   "baseline_id": "LOC-412",
+   "member_ids": [
+    "LOC-412"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G413",
+   "baseline_id": "LOC-413",
+   "member_ids": [
+    "LOC-413"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G414",
+   "baseline_id": "LOC-414",
+   "member_ids": [
+    "LOC-414"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G415",
+   "baseline_id": "LOC-415",
+   "member_ids": [
+    "LOC-415"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G416",
+   "baseline_id": "LOC-416",
+   "member_ids": [
+    "LOC-416"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G417",
+   "baseline_id": "LOC-417",
+   "member_ids": [
+    "LOC-417"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G418",
+   "baseline_id": "LOC-418",
+   "member_ids": [
+    "LOC-418"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G419",
+   "baseline_id": "LOC-419",
+   "member_ids": [
+    "LOC-419"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G420",
+   "baseline_id": "LOC-420",
+   "member_ids": [
+    "LOC-420"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G421",
+   "baseline_id": "LOC-421",
+   "member_ids": [
+    "LOC-421"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G422",
+   "baseline_id": "LOC-422",
+   "member_ids": [
+    "LOC-422"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G423",
+   "baseline_id": "LOC-423",
+   "member_ids": [
+    "LOC-423"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G424",
+   "baseline_id": "LOC-424",
+   "member_ids": [
+    "LOC-424"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G425",
+   "baseline_id": "LOC-425",
+   "member_ids": [
+    "LOC-425"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G426",
+   "baseline_id": "LOC-426",
+   "member_ids": [
+    "LOC-426"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G427",
+   "baseline_id": "LOC-427",
+   "member_ids": [
+    "LOC-427"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G428",
+   "baseline_id": "LOC-428",
+   "member_ids": [
+    "LOC-428"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G429",
+   "baseline_id": "LOC-429",
+   "member_ids": [
+    "LOC-429"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G430",
+   "baseline_id": "LOC-430",
+   "member_ids": [
+    "LOC-430"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G431",
+   "baseline_id": "LOC-431",
+   "member_ids": [
+    "LOC-431"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G432",
+   "baseline_id": "LOC-432",
+   "member_ids": [
+    "LOC-432"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G433",
+   "baseline_id": "LOC-433",
+   "member_ids": [
+    "LOC-433"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G434",
+   "baseline_id": "LOC-434",
+   "member_ids": [
+    "LOC-434"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G435",
+   "baseline_id": "LOC-435",
+   "member_ids": [
+    "LOC-435"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G436",
+   "baseline_id": "LOC-436",
+   "member_ids": [
+    "LOC-436"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G437",
+   "baseline_id": "LOC-437",
+   "member_ids": [
+    "LOC-437"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G438",
+   "baseline_id": "LOC-438",
+   "member_ids": [
+    "LOC-438"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G439",
+   "baseline_id": "LOC-439",
+   "member_ids": [
+    "LOC-439"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G440",
+   "baseline_id": "LOC-440",
+   "member_ids": [
+    "LOC-440"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G441",
+   "baseline_id": "LOC-441",
+   "member_ids": [
+    "LOC-441"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G442",
+   "baseline_id": "LOC-442",
+   "member_ids": [
+    "LOC-442"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G443",
+   "baseline_id": "LOC-443",
+   "member_ids": [
+    "LOC-443"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G444",
+   "baseline_id": "LOC-444",
+   "member_ids": [
+    "LOC-444"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G445",
+   "baseline_id": "LOC-445",
+   "member_ids": [
+    "LOC-445"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G446",
+   "baseline_id": "LOC-446",
+   "member_ids": [
+    "LOC-446"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G447",
+   "baseline_id": "LOC-447",
+   "member_ids": [
+    "LOC-447"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G448",
+   "baseline_id": "LOC-448",
+   "member_ids": [
+    "LOC-448"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G449",
+   "baseline_id": "LOC-449",
+   "member_ids": [
+    "LOC-449"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G450",
+   "baseline_id": "LOC-450",
+   "member_ids": [
+    "LOC-450"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G451",
+   "baseline_id": "LOC-451",
+   "member_ids": [
+    "LOC-451"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  },
+  {
+   "group_id": "G452",
+   "baseline_id": "LOC-452",
+   "member_ids": [
+    "LOC-452"
+   ],
+   "recovered_from_sibling": false,
+   "options_incomplete": false
+  }
+ ]
+}

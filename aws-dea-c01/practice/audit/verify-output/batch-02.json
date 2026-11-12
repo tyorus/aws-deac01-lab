@@ -1,0 +1,609 @@
+[
+ {
+  "group_id": "G045",
+  "ids": ["LOC-045"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "S3 Event Notification invokes a Lambda function (runtime < 1 menit) yang mempublikasikan hasil ke SNS topic dengan email subscription.",
+  "confidence": "high",
+  "reasoning": "Pekerjaan berdurasi <1 menit dan hanya 1 file per jam cocok untuk Lambda yang dipicu S3 Event Notifications, tanpa server untuk dikelola; SNS dengan email subscription mengirim hasil ke data engineer. Opsi A dan B memerlukan polling terjadwal dan pengiriman email lewat perintah OS, yang jauh lebih banyak overhead operasional. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html", "https://docs.aws.amazon.com/sns/latest/dg/sns-email-notifications.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G046",
+  "ids": ["LOC-046"],
+  "current_key": "A",
+  "verdict": "ambiguous",
+  "correct_answer": null,
+  "correct_answer_summary": "Stem terpotong (tidak ada kalimat tanya) dan tidak ada opsi yang jelas membersihkan kode pos di data lake; dari opsi yang terlihat, A (schema/cast pada DynamicFrame) hanyalah yang paling masuk akal, sedangkan B dan C jelas tidak relevan.",
+  "confidence": "low",
+  "reasoning": "Opsi B (workflow properties) hanya berbagi state antar job dan C (push_down_predicate/catalogPartitionPredicate) hanya memfilter partisi, tidak ada yang memperbaiki nilai kolom. Opsi A mendefinisikan skema untuk DynamicFrame sehingga tipe/format kolom dipaksakan, kemungkinan alasan sumber (ExamTopics) menandai A, tetapi skema saja tidak menghapus karakter tidak valid atau 'memperbaiki' data di data lake. Karena stem terpotong dan opsi lain mungkin hilang, kunci tidak dapat dipastikan 100%.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-pyspark-extensions-dynamic-frame.html", "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-crawler-pyspark-transforms-ResolveChoice.html"],
+  "structure_issues": ["stem_truncated", "options_lt4"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G047",
+  "ids": ["LOC-047"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "EventBridge rule dengan pola 'Glue Job State Change' state FAILED yang menargetkan SNS standard topic dengan email subscription.",
+  "confidence": "high",
+  "reasoning": "AWS Glue mengirim event 'Glue Job State Change' (FAILED/TIMEOUT/STOPPED/SUCCEEDED) ke EventBridge, dan rule dapat langsung menargetkan SNS topic. SNS FIFO topic tidak mendukung langganan email (hanya SQS), sehingga A salah; C salah karena SQS tidak bisa dilanggan email dan AWS Config bukan sumber event job Glue. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/automating-awsglue-with-cloudwatch-events.html", "https://repost.aws/knowledge-center/glue-sns-notification-state", "https://docs.aws.amazon.com/sns/latest/dg/fifo-message-delivery.html"],
+  "structure_issues": ["options_merged", "ocr_noise"],
+  "fix_proposal": {
+   "stem": "A data engineer is troubleshooting an AWS Glue workflow that occasionally fails. The engineer determines that the failures are a result of data quality issues. A business reporting team needs to receive an email notification any time the workflow fails in the future. Which solution will meet this requirement?",
+   "options": [
+    {"label": "A", "text": "Create an Amazon Simple Notification Service (Amazon SNS) FIFO topic. Subscribe the team’s email account to the SNS topic. Create an AWS Lambda function that initiates when the AWS Glue job state changes to FAILED. Set the SNS topic as the target."},
+    {"label": "B", "text": "Create an Amazon Simple Notification Service (Amazon SNS) standard topic. Subscribe the team’s email account to the SNS topic. Create an Amazon EventBridge rule that triggers when the AWS Glue job state changes to FAILED. Set the SNS topic as the target."},
+    {"label": "C", "text": "Create an Amazon Simple Queue Service (Amazon SQS) FIFO queue. Subscribe the team’s email account to the SQS queue. Create an AWS Config rule that triggers when the AWS Glue job state changes to FAILED. Set the SQS queue as the target."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G048",
+  "ids": ["LOC-048"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "EventBridge rule untuk event kegagalan job Glue, metrik CloudWatch dari rule tersebut, dan CloudWatch alarm yang mengirim ke SNS (tanpa kode kustom).",
+  "confidence": "medium",
+  "reasoning": "Opsi C asli (teks setelah 'C.' pada opsi gabungan) tidak membutuhkan fungsi Lambda: event Glue FAILED -> EventBridge rule -> metrik (mis. TriggeredRules/Invocations rule di namespace AWS/Events) -> alarm -> SNS, sehingga overhead operasional lebih rendah daripada A (butuh Lambda) dan B (parsing log dengan Lambda). Opsi 'C' yang tampil adalah gabungan teks B dan C asli, namun kunci C merujuk pada solusi alarm tersebut. Catatan: solusi ideal sebenarnya EventBridge langsung ke SNS, tetapi tidak ditawarkan.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/automating-awsglue-with-cloudwatch-events.html", "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-monitoring.html"],
+  "structure_issues": ["options_merged", "option_letter_duplicate"],
+  "fix_proposal": {
+   "stem": "A company uses AWS Glue jobs to implement several data pipelines. The pipelines are critical to the company. The company needs to implement a monitoring mechanism that will alert stakeholders if the pipelines fail. Which solution will meet these requirements with the LEAST operational overhead?",
+   "options": [
+    {"label": "A", "text": "Create an Amazon EventBridge rule to match AWS Glue job failure events. Configure the rule to target an AWS Lambda function to process events. Configure the function to send notifications to an Amazon Simple Notification Service (Amazon SNS) topic."},
+    {"label": "B", "text": "Configure an Amazon CloudWatch Logs log group for the AWS Glue jobs. Create an Amazon EventBridge rule to match new log creation events in the log group. Configure the rule to target an AWS Lambda function that reads the logs and sends notifications to an Amazon Simple Notification Service (Amazon SNS) topic if AWS Glue job failure logs are present."},
+    {"label": "C", "text": "Create an Amazon EventBridge rule to match AWS Glue job failure events. Define an Amazon CloudWatch metric based on the EventBridge rule. Set up a CloudWatch alarm based on the metric to send notifications to an Amazon Simple Notification Service (Amazon SNS) topic."}
+   ],
+   "type": "single",
+   "correct": "C"
+  }
+ },
+ {
+  "group_id": "G049",
+  "ids": ["LOC-049"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Gunakan Athena partition projection dengan rentang tanggal 5 tahun terakhir hingga sekarang.",
+  "confidence": "high",
+  "reasoning": "Partition projection menghitung nilai partisi dari properti tabel sehingga tidak perlu memanggil Glue Data Catalog untuk metadata partisi; ini mempercepat query pada tabel dengan banyak partisi dan mengotomatiskan manajemen partisi (partisi baru otomatis tercakup oleh rentang tanggal). Opsi A membuat partisi manual lewat Lambda (overhead dan tidak mempercepat lookup), C mengubah skema dan mengurangi granularitas data. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A data engineer notices slow query performance on a highly partitioned table that is in Amazon Athena. The table contains daily data for the previous 5 years, partitioned by date. The data engineer wants to improve query performance and to automate partition management. Which solution will meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Use an AWS Lambda function that runs daily. Configure the function to manually create new partitions in AWS Glue for each day’s data."},
+    {"label": "B", "text": "Use partition projection in Athena. Configure the table properties by using a date range from 5 years ago to the present."},
+    {"label": "C", "text": "Reduce the number of partitions by changing the partitioning schema from daily to monthly granularity."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G050",
+  "ids": ["LOC-050"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Tambahkan resource-based policy pada data stream (dan consumer EFO terdaftar bila perlu) yang mengizinkan akses baca bagi execution role Lambda lintas akun.",
+  "confidence": "high",
+  "reasoning": "Kinesis Data Streams mendukung resource-based policy (PutResourcePolicy) pada stream dan registered consumer (EFO) untuk berbagi akses lintas akun, dengan principal berupa execution role Lambda akun B. SCP hanya membatasi (guardrail) dan tidak pernah memberi izin, sehingga A dan C salah. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/streams/latest/dev/resource-based-policy-examples.html"],
+  "structure_issues": ["stem_truncated", "options_merged", "ocr_noise"],
+  "fix_proposal": {
+   "stem": "A company uses an organization in AWS Organizations to manage multiple AWS accounts. The company uses an enhanced fanout data stream in Amazon Kinesis Data Streams to receive streaming data from multiple producers. The company runs the data stream in an account named Account A. The company wants to use an AWS Lambda function in an account named Account B to process the data from the data stream. The company creates a Lambda execution role in Account B that has permissions to access data from the data stream in Account A. What additional step must the company take to meet this requirement?",
+   "options": [
+    {"label": "A", "text": "Create a service control policy (SCP) to grant the data stream read access to the cross-account Lambda execution role. Attach the SCP to Account A."},
+    {"label": "B", "text": "Add a resource-based policy to the data stream to allow read access for the cross-account Lambda execution role."},
+    {"label": "C", "text": "Create a service control policy (SCP) to grant the data stream read access to the cross-account Lambda execution role. Attach the SCP to Account B."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G051",
+  "ids": ["LOC-051"],
+  "current_key": "ABC",
+  "verdict": "key_wrong",
+  "correct_answer": "A",
+  "correct_answer_summary": "Aktifkan DynamoDB TTL dan set atribut TTL (epoch detik) pada item; ini single-answer dengan usaha konfigurasi paling kecil.",
+  "confidence": "high",
+  "reasoning": "DynamoDB TTL menghapus item kedaluwarsa otomatis tanpa konsumsi write throughput dan hanya perlu mengaktifkan TTL serta mengisi atribut waktu kedaluwarsa. Opsi B (EventBridge + Lambda) memerlukan kode dan operasi tambahan, dan C salah karena DynamoDB tidak memiliki 'lifecycle configuration'. Soal bertipe single ('Which solution'), sehingga kunci ABC (semua opsi yang terlihat) rusak; 'ABCD' pada sumber adalah placeholder. Catatan: TTL menghapus 'dalam beberapa hari' setelah kedaluwarsa, tetapi tetap jawaban terbaik.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html"],
+  "structure_issues": ["multi_without_choose_n", "key_all_options", "source_placeholder_key", "options_lt4"],
+  "fix_proposal": {
+   "stem": "A data engineer is building a new data pipeline that stores metadata in an Amazon DynamoDB table. The data engineer must ensure that all items that are older than a specified age are removed from the DynamoDB table daily. Which solution will meet this requirement with the LEAST configuration effort?",
+   "options": [
+    {"label": "A", "text": "Enable DynamoDB TTL on the DynamoDB table. Adjust the application source code to set the TTL attribute appropriately."},
+    {"label": "B", "text": "Create an Amazon EventBridge rule that uses a daily cron expression to trigger an AWS Lambda function to delete items that are older than the specified age."},
+    {"label": "C", "text": "Add a lifecycle configuration to the DynamoDB table that deletes items that are older than the specified age."}
+   ],
+   "type": "single",
+   "correct": "A"
+  }
+ },
+ {
+  "group_id": "G052",
+  "ids": ["LOC-052"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Gunakan AWS Glue DataBrew: ruleset data quality + profile job, dipicu EventBridge saat data baru masuk S3.",
+  "confidence": "high",
+  "reasoning": "DataBrew menyediakan ruleset data quality yang dievaluasi oleh profile job, fully managed dan serverless sehingga overhead terendah; EventBridge dapat memicu job saat objek baru dibuat. Opsi A butuh kode Lambda kustom dan alarm, sedangkan C memerlukan cluster EMR provisioned dan paket open source, jauh lebih banyak overhead. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-rules.html", "https://docs.aws.amazon.com/databrew/latest/dg/jobs.profile.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A company is developing machine learning (ML) models. A data engineer needs to apply data quality rules to training data. The company stores the training data in an Amazon S3 bucket. Which solution will meet these requirements with the LEAST operational overhead?",
+   "options": [
+    {"label": "A", "text": "Create an AWS Lambda function to check data quality and to raise exceptions in the code. Run the function when data is added to the S3 bucket. Create an Amazon CloudWatch alarm for exceptions in the code."},
+    {"label": "B", "text": "Create an AWS Glue DataBrew project for the data in the S3 bucket. Create a ruleset for the data quality rules. Create a profile job to run the data quality rules. Use Amazon EventBridge to run the profile job when data is added to the S3 bucket."},
+    {"label": "C", "text": "Create an Amazon EMR provisioned cluster. Add a Python open source data quality package to the EMR cluster. Use the Python package to write code for data quality rules and to copy the data from the S3 bucket to the EMR cluster. Run the data quality rules."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G053",
+  "ids": ["LOC-053"],
+  "current_key": "ABC",
+  "verdict": "key_wrong",
+  "correct_answer": "A",
+  "correct_answer_summary": "Penyebab paling mungkin: AWS Glue Data Catalog belum diperbarui dengan perubahan partisi S3 terbaru (mis. crawler/MSCK REPAIR/partition projection belum dijalankan).",
+  "confidence": "medium",
+  "reasoning": "Soal single ('What is the likely cause') tetapi bertipe multi dan kunci ABC = semua opsi yang terlihat, sehingga rusak ('ABCD' sumber adalah placeholder). Data yang hilang/usang saat query lewat Data Catalog klasik disebabkan metadata partisi tidak sinkron dengan data baru di S3. Salah peran IAM menimbulkan AccessDenied (bukan data sebagian tanpa error) dan versioning S3 tidak memengaruhi kelengkapan hasil query.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/partitions.html", "https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html"],
+  "structure_issues": ["multi_without_choose_n", "key_all_options", "source_placeholder_key", "options_lt4"],
+  "fix_proposal": {
+   "stem": "A data engineer needs to analyze time-sensitive sales data. The company stores the data in an Amazon S3 bucket. The data engineer uses AWS Glue Data Catalog to access the data. When the data engineer performs the analysis, the data engineer notices that some records are missing or out of date. What is the likely cause of these issues?",
+   "options": [
+    {"label": "A", "text": "AWS Glue Data Catalog is not up to date with the latest S3 partition changes."},
+    {"label": "B", "text": "Incorrect IAM roles are assigned to the AWS Glue jobs."},
+    {"label": "C", "text": "Versioning is not enabled on the S3 bucket."}
+   ],
+   "type": "single",
+   "correct": "A"
+  }
+ },
+ {
+  "group_id": "G054",
+  "ids": ["LOC-054"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "S3 Lifecycle: Standard -> Standard-IA setelah 60 hari -> Glacier Flexible Retrieval setelah 180 hari -> expire setelah 365 hari.",
+  "confidence": "medium",
+  "reasoning": "Lifecycle rule memetakan langsung ke kebutuhan (akses langsung 60 hari, jarang 61-180, dapat diambil dalam 1 jam untuk 181-365 hari lewat Expedited retrieval Glacier Flexible Retrieval, lalu hapus). Opsi A salah karena Archive Access tier Intelligent-Tiering butuh 3-5 jam dan expire tidak bisa dengan bucket policy; C (Inventory + Batch Operations) lebih mahal dan kompleks. Catatan: secara default objek <128 KB tidak ditransisikan oleh lifecycle (perlu filter ukuran), tetapi ini nuansa di luar opsi yang ditawarkan.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/restoring-objects-retrieval-options.html"],
+  "structure_issues": ["options_merged", "option_letter_duplicate", "stem_header_scrape"],
+  "fix_proposal": {
+   "stem": "A company needs to optimize storage costs for an Amazon S3 bucket. The S3 bucket receives 10 million objects every day. The objects range in size from 2 KB to 5 MB. The objects need to be immediately accessible for the first 60 days. Users access objects infrequently from 61 to 180 days. The objects must be accessible within an hour from 181 to 365 days. The company can delete the objects after 365 days. Which solution will meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Use S3 Intelligent-Tiering to automatically transition objects. Select the Archive Access tier for Intelligent-Tiering. Configure an S3 bucket policy to expire objects that are older than 365 days."},
+    {"label": "B", "text": "Create an S3 Lifecycle policy to move objects. Configure the policy to move objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) after 60 days. Move the objects to S3 Glacier Flexible Retrieval after 180 days. Expire objects after 365 days."},
+    {"label": "C", "text": "Enable S3 Inventory. Use a daily inventory report to configure an S3 Batch Operations job that moves objects from S3 Standard to S3 Standard-Infrequent Access (S3 Standard-IA) after 60 days. Move objects to S3 Glacier Flexible Retrieval after 180 days. Expire objects after 365 days."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G055",
+  "ids": ["LOC-055"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Gunakan rule data quality (completeness untuk timestamp dan validasi rentang numerik untuk suhu) tanpa coding, yaitu pendekatan DataBrew pada opsi A.",
+  "confidence": "medium",
+  "reasoning": "Opsi A menyatakan secara eksplisit completeness rule untuk timestamp dan validasi rentang numerik -50 s.d. 150, tanpa coding, sesuai kebutuhan. Opsi B bergantung pada ML anomaly detection yang mendeteksi anomali statistik, bukan batas tetap yang ditentukan, sehingga kurang tepat; Lambda (opsi C asli) membutuhkan banyak kode. Catatan: Glue Data Quality dengan DQDL (ColumnValues between, Completeness) juga mampu, jadi ada sedikit ambiguitas, tetapi A paling sesuai dengan teks opsi.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/databrew/latest/dg/profile.data-quality-rules.html", "https://docs.aws.amazon.com/glue/latest/dg/dqdl.html"],
+  "structure_issues": ["options_merged", "option_letter_duplicate", "stem_header_scrape"],
+  "fix_proposal": {
+   "stem": "A manufacturing company uses AWS Glue jobs to process IoT sensor data to generate predictive maintenance models. A data engineer needs to implement automated data quality checks to identify temperature readings that are outside the expected range of -50°C to 150°C. The data quality checks must also identify records that are missing timestamp values. The data engineer needs a solution that requires minimal coding and can automatically flag the specified issues. Which solution will meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Create an AWS Glue DataBrew project to profile the sensor data. Define completeness rules for timestamps. Set up numeric range validation for temperature values."},
+    {"label": "B", "text": "Use AWS Glue’s Data Quality rules and machine learning (ML)-based anomaly detection to identify missing timestamps and to detect temperature anomalies."},
+    {"label": "C", "text": "Create an AWS Lambda function to scan the sensor data files to validate temperature ranges. Use AWS Glue Data Catalog tables to check timestamp completeness."}
+   ],
+   "type": "single",
+   "correct": "A"
+  }
+ },
+ {
+  "group_id": "G056",
+  "ids": ["LOC-056"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Lifecycle rule ke S3 Glacier Instant Retrieval setelah 7 hari, expire setelah 7 tahun.",
+  "confidence": "high",
+  "reasoning": "Glacier Instant Retrieval cocok untuk data yang jarang diakses tetapi harus tetap tersedia dalam milidetik, dengan biaya penyimpanan jauh lebih murah dari Standard. Deep Archive (A) tidak 'readily accessible' (jam), sedangkan Intelligent-Tiering (B) menambah biaya monitoring dan kurang hemat dibanding transisi langsung untuk pola akses yang sudah diketahui. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G057",
+  "ids": ["LOC-057"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Perbarui security group database untuk mengizinkan koneksi inbound dari instance EC2.",
+  "confidence": "high",
+  "reasoning": "Konektivitas JDBC ke RDS dikontrol oleh security group (inbound pada port database, sumber berupa security group/IP EC2). IAM role untuk instance database tidak mengatur koneksi jaringan, dan parameter 'ec2_authorized_hosts' tidak ada di RDS parameter group. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.RDSSecurityGroups.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G058",
+  "ids": ["LOC-058"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Kinesis Data Streams untuk ingest clickstream dan Amazon Data Firehose untuk mengirimkannya ke S3.",
+  "confidence": "medium",
+  "reasoning": "Kombinasi KDS + Firehose -> S3 adalah pola ingest streaming terkelola tanpa agen/server, dan S3 menjadi penyimpanan untuk analitik (Athena/Redshift Spectrum). Opsi B memerlukan agen di EC2 dan batch upload manual (bukan real-time, banyak maintenance); opsi A mengirim ke cluster Redshift provisioned yang perlu dikelola. Kunci C paling sesuai.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/streams/latest/dev/introduction.html", "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G059",
+  "ids": ["LOC-059"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Gunakan AWS Glue Data Quality dengan rule kustom (mis. CustomSql/DQDL) yang membandingkan ketiga kolom tanggal dan menyimpan record gagal ke bucket kedua.",
+  "confidence": "medium",
+  "reasoning": "Pipeline sudah memakai AWS Glue ETL, sehingga Glue Data Quality (DQDL dengan CustomSql untuk perbandingan lintas kolom, plus row-level outcomes) dapat menjalankan pengecekan di job yang sama dengan biaya paling kecil. Opsi A (DataBrew DATEDIFF) menambah layanan dan kolom baru, B (Athena query terpisah) menambah biaya dan langkah pemisahan record gagal. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/dqdl.html", "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A company uses AWS Glue ETL pipelines to process data. The company uses Amazon Athena to analyze data in an Amazon S3 bucket. To better understand shipping timelines, the company decides to collect and store shipping and delivery dates in addition to order data. The company adds a data quality check to ensure that shipping date is greater than order date and that delivery date is greater than shipping date. Orders that fail the quality check must be stored in a second S3 bucket. Which solution will meet these requirements MOST cost-effectively?",
+   "options": [
+    {"label": "A", "text": "Use the AWS Glue DataBrew DATEDIFF function to create two additional columns. Check the new columns."},
+    {"label": "B", "text": "Use Athena to query all three date columns, and compare the columns."},
+    {"label": "C", "text": "Use AWS Glue Data Quality to create a custom rule that uses the three date columns."}
+   ],
+   "type": "single",
+   "correct": "C"
+  }
+ },
+ {
+  "group_id": "G060",
+  "ids": ["LOC-060"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Simpan di S3 dalam format Parquet dan query lewat Redshift Spectrum.",
+  "confidence": "high",
+  "reasoning": "Retensi tak terbatas paling murah di S3, dan Parquet (kolumnar, terkompresi) mengurangi data yang dipindai Spectrum sehingga lebih hemat dibanding JSON (C). Opsi A menyalin seluruh data ke cluster Redshift sehingga biaya penyimpanan cluster bertambah terus. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/c-using-spectrum.html", "https://docs.aws.amazon.com/redshift/latest/dg/c-spectrum-external-performance.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A company needs to store and analyze a large amount of IoT sensor data. The company needs to retain the data indefinitely. The company analyzes the data in an Amazon Redshift cluster. Which solution will meet these requirements MOST cost-effectively?",
+   "options": [
+    {"label": "A", "text": "Store the data in an Amazon S3 bucket in JSON format. Configure auto-copy data ingestion from the S3 bucket to the Redshift cluster."},
+    {"label": "B", "text": "Store the data in an Amazon S3 bucket in Apache Parquet format. Configure query access through Amazon Redshift Spectrum."},
+    {"label": "C", "text": "Store the data in an Amazon S3 bucket in JSON format. Configure query access through Amazon Redshift Spectrum."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G061",
+  "ids": ["LOC-061"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "AWS Lake Formation dengan LF-Tags pada resource Glue Data Catalog dan tag-based access control (LF-TBAC).",
+  "confidence": "high",
+  "reasoning": "LF-TBAC memberi akses ke subset data lake per departemen secara skalabel (least privilege) tanpa mengelola kebijakan per path S3. IAM policy per path (A) sulit dikelola dan tidak granular di level tabel/kolom, sedangkan Redshift Spectrum sebagai entry point (B) menambah komponen tanpa kontrol granular. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/lake-formation/latest/dg/tag-based-access-control.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G062",
+  "ids": ["LOC-062"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "AWS Secrets Manager dengan rotasi otomatis; aplikasi mengambil kredensial lewat API call.",
+  "confidence": "high",
+  "reasoning": "Secrets Manager mendukung rotasi otomatis terjadwal (termasuk untuk database di luar AWS lewat fungsi rotasi Lambda kustom) dan aplikasi mengambil secret saat runtime sehingga kode tidak perlu diubah tiap rotasi. IAM role tidak dapat memberi temporary credentials ke MySQL on-premises (A), dan KMS key rotation hanya merotasi kunci enkripsi, bukan kredensial database (B). Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html"],
+  "structure_issues": ["stem_typo"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G063",
+  "ids": ["LOC-063"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Letakkan tabel yang lebih besar di sisi kiri join dan tabel yang lebih kecil di sisi kanan (build side).",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Athena menyatakan untuk distributed hash join, tabel di kanan JOIN adalah build side yang didistribusikan ke node dan harus cukup kecil agar muat di memori, sedangkan tabel kiri adalah probe side yang di-stream. Opsi A kebalikannya dan berisiko kehabisan memori; pra-proses Glue (C) bukan jawaban untuk urutan join. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/performance-tuning-query-optimization-techniques.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A data engineer is writing a query to join two tables in Amazon Athena. The data engineer needs to choose the correct join order for the tables to optimize query performance. Which solution will meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Specify the smaller table on the left side of the join and the larger table on the right side of the join."},
+    {"label": "B", "text": "Specify the larger table on the left side of the join and the smaller table on the right side of the join."},
+    {"label": "C", "text": "Use AWS Glue to pre-process the tables before performing the join."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G064",
+  "ids": ["LOC-064"],
+  "current_key": "AB",
+  "verdict": "key_wrong",
+  "correct_answer": "BC",
+  "correct_answer_summary": "Buat zero-ETL integration Aurora MySQL -> Redshift dengan data filtering hanya untuk 30 tabel yang dibutuhkan, lalu buat database di Redshift dari integration tersebut (CREATE DATABASE ... FROM INTEGRATION).",
+  "confidence": "high",
+  "reasoning": "Aurora zero-ETL integration mereplikasi data hampir real time tanpa pipeline, mendukung data filtering level database/tabel (include/exclude), dan setelah aktif harus dibuat destination database di Redshift dari integration ID. DMS (A) membutuhkan pengelolaan replication instance/task sehingga overhead lebih tinggi, dan query editor v2 (D) hanya klien SQL, tidak memindahkan data. Kunci AB salah (A seharusnya diganti C); ABCDE pada sumber adalah placeholder.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.filtering.html", "https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.creating-db.html", "https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_DATABASE.html"],
+  "structure_issues": ["source_placeholder_key"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G065",
+  "ids": ["LOC-065"],
+  "current_key": "B",
+  "verdict": "ambiguous",
+  "correct_answer": null,
+  "correct_answer_summary": "Antara A (EventBridge -> Step Functions dengan Retry/Catch per state, error handling yang kuat) dan B (EventBridge -> Lambda -> SQS -> Lambda); tidak bisa dipastikan dari teks opsi mana yang dimaksud.",
+  "confidence": "low",
+  "reasoning": "Stem menuntut 'robust error handling'; opsi A secara eksplisit menyebut error handling per state (Retry/Catch Step Functions) sedangkan opsi B tidak menyebut retry/DLQ sama sekali, meski SQS+Lambda juga memberi retry dan DLQ secara bawaan. Batas payload 256 KB Step Functions/SQS vs kebutuhan 10 MB juga tidak menentukan karena data bisa diteruskan lewat referensi. Kunci komunitas B tidak bisa dikonfirmasi dari dokumentasi, sehingga ditandai ambigu (dugaan lemah mengarah ke A).",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html", "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html"],
+  "structure_issues": ["options_lt4"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G066",
+  "ids": ["LOC-066"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Buat profile job pada dataset di AWS Glue DataBrew dan tinjau hasilnya.",
+  "confidence": "high",
+  "reasoning": "DataBrew profile job adalah cara terkelola paling efisien untuk memprofil dataset Parquet di S3 (statistik kolom, nilai hilang, distribusi, korelasi) tanpa kode atau infrastruktur. Flink (B) tidak untuk profiling dataset statis dan 'ingest into Redshift Spectrum' (C) bukan operasi yang valid. Kunci A benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/databrew/latest/dg/jobs.profile.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A company stores a 100 MB dataset in an Amazon S3 bucket as an Apache Parquet file. A data engineer needs to profile the data before performing data preparation steps on the data. Which solution will meet this requirement in the MOST operationally efficient way?",
+   "options": [
+    {"label": "A", "text": "Create a profile job on the dataset in AWS Glue DataBrew. Review the profile job results."},
+    {"label": "B", "text": "Stream the data into Amazon Managed Service for Apache Flink for SQL queries. Use the Apache Flink dashboard to profile the data."},
+    {"label": "C", "text": "Ingest the data into Amazon Redshift Spectrum. Use SQL queries to profile the data."}
+   ],
+   "type": "single",
+   "correct": "A"
+  }
+ },
+ {
+  "group_id": "G067",
+  "ids": ["LOC-067"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Kinesis Data Streams dengan Redshift streaming ingestion langsung ke materialized view.",
+  "confidence": "high",
+  "reasoning": "Redshift streaming ingestion membaca langsung dari Kinesis Data Streams/MSK ke materialized view tanpa staging di S3, memberi latensi query terendah dan mampu menangani throughput tinggi. Firehose -> S3 -> COPY (A) menambah langkah staging dan latensi, sedangkan MSK + EMR + federated query (B) tidak memuat data ke Redshift. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-streaming-ingestion.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G068",
+  "ids": ["LOC-068"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "EventBridge rule dengan event pattern per tipe error yang merutekan ke SNS topic khusus tiap tim.",
+  "confidence": "high",
+  "reasoning": "EventBridge content-based filtering memisahkan error per tipe tanpa kode dan SNS mengirim notifikasi langsung ke tiap tim, sehingga overhead minimal dan hampir tanpa delay. Opsi A memerlukan Lambda kustom untuk routing, sedangkan SQS (C) mengharuskan tiap tim melakukan polling, bukan notifikasi. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html", "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-targets.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G069",
+  "ids": ["LOC-069"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Gunakan Amazon MWAA (Apache Airflow) dengan DAG untuk mengorkestrasi ETL lintas Glue, EMR, Redshift, dan S3.",
+  "confidence": "medium",
+  "reasoning": "MWAA adalah layanan terkelola yang menyediakan dependency management lewat DAG, retry otomatis, dan monitoring, serta operator bawaan untuk Glue, EMR, dan Redshift. Opsi A memakai Step Functions Express workflow yang dibatasi 5 menit, at-least-once, dan tidak mendukung pola .sync (job-run) sehingga tidak cocok untuk ETL panjang; B (Lambda + EventBridge) tidak menyediakan dependency management/monitoring pipeline yang memadai. Kunci C paling sesuai.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html", "https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html"],
+  "structure_issues": ["stem_header_scrape", "option_contains_stem_text"],
+  "fix_proposal": {
+   "stem": "A global ecommerce company processes customer transactions, inventory updates, and user activity logs across multiple AWS services. The company needs a scalable, fully managed, and event-driven orchestration solution to coordinate complex extract, transform, and load (ETL) workflows. The solution must use AWS Glue and Amazon EMR to process data. The data will be stored in Amazon Redshift and Amazon S3. The solution must support dependency management, automated retries, and data pipeline monitoring. Which solution will meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Use AWS Step Functions to define an express workflow that invokes the data transformation and loading tasks across Amazon EMR and AWS Glue."},
+    {"label": "B", "text": "Create AWS Lambda functions for each step of the workflow. Configure Amazon EventBridge to invoke AWS Glue jobs. Configure the Lambda functions to process and move data through the pipeline."},
+    {"label": "C", "text": "Use Apache Airflow on Amazon Managed Workflows for Apache Airflow (Amazon MWAA) to create Directed Acyclic Graphs (DAGs) to manage ETL workflows."}
+   ],
+   "type": "single",
+   "correct": "C"
+  }
+ },
+ {
+  "group_id": "G070",
+  "ids": ["LOC-070"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Aktifkan Amazon Q di Quick Suite (QuickSight) agar analis membuat dashboard/laporan dengan bahasa natural.",
+  "confidence": "high",
+  "reasoning": "Generative BI di Amazon Q in QuickSight memungkinkan pembuatan visual, dashboard, dan laporan lewat perintah bahasa natural tanpa SQL, dengan usaha operasional paling kecil karena sudah terintegrasi dengan Quick Suite. Zero-ETL dashboard (A) tidak menyediakan natural language, dan Tableau (C) menambah tool baru. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/quicksight/latest/user/quicksight-gen-bi.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G071",
+  "ids": ["LOC-071"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Gunakan Amazon Redshift data sharing antara cluster producer dan consumer (RA3, lintas akun).",
+  "confidence": "high",
+  "reasoning": "Data sharing pada RA3 memberi akses live dan segera ke data tanpa menyalin atau memindahkan data, serta menjaga performa Redshift native (lintas akun didukung lewat authorize/associate datashare). UNLOAD + Spectrum (A) mengubah performa karena data berada di S3, dan ETL harian (B) menambah latensi data. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/datashare-overview.html", "https://docs.aws.amazon.com/redshift/latest/dg/across-account-datasharing.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G072",
+  "ids": ["LOC-072"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Gunakan Amazon MSK Replicator antar cluster MSK di tiga Region dengan TLS dan IAM authentication.",
+  "confidence": "medium",
+  "reasoning": "MSK Replicator adalah fitur terkelola untuk replikasi lintas Region (aktif-aktif atau aktif-pasif) yang mereplikasi topic, offset konsumen, dan ACL tanpa infrastruktur Kafka Connect/MirrorMaker yang dikelola sendiri, dengan enkripsi TLS in transit. Opsi A dan C membutuhkan penerapan dan operasi sendiri sehingga usaha operasional lebih besar. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/msk/latest/developerguide/msk-replicator.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G073",
+  "ids": ["LOC-073"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Amazon OpenSearch Service dengan indexing, satu cluster per tim data agar dikonfigurasi sendiri.",
+  "confidence": "medium",
+  "reasoning": "OpenSearch Service dirancang untuk pencarian dan analitik near real-time dengan latensi query rendah dan throughput ribuan request per detik, dan cluster terpisah per tim memungkinkan tiap tim mengatur storage/performa/biaya sendiri. Athena (A) tidak cocok untuk latensi rendah pada 1.000 RPS, dan KDS + Flink (B) bukan mesin pencarian. Kunci C paling sesuai.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G074",
+  "ids": ["LOC-074"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Aktifkan S3 Versioning dan MFA Delete untuk mencegah penghapusan tidak sengaja.",
+  "confidence": "high",
+  "reasoning": "Versioning menyimpan versi lama saat objek dihapus (hanya delete marker), dan MFA Delete mewajibkan MFA untuk menghapus versi secara permanen atau mengubah status versioning. Opsi B (bucket policy melarang delete marker) tidak mencegah penghapusan permanen versi dan C tidak ada mekanisme 'moves deleted files' via lifecycle. Kunci A benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G075",
+  "ids": ["LOC-075"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Rule ColumnValues \"Email\" matches pola email dengan threshold > 0.9.",
+  "confidence": "high",
+  "reasoning": "Rule ColumnValues dengan 'matches' memeriksa pola per nilai kolom, dan 'with threshold > 0.9' membuat rule lolos hanya jika lebih dari 90% baris valid (gagal bila <90%). Uniqueness (A) memeriksa keunikan, bukan format; threshold > 0.1 (B) hanya mensyaratkan 10% valid. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/dqdl.html"],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G076",
+  "ids": ["LOC-076"],
+  "current_key": "C",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Policy IAM harus berisi elemen Resource dengan pola ARN objek S3 per prefix dan elemen Condition dengan kunci aws:CurrentTime memakai operator DateGreaterThan/DateLessThan.",
+  "confidence": "medium",
+  "reasoning": "Pembatasan akses objek per prefix dilakukan lewat ARN objek (arn:aws:s3:::bucket/prefix/*) di Resource; kunci s3:prefix hanya berlaku untuk ListBucket/ListObjectsV2 (membatasi hasil listing), bukan GetObject/PutObject. Pembatasan waktu memakai aws:CurrentTime dengan operator tanggal; '$util.time' pada opsi A bukan kunci IAM yang valid. Opsi C tidak menyertakan elemen Resource dan memakai s3:prefix untuk akses objek sehingga tidak tepat. Catatan: aws:CurrentTime adalah timestamp absolut sehingga jam kerja berulang sebenarnya tidak murni bisa diwakili; kunci komunitas C kemungkinan keliru, tetapi ada ketidakpastian atas maksud soal.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/amazon-s3-policy-keys.html"],
+  "structure_issues": ["options_lt4"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G077",
+  "ids": ["LOC-077"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "AWS Step Functions Distributed Map state membaca CSV dari S3 dan ToleratedFailurePercentage 15% menghentikan eksekusi bila kegagalan melebihi ambang.",
+  "confidence": "high",
+  "reasoning": "Distributed Map memproses item (mis. baris CSV di S3) secara paralel dalam skala besar dan menyediakan ToleratedFailurePercentage untuk menggagalkan Map Run bila persentase item gagal melebihi nilai ambang. Ini fitur bawaan sehingga overhead lebih rendah daripada AWS Batch (A) atau EMR/Spark (C) yang memerlukan mekanisme kustom. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/step-functions/latest/dg/state-map-distributed.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G078",
+  "ids": ["LOC-078"],
+  "current_key": "AB",
+  "verdict": "key_correct",
+  "correct_answer": "AB",
+  "correct_answer_summary": "AWS Step Functions (koordinasi job Glue + retry) dan AWS Glue workflows (graf dependensi job/trigger) adalah dua opsi orkestrasi serverless yang valid.",
+  "confidence": "high",
+  "reasoning": "Step Functions memiliki integrasi Glue dengan Retry/Catch dan sepenuhnya serverless, sedangkan Glue workflows memvisualisasikan dependensi antar job/crawler dengan trigger. Opsi C (EC2 selalu menyala + cron) tidak serverless, dan D (EventBridge) tidak cocok untuk merantai job dengan dependensi kompleks. Sumber mentah hanya mencantumkan A (tidak lengkap), kunci bank AB benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/step-functions/latest/dg/connect-glue.html", "https://docs.aws.amazon.com/glue/latest/dg/workflows_overview.html"],
+  "structure_issues": ["ocr_noise", "stem_typo", "source_key_incomplete"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G079",
+  "ids": ["LOC-079"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Simpan di S3 Standard selama 90 hari, lalu expire dengan S3 Lifecycle.",
+  "confidence": "high",
+  "reasoning": "Data hanya perlu disimpan 90 hari lalu dihapus, sehingga Standard + expiration lifecycle paling murah. Transisi ke Glacier Flexible Retrieval (A) tidak perlu karena data dihapus dan menambah biaya (minimum 90 hari, request transisi), sedangkan Object Lock + versioning (B) menambah biaya dan kompleksitas tanpa kebutuhan WORM. Kunci C benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G080",
+  "ids": ["LOC-080"],
+  "current_key": "C",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Buat Amazon Bedrock Knowledge Base dari buku teks dan gunakan model multibahasa dengan RetrieveAndGenerate untuk jawaban dengan sitasi sumber.",
+  "confidence": "high",
+  "reasoning": "Bedrock Knowledge Bases adalah RAG terkelola yang menyediakan ingest, embedding, retrieval, dan respons dengan citation ke lokasi sumber dokumen, sehingga memenuhi kebutuhan sitasi spesifik dan bahasa respons (model multibahasa) dengan overhead paling rendah. Opsi C (Comprehend + Kendra + Lambda) hanya mengambil passage dan memformat sendiri, tidak menghasilkan umpan balik personal multibahasa dan butuh kode kustom; A membangun vector database sendiri. Kunci C salah.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-retrieve-generate.html", "https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Citation.html"],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G081",
+  "ids": ["LOC-081"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "IAM policies untuk akses, SSE-KMS (AWS managed key) untuk enkripsi, dan AWS Secrets Manager dengan rotasi otomatis via Lambda untuk kredensial database.",
+  "confidence": "high",
+  "reasoning": "Secrets Manager adalah layanan yang mendukung rotasi otomatis kredensial lewat fungsi Lambda, dan SSE-KMS dapat memakai AWS managed key. Opsi A menyimpan kredensial di environment variable (tanpa rotasi), dan C memakai ACL (legacy) serta Parameter Store yang tidak punya rotasi otomatis bawaan. Kunci B benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ }
+]

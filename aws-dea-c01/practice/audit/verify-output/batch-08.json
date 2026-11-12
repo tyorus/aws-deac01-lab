@@ -1,0 +1,573 @@
+[
+ {
+  "group_id": "G280",
+  "ids": ["LOC-280"],
+  "current_key": "AC",
+  "verdict": "key_correct",
+  "correct_answer": "AC",
+  "correct_answer_summary": "Use columnar format (Parquet/ORC) and partition the S3 data by order date so Redshift Spectrum scans only needed columns and partitions.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Redshift Spectrum merekomendasikan format kolumnar (Parquet/ORC) agar hanya kolom yang dipilih yang dipindai, serta partisi data (mis. per tanggal) agar partition pruning mengurangi data yang discan. Query memilih sebagian kecil dari >100 kolom dan agregasi per hari, sehingga A dan C paling sesuai dengan usaha pengembangan terkecil. B hanya menggabungkan file CSV (masih row-based), D/E (JSON/SUPER) tidak memperbaiki scan kolom.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/c-spectrum-external-performance.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G281",
+  "ids": ["LOC-281"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use an Athena workgroup (Spark engine) to explore the JSON data in S3 and share the Athena/Glue Data Catalog schemas and tables; this is serverless and pay-per-use, with no data loading into Redshift.",
+  "confidence": "medium",
+  "reasoning": "Soal meminta katalog data atas data JSON di S3 dengan biaya paling efisien dan skema yang bisa berubah. Opsi A, B, dan D memuat data ke Redshift (Serverless/provisioned) atau membutuhkan orkestrasi tambahan sehingga biaya jauh lebih tinggi; Athena bersifat serverless, bayar per query/compute, dan tabelnya tersimpan di Glue Data Catalog, jadi C paling hemat. Kunci A (Glue + Schema Registry + ingest ke Redshift Serverless) menambah biaya compute/storage yang tidak diperlukan; pembahasan komunitas (ExamTopics/freecram) juga menyebut C.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/notebooks-spark.html", "https://docs.aws.amazon.com/athena/latest/ug/data-sources-glue.html", "https://www.freecram.net/question/Amazon.Data-Engineer-Associate.v2025-12-19.q85/a-security-company-stores-iot-data-that-is-in-json-format-in-an-amazon-s3-bucket-the-data-structure"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G282",
+  "ids": ["LOC-282"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Use Amazon Redshift streaming ingestion from Kinesis Data Streams into a materialized view.",
+  "confidence": "high",
+  "reasoning": "Redshift streaming ingestion membaca langsung dari Kinesis Data Streams ke materialized view dengan latensi rendah tanpa staging di S3 dan tanpa pipeline tambahan, sehingga overhead operasional paling kecil. Firehose ke Redshift selalu melalui S3 + COPY (bukan real-time sejati), dan Managed Service for Apache Flink tidak mengirim langsung ke tabel Redshift tanpa konektor/kode tambahan.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-streaming-ingestion.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G283",
+  "ids": ["LOC-283"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Publish the data to Kinesis Data Streams and use Amazon Managed Service for Apache Flink to detect drops in real time.",
+  "confidence": "high",
+  "reasoning": "Deteksi penurunan secara real-time dengan latensi terendah dicapai melalui stream processing (Kinesis Data Streams + Managed Service for Apache Flink) dengan windowed aggregation. Opsi A dan C melakukan polling per menit (latensi tinggi), sedangkan D (Database Activity Streams) hanya untuk audit aktivitas database, bukan metrik penggunaan jaringan.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/managed-flink/latest/java/what-is.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G284",
+  "ids": ["LOC-284"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use the Kinesis Producer Library (KPL), which aggregates and batches records to maximize shard throughput efficiency and provides retries.",
+  "confidence": "high",
+  "reasoning": "KPL melakukan aggregation (banyak record kecil 10 byte digabung dalam satu record Kinesis) dan collection, plus retry otomatis, sehingga memaksimalkan throughput shard dan andal; keterlambatan beberapa menit dapat ditoleransi (RecordMaxBufferedTime). Kinesis SDK (PutRecord) mengirim per record tanpa agregasi, Kinesis Agent untuk file log, dan Firehose bukan mekanisme produser langsung untuk memaksimalkan efisiensi shard KDS.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html", "https://docs.aws.amazon.com/streams/latest/dev/developing-producers-with-kpl.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G285",
+  "ids": ["LOC-285", "LOC-357"],
+  "current_key": "CE",
+  "verdict": "key_correct",
+  "correct_answer": "CE",
+  "correct_answer_summary": "Convert CSV to columnar Apache Parquet and keep the S3 bucket in the same Region as Athena queries.",
+  "confidence": "medium",
+  "reasoning": "Panduan performance tuning Athena menyarankan format kolumnar seperti Parquet (hanya membaca blok/kolom yang dibutuhkan predikat) dan menempatkan bucket di Region yang sama dengan query untuk menghindari latensi/biaya lintas Region. Awalan acak pada key S3 tidak lagi diperlukan (S3 mendukung >=3.500 PUT/5.500 GET per prefix), bucket di akun sama tidak mempengaruhi performa, dan JSON bukan format yang meningkatkan scan selektif. Kunci LOC-357 (AB) salah dan bertentangan dengan LOC-285 (CE).",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/performance-tuning.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/optimizing-performance.html"],
+  "structure_issues": ["duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G287",
+  "ids": ["LOC-287"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Use AWS Glue (JDBC connections) to ingest from all operational databases into Amazon Redshift and build QuickSight dashboards.",
+  "confidence": "medium",
+  "reasoning": "Glue mendukung koneksi JDBC ke database relasional sumber, jadi ingestion hourly ke Redshift sebagai data warehouse terpusat lalu dashboard QuickSight memerlukan pengembangan paling sedikit. Opsi dengan DMS ke DynamoDB di Region berbeda tidak cocok untuk analitik lintas sistem (DynamoDB tidak ideal untuk join/analitik), dan Grafana menambah overhead; B memuat ke DynamoDB, juga kurang cocok untuk dashboard analitik.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect-jdbc-home.html", "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"],
+  "structure_issues": ["ocr_noise", "options_merged"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G288",
+  "ids": ["LOC-288"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use Amazon MWAA (managed Apache Airflow), which orchestrates Python and Bash scripts without managing servers or refactoring code.",
+  "confidence": "high",
+  "reasoning": "MWAA adalah layanan Airflow terkelola; DAG Airflow mendukung PythonOperator dan BashOperator sehingga skrip Python/Bash dari tool orkestrasi on-premises dapat dijalankan tanpa refaktor kode besar dan tanpa mengelola server. Lambda, Step Functions, dan Glue memerlukan refaktor/format workflow berbeda atau tidak mengorkestrasi skrip Bash secara native. Teks opsi B mengandung noise OCR ('MVVAA' seharusnya MWAA).",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html"],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G289",
+  "ids": ["LOC-289"],
+  "current_key": "B",
+  "verdict": "ambiguous",
+  "correct_answer": "B",
+  "correct_answer_summary": "Menurut kunci komunitas: store gzip data in S3 and query with S3 Select (supports GZIP CSV/JSON); namun Athena (C) juga valid dan S3 Select kini tertutup untuk pelanggan baru.",
+  "confidence": "low",
+  "reasoning": "S3 Select mendukung objek CSV/JSON yang dikompres GZIP dan mengenakan biaya scan per GB lebih rendah dibanding Athena, tetapi hanya untuk satu objek per request; Athena juga mendukung gzip. Opsi dengan Glacier Flexible Retrieval/Glacier Select kurang sesuai (S3 Select tidak bisa query objek di Glacier Flexible Retrieval; Glacier Select kini juga tidak tersedia untuk pelanggan baru), dan Glacier Instant Retrieval tidak dapat diquery dengan Athena secara langsung untuk kasus cost-optimal. Karena S3 Select sudah tidak tersedia bagi pelanggan baru dan jawaban resmi tidak dapat dipastikan, B vs C dibiarkan ambigu.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/selecting-content-from-objects.html", "https://docs.aws.amazon.com/athena/latest/ug/compression-formats.html"],
+  "structure_issues": ["feature_deprecated"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G290",
+  "ids": ["LOC-290"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Use the AWS Glue FindMatches ML transform to find and remove duplicate/fuzzy-matching records.",
+  "confidence": "high",
+  "reasoning": "FindMatches (Glue ML transform) mengidentifikasi record duplikat atau yang cocok secara fuzzy, termasuk salah eja, tanpa perlu kunci yang identik, dengan overhead rendah. Window function Athena hanya cocok untuk duplikat persis, Neptune ML tidak relevan, dan DynamoDB global tables adalah replikasi multi-Region, bukan deduplikasi.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/machine-learning.html", "https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G291",
+  "ids": ["LOC-291"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Publish VPC flow logs to S3 in Parquet format and analyze with Athena.",
+  "confidence": "high",
+  "reasoning": "VPC Flow Logs dapat dipublikasikan ke S3 dalam format Apache Parquet; kolumnar mengurangi data yang discan Athena (hemat biaya query) dan ukuran penyimpanan, sedangkan CloudWatch Logs/OpenSearch lebih mahal untuk volume besar. Teks biasa di S3 lebih mahal untuk query dibanding Parquet.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html", "https://docs.aws.amazon.com/athena/latest/ug/vpc-flow-logs.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G292",
+  "ids": ["LOC-292"],
+  "current_key": "B",
+  "verdict": "key_correct",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use an AWS Glue crawler with a custom classifier for ALB logs to infer schema and create partition metadata in the Glue Data Catalog.",
+  "confidence": "medium",
+  "reasoning": "Crawler Glue dapat mendeteksi struktur folder dan menambahkan partisi ke Data Catalog secara otomatis (dengan custom classifier/grok untuk format log ALB), sehingga Athena melakukan partition pruning dengan usaha operasional minimal. Opsi C dan D memerlukan transformasi/kode dan pengelolaan Lambda, sedangkan A menyebut Glue job yang bukan mekanisme standar untuk menemukan skema dan partisi.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html", "https://docs.aws.amazon.com/athena/latest/ug/application-load-balancer-logs.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G293",
+  "ids": ["LOC-293"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use Amazon Macie to discover and detect PII in S3 objects.",
+  "confidence": "high",
+  "reasoning": "Amazon Macie adalah layanan terkelola yang memakai ML dan pattern matching untuk menemukan data sensitif seperti PII di S3 tanpa membangun pipeline. Textract mengekstrak teks dari dokumen, Storage Lens memberi metrik penggunaan storage, dan Data Wrangler untuk persiapan data ML.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html", "https://docs.aws.amazon.com/macie/latest/user/managed-data-identifiers.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G294",
+  "ids": ["LOC-294"],
+  "current_key": "DE",
+  "verdict": "key_correct",
+  "correct_answer": "DE",
+  "correct_answer_summary": "Store the credentials in AWS Secrets Manager and grant the Glue job IAM role access to the secret.",
+  "confidence": "high",
+  "reasoning": "Praktik terbaik AWS adalah menyimpan kredensial di Secrets Manager dan memberi IAM role job Glue izin secretsmanager:GetSecretValue pada secret tersebut. Menyimpan di job parameters atau file S3 tidak aman untuk kredensial teks biasa.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html", "https://docs.aws.amazon.com/glue/latest/dg/getting-started-min-privs.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G295",
+  "ids": ["LOC-295"],
+  "current_key": "D",
+  "verdict": "key_correct",
+  "correct_answer": "D",
+  "correct_answer_summary": "Among the listed options, use S3 Event Notifications to trigger a Lambda function that runs COPY into Redshift (the newer native alternative is Redshift auto-copy from S3).",
+  "confidence": "medium",
+  "reasoning": "Hanya D yang event-driven saat file baru tiba; A adalah jadwal COPY (bukan near real time), B zero-ETL Aurora tidak terkait S3, dan C job bookmarks hanya melacak data yang sudah diproses pada job batch. Catatan: Redshift sekarang memiliki fitur auto-copy (COPY JOB) dari S3 yang lebih sederhana, tetapi tidak ada di opsi.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/loading-data-copy-job.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G296",
+  "ids": ["LOC-296"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Store in S3 Standard and apply a lifecycle rule to transition to S3 Standard-IA after 30 days.",
+  "confidence": "high",
+  "reasoning": "Akses segera 30 hari pertama membutuhkan S3 Standard, lalu akses jarang tetap memerlukan retrieval milidetik, sehingga S3 Standard-IA setelah 30 hari paling hemat (Standard-IA mensyaratkan objek berusia minimal 30 hari sebelum transisi dari Standard). Deep Archive tidak cocok (retrieval berjam-jam), Standard-IA sejak awal mengenakan biaya retrieval untuk data yang sering diakses, dan Intelligent-Tiering menambah biaya monitoring per objek.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-transition-general-considerations.html", "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"],
+  "structure_issues": [],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G297",
+  "ids": ["LOC-297"],
+  "current_key": "C",
+  "verdict": "key_correct",
+  "correct_answer": "C",
+  "correct_answer_summary": "Run git rebase master on Branch B to replay its commits on top of the latest master (which already includes Branch A changes) before opening the pull request.",
+  "confidence": "medium",
+  "reasoning": "Karena Branch A sudah dideploy ke master/production, Branch B perlu di-rebase ke master terbaru agar riwayat linear dan konflik terselesaikan sebelum pull request. git diff hanya membandingkan, git commit -m tidak lengkap, dan 'git fetch -b' bukan opsi valid. Soal ini bukan topik dokumentasi AWS sehingga rujukan memakai dokumentasi Git. Ada dua opsi berlabel 'B' (git commit -m dan git pull master).",
+  "aws_doc_urls": ["https://git-scm.com/docs/git-rebase"],
+  "structure_issues": ["option_letter_duplicate", "label_sequence_broken"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G301",
+  "ids": ["LOC-301"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Use API calls to access and integrate third-party datasets from AWS Data Exchange.",
+  "confidence": "high",
+  "reasoning": "AWS Data Exchange adalah layanan untuk menemukan, berlangganan, dan menggunakan dataset pihak ketiga, dengan akses via API/ekspor otomatis ke S3 sehingga overhead minimal. DataSync memindahkan data antar storage, sedangkan Kinesis dari CodeCommit/ECR tidak relevan. Opsi E hanyalah sisa teks gabungan dari B, C, dan D.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/data-exchange/latest/userguide/what-is.html"],
+  "structure_issues": ["options_merged", "option_letter_duplicate", "ocr_noise", "stem_header_scrape"],
+  "fix_proposal": {
+   "stem": "A media company wants to improve a system that recommends media content to customers based on user behavior and preferences. To improve the recommendation system, the company needs to incorporate insights from third-party datasets into the company's existing analytics platform. The company wants to minimize the effort and time required to incorporate third-party datasets. Which solution will meet these requirements with the LEAST operational overhead?",
+   "options": [
+    {"label": "A", "text": "Use API calls to access and integrate third-party datasets from AWS Data Exchange."},
+    {"label": "B", "text": "Use API calls to access and integrate third-party datasets from AWS DataSync."},
+    {"label": "C", "text": "Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories."},
+    {"label": "D", "text": "Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR)."}
+   ],
+   "type": "single",
+   "correct": "A"
+  }
+ },
+ {
+  "group_id": "G306",
+  "ids": ["LOC-306"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use the Amazon Redshift Data API to run SQL queries over HTTPS from the application without managing drivers or persistent connections.",
+  "confidence": "high",
+  "reasoning": "Redshift tidak menyediakan koneksi WebSocket untuk query SQL, jadi opsi A bukan solusi yang valid. Redshift Data API memungkinkan aplikasi web menjalankan query via API HTTP aman tanpa mengelola koneksi/driver, dengan overhead operasional paling kecil; JDBC memerlukan pengelolaan koneksi dan driver, dan S3 Select tidak menjalankan query terhadap data Redshift.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html"],
+  "structure_issues": ["ocr_noise", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A financial services company stores financial data in Amazon Redshift. A data engineer wants to run real-time queries on the financial data to support a web-based trading application. The data engineer wants to run the queries from within the trading application. Which solution will meet these requirements with the LEAST operational overhead?",
+   "options": [
+    {"label": "A", "text": "Establish WebSocket connections to Amazon Redshift."},
+    {"label": "B", "text": "Use the Amazon Redshift Data API."},
+    {"label": "C", "text": "Set up Java Database Connectivity (JDBC) connections to Amazon Redshift."},
+    {"label": "D", "text": "Store frequently accessed data in Amazon S3. Use Amazon S3 Select to run the queries."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G307",
+  "ids": ["LOC-307"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Choose the FLEX execution class for the Glue jobs, which is cheaper for non-urgent workloads.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Glue menyatakan flexible execution class cocok untuk job non-urgent dan ditagih lebih murah dibanding Standard; job tidak wajib selesai pada waktu tertentu. Opsi Spot Instance bukan properti job Glue, STANDARD lebih mahal, dan memilih versi Glue terbaru tidak mengurangi biaya secara langsung.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/add-job.html", "https://docs.aws.amazon.com/glue/latest/dg/add-job.html#:~:text=Flex%20execution"],
+  "structure_issues": ["ocr_noise"],
+  "fix_proposal": {
+   "stem": "A data engineer needs to schedule a workflow that runs a set of AWS Glue jobs every day. The data engineer does not require the Glue jobs to run or finish at a specific time. Which solution will run the Glue jobs in the MOST cost-effective way?",
+   "options": [
+    {"label": "A", "text": "Choose the FLEX execution class in the Glue job properties."},
+    {"label": "B", "text": "Use the Spot Instance type in Glue job properties."},
+    {"label": "C", "text": "Choose the STANDARD execution class in the Glue job properties."},
+    {"label": "D", "text": "Choose the latest version in the GlueVersion field in the Glue job properties."}
+   ],
+   "type": "single",
+   "correct": "A"
+  }
+ },
+ {
+  "group_id": "G309",
+  "ids": ["LOC-309"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "C",
+  "correct_answer_summary": "Convert the CSV files to Apache Parquet with Snappy compression so Athena reads only the needed column.",
+  "confidence": "high",
+  "reasoning": "Query memilih kolom tertentu, sehingga format kolumnar (Parquet/ORC) paling mengurangi data yang discan dan mempercepat Athena; kompresi Snappy menambah efisiensi dan splittable. JSON adalah format berbasis baris/teks sehingga tidak meningkatkan kinerja pemilihan kolom, dan kompresi CSV saja (B, D) tidak memberi column pruning.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html", "https://docs.aws.amazon.com/athena/latest/ug/performance-tuning.html"],
+  "structure_issues": ["ocr_noise", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A data engineer needs Amazon Athena queries to finish faster. The data engineer notices that all the files the Athena queries use are currently stored in uncompressed .csv format. The data engineer also notices that users perform most queries by selecting a specific column. Which solution will MOST speed up the Athena query performance?",
+   "options": [
+    {"label": "A", "text": "Change the data format from .csv to JSON format. Apply Snappy compression."},
+    {"label": "B", "text": "Compress the .csv files by using Snappy compression."},
+    {"label": "C", "text": "Change the data format from .csv to Apache Parquet. Apply Snappy compression."},
+    {"label": "D", "text": "Compress the .csv files by using gzip compression."}
+   ],
+   "type": "single",
+   "correct": "C"
+  }
+ },
+ {
+  "group_id": "G314",
+  "ids": ["LOC-314"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use AWS Database Migration Service (AWS DMS) to migrate SQL Server data to Amazon RDS for SQL Server with minimal downtime.",
+  "confidence": "high",
+  "reasoning": "AWS DMS adalah layanan migrasi database dengan dukungan full load dan CDC sehingga downtime aplikasi minimal serta biaya efisien untuk migrasi berkala. AWS Lambda bukan layanan migrasi database, Direct Connect hanyalah konektivitas jaringan, dan DataSync untuk transfer file, bukan database.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html", "https://docs.aws.amazon.com/dms/latest/sbs/chap-manageddatabases.sqlserver2rdssqlserver.html"],
+  "structure_issues": ["ocr_noise", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A company uses an on-premises Microsoft SQL Server database to store financial transaction data. The company migrates the transaction data from the on-premises database to AWS at the end of each month. The company has noticed that the cost to migrate data from the on-premises database to an Amazon RDS for SQL Server database has increased recently. The company requires a cost-effective solution to migrate the data to AWS. The solution must cause minimal downtime for the applications that access the database. Which AWS service should the company use to meet these requirements?",
+   "options": [
+    {"label": "A", "text": "AWS Lambda"},
+    {"label": "B", "text": "AWS Database Migration Service (AWS DMS)"},
+    {"label": "C", "text": "AWS Direct Connect"},
+    {"label": "D", "text": "AWS DataSync"}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G320",
+  "ids": ["LOC-320"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use the Detect PII transform in AWS Glue Studio to identify and obfuscate PII, orchestrated with Step Functions.",
+  "confidence": "medium",
+  "reasoning": "Transform Detect PII di AWS Glue Studio dapat mendeteksi dan melakukan redaksi/obfuscation PII langsung dalam pipeline ETL, dengan usaha operasional paling kecil. Opsi A (Firehose + Lambda + SDK) menuntut kode kustom, C keliru karena Glue Data Quality tidak berfungsi meng-obfuscate data (hanya validasi), dan D (DynamoDB + Lambda) tidak perlu dan kompleks.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/detect-PII.html", "https://docs.aws.amazon.com/glue/latest/dg/data-quality-gs-studio.html"],
+  "structure_issues": ["options_merged", "option_letter_duplicate", "ocr_noise", "stem_header_scrape", "option_truncated", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A data engineer must use AWS services to ingest a dataset into an Amazon S3 data lake. The data engineer profiles the dataset and discovers that the dataset contains personally identifiable information (PII). The data engineer must implement a solution to profile the dataset and obfuscate the PII. Which solution will meet this requirement with the LEAST operational effort?",
+   "options": [
+    {"label": "A", "text": "Use an Amazon Kinesis Data Firehose delivery stream to process the dataset. Create an AWS Lambda transform function to identify the PII. Use an AWS SDK to obfuscate the PII. Set the S3 data lake as the target for the delivery stream."},
+    {"label": "B", "text": "Use the Detect PII transform in AWS Glue Studio to identify the PII. Obfuscate the PII. Use an AWS Step Functions state machine to orchestrate a data pipeline to ingest the data into the S3 data lake."},
+    {"label": "C", "text": "Use the Detect PII transform in AWS Glue Studio to identify the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Functions state machine to orchestrate a data pipeline to ingest the data into the S3 data lake."},
+    {"label": "D", "text": "Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lake."}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G330",
+  "ids": ["LOC-330"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use the Map state (Distributed Map for large collections of S3 files) to process each file in parallel with the same transformation.",
+  "confidence": "high",
+  "reasoning": "State Map menjalankan sub-workflow yang sama untuk setiap item dalam kumpulan data, dan mode Distributed Map mendukung pemrosesan paralel berskala besar atas banyak objek S3. State Parallel menjalankan cabang berbeda yang jumlahnya tetap sehingga tidak cocok untuk koleksi file berukuran besar; Choice dan Wait bukan untuk paralelisme.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/step-functions/latest/dg/state-map-distributed.html", "https://docs.aws.amazon.com/step-functions/latest/dg/state-map.html"],
+  "structure_issues": ["ocr_noise", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A data engineer needs to use AWS Step Functions to design an orchestration workflow. The workflow must parallel process a large collection of data files and apply a specific transformation to each file. Which Step Functions state should the data engineer use to meet these requirements?",
+   "options": [
+    {"label": "A", "text": "Parallel state"},
+    {"label": "B", "text": "Choice state"},
+    {"label": "C", "text": "Map state"},
+    {"label": "D", "text": "Wait state"}
+   ],
+   "type": "single",
+   "correct": "C"
+  }
+ },
+ {
+  "group_id": "G350",
+  "ids": ["LOC-350"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Use Amazon AppFlow to transfer data from SaaS applications to Amazon S3 or Amazon Redshift as a fully managed integration.",
+  "confidence": "high",
+  "reasoning": "Amazon AppFlow adalah layanan integrasi terkelola untuk memindahkan data dari aplikasi SaaS ke S3 dan Redshift tanpa kode, jadi overhead operasional paling kecil. MSK dan Kinesis adalah layanan streaming yang memerlukan produser/konektor, dan Glue Data Catalog hanya penyimpan metadata.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html"],
+  "structure_issues": ["ocr_noise", "stem_truncated", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A media company uses software as a service (SaaS) applications to gather data by using third-party tools. The company needs to store the data in an Amazon S3 bucket. The company will use Amazon Redshift to perform analytics based on the data. Which AWS service or feature will meet these requirements with the LEAST operational overhead?",
+   "options": [
+    {"label": "A", "text": "Amazon Managed Streaming for Apache Kafka (Amazon MSK)"},
+    {"label": "B", "text": "Amazon AppFlow"},
+    {"label": "C", "text": "AWS Glue Data Catalog"},
+    {"label": "D", "text": "Amazon Kinesis"}
+   ],
+   "type": "single",
+   "correct": "B"
+  }
+ },
+ {
+  "group_id": "G353",
+  "ids": ["LOC-353"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "C",
+  "correct_answer_summary": "Use query editor v2 to schedule the REFRESH MATERIALIZED VIEW statements (or Redshift auto refresh), which needs the least effort.",
+  "confidence": "medium",
+  "reasoning": "Query editor v2 mendukung scheduled queries sehingga REFRESH MATERIALIZED VIEW dapat dijadwalkan langsung dari Redshift tanpa infrastruktur tambahan, usaha terkecil di antara opsi. Apache Airflow (MWAA) dan Glue workflow memerlukan penyiapan dan pemeliharaan orkestrator, sementara Lambda UDF tidak dirancang untuk menjadwalkan refresh. Redshift juga mendukung AUTO REFRESH, tetapi tidak tercantum di opsi.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/mgmt/query-editor-v2-schedule-query.html", "https://docs.aws.amazon.com/redshift/latest/dg/materialized-view-refresh.html"],
+  "structure_issues": ["options_merged", "label_sequence_broken", "ocr_noise", "stem_truncated", "key_wrong_default_A"],
+  "fix_proposal": {
+   "stem": "A company uses Amazon Redshift for its data warehouse. The company must automate refresh schedules for Amazon Redshift materialized views. Which solution will meet this requirement with the LEAST effort?",
+   "options": [
+    {"label": "A", "text": "Use Apache Airflow to refresh the materialized views."},
+    {"label": "B", "text": "Use an AWS Lambda user-defined function (UDF) within Amazon Redshift to refresh the materialized views."},
+    {"label": "C", "text": "Use the query editor v2 in Amazon Redshift to refresh the materialized views."},
+    {"label": "D", "text": "Use an AWS Glue workflow to refresh the materialized views."}
+   ],
+   "type": "single",
+   "correct": "C"
+  }
+ },
+ {
+  "group_id": "G369",
+  "ids": ["LOC-369"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "The correct solution is to store the dimension table in an open table format such as Apache Iceberg (or Hudi/Delta) and apply the daily changes with MERGE/upsert (e.g., Athena or Glue Spark), which rewrites only affected files; this option is not visible.",
+  "confidence": "low",
+  "reasoning": "Sumber mentah menandai D (tidak terlihat), sedangkan opsi A-C menyebut 'Spark update method' dan 'Pandas update method' yang bukan cara melakukan update/upsert pada tabel di S3 (DataFrame bersifat immutable dan menulis ulang seluruh 1 TB). Solusi yang didukung dokumentasi AWS adalah tabel Apache Iceberg dengan MERGE INTO untuk mengubah hanya record yang berubah. Kunci A (EMR) tidak dapat dibuktikan benar dan kemungkinan kunci default.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/querying-iceberg.html", "https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-format-iceberg.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G370",
+  "ids": ["LOC-370"],
+  "current_key": "A",
+  "verdict": "key_correct",
+  "correct_answer": "A",
+  "correct_answer_summary": "Use the Spark UI (enabled for the Glue job) to view job, stage, and task details; CloudWatch job metrics are not per-stage.",
+  "confidence": "medium",
+  "reasoning": "Spark UI pada Glue (history server dari log event Spark) menampilkan tab Jobs dan Stages beserta metrik tiap stage; metrik CloudWatch Glue hanya level job/executor, dan CloudTrail hanya mencatat API call. Opsi A benar secara teknis, tetapi sumber mentah menunjuk D yang tidak terlihat sehingga opsi lengkap tidak diketahui. Opsi B berisi teks stem dan opsi A tergabung.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui.html", "https://docs.aws.amazon.com/glue/latest/dg/monitor-spark-ui-jobs.html"],
+  "structure_issues": ["options_missing", "options_merged", "stem_header_scrape", "key_not_in_options", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G371",
+  "ids": ["LOC-371"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "To create year/month/day partitions daily and track schema changes, run an AWS Glue crawler on a daily schedule (partition projection avoids creating partitions but does not adapt to schema changes); the likely correct option D is not visible.",
+  "confidence": "low",
+  "reasoning": "DataBrew adalah alat persiapan data visual dan tidak membuat partisi tabel Glue, jadi kunci A salah. Sumber mentah menunjuk D yang hilang; solusi menurut dokumentasi AWS adalah Glue crawler terjadwal harian (menambah partisi dan memperbarui skema) atau menambah partisi via Lambda/ALTER TABLE. Partition projection (C) menghilangkan kebutuhan membuat partisi tetapi tidak menyesuaikan perubahan skema.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html", "https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "stem_header_scrape", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G372",
+  "ids": ["LOC-372"],
+  "current_key": "A",
+  "verdict": "key_wrong",
+  "correct_answer": "B",
+  "correct_answer_summary": "Configure a CloudWatch Logs data protection policy on the log group to mask sensitive (PII) data in log events.",
+  "confidence": "high",
+  "reasoning": "CloudWatch Logs data protection policy mendeteksi dan menyamarkan (mask) data sensitif seperti PII saat ingest ke log group, dan data tersamarkan di semua titik egress. Security configuration Glue hanya mengatur enkripsi (CloudWatch logs/S3/bookmark dengan KMS), bukan masking, sedangkan Macie memindai S3, bukan log CloudWatch. Opsi tampak kurang dari 4 sehingga mungkin ada opsi hilang, tetapi B sudah benar.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html", "https://docs.aws.amazon.com/glue/latest/dg/console-security-configurations.html"],
+  "structure_issues": ["options_missing", "option_letter_duplicate", "key_wrong_default_A"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G373",
+  "ids": ["LOC-373"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "Use Amazon DynamoDB (key-value, API-based access with single-digit-millisecond latency) which handles thousands of concurrent writes/reads per second; this option is not visible.",
+  "confidence": "low",
+  "reasoning": "Persyaratan akses record spesifik berbasis API dan >4.000 write serta 6.500 read per detik secara terus-menerus paling sesuai dengan DynamoDB (skala throughput tinggi, GetItem/PutItem), bukan Redshift yang dioptimalkan untuk analitik dan memiliki batas konkurensi query. Opsi A-C seluruhnya Redshift dan sumber mentah menunjuk D yang hilang. Kunci A (Redshift Data API) tidak cocok untuk beban OLTP-like ini.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html", "https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G374",
+  "ids": ["LOC-374"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "Use Amazon Aurora zero-ETL integration with Amazon Redshift (Serverless), which replicates changes from multiple Aurora MySQL clusters in near real time with no pipeline to manage; this option is not visible.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Redshift menyebut zero-ETL integration mendukung sumber Aurora MySQL ke Redshift provisioned/Serverless, serverless dan tanpa pemeliharaan pipeline, sehingga overhead terkecil. Opsi A (DMS dengan schema conversion) tidak diperlukan dan menambah pekerjaan, B (MSK Connect + Debezium) dan C (DMS ke Kinesis) membutuhkan pengelolaan komponen tambahan. Sumber menunjuk D yang hilang, yang kemungkinan zero-ETL.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/mgmt/zero-etl-using.html", "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/zero-etl.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G375",
+  "ids": ["LOC-375"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "The correct next step is not determinable from visible options; A (IAM role with S3 write permission associated with Redshift) is only valid if Redshift UNLOAD is used, while the source key points to an unseen option D.",
+  "confidence": "low",
+  "reasoning": "Opsi A secara teknis relevan jika data diekspor lewat Redshift UNLOAD (butuh IAM role yang diasosiasikan ke cluster), tetapi stem menyebut job AWS Glue sehingga kebutuhan sebenarnya bisa berupa IAM role/koneksi Glue yang berbeda. Sumber mentah menunjuk D yang hilang, jadi kunci tidak dapat dipastikan. Opsi B (Spectrum/Data Catalog) dan C (data sharing) tidak untuk menulis salinan ke S3.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/mgmt/authorizing-redshift-service.html", "https://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "stem_header_scrape", "option_contains_stem_text", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G376",
+  "ids": ["LOC-376"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "Use domain units in SageMaker Unified Studio (delegated ownership, authorization policies, publish/subscribe with approval for sharing) with IAM Identity Center for centralized authentication; the matching option D is not visible.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi SageMaker Unified Studio: domain units memberi delegated authority kepada owner unit bisnis, asset dibagikan lintas unit melalui katalog dengan permintaan akses/persetujuan, dan autentikasi terpusat memakai IAM Identity Center (bukan API keys). Opsi A salah karena 'API keys' bukan metode autentikasi domain, B melarang berbagi data antar domain, dan C memisahkan domain tanpa kebijakan bersama. Sumber menunjuk D yang hilang.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/sagemaker-unified-studio/latest/adminguide/concepts.html", "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/adminguide/manage-users-idc-based-domains.html", "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/share-assets.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "stem_header_scrape", "option_contains_stem_text", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G377",
+  "ids": ["LOC-377"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "The correct statement is SELECT * EXCLUDE (companyId, unique_system_id) FROM orders.complete_orders_history; the visible options are placeholders.",
+  "confidence": "high",
+  "reasoning": "Redshift mendukung klausa EXCLUDE column_list pada SELECT * untuk mengecualikan kolom tertentu dari tabel lebar, dengan sintaks SELECT * EXCLUDE (col1, col2) FROM tabel. Opsi A dan B hanyalah teks placeholder hasil scrape sehingga kunci A tidak bermakna dan tidak bisa dicocokkan dengan pernyataan SQL.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/redshift/latest/dg/r_EXCLUDE_list.html"],
+  "structure_issues": ["options_missing", "placeholder_options", "key_not_in_options"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G378",
+  "ids": ["LOC-378"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "Enable the MariaDB Audit Plugin (MARIADB_AUDIT_PLUGIN option group) on RDS for MySQL and publish the audit logs to CloudWatch Logs, plus AWS CloudTrail for instance-level changes; the matching option D is not visible.",
+  "confidence": "medium",
+  "reasoning": "Untuk melacak user yang memodifikasi data pada RDS for MySQL diperlukan audit log (MariaDB Audit Plugin yang mencatat CONNECT/QUERY per username), sedangkan perubahan pada instance dicatat oleh CloudTrail. Opsi A hanya metric filter pada CloudWatch Logs tanpa mengaktifkan audit plugin, B memakai EventBridge yang tidak menangkap aktivitas query database, dan C hanya CloudTrail API calls tanpa aktivitas data. Sumber menunjuk D yang hilang.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.AuditPlugin.html", "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-database-activity.html"],
+  "structure_issues": ["options_missing", "key_not_in_options", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ },
+ {
+  "group_id": "G379",
+  "ids": ["LOC-379"],
+  "current_key": "A",
+  "verdict": "options_incomplete",
+  "correct_answer": null,
+  "correct_answer_summary": "Use Amazon Athena Federated Query (data source connectors) to join DynamoDB, RDS, Redshift, and S3 in place without moving data; this option is not visible.",
+  "confidence": "medium",
+  "reasoning": "Untuk laporan sekali pakai yang menghindari pemindahan data, Athena Federated Query menggabungkan sumber DynamoDB, RDS, Redshift, dan S3 lewat konektor Lambda tanpa ETL. Opsi A memindahkan semua data ke S3 (bertentangan dengan 'avoid data movement'), B memakai Glue ETL ke S3, dan C memakai EMR untuk merge data; semuanya memindahkan data. Sumber menunjuk D yang hilang.",
+  "aws_doc_urls": ["https://docs.aws.amazon.com/athena/latest/ug/connect-to-a-data-source.html", "https://docs.aws.amazon.com/athena/latest/ug/federated-queries.html"],
+  "structure_issues": ["options_missing", "options_merged", "key_not_in_options", "stem_header_scrape", "duplicate_copy_key_conflict"],
+  "fix_proposal": null
+ }
+]

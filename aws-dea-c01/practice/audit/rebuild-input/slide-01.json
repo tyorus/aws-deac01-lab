@@ -1,0 +1,623 @@
+[
+ {
+  "id": "LOC-385",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer change?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 11/ 35 --- page 575 --- D30PS WORKEDSCENARI02 0F4 query them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with no retention policy set, and the Cloudwatch bill has grown steadily. The security team also needs to run occasional forensic searches over the last thirty days, interactively. Which approach best meets both needs? Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs PAUSE AND DECIDE MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 21/46 --- page 576 --- D30PS WORKED SCENARI0 2 0F 4-WORKED Which approach best meets both needs? Everything in Cloudwatch forever Thirty day retention, export to S3, lifecycle to Meetsbothrequirements atCloudWatchLogsstorage Glacier, query with Athena pricesfor seven years.That is the bill they complained Recent logs stay interactive; archives move to storage about. priced for the access pattern and stay quer...",
+     "correct": true
+    },
+    {
+     "label": "E",
+     "body": "Seven years of OpenSearch indices Thirty days only Keepssevenyears of data on a clustersized forsearch,for Solves the cost problem by breaking the regulatory two queries a year. The most expensive option here. requirement. Never theanswer. THE SIGNAL Two access patterns, thirty days and seven years, need two storage tiers. This is module eight's lifecycle argument applied to logs. MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 22/46 --- page 699 --- D4SEC WORKEDSCENARI03 0F 4 A financial services company runs Glue jobs in private subnets. A compliance requirement states that no data may traverse the public internet, and that jobs must be able to reach only two named s3 buckets, not any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and the jobs reach Amazon S3 over the public endpoint.",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   575,
+   576,
+   699
+  ],
+  "ocr_pages": {
+   "574": "D30PS\nMONITORINGAND TROUBLESHOOTING\nDeeper instrumentation\nContainer Insights for ECs and EkS cluster, pod and container metrics.\nLambda Insights for per-invocation memory, CPU and cold start detail.\nApplication Signals tracks service level objectives against real behaviour.\nEmbedded metric format publishes metrics inside log events, avoiding a separate APl call.\nEach adds cost. Instrument what you will act on.\nON THEEXAM\nEmbedded metric format is the efficient way for a high-volume function to publish\ncustom metrics.\nMONITORING AND TROUBLESHOOTING\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com\n20/46",
+   "575": "D30PS\nWORKEDSCENARI02 0F4\nquery them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with\nno retention policy set, and the Cloudwatch bill has grown steadily.\nThe security team also needs to run occasional forensic searches over the last thirty days,\ninteractively.\nWhich approach best meets both needs?\nKeep everything in CloudWatch Logs indefinitely\n Set a thirty day retention on the log groups, and\nand query with Logs Insights\nexport older logs to Amazon S3 with a lifecycle\npolicy to Glacier, queried with Athena\nStream all logs toAmazonOpenSearchService\nReduce retention to thirty days and accept the\nand retain seven years of indices\nloss of older logs\nPAUSE AND DECIDE\nMONITORING AND TROUBLESHOOTING\nadmin@sthithapragna.com\n21/46",
+   "576": "D30PS\nWORKED SCENARI0 2 0F 4-WORKED\nWhich approach best meets both needs?\nEverything in Cloudwatch forever\nThirty day retention, export to S3, lifecycle to\nMeetsbothrequirements atCloudWatchLogsstorage\nGlacier, query with Athena\npricesfor seven years.That is the bill they complained\nRecent logs stay interactive; archives move to storage\nabout.\npriced for the access pattern and stay queryable.\nSeven years of OpenSearch indices\nThirty days only\nKeepssevenyears of data on a clustersized forsearch,for\nSolves the cost problem by breaking the regulatory\ntwo queries a year. The most expensive option here.\nrequirement. Never theanswer.\nTHE SIGNAL\nTwo access patterns, thirty days and seven years, need two storage tiers. This is\nmodule eight's lifecycle argument applied to logs.\nMONITORING AND TROUBLESHOOTING\nadmin@sthithapragna.com\n22/46",
+   "577": "D30PS\nCLOUDTRAIL\nCloudTrail answers who, and it is not a\ndebugging tool.\nMONITORING AND TROUBLESHOOTING\nadmin@sthithapragna.com\n23/46",
+   "697": "D4SEC\nAUTHENTICATION AND NETWORK ACCESS\nKeeping traffic inside a boundary\nA data perimeter combines identity, resource and network controls.\n Only trusted identities reach your resources, enforced by RCPs.\nOnly trusted resources are reachable from your network, enforced by endpoint policies.\nOnly expected networks can reach your data, enforced by conditions on source VPC.\nBlock Public Access at account level, so no individual bucket can be exposed.\nONTHEEXAM\nThree controls, three directions. Who can get in, what can be reached, and from where.\nAUTHENTICATION AND NETWORK ACCESS\nadmin@sthithapragna.com\n25/34",
+   "698": "D4SEC\nAUTHENTICATION AND NETWORK ACCESS\nS3 Access Points\nA named endpoint attached to a bucket, each with its own policy.\nOne consumer, one access point, instead of one growing bucket policy.\nCan be restricted to a VPc, so the data is unreachable from the internet.\nMulti-Region Access Points give one endpoint across Regions.\nObject Lambda transformed data on retrieval, and is now closed to new customers.\nON THE EXAM\nModule eight promised this. Access Points exist because a shared bucket policy\nbecomes unmaintainable.\nAUTHENTICATION AND NETWORK ACCESS\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com\n26/34",
+   "699": "D4SEC\nWORKEDSCENARI03 0F 4\nA financial services company runs Glue jobs in private subnets. A compliance requirement\nstates that no data may traverse the public internet, and that jobs must be able to reach\nonly two named s3 buckets, not any bucket in Aws.\nThe subnets currently route outbound traffic through a NAT gateway, and the jobs reach\nAmazon S3 over the public endpoint.\nWhat should the data engineer implement?\nAdd an S3 gateway endpoint with an endpoint\nKeep the NAT gateway and add a bucket policy\npolicy naming the two buckets, and remove the\non each of the twobuckets\nNAT route for S3\nAdd an interface endpoint for Amazon S3 and\nMove the Glue jobs to public subnets so the\nrely on the Glue role's lAM policy\nrouting is simpler\nPAUSE AND DECIDE\nAUTHENTICATION AND NETWORK ACCESS\nadmin@sthithapragna.com\n27/34",
+   "700": "D4SEC\nWORKEDSCENARI030F4-WORKED\nWhat should the data engineer implement?\nGateway endpoint with an endpoint policy\nNAT plus bucket policies\nTraffic leaves the internet path entirely, and the endpoint\nBucket policies control your buckets. They do nothing about\npolicy restricts which buckets are reachable through it. Both\ntraffic tosomebody else'sbucket,and traffic still uses the\nrequirements.\ninternet path.\nInterface endpoint plus the IAM policy\n Public subnets\nKeeps traffic private, and an IAM policy governs the identity\nSolves a routing inconvenience by putting the jobs on the\nrather thanthenetworkpath.Closer,and it missesthe\ninternet, which is the opposite of the requirement.\nendpoint restriction.\nTHE SIGNAL\nTwo requirements: private path, and a restricted set of destinations. Only the endpoint\npolicy delivers the second.\nAUTHENTICATION AND NETWORK ACCESS\nadmin@sthithapragna.com\n28 / 34"
+  }
+ },
+ {
+  "id": "LOC-386",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer configure now?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.",
+     "correct": false
+    },
+    {
+     "label": "E",
+     "body": "The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read more than a set Allows expensive queries to run for longer. It is the opposite volume, so a single accidental query cannot run up a large of a guardrail. bill. THE SIGNAL Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards. PRACTICE EXAM 3 admin@sthithapragna.com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   1054
+  ],
+  "ocr_pages": {
+   "1052": "ALL DOMAINS\nQUESTI0N 18 0F 20 : D0MAIN 4\nAn insurer holds claims data in Amazon Redshift. Regional teams must see only their own\nregion's claims. A fraud team must see all regions. A support team must see all regions but\nwith the claimant's national identifier partially masked, while the fraud team sees it in full.\nThere are currently eleven views maintaining these combinations, and keeping them aligned\nwith schema changes has become a burden.\nWhat should the data engineer implement?\nA\nCreate one table per region with the identifier\nB\nContinue with views, generating them\ncolumn omitted where required\nautomatically when the schema changes\nMove the data to Amazon S3 and apply Lake\nRow-level security policies for the regional\nFormation data filters\nfiltering, and dynamic data masking on the\nidentifier column by role\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n38/ 50",
+   "1053": "ALL DOMAINS\nQUESTI0N 18 · W0RKED\nWhat should the data engineer implement?\nA\nOne table per region\nB\nGenerate the views automatically\nMultiplies the schema, the pipelines and the drift, and still\nAutomates the maintenance of eleven objects rather than\ndoes not address the two masking audiences.\nremoving them. The duplication remains.\nMove to s3 and use Lake Formation\nRow-level security plus dynamic data masking\nRelocates warehouse data to the lake to reach capabilities\nOne table, one schema. Rows filter by the session's role and\nRedshift already has natively.\nthe identifier masks by role, with nothing to keep aligned.\nTHE SIGNAL\nTwo distinct requirements, two native Redshift features. The eleven views exist because\nneither was used.\nPRACTICE EXAM3\nadmin@sthithapragna.com\n39/ 50",
+   "1054": "ALL DOMAINS\nQUESTI0N 19 0F 20·D0MAIN 4\nA data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a\ncustomer managed key. Compliance requires a customer managed key with an audit trail\nso the encryption cannot be changed.\nFinance has flagged that the Aws KMs bill scales with query volume rather than with the\namount of data stored.\nWhat should the data engineer do?\nMovethedata toS3Standard-Infrequent\nSwitch the bucket to SSE-s3 encryption\nAccess\nRequest a KMS request quota increase\nEnable S3 Bucket Keys on the bucket\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n40/50",
+   "1055": "ALL DOMAINS\nQUESTI0N 19· W0RKED\nWhat should the data engineer do?\nStandard-IA\nSwitch to SSE-S3\nChanges storage cost and adds a retrieval charge.The\nRemoves the customer managedkey and its audit trail,\nKMS request volume is unaffected.\nwhich compliance requires. It solves costbybreaking the\nrequirement.\nA quota increase\nEnable S3 Bucket Keys\nRaises the request ceiling. It does nothing about being\nA bucket-level key derives per-object keys locally, cutting\nbilled for every oneof those requests.\nKMS requests by up to ninety nine percent with the same\nkey and encryption.\nTHE SIGNAL\ndecryption signature.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n41/50"
+  }
+ },
+ {
+  "id": "LOC-387",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer configure?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "only copy in a single Availability Zon",
+     "correct": false
+    },
+    {
+     "label": "E",
+     "body": "THE SIGNAL \"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3 admin@sthithapragna.com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   1048
+  ],
+  "ocr_pages": {
+   "1046": "ALL DOMAINS\nQUESTI0N 15 0F 20·D0MAIN3\nOccasionally a small number of records arrive with a missing settlement currency. Partial\nfigures are worse than no figures for this use case, because reports built on incomplete data\nhave twice been filed.\nThe team wants to catch this and does not want to write custom validation code.\nSelectTwoactions the data engineer should take.\nAdd AWS Glue Data Quality rules inside the ETL\nConfigure the job to fail when the ruleset does\njob checking completeness of the currency\nnot pass, so nothing downstream is loaded\ncolumn\nConfigure the job to routefailing records to a\nAdd a Cloudwatch alarm on the Glue job's\nquarantine location and continue\nfailed run count\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n32/50",
+   "1047": "ALL DOMAINS\nQUESTI0N 15·W0RKED\nSelect Two actions the data engineer should take.\nGlue Data Quality rules in the job\nFail the job on violation\nAdeclarativecompletenessrule,evaluatedasdataflows\nthrough, with no custom validation code to maintain.\nso stopping is correct and quarantining would publish\nincomplete data.\nQuarantine and continue\nAlarm on failed runs\nRight when partial data has value. Here the question states \nUseful once the job fails, and on its own it detects nothing,\nthe opposite, and incompletereports havealreadybeen\nbecause today the job succeeds withbad data.\nfiled.\nTHE SIGNAL\n\"Partial figures are worse than no figures\" is the clause choosing fail over quarantine. It\nis the only difference.\nPRACTICE EXAM 3\nａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com\n33/50",
+   "1048": "ALL DOMAINS\nQUESTI0N 16 0F 20·D0MAIN3\nAn analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table\nwants to prevent a recurrence.\nThe underlying data is scheduled to be converted to partitioned Parquet next quarter.\nWhat should the data engineer configure now?\nRemove the analyst's Athena permissions\nAnAwsBudgetalertontheAthenaservice\nA per-query data scan limit on the Athena\nIncrease the workgroup's query timeout so\nworkgroup\nlarge queries are less likely to be retried\nPAUSE ANDDECIDE\nPRACTICE EXAM 3\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com\n34/50",
+   "1049": "ALL DOMAINS\nQUESTI0N 16· W0RKED\nWhat should the data engineer configure now?\nRemove the permissions\nA Budget alert\nTells you afterwards that spend crossed a line. The\ndoes nothing about anybody else.\ndamage from one query is already done.\nA per-query data scan limit\nA longer timeout\nCancels any query that would read more than a set\nAllows expensive queries to run for longer. It is the opposite\nvolume, so a single accidental query cannot run up a large\nof a guardrail.\nbill.\nTHE SIGNAL\nPrevent or detect? A scan limit refuses the query. A budget alert reports the bill\nafterwards.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n35/50"
+  }
+ },
+ {
+  "id": "LOC-388",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer do?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signatur",
+     "correct": false
+    },
+    {
+     "label": "E",
+     "body": "The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signature. PRACTICE EXAM 3 admin@sthithapragna.com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   1056
+  ],
+  "ocr_pages": {
+   "1054": "ALL DOMAINS\nQUESTI0N 19 0F 20·D0MAIN 4\nA data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a\ncustomer managed key. Compliance requires a customer managed key with an audit trail\nso the encryption cannot be changed.\nFinance has flagged that the Aws KMs bill scales with query volume rather than with the\namount of data stored.\nWhat should the data engineer do?\nMovethedata toS3Standard-Infrequent\nSwitch the bucket to SSE-s3 encryption\nAccess\nRequest a KMS request quota increase\nEnable S3 Bucket Keys on the bucket\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n40/50",
+   "1055": "ALL DOMAINS\nQUESTI0N 19· W0RKED\nWhat should the data engineer do?\nStandard-IA\nSwitch to SSE-S3\nChanges storage cost and adds a retrieval charge.The\nRemoves the customer managedkey and its audit trail,\nKMS request volume is unaffected.\nwhich compliance requires. It solves costbybreaking the\nrequirement.\nA quota increase\nEnable S3 Bucket Keys\nRaises the request ceiling. It does nothing about being\nA bucket-level key derives per-object keys locally, cutting\nbilled for every oneof those requests.\nKMS requests by up to ninety nine percent with the same\nkey and encryption.\nTHE SIGNAL\ndecryption signature.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n41/50",
+   "1056": "ALL DOMAINS\nQUESTI0N 20 0F 20·D0MAIN 4\nrequests are handled by a central platform team, who receive around forty a week and take\nseveral days each. The team approving requests often does not know whether the requester\nshould have the data.\nThe organisation wants requests decided by whoever owns the data, with each decision\nrecorded for audit.\nWhat should the data engineer implement?\nGranteachbusinessunitdatabase-levelLake\nPublish datasets as assets in Amazon\nFormation permissions on its own databases\nSageMaker Catalog and use the subscription\nworkflow, with data owners approving requests\nAdd more engineers to the central platform\nGive every analyst read access to all eight\nteam\nhundred datasets and audit usage with\nCloudTrail\nPAUSE ANDDECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n42/50",
+   "1057": "ALL DOMAINS\nQUESTI0N 20·W0RKED\nWhat should the data engineer implement?\nDatabase-level grants per business unit\nSageMaker Catalog subscription workflow\nRemoves the queue by granting broadly. It cannot\nConsumers request, the data owner approves, and Lake\ndistinguish sensitivity within a business unit, and records no\nFormation permissions are applied automatically with the\ndecision.\ndecision recorded.\nMore engineers\nAccess to everything, audited afterwards\nScales the bottleneck.The approvers still lack the context to\nAbandons access control and substitutes detection.It is\ndecide, which was the stated problem.\nthe opposite of what therequirement describes.\nTHE SIGNAL\nTwo requirements: the owner decides, and the decision is recorded. The subscription\nworkflow does both.\nPRACTICE EXAM 3\nadmin@sthｉthapragna.com\n43/50"
+  }
+ },
+ {
+  "id": "LOC-389",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes detection.It is decide, which was the stated problem. the opposite of what therequirement describes. THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both. PRACTICE EXAM 3 admin@sthｉthapragna.com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   1063
+  ],
+  "ocr_pages": {
+   "1061": "ALL DOMAINS\nPRACTICE EXAM 3\nReading your trend across sixty questions\nFlat across the three usually means you scored without reviewing in between.\nstrong on facts, weak on scenarios points at reading order rather than knowledge.\nstrong on Domain 1, weak on Domain 4 is the most common shape, and the easiest to fix.\nON THE EXAM\nSixty questions is enough to see a pattern. It is not enough to predict a scaled score,\nand nobody can honestly tell you otherwise.\nPRACTICE EXAM 3\nadmiｎ@sthithaｐragnａ.com\n47/50",
+   "1062": "ALL DOMAINS\nPRACTICE EXAM3\nWhat to dowith the last week\nReread module twenty one, particularly the words that decide.\nReread module twenty three, the availability warnings and the renames.\nWork through every question you got wrong until you can explain all four options.\nDo not learn new services. Nothing absorbed in the final week survives to the exam.\nSleep, and check the logistics. Fatigue costs more marks than one more service gains.\nON THEEXAM\nThe third point is the whole method. Being able to say why each wrong option is wrong\nis the skill the exam tests.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n48/50",
+   "1063": "ALLDOMAINS\nTWENTYSEVENMODULES\nYou have covered every task statement\nin\nthe exam guide, and about a hundred\nworked scenarios.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n49/50",
+   "1064": "ALL DOMAINS\nPRACTICE EXAM3\nWhat this course tried to do\nTeach the decisions, rather than the service descriptions.\nName the deciding sentence in every worked scenario.\nON THE EXAM\nGood luck. The reasoning transfers well beyond the exam, which is rather the point.\nPRACTICE EXAM 3\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com\n50/50"
+  }
+ },
+ {
+  "id": "LOC-390",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer recommend?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 31/43 --- page 466 --- D2ST0RE",
+     "correct": true
+    },
+    {
+     "label": "E",
+     "body": "Here it means a one query in one system the team already runs. second system to run and the filter columns living elsewhere. MemoryDB Athena over document text Lowest latency, at in-memory prices for two million vectors, Keyword matching over files.The whole requirement is and nothing here requires microseconds. finding matches where the wording differs. THE SIGNAL CHOOSING A DATA STORE admin@sthithapragna.com 31/43 --- page 466 --- D2ST0RE",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   466
+  ],
+  "ocr_pages": {
+   "464": "D2ST0RE\nWORKEDSCENARI040F8\nAn insurance company runs its policy administration system on Amazon Aurora PostgresQL.\ndiffers.\nThere are around two million document chunks. Searches must also filter by policy type and\neffective date, which are columns already in the Aurora database. The team is small and\nwants to avoid running another system.\nWhat should the data engineer recommend?\nStore the embeddings in Aurora PostgreSQL\nDeploy an Amazon OpenSearch Service domain\nusing pgvector with an HNsw index\nand index the embeddings there\nStore the embeddings in Amazon MemoryDB for\nUseAmazonAthena tosearch thedocument\nthe lowest possible latency\ntext stored in Amazon S3\nPAUSE ANDDECIDE\nCHOOSING A DATA STORE\nadmin@sthithapragna.com\n30/43",
+   "465": "D2ST0RE\nWORKED SCENARI04 0F 8-WORKED\nWhat should the data engineer recommend?\npgvector with HNsw in Aurora\nAn OpenSearch domain\nEmbeddings sit beside the columns being filtered on, so it is\nThe strongest choice at large scale. Here it means a\none query in one system the team already runs.\nsecond system to run and the filter columns living\nelsewhere.\nMemoryDB\nAthena over document text\nLowest latency, at in-memory prices for two million vectors,\nKeyword matching over files.The whole requirement is\nand nothing here requires microseconds.\nfinding matches where the wording differs.\nTHE SIGNAL\nCHOOSING A DATA STORE\nadmin@sthithapragna.com\n31/43",
+   "466": "D2ST0RE\nWORKED SCENARIO 5 OF 8\nIt needs semantic retrieval, keyword matching for exact product codes, filtering by product\nline, and relevance tuning. Query volume is high and latency must stay under two hundred\nmilliseconds.\nThe company has a platform team with capacity to operate infrastructure.\nWhich vector store fits best?\nAmazon s3 Vectors, for the lowest storage cost\nAmazon OpenSearchServicewith HNsw\nat this corpus size\nindexing and hybrid search\nAurora PostgreSQL with pgvector and an IVFFlat\nAmazon Neptune Analytics, treating articles as\nindex\nconnectednodes\nPAUSE AND DECIDE\nCHOOSING A DATA STORE\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.com\n32/43",
+   "467": "D2ST0RE\nWORKEDSCENARI05 0F 8-WORKED\nWhichvectorstorefitsbest?\nS3 Vectors\nOpenSearch with HNsw and hybrid search\nCheapest storage, and its latency is measured well above\nSemantic and keyword together is exactly hybrid search,\nthe stated two hundred millisecond budget.\nplus filtering and relevance tuning, at the required latency.\npgvector with IVFFlat\nNeptune Analytics\nWorkable, and no relational data is involved here, and IVF\nGraph plus vectors. Nothing in the requirement is about\ntrades recall for memory in a system built for accuracy.\nrelationshipsbetweenarticles.\nTHE SIGNAL\nCompare with scenario 4. Same technology, different answer, because the\nrequirements point elsewhere.\nCHOOSING A DATA STORE\nadmin@sthithapragna.com\n33/43"
+  }
+ },
+ {
+  "id": "LOC-391",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "What should the data engineer use?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte fil",
+     "correct": false
+    },
+    {
+     "label": "E",
+     "body": "Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all. PRACTICE EXAM 3 admin@sthithapragna.com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   1032
+  ],
+  "ocr_pages": {
+   "1030": "ALL DOMAINS\nQUESTI0N 70F 20·D0MAIN1\ndates, and writes Parquet. It currently runs as an Aws Glue Spark job with the default\nallocation and takes about four minutes, most of which is startup.\nThe team wants the lowest cost for this specific step.\nWhat should the data engineer use?\nAn AwS Lambda function triggered by the file\nKeep the Glue Spark job and reduce it to the\narrival\nminimum two DPUs\n A Glue Python shell job\nAnAmazon EMR Serverless application\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n16/50",
+   "1031": "ALL DOMAINS\nQUESTION7·WORKED\nWhat should the data engineer use?\nA Lambda function\nTwo DPUs on Spark\nMegabytes, three trivial transformations, seconds of work.\nA real improvement, and still a Spark cluster starting up for\nNo startup overhead and no billing minimumbeyond the\ntwo megabytes, with a one minute billing minimum each\nmilliseconds used.\nhour.\nA Glue Python shell job\nEMR Serverless\nGenuinely close, and cheaper than Spark. It still carries Glue\nA Spark runtime for a two megabyte file. Heavier than the\nstartup time and a oneminuteminimum,twentyfour times\noption it would replace.\na day.\nTHE SIGNAL\nTwo megabytes and three trivial transformations. Nothing here needs a distributed\nengine at all.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n17 /50",
+   "1032": "ALL DOMAINS\nQUESTION80F 20·D0MAIN2\nA company is launching a new product and will store its telemetry in Amazon S3. Nobody\ncan predict how often the data will be read, and access patterns are expected to change as\nthe product matures. Objects average four megabytes.\nThe team wants to minimise storage cost without risking retrieval charges from a wrong\nguess.\nWhat should the data engineer configure?\nA lifecycle rule transitioning to Standard-IA after\n S3 Intelligent-Tiering\nthirty days\nA lifecycle rule transitioning to Glacier Instant\nS3 One Zone-Infrequent Access from the outset\nRetrieval after seven days\nPAUSE AND DECIDE\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n18/50",
+   "1033": "ALL DOMAINS\nQUESTION8·WORKED\nWhat should the data engineer configure?\nLifecycle to Standard-IA\nS3 Intelligent-Tiering\nA lifecycle rule encodes a guess about access. The\nMoves objects between tiers based on observed access,\nwithnoretrieval feesand nominimumduration.Built for\nmeans retrieval charges.\nunknown patterns.\nGlacier Instant Retrieval after seven days\nOne Zone-lA from the outset\nAssumes infrequent access from day one, and stores the\naccesswouldbechargedandearlydeletionpenalised.\nonly copy in a single Availability Zone.\nTHE SIGNAL\n\"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost\nword for word.\nPRACTICE EXAM 3\nadmin@sthithapragna.com\n19/50"
+  }
+ },
+ {
+  "id": "LOC-392",
+  "source": "pdf_slide_deck",
+  "domain": "D1",
+  "current": {
+   "stem": "Why did the first attempt fail, and what should replace it?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "com 22 / 24 --- page 183 --- D1INGEST",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "Matches the access pattern. reads. Faster than Athena, still the wrong shap",
+     "correct": false
+    },
+    {
+     "label": "E",
+     "body": "THE SIGNAL Compare with scenario 1. There, streaming was overkill. Here, an analytical store is underpowered. Same question, opposite direction. THE MENTAL MODEL admin@sthithapragna.com 22 / 24 --- page 183 --- D1INGEST",
+     "correct": false
+    }
+   ]
+  },
+  "referenced_pages": [
+   183
+  ],
+  "ocr_pages": {
+   "182": "D1INGEST\nCHOOSING A TRANSFORMATION ENGINE\nMaking EMR cheap\n Spot Instances on task nodes. Up to ninety percent off, and interruption is survivable.\n Keep primary and core on-demand. Losing them costs you the cluster or the data.\n Instance fleets mix several instance types, so one Spot pool drying up is not fatal.\nManaged scaling resizes the cluster to the workload between limits you set.\n Transient clusters for scheduled work. Nothing runs between jobs.\nON THEEXAM\nInstance groups are one instance type each. Instance fleets mix types and are the\nanswer to Spot availability questions.\nCHOOSING A TRANSFORMATION ENGINE\nadmin@sthｉthapragna.com\n10/48",
+   "183": "D1INGEST\nWORKEDSCENARIO1OF8\nA media company runs an Amazon EMR cluster on EC2 twenty four hours a day. The cluster\nruns a nightly Apache Hive job that takes about three hours, and nothing else. It uses fifteen\non-demand core nodes and stores intermediate data in HDFS on those nodes.\nFinance has flagged the cost. The job must still complete overnight, and the team has a\nlarge body of existing Hive scripts they do not want to rewrite.\nWhich combination will reduce cost the most while meeting the requirements?\nMigrate the Hive scripts to Aws Glue and run\nStore data in Amazon S3 with EMRFS, run a\nthem as scheduled Spark jobs\ntransient cluster nightly, and use Spot Instances\nfor task nodes\nSwitch all fifteen core nodes toSpot Instances\nReduce thecluster fromfifteennodes tofive\nand keep the cluster running\nand accept a longer runtime\nPAUSE AND DECIDE\nCHOOSING A TRANSFORMATION ENGINE\nadmin@sthithapragna.com\n11/ 48",
+   "184": "D1INGEST\nWORKED SCENARIO 1 OF 8- WORKED\nWhich combination will reduce cost the most while meeting the requirements?\nMigrate Hive to Glue\nS3 with EMRFS, transient cluster, Spot task nodes\nGlue does not run Hive, so this means rewriting every script\nStops paying for twenty one idle hours a day, and discounts\nin Spark. Explicitly ruled out by the question.\nthe three that remain. Hive still runs unchanged.\nAll core nodes on Spot\nFive nodes, longer runtime\nCore nodes hold HDFS. An interruption loses data mid-job,\nSaves two thirds of a bill you should not be paying at all.\nand theclusterstill runsalldayregardless.\nThe waste is the idle time, not the node count.\nTHE SIGNAL\nTwenty four hours of cluster for three hours of work. The waste is time, not size.\nCHOOSING A TRANSFORMATION ENGINE\nadmin@sthithapragna.com\n12/48"
+  }
+ },
+ {
+  "id": "LOC-393",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "A logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Around forty microservices produce and consume from it using Kafka client libraries and a schema registry. The operations team spends significant time patching brokers and rebalancing partitions. The company wants to reduce that operational work. Throughput is high, steady and well understood, and the services must not be rewritten. What should the data engineer recommend?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Amazon Msk Serverless",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Amazon Kinesis Data Streams in on-demand",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "Amazon MsK Provisioned, migrating the existing",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Amazon Data Firehose delivering to Amazon s3",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 924,
+  "exam_number": 1,
+  "source_question_number": 1,
+  "ocr_pages": {
+   "924": "ALL DOMAINS\nQUESTION 1 0F 20 · D0MAIN 1\nA logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Around\nforty microservices produce and consume from it using Kafka client libraries and a schema\nregistry. The operations team spends significant time patching brokers and rebalancing\npartitions.\nThe company wants to reduce that operational work. Throughput is high, steady and well\nunderstood, and the services must not be rewritten.\nWhat should the data engineer recommend?\nAmazon Msk Serverless\nB\nAmazon Kinesis Data Streams in on-demand\nmode\nAmazon MsK Provisioned, migrating the existing\nAmazon Data Firehose delivering to Amazon s3\ntopics\nPAUSEANDDECIDE\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n04/47",
+   "925": "ALL DOMAINS\nQUESTION 1 : WORKED\nWhat should the data engineer recommend?\nAmazon Msk Serverless\nB\nKinesis Data Streams\nAlso Kafka compatible, and priced for variable load.\nA different APl. Forty services using Kafka client libraries\nThroughput here is steady and measured, which favours\nwould all need rewriting, which the question forbids.\nprovisioned.\nAmazon MsK Provisioned\nAmazon Data Firehose\nKafka compatible, so nothing is rewritten, and Aws patches\nA delivery service with no Kafka APl and no consumers. It\nthe brokers. Steady, well understood throughput suits\ncannot replace a message bus forty services depend on.\nprovisioned capacity.\nTHE SIGNAL\nTwo Kafka-compatible options. The word 'steady' separates them, exactly as module\n2l's provisioned-or-serverless pair predicts.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n05/47"
+  },
+  "source_answer_from_parse": ""
+ },
+ {
+  "id": "LOC-394",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "An Aws Glue job reads JsON files from a partner and writes Parquet to a curated table. It has run nightly for a year. Last week the partner added a nested field and changed one integer column to sometimes contain a string. The job now fails on some nights and succeeds on others. When it succeeds, downstream totals are slightly lower than the source system reports. What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Increase the number of workers so the job has",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Enable job bookmarks so previously processed",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "files are skipped",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Configure the crawler's schema change policy",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 926,
+  "exam_number": 1,
+  "source_question_number": 2,
+  "ocr_pages": {
+   "926": "ALL DOMAINS\nQUESTION 2 0F 20 · D0MAIN 1\nAn Aws Glue job reads JsON files from a partner and writes Parquet to a curated table. It has\nrun nightly for a year. Last week the partner added a nested field and changed one integer\ncolumn to sometimes contain a string.\nThe job now fails on some nights and succeeds on others. When it succeeds, downstream\ntotals are slightly lower than the source system reports.\nWhat should the data engineer implement?\nIncrease the number of workers so the job has\nB\nEnable job bookmarks so previously processed\nmore memory\nfiles are skipped\nConfigure the crawler's schema change policy\nRead the data as a DynamicFrame and use\nto ignore changes\nResolveChoice to handle the ambiguous\ncolumn explicitly\nPAUSE ANDDECIDE\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n06/47",
+   "927": "ALL DOMAINS\nQUESTION 2 : WORKED\nWhat should the data engineer implement?\nMore workers\nB\nJob bookmarks\nCapacity for a type conflict. The job is not running out of\nControls which files are read. It has no bearing on how a\nmemory, it is meeting a value it cannot parse.\nvalue inside a file is parsed.\nIgnore schema changes\nDynamicFrame with ResolveChoice\nFreezes the catalog while the data keeps changing. It hides\nHandles both the intermittent failure and the silent\nthe mismatch rather than resolving it.\nundercount, by keeping both types and forcing an explicit\ndecision.\nTHE SIGNAL\nTwo symptoms, one cause. Intermittent failure and a quiet undercount are the same\ntype conflict seen twice.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n07/ 47"
+  },
+  "source_answer_from_parse": ""
+ },
+ {
+  "id": "LOC-395",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "A Step Functions state machine starts an Aws Glue job, then runs a Glue crawler, then every night. Analysts report that the crawler sometimes registers only part of the day's data, and the What is the most likely cause?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "The Lambda function is timing out before the",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "The crawler needs a longer schedule interval",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "summary is written",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "The Glue job is being invoked with the default",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 928,
+  "exam_number": 1,
+  "source_question_number": 3,
+  "ocr_pages": {
+   "928": "ALL DOMAINS\nQUESTION 30F 20·D0MAIN 1\nA Step Functions state machine starts an Aws Glue job, then runs a Glue crawler, then\nevery night.\nAnalysts report that the crawler sometimes registers only part of the day's data, and the\nWhat is the most likely cause?\nThe Lambda function is timing out before the\nThe crawler needs a longer schedule interval\nsummary is written\nThe Glue job is being invoked with the default\nThe state machine should be an Express\nrequest-response pattern, so the state machine\nworkflowrather thanStandard\ndoes not wait for it to finish\nPAUSE AND DECIDE\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n08/47",
+   "929": "ALL DOMAINS\nQUESTION 3 · WORKED\nWhat is the most likely cause?\nThe Lambda function timing out\nB\nA longer crawler interval\nA timeout would fail the state, and the state machine\nThe crawler is not on a schedule; the state machine\nreports success every night.\ninvokes it. There is no interval to change.\nRequest-response instead of .sync\nExpress workflows\nThe APl call succeeds immediately, so the state machine\nChanges duration limits and pricing. It has nothing to do\nmoves on while the Glue job is still writing. The crawler then\nwith whether a step waits for a job.\nsees partial data.\nTHE SIGNAL\nEvery step succeeds and the output is wrong. That combination points at ordering\nrather than failure.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n09/47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-396",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "A nightly Aws Glue job processes about four hundred gigabytes and takes ninety minutes. It at two. The company wants to reduce cost. evenly utilised throughout. What should the data engineer do?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Migrate the job to Amazon EMR on EC2 with Spot",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Run the job on Glue Flex execution",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "Switch to memory-optimised R workers",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "Reduce the worker count to five and accept a",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 930,
+  "exam_number": 1,
+  "source_question_number": 4,
+  "ocr_pages": {
+   "930": "ALL DOMAINS\nQUESTION 4 0F 20 · D0MAIN 1\nA nightly Aws Glue job processes about four hundred gigabytes and takes ninety minutes. It\nat two. The company wants to reduce cost.\nevenly utilised throughout.\nWhat should the data engineer do?\nMigrate the job to Amazon EMR on EC2 with Spot\nB\nRun the job on Glue Flex execution\nInstances\nSwitch to memory-optimised R workers\nReduce the worker count to five and accept a\nlonger runtime\nPAUSE ANDDECIDE\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n10/47",
+   "931": "ALL DOMAINS\nQUESTION 4 · WORKED\nWhat should the data engineer do?\nEMR with Spot\nGlue Flex\nA\nSpot is genuinely cheap, and this introduces a cluster to\nUp to 34 percent cheaper for jobs with no tight deadline. Six\noperate for a job Glue already runs well.\nhours of slack is exactly the condition Flex exists for.\nR workers\nFive workers\nMore memory per worker, at a higher price. Workers are\nFewer, slower workers process the same data. Glue bills\nevenly utilised, so memory is not the constraint.\nDPU-hours, so the total is broadly unchanged.\nTHE SIGNAL\nSix hours of slack before the deadline is the planted detail. Flex trades start-time\ncertainty for a discount.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n11 / 47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-397",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "A retailer sends clickstream events to Amazon Data Firehose, which writes raw JsoN to Amazon S3 in a single prefix. Analysts query the data with Amazon Athena and costs are rising steeply. A fraud team has now also asked to consume the same events within seconds, independently. The team wants to address both the query cost and the fraud team's requirement. What should the data engineer implement?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Increase the Firehose buffer size so fewer, larger",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Enable Firehose format conversion to Parquet",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "files are written",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "with dynamic partitioning, and add a second",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 934,
+  "exam_number": 1,
+  "source_question_number": 6,
+  "ocr_pages": {
+   "934": "ALL DOMAINS\nQUESTI0N 60F 20·D0MAIN 1\nA retailer sends clickstream events to Amazon Data Firehose, which writes raw JsoN to\nAmazon S3 in a single prefix. Analysts query the data with Amazon Athena and costs are\nrising steeply. A fraud team has now also asked to consume the same events within seconds,\nindependently.\nThe team wants to address both the query cost and the fraud team's requirement.\nWhat should the data engineer implement?\nIncrease the Firehose buffer size so fewer, larger\nEnable Firehose format conversion to Parquet\nfiles are written\nwith dynamic partitioning, and add a second\nFirehose stream for the fraud team\nKeep the current design and have the fraud\nPuta KinesisDataStream infront,with Firehose\nteam query the S3 files with Athena\nas one consumer converting to partitioned\nParquet, and the fraud team as another\nconsumer\nPAUSEANDDECIDE\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n14/ 47",
+   "935": "ALL DOMAINS\nQUESTI0N6·W0RKED\nWhat should the data engineer implement?\nLarger buffers\nConversion plus a second Firehose stream\nProduces fewer, larger files, which helps a little and leaves\nFixes the cost properly, and a second Firehose stream\nraw JsoN unpartitioned. It does nothing for the fraud team.\ndeliverstoadestinationratherthangivingthefraud team\na live feed.\nFraud team queries S3\nDataStream infront,Firehoseasoneconsumer\nFiles appear after buffering, so the fraud team is always \nConversion and partitioning fix the Athena cost; the stream\nbehind. Seconds was the stated requirement.\ngives thefraud teaman independent consumer reading\nwithin seconds.\nTHE SIGNAL\nTwo requirements again. Format and partitioning fix the cost; multiple consumers is\nthe capability Firehose lacks.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n15/ 47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-398",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D1",
+  "current": {
+   "stem": "An AwS Lambda function converts small JsON files to Parquet as they arrive in Amazon S3. It is configured with 5l2 MB of memory and takes about twenty five seconds per file. CloudWatch shows peak memory usage of around 2o0 MB. The conversion is CPU bound. The company processes around one hundred thousand files a month and wants to reduce the Lambda cost. What should the data engineer do?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Increase the memory allocation, measure the",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Reduce the memory allocation to 256 MB to",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "change in duration, and select the cheapest",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "match observed usage",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 936,
+  "exam_number": 1,
+  "source_question_number": 7,
+  "ocr_pages": {
+   "936": "ALL DOMAINS\nQUESTION 70F 20·D0MAIN 1\nAn AwS Lambda function converts small JsON files to Parquet as they arrive in Amazon S3. It\nis configured with 5l2 MB of memory and takes about twenty five seconds per file.\nCloudWatch shows peak memory usage of around 2o0 MB. The conversion is CPU bound.\nThe company processes around one hundred thousand files a month and wants to reduce\nthe Lambda cost.\nWhat should the data engineer do?\nIncrease the memory allocation, measure the\nReduce the memory allocation to 256 MB to\nchange in duration, and select the cheapest\nmatch observed usage\ntotal\nEnableprovisioned concurrency toremove cold\nIncreasethefunctiontimeouttoallowmore\nstart time\nprocessing time\nPAUSE AND DECIDE\nPRACTICE EXAM 1\nadmｉn@sthｉthａpragnａ.com\n16/ 47",
+   "937": "ALL DOMAINS\nQUESTION7·WORKED\nWhat should the data engineer do?\nRaise memory, measure, choose the cheapest\nHalve the memory\nMemory buys CPU. A CPU-bound function finishes \nHalves the CPU too. A CPU-bound function takes roughly\nproportionally sooner, and duration times rate often falls.\ntwice as long, so the bill barely moves and may rise.\nProvisioned concurrency\nA longer timeout\nRemoves cold start latency at a continuous charge. The\nNothing is timing out. A timeout is a ceiling, not a \nworktakes twentyfiveseconds;cold start isnot the cost.\nperformance or cost setting.\nTHE SIGNAL\n\"CPU bound\" and \"memory barely used\" together are the exam pointing directly at the\nmemory-equals-CPU relationship.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n17/ 47"
+  },
+  "source_answer_from_parse": "A"
+ },
+ {
+  "id": "LOC-399",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "A company stores sensor readings in Amazon s3. Objects average 30 kilobytes. Data is queried frequently for fourteen days, then very rarely, but must be retained for five years for regulatory reasons. A data engineer proposes a lifecycle rule transitioning objects to s3 Standard-lnfrequent Access after fourteen days, and expiring them after five years. What is the problem with this proposal?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Standard-IA retrieval takes several hours, which",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Standard-iA cannot be used for objects",
+     "correct": true
+    },
+    {
+     "label": "C",
+     "body": "is too slow for regulatory access",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "retained longer than one year",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 938,
+  "exam_number": 1,
+  "source_question_number": 8,
+  "ocr_pages": {
+   "938": "ALL DOMAINS\nQUESTION 80F 20·D0MAIN 2\nA company stores sensor readings in Amazon s3. Objects average 30 kilobytes. Data is\nqueried frequently for fourteen days, then very rarely, but must be retained for five years for\nregulatory reasons.\nA data engineer proposes a lifecycle rule transitioning objects to s3 Standard-lnfrequent\nAccess after fourteen days, and expiring them after five years.\nWhat is the problem with this proposal?\nStandard-IA retrieval takes several hours, which\nStandard-iA cannot be used for objects\nis too slow for regulatory access\nretained longer than one year\nLifecycle rules cannot transition objects until\nObjects of 30 KB are billed at a 128 KB minimum\nthey are thirty days old\nin Standard-lA, so storage cost may rise rather\nthan fall\nPAUSE AND DECIDE\nPRACTICE EXAM 1\nadmin@sthｉthapragna.com\n18/47",
+   "939": "ALL DOMAINS\nQUESTION 8·WORKED\nWhat is theproblem with this proposal?\nHours to retrieve\nA one year limit\nStandard-IA returns inmilliseconds.Hoursdescribes\nInvented. There is no maximum retention for any storage\nGlacierFlexibleRetrieval orDeepArchive.\nclass.\nA thirty day transition floor\n128 KB billing minimum\nStandard-iA has a thirty day minimum storage duration,\nEach 30 KB object is billed as 128KB, more than four times\nnot a minimum agebefore transition.Transitioning at\nits real size. The cheaper class becomes more expensive.\nfourteen days incurs theremainder.\nTHE SIGNAL\nThirty kilobyte objects is the planted number. Check it against the 128 KB minimum\nbefore anything else.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n19/ 47"
+  },
+  "source_answer_from_parse": "B"
+ },
+ {
+  "id": "LOC-400",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "Amazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over eight months, query times have roughly tripled and storage costs have grown faster than the underlying data volume. The platform team is two people supporting twenty pipelines and has no capacity to build and operate maintenance jobs. What should the data engineer recommend?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Increase the Firehose buffer interval to reduce",
+     "correct": true
+    },
+    {
+     "label": "B",
+     "body": "Migrate the tables to Amazon s3 Tables, which",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "the number of files written",
+     "correct": false
+    },
+    {
+     "label": "D",
+     "body": "performs compaction and snapshot",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 940,
+  "exam_number": 1,
+  "source_question_number": 9,
+  "ocr_pages": {
+   "940": "ALL DOMAINS\nQUESTI0N 9 0F 20 : D0MAIN 2\nAmazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over eight\nmonths, query times have roughly tripled and storage costs have grown faster than the\nunderlying data volume.\nThe platform team is two people supporting twenty pipelines and has no capacity to build\nand operate maintenance jobs.\nWhat should the data engineer recommend?\nIncrease the Firehose buffer interval to reduce\nB\nMigrate the tables to Amazon s3 Tables, which\nthe number of files written\nperforms compaction and snapshot\nmanagement automatically\nConvert the tables from lceberg back to plain\nWrite a scheduled Spark job on Amazon EMR to\nParquet\ncompact files and expire snapshots\nPAUSE AND DECIDE\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n20/47",
+   "941": "ALL DOMAINS\nQUESTI0N 9 : W0RKED\nWhat should the data engineer recommend?\nLarger Firehose buffers\nMigrate to S3 Tables\nReduces new small files and does nothing about eight\nCompaction, snapshot expiry and orphan removal run\nmonths of accumulation or the stale snapshots inflating\nautomatically. Both symptoms addressed with nothing new\nstorage.\nto operate.\nBack to plain Parquet\nA scheduled compaction job\nRemoves the ability to apply the continuous updates the\nTechnically the correct fix, and it is exactly the\npipeline depends on. It solves maintenance by removing a\nmaintenance work the question says the team cannot take\nrequirement.\non.\nTHE SIGNAL\nSlower queries plus storage outgrowing data is the signature of unmaintained lceberg.\nThe team constraint picks the option.\nPRACTICE EXAM 1\nadmin@sthithapragna.com\n21 / 47"
+  },
+  "source_answer_from_parse": ""
+ },
+ {
+  "id": "LOC-401",
+  "source": "pdf_slide_practice_exam",
+  "domain": "D2",
+  "current": {
+   "stem": "An Amazon Redshift cluster holds a three billion row events table and a fifty thousand row campaigns table. Almost every query joins the two on campaign ID and filters on an event date range covering the last seven days. Both tables currently use EVEN distribution and neither has a sort key. Monitoring shows heavy data redistribution during joins. Which combination will most improve performance?",
+   "type": "single",
+   "options": [
+    {
+     "label": "A",
+     "body": "Enable concurrency scaling on the cluster",
+     "correct": false
+    },
+    {
+     "label": "B",
+     "body": "Add four more nodes to the cluster",
+     "correct": false
+    },
+    {
+     "label": "C",
+     "body": "Set both tables to KEY distribution on campaign",
+     "correct": true
+    },
+    {
+     "label": "D",
+     "body": "Set the events table toKEY distribution on",
+     "correct": false
+    }
+   ]
+  },
+  "slide_page": 942,
+  "exam_number": 1,
+  "source_question_number": 10,
+  "ocr_pages": {
+   "942": "ALL DOMAINS\nQUESTI0N 10 0F 20·D0MAIN2\nAn Amazon Redshift cluster holds a three billion row events table and a fifty thousand row\ncampaigns table. Almost every query joins the two on campaign ID and filters on an event\ndate range covering the last seven days.\nBoth tables currently use EVEN distribution and neither has a sort key. Monitoring shows\nheavy data redistribution during joins.\nWhich combination will most improve performance?\nEnable concurrency scaling on the cluster\nAdd four more nodes to the cluster\nSet both tables to KEY distribution on campaign\nSet the events table toKEY distribution on\nID and add interleaved sort keys\ncampaign ID, the campaigns table to ALL, and\nadd a compound sort key on event date\nPAUSE AND DECIDE\nPRACTICE EXAM 1\nａdmｉｎ@ｓtｈｉｔhａｐrａｇｎａ.cｏom\n22/47",
+   "943": "ALL DOMAINS\nQUESTI0N 10· W0RKED\nWhich combination will most improve performance?\nConcurrency scaling\nFour more nodes\nAddresses queries waiting to start. These queries are slow\nMore slices performing the same redistribution on every\nwhile running.\njoin. Cost rises and the cause remains.\nKEY on both, interleaved sort\nKEY on events, ALL on campaigns, sort on date\nKEY on a small dimensionwastesthemechanism,and\nFiftythousandrowsreplicatedtoeverynoderemovesthe\ninterleaved suitsunpredictable filters.Thesealwaysfilteron\nexchange, and a date sort key lets zone maps skip\ndate.\neverything outside seven days.\nTHE SIGNAL\nFifty thousand rows is small enough for ALl. Three billion joined on one column is the\nKEY case.\nPRACTICE EXAM 1\nａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com\n23/47"
+  },
+  "source_answer_from_parse": "C"
+ }
+]

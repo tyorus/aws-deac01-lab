@@ -1,0 +1,410 @@
+[
+ {
+  "id": "LOC-385",
+  "src": "pdf_slide_deck",
+  "sig": "Two access patterns, thirty days and seven years, need two storage tiers. This is module eight's lifecycle argument applied to logs.",
+  "opts": "Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs"
+ },
+ {
+  "id": "LOC-386",
+  "src": "pdf_slide_deck",
+  "sig": "Two distinct requirements, two native Redshift features. The eleven views exist because neither was used.",
+  "opts": "A Create one table per region with the identifier B Continue with views, generating them column omitted where required automatically when the schema changes Move the data to Amazon S3 and apply Lake Row-level security policies for the regional Formation data filters filtering, and dynamic data masking on the identifier column by role"
+ },
+ {
+  "id": "LOC-387",
+  "src": "pdf_slide_deck",
+  "sig": "\"Partial figures are worse than no figures\" is the clause choosing fail over quarantine. It is the only difference.",
+  "opts": "ALL DOMAINS QUESTION 15 0F 20·DOMAIN3 Occasionally a small number of records arrive with a missing settlement currency. Partial figures are worse than no figures for this use case, because reports built on incomplete data have twice been filed. The team wants to catch this and does not want to write custom validation code. SelectTwoactions the data engineer should take. Add AWS Glue Data Quality r"
+ },
+ {
+  "id": "LOC-388",
+  "src": "pdf_slide_deck",
+  "sig": "decryption signature.",
+  "opts": "Movethedata toS3Standard-Infrequent Switch the bucket to SSE-s3 encryption Access Request a KMS request quota increase Enable S3 Bucket Keys on the bucket"
+ },
+ {
+  "id": "LOC-389",
+  "src": "pdf_slide_deck",
+  "sig": "",
+  "opts": ""
+ },
+ {
+  "id": "LOC-390",
+  "src": "pdf_slide_deck",
+  "sig": "CHOOSING A DATA STORE",
+  "opts": "Store the embeddings in Aurora PostgreSQL Deploy an Amazon OpenSearch Service domain using pgvector with an HNsw index and index the embeddings there Store the embeddings in Amazon MemoryDB for UseAmazonAthena tosearch thedocument the lowest possible latency text stored in Amazon S3"
+ },
+ {
+  "id": "LOC-391",
+  "src": "pdf_slide_deck",
+  "sig": "Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all.",
+  "opts": "An AwS Lambda function triggered by the file Keep the Glue Spark job and reduce it to the arrival minimum two DPUs A Glue Python shell job AnAmazon EMR Serverless application"
+ },
+ {
+  "id": "LOC-392",
+  "src": "pdf_slide_deck",
+  "sig": "Twenty four hours of cluster for three hours of work. The waste is time, not size. CHOOSING A TRANSFORMATION ENGINE",
+  "opts": "Migrate the Hive scripts to Aws Glue and run Store data in Amazon S3 with EMRFS, run a them as scheduled Spark jobs transient cluster nightly, and use Spot Instances for task nodes Switch all fifteen core nodes toSpot Instances Reduce thecluster fromfifteennodes tofive and keep the cluster running and accept a longer runtime"
+ },
+ {
+  "id": "LOC-393",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two Kafka-compatible options. The word 'steady' separates them, exactly as module 2l's provisioned-or-serverless pair predicts.",
+  "opts": "Amazon Msk Serverless B Amazon Kinesis Data Streams in on-demand mode Amazon MsK Provisioned, migrating the existing Amazon Data Firehose delivering to Amazon s3 topics"
+ },
+ {
+  "id": "LOC-394",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two symptoms, one cause. Intermittent failure and a quiet undercount are the same type conflict seen twice.",
+  "opts": "Increase the number of workers so the job has B Enable job bookmarks so previously processed more memory files are skipped Configure the crawler's schema change policy Read the data as a DynamicFrame and use to ignore changes ResolveChoice to handle the ambiguous column explicitly"
+ },
+ {
+  "id": "LOC-395",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Every step succeeds and the output is wrong. That combination points at ordering rather than failure.",
+  "opts": "The Lambda function is timing out before the The crawler needs a longer schedule interval summary is written The Glue job is being invoked with the default The state machine should be an Express request-response pattern, so the state machine workflowrather thanStandard does not wait for it to finish"
+ },
+ {
+  "id": "LOC-396",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Six hours of slack before the deadline is the planted detail. Flex trades start-time certainty for a discount.",
+  "opts": "Migrate the job to Amazon EMR on EC2 with Spot B Run the job on Glue Flex execution Instances Switch to memory-optimised R workers Reduce the worker count to five and accept a longer runtime"
+ },
+ {
+  "id": "LOC-397",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two requirements again. Format and partitioning fix the cost; multiple consumers is the capability Firehose lacks.",
+  "opts": "Increase the Firehose buffer size so fewer, larger Enable Firehose format conversion to Parquet files are written with dynamic partitioning, and add a second Firehose stream for the fraud team Keep the current design and have the fraud Puta KinesisDataStream infront,with Firehose team query the S3 files with Athena as one consumer converting to partitioned Parquet, and the fraud team as another co"
+ },
+ {
+  "id": "LOC-398",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"CPU bound\" and \"memory barely used\" together are the exam pointing directly at the memory-equals-CPU relationship.",
+  "opts": "Increase the memory allocation, measure the Reduce the memory allocation to 256 MB to change in duration, and select the cheapest match observed usage total Enableprovisioned concurrency toremove cold Increasethefunctiontimeouttoallowmore start time processing time"
+ },
+ {
+  "id": "LOC-399",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Thirty kilobyte objects is the planted number. Check it against the 128 KB minimum before anything else.",
+  "opts": "Standard-IA retrieval takes several hours, which Standard-iA cannot be used for objects is too slow for regulatory access retained longer than one year Lifecycle rules cannot transition objects until Objects of 30 KB are billed at a 128 KB minimum they are thirty days old in Standard-lA, so storage cost may rise rather than fall"
+ },
+ {
+  "id": "LOC-400",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Slower queries plus storage outgrowing data is the signature of unmaintained lceberg. The team constraint picks the option.",
+  "opts": "Increase the Firehose buffer interval to reduce B Migrate the tables to Amazon s3 Tables, which the number of files written performs compaction and snapshot management automatically Convert the tables from lceberg back to plain Write a scheduled Spark job on Amazon EMR to Parquet compact files and expire snapshots"
+ },
+ {
+  "id": "LOC-401",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Fifty thousand rows is small enough for ALl. Three billion joined on one column is the KEY case.",
+  "opts": "Enable concurrency scaling on the cluster Add four more nodes to the cluster Set both tables to KEY distribution on campaign Set the events table toKEY distribution on ID and add interleaved sort keys campaign ID, the campaigns table to ALL, and add a compound sort key on event date"
+ },
+ {
+  "id": "LOC-402",
+  "src": "pdf_slide_practice_exam",
+  "sig": "An existing table plus a new access pattern is always a Gsl. LSls cannot be added after creation.",
+  "opts": "A global secondary index partitioned by A local secondary index with customer ID as the customerID and sorted by order date sort key A Scanwith a filter expressiononcustomer ID Export the table to AmazonS3 and query it with Amazon Athena"
+ },
+ {
+  "id": "LOC-403",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Spectrum also queries this table. That single sentence is what rules out partition projection.",
+  "opts": "Reduce the crawler schedule to every three Configure partition projection on the table in minutes Athena EnableenableUpdateCatalogontheGlue job RunMSCK REPAIRTABLEona scheduleinstead of so it registers its own partitions, and remove the the crawler crawler"
+ },
+ {
+  "id": "LOC-404",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Nothing failed. Every option that monitors for failure is answering a question the scenario did not ask.",
+  "opts": "Lower the failure alarm threshold to fire on a B Enable Aws CloudTrail so the rule change is single failed run recorded Create an alarm on the job's succeeded run Add a notification step at the end of the Glue count falling below one in twenty four hours, job with missing data treated as breaching"
+ },
+ {
+  "id": "LOC-405",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Counts match because they were taken after the join. The dropped rows were never in either number.",
+  "opts": "The row count check is sufficient, so the source The job is running out of memory and dropping system figure must be wrong records. A Cloudwatch memory alarm would detect it Redshift compression is losing precision. A An inner join is dropping transactions whose checksum comparison would detect it merchant code is missing from the reference table. A Referentiallntegrity rule would detect it"
+ },
+ {
+  "id": "LOC-406",
+  "src": "pdf_slide_practice_exam",
+  "sig": "The two numbers are given separately on purpose. Waiting and running slowly have no answers in common.",
+  "opts": "Enable concurrency scaling on the dashboard B Add sort and distribution keys to the dashboard queue and set WLM query priority above the tables transformation workload Run VACUUM and ANALYZE every morning before Resize the cluster to double the node count business hours"
+ },
+ {
+  "id": "LOC-407",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Cross-account access to encrypted data needs three policies to align. CloudTrail names which one failed.",
+  "opts": "The KMs key policy does not permit the partner's B The objects must be re-encrypted with sSE-s3 role to use the key for cross-account access S3 Bucket Keys must be enabled before cross- The partner must be added as an IAM user in account decryption works the owning account"
+ },
+ {
+  "id": "LOC-408",
+  "src": "pdf_slide_practice_exam",
+  "sig": "The proposal is impossible rather than merely suboptimal. Recognising that is faster than weighing the alternatives.",
+  "opts": "Encrypt the three columns with a KMS key the IAM cannot express column-level permissions. modelling team cannot use Use Aws Lake Formation column-level grants or a data filter Create a redacted copy of the table for the The IAM policy must be attached to the bucket modelling team rather than the role"
+ },
+ {
+  "id": "LOC-409",
+  "src": "pdf_slide_practice_exam",
+  "sig": "One word decides it. Rotation eliminates Parameter Store, and a third-party APl key eliminates a role.",
+  "opts": "Store both in Systems Manager Parameter Store Store both in Aws Secrets Manager, with as Securestring parameters rotation enabled ontheRedshiftsecret Store the APl key inParameter Storeand the Attach an IAM roleto the Glue job that covers Redshift password in Secrets Manager, with both credentials rotation enabled"
+ },
+ {
+  "id": "LOC-410",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two findings, one cause. Both are derived artefacts that inherited the data's sensitivity but not its constraint.",
+  "opts": "Encrypt the snapshots and query results so their Apply Lake Formation row-level filters to the location is no longer material affected tables Delete the disaster recovery snapshots and Relocate the snapshot copies and the Athena acceptthereducedresilience results location into the required Region, and apply a service control policy restricting which Regions may be used"
+ },
+ {
+  "id": "LOC-411",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"within any two minute window\" is the windowing signal. Counting across time is what separates Flink from Firehose.",
+  "opts": "Amazon Managed Service for Apache Flink with B Amazon Data Firehose delivering to Amazon S3, a two minute tumbling window with a scheduled Glue job checking for the pattern An Aws Lambda consumer that counts Amazon Athena querying the raw stream data transactions per card in memory every minute"
+ },
+ {
+  "id": "LOC-412",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Cost growing with total accumulated data rather than with daily volume is the reprocessing signature.",
+  "opts": "Increase the number of workers so the job B Enable job bookmarks so each run processes completes in the original time only files added since the last run Switch the job to Glue Flex execution Partition the output table by date"
+ },
+ {
+  "id": "LOC-413",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Twenty four hours of cluster for four hours of work. The waste is time, and Hive rules out Glue in one word.",
+  "opts": "Migrate the Hive scripts to Aws Glue and run B Move all core nodes to Spot Instances and keep them as Spark jobs the cluster running Halve the cluster size and accept a longer Store data in Amazon S3 with EMRFS, run a runtime transient cluster nightly, and use Spot Instances for task nodes"
+ },
+ {
+  "id": "LOC-414",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Forty minutes crosses Lambda's hard fifteen minute ceiling. That number is in the question to eliminate Lambda.",
+  "opts": "Increase the Lambda function's timeout and B An Amazon EMR cluster with a step per file memory allocation Aws Batch, running each file as a containerised An Aws Glue Spark job triggered per file job"
+ },
+ {
+  "id": "LOC-415",
+  "src": "pdf_slide_practice_exam",
+  "sig": "The proposal lists four things AppFlow does for you. A question describing that much plumbing is naming the managed service.",
+  "opts": "Amazon AppFlow, with a scheduled flow B Build the Lambda function as proposed, with performing the mapping and filtering EventBridge Scheduler triggering it daily Aws DMS with Salesforce as a source endpoint AWs DataSync to transfer the Salesforce data"
+ },
+ {
+  "id": "LOC-416",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Throttling at forty percent utilisation, unimproved by two capacity increases, is the hot partition signature.",
+  "opts": "Increase the shard count again Switch the stream to on-demand capacity mode Use a composite partition key combining store Enableenhancedfan-outfortheconsumers ID with a random suffix"
+ },
+ {
+  "id": "LOC-417",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Row-level deletion inside shared files is precisely the problem open table formats exist to solve.",
+  "opts": "Convert the dataset to Apachelceberg tables EnableS3Versioningso a failed rewritecanbe and use DELETE statements rolled back Repartition the data by customer identifier so Apply S3 Object Lock so files cannot be whole files canbedeleted corrupted during rewriting"
+ },
+ {
+  "id": "LOC-418",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"Join old and recent data in a single query\" is the clause that makes it Spectrum rather than Athena.",
+  "opts": "Reduce the cluster node count to lower the Move the older data to a second Redshift storage cost cluster and use data sharing Unload data older than six months to Amazon Unload older data to Amazon S3 and have S3 as partitioned Parquet and query it with auditors useAmazonAthena Redshift Spectrum"
+ },
+ {
+  "id": "LOC-419",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Eighty services using MongoDB drivers is a compatibility requirement. Aggregation pipelines make it stricter still.",
+  "opts": "Amazon Keyspaces, which is designed for B Amazon DynamoDB, which is fully managed flexible schemas and handles document workloads Amazon Aurora PostgreSQL using JSONB Amazon DocumentDB, which is MongoDB columns compatible"
+ },
+ {
+  "id": "LOC-420",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Twenty terabytes known, seventy billed. Two planted details, versioning and failed uploads, explain the fifty.",
+  "opts": "Enable S3 Intelligent-Tiering so infrequently B Enable Cross-Region Replication and delete the accessed data moves to cheaper tiers primary copies Disable versioning to stop old versions Add lifecycle rules to expire noncurrent versions accumulating and to abort incomplete multipart uploads"
+ },
+ {
+  "id": "LOC-421",
+  "src": "pdf_slide_practice_exam",
+  "sig": "One column holding the whole line is the classic unrecognised-format symptom. A classifier is the fix.",
+  "opts": "Increase the crawler's sample size so it reads B Create a custom classifier defining the pipe more files delimiter, and rerun the crawler Set the crawler's schema change policy to Convert the files to Parquet before crawling update the table them"
+ },
+ {
+  "id": "LOC-422",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Correct results and a full table scan together is the silent pruning failure. Nothing errors.",
+  "opts": "The table needs a Glue partition index The workgroup's data scan limit has been set too high Thefilter is applied toa derived value, so Parquet files are too small and need Athena cannot prune partitions compaction"
+ },
+ {
+  "id": "LOC-423",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Log delivery is configured at cluster creation. After a transient cluster terminates, the decision has already been made.",
+  "opts": "Rerun the job on a long-running cluster to Configure the cluster to archive logs to Amazon reproduce the failure S3 and enable the persistent Spark history server Enable Aws CloudTrail to record what the job Increasetheclustersizesothejobdoesnotfail did"
+ },
+ {
+  "id": "LOC-424",
+  "src": "pdf_slide_practice_exam",
+  "sig": "A gradual drift with all rules passing is exactly the failure static rules cannot catch. That is what anomaly detection is for.",
+  "opts": "Add an IsCompleterule on the description Run the ruleset twice daily instead of once column with a one hundred percent threshold Increase the Glue job's worker count so more Enable anomaly detection so statistics records arevalidated gathered across runs flag unexpected changes"
+ },
+ {
+  "id": "LOC-425",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two requirements: a private path, and a restricted set of destinations. Only an endpoint policy delivers the second.",
+  "opts": "An IAM policy on the Glue role permitting only Bucket policies on each of the three buckets, those three buckets keeping the NAT gateway Move the Glue jobs into public subnets to An S3 gateway endpoint with an endpoint simplify routing policy naming the three buckets, and remove the S3 route through the NAT gateway"
+ },
+ {
+  "id": "LOC-426",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Grants that appear configured and do nothing is the classic Lake Formation surprise. The pre-existing database is the clue.",
+  "opts": "Column-level grants only apply to Amazon The IAMAllowedPrincipals setting is still present, Redshift Spectrum, not to Athena so Lake Formation defers to IAM The grants need up to twenty four hours to The table must be converted to Apache Iceberg propagate for column grants to apply"
+ },
+ {
+  "id": "LOC-427",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Near silence across three hundred encrypted buckets is a symptom, not a clean result. Ask what the tool could see.",
+  "opts": "Macie lacks permission to use the KMs keys, so it Macie does not detect payment card numbers can only report object metadata without a custom data identifier Macie samples only the first megabyte of each The findings expired, because Macie retains object results for ninety days"
+ },
+ {
+  "id": "LOC-428",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Subscribers, automatic revisions, and access ending on lapse. Those three words are the Data Exchange signal.",
+  "opts": "A single bucket with a bucket policy listing all B Automate the per-customer copying with a one hundred and fifty accounts scheduled Glue job Aws Lake Formation cross-account grants to AWs Data Exchange, publishing the datasets each customer account with managed entitlements and revisions"
+ },
+ {
+  "id": "LOC-429",
+  "src": "pdf_slide_practice_exam",
+  "sig": "No s3 staging and no consumer to operate. Those two constraints together leave one option.",
+  "opts": "Amazon Data Firehose delivering to Amazon S3, B Redshift streaming ingestion, materialising the with a scheduled COPY into Redshift stream into a materialized view An Aws Lambda consumer writing rows to AWS Glue streaming job writing to Redshift Redshift with the Data APl every minute"
+ },
+ {
+  "id": "LOC-430",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two years old, default settings, fifteen percent utilisation. The defaults are the answer.",
+  "opts": "Switch the job to Glue Flex execution B Enable job bookmarks Move the job to Amazon EMR Serverless Reduce the number of workers from the default allocation to match observed utilisation"
+ },
+ {
+  "id": "LOC-431",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Parallelism upstream became a bottleneck downstream. Reserved concurrency is a throttle you apply to yourself.",
+  "opts": "Increase the RDs instance size to raise the B Enable provisioned concurrency on the Lambda connection limit function Set reserved concurrency on the Lambda Increase the Lambda function timeout function to cap simultaneous executions"
+ },
+ {
+  "id": "LOC-432",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Millions of independent objects, no custom fan-out, per-item tracking. That combination names Distributed Map.",
+  "opts": "An Aws Glue Spark job listing the prefix and A single Lambda function iterating over the processing every object objects in a loop A Step Functions inline Map state over a list of A Step Functions Distributed Map state invoking four million keys a Lambda functionper object"
+ },
+ {
+  "id": "LOC-433",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"Cannot change how it transmits\" plus SFTP names Transfer Family. The protocol is the requirement.",
+  "opts": "AWS Transfer Family with an SFTP endpoint B AWs DataSync agents at each supplier site backed by Amazon S3 Amazon AppFlow with an SFTP connector Aws Snowball Edge devices shipped to each supplier"
+ },
+ {
+  "id": "LOC-434",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all.",
+  "opts": "An AwS Lambda function triggered by the file Keep the Glue Spark job and reduce it to the arrival minimum two DPUs A Glue Python shell job AnAmazon EMR Serverless application"
+ },
+ {
+  "id": "LOC-435",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"Nobody can predict\" and \"expected to change\" is the Intelligent-Tiering signal, almost word for word.",
+  "opts": "A lifecycle rule transitioning to Standard-IA after S3 Intelligent-Tiering thirty days A lifecycle rule transitioning to Glacier Instant S3 One Zone-Infrequent Access from the outset Retrieval after seven days"
+ },
+ {
+  "id": "LOC-436",
+  "src": "pdf_slide_practice_exam",
+  "sig": "A declared primary key that did not prevent duplicates is not a bug. Redshift constraints are hints to the planner.",
+  "opts": "The rerun used a different distribution key, The primary key was declared after the table creating duplicate slices was created, so it applies only to new rows Redshift constraints are informational and not Enable automatic table optimization so Redshift enforced. Make the load idempotent with a enforces the key staging table and a MERGE statement"
+ },
+ {
+  "id": "LOC-437",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Microseconds and durable and authoritative. That combination is MemoryDB rather than any cache.",
+  "opts": "Amazon DynamoDB with DynamoDB B Amazon s3 Express One Zone Accelerator Amazon Aurora PostgreSQL with a large buffer Amazon MemoryDB cache"
+ },
+ {
+  "id": "LOC-438",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Column IDs are why a rename is safe in lceberg and unsafe in plain Parquet. That is the mechanism being tested.",
+  "opts": "Rename the column in the Glue Data Catalog B Create a view that aliases the old column name and leave the files unchanged to the new one Convert the dataset to Apache lceberg, then Rewrite all five years of Parquet files with the rename the column new column name"
+ },
+ {
+  "id": "LOC-439",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Compare with exam one's partition question. There the hour partition was unused; here it is needed, and the answer moves.",
+  "opts": "Repartition the data by day and discard the Add a Glue partition index on the partition keys hour partition Increase theAthena workgroup'squery timeout RunMSCK REPAIRTABLEtorefresh thepartition metadata"
+ },
+ {
+  "id": "LOC-440",
+  "src": "pdf_slide_practice_exam",
+  "sig": "The team's failed attempt is the clue. Alarms cannot watch logs directly, which is exactly why metric filters exist.",
+  "opts": "A CloudWatch Logs metric filter matching the A CloudWatch alarm configured with the log B pattern, with an alarm on the resulting metric group as its metric source A Cloudwatch Logs subscription filter delivering An EventBridge rule matching the log content matching events to Amazon s3"
+ },
+ {
+  "id": "LOC-441",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Identical queries against data that does not change is the caching signal. Removing work beats absorbing it.",
+  "opts": "Import the dashboard dataset into SPiCE and B Enable Redshift concurrency scaling so refresh it after the overnight load completes additional clusters absorb the morning burst Resize the Redshift cluster to handle the peak Point the dashboard at Amazon Athena over the same data in Amazon s3"
+ },
+ {
+  "id": "LOC-442",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards.",
+  "opts": "Remove the analyst's Athena permissions AnAwsBudgetalertontheAthenaservice A per-query data scan limit on the Athena Increase the workgroup's query timeout so workgroup large queries are less likely to be retried"
+ },
+ {
+  "id": "LOC-443",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"Access should end when employment ends\" is a statement about where identity lives. Only federation satisfies it.",
+  "opts": "A scheduled Lambda function deleting lAM A ninety day access key rotation policy users inactive for sixty days enforced across all accounts AwS IAMIdentityCenterfederated to the Consolidate the fifteen accounts into three corporate directory, with permission sets granting roles per account"
+ },
+ {
+  "id": "LOC-444",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two distinct requirements, two native Redshift features. The eleven views exist because neither was used.",
+  "opts": "A Create one table per region with the identifier B Continue with views, generating them column omitted where required automatically when the schema changes Move the data to Amazon S3 and apply Lake Row-level security policies for the regional Formation data filters filtering, and dynamic data masking on the identifier column by role"
+ },
+ {
+  "id": "LOC-445",
+  "src": "pdf_slide_practice_exam",
+  "sig": "decryption signature.",
+  "opts": "Movethedata toS3Standard-Infrequent Switch the bucket to SSE-s3 encryption Access Request a KMS request quota increase Enable S3 Bucket Keys on the bucket"
+ },
+ {
+  "id": "LOC-446",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both.",
+  "opts": "Granteachbusinessunitdatabase-levelLake Publish datasets as assets in Amazon Formation permissions on its own databases SageMaker Catalog and use the subscription workflow, with data owners approving requests Add more engineers to the central platform Give every analyst read access to all eight team hundred datasets and audit usage with CloudTrail"
+ },
+ {
+  "id": "LOC-447",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two requirements, two answers. Heterogeneous engines need conversion; near-zero downtime needs CDC.",
+  "opts": "ALL DOMAINS QUESTION 5 0F 20 · DOMAIN 1 source database must remain available to its application throughout, and cutover downtime must be under fifteen minutes. The database contains a number of large object columns. The team has assessed the schema and knows some stored procedures need manual work. Select Two actions the data engineer should take. Run an AWs DMS task with full load plus change B "
+ },
+ {
+  "id": "LOC-448",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two named causes, two answers. The question tells you both problems explicitly.",
+  "opts": "ALL DOMAINS QUESTION 13 0F 20 : DOMAIN 3 An analytics team queries a fifty terabyte dataset in Amazon s3 with Amazon Athena. The data is Parquet, partitioned by date. Costs have risen sharply. Investigation shows analysts write queries as SELECT star across ninety columns, and six dashboards each re-run the same four queries every ten minutes against data that is refreshed once daily. Select Two c"
+ },
+ {
+  "id": "LOC-449",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Two requirements stated, two answers. Dependency ordering and failure alerting are separate things.",
+  "opts": "ALL DOMAINS QUESTION 6 0F 20 · DOMAIN 1 Four Aws Glue jobs run nightly, each triggered by its own cron schedule spaced ninety minutes apart. Job two occasionally overruns, and when it does, job three starts against incomplete data and produces incorrect aggregates. No error is raised. The team wants the pipeline to be dependency-driven and to be alerted when any step fails. Select Two actions the "
+ },
+ {
+  "id": "LOC-450",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work.",
+  "opts": "ALL DOMAINS QUESTION 16 0F 20·DOMAIN3 An analytics team's Amazon Athena spend has grown to a level finance has queried. The data is uncompressed JsON in Amazon S3 in a single prefix, and queries filter on a date field and read eight columns out of seventy. A proposal has been made to purchase Athena capacity reservations to make the cost predictable. Select Two changes the data engineer should mak"
+ },
+ {
+  "id": "LOC-451",
+  "src": "pdf_slide_practice_exam",
+  "sig": "Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape.",
+  "opts": "ALL DOMAINS QUESTION 6 0F 20 · DOMAIN 1 A Glue job writes to a curated Amazon S3 table used by Athena. Output consists of roughly forty thousand files per day, most under two hundred kilobytes, because the job writes one file per input partition. Athena queries have become slow, spending most of their time before any data is read. The data is Parquet and correctly partitioned by date. Select Two a"
+ },
+ {
+  "id": "LOC-452",
+  "src": "pdf_slide_practice_exam",
+  "sig": "\"Partial figures are worse than no figures\" is the clause choosing fail over quarantine. It is the only difference.",
+  "opts": "ALL DOMAINS QUESTION 15 0F 20·DOMAIN3 Occasionally a small number of records arrive with a missing settlement currency. Partial figures are worse than no figures for this use case, because reports built on incomplete data have twice been filed. The team wants to catch this and does not want to write custom validation code. SelectTwoactions the data engineer should take. Add AWS Glue Data Quality r"
+ }
+]

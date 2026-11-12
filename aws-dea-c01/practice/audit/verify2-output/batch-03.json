@@ -1,0 +1,331 @@
+[
+ {
+  "group_id": "G390",
+  "answer": null,
+  "answer_status": "stem_or_options_unusable",
+  "correct_solution_summary": "Dari sisa petunjuk (pencarian kecocokan makna ketika redaksi berbeda, tanpa kebutuhan latensi mikrodetik, di sistem yang sudah dijalankan tim) solusi yang dimaksud kemungkinan vector/semantic search pada penyimpanan yang sudah ada (mis. OpenSearch k-NN), bukan MemoryDB berbiaya memori tinggi atau Athena keyword matching. Stem asli hilang sehingga tidak bisa dipastikan.",
+  "confidence": "low",
+  "reasoning": "Stem hanya berisi 'What should the data engineer recommend?' dan opsi A/E hanyalah noise OCR (footer halaman dan potongan catatan penjelasan). Dokumentasi MemoryDB menyebut vector search untuk kasus yang mengutamakan performa puncak, sedangkan OpenSearch k-NN mendukung pencarian vektor pada klaster yang lazim sudah ada; Athena hanya cocok untuk keyword/SQL. Karena tidak ada opsi nyata, tidak ada jawaban yang bisa ditetapkan.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/memorydb/latest/devguide/vector-search.html",
+   "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/knn.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Soal hasil scrape dari materi berbayar (footer 'D2ST0RE', 'admin@...'); stem dan opsi hilang total."
+ },
+ {
+  "group_id": "G392",
+  "answer": null,
+  "answer_status": "stem_or_options_unusable",
+  "correct_solution_summary": "Tidak dapat ditentukan: stem tidak memuat skenario. Catatan penjelasan yang tersisa ('streaming was overkill' pada skenario 1, 'analytical store is underpowered' di sini) mengisyaratkan pengganti berupa penyimpanan/ingest yang sesuai pola akses (mis. Kinesis Data Streams atau store operasional), tetapi tanpa opsi nyata tidak bisa dipastikan.",
+  "confidence": "low",
+  "reasoning": "Hanya ada opsi A (footer halaman), D (potongan 'Matches the access pattern... Faster than Athena, still the wrong shape') dan E (catatan penjelasan). Dokumentasi Kinesis Data Streams menjelaskan latensi put-to-get di bawah 1 detik untuk ingest real-time, relevan dengan petunjuk 'analytical store underpowered', namun skenario kegagalan percobaan pertama tidak tersedia.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Stem terpotong dan opsi berupa noise OCR; tidak ada opsi benar yang terlihat."
+ },
+ {
+  "group_id": "G393",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Migrasikan ke Amazon MSK Provisioned (klaster Kafka terkelola): kompatibel penuh dengan klien Kafka dan schema registry yang ada, tanpa menulis ulang layanan, sambil menghilangkan patching broker dan rebalancing manual.",
+  "confidence": "medium",
+  "reasoning": "MSK Serverless ditujukan untuk kapasitas on-demand yang naik-turun otomatis, mewajibkan IAM access control (ACL Kafka tidak didukung) dan memiliki kuota throughput, sehingga kurang cocok untuk beban tinggi, stabil, dan terprediksi serta klien yang tidak boleh diubah. Kinesis Data Streams dan Firehose memerlukan penulisan ulang karena bukan API Kafka. MSK Provisioned memberi kontrol kapasitas sesuai throughput tetap dan mengurangi operasi broker.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/msk/latest/developerguide/serverless.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Teks opsi C terpotong ('migrating the existing ...'), tetapi maksudnya jelas. Pilihan antara MSK Provisioned vs Serverless bergantung pada kata 'high, steady, well understood'."
+ },
+ {
+  "group_id": "G395",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "State machine harus memakai integrasi Run a Job (.sync) untuk Glue StartJobRun agar crawler baru dijalankan setelah job selesai; bila hanya memakai pola request-response default, Step Functions langsung lanjut ke crawler saat job masih berjalan sehingga hanya sebagian data ter-registrasi.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Step Functions untuk Glue menyatakan integrasi teroptimasi mendukung pola Run a Job (.sync) (arn:aws:states:::glue:startJobRun.sync) yang menunggu job selesai. Tanpa .sync (pola default request-response), state berikutnya (crawler) berjalan segera setelah job dimulai. Gejala 'crawler hanya mendaftarkan sebagian data harian' konsisten dengan hal ini, sedangkan opsi A/C (Lambda timeout sebelum ringkasan ditulis) dan B (interval jadwal crawler, tidak relevan dalam alur Step Functions) tidak menjelaskan gejala tersebut.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/step-functions/latest/dg/connect-glue.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Stem dan opsi terpotong; teks D ('The Glue job is being invoked with the default ...') diasumsikan berlanjut ke 'asynchronous/request-response integration instead of .sync'. A dan C tampak satu opsi yang terpecah (Lambda timeout ... summary is written). Kunci sumber 'A' tampak keliru."
+ },
+ {
+  "group_id": "G396",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Jalankan job batch malam yang tidak mendesak dengan Glue Flex execution class (kapasitas spare, tarif DPU lebih murah) untuk menurunkan biaya tanpa migrasi.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi properti job Glue menyebut flexible execution class cocok untuk job non-urgent, didukung Glue 3.0+ dengan worker G.1X/G.2X, dan ditagih per waktu worker berjalan. Job malam 400 GB selama 90 menit adalah kandidat Flex. Opsi R worker menambah biaya (memory-optimized), migrasi ke EMR Spot menambah beban operasional, dan mengurangi worker menjadi lima hanya memperpanjang waktu tanpa jaminan hemat bila worker sudah terpakai merata.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/glue/latest/dg/add-job.html"
+  ],
+  "docs_unreachable": [
+   "https://docs.aws.amazon.com/glue/latest/dg/flex-job.html"
+  ],
+  "notes": "Stem terpotong (jam mulai dan batas waktu hilang); jawaban mengasumsikan job tidak berbatas waktu ketat. Kunci sumber 'A' (EMR Spot) kemungkinan kurang tepat untuk 'least overhead'."
+ },
+ {
+  "group_id": "G400",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Migrasikan tabel ke Amazon S3 Tables yang menjalankan compaction dan snapshot management (expire snapshot, hapus file tak terreferensi) otomatis, sehingga tidak perlu membangun job maintenance.",
+  "confidence": "medium",
+  "reasoning": "S3 Tables mengaktifkan compaction (gabung file kecil, target 512 MB default) dan snapshot management (MaximumSnapshotAge default 120 jam) secara default untuk semua tabel. Ini menjawab file kecil dari Firehose yang memperlambat query serta snapshot lama yang membengkakkan biaya penyimpanan, tanpa kerja operasional dari tim dua orang. Menaikkan buffer Firehose hanya mengurangi jumlah file, tidak membersihkan snapshot, dan masih memerlukan pemeliharaan.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi terpecah antar label: A+C = 'Increase the Firehose buffer interval to reduce the number of files written'; B+D = 'Migrate the tables to Amazon S3 Tables, which performs compaction and snapshot ...'. Jawaban dipilih sebagai label awal (B) dari pasangan B+D. Stem terpotong tetapi konteks (Iceberg lewat Firehose) jelas."
+ },
+ {
+  "group_id": "G401",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "Distribusikan tabel events dengan KEY pada campaign ID, tabel campaigns kecil dengan ALL, dan gunakan sort key pada tanggal event agar join ter-collocate tanpa redistribusi dan filter rentang tanggal memanfaatkan zone map.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Redshift menjelaskan KEY distribution menempatkan nilai join yang sama pada slice yang sama, dan ALL menyalin seluruh tabel ke setiap node sehingga setiap join ter-collocate; EVEN tidak cocok untuk tabel yang ikut join. Menambah node atau concurrency scaling tidak menghilangkan redistribusi. Sort key pada tanggal event mempercepat filter 7 hari terakhir. Opsi D (events KEY pada campaign ID, lanjutannya hilang) paling sesuai dengan 'combination'; opsi C (keduanya KEY) terpotong.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/redshift/latest/dg/c_choosing_dist_sort.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Kedua opsi C dan D terpotong sehingga ambiguitas tersisa: bila C sebenarnya memuat sort key juga, KEY/KEY tetap ter-collocate, tetapi praktik terbaik untuk dimensi kecil adalah ALL. Kunci sumber 'C' tidak dapat dipastikan."
+ },
+ {
+  "group_id": "G402",
+  "answer": "A",
+  "answer_status": "determined",
+  "correct_solution_summary": "Buat global secondary index dengan partition key customer ID dan sort key order date, lalu Query indeks tersebut (eventually consistent sudah cukup).",
+  "confidence": "high",
+  "reasoning": "Dokumentasi DynamoDB menyatakan LSI harus memakai partition key yang sama dengan tabel dasar dan hanya dapat dibuat saat tabel dibuat, sehingga tidak mungkin pada tabel 200 juta item dengan order ID sebagai partition key. GSI dapat ditambahkan ke tabel yang sudah ada, memakai partition key/sort key berbeda, dan hanya mendukung eventual consistency, sesuai syarat soal. Scan dengan filter tidak efisien pada 200 juta item.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi terpecah: A+C = 'global secondary index partitioned by customer ID and sorted by order date'; B = LSI; D = Scan. Kunci sumber 'B' (LSI) salah."
+ },
+ {
+  "group_id": "G403",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Aktifkan enableUpdateCatalog (dengan partitionKeys) pada Glue job agar partisi baru langsung terdaftar di Glue Data Catalog saat job menulis, sehingga crawler 10 menit tidak diperlukan dan Athena maupun Redshift Spectrum melihat partisi segera.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Glue menjelaskan enableUpdateCatalog memungkinkan job ETL menambahkan partisi baru ke Data Catalog tanpa menjalankan ulang crawler. Partition projection hanya dipakai saat tabel di-query lewat Athena; Redshift Spectrum, Athena for Spark dan EMR memakai metadata partisi standar, jadi opsi B tidak berlaku karena tabel juga di-query Spectrum. Menurunkan interval crawler menambah biaya, dan MSCK REPAIR TABLE terjadwal masih mempunyai jeda dan hanya untuk Athena.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/glue/latest/dg/update-from-job.html",
+   "https://docs.aws.amazon.com/athena/latest/ug/partition-projection.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber 'B' (partition projection) jebakan karena Redshift Spectrum tidak membaca konfigurasi projection. Teks opsi C/D terpotong."
+ },
+ {
+  "group_id": "G404",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "Buat alarm pada metrik/jumlah run Glue yang berhasil (atau ketiadaan run sukses) dengan treat missing data sebagai breaching, sehingga tidak adanya eksekusi malam hari memicu alarm.",
+  "confidence": "medium",
+  "reasoning": "Alarm kegagalan hanya aktif bila ada run yang gagal; jika EventBridge rule dinonaktifkan, job tidak berjalan sama sekali sehingga tidak ada metrik gagal. Dokumentasi CloudWatch menyebut alarm dapat diatur bagaimana memperlakukan data yang hilang, dan alarm pada metrik sukses (ketiadaan = breach) mendeteksi job yang tidak berjalan. Menurunkan ambang batas gagal tidak membantu, dan CloudTrail hanya mencatat perubahan rule tanpa memberi peringatan atas job yang tidak berjalan.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html"
+  ],
+  "docs_unreachable": [
+   "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-missing-data-evaluation.html"
+  ],
+  "notes": "Opsi terpecah (A+C = 'Lower the failure alarm threshold to fire on a single failed run'); teks opsi D terpotong tetapi prinsip alarm pada 'tidak ada sukses' jelas. Halaman missing-data khusus kosong; detail treat-missing-data hanya dirujuk dari halaman alarm umum."
+ },
+ {
+  "group_id": "G408",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "IAM tidak dapat mengekspresikan izin tingkat kolom untuk tabel Glue/Athena; gunakan AWS Lake Formation column-level grants (data filter yang mengecualikan kolom nama, alamat, nomor rekening) untuk tim pemodelan.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Lake Formation menjelaskan data filtering menyediakan column-level security: pengguna hanya melihat kolom yang diizinkan, sehingga kolom PII dapat dikecualikan dari hasil query Athena. IAM policy bekerja pada level resource Glue (database/tabel), bukan kolom. Mengenkripsi kolom dengan KMS key yang tidak dapat dipakai tim bukan mekanisme akses tingkat kolom Athena dan membuat query bermasalah.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/lake-formation/latest/dg/data-filtering.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi terpecah: A+C = 'Encrypt the three columns with a KMS key the modelling team cannot use'; B+D = 'IAM cannot express column-level permissions. Use AWS Lake Formation column-level grants or ...'. Jawaban dilabeli B (awal pasangan B+D); bagian Lake Formation berada di label D. Kunci sumber 'A' salah."
+ },
+ {
+  "group_id": "G414",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan AWS Batch yang menjalankan setiap file sebagai job kontainer single-threaded; tidak ada batas 15 menit seperti Lambda.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Lambda menyatakan timeout maksimum 900 detik (15 menit), sehingga file yang butuh 8-40 menit gagal dan menaikkan timeout/memori (opsi A+C) tidak bisa melewati batas tersebut. AWS Batch menjalankan kontainer tanpa batas waktu singkat dan cocok untuk satu file per job single-threaded. EMR cluster per file terlalu berat untuk pemrosesan metadata single-thread.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/lambda/latest/dg/configuration-timeout.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Stem terpotong ('processing is single-...' kemungkinan 'threaded'). Opsi A+C = 'Increase the Lambda function's timeout and memory allocation'. Kunci sumber 'A' salah karena batas 15 menit."
+ },
+ {
+  "group_id": "G415",
+  "answer": "A",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan Amazon AppFlow dengan scheduled flow dari Salesforce ke S3 (mapping field dan filter bawaan, tanpa kode).",
+  "confidence": "high",
+  "reasoning": "Dokumentasi AppFlow menyebut layanan terkelola untuk transfer data antara aplikasi SaaS seperti Salesforce dan S3 tanpa menulis kode, dapat dijalankan sesuai jadwal. Pagination, OAuth refresh, dan retry ditangani layanan, serta mapping/filter dikonfigurasi di flow. Membangun Lambda sendiri bertentangan dengan tujuan meminimalkan kode.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Stem terpotong di awal. Opsi B+D = Lambda + EventBridge Scheduler (pilihan proposal pengembang); C = potongan 'performing the mapping and filtering'. Kunci sumber 'B' salah."
+ },
+ {
+  "group_id": "G420",
+  "answer": null,
+  "answer_status": "correct_option_missing",
+  "correct_solution_summary": "Selisih ~50 TB kemungkinan berasal dari versi noncurrent (versioning), delete marker, dan incomplete multipart uploads yang ikut ditagih di Storage Lens; atasi dengan S3 Lifecycle: NoncurrentVersionExpiration dan AbortIncompleteMultipartUpload (plus cek replikasi/ukuran).",
+  "confidence": "low",
+  "reasoning": "Metrik Storage Lens menunjukkan ObjectCount/StorageBytes mencakup versi current, noncurrent, delete marker, dan incomplete multipart uploads, serta menyediakan metrik noncurrent version bytes. Dokumentasi Lifecycle menyediakan aturan NoncurrentVersionExpiration dan AbortIncompleteMultipartUpload untuk menghapus data tersembunyi tersebut. Opsi yang terlihat (Intelligent-Tiering; CRR lalu hapus primary) tidak menjelaskan maupun mengatasi selisih penagihan, bahkan CRR menambah salinan.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html",
+   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-configuration-examples.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Stem terpotong (awal skenario hilang) dan opsi terpecah (A+C Intelligent-Tiering; B+D CRR). Soal 'which combination' tampaknya multi-jawaban dengan opsi benar hilang. Kunci sumber 'B' tidak masuk akal. Penyebab pasti bergantung pada stem yang hilang."
+ },
+ {
+  "group_id": "G422",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Filter diterapkan pada nilai turunan (fungsi atas event_timestamp), bukan pada kolom partisi event_date, sehingga Athena tidak bisa melakukan partition pruning; filter harus memakai kolom partisi langsung.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Athena menyatakan jika tabel berpartisi di-query dengan partisi dalam klausa WHERE, Athena hanya memindai partisi tersebut. Predikat yang memakai fungsi atas kolom lain tidak merujuk kolom partisi sehingga seluruh lima tahun data dipindai, walau hasilnya benar. Partition index hanya mempercepat lookup metadata, bukan pruning, dan scan limit workgroup hanya membatasi, bukan menyebabkan full scan.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/athena/latest/ug/partitions.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Teks opsi C terpotong ('The filter is applied to a derived value, so ...'). Kunci sumber 'A' salah."
+ },
+ {
+  "group_id": "G430",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "Kecilkan job (kurangi jumlah worker dari default, atau pakai worker lebih kecil) karena 8 GB data dengan utilisasi executor <15% berarti kapasitas berlebih; biaya Glue = DPU x waktu.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Glue menyatakan tagihan berdasarkan jumlah DPU yang dipakai dikali durasi, dan G.1X (1 DPU per worker) cukup untuk sebagian besar job. Job default 10 worker untuk 8 GB dengan utilisasi sangat rendah terlalu besar, sehingga menurunkan jumlah worker memangkas biaya dengan dampak waktu minimal. Job bookmarks tidak mengurangi kapasitas, EMR Serverless menambah migrasi, dan Flex tetap membayar worker berlebih.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/glue/latest/dg/add-job.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Flex (A) bisa menurunkan tarif tetapi tidak menyelesaikan overprovisioning; jawaban D dinilai paling tepat. Kunci sumber 'B' (job bookmarks) tidak menurunkan biaya kapasitas pada data kecil."
+ },
+ {
+  "group_id": "G433",
+  "answer": "A",
+  "answer_status": "determined",
+  "correct_solution_summary": "Gunakan AWS Transfer Family dengan endpoint SFTP berbasis Amazon S3 sehingga pemasok tetap memakai SFTP dan kredensial masing-masing tanpa server EC2.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Transfer Family menyebut layanan terkelola tanpa server yang harus dijalankan, mendukung SFTP langsung ke/dari S3, mempertahankan konfigurasi klien yang ada, dan umum dipakai untuk unggahan dari vendor/mitra ke data lake. DataSync memerlukan agent di tiap pemasok, dan AppFlow tidak menerima unggahan SFTP dari pemasok.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi A+C = 'AWS Transfer Family with an SFTP endpoint backed by Amazon S3'. Kunci sumber 'B' (DataSync) salah."
+ },
+ {
+  "group_id": "G438",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Buat view yang memberi alias nama kolom lama ke nama baru (file tidak diubah); mengganti nama kolom di katalog akan memutus pemetaan ke file Parquet historis.",
+  "confidence": "low",
+  "reasoning": "Dokumentasi Athena views menyebut view dapat menyembunyikan nama tabel dan kolom dasar sehingga perubahan nama diatasi dengan mendefinisikan ulang view tanpa mengubah query konsumen. Dengan begitu data historis tetap mengembalikan baris yang sama tanpa menulis ulang lima tahun file. Glue Data Catalog multi-dialect view memungkinkan view yang sama dipakai Athena dan Spark (EMR/Glue), tetapi Athena view biasa tidak selalu dapat dibaca EMR.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/athena/latest/ug/views.html",
+   "https://docs.aws.amazon.com/glue/latest/dg/catalog-views.html"
+  ],
+  "docs_unreachable": [
+   "https://docs.aws.amazon.com/athena/latest/ug/handling-schema-updates-chap.html",
+   "https://docs.aws.amazon.com/athena/latest/ug/types-of-updates.html",
+   "https://docs.aws.amazon.com/athena/latest/ug/schema-updates.html"
+  ],
+  "notes": "Opsi terpecah: A+C = 'Rename the column in the Glue Data Catalog and leave the files unchanged'; B+D = 'Create a view that aliases the old column name to the new one'. Halaman skema Athena (perilaku pemetaan kolom Parquet/ORC) gagal dibuka, sehingga confidence rendah; stem terpotong. Rename katalog pada Parquet berisiko mengembalikan NULL untuk file lama."
+ },
+ {
+  "group_id": "G439",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Tambahkan Glue partition index pada partition keys (tanggal/jam) dan aktifkan partition_filtering.enabled di Athena agar GetPartitions hanya mengambil subset partisi, tanpa kehilangan granularitas per jam.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Glue menjelaskan tanpa indeks, GetPartitions memuat semua partisi lalu memfilter, sehingga lambat pada ratusan ribu partisi; dengan indeks hanya subset yang diambil. Untuk Athena perlu menambahkan properti tabel partition_filtering.enabled=true. Mengganti partisi menjadi harian (A+C) menghapus granularitas per jam yang diminta dipertahankan, dan menaikkan timeout tidak mempercepat apa pun.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/glue/latest/dg/partition-indexes.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi A+C = 'Repartition the data by day and discard the hour partition'. Alternatif lain (partition projection) tidak ditawarkan."
+ },
+ {
+  "group_id": "G442",
+  "answer": "C",
+  "answer_status": "determined",
+  "correct_solution_summary": "Konfigurasikan per-query data scan limit pada workgroup Athena sehingga query yang memindai di atas batas otomatis dibatalkan.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Athena menjelaskan kontrol per-query menetapkan total data yang dipindai per query (10 MB hingga 7 EB) dan query yang melewatinya dibatalkan. AWS Budgets alert dan workgroup alert hanya memberi notifikasi, sedangkan menghapus izin menghambat pekerjaan analis dan menaikkan timeout tidak membatasi data scan.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/athena/latest/ug/workgroups-setting-control-limits-cloudwatch.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Stem terpotong di awal; opsi C terpotong ('per-query data scan limit on the Athena [workgroup]'). Kunci sumber 'A' salah."
+ },
+ {
+  "group_id": "G445",
+  "answer": "D",
+  "answer_status": "determined",
+  "correct_solution_summary": "Aktifkan S3 Bucket Keys pada bucket SSE-KMS dengan customer managed key untuk menurunkan permintaan ke KMS (hingga 99%) tanpa mengubah jenis enkripsi atau audit trail.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi S3 menyatakan Bucket Keys mengurangi biaya request KMS hingga 99% dengan membuat bucket-level key berumur pendek, dan KMS tetap mencatat akses di CloudTrail. Beralih ke SSE-S3 melanggar syarat customer managed key, mengganti storage class tidak mengubah jumlah request KMS, dan menaikkan kuota tidak menurunkan biaya. Catatan: objek yang sudah ada perlu disalin ulang (CopyObject) agar memakai Bucket Key.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber 'A' (S3 Standard-IA) salah. Bucket Key hanya berlaku pada objek baru kecuali objek lama disalin ulang."
+ },
+ {
+  "group_id": "G446",
+  "answer": "B",
+  "answer_status": "determined",
+  "correct_solution_summary": "Publikasikan dataset sebagai asset di Amazon SageMaker Catalog (basis Amazon DataZone) dan gunakan alur subscription request/approval sehingga pemilik data memutuskan, dengan setiap keputusan tercatat untuk audit.",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi DataZone menyebut layanan ini memungkinkan menyetujui subscription data lewat governed workflow, memberi transparansi penggunaan asset dan usage auditing, serta pemberian akses ke tabel Glue yang dikelola Lake Formation. Hal ini memindahkan keputusan dari tim platform pusat ke pemilik data. Hibah Lake Formation tingkat database per unit bisnis tidak menyediakan alur persetujuan oleh pemilik.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/datazone/latest/userguide/what-is-datazone.html"
+  ],
+  "docs_unreachable": [
+   "https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/subscribe-to-data.html",
+   "https://docs.aws.amazon.com/datazone/latest/userguide/subscribe-data.html"
+  ],
+  "notes": "Opsi terpecah: A+C = 'Grant each business unit database-level Lake Formation permissions on its own databases'; B+D = 'Publish datasets as assets in Amazon SageMaker Catalog and use the subscription [workflow]'. Dokumentasi spesifik SageMaker Catalog tidak terbuka; dasar memakai halaman DataZone. Stem terpotong. Kunci sumber 'A' tampak salah."
+ },
+ {
+  "group_id": "G448",
+  "answer": "AB",
+  "answer_status": "determined",
+  "correct_solution_summary": "Sebutkan hanya kolom yang diperlukan (kurangi data yang dipindai pada Parquet kolumnar) dan aktifkan query result reuse untuk dashboard yang menjalankan ulang query sama padahal data diperbarui sekali sehari.",
+  "confidence": "high",
+  "reasoning": "Dokumentasi Athena menyatakan format kolumnar seperti Parquet hanya membaca kolom yang diminta, sehingga menghindari SELECT * dari 90 kolom menurunkan byte yang dipindai. Query result reuse menghindari eksekusi ulang query identik (maks umur 7 hari, default 60 menit) dan mengurangi biaya byte yang dipindai. Memindahkan ke S3 Standard-IA tidak mengurangi biaya scan Athena, dan repartisi per jam justru menambah partisi tanpa menurunkan scan untuk data yang diperbarui harian.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/athena/latest/ug/reusing-query-results.html",
+   "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Kunci sumber kosong. Pernyataan SELECT * vs kolom spesifik berasal dari karakteristik penyimpanan kolumnar; halaman best-practices Athena (performance-tuning) hanya berisi kerangka kosong."
+ },
+ {
+  "group_id": "G449",
+  "answer": "AD",
+  "answer_status": "determined",
+  "correct_solution_summary": "Ganti jadwal cron dengan state machine AWS Step Functions yang memanggil setiap job berurutan (dependency-driven, misalnya integrasi .sync) dan tambahkan Catch pada tiap state yang mengarahkan kegagalan ke notifikasi (mis. SNS).",
+  "confidence": "medium",
+  "reasoning": "Dokumentasi Step Functions menjelaskan state Task, Parallel, dan Map dapat memiliki field Retry dan Catch (fallback states) untuk menangani error; integrasi Glue .sync menunggu job selesai sebelum state berikutnya, sehingga job tiga tidak mulai sebelum job dua selesai. Melebarkan jarak cron tidak menghilangkan risiko overrun dan tidak menimbulkan alert.",
+  "docs_opened": [
+   "https://docs.aws.amazon.com/step-functions/latest/dg/concepts-error-handling.html",
+   "https://docs.aws.amazon.com/step-functions/latest/dg/connect-glue.html"
+  ],
+  "docs_unreachable": [],
+  "notes": "Opsi terpecah: A+C = 'Replace the cron schedules with an AWS Step Functions state machine invoking each job in [sequence]'; B = 'Widen the gaps between the cron schedules...'; D = 'Add a Catch on each state routing failures to [SNS/notification]'. Jawaban 'AD' memakai label awal A untuk opsi Step Functions (lanjutannya di C). Kunci sumber 'B' salah."
+ }
+]
