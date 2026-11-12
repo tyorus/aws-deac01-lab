@@ -1,6 +1,6 @@
 # DEA-C01 Compiled Local Question Bank
 
-Generated: 2026-11-12T04:38:21.975Z
+Generated: 2026-11-12T05:48:22.008Z
 
 Bank soal lokal (scrape + PDF) lengkap dengan **pembahasan**.
 Bukan materi resmi AWS.
@@ -135,16 +135,35 @@ Source URL: https://examice.com/exams/amazon/dea-c01#question-4
 ## Q7. [examtopics] #4
 *App id: `LOC-007` · type: `multi`*
 
-Question #: 4 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
+A financial company wants to implement a data mesh. The data mesh must support centralized data governance, data analysis, and data access control. The company has decided to use AWS Glue for data catalogs and extract, transform, and load (ETL) operations. Which combination of AWS services will implement a data mesh? (Choose two.)
 
 - A. Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.
 - B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
 - C. Use AWS Glue DataBrew for centralized data governance and access control.
 - D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis.
+- E. Use AWS Lake Formation for centralized data governance and access control.
 
-**Answer:** B
+**Answer:** BE
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Pembahasan:** Jawaban yang tepat adalah **BE**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **B**: Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
+- **E**: Use AWS Lake Formation for centralized data governance and access control.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Lake Formation dipakai untuk tata kelola data lake, termasuk izin kolom/baris.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.
+- **C**: tidak memenuhi constraint utama soal — Use AWS Glue DataBrew for centralized data governance and access control.
+- **D**: tidak memenuhi constraint utama soal — Use Amazon RDS for data storage. Use Amazon EMR for data analysis.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/131467-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-4-discussion/
 
@@ -444,16 +463,30 @@ Source URL: https://www.examtopics.com/discussions/amazon/view/142580-exam-aws-c
 ## Q23. [examtopics] #125
 *App id: `LOC-023` · type: `multi`*
 
-Question #: 125 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application. Which solutions will minimize data loss for the application? (Choose two.)
+An application consumes messages from an Amazon Simple Queue Service (Amazon SQS) queue. The application experiences occasional downtime. As a result of the downtime, messages within the queue expire and are deleted after 1 day. The message deletions cause data loss for the application.
+
+Which solutions will minimize data loss for the application? (Choose two.)
 
 - A. Increase the message retention period
 - B. Increase the visibility timeout.
 - C. Attach a dead-letter queue (DLQ) to the SQS queue.
 - D. Use a delay queue to delay message delivery
+- E. Reduce message processing time.
 
-**Answer:** A
+**Answer:** AC
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Pembahasan:** Jawaban yang tepat adalah **AC**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Increase the message retention period.
+- **C**: Attach a dead-letter queue (DLQ) to the SQS queue.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Increase the visibility timeout.
+- **D**: tidak memenuhi constraint utama soal — Use a delay queue to delay message delivery
+- **E**: tidak memenuhi constraint utama soal — Reduce message processing time.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/145713-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-125-discussion/
 
@@ -538,16 +571,34 @@ Source URL: https://www.examtopics.com/discussions/amazon/view/151925-exam-aws-c
 ## Q28. [examtopics] #159
 *App id: `LOC-028` · type: `multi`*
 
-Question #: 159 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has an application that uses a microservice architecture. The company hosts the application on an Amazon Elastic Kubernetes Services (Amazon EKS) cluster. The company wants to set up a robust monitoring system for the application. The company needs to analyze the logs from the EKS cluster and the application. The company needs to correlate the cluster's logs with the application's traces to identify points of failure in the whole application request flow. Which combination of steps will meet these requirements with the LEAST development effort? (Choose two.)
+A company has an application that uses a microservice architecture. The company hosts the application on an Amazon Elastic Kubernetes Services (Amazon EKS) cluster.
+
+The company wants to set up a robust monitoring system for the application. The company needs to analyze the logs from the EKS cluster and the application. The company needs to correlate the cluster's logs with the application's traces to identify points of failure in the whole application request flow.
+
+Which combination of steps will meet these requirements with the LEAST development effort? (Choose two.)
 
 - A. Use FluentBit to collect logs. Use OpenTelemetry to collect traces.
 - B. Use Amazon CloudWatch to collect logs. Use Amazon Kinesis to collect traces.
 - C. Use Amazon CloudWatch to collect logs. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to collect traces.
 - D. Use Amazon OpenSearch to correlate the logs and traces.
+- E. Use AWS Glue to correlate the logs and traces.
 
-**Answer:** A
+**Answer:** AD
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Pembahasan:** Jawaban yang tepat adalah **AD**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use FluentBit to collect logs. Use OpenTelemetry to collect traces.
+- **D**: Use Amazon OpenSearch to correlate the logs and traces.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use Amazon CloudWatch to collect logs. Use Amazon Kinesis to collect traces.
+- **C**: tidak memenuhi constraint utama soal — Use Amazon CloudWatch to collect logs. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to collect traces.
+- **E**: tidak memenuhi constraint utama soal — Use AWS Glue to correlate the logs and traces.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/151926-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-159-discussion/
 
@@ -658,9 +709,26 @@ Question #: 223 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - C. Scale out the number of workers horizontally to address data skewness.
 - D. Enable the --write-shuffie-files-to-s3 job parameter. Use the salting technique.
 
-**Answer:** B
+**Answer:** AB
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Scale out the workers vertically to address data skewness.
+- **B**: Use the Spark UI and AWS Glue metrics to monitor data skew in the Spark executors.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Scale out the number of workers horizontally to address data skewness.
+- **D**: tidak memenuhi constraint utama soal — Enable the --write-shuffie-files-to-s3 job parameter. Use the salting technique.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/305570-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-223-discussion/
 
@@ -1228,9 +1296,27 @@ Question #: 310 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - C. **C:** Create a zero-ETL integration in Amazon Aurora. Select only the required tables.
 - D. **D:** Use query editor v2 in Amazon Redshift to access the data in Aurora.
 
-**Answer:** ABCD
+**Answer:** AB
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: **A:** Use AWS Database Migration Service (AWS DMS) to create a replication task. Select only the required tables.
+- **B**: **B:** Create a database in Amazon Redshift that uses the integration.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+- DMS memindahkan/mereplikasi data antar store dengan beban operasional lebih rendah dari ETL custom.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — **C:** Create a zero-ETL integration in Amazon Aurora. Select only the required tables.
+- **D**: tidak memenuhi constraint utama soal — **D:** Use query editor v2 in Amazon Redshift to access the data in Aurora.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401537-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-310-discussion/
 
@@ -1493,9 +1579,26 @@ Question #: 329 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - C. Provision an always on Amazon EC2 instance. Create a cron job that invokes the AWS Glue ETL jobs in sequence based on a predefined scheduleю
 - D. Use Amazon EventBridge rules to invoke the AWS Glue ETL jobs based on S3 object creation events. Configure the rules to chain the AWS Glue ETL jobs in sequence and handle complex job dependencies.
 
-**Answer:** A
+**Answer:** AB
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Implement the workflow by using AWS Step Functions. Configure Step Functions to coordinate the AWS Glue ETL jobs and handle error conditions with automatic retries.
+- **B**: Use AWS Glue workflows to create a graph of the ETL tasks that visually represents the dependencies between jobs and the job triggers.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Provision an always on Amazon EC2 instance. Create a cron job that invokes the AWS Glue ETL jobs in sequence based on a predefined scheduleю
+- **D**: tidak memenuhi constraint utama soal — Use Amazon EventBridge rules to invoke the AWS Glue ETL jobs based on S3 object creation events. Configure the rules to chain the AWS Glue ETL jobs in sequen...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401556-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-329-discussion/
 
@@ -4058,9 +4161,26 @@ Which combination of steps will meet this requirement? (Choose two.)
 - D. Add an IAM policy to the QuickSight service role to give QuickSight access to the KMS key that encrypts the S3 bucket.
 - E. Add the KMS key as a resource that the QuickSight service role can access.
 
-**Answer:** E
+**Answer:** AB
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `github_examtopics_cache`.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use the existing AWS KMS key to encrypt connections from QuickSight to the S3 bucket.
+- **B**: Add the S3 bucket as a resource that the QuickSight service role can access.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- KMS mengelola kunci enkripsi; pastikan grant/policy sesuai akses layanan.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use AWS Resource Access Manager (AWS RAM) to share the S3 bucket with the BI-Account account.
+- **D**: tidak memenuhi constraint utama soal — Add an IAM policy to the QuickSight service role to give QuickSight access to the KMS key that encrypts the S3 bucket.
+- **E**: tidak memenuhi constraint utama soal — Add the KMS key as a resource that the QuickSight service role can access.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/150344-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
@@ -6041,9 +6161,25 @@ Which combination of steps will meet these requirements? (Choose two.)
 - D. Schedule a monthly job to copy data that is older than 15 months to Amazon S3 Glacier Flexible Retrieval by using the UNLOAD command. Delete the old data from the Redshift cluster. Configure Redshift Spectrum to access historical data from S3 Glacier Flexible Retrieval.
 - E. Create a materialized view in Amazon Redshift that combines live, current, and historical data from different sources.
 
-**Answer:** A
+**Answer:** AB
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `github_examtopics_cache`.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Configure the Amazon Redshift Federated Query feature to query live transactional data that is in the PostgreSQL database.
+- **B**: Configure Amazon Redshift Spectrum to query live transactional data that is in the PostgreSQL database.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Schedule a monthly job to copy data that is older than 15 months to Amazon S3 by using the UNLOAD command. Delete the old data from the Redshift cluster. Con...
+- **D**: tidak memenuhi constraint utama soal — Schedule a monthly job to copy data that is older than 15 months to Amazon S3 Glacier Flexible Retrieval by using the UNLOAD command. Delete the old data fro...
+- **E**: tidak memenuhi constraint utama soal — Create a materialized view in Amazon Redshift that combines live, current, and historical data from different sources.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/142537-exam-aws-certified-data-engineer-associate-dea-c01-topic-1/
 
@@ -6486,7 +6622,24 @@ A data engineer is confguring an AWS Glue job to read data from an Amazon S3 buc
 - D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
 - E. D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** D
+
+**Pembahasan:** Jawaban yang tepat adalah **D**.
+
+Opsi D paling sesuai karena: Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- IAM mengatur autentikasi/otorisasi; prinsip least privilege dan role terpisah penting.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Update the AWS Glue security group to allow inbound traffic from the Amazon S3 VPC gateway endpoint. gateway endpoint.
+- **B**: tidak memenuhi constraint utama soal — Confgure an S3 bucket policy to explicitly grant the AWS Glue job permissions to access the S3 bucket.
+- **C**: tidak memenuhi constraint utama soal — Review the AWS Glue job code to ensure that the AWS Glue connection details include a fully qualifed domain name.
+- **E**: tidak memenuhi constraint utama soal — D. Verify that the VPC's route table includes inbound and outbound routes for the Amazon S3 VPC gateway endpoint.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6501,7 +6654,26 @@ A retail company has a customer data hub in an Amazon S3 bucket. Employees from 
 - D. Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. Assign the appropriate roles to the analysts.
 - E. Provide access to each analyst based on the country that the analyst serves. D. Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. Assign the appropriate roles to the analysts.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create a separate table for each country's customer data. Provide access to each analyst each analyst based on the country that the analyst serves. analyst serves.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Register the S3 bucket as a data lake locafon in AWS Lake Formafon. Use the Lake Formafon row-level security features to enforce the company's access policies.
+- **C**: tidak memenuhi constraint utama soal — Move the data to AWS Regions that are close to the countries where the customers are. Provide access to each analyst based on the country that the analyst se...
+- **D**: tidak memenuhi constraint utama soal — Load the data into Amazon Redshiffl. Create a view for each country. Create separate IAM roles for each country to provide access to data from each country. ...
+- **E**: tidak memenuhi constraint utama soal — Provide access to each analyst based on the country that the analyst serves. D. Load the data into Amazon Redshiffl. Create a view for each country. Create s...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6516,7 +6688,23 @@ A media company wants to improve a system that recommends media content to custo
 - D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
 - E. B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories. D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use API calls to access and integrate third-party datasets from AWS Data Exchange.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use API calls to access and integrate third-party datasets from AWS DataSyn
+- **C**: tidak memenuhi constraint utama soal — C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories.
+- **D**: tidak memenuhi constraint utama soal — Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
+- **E**: tidak memenuhi constraint utama soal — B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datas...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6531,7 +6719,23 @@ A media company wants to improve a system that recommends media content to custo
 - D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
 - E. B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories. D. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use API calls to access and integrate third-party datasets from AWS Data Exchange.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use API calls to access and integrate third-party datasets from AWS DataSyn
+- **C**: tidak memenuhi constraint utama soal — C. Use Amazon Kinesis Data Streams to access and integrate third-party datasets from AWS CodeCommit repositories.
+- **D**: tidak memenuhi constraint utama soal — Use Amazon Kinesis Data Streams to access and integrate third-party datasets from Amazon Elastic Container Registry (Amazon ECR).
+- **E**: tidak memenuhi constraint utama soal — B. Use API calls to access and integrate third-party datasets from AWS DataSync. C. Use Amazon Kinesis Data Streams to access and integrate third-party datas...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6546,7 +6750,27 @@ A financial company wants to implement a data mesh. The data mesh must support c
 - D. Use Amazon RDS for data storag
 - E. Use an Amazon Redshift provisioned cluster for data analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue DataBrew for centralised data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formation for centralised data governance and access control.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** BE
+
+**Pembahasan:** Jawaban yang tepat adalah **BE**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **B**: Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
+- **E**: Use an Amazon Redshift provisioned cluster for data analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue DataBrew for centralised data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formation for centralised data governance and access control.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Lake Formation dipakai untuk tata kelola data lake, termasuk izin kolom/baris.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Use Amazon Aurora for data storage. Use an Amazon Redshift provisioned cluster for data analysis.
+- **C**: tidak memenuhi constraint utama soal — Use AWS Glue DataBrew for centralised data governance and access control.
+- **D**: tidak memenuhi constraint utama soal — Use Amazon RDS for data storag
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6561,7 +6785,29 @@ A fnancial ) A fnancial company wants to implement a data mesh. The data mesh mu
 - D. Use Amazon RDS for data storag
 - E. Use an Amazon Redshiffl provisioned cluster for data analysis. analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS Glue Data Brew for centralized data governance and access control. D. Use Amazon RDS for data storage. Use Amazon EMR for data analysis. E. Use AWS Lake Formafon for centralized data governance and access control.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use Amazon Aurora for data storage. Use an Amazon Redshiffl provisioned cluster for data analysis. analysis.
+- **B**: Use Amazon S3 for data storage. Use Amazon Athena for data analysis.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use AWS Glue Data Brew for centralized data governance and access control.
+- **D**: tidak memenuhi constraint utama soal — Use Amazon RDS for data storag
+- **E**: tidak memenuhi constraint utama soal — Use an Amazon Redshiffl provisioned cluster for data analysis. analysis. B. Use Amazon S3 for data storage. Use Amazon Athena for data analysis. C. Use AWS G...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6575,7 +6821,21 @@ A data engineer maintains custom Python scripts that perform a data formaffng pr
 - C. Store a pointer to the custom Python scripts in environment variables in a shared Amazon S3 bucket. S3 bucket.
 - D. Assign the same alias to each Lambda function. Call reach Lambda function by specifying the function's alias.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Opsi B paling sesuai karena: Package the custom Python scripts into Lambda layers. Apply the Lambda layers to the Lambda funcfons. Lambda funcfons.
+
+Konteks layanan terkait:
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Store a pointer to the custom Python scripts in the execution context object in a shared Amazon S3 bucket.
+- **C**: tidak memenuhi constraint utama soal — Store a pointer to the custom Python scripts in environment variables in a shared Amazon S3 bucket. S3 bucket.
+- **D**: tidak memenuhi constraint utama soal — Assign the same alias to each Lambda function. Call reach Lambda function by specifying the function's alias.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6589,7 +6849,27 @@ A company created an extract, transform, and load (ETL) data pipeline in AWS Glu
 - C. AWS Glue Studio
 - D. Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA)
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: AWS Step Functions.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Step Functions mengorkestrasi alur multi-langkah dengan retry/branching.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — AWS Glue workflows
+- **C**: tidak memenuhi constraint utama soal — AWS Glue Studio
+- **D**: tidak memenuhi constraint utama soal — Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA)
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6603,7 +6883,24 @@ A fnancial services company stores fnancial data in Amazon Redshiffl. A data eng
 - C. Set up Java Database Connectivity (JDBC) connections to Amazon Redshiffl.
 - D. Store frequently accessed data in Amazon S3. Use Amazon S3 Select to run the queries.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Establish WebSocket connections to Amazon Redshiffl.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use the Amazon Redshiffi Data API.
+- **C**: tidak memenuhi constraint utama soal — Set up Java Database Connectivity (JDBC) connections to Amazon Redshiffl.
+- **D**: tidak memenuhi constraint utama soal — Store frequently accessed data in Amazon S3. Use Amazon S3 Select to run the queries.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6617,7 +6914,25 @@ A data engineer needs to schedule a workfiow that runs a set of AWS Glue jobs ev
 - C. Choose the STANDARD execution class in the Glue job properties.
 - D. Choose the latest version in the GlueVersion feld in the Glue job properties. properties.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Choose the FLEX execufon class in the Glue job properfes.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use the Spot Instance type in Glue job properties.
+- **C**: tidak memenuhi constraint utama soal — Choose the STANDARD execution class in the Glue job properties.
+- **D**: tidak memenuhi constraint utama soal — Choose the latest version in the GlueVersion feld in the Glue job properties. properties.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6631,7 +6946,26 @@ data engineer needs to create an AWS Lambda function that converts the format of
 - C. Create an S3 event notifcation that has an event type of s3:*. Use a flter rule to generate generate notifcations only when the suffix includes .csv. Set the Amazon Resource Name (ARN) of the the Lambda function as the destination for the event notifcation.
 - D. Create an S3 event notifcation that has an event type of s3:ObjectCreated:*. Use a flter flter rule to generate notifcations only when the suffix includes .csv. Set an Amazon Simple Notifcation Service (Amazon SNS) topic as the destination for the event notifcation. Subscribe the Lambda function to the SNS topic.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create an S3 event noffflcafon that has an event type of s3:ObjectCreated:*. Use a ffllter rule to generate noffflcafons only when the suftx includes .csv. Set the Amazon Resource Name (ARN) of the Lambda funcfon as the desfnafon for the event noffflcafon.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create an $3 event notifcation that has an event type of s3:ObjectTagging:* for objects for objects that have a tag set to .csv. Set the Amazon Resource Name...
+- **C**: tidak memenuhi constraint utama soal — Create an S3 event notifcation that has an event type of s3:*. Use a flter rule to generate generate notifcations only when the suffix includes .csv. Set the...
+- **D**: tidak memenuhi constraint utama soal — Create an S3 event notifcation that has an event type of s3:ObjectCreated:*. Use a flter flter rule to generate notifcations only when the suffix includes .c...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6645,7 +6979,25 @@ A data engineer needs Amazon Athena queries to fnish faster. The data engineer n
 - C. Change the data format from .csv to Apache Parquet. Apply Snappy compression.
 - D. Compress the .csv fles by using gzip compression.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Change the data format from .csv to JSON format. Apply Snappy compression.
+
+Konteks layanan terkait:
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Compress the .csv fles by using Snappy compression.
+- **C**: tidak memenuhi constraint utama soal — Change the data format from .csv to Apache Parquet. Apply Snappy compression.
+- **D**: tidak memenuhi constraint utama soal — Compress the .csv fles by using gzip compression.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6660,7 +7012,27 @@ A manufacturing company collects sensor data from its factory fioor to monitor a
 - D. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard. C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream databas
 - E. Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon Aurora. Use Aurora. Use Aurora as a source to create an Amazon QuickSight dashboard. C. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Firehose delivery stream to publish data directly to an Amazon Timestream database. Use the Timestream database as a source to create an Amazon QuickSight dashboard. D. Use AWS Glue bookmarks to read sensor data from the S3 bucket in real time. Publish the data to an Amazon Timestream database. Use the Timestream database as a source to create a Grafana dashboard.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to process the sensor data. Use a connector for Apache Flink to write data to an Amazon Timestream database. Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publish the data to Amazon ...
+- **C**: tidak memenuhi constraint utama soal — Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Kinesis Data Analytics) to process the sensor data. Create a new Data Fi...
+- **D**: tidak memenuhi constraint utama soal — Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda function when any new object is created. Use the Lambda function to publi...
+- **E**: tidak memenuhi constraint utama soal — Use the Timestream database as a source to create a Grafana dashboard. Grafana dashboard. B. Confgure the S3 bucket to send a notifcation to an AWS Lambda fu...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6675,7 +7047,24 @@ A company stores daily records of the fnancial performance of investment porftol
 - D. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the crawler's data stor
 - E. Create a daily schedule to run the crawler. Confgure the output destination to a new path in the existing S3 bucket. B. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Specify a database name for the output. C. Create an IAM role that includes the AmazonS3FullAccess policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Specify a database name for the output. D. Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the crawler's data store. Allocate data processing units (DPUs) to run the crawler every day. Confgure the output destination to a new path in the existing S3 bucket.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Opsi B paling sesuai karena: Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the crawler's data store. Create a daily schedule to run the crawler. Specify a database name for the output.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- IAM mengatur autentikasi/otorisasi; prinsip least privilege dan role terpisah penting.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Create an IAM role that includes the Amazon S3 Full Access policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the ...
+- **C**: tidak memenuhi constraint utama soal — Create an IAM role that includes the AmazonS3FullAccess policy. Associate the role with the crawler. Specify the S3 bucket path of the source data as the cra...
+- **D**: tidak memenuhi constraint utama soal — Create an IAM role that includes the AWSGlueServiceRole policy. Associate the role with the crawler. Specify the 53 bucket path of the source data as the cra...
+- **E**: tidak memenuhi constraint utama soal — Create a daily schedule to run the crawler. Confgure the output destination to a new path in the existing S3 bucket. B. Create an IAM role that includes the ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6690,7 +7079,26 @@ A company loads transaction data for each day into Amazon Redshiffl tables at th
 - D. Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
 - E. Confflgure an EventBridge rule to invoke the Lambda funcfon. C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda function. function. D. Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use a second Lambda function to invoke the frst Lambda function based on Amazon Amazon CloudWatch events. CloudWatch events.
+
+Konteks layanan terkait:
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+- DynamoDB untuk key-value/NoSQL latensi rendah; bukan pengganti warehouse analitik.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use the Amazon Redshiffi Data API to publish an event to Amazon EventBridge. Confflgure an EventBridge rule to invoke the Lambda funcfon.
+- **C**: tidak memenuhi constraint utama soal — Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Amazon SQS) queue. Confgure the SQS queue to invoke the Lambda func...
+- **D**: tidak memenuhi constraint utama soal — Use a second Lambda function to invoke the frst Lambda function based on AWS AWS CloudTrail events. CloudTrail events.
+- **E**: tidak memenuhi constraint utama soal — Confflgure an EventBridge rule to invoke the Lambda funcfon. C. Use the Amazon Redshiffl Data API to publish a message to an Amazon Simple Queue Service (Ama...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6704,7 +7112,23 @@ A data engineer needs to securely transfer 5 TB of data from an on-premises data
 - C. AWS Direct Connect
 - D. Amazon S3 Transfer Acceleration
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: AWS DataSync.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — AWS Glue
+- **C**: tidak memenuhi constraint utama soal — AWS Direct Connect
+- **D**: tidak memenuhi constraint utama soal — Amazon S3 Transfer Acceleration
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6718,7 +7142,23 @@ A company uses an on-premises Microsoffl SQL Server database to store fnancial t
 - C. AWS Direct Connect
 - D. AWS DataSync
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: AWS Lambda.
+
+Konteks layanan terkait:
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — AWS Database Migrafon Service (AWS DMS)
+- **C**: tidak memenuhi constraint utama soal — AWS Direct Connect
+- **D**: tidak memenuhi constraint utama soal — AWS DataSync
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6732,7 +7172,25 @@ A company uses an on-premises Microsoft SQL Server database to store financial t
 - C. AWS Direct Connect
 - D. AWS DataSync
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: AWS Lambda.
+
+Konteks layanan terkait:
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — AWS Database Migration Service (AWS DMS)
+- **C**: tidak memenuhi constraint utama soal — AWS Direct Connect
+- **D**: tidak memenuhi constraint utama soal — AWS DataSync
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6747,7 +7205,27 @@ A data engineer is building a data pipeline on AWS by using AWS Glue extract, tr
 - D. Use AWS Glue connecfons to establish connecfvity between the data sources and Amazon Redshiffi. Amazon Redshiffi.
 - E. Use the Redshiffl Data API to load transformed data into Amazon Redshiffl.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Confflgure AWS Glue triggers to run the ETL jobs every hour.
+- **B**: Use AWS Glue DataBrew to clean and prepare the data for analytics.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use AWS Lambda functions to schedule and run the ETL jobs every hour.
+- **D**: tidak memenuhi constraint utama soal — Use AWS Glue connecfons to establish connecfvity between the data sources and Amazon Redshiffi. Amazon Redshiffi.
+- **E**: tidak memenuhi constraint utama soal — Use the Redshiffl Data API to load transformed data into Amazon Redshiffl.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6761,7 +7239,20 @@ A company uses an Amazon Redshiffl cluster that runs on RA3 nodes. The company w
 - C. Turn on concurrency scaling in the seffngs during the creation of any new Redshiffl cluster. cluster.
 - D. Turn on concurrency scaling for the daily usage quota for the Redshiffl cluster.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Turn on concurrency scaling in workload management (WLM) for Redshiffl Serverless Serverless workgroups. workgroups.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Turn on concurrency scaling at the workload management (WLM) queue level in the Redshiffi cluster. Redshiffi cluster.
+- **C**: tidak memenuhi constraint utama soal — Turn on concurrency scaling in the seffngs during the creation of any new Redshiffl cluster. cluster.
+- **D**: tidak memenuhi constraint utama soal — Turn on concurrency scaling for the daily usage quota for the Redshiffl cluster.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6776,7 +7267,28 @@ A data A data engineer must orchestrate a series of Amazon Athena queries that w
 - D. Use an AWS Glue Python shell script to run a sleep timer that checks every 5 minutes to determine whether the current Athena query has fnished running successfully. Confgure the Python shell script to invoke the next query when the current query has fnished fnished running. running.
 - E. Use Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) to orchestrate the Athena queries in AWS Batch.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use an AWS Lambda funcfon and the Athena Boto3 client start_query_execufon API call to invoke the Athena queries programmafcally.
+- **B**: Create an AWS Step Funcfons workflow and add two states. Add the fflrst state before the Lambda funcfon. Confflgure the second state as a Wait state to periodically check whether the Athena query has fflnished using the Athena Boto3 get_query_execufon API call. Confflgure the workflow to invoke the next query when the current query has fflnished running. running.
+
+Konteks layanan terkait:
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use an AWS Glue Python shell job and the Athena Boto3 client start_query_execution API call to invoke the A call to invoke the Athena queries programmatically.
+- **D**: tidak memenuhi constraint utama soal — Use an AWS Glue Python shell script to run a sleep timer that checks every 5 minutes to determine whether the current Athena query has fnished running succes...
+- **E**: tidak memenuhi constraint utama soal — Use Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) to orchestrate the Athena queries in AWS Batch.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6790,7 +7302,25 @@ A company is migrating on-premises workloads to AWS. The company wants to reduce
 - C. AWS Lambda
 - D. Amazon Redshiffl
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: AWS Glue.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Amazon EMR
+- **C**: tidak memenuhi constraint utama soal — AWS Lambda
+- **D**: tidak memenuhi constraint utama soal — Amazon Redshiffl
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6805,7 +7335,26 @@ A data engineer must use AWS services to ingest a dataset into an Amazon S3 data
 - D. Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lak
 - E. C. Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons state machine to orchestrate a data pipeline to ingest the data into the S3 data lake. D. Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use the same Lambda function to ingest the data into the S3 data lake.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use an Amazon Kinesis Data Firehose delivery stream to process the dataset. Create an AWS Lambda transform function to identify the PII. Use an AWS SDK to obfuscate the PII. Set the S3 data lake as the target for the delivery stream.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use the Detect PII transform in AWS Glue Studio to identify the PII. Obfuscate the PII. Use Use an AWS Step Functions state machine to orchestrate a data pip...
+- **C**: tidak memenuhi constraint utama soal — Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons sta...
+- **D**: tidak memenuhi constraint utama soal — Ingest the dataset into Amazon DynamoDB. Create an AWS Lambda function to identify and obfuscate the PII in the DynamoDB table and to transform the data. Use...
+- **E**: tidak memenuhi constraint utama soal — C. Use the Detect PII transform in AWS Glue Studio to idenffy the PII. Create a rule in AWS Glue Data Quality to obfuscate the PII. Use an AWS Step Funcfons ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6819,7 +7368,27 @@ A company maintains multiple extract, transform, and load (ETL) workfiows that i
 - C. AWS Lambda functions
 - D. Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) workfiows
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: AWS Glue workflows.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- EMR untuk pemrosesan big data (Spark/Hadoop) saat kebutuhan compute berat.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — AWS Step Functions tasks
+- **C**: tidak memenuhi constraint utama soal — AWS Lambda functions
+- **D**: tidak memenuhi constraint utama soal — Amazon Managed Workfiows for Apache Airfiow (Amazon MWAA) workfiows
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6833,7 +7402,25 @@ A company currently stores all of its data in Amazon S3 by using the S3 Standard
 - C. Transifon objects to S3 Standard-Infrequent Access (S3 Standard-IA) affier 6 months. Transfer objects to S3 Glacier Deep Archive affier 2 years.
 - D. Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. months. Transfer objects to S3 Glacier Deep Archive affler 2 years.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. 6 months. Transfer objects to S3 Glacier Flexible Retrieval affler 2 years.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Transition objects to S3 Standard-Infrequent Access (S3 Standard-IA) affler 6 months. Transfer objects to S3 Glacier Flexible Retrieval affler 2 years.
+- **C**: tidak memenuhi constraint utama soal — Transifon objects to S3 Standard-Infrequent Access (S3 Standard-IA) affier 6 months. Transfer objects to S3 Glacier Deep Archive affier 2 years.
+- **D**: tidak memenuhi constraint utama soal — Transition objects to S3 One Zone-Infrequent Access (S3 One Zone-IA) affler 6 months. months. Transfer objects to S3 Glacier Deep Archive affler 2 years.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6847,7 +7434,18 @@ A company maintains an Amazon Redshiffl provisioned cluster that the company use
 - C. Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
 - D. Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshiffl Spectrum table based on the content of the ETL cluster.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshiffi data sharing. sharing.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create materialized views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- **C**: tidak memenuhi constraint utama soal — Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- **D**: tidak memenuhi constraint utama soal — Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshiffl Spectrum table based on the content of the ETL c...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6861,7 +7459,23 @@ A company maintains an Amazon Redshift provisioned cluster that the company uses
 - C. Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
 - D. Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshift Spectrum table based on the content of the ETL cluster.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Set up the sales team BI cluster as a consumer of the ETL cluster by using Redshift data sharing.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create materialised views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- **C**: tidak memenuhi constraint utama soal — Create database views based on the sales team's requirements. Grant the sales team direct access to the ETL cluster.
+- **D**: tidak memenuhi constraint utama soal — Unload a copy of the data from the ETL cluster to an Amazon S3 bucket every week. Create an Amazon Redshift Spectrum table based on the content of the ETL cl...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6875,7 +7489,27 @@ A data engineer needs to join data from multiple sources to perform a one-time a
 - C. Use Amazon Athena Federated Query to join the data from all data sources.
 - D. Use Redshiffl Spectrum to query data from DynamoDB, Amazon RDS, and Amazon S3 directly from Redshiffl.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use an Amazon EMR provisioned cluster to read from all sources. Use Apache Spark to join the data and perform the analysis.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- EMR untuk pemrosesan big data (Spark/Hadoop) saat kebutuhan compute berat.
+- DynamoDB untuk key-value/NoSQL latensi rendah; bukan pengganti warehouse analitik.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Copy the data from DynamoDB, Amazon RDS, and Amazon Redshiffl into Amazon S3. Run Amazon Athena queries directly on the S3 fles.
+- **C**: tidak memenuhi constraint utama soal — Use Amazon Athena Federated Query to join the data from all data sources.
+- **D**: tidak memenuhi constraint utama soal — Use Redshiffl Spectrum to query data from DynamoDB, Amazon RDS, and Amazon S3 directly from Redshiffl.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6890,7 +7524,26 @@ A company is planning to use a provisioned Amazon EMR cluster that runs Apache S
 - D. Use Graviton instances for core nodes and task nodes.
 - E. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** BD
+
+**Pembahasan:** Jawaban yang tepat adalah **BD**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **B**: Use Amazon S3 as a persistent data store.
+- **D**: Use Graviton instances for core nodes and task nodes.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- EMR untuk pemrosesan big data (Spark/Hadoop) saat kebutuhan compute berat.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Use Hadoop Distributed File System (HDFS) as a persistent data store.
+- **C**: tidak memenuhi constraint utama soal — Use x86-based instances for core nodes and task nodes.
+- **E**: tidak memenuhi constraint utama soal — B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. D. Use Graviton instances for core nodes and task node...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6905,7 +7558,28 @@ A company is planning to use a provisioned Amazon EMR cluster that runs Apache S
 - D. Use Graviton instances for core nodes and task nodes.
 - E. store. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. task nodes. D. Use Graviton instances for core nodes and task nodes. E. Use Spot Instances for all primary nodes. primary nodes.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use Hadoop Distributed File System (HDFS) as a persistent data store. store.
+- **B**: Use Amazon S3 as a persistent data store.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- EMR untuk pemrosesan big data (Spark/Hadoop) saat kebutuhan compute berat.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use x86-based instances for core nodes and task nodes. task nodes.
+- **D**: tidak memenuhi constraint utama soal — Use Graviton instances for core nodes and task nodes.
+- **E**: tidak memenuhi constraint utama soal — store. B. Use Amazon S3 as a persistent data store. C. Use x86-based instances for core nodes and task nodes. task nodes. D. Use Graviton instances for core ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6920,7 +7594,29 @@ A company wants to implement real-time analytics capabilities. The company wants
 - D. Connect Kinesis Data Streams to Amazon Kinesis Data Firehos
 - E. Use Kinesis Data Firehose Firehose to stage the data in Amazon S3. Use the COPY command to load the data from Amazon S3 to a table in Amazon Redshiffl.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use Kinesis Data Streams to stage data in Amazon S3. Use the COPY command to load data from Amazon S3 directly into Amazon Redshiffl to make the data immediately available for real-time analysis.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Access the data from Kinesis Data Streams by using SQL queries. Create materialized views directly on top of the stream. Refresh the materialized views regul...
+- **C**: tidak memenuhi constraint utama soal — Create an external schema in Amazon Redshiffi to map the data from Kinesis Data Streams to an Amazon Redshiffi object. Create a materialized view to read dat...
+- **D**: tidak memenuhi constraint utama soal — Connect Kinesis Data Streams to Amazon Kinesis Data Firehos
+- **E**: tidak memenuhi constraint utama soal — Use Kinesis Data Firehose Firehose to stage the data in Amazon S3. Use the COPY command to load the data from Amazon S3 to a table in Amazon Redshiffl.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6935,7 +7631,24 @@ A company uses an Amazon QuickSight dashboard to monitor usage of one of the com
 - D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day.
 - E. C. Convert the AWS Glue schema to the DynamicFrame schema class. D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day. E. Modify the IAM role that grants access to AWS glue to grant access to all S3 features.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Parffon the data that is in the S3 bucket. Organize the data by year, month, and day.
+- **B**: Increase the AWS Glue instance size by scaling up the worker type.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Convert the AWS Glue schema to the DynamicFrame schema class.
+- **D**: tidak memenuhi constraint utama soal — Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day.
+- **E**: tidak memenuhi constraint utama soal — C. Convert the AWS Glue schema to the DynamicFrame schema class. D. Adjust AWS Glue job scheduling frequency so the jobs run half as many times each day. E. ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -6949,7 +7662,23 @@ A data engineer needs to use AWS Step Functions to design an orchestration workf
 - C. Map state
 - D. Wait state
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Parallel state.
+
+Konteks layanan terkait:
+- Step Functions mengorkestrasi alur multi-langkah dengan retry/branching.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Choice state
+- **C**: tidak memenuhi constraint utama soal — Map state
+- **D**: tidak memenuhi constraint utama soal — Wait state
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6964,7 +7693,26 @@ A company is migrating a legacy application to an Amazon S3 based data lake. A d
 - D. Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
 - E. drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication. B. Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplication. C. Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. deduplication. D. Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Write a custom extract, transform, and load (ETL) job in Python. Use the DataFrame.drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Write an AWS Glue extract, transform, and load (ETL) job. Use the FindMatches machine learning (ML) transform to transform the data to perform data deduplica...
+- **C**: tidak memenuhi constraint utama soal — Write a custom extract, transform, and load (ETL) job in Python. Import the Python dedupe library. Use the dedupe library to perform data deduplication. dedu...
+- **D**: tidak memenuhi constraint utama soal — Write an AWS Glue extract, transform, and load (ETL) job. Import the Python dedupe library. Use the dedupe library to perform data deduplicafon.
+- **E**: tidak memenuhi constraint utama soal — drop_duplicates() function by importing the Pandas library to perform data deduplication. deduplication. B. Write an AWS Glue extract, transform, and load (E...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6979,7 +7727,25 @@ A company is building an analytics solution. The solution uses Amazon S3 for dat
 - D. Split the data into fles that are less than 10 KB.
 - E. Use fle formats that are not spliflable. not spliflable.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use gzip compression to compress individual fles to sizes that are between 1 GB and 5 G.
+- **B**: GB. B. Use a columnar storage fflle format.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Parffon the data based on the most common query predicates.
+- **D**: tidak memenuhi constraint utama soal — Split the data into fles that are less than 10 KB.
+- **E**: tidak memenuhi constraint utama soal — Use fle formats that are not spliflable. not spliflable.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -6994,7 +7760,27 @@ A company uses Amazon RDS to store transactional data. The company runs an RDS D
 - D. Aflach the same security group to the Lambda function and the DB instanc
 - E. B. Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port. C. Confflgure the Lambda funcfon to run in the same subnet that the DB instance uses. D. Aflach the same security group to the Lambda function and the DB instance. Include a self- referencing rule that allows access through the database port. E. Update the network ACL of the private subnet to include a self-referencing rule that allows access through the database port.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Turn on the public access seffng for the DB instance.
+- **B**: Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port.
+
+Konteks layanan terkait:
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Confflgure the Lambda funcfon to run in the same subnet that the DB instance uses.
+- **D**: tidak memenuhi constraint utama soal — Aflach the same security group to the Lambda function and the DB instanc
+- **E**: tidak memenuhi constraint utama soal — B. Update the security group of the DB instance to allow only Lambda funcfon invocafons on the database port. database port. C. Confflgure the Lambda funcfon...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7008,7 +7794,22 @@ A company has a frontend ReactJS website that uses Amazon API Gateway to invoke 
 - C. Deploy a custom Python script that can integrate with API Gateway on Amazon Elastic Kubernetes Service (Amazon EKS).
 - D. Create an AWS Lambda function. Ensure that the function is warm by scheduling an scheduling an Amazon EventBridge rule to invoke the Lambda function every 5 minutes by using mock events. events.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Deploy a custom Python script on an Amazon Elastic Container Service (Amazon ECS) cluster. cluster.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create an AWS Lambda Python funcfon with provisioned concurrency.
+- **C**: tidak memenuhi constraint utama soal — Deploy a custom Python script that can integrate with API Gateway on Amazon Elastic Kubernetes Service (Amazon EKS).
+- **D**: tidak memenuhi constraint utama soal — Create an AWS Lambda function. Ensure that the function is warm by scheduling an scheduling an Amazon EventBridge rule to invoke the Lambda function every 5 ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7022,7 +7823,25 @@ A company has a production AWS account that runs company workloads. The company'
 - C. Create a destination data stream in the production AWS account. In the production AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the security AWS account.
 - D. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription filter in the production AWS account.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** D
+
+**Pembahasan:** Jawaban yang tepat adalah **D**.
+
+Opsi D paling sesuai karena: Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription filter in the production AWS account.
+
+Konteks layanan terkait:
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+- IAM mengatur autentikasi/otorisasi; prinsip least privilege dan role terpisah penting.
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Create a destination data stream in the production AWS account. In the security AWS account, create an IAM role that has cross-account permissions to Kinesis...
+- **B**: tidak memenuhi constraint utama soal — Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into ...
+- **C**: tidak memenuhi constraint utama soal — Create a destination data stream in the production AWS account. In the production AWS account, create an IAM role that has cross-account permissions to Kines...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -7036,7 +7855,27 @@ A company has a production AWS account that runs company workloads. The company'
 - C. Create a desfnafon data stream in the producfon AWS account. In the producfon AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the security AWS account.
 - D. Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into the stream. Create a subscription flter in the production AWS account.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create a desfnafon data stream in the producfon AWS account. In the security AWS account, create an IAM role that has cross-account permissions to Kinesis Data Streams in the producfon AWS account.
+
+Konteks layanan terkait:
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+- IAM mengatur autentikasi/otorisasi; prinsip least privilege dan role terpisah penting.
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into ...
+- **C**: tidak memenuhi constraint utama soal — Create a desfnafon data stream in the producfon AWS account. In the producfon AWS account, create an IAM role that has cross-account permissions to Kinesis D...
+- **D**: tidak memenuhi constraint utama soal — Create a destination data stream in the security AWS account. Create an IAM role and a trust policy to grant CloudWatch Logs the permission to put data into ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7051,7 +7890,27 @@ A company uses Amazon S3 to store semi-structured data in a transactional data l
 - D. Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lak
 - E. B. Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake. C. Use an open source data lake format to merge the data source with the S3 data lake to insert the new data and update the exisfng data. D. Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create an AWS Lambda function to identify the changes between the previous data and the current data. Confgure the Lambda function to ingest the changes into the data lake.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake.
+- **C**: tidak memenuhi constraint utama soal — Use an open source data lake format to merge the data source with the S3 data lake to insert the new data and update the exisfng data.
+- **D**: tidak memenuhi constraint utama soal — Ingest the data into an Amazon Aurora MySQL DB instance that runs Aurora Serverless. Use AWS Database Migration Service (AWS DMS) to write the changed data t...
+- **E**: tidak memenuhi constraint utama soal — B. Ingest the data into Amazon RDS for MySQL. Use AWS Database Migration Service (AWS DMS) to write the changed data to the data lake. C. Use an open source ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7066,7 +7925,27 @@ A data engineer runs Amazon Athena queries on data that is in an Amazon S3 bucke
 - D. Transform the data that is in the S3 bucket to Apache Parquet format.
 - E. Use the Amazon EMR S3DistCP utility to combine smaller objects in the 53 bucket into larger objects. larger objects.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Create an AWS Glue parffon index. Enable parffon fflltering.
+- **B**: Bucket the data based on a column that the data have in common in a WHERE clause of the user query.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use Athena parffon projecfon based on the S3 bucket prefflx.
+- **D**: tidak memenuhi constraint utama soal — Transform the data that is in the S3 bucket to Apache Parquet format.
+- **E**: tidak memenuhi constraint utama soal — Use the Amazon EMR S3DistCP utility to combine smaller objects in the 53 bucket into larger objects. larger objects.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7080,7 +7959,28 @@ A data A data engineer must manage the ingestion of real-time streaming data int
 - C. Use an AWS Lambda function that includes both the business and the analytics logic to logic to perform aggregations for a tumbling window of up to 30 minutes, based on the event the event timestamp. timestamp.
 - D. Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to analyze the data by using mulfple types of aggregafons to perform fme-based analyfcs over a window of up to 30 minutes.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use an AWS Lambda function that includes both the business and the analytics logic to ic to perform time-based aggregations over a window of up to 30 minutes for the data in Amazon Amazon Kinesis Data Streams.
+
+Konteks layanan terkait:
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analytics) to analyze the data that might occasionally contain duplicate...
+- **C**: tidak memenuhi constraint utama soal — Use an AWS Lambda function that includes both the business and the analytics logic to logic to perform aggregations for a tumbling window of up to 30 minutes...
+- **D**: tidak memenuhi constraint utama soal — Use Amazon Managed Service for Apache Flink (previously known as Amazon Kinesis Data Analyfcs) to analyze the data by using mulfple types of aggregafons to p...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7094,7 +7994,22 @@ A company is planning to upgrade its Amazon Elastic Block Store (Amazon EBS) Gen
 - C. Change the volume type of the exisfng gp2 volumes to gp3. Enter new values for volume size, IOPS, and throughput.
 - D. Use AWS DataSync to create new gp3 volumes. Transfer the data from the original gp2 volumes to the new gp3 volumes.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create snapshots of the gp2 volumes. Create new gp3 volumes from the snapshots. Aflach the new gp3 volumes to the EC2 instances.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create new gp3 volumes. Gradually transfer the data to the new gp3 volumes. When the transfer is complete, mount the new gp3 volumes to the EC2 instances to ...
+- **C**: tidak memenuhi constraint utama soal — Change the volume type of the exisfng gp2 volumes to gp3. Enter new values for volume size, IOPS, and throughput.
+- **D**: tidak memenuhi constraint utama soal — Use AWS DataSync to create new gp3 volumes. Transfer the data from the original gp2 volumes to the new gp3 volumes.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7108,7 +8023,24 @@ A company is migrating its database servers from Amazon EC2 instances that run M
 - C. Use a SQL query to create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create and run an AWS Glue crawler to read the view. Create an AWS Glue job that retrieves the data and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day.
 - D. Create an AWS Lambda function that queries the EC2 instance-based databases by using Java Database Connectivity (JDBC). Confgure the Lambda function to retrieve the required data, transform the data into Parquet format, and transfer the data into an S3 bucket. Use bucket. Use Amazon EventBridge to schedule the Lambda function to run every day.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create an AWS Glue job that selects the data directly from the view and view and transfers the data in Parquet format to an S3 bucket. Schedule the AWS Glue job to run every day. every day.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Schedule SQL Server Agent to run a daily SQL query that selects the desired data elements from the EC2 instance-based SQL Server databases. Confgure the quer...
+- **C**: tidak memenuhi constraint utama soal — Use a SQL query to create a view in the EC2 instance-based SQL Server databases that contains the required data elements. Create and run an AWS Glue crawler ...
+- **D**: tidak memenuhi constraint utama soal — Create an AWS Lambda function that queries the EC2 instance-based databases by using Java Database Connectivity (JDBC). Confgure the Lambda function to retri...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7122,7 +8054,20 @@ A data engineering team is using an Amazon Redshiffl data warehouse for operatio
 - C. STL_QUERY_METRICS
 - D. STL_PLAN_INFO
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: STL_USAGE_CONTROL.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — STL_ALERT_EVENT_LOG
+- **C**: tidak memenuhi constraint utama soal — STL_QUERY_METRICS
+- **D**: tidak memenuhi constraint utama soal — STL_PLAN_INFO
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7137,7 +8082,30 @@ A data engineer must ingest a source of structured data that is in .csv format i
 - D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data sourc
 - E. Confgure the job to ingest the data into the data lake in JSON format. C. Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format. D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confflgure the job to write the data into the data lake in Apache Parquet format. Parquet format.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** E
+
+**Pembahasan:** Jawaban yang tepat adalah **E**.
+
+Opsi E paling sesuai karena: Confgure the job to ingest the data into the data lake in JSON format. C. Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format. D. Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confflgure the job to write the data into the data lake in Apache Parquet format. Parquet format.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Use an AWS Glue PySpark job to ingest the source data into the data lake in .csv format.
+- **B**: tidak memenuhi constraint utama soal — Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data source. Confgure the job to ingest the data into the data lak...
+- **C**: tidak memenuhi constraint utama soal — Use an AWS Glue PySpark job to ingest the source data into the data lake in Apache Avro format. format.
+- **D**: tidak memenuhi constraint utama soal — Create an AWS Glue extract, transform, and load (ETL) job to read from the .csv structured data sourc
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7152,7 +8120,28 @@ A company has fve offices in disterent AWS Regions. Each office has its own huma
 - D. Enable fflne-grained access control in AWS Lake Formafon. Add a data ffllter for each Region. Region.
 - E. Create a separate S3 bucket for each Region. Confgure an IAM policy to allow $3 access. Restrict access based on Region.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use data flters for each Region to register the S3 paths as data locations.
+- **B**: Register the S3 path as an AWS Lake Formafon locafon.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- IAM mengatur autentikasi/otorisasi; prinsip least privilege dan role terpisah penting.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Modify the IAM roles of the HR departments to add a data flter for each department's department's Region. Region.
+- **D**: tidak memenuhi constraint utama soal — Enable fflne-grained access control in AWS Lake Formafon. Add a data ffllter for each Region. Region.
+- **E**: tidak memenuhi constraint utama soal — Create a separate S3 bucket for each Region. Confgure an IAM policy to allow $3 access. Restrict access based on Region.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7167,7 +8156,25 @@ A company uses AWS Step Functions to orchestrate a data pipeline. The pipeline c
 - D. Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports.
 - E. Include details of the EMR task in the email message for further analysis. B. Verify that the Step Funcfons state machine code has all IAM permissions that are necessary to create and run the EMR jobs. Verify that the Step Funcfons state machine code also includes IAM permissions to access the Amazon S3 buckets that the EMR jobs use. Use Access Analyzer for S3 to check the S3 access properfes. C. Check for entries in Amazon CloudWatch for the newly created EMR cluster. Change the Change the AWS Step Functions state machine code to use Amazon EMR on EKS. Change the IAM access policies and the security group confguration for the Step Functions state machine code to refiect inclusion of Amazon Elastic Kubernetes Service (Amazon ĔKS). ĔKS). D. Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports. E. Check the retry scenarios that the company confgured for the EMR jobs. Increase the Increase the number of seconds in the interval between each EMR ...
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** BD
+
+**Pembahasan:** Jawaban yang tepat adalah **BD**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **B**: Verify that the Step Funcfons state machine code has all IAM permissions that are necessary to create and run the EMR jobs. Verify that the Step Funcfons state machine code also includes IAM permissions to access the Amazon S3 buckets that the EMR jobs use. Use Access Analyzer for S3 to check the S3 access properfes.
+- **D**: Query the flow logs for the VPC. Determine whether the traftc that originates from the EMR cluster can successfully reach the data providers. Determine whether any security group that might be astached to the Amazon EMR cluster allows connecfons to the data source servers on the informed ports.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- IAM mengatur autentikasi/otorisasi; prinsip least privilege dan role terpisah penting.
+- Step Functions mengorkestrasi alur multi-langkah dengan retry/branching.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Use AWS CloudFormation to automate the Step Functions state machine deployment. Create a step to pause the state machine during the EMR jobs that fail. Confg...
+- **C**: tidak memenuhi constraint utama soal — Check for entries in Amazon CloudWatch for the newly created EMR cluster. Change the Change the AWS Step Functions state machine code to use Amazon EMR on EK...
+- **E**: tidak memenuhi constraint utama soal — Include details of the EMR task in the email message for further analysis. B. Verify that the Step Funcfons state machine code has all IAM permissions that a...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -7182,7 +8189,21 @@ A company is developing an application that runs on Amazon EC2 instances. Curren
 - D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volum
 - E. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances. D. Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volume. Aflach an additional EC2 instance store volume to contain the application data. Apply the default seffngs to the EC2 instances.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume that contains the application data. Apply the default seffngs to the EC2 instances.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Launch new EC2 instances by using an AMI that is backed by a root Amazon Elasfc Block Store (Amazon EBS) volume that contains the applicafon data. Apply the ...
+- **C**: tidak memenuhi constraint utama soal — Launch new EC2 instances by using an AMI that is backed by an EC2 instance store volume. Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain ...
+- **D**: tidak memenuhi constraint utama soal — Launch new EC2 instances by using an AMI that is backed by an Amazon Elastic Block Store (Amazon EBS) volum
+- **E**: tidak memenuhi constraint utama soal — Aflach an Amazon Elastic Block Store (Amazon EBS) volume to contain the application data. Apply the default seffngs to the EC2 instances. D. Launch new EC2 i...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7196,7 +8217,23 @@ A company uses Amazon Athena to run SQL queries for extract, transform, and load
 - C. Athena data source
 - D. Athena query editor
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Athena query seffngs.
+
+Konteks layanan terkait:
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Athena workgroup
+- **C**: tidak memenuhi constraint utama soal — Athena data source
+- **D**: tidak memenuhi constraint utama soal — Athena query editor
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7210,7 +8247,24 @@ A company needs to partition the Amazon S3 storage that the company uses for a d
 - C. Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.
 - D. Run the MSCK REPAIR TABLE command from the AWS Glue consol
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Schedule an AWS Glue crawler to run every morning.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Manually run the AWS Glue CreatePartition API twice each day.
+- **C**: tidak memenuhi constraint utama soal — Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_partition API call.
+- **D**: tidak memenuhi constraint utama soal — Run the MSCK REPAIR TABLE command from the AWS Glue consol
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7224,7 +8278,24 @@ A company needs to partition the Amazon S3 storage that the company uses for a d
 - C. Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_parffon API call. API call.
 - D. Run the MSCK REPAIR TABLE command from the AWS Glue consol
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Schedule an AWS Glue crawler to run every morning.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Manually run the AWS Glue CreatePartition API twice each day.
+- **C**: tidak memenuhi constraint utama soal — Use code that writes data to Amazon S3 to invoke the Boto3 AWS Glue create_parffon API call. API call.
+- **D**: tidak memenuhi constraint utama soal — Run the MSCK REPAIR TABLE command from the AWS Glue consol
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7238,7 +8309,25 @@ A media company uses sofflware as a service (SaaS) applications to gather data b
 - C. AWS Glue Data Catalog
 - D. Amazon Kinesis
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Amazon Managed Streaming for Apache Kaa (Amazon MSK).
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Amazon AppFlow
+- **C**: tidak memenuhi constraint utama soal — AWS Glue Data Catalog
+- **D**: tidak memenuhi constraint utama soal — Amazon Kinesis
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7253,7 +8342,25 @@ A data engineer is using Amazon Athena to analyze sales data that is in Amazon S
 - D. Remove the GROUP BY claus
 - E. D. Remove the GROUP BY clause.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Replace sum(sales_amount) with count(*) for the aggregation. gregation.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Change WHERE year = 2023 to WHERE extract(year FROM sales_data) = 2023.
+- **C**: tidak memenuhi constraint utama soal — Add HAVING sum(sales_amount) > 0 affier the GROUP BY clause.
+- **D**: tidak memenuhi constraint utama soal — Remove the GROUP BY claus
+- **E**: tidak memenuhi constraint utama soal — D. Remove the GROUP BY clause.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7268,7 +8375,29 @@ A data A data engineer has a one-time task to read data from objects that are in
 - D. Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
 - E. Write a SQL SELECT statement on the dataframe to query the required column. B. Use S3 Select to write a SQL SELECT statement to retrieve the required column from the S3 objects. S3 objects. C. Prepare an AWS Glue DataBrew project to consume the S3 objects and to query the required column. required column. D. Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Confgure an AWS Lambda function to load data from the S3 bucket into a pandas dataframe. Write a SQL SELECT statement on the dataframe to query the required column.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use S3 Select to write a SQL SELECT statement to retrieve the required column from the S3 objects. S3 objects.
+- **C**: tidak memenuhi constraint utama soal — Prepare an AWS Glue DataBrew project to consume the S3 objects and to query the required column. required column.
+- **D**: tidak memenuhi constraint utama soal — Run an AWS Glue crawler on the S3 objects. Use a SQL SELECT statement in Amazon Athena to query the required column.
+- **E**: tidak memenuhi constraint utama soal — Write a SQL SELECT statement on the dataframe to query the required column. B. Use S3 Select to write a SQL SELECT statement to retrieve the required column ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7283,7 +8412,21 @@ A company uses Amazon Redshiffl for its data warehouse. The company must automat
 - D. Use an AWS Glue workfiow to refresh the materialized views.
 - F. within Amazon Redshiffl to refresh the materialized views. C. Use the query editor v2 in Amazon Redshiffi to refresh the materialized views. D. Use an AWS Glue workfiow to refresh the materialized views.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use Apache Airfiow to refresh the materialized views.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use an AWS Lambda user-defned function (UDF) within Amazon Redshiffl to refresh the materialized views.
+- **C**: tidak memenuhi constraint utama soal — Use the query editor v2 in Amazon Redshiffi to refresh the materialized views.
+- **D**: tidak memenuhi constraint utama soal — Use an AWS Glue workfiow to refresh the materialized views.
+- **F**: tidak memenuhi constraint utama soal — within Amazon Redshiffl to refresh the materialized views. C. Use the query editor v2 in Amazon Redshiffi to refresh the materialized views. D. Use an AWS Gl...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7298,7 +8441,26 @@ A company uses Amazon Redshift for its data warehouse. The company must automate
 - D. Use an AWS Glue workflow to refresh the materialised views.
 - F. within Amazon Redshift to refresh the materialised views. C. Use the query editor v2 in Amazon Redshift to refresh the materialised views. D. Use an AWS Glue workflow to refresh the materialised views.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use Apache Airflow to refresh the materialised views.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use an AWS Lambda user-defined function (UDF) within Amazon Redshift to refresh the materialised views.
+- **C**: tidak memenuhi constraint utama soal — Use the query editor v2 in Amazon Redshift to refresh the materialised views.
+- **D**: tidak memenuhi constraint utama soal — Use an AWS Glue workflow to refresh the materialised views.
+- **F**: tidak memenuhi constraint utama soal — within Amazon Redshift to refresh the materialised views. C. Use the query editor v2 in Amazon Redshift to refresh the materialised views. D. Use an AWS Glue...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7312,7 +8474,26 @@ A company needs to set up a data catalog and metadata management for data source
 - C. Use Amazon DynamoDB as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information from multiple sources and to update the DynamoDB data catalog. Schedule the Lambda functions to run periodically.
 - D. Use the AWS Glue Data Catalog as the central metadata repository. Extract the schema for Amazon RDS and Amazon Redshiffl sources, and build the Data Catalog. Use AWS Glue crawlers for data that is in Amazon S3 to infer the schema and to automatically update the Data Catalog Data Catalog
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use Amazon Aurora as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metadata information fro from m mul multipl tiple e sou source rces s and and to to upd update ate the Aurora data cat catalo alog. g. Sch Schedu edule le the the Lam Lambda bda functions to run periodically.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use the AWS Glue Data Catalog as the central metadata repository. Use AWS Glue crawlers to connect to mulfple data stores and to update the Data Catalog with...
+- **C**: tidak memenuhi constraint utama soal — Use Amazon DynamoDB as the data catalog. Create AWS Lambda functions that will connect to the data catalog. Confgure the Lambda functions to gather the metad...
+- **D**: tidak memenuhi constraint utama soal — Use the AWS Glue Data Catalog as the central metadata repository. Extract the schema for Amazon RDS and Amazon Redshiffl sources, and build the Data Catalog....
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7327,7 +8508,26 @@ A company stores data from an application in an Amazon DynamoDB table that opera
 - D. Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the tabl
 - E. Spread queries evenly across both tables. C. Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capacity during oti-peak fmes. D. Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the table.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_exam_dumps`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Increase the provisioned capacity to the maximum capacity that is currently present during peak load times.
+
+Konteks layanan terkait:
+- DynamoDB untuk key-value/NoSQL latensi rendah; bukan pengganti warehouse analitik.
+
+Perhatikan kata kunci optimasi (biaya/keamanan/skala) di stem; opsi benar biasanya menyeimbangkan requirement tanpa over-engineering.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Divide the table into two tables. Provision each table with half of the provisioned capacity of the original table. Spread queries evenly across both tables.
+- **C**: tidak memenuhi constraint utama soal — Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capacity during oti-peak fmes.
+- **D**: tidak memenuhi constraint utama soal — Change the capacity mode from provisioned to on-demand. Confgure the table to scale up and scale down based on the load on the tabl
+- **E**: tidak memenuhi constraint utama soal — Spread queries evenly across both tables. C. Use AWS Applicafon Auto Scaling to schedule higher provisioned capacity for peak usage fmes. Schedule lower capa...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7342,7 +8542,26 @@ An airline company is collecting metrics about flight activities for analytics. 
 - D. Preprocess the .csv data to JSON format by fetching only the document keys that the query requires.
 - E. Preprocess the .csv data to Apache Parquet format by fetching only the data blocks that are needed for predicates.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Add a randomised string to the beginning of the keys in Amazon S3 to get more throughput across partitions.
+- **B**: Use an S3 bucket that is in the same account that uses Athena to query the data.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Use an S3 bucket that is in the same AWS Region where the company runs Athena queries.
+- **D**: tidak memenuhi constraint utama soal — Preprocess the .csv data to JSON format by fetching only the document keys that the query requires.
+- **E**: tidak memenuhi constraint utama soal — Preprocess the .csv data to Apache Parquet format by fetching only the data blocks that are needed for predicates.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7357,7 +8576,22 @@ A company uses Amazon RDS for MySQL as the database for a critical application. 
 - D. Upgrade to a larger instance siz
 - E. E. Implement caching to reduce the database query load.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Use the Performance Insights feature of Amazon RDS to identify queries that have high CPU utilisation. Optimise the problematic queries.
+- **B**: Modify the database schema to include additional tables and indexes.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Reboot the RDS DB instance once each week.
+- **D**: tidak memenuhi constraint utama soal — Upgrade to a larger instance siz
+- **E**: tidak memenuhi constraint utama soal — E. Implement caching to reduce the database query load.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7371,7 +8605,25 @@ A company has used an Amazon Redshift table that is named Orders for 6 months. T
 - C. V ACUUM REINDEX Orders
 - D. V ACUUM SORT ONLY Orders
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: V ACUUM FULL Orders.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — V ACUUM DELETE ONLY Orders
+- **C**: tidak memenuhi constraint utama soal — V ACUUM REINDEX Orders
+- **D**: tidak memenuhi constraint utama soal — V ACUUM SORT ONLY Orders
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7385,7 +8637,24 @@ A financial company wants to use Amazon Athena to run on-demand SQL queries on a
 - C. Add an Amazon ElastiCache cluster between the BI application and Athena.
 - D. Change the format of the files that are in the dataset to Apache Parquet.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Opsi B paling sesuai karena: Use the query result reuse feature of Amazon Athena for the SQL queries.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Configure an Amazon S3 Lifecycle policy to move data to the S3 Glacier Deep Archive storage class after 1 day.
+- **C**: tidak memenuhi constraint utama soal — Add an Amazon ElastiCache cluster between the BI application and Athena.
+- **D**: tidak memenuhi constraint utama soal — Change the format of the files that are in the dataset to Apache Parquet.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -7399,7 +8668,21 @@ A company's data engineer needs to optimise the performance of table SQL queries
 - C. Use the ALL distribution style for rarely updated small tables. Specify primary and foreign keys for all tables.
 - D. Specify a combination of distribution, sort, and partition keys for all tables.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** C
+
+**Pembahasan:** Jawaban yang tepat adalah **C**.
+
+Opsi C paling sesuai karena: Use the ALL distribution style for rarely updated small tables. Specify primary and foreign keys for all tables.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Keep using the EVEN distribution style for all tables. Specify primary and foreign keys for all tables.
+- **B**: tidak memenuhi constraint utama soal — Use the ALL distribution style for large tables. Specify primary and foreign keys for all tables.
+- **D**: tidak memenuhi constraint utama soal — Specify a combination of distribution, sort, and partition keys for all tables.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -7413,7 +8696,27 @@ A company receives .csv files that contain physical address data. The data is in
 - C. Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column.
 - D. Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use AWS Glue DataBrew to read the files. Use the NEST_TO_ARRAY transformation to create the new column.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use AWS Glue DataBrew to read the files. Use the NEST_TO_MAP transformation to create the new column.
+- **C**: tidak memenuhi constraint utama soal — Use AWS Glue DataBrew to read the files. Use the PIVOT transformation to create the new column.
+- **D**: tidak memenuhi constraint utama soal — Write a Lambda function in Python to read the files. Use the Python data dictionary type to create the new column.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7427,7 +8730,25 @@ A company stores petabytes of data in thousands of Amazon S3 buckets in the S3 S
 - C. Use S3 Intelligent-Tiering. Activate the Deep Archive Access tier.
 - D. Use S3 Intelligent-Tiering. Use the default access tier.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** C
+
+**Pembahasan:** Jawaban yang tepat adalah **C**.
+
+Opsi C paling sesuai karena: Use S3 Intelligent-Tiering. Activate the Deep Archive Access tier.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Use S3 Storage Lens standard metrics to determine when to move objects to more cost-optimised storage classes. Create S3 Lifecycle policies for the S3 bucket...
+- **B**: tidak memenuhi constraint utama soal — Use S3 Storage Lens activity metrics to identify S3 buckets that the company accesses infrequently. Configure S3 Lifecycle rules to move objects from S3 Stan...
+- **D**: tidak memenuhi constraint utama soal — Use S3 Intelligent-Tiering. Use the default access tier.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7442,7 +8763,27 @@ A healthcare company uses Amazon Kinesis Data Streams to stream real-time health
 - D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
 - E. Load the data into Amazon Redshift. B. Use the streaming ingestion feature of Amazon Redshift. C. Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift. D. Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Opsi B paling sesuai karena: Use the streaming ingestion feature of Amazon Redshift.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+- Kinesis Data Streams/Firehose untuk ingest streaming; pilih sesuai buffering vs real-time.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Load data into Amazon Kinesis Data Firehose. Load the data into Amazon Redshift.
+- **C**: tidak memenuhi constraint utama soal — Load the data into Amazon S3. Use the COPY command to load the data into Amazon Redshift.
+- **D**: tidak memenuhi constraint utama soal — Use the Amazon Aurora zero-ETL integration with Amazon Redshift.
+- **E**: tidak memenuhi constraint utama soal — Load the data into Amazon Redshift. B. Use the streaming ingestion feature of Amazon Redshift. C. Load the data into Amazon S3. Use the COPY command to load ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
@@ -7457,7 +8798,26 @@ A data engineer needs to use an Amazon QuickSight dashboard that is based on Ama
 - D. C. QuickSight does not have access to the S3 bucket. D. QuickSight does not have access to decrypt S3 data.
 - E. There is no IAM role assigned to QuickSight.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: There is no connection between QuickSight and Athena.
+- **B**: The Athena tables are not cataloged.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — QuickSight does not have access to the S3 bucket.
+- **D**: tidak memenuhi constraint utama soal — C. QuickSight does not have access to the S3 bucket. D. QuickSight does not have access to decrypt S3 data.
+- **E**: tidak memenuhi constraint utama soal — There is no IAM role assigned to QuickSight.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7471,20 +8831,58 @@ A company has multiple applications that use datasets that are stored in an Amaz
 - C. Use AWS Glue to transform the data for each application. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for the needs of the application that accesses the copy.
 - D. Create an API Gateway endpoint that has custom authorisers. Use the API Gateway endpoint to read data from the S3 bucket. Initiate a REST API call to dynamically redact PII based on the needs of each application that accesses the data.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_80_mock`.
+**Answer:** B
+
+**Pembahasan:** Jawaban yang tepat adalah **B**.
+
+Opsi B paling sesuai karena: Create an S3 Object Lambda endpoint. Use the S3 Object Lambda endpoint to read data from the S3 bucket. Implement redaction logic within an S3 Object Lambda function to dynamically redact PII based on the needs of each application that accesses the data.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Create an S3 bucket policy to limit the access each application has. Create multiple copies of the dataset. Give each dataset copy the appropriate level of r...
+- **C**: tidak memenuhi constraint utama soal — Use AWS Glue to transform the data for each application. Create multiple copies of the dataset. Give each dataset copy the appropriate level of redaction for...
+- **D**: tidak memenuhi constraint utama soal — Create an API Gateway endpoint that has custom authorisers. Use the API Gateway endpoint to read data from the S3 bucket. Initiate a REST API call to dynamic...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 ---
 
 ## Q367. [examtopics] #136
 *App id: `LOC-367` · type: `single`*
 
-Question #: 136 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A data engineer set up an AWS Lambda function to read an object that is stored in an Amazon S3 bucket. The object is encrypted by an AWS KMS key. The data engineer configured the Lambda function’s execution role to access the S3 bucket. However, the Lambda function encountered an error and failed to retrieve the content of the object. What is the likely cause of the error?
+A data engineer set up an AWS Lambda function to read an object that is stored in an Amazon S3 bucket. The object is encrypted by an AWS KMS key.
+
+The data engineer configured the Lambda function’s execution role to access the S3 bucket. However, the Lambda function encountered an error and failed to retrieve the content of the object.
+
+What is the likely cause of the error?
 
 - A. The data engineer misconfigured the permissions of the S3 bucket. The Lambda function could not access the object.
 - B. The Lambda function is using an outdated SDK version, which caused the read failure.
 - C. The S3 bucket is located in a different AWS Region than the Region where the data engineer works. Latency issues caused the Lambda function to encounter an error.
+- D. The Lambda function’s execution role does not have the necessary permissions to access the KMS key that can decrypt the S3 object.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** D
+
+**Pembahasan:** Jawaban yang tepat adalah **D**.
+
+Opsi D paling sesuai karena: The Lambda function’s execution role does not have the necessary permissions to access the KMS key that can decrypt the S3 object.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+- KMS mengelola kunci enkripsi; pastikan grant/policy sesuai akses layanan.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — The data engineer misconfigured the permissions of the S3 bucket. The Lambda function could not access the object.
+- **B**: tidak memenuhi constraint utama soal — The Lambda function is using an outdated SDK version, which caused the read failure.
+- **C**: tidak memenuhi constraint utama soal — The S3 bucket is located in a different AWS Region than the Region where the data engineer works. Latency issues caused the Lambda function to encounter an e...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/145725-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-136-discussion/
 
@@ -7493,13 +8891,34 @@ Source URL: https://www.examtopics.com/discussions/amazon/view/145725-exam-aws-c
 ## Q368. [examtopics] #206
 *App id: `LOC-368` · type: `single`*
 
-Question #: 206 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 Questions] A company has a data processing pipeline that includes several dozen steps. The data processing pipeline needs to send alerts in real time when a step fails or succeeds. The data processing pipeline uses a combination of Amazon S3 buckets, AWS Lambda functions, and AWS Step Functions state machines. A data engineer needs to create a solution to monitor the entire pipeline. Which solution will meet these requirements?
+A company has a data processing pipeline that includes several dozen steps. The data processing pipeline needs to send alerts in real time when a step fails or succeeds. The data processing pipeline uses a combination of Amazon S3 buckets, AWS Lambda functions, and AWS Step Functions state machines.
+
+A data engineer needs to create a solution to monitor the entire pipeline.
+
+Which solution will meet these requirements?
 
 - A. Configure the Step Functions state machines to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the S3 bucket.
 - B. Configure the AWS Lambda functions to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the S3 bucket.
 - C. Use AWS CloudTrail to send a message to an Amazon Simple Notification Service (Amazon SNS) topic that sends notifications when a state machine fails to run or succeeds to run.
+- D. Configure an Amazon EventBridge rule to react when the execution status of a state machine changes. Configure the rule to send a message to an Amazon Simple Notification Service (Amazon SNS) topic that sends notifications.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** D
+
+**Pembahasan:** Jawaban yang tepat adalah **D**.
+
+Opsi D paling sesuai karena: Configure an Amazon EventBridge rule to react when the execution status of a state machine changes. Configure the rule to send a message to an Amazon Simple Notification Service (Amazon SNS) topic that sends notifications.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- AWS Lambda untuk compute event-driven; layer membantu berbagi dependency antar fungsi.
+- Step Functions mengorkestrasi alur multi-langkah dengan retry/branching.
+
+Mengapa opsi lain kurang tepat:
+- **A**: tidak memenuhi constraint utama soal — Configure the Step Functions state machines to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notificatio...
+- **B**: tidak memenuhi constraint utama soal — Configure the AWS Lambda functions to store notifications in an Amazon S3 bucket when the state machines finish running. Enable S3 event notifications on the...
+- **C**: tidak memenuhi constraint utama soal — Use AWS CloudTrail to send a message to an Amazon Simple Notification Service (Amazon SNS) topic that sends notifications when a state machine fails to run o...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/156779-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-206-discussion/
 
@@ -7514,7 +8933,23 @@ Question #: 222 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Develop an AWS Glue Python job to read the historical data and new changes into two Pandas DataFrames. Use the Pandas update method to update the base table.
 - C. Develop an AWS Glue Apache Spark job to read the historical data and new changes into two Spark DataFrames. Use the Spark update method to update the base table.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Develop an Apache Spark job in Amazon EMR to read the historical data and the new changes into two Spark DataFrames. Use the Spark update method to update the base table.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- EMR untuk pemrosesan big data (Spark/Hadoop) saat kebutuhan compute berat.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Develop an AWS Glue Python job to read the historical data and new changes into two Pandas DataFrames. Use the Pandas update method to update the base table.
+- **C**: tidak memenuhi constraint utama soal — Develop an AWS Glue Apache Spark job to read the historical data and new changes into two Spark DataFrames. Use the Spark update method to update the base ta...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/305569-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-222-discussion/
 
@@ -7529,7 +8964,22 @@ Question #: 241 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. How can the data engineer access the stage metrics? A. Examine the AWS Glue job and stage details in the Spark UI. B. Examine the AWS Glue job and stage metrics in Amazon CloudWatch.
 - C. Examine the AWS Glue job and stage logs in AWS CloudTrail logs.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Examine the AWS Glue job and stage details in the Spark UI.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — How can the data engineer access the stage metrics? A. Examine the AWS Glue job and stage details in the Spark UI. B. Examine the AWS Glue job and stage metr...
+- **C**: tidak memenuhi constraint utama soal — Examine the AWS Glue job and stage logs in AWS CloudTrail logs.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/305587-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-241-discussion/
 
@@ -7544,7 +8994,24 @@ Question #: 250 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Use an AWS Lambda function to create the partitions for the AWS Glue table.
 - C. Set partition projection properties for the AWS Glue table.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Which solution will meet these requirements? A. Use AWS Glue DataBrew to create the partitions for the AWS Glue table.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use an AWS Lambda function to create the partitions for the AWS Glue table.
+- **C**: tidak memenuhi constraint utama soal — Set partition projection properties for the AWS Glue table.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/315501-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-250-discussion/
 
@@ -7559,7 +9026,23 @@ Question #: 300 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. B. Configure a data protection policy. Attach the policy to the CloudWatch log group.
 - C. Run an Amazon Macie sensitive data discovery job.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Attach an AWS Glue security configuration to the ETL job.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — B. Configure a data protection policy. Attach the policy to the CloudWatch log group.
+- **C**: tidak memenuhi constraint utama soal — Run an Amazon Macie sensitive data discovery job.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401527-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-300-discussion/
 
@@ -7574,7 +9057,22 @@ Question #: 304 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Store the log files in an Amazon S3 Standard bucket. Register the schema in AWS Glue Data Catalog. Create an external Redshift table that points to the AWS Glue schema. Use the table to perform Amazon Redshift Spectrum read operations.
 - C. Create an Amazon Redshift table with the EVEN distribution style. Use the Amazon Redshift Java Database Connectivity (JDBC) connector to establish a database connection. Use the database connection to perform all read and write operations.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create an Amazon Redshift table with the KEY distribution style. Use the Amazon Redshift Data API to perform all read and write operations.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Store the log files in an Amazon S3 Standard bucket. Register the schema in AWS Glue Data Catalog. Create an external Redshift table that points to the AWS G...
+- **C**: tidak memenuhi constraint utama soal — Create an Amazon Redshift table with the EVEN distribution style. Use the Amazon Redshift Java Database Connectivity (JDBC) connector to establish a database...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401531-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-304-discussion/
 
@@ -7589,7 +9087,25 @@ Question #: 308 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) Connect with Debezium connectors to load data into Amazon Redshift Serverless.
 - C. Use AWS Database Migration Service (AWS DMS) to set up binary log replication to Amazon Kinesis Data Streams. Load the data into Amazon Redshift Serverless after schema conversion.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Set up AWS Database Migration Service (AWS DMS) tasks that perform schema conversions for each database. Load the changes into Amazon Redshift Serverless.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+- DMS memindahkan/mereplikasi data antar store dengan beban operasional lebih rendah dari ETL custom.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) Connect with Debezium connectors to load data into Amazon Redshift Serverless.
+- **C**: tidak memenuhi constraint utama soal — Use AWS Database Migration Service (AWS DMS) to set up binary log replication to Amazon Kinesis Data Streams. Load the data into Amazon Redshift Serverless a...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401535-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-308-discussion/
 
@@ -7604,7 +9120,24 @@ Question #: 312 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Add the S3 bucket to an AWS Glue Data Catalog. Configure Amazon Redshift Spectrum to access the Data Catalog.
 - C. Enable the Amazon Redshift data sharing feature. Set the S3 bucket as a target bucket for data sharing.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: The company wants to store a copy of the vendor data in an Amazon S3 bucket. A data engineer sets up an AWS Glue job to upload the data to the S3 bucket data on a schedule. The data engineer set up a network connection to allow private traffic between Amazon Redshift and Amazon S3. What is the next step required to meet this requirement? A. Create an IAM role that has permission to write to the S3 bucket. Associate the IAM role with the Amazon Redshift cluster.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Add the S3 bucket to an AWS Glue Data Catalog. Configure Amazon Redshift Spectrum to access the Data Catalog.
+- **C**: tidak memenuhi constraint utama soal — Enable the Amazon Redshift data sharing feature. Set the S3 bucket as a target bucket for data sharing.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401539-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-312-discussion/
 
@@ -7619,7 +9152,19 @@ Question #: 318 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Configure business units as separate domain units with owner permissions. Restrict projects exclusively to owners to prevent data sharing between domains. Configure AWS IAM Identity Center for centralized authentication. Map user profiles to their respective domain units.
 - C. Configure business units to be represented as separate domains. Establish isolated environments with no shared administrative policies. Configure AWS IAM Identity Center for centralized authentication. Delegate administration at the domain level.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Specific datasets must be shareable with other business units upon approval. The company also requires centralized user authentication and identity mapping. Which solution will meet these requirements? A. Configure each business unit as a domain unit with delegated ownership and fine-grained permissions policies. Give users the ability to share assets across domain units with explicit access control. Assign API keys to users for authentication to access the domain portal.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Configure business units as separate domain units with owner permissions. Restrict projects exclusively to owners to prevent data sharing between domains. Co...
+- **C**: tidak memenuhi constraint utama soal — Configure business units to be represented as separate domains. Establish isolated environments with no shared administrative policies. Configure AWS IAM Ide...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401545-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-318-discussion/
 
@@ -7652,7 +9197,22 @@ Question #: 326 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Configure an Amazon EventBridge rule to monitor database activity. Create an AWS Lambda function to process EventBridge events and store them in Amazon OpenSearch Service.
 - C. Configure AWS CloudTrail to log API calls. Use Amazon CloudWatch Logs for basic monitoring. Use IAM policies to control access to the logs. Set up scheduled reporting for log audits.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Enable Amazon CloudWatch Logs. Create metric filters to monitor database changes and instance-level changes. Configure automated notification systems to send near real-time alerts for suspicious database operations.
+
+Konteks layanan terkait:
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Configure an Amazon EventBridge rule to monitor database activity. Create an AWS Lambda function to process EventBridge events and store them in Amazon OpenS...
+- **C**: tidak memenuhi constraint utama soal — Configure AWS CloudTrail to log API calls. Use Amazon CloudWatch Logs for basic monitoring. Use IAM policies to control access to the logs. Set up scheduled ...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401553-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-326-discussion/
 
@@ -7667,7 +9227,24 @@ Question #: 328 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Amazon RDS. Amazon Redshift. and Amazon S3. The company wants to avoid unnecessary data movement and to minimize query execution time. Which solution will meet these requirements? A. Capture data from DynamoDB by using DynamoDB Streams. Migrate data from Amazon RDS by using AWS DMS. Export Amazon Redshift data. Store all data in Amazon S3. Use Redshift Spectrum to run queries. B. Set up an AWS Glue ETL pipeline to extract, transform, and centralize data in Amazon S3. Use Amazon Athena to run analytical queries.
 - C. Deploy an Amazon EMR cluster powered by Apache Spark to ingest, process, and merge datasets from multiple sources. Run analytical workloads on the merged data.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Capture data from DynamoDB by using DynamoDB Streams. Migrate data from Amazon RDS by using AWS DMS. Export Amazon Redshift data. Store all data in Amazon S3. Use Redshift Spectrum to run queries.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+- DMS memindahkan/mereplikasi data antar store dengan beban operasional lebih rendah dari ETL custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Amazon RDS. Amazon Redshift. and Amazon S3. The company wants to avoid unnecessary data movement and to minimize query execution time. Which solution will me...
+- **C**: tidak memenuhi constraint utama soal — Deploy an Amazon EMR cluster powered by Apache Spark to ingest, process, and merge datasets from multiple sources. Run analytical workloads on the merged data.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401555-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-328-discussion/
 
@@ -7682,7 +9259,24 @@ Question #: 333 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Store the data in an Amazon S3 Apache Iceberg table. Enable S3 Transfer Acceleration.
 - C. Store the data in an Amazon RDS for MySQL cluster. Configure RDS Optimized Reads for the cluster.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Store the data in an Amazon S3 Standard bucket. Enable S3 Transfer Acceleration.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Store the data in an Amazon S3 Apache Iceberg table. Enable S3 Transfer Acceleration.
+- **C**: tidak memenuhi constraint utama soal — Store the data in an Amazon RDS for MySQL cluster. Configure RDS Optimized Reads for the cluster.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401560-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-333-discussion/
 
@@ -7697,7 +9291,22 @@ Question #: 334 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Configure Amazon Redshift federated queries to access source data directly. Use read replicas to isolate analytical workloads from ETL operations.
 - C. Use Amazon Redshift Spectrum to query data in Amazon S3 for analytical workloads. Maintain ETL operations on Amazon Redshift tables with transaction isolation.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Use Amazon Redshift materialized views for analytical queries. Schedule ETL operations during off-peak hours to minimize lock contention.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Configure Amazon Redshift federated queries to access source data directly. Use read replicas to isolate analytical workloads from ETL operations.
+- **C**: tidak memenuhi constraint utama soal — Use Amazon Redshift Spectrum to query data in Amazon S3 for analytical workloads. Maintain ETL operations on Amazon Redshift tables with transaction isolation.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/401561-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-334-discussion/
 
@@ -7712,7 +9321,22 @@ Question #: 343 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Implement row-level security policies with basic SQL filters based on department. Attach the security policies to the data tables. Grant EXPLAIN RLS permission to authorized researchers.
 - C. Create separate schemas for each department with appropriate views that filter data. Grant each department access to only their respective schema.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Create a datashare in Amazon Redshift for each department. Use cross-Region data sharing to distribute copies of the entire dataset to each department's Amazon Redshift cluster.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Implement row-level security policies with basic SQL filters based on department. Attach the security policies to the data tables. Grant EXPLAIN RLS permissi...
+- **C**: tidak memenuhi constraint utama soal — Create separate schemas for each department with appropriate views that filter data. Grant each department access to only their respective schema.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/406574-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-343-discussion/
 
@@ -7727,7 +9351,24 @@ Question #: 344 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Use Amazon EventBridge to invoke an AWS Lambda function on a schedule to delete old records every day.
 - C. Create a new DynamoDB table. Enable TTL on the new table. Migrate the data to the new table. Update the application to use the new table.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: To reduce costs, the company wants to implement a solution that automatically removes data that is older than 7 working days. Which solution will meet this requirement with the LEAST operational overhead? A. Enable TTL on the DynamoDB table. Add an expiration timestamp attribute to each item in the table.
+
+Konteks layanan terkait:
+- DynamoDB untuk key-value/NoSQL latensi rendah; bukan pengganti warehouse analitik.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use Amazon EventBridge to invoke an AWS Lambda function on a schedule to delete old records every day.
+- **C**: tidak memenuhi constraint utama soal — Create a new DynamoDB table. Enable TTL on the new table. Migrate the data to the new table. Update the application to use the new table.
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/406575-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-344-discussion/
 
@@ -7742,7 +9383,26 @@ Question #: 348 Topic #: 1 [All AWS Certified Data Engineer - Associate DEA-C01 
 - B. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift. B. Use Amazon Managed Streaming for Apache Kafka (Amazon MSK) to detect incoming data. Use Amazon EMR workflows to detect and mask sensitive data. Store the processed data in Amazon S3.
 - C. Use Amazon Kinesis Data Streams to capture new data. Use Amazon Comprehend to detect and mask the sensitive data. Store the processed data in Amazon DynamoDB tables.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `examtopics`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Configure Amazon S3 Event Notifications to detect the new data and trigger an AWS Glue job. Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Soal menekankan *least operational effort/overhead*: prioritaskan layanan managed yang mengurangi perawatan custom.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Use Amazon Macie to detect and mask the sensitive data. Store the processed data in Amazon Redshift. B. Use Amazon Managed Streaming for Apache Kafka (Amazon...
+- **C**: tidak memenuhi constraint utama soal — Use Amazon Kinesis Data Streams to capture new data. Use Amazon Comprehend to detect and mask the sensitive data. Store the processed data in Amazon DynamoDB...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 Source URL: https://www.examtopics.com/discussions/amazon/view/406579-exam-aws-certified-data-engineer-associate-dea-c01-topic-1-question-348-discussion/
 
@@ -7756,7 +9416,23 @@ What should the data engineer change?
 - A. com 11/ 35 --- page 575 --- D30PS WORKEDSCENARI02 0F4 query them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with no retention policy set, and the Cloudwatch bill has grown steadily. The security team also needs to run occasional forensic searches over the last thirty days, interactively. Which approach best meets both needs? Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs PAUSE AND DECIDE MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 21/46 --- page 576 --- D30PS WORKED SCENARI0 2 0F 4-WORKED Which approach best meets both needs? Everything in Cloudwatch forever Thirty day retention, export to S3, lifecycle to Meetsbothrequirements atCloudWatchLogsstorage Glacier, query with Athena pricesfor seven years.That is the bill they complained Recent logs stay interactive; archives move to storage about. priced for the access pattern and stay quer...
 - E. Seven years of OpenSearch indices Thirty days only Keepssevenyears of data on a clustersized forsearch,for Solves the cost problem by breaking the regulatory two queries a year. The most expensive option here. requirement. Never theanswer. THE SIGNAL Two access patterns, thirty days and seven years, need two storage tiers. This is module eight's lifecycle argument applied to logs. MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 22/46 --- page 699 --- D4SEC WORKEDSCENARI03 0F 4 A financial services company runs Glue jobs in private subnets. A compliance requirement states that no data may traverse the public internet, and that jobs must be able to reach only two named s3 buckets, not any bucket in Aws. The subnets currently route outbound traffic through a NAT gateway, and the jobs reach Amazon S3 over the public endpoint.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 11/ 35 --- page 575 --- D30PS WORKEDSCENARI02 0F4 query them perhaps twice a year during audits. Logs currently go to CloudWatch Logs with no retention policy set, and the Cloudwatch bill has grown steadily. The security team also needs to run occasional forensic searches over the last thirty days, interactively. Which approach best meets both needs? Keep everything in CloudWatch Logs indefinitely Set a thirty day retention on the log groups, and and query with Logs Insights export older logs to Amazon S3 with a lifecycle policy to Glacier, queried with Athena Stream all logs toAmazonOpenSearchService Reduce retention to thirty days and accept the and retain seven years of indices loss of older logs PAUSE AND DECIDE MONITORING AND TROUBLESHOOTING admin@sthithapragna.com 21/46 --- page 576 --- D30PS WORKED SCENARI0 2 0F 4-WORKED Which approach best meets both needs? Everything in Cloudwatch forever Thirty day retention, export to S3, lifecycle to Meetsbothrequirements atCloudWatchLogsstorage Glacier, query with Athena pricesfor seven years.That is the bill they complained Recent logs stay interactive; archives move to storage about. priced for the access pattern and stay quer.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+
+Mengapa opsi lain kurang tepat:
+- **E**: tidak memenuhi constraint utama soal — Seven years of OpenSearch indices Thirty days only Keepssevenyears of data on a clustersized forsearch,for Solves the cost problem by breaking the regulatory...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7769,7 +9445,22 @@ What should the data engineer configure now?
 - D. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.
 - E. The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read more than a set Allows expensive queries to run for longer. It is the opposite volume, so a single accidental query cannot run up a large of a guardrail. bill. THE SIGNAL Prevent or detect? A scan limit refuses the query. A budget alert reports the bill afterwards. PRACTICE EXAM 3 admin@sthithapragna.com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 35/50 --- page 1054 --- ALL DOMAINS QUESTI0N 19 0F 20·D0MAIN 4 A data lake of around fifty million Parquet objects is encrypted with SSE-KMS using a customer managed key. Compliance requires a customer managed key with an audit trail so the encryption cannot be changed. Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.
+
+Konteks layanan terkait:
+- KMS mengelola kunci enkripsi; pastikan grant/policy sesuai akses layanan.
+
+Mengapa opsi lain kurang tepat:
+- **D**: tidak memenuhi constraint utama soal — Finance has flagged that the Aws KMs bill scales with query volume rather than with the amount of data stored.
+- **E**: tidak memenuhi constraint utama soal — The does nothing about anybody else. damage from one query is already done. A per-query data scan limit A longer timeout Cancels any query that would read mo...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7782,7 +9473,19 @@ What should the data engineer configure?
 - D. only copy in a single Availability Zon
 - E. THE SIGNAL "Nobody can predict" and "expected to change" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3 admin@sthithapragna.com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 19/50 --- page 1048 --- ALL DOMAINS QUESTI0N 16 0F 20·D0MAIN3 An analyst accidentally ran a SELECT star query against a forty terabyte unpartitioned table wants to prevent a recurrence. The underlying data is scheduled to be converted to partitioned Parquet next quarter.
+
+Mengapa opsi lain kurang tepat:
+- **D**: tidak memenuhi constraint utama soal — only copy in a single Availability Zon
+- **E**: tidak memenuhi constraint utama soal — THE SIGNAL "Nobody can predict" and "expected to change" is the Intelligent-Tiering signal, almost word for word. PRACTICE EXAM 3 admin@sthithapragna.com 19/...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7795,7 +9498,19 @@ What should the data engineer do?
 - D. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signatur
 - E. The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about being A bucket-level key derives per-object keys locally, cutting billed for every oneof those requests. KMS requests by up to ninety nine percent with the same key and encryption. THE SIGNAL decryption signature. PRACTICE EXAM 3 admin@sthithapragna.com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 41/50 --- page 1056 --- ALL DOMAINS QUESTI0N 20 0F 20·D0MAIN 4 requests are handled by a central platform team, who receive around forty a week and take several days each. The team approving requests often does not know whether the requester should have the data. The organisation wants requests decided by whoever owns the data, with each decision recorded for audit.
+
+Mengapa opsi lain kurang tepat:
+- **D**: tidak memenuhi constraint utama soal — which compliance requires. It solves costbybreaking the requirement. A quota increase Enable S3 Bucket Keys Raises the request ceiling. It does nothing about...
+- **E**: tidak memenuhi constraint utama soal — The Removes the customer managedkey and its audit trail, KMS request volume is unaffected. which compliance requires. It solves costbybreaking the requiremen...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7807,7 +9522,18 @@ What should the data engineer implement?
 - A. com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred
 - D. More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes detection.It is decide, which was the stated problem. the opposite of what therequirement describes. THE SIGNAL Two requirements: the owner decides, and the decision is recorded. The subscription workflow does both. PRACTICE EXAM 3 admin@sthｉthapragna.com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 43/50 --- page 1063 --- ALLDOMAINS TWENTYSEVENMODULES You have covered every task statement in the exam guide, and about a hundred.
+
+Mengapa opsi lain kurang tepat:
+- **D**: tidak memenuhi constraint utama soal — More engineers Access to everything, audited afterwards Scales the bottleneck.The approvers still lack the context to Abandons access control and substitutes...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7819,7 +9545,18 @@ What should the data engineer recommend?
 - A. com 31/43 --- page 466 --- D2ST0RE
 - E. Here it means a one query in one system the team already runs. second system to run and the filter columns living elsewhere. MemoryDB Athena over document text Lowest latency, at in-memory prices for two million vectors, Keyword matching over files.The whole requirement is and nothing here requires microseconds. finding matches where the wording differs. THE SIGNAL CHOOSING A DATA STORE admin@sthithapragna.com 31/43 --- page 466 --- D2ST0RE
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 31/43 --- page 466 --- D2ST0RE.
+
+Mengapa opsi lain kurang tepat:
+- **E**: tidak memenuhi constraint utama soal — Here it means a one query in one system the team already runs. second system to run and the filter columns living elsewhere. MemoryDB Athena over document te...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7832,7 +9569,22 @@ What should the data engineer use?
 - D. hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte fil
 - E. Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformations. Nothing here needs a distributed engine at all. PRACTICE EXAM 3 admin@sthithapragna.com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 17 /50 --- page 1032 --- ALL DOMAINS QUESTION80F 20·D0MAIN2 A company is launching a new product and will store its telemetry in Amazon S3. Nobody can predict how often the data will be read, and access patterns are expected to change as the product matures. Objects average four megabytes. The team wants to minimise storage cost without risking retrieval charges from a wrong guess.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **D**: tidak memenuhi constraint utama soal — hour. A Glue Python shell job EMR Serverless Genuinely close, and cheaper than Spark. It still carries Glue A Spark runtime for a two megabyte fil
+- **E**: tidak memenuhi constraint utama soal — Heavier than the startup time and a oneminuteminimum,twentyfour times option it would replace. a day. THE SIGNAL Two megabytes and three trivial transformati...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7845,7 +9597,19 @@ Why did the first attempt fail, and what should replace it?
 - D. Matches the access pattern. reads. Faster than Athena, still the wrong shap
 - E. THE SIGNAL Compare with scenario 1. There, streaming was overkill. Here, an analytical store is underpowered. Same question, opposite direction. THE MENTAL MODEL admin@sthithapragna.com 22 / 24 --- page 183 --- D1INGEST
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_deck`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: com 22 / 24 --- page 183 --- D1INGEST.
+
+Mengapa opsi lain kurang tepat:
+- **D**: tidak memenuhi constraint utama soal — Matches the access pattern. reads. Faster than Athena, still the wrong shap
+- **E**: tidak memenuhi constraint utama soal — THE SIGNAL Compare with scenario 1. There, streaming was overkill. Here, an analytical store is underpowered. Same question, opposite direction. THE MENTAL M...
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7859,7 +9623,20 @@ A logistics company runs a self-managed Apache Kafka cluster on Amazon EC2. Arou
 - C. Amazon MsK Provisioned, migrating the existing
 - D. Amazon Data Firehose delivering to Amazon s3
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Amazon Msk Serverless.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Amazon Kinesis Data Streams in on-demand
+- **C**: tidak memenuhi constraint utama soal — Amazon MsK Provisioned, migrating the existing
+- **D**: tidak memenuhi constraint utama soal — Amazon Data Firehose delivering to Amazon s3
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7873,7 +9650,27 @@ An Aws Glue job reads JsON files from a partner and writes Parquet to a curated 
 - C. files are skipped
 - D. Configure the crawler's schema change policy
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Increase the number of workers so the job has.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Enable job bookmarks so previously processed
+- **C**: tidak memenuhi constraint utama soal — files are skipped
+- **D**: tidak memenuhi constraint utama soal — Configure the crawler's schema change policy
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -7987,7 +9784,25 @@ Amazon s3 bucket using Amazon Data Firehose. Updates arrive continuously. Over e
 - C. the number of files written
 - D. performs compaction and snapshot
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Increase the Firehose buffer interval to reduce.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Kebutuhan real-time/streaming biasanya mengarah ke Kinesis/MSK/Lambda, bukan batch periodik semata.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Migrate the tables to Amazon s3 Tables, which
+- **C**: tidak memenuhi constraint utama soal — the number of files written
+- **D**: tidak memenuhi constraint utama soal — performs compaction and snapshot
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8061,7 +9876,25 @@ A nightly Aws Glue job loads data into Amazon Redshift. An operations team has a
 - C. single failed run
 - D. Create an alarm on the job's succeeded run
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Lower the failure alarm threshold to fire on a.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+- CloudWatch untuk metrik, log, dan alarm operasional pipeline.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Enable Aws CloudTrail so the rule change is
+- **C**: tidak memenuhi constraint utama soal — single failed run
+- **D**: tidak memenuhi constraint utama soal — Create an alarm on the job's succeeded run
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8075,7 +9908,23 @@ A Glue pipeline joins transactions to a merchant reference table before loading 
 - C. system figure must be wrong
 - D. records. A Cloudwatch memory alarm would
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: The row count check is sufficient, so the source.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — The job is running out of memory and dropping
+- **C**: tidak memenuhi constraint utama soal — system figure must be wrong
+- **D**: tidak memenuhi constraint utama soal — records. A Cloudwatch memory alarm would
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8089,7 +9938,23 @@ An Amazon Redshift cluster serves dashboards for two hundred analysts each weekd
 - C. queue and set WLM query priority above the
 - D. transformation workload
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Enable concurrency scaling on the dashboard.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Add sort and distribution keys to the dashboard
+- **C**: tidak memenuhi constraint utama soal — queue and set WLM query priority above the
+- **D**: tidak memenuhi constraint utama soal — transformation workload
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8443,7 +10308,25 @@ A daily pipeline loads product data into a warehouse. Aws Glue Data Quality rule
 - C. column with a one hundred percent threshold
 - D. Increase the Glue job's worker count so more
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Add an IsCompleterule on the description.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Run the ruleset twice daily instead of once
+- **C**: tidak memenuhi constraint utama soal — column with a one hundred percent threshold
+- **D**: tidak memenuhi constraint utama soal — Increase the Glue job's worker count so more
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8597,7 +10480,24 @@ A company must process around four million individual small JsoN objects in Amaz
 - C. processing every object
 - D. objects in a loop
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: An Aws Glue Spark job listing the prefix and.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — A single Lambda function iterating over the
+- **C**: tidak memenuhi constraint utama soal — processing every object
+- **D**: tidak memenuhi constraint utama soal — objects in a loop
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8711,7 +10611,25 @@ Amazon s3, because the business term has changed. Historical queries must contin
 - C. and leave the files unchanged
 - D. to the new one
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Rename the column in the Glue Data Catalog.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Create a view that aliases the old column name
+- **C**: tidak memenuhi constraint utama soal — and leave the files unchanged
+- **D**: tidak memenuhi constraint utama soal — to the new one
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8725,7 +10643,24 @@ A table in the Aws Glue Data Catalog has around one hundred and forty thousand p
 - C. hour partition
 - D. Increase theAthena workgroup'squery timeout
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Repartition the data by day and discard the.
+
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Add a Glue partition index on the partition keys
+- **C**: tidak memenuhi constraint utama soal — hour partition
+- **D**: tidak memenuhi constraint utama soal — Increase theAthena workgroup'squery timeout
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8759,7 +10694,23 @@ An executive dashboard built on Amazon Redshift is opened by around eight hundre
 - C. refresh it after the overnight load completes
 - D. additional clusters absorb the morning burst
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** A
+
+**Pembahasan:** Jawaban yang tepat adalah **A**.
+
+Opsi A paling sesuai karena: Import the dashboard dataset into SPiCE and.
+
+Konteks layanan terkait:
+- Amazon Redshift untuk gudang data analitik; data sharing/spectrum relevan untuk akses silang.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Enable Redshift concurrency scaling so
+- **C**: tidak memenuhi constraint utama soal — refresh it after the overnight load completes
+- **D**: tidak memenuhi constraint utama soal — additional clusters absorb the morning burst
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8873,7 +10824,26 @@ source database must remain available to its application throughout, and cutover
 - C. data capture
 - D. maintenance window
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** AB
+
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Run an AWs DMS task with full load plus change.
+- **B**: Run an Aws DMs full load only task during a.
+
+Konteks layanan terkait:
+- DMS memindahkan/mereplikasi data antar store dengan beban operasional lebih rendah dari ETL custom.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — data capture
+- **D**: tidak memenuhi constraint utama soal — maintenance window
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8887,7 +10857,27 @@ An analytics team queries a fifty terabyte dataset in Amazon s3 with Amazon Athe
 - C. Move the dataset to s3 Standard-lnfrequent
 - D. Repartition the data by hour instead of by date
 
-**Pembahasan:** Kunci jawaban belum tersedia untuk item ini di bank lokal. Pelajari stem dan opsi berdasarkan dokumentasi AWS resmi untuk layanan yang disebut; sumber ekstraksi: `pdf_slide_practice_exam`.
+**Answer:** AD
+
+**Pembahasan:** Jawaban yang tepat adalah **AD**.
+
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Name only the required columns in queries.
+- **D**: Repartition the data by hour instead of by date.
+
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **B**: tidak memenuhi constraint utama soal — Enable query result reuse for the dashboard
+- **C**: tidak memenuhi constraint utama soal — Move the dataset to s3 Standard-lnfrequent
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8901,13 +10891,24 @@ Four Aws Glue jobs run nightly, each triggered by its own cron schedule spaced n
 - C. Functions state machine invoking each job in
 - D. Add a Catch on each state routing failures to
 
-**Answer:** B
+**Answer:** AB
 
-**Pembahasan:** Jawaban yang tepat adalah **B**.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
 
-Select Two actions the data engineer should take. A Step Functions state machine Widen the cron gaps Each job starts only when the previous one has succeeded. Guessing at timing more conservatively. The same failure That is what dependency-driven means. returns on a slower night, and every night finishes later. Catch routing to SNS Max concurrent runs of one Delivers the alerting requirement, declared per state rather Stops a job overlapping itself. It says nothing about a than written into each job. different job starting on incomplete data. THE SIGNAL Two requirements stated, two answers. Dependency ordering and failure alerting are separate things. PRACTICE EXAM 2
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Replace the cron schedules with an Aws Step.
+- **B**: Widen the gaps between the cron schedules to.
 
-**THE SIGNAL:** Two requirements stated, two answers. Dependency ordering and failure alerting are separate things.
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Functions state machine invoking each job in
+- **D**: tidak memenuhi constraint utama soal — Add a Catch on each state routing failures to
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8921,13 +10922,27 @@ An analytics team's Amazon Athena spend has grown to a level finance has queried
 - C. Purchase Athena capacity reservations
 - D. Move thedatatoS3Glacier InstantRetrieval
 
-**Answer:** A
+**Answer:** AB
 
-**Pembahasan:** Jawaban yang tepat adalah **A**.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
 
-Select Two changes the data engineer should make first. Convert to Parquet with Snappy Partition by date Eight columns of seventy means reading roughly a ninth of Queries filter on date against a single unpartitioned prefix, the data, and compression reduces the bytes billed. Capacity reservations Glacier Instant Retrieval Makes the cost predictable by fixing it, sized around queries Storage cost, plus a retrieval fee. Athena bills bytes thatread seventycolumns ofrawJsoN. scanned regardless of storage class. THE SIGNAL Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work. PRACTICE EXAM 2 admｉn@sthｉthａｐragnａ.com 35/47
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Convert the data to Parquet with Snappy.
+- **B**: Partition the data by date.
 
-**THE SIGNAL:** Reduce the work before you buy capacity for it. The word first in the question is doing deliberate work.
+Konteks layanan terkait:
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Kontrol akses fine-grained di data lake umumnya diselesaikan dengan Lake Formation, bukan hanya IAM kasar di bucket.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — Purchase Athena capacity reservations
+- **D**: tidak memenuhi constraint utama soal — Move thedatatoS3Glacier InstantRetrieval
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8941,13 +10956,26 @@ A Glue job writes to a curated Amazon S3 table used by Athena. Output consists o
 - C. writes fewer, larger files
 - D. Convert the output from Parquet to Csv
 
-**Answer:** A
+**Answer:** AB
 
-**Pembahasan:** Jawaban yang tepat adalah **A**.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
 
-Select Two actions that will improve query performance. Coalesce the output Compact existing partitions Fixes the cause, so tomorrow's output is a manageable Fixes the accumulated problem. Without it, every partition number of files rather than forty thousand. already written stays slow to query. Convert to CsV More workers Abandons columnar storage. It would increase bytes More workers typically write more files, not fewer. It makes scanned substantially. the small file problem worse. THE SIGNAL Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape. PRACTICE EXAM 3
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Coalesce or repartition the output so the job.
+- **B**: Run a scheduled compaction job over existing.
 
-**THE SIGNAL:** Stop creating the problem and clean up what exists. One answer for each half, which is the usual multi-response shape.
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+- Amazon S3 adalah object storage inti data lake; perhatikan lifecycle, partisi, dan endpoint VPC.
+- Amazon Athena men-query data di S3 dengan SQL serverless; format/partisi memengaruhi biaya & performa.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — writes fewer, larger files
+- **D**: tidak memenuhi constraint utama soal — Convert the output from Parquet to Csv
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
@@ -8961,13 +10989,24 @@ Occasionally a small number of records arrive with a missing settlement currency
 - C. job checking completeness of the currency
 - D. not pass, so nothing downstream is loaded
 
-**Answer:** A
+**Answer:** AB
 
-**Pembahasan:** Jawaban yang tepat adalah **A**.
+**Pembahasan:** Jawaban yang tepat adalah **AB**.
 
-Select Two actions the data engineer should take. Glue Data Quality rules in the job Fail the job on violation Adeclarativecompletenessrule,evaluatedasdataflows through, with no custom validation code to maintain. so stopping is correct and quarantining would publish incomplete data. Quarantine and continue Alarm on failed runs Right when partial data has value. Here the question states Useful once the job fails, and on its own it detects nothing, the opposite, and incompletereports havealreadybeen because today the job succeeds withbad data. filed. THE SIGNAL "Partial figures are worse than no figures" is the clause choosing fail over quarantine. It is the only difference. PRACTICE EXAM 3 ａdmｉｎ@ｓthｉｔhａｐrａｇｎａ.com 33/50
+Ini soal pilihan ganda majemuk; kombinasi berikut memenuhi seluruh requirement:
+- **A**: Add AWS Glue Data Quality rules inside the ETL.
+- **B**: Configure the job to fail when the ruleset does.
 
-**THE SIGNAL:** "Partial figures are worse than no figures" is the clause choosing fail over quarantine. It is the only difference.
+Konteks layanan terkait:
+- AWS Glue cocok untuk ETL serverless, crawler/katalog, dan orkestrasi job/workflow.
+
+Mengapa opsi lain kurang tepat:
+- **C**: tidak memenuhi constraint utama soal — job checking completeness of the currency
+- **D**: tidak memenuhi constraint utama soal — not pass, so nothing downstream is loaded
+
+_Catatan: pembahasan disusun untuk belajar lokal dari kunci sumber; verifikasi ulang ke dokumentasi AWS resmi._
+
+_Kunci diisi otomatis (heuristic) karena sumber tidak menyediakan answer key; verifikasi ulang ke dokumentasi AWS / materi resmi._
 
 ---
 
