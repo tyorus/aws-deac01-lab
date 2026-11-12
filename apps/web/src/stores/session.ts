@@ -1,12 +1,21 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { computed, ref, toRaw } from 'vue'
 import type { FeedbackMode, GradeResult, Question, QuizSession, SessionMode } from '@/types'
 import { invokeFunction, isSupabaseConfigured, supabase } from '@/services/supabase'
 import { useAuthStore } from '@/stores/auth'
-import { loadLocalQuestions } from '@/services/localQuestions'
-import { gradeLocally } from '@/services/localGrader'
+import { loadLocalQuestions, getRawById } from '@/services/localQuestions'
+import { gradeLocally, stripAnswerKeys } from '@/services/localGrader'
 
 const RECOVERY_KEY = 'dea-quiz-recovery'
+const LAST_EXAM_KEY = 'dea-quiz-last-exam'
+const RECOVERY_VERSION = 2
+
+type RecoveryPayloadV2 = {
+  v: typeof RECOVERY_VERSION
+  session: QuizSession
+  feedbackMode: FeedbackMode
+  lastGradedQuestionId: string | null
+}
 
 export const useSessionStore = defineStore('session', () => {
   const current = ref<QuizSession | null>(null)
@@ -22,34 +31,121 @@ export const useSessionStore = defineStore('session', () => {
     return questions.value.find((q) => q.id === id) ?? null
   })
 
+  function hydrateQuestions(ids: string[], cached?: Question[]): Question[] {
+    const fromCache = new Map((cached || []).map((q) => [q.id, q]))
+    const out: Question[] = []
+    for (const id of ids) {
+      const raw = getRawById(id)
+      if (raw) {
+        out.push({
+          id: raw.id,
+          stem: raw.stem,
+          type: raw.type as Question['type'],
+          difficulty: raw.difficulty as Question['difficulty'],
+          domain_id: raw.domain,
+          status: raw.status as Question['status'],
+          provenance: raw.provenance,
+          verification_status: raw.verification_status as Question['verification_status'],
+          topics: raw.topics,
+          services: raw.services,
+          options: stripAnswerKeys(raw.options),
+        })
+        continue
+      }
+      const fallback = fromCache.get(id)
+      if (fallback) out.push(fallback)
+    }
+    return out
+  }
+
+  function readStored(key: string): string | null {
+    try {
+      return sessionStorage.getItem(key) || localStorage.getItem(key)
+    } catch {
+      try {
+        return localStorage.getItem(key)
+      } catch {
+        return null
+      }
+    }
+  }
+
+  function writeStored(key: string, value: string) {
+    try {
+      localStorage.setItem(key, value)
+    } catch {
+      // ignore quota
+    }
+    try {
+      sessionStorage.setItem(key, value)
+    } catch {
+      // ignore quota
+    }
+  }
+
+  function removeStored(key: string) {
+    try {
+      localStorage.removeItem(key)
+    } catch {
+      // ignore
+    }
+    try {
+      sessionStorage.removeItem(key)
+    } catch {
+      // ignore
+    }
+  }
+
   function persistRecovery() {
-    if (!current.value) {
-      localStorage.removeItem(RECOVERY_KEY)
+    if (!current.value || current.value.status !== 'active') {
+      removeStored(RECOVERY_KEY)
       return
     }
-    localStorage.setItem(
-      RECOVERY_KEY,
-      JSON.stringify({
-        session: current.value,
-        questions: questions.value,
-        feedbackMode: feedbackMode.value,
-      }),
-    )
+    const payload: RecoveryPayloadV2 = {
+      v: RECOVERY_VERSION,
+      session: JSON.parse(JSON.stringify(toRaw(current.value))) as QuizSession,
+      feedbackMode: feedbackMode.value,
+      lastGradedQuestionId: lastGrade.value
+        ? current.value.question_ids[current.value.current_index] ?? null
+        : null,
+    }
+    writeStored(RECOVERY_KEY, JSON.stringify(payload))
   }
 
   function restoreRecovery(): boolean {
-    const raw = localStorage.getItem(RECOVERY_KEY)
+    if (current.value?.status === 'active' && questions.value.length) return true
+    const raw = readStored(RECOVERY_KEY)
     if (!raw) return false
     try {
-      const parsed = JSON.parse(raw) as {
-        session: QuizSession
-        questions: Question[]
-        feedbackMode: FeedbackMode
+      const parsed = JSON.parse(raw) as RecoveryPayloadV2 & {
+        questions?: Question[]
+        session?: QuizSession
+        feedbackMode?: FeedbackMode
+        lastGradedQuestionId?: string | null
       }
-      if (parsed.session.status !== 'active') return false
-      current.value = parsed.session
-      questions.value = parsed.questions
-      feedbackMode.value = parsed.feedbackMode
+      const sess = parsed.session
+      if (!sess || sess.status !== 'active' || !Array.isArray(sess.question_ids)) return false
+      if (sess.ends_at && new Date(sess.ends_at).getTime() <= Date.now()) {
+        sess.status = 'submitted'
+        sess.submitted_at = sess.submitted_at || new Date().toISOString()
+        removeStored(RECOVERY_KEY)
+        return false
+      }
+      const hydrated = hydrateQuestions(sess.question_ids, parsed.questions)
+      if (!hydrated.length) return false
+      sess.question_ids = hydrated.map((q) => q.id)
+      if (sess.current_index < 0 || sess.current_index >= sess.question_ids.length) {
+        sess.current_index = 0
+      }
+      current.value = sess
+      questions.value = hydrated
+      feedbackMode.value = parsed.feedbackMode ?? 'immediate'
+      const gradedId = parsed.lastGradedQuestionId
+      const currentId = sess.question_ids[sess.current_index]
+      if (gradedId && gradedId === currentId) {
+        lastGrade.value = gradeLocally(currentId, sess.answers[currentId] ?? [])
+      }
+      persistRecovery()
       return true
     } catch {
       return false
@@ -123,12 +219,12 @@ export const useSessionStore = defineStore('session', () => {
         submitted_at: null,
       }
 
-      if (isSupabaseConfigured && auth.isAuthenticated) {
+      if (isSupabaseConfigured && auth.user?.id) {
         const { data, error: err } = await supabase
           .from('quiz_sessions')
           .insert({
             id: localSession.id,
-            user_id: auth.user!.id,
+            user_id: auth.user.id,
             mode: localSession.mode,
             status: 'active',
             config: localSession.config,
@@ -151,6 +247,7 @@ export const useSessionStore = defineStore('session', () => {
       }
 
       questions.value = shuffled
+      if (mode === 'exam') removeStored(LAST_EXAM_KEY)
       persistRecovery()
     } catch (e) {
       error.value = e instanceof Error ? e.message : String(e)
@@ -195,7 +292,7 @@ export const useSessionStore = defineStore('session', () => {
 
     let result: GradeResult
     try {
-      if (isSupabaseConfigured && useAuthStore().isAuthenticated) {
+      if (isSupabaseConfigured && useAuthStore().user?.id) {
         result = await invokeFunction<GradeResult>('grade-attempt', {
           session_id: session.id,
           question_id: q.id,
@@ -214,6 +311,7 @@ export const useSessionStore = defineStore('session', () => {
     }
 
     lastGrade.value = result
+    persistRecovery()
     return result
   }
 
@@ -224,7 +322,7 @@ export const useSessionStore = defineStore('session', () => {
     persistRecovery()
 
     const auth = useAuthStore()
-    if (isSupabaseConfigured && auth.isAuthenticated) {
+    if (isSupabaseConfigured && auth.user?.id) {
       try {
         const data = await invokeFunction<{
           result: unknown
@@ -232,7 +330,8 @@ export const useSessionStore = defineStore('session', () => {
           session_id: current.value.id,
           answers: current.value.answers,
         })
-        localStorage.removeItem(RECOVERY_KEY)
+        persistLastExam(data)
+        removeStored(RECOVERY_KEY)
         return data
       } catch {
         // fall through to local summary
@@ -240,7 +339,8 @@ export const useSessionStore = defineStore('session', () => {
     }
 
     const summary = buildLocalExamSummary()
-    localStorage.removeItem(RECOVERY_KEY)
+    persistLastExam(summary)
+    removeStored(RECOVERY_KEY)
     return summary
   }
 
@@ -284,7 +384,7 @@ export const useSessionStore = defineStore('session', () => {
 
   async function syncSession() {
     const auth = useAuthStore()
-    if (!current.value || !isSupabaseConfigured || !auth.isAuthenticated) return
+    if (!current.value || !isSupabaseConfigured || !auth.user?.id) return
     await supabase
       .from('quiz_sessions')
       .update({
@@ -297,11 +397,59 @@ export const useSessionStore = defineStore('session', () => {
       .eq('id', current.value.id)
   }
 
+  function persistLastExam(summary: unknown) {
+    if (!summary || typeof summary !== 'object') return
+    const data = summary as {
+      result?: unknown
+      answers?: Record<string, string[]>
+      questions?: Question[]
+    }
+    const ids =
+      current.value?.question_ids?.length
+        ? current.value.question_ids
+        : (data.questions || []).map((q) => q.id)
+    if (!ids.length) return
+    writeStored(
+      LAST_EXAM_KEY,
+      JSON.stringify({
+        result: data.result,
+        answers: data.answers ?? current.value?.answers ?? {},
+        question_ids: ids,
+      }),
+    )
+  }
+
+  function restoreLastExam() {
+    const raw = readStored(LAST_EXAM_KEY)
+    if (!raw) return null
+    try {
+      const parsed = JSON.parse(raw) as {
+        result: unknown
+        answers: Record<string, string[]>
+        question_ids: string[]
+        questions?: Question[]
+      }
+      const hydrated = hydrateQuestions(parsed.question_ids, parsed.questions)
+      if (!hydrated.length || !parsed.result) return null
+      return {
+        result: parsed.result,
+        answers: parsed.answers ?? {},
+        questions: hydrated,
+      }
+    } catch {
+      return null
+    }
+  }
+
+  function clearLastExam() {
+    removeStored(LAST_EXAM_KEY)
+  }
+
   function clear() {
     current.value = null
     questions.value = []
     lastGrade.value = null
-    localStorage.removeItem(RECOVERY_KEY)
+    removeStored(RECOVERY_KEY)
   }
 
   return {
@@ -320,6 +468,8 @@ export const useSessionStore = defineStore('session', () => {
     submitExam,
     restoreRecovery,
     persistRecovery,
+    restoreLastExam,
+    clearLastExam,
     clear,
   }
 })

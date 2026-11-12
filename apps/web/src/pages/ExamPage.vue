@@ -48,6 +48,9 @@ const remainingLabel = computed(() => {
 
 onMounted(() => {
   session.restoreRecovery()
+  if (!session.current || session.current.mode !== 'exam' || session.current.status !== 'active') {
+    result.value = session.restoreLastExam() as typeof result.value
+  }
   timer = window.setInterval(() => {
     now.value = Date.now()
     if (remaining.value === 0 && session.current?.status === 'active') {
@@ -62,6 +65,7 @@ onUnmounted(() => {
 
 async function start() {
   result.value = null
+  session.clearLastExam()
   const preset = presets.find((p) => p.id === presetId.value) ?? presets[0]
   await session.startDrill({
     mode: 'exam',

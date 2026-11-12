@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import QuestionCard from '@/components/QuestionCard.vue'
 import { useSessionStore } from '@/stores/session'
 import { recordLocalAttempt } from '@/services/analytics'
@@ -14,17 +14,33 @@ const domainNames = Object.fromEntries(
   (examConfig.official?.domain_weights || []).map((d: { code: string; name: string }) => [d.code, d.name]),
 )
 
-const domain = ref('')
-const service = ref('')
-const difficulty = ref('')
-const questionType = ref<'' | QuestionType>('')
-const keyFilter = ref<'all' | 'keyed' | 'study'>('all')
-const feedback = ref<'immediate' | 'delayed'>('immediate')
-const countMode = ref<'all' | 'custom'>('all')
-const customCount = ref(20)
+const DRILL_PREFS_KEY = 'dea-drill-prefs'
+const savedPrefs = (() => {
+  try {
+    return JSON.parse(localStorage.getItem(DRILL_PREFS_KEY) || '{}') as Record<string, unknown>
+  } catch {
+    return {}
+  }
+})()
+
+const domain = ref(typeof savedPrefs.domain === 'string' ? savedPrefs.domain : '')
+const service = ref(typeof savedPrefs.service === 'string' ? savedPrefs.service : '')
+const difficulty = ref(typeof savedPrefs.difficulty === 'string' ? savedPrefs.difficulty : '')
+const questionType = ref<'' | QuestionType>(
+  savedPrefs.questionType === 'single' || savedPrefs.questionType === 'multi'
+    ? savedPrefs.questionType
+    : '',
+)
+const keyFilter = ref<'all' | 'keyed' | 'study'>(
+  savedPrefs.keyFilter === 'keyed' || savedPrefs.keyFilter === 'study' ? savedPrefs.keyFilter : 'all',
+)
+const feedback = ref<'immediate' | 'delayed'>(savedPrefs.feedback === 'delayed' ? 'delayed' : 'immediate')
+const countMode = ref<'all' | 'custom'>(savedPrefs.countMode === 'custom' ? 'custom' : 'all')
+const customCount = ref(typeof savedPrefs.customCount === 'number' ? savedPrefs.customCount : 20)
 const confidence = ref(3)
 const busy = ref(false)
 const message = ref('')
+
 const bookmarks = ref<string[]>(JSON.parse(localStorage.getItem('dea-bookmarks') || '[]'))
 const incorrect = ref<string[]>(JSON.parse(localStorage.getItem('dea-incorrect') || '[]'))
 
@@ -65,6 +81,34 @@ watch(matchingCount, (n) => {
   if (countMode.value === 'custom' && customCount.value > n) customCount.value = Math.max(1, n)
 })
 
+watch(
+  [domain, service, difficulty, questionType, keyFilter, feedback, countMode, customCount],
+  () => {
+    try {
+      localStorage.setItem(
+        DRILL_PREFS_KEY,
+        JSON.stringify({
+          domain: domain.value,
+          service: service.value,
+          difficulty: difficulty.value,
+          questionType: questionType.value,
+          keyFilter: keyFilter.value,
+          feedback: feedback.value,
+          countMode: countMode.value,
+          customCount: customCount.value,
+        }),
+      )
+    } catch {
+      // ignore quota
+    }
+  },
+)
+
+onMounted(() => {
+  session.restoreRecovery()
+  if (session.current?.status === 'active') feedback.value = session.feedbackMode
+})
+
 const selected = computed(() => {
   const q = session.currentQuestion
   if (!q || !session.current) return []
@@ -72,7 +116,7 @@ const selected = computed(() => {
 })
 
 const showFeedback = computed(
-  () => feedback.value === 'immediate' && Boolean(session.lastGrade),
+  () => session.feedbackMode === 'immediate' && Boolean(session.lastGrade),
 )
 
 async function start() {
@@ -355,7 +399,7 @@ async function reviewIncorrect() {
         :selected="selected"
         :grade="session.lastGrade"
         :show-feedback="showFeedback"
-        :disabled="Boolean(session.lastGrade) && feedback === 'immediate'"
+        :disabled="Boolean(session.lastGrade) && session.feedbackMode === 'immediate'"
         @select="onSelect"
       />
 
@@ -367,7 +411,7 @@ async function reviewIncorrect() {
         </label>
         <button type="button" class="rounded-md border border-[var(--color-border)] px-3 py-2 text-sm" @click="prev">Previous</button>
         <button
-          v-if="feedback === 'immediate' && !session.lastGrade"
+          v-if="session.feedbackMode === 'immediate' && !session.lastGrade"
           type="button"
           class="rounded-md bg-[var(--color-accent)] text-white px-3 py-2 text-sm disabled:opacity-50"
           :disabled="selected.length === 0"
@@ -379,7 +423,7 @@ async function reviewIncorrect() {
           v-else
           type="button"
           class="rounded-md bg-[var(--color-accent)] text-white px-3 py-2 text-sm"
-          @click="async () => { if (feedback === 'delayed' && !session.lastGrade) await check(); next() }"
+          @click="async () => { if (session.feedbackMode === 'delayed' && !session.lastGrade) await check(); next() }"
         >
           Next
         </button>
